@@ -14,10 +14,15 @@
 	if(istype(T) && movement_dir && T.on)
 		return TRUE
 
-	var/obj/item/tank/jetpack/J = get_jetpack()
-	if(istype(J) && (movement_dir || J.stabilizers) && J.on)
-		return TRUE
-
+	var/obj/item/I = get_jetpack()
+	if(istype(I, /obj/item/tank/jetpack))
+		var/obj/item/tank/jetpack/J = I
+		if((movement_dir || J.stabilizers) && J.allow_thrust(0.01, src))
+			return TRUE
+	else if(istype(I, /obj/item/mod/module/jetpack))
+		var/obj/item/mod/module/jetpack/J = I
+		if((movement_dir || J.stabilizers) && J.allow_thrust())
+			return TRUE
 	if(..())
 		return TRUE
 

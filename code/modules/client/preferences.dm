@@ -179,6 +179,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	///The outfit we currently want to preview on our character
 	var/datum/outfit/job/selected_outfit
 
+	// Multiz Parallax option
+	var/multiz_parallax = FALSE
+
+	/// Multiz Performance option
+	var/multiz_performance = -1
+
 /datum/preferences/New(client/C)
 	parent = C
 

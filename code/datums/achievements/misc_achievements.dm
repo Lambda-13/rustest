@@ -111,3 +111,9 @@
 	name = "HA, GOTTEM"
 	desc = "Made you look!"
 	database_id = MEDAL_GOTTEM
+
+/datum/award/achievement/misc/springlock
+	name = "The Man Inside the MODsuit"
+	desc = "Ignore the warning label on a springlock MODsuit."
+	database_id = MEDAL_SPRINGLOCK
+	icon = "springlock"

@@ -6,3 +6,5 @@
 #define is_reserved_level(atom) atom.virtual_level_trait(ZTRAIT_RESERVED)
 
 #define is_away_level(atom) atom.virtual_level_trait(ZTRAIT_AWAY)
+
+#define is_reebe(atom) atom.virtual_level_trait(ZTRAIT_REEBE)

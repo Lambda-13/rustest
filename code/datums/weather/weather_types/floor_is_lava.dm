@@ -19,7 +19,7 @@
 
 	overlay_layer = ABOVE_OPEN_TURF_LAYER //Covers floors only
 	overlay_plane = FLOOR_PLANE
-	immunity_type = "lava"
+	immunity_type = "lava" || TRAIT_LAVA_IMMUNE
 	multiply_blend_on_main_stage = TRUE
 
 

@@ -32,6 +32,10 @@
 		return 0
 	return 1
 
+/datum/atom_hud/data/human/medical/basic/add_atom_to_single_mob_hud(mob/M, mob/living/carbon/H)
+	if(check_sensors(H))
+		..()
+
 /datum/atom_hud/data/human/medical/basic/add_to_single_hud(mob/M, mob/living/carbon/H)
 	if(check_sensors(H))
 		..()

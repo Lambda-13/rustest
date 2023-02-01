@@ -14,6 +14,12 @@
 	dupe_mode = COMPONENT_DUPE_UNIQUE
 	var/datum/component/storage/concrete/master		//If not null, all actions act on master and this is just an access point.
 
+	/// the actual item we're attached to
+	
+	/// the actual item we're storing in
+	var/datum/weakref/real_location
+
+
 	var/list/can_hold								//if this is set, only items, and their children, will fit
 	var/list/cant_hold								//if this is set, items, and their children, won't fit
 	var/list/exception_hold           //if set, these items will be the exception to the max size of object that can fit.
@@ -38,7 +44,7 @@
 
 	var/collection_mode = COLLECT_EVERYTHING
 
-	var/insert_preposition = "in"					//you put things "in" a bag, but "on" a tray.
+	var/insert_preposition = "в"					//you put things "in" a bag, but "on" a tray.
 
 	var/display_numerical_stacking = FALSE			//stack things of the same type and show as a single object with a number.
 
@@ -885,3 +891,35 @@
 			to_chat(user, "<span class='notice'>[parent] now picks up all items in a tile at once.</span>")
 		if(COLLECT_ONE)
 			to_chat(user, "<span class='notice'>[parent] now picks up one item at a time.</span>")
+
+/**
+ * Sets where items are physically being stored in the case it shouldn't be on the parent.
+ *
+ * @param atom/real the new real location of the datum
+ * @param should_drop if TRUE, all the items in the old real location will be dropped
+ */
+/datum/component/storage/proc/set_real_location(atom/real, should_drop = FALSE)
+	if(!real)
+		return
+	change_master(src)
+	var/atom/resolve_location = src.real_location?.resolve()
+	if(!resolve_location)
+		return
+
+	//real.on_slave_link()
+	var/atom/resolve_parent = TRUE//src.master?.resolve()
+	if(!resolve_parent)
+		return
+
+	if(should_drop)
+		dump_content_at(get_turf(src))
+
+	resolve_location.flags_1 &= ~HAS_DISASSOCIATED_STORAGE_1
+	real.flags_1 |= HAS_DISASSOCIATED_STORAGE_1
+
+	UnregisterSignal(resolve_location, list(COMSIG_ATOM_ENTERED, COMSIG_ATOM_EXITED))
+
+	//RegisterSignal(real, COMSIG_ATOM_ENTERED, PROC_REF(handle_enter))
+	//RegisterSignal(real, COMSIG_ATOM_EXITED, PROC_REF(handle_exit))
+
+	real_location = WEAKREF(real)

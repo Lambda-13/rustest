@@ -62,6 +62,7 @@
 	ion_trail.start()
 	RegisterSignal(user, COMSIG_MOVABLE_MOVED, .proc/move_react)
 	RegisterSignal(user, COMSIG_MOVABLE_PRE_MOVE, .proc/pre_move_react)
+	RegisterSignal(user, COMSIG_MOVABLE_SPACEMOVE, .proc/spacemove_react)
 	if(full_speed)
 		user.add_movespeed_modifier(/datum/movespeed_modifier/jetpack/fullspeed)
 
@@ -110,6 +111,12 @@
 		return (OXYLOSS)
 	else
 		..()
+
+/obj/item/tank/jetpack/proc/spacemove_react(mob/user, movement_dir)
+	SIGNAL_HANDLER
+
+	if(on && (movement_dir || stabilizers))
+		return COMSIG_MOVABLE_STOP_SPACEMOVE
 
 /obj/item/tank/jetpack/improvised
 	name = "improvised jetpack"
@@ -250,9 +257,13 @@
 	return
 
 /mob/living/carbon/get_jetpack()
-	var/obj/item/tank/jetpack/J = back
-	if(istype(J))
-		return J
+	var/obj/item/I = back
+	if(istype(I, /obj/item/tank/jetpack))
+		return I
+	else if(istype(I, /obj/item/mod/control))
+		var/obj/item/mod/control/C = I
+		for(var/obj/item/mod/module/jetpack/J in C.modules)
+			return J
 
 /mob/living/carbon/human/get_jetpack()
 	var/obj/item/tank/jetpack/J = ..()

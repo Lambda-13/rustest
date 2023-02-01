@@ -190,7 +190,7 @@
 	update_name()
 	update_icon()
 
-/obj/structure/poddoor_assembly/proc/update_name()
+/obj/structure/poddoor_assembly/proc/update_names(updates)
 
 	switch(state)
 		if(AIRLOCK_ASSEMBLY_NEEDS_ELECTRONICS)

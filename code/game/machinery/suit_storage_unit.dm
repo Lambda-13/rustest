@@ -11,6 +11,7 @@
 	var/obj/item/clothing/suit/space/suit = null
 	var/obj/item/clothing/head/helmet/space/helmet = null
 	var/obj/item/clothing/mask/mask = null
+	var/obj/item/mod/control/mod = null
 	var/obj/item/storage = null
 								// if you add more storage slots, update cook() to clear their radiation too.
 
@@ -20,6 +21,8 @@
 	var/helmet_type = null
 	/// What type of breathmask the unit starts with when spawned.
 	var/mask_type = null
+	/// What type of MOD the unit starts with when spawned.
+	var/mod_type = null
 	/// What type of additional item the unit starts with when spawned.
 	var/storage_type = null
 
@@ -45,6 +48,8 @@
 	var/message_cooldown
 	/// How long it takes to break out of the SSU.
 	var/breakout_time = 300
+	/// How fast it charges cells in a suit
+	var/charge_rate = 250
 
 /obj/machinery/suit_storage_unit/industrial
 	name = "industrial suit storage unit"
@@ -195,6 +200,7 @@
 	QDEL_NULL(suit)
 	QDEL_NULL(helmet)
 	QDEL_NULL(mask)
+	QDEL_NULL(mod)
 	QDEL_NULL(storage)
 	return ..()
 
@@ -205,7 +211,7 @@
 		. += "[base_icon_state]_panel"
 	if(state_open)
 		. += "[base_icon_state]_open"
-		if(suit)
+		if(suit || mod)
 			. += "[base_icon_state]_suit"
 		if(helmet)
 			. += "[base_icon_state]_helm"
@@ -243,6 +249,7 @@
 	helmet = null
 	suit = null
 	mask = null
+	mod = null
 	storage = null
 	occupant = null
 
@@ -423,6 +430,8 @@
 			qdel(suit) // Delete everything but the occupant.
 			mask = null
 			qdel(mask)
+			mod = null
+			qdel(mod)
 			storage = null
 			qdel(storage)
 			// The wires get damaged too.
@@ -444,6 +453,9 @@
 			if(mask)
 				things_to_clear += mask
 				things_to_clear += mask.GetAllContents()
+			if(mod)
+				things_to_clear += mod
+				things_to_clear += mod.GetAllContents()
 			if(storage)
 				things_to_clear += storage
 				things_to_clear += storage.GetAllContents()
@@ -457,6 +469,20 @@
 		if(occupant)
 			dump_contents()
 
+/*obj/machinery/suit_storage_unit/process(delta_time)
+	var/obj/item/stock_parts/cell/cell
+	if(mod)
+		if(!istype(mod))
+			return
+		if(!mod.cell)
+			return
+		cell = mod.cell
+	else
+		return
+
+	use_power(charge_rate * delta_time)
+	cell.give(charge_rate * delta_time)
+*/
 /obj/machinery/suit_storage_unit/proc/shock(mob/user, prb)
 	if(!prob(prb))
 		var/datum/effect_system/spark_spread/s = new /datum/effect_system/spark_spread
@@ -530,6 +556,13 @@
 			if(!user.transferItemToLoc(I, src))
 				return
 			mask = I
+		else if(istype(I, /obj/item/mod/control))
+			if(mod)
+				to_chat(user, span_warning("The unit already contains a MOD!"))
+				return
+			if(!user.transferItemToLoc(I, src))
+				return
+			mod = I
 		else
 			if(storage)
 				to_chat(user, "<span class='warning'>The auxiliary storage compartment is full!</span>")

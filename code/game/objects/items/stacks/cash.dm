@@ -18,7 +18,7 @@
 	. = ..()
 	update_desc()
 
-/obj/item/stack/spacecash/proc/update_desc()
+/obj/item/stack/spacecash/proc/update_descs()
 	var/total_worth = get_item_credit_value()
 	desc = "It's worth [total_worth] credit[(total_worth > 1) ? "s" : ""]"
 

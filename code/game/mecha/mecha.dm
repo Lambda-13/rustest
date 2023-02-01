@@ -909,15 +909,15 @@
 	visible_message("<span class='notice'>[user] starts to climb into [name].</span>")
 
 	//check user for fast embark, divide enter_delay by 2, then pass final delay to do_after
-	var/final_delay = enter_delay
+	/*var/final_delay = enter_delay
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
 		if(H.wear_suit)
 			var/obj/item/clothing/suit/S = H.get_item_by_slot(ITEM_SLOT_OCLOTHING)
 			if(S.clothing_flags & FAST_EMBARK)
 				final_delay = enter_delay/2
-
-	if(do_after(user, final_delay, target = src))
+*/
+	if(do_after(user, enter_delay, target = src))
 		if(obj_integrity <= 0)
 			to_chat(user, "<span class='warning'>You cannot get in the [name], it has been destroyed!</span>")
 		else if(occupant)
@@ -1003,12 +1003,12 @@
 	is_currently_ejecting = TRUE
 	to_chat(occupant, "<span class='notice'>You begin the ejection procedure. Equipment is disabled during this process. Hold still to finish ejecting.</span>")
 	var/final_exit_delay = exit_delay
-	if(ishuman(user))
+	/*if(ishuman(user))
 		var/mob/living/carbon/human/H = user
 		if(H.wear_suit)
 			var/obj/item/clothing/suit/S = H.get_item_by_slot(ITEM_SLOT_OCLOTHING)
 			if(S.clothing_flags & FAST_EMBARK)
-				final_exit_delay = exit_delay/2
+				final_exit_delay = exit_delay/2 */
 
 	if(do_after(occupant, has_gravity() ? final_exit_delay : 0 , target = src))
 		to_chat(occupant, "<span class='notice'>You exit the mech.</span>")

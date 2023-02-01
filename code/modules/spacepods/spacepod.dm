@@ -526,12 +526,12 @@ GLOBAL_LIST_INIT(spacepod_verb_list,  list(
 
 	if(passengers.len <= max_passengers || !pilot)
 		var/final_delay = enter_delay
-		if(ishuman(user))
+		/*if(ishuman(user))
 			var/mob/living/carbon/human/H = user
 			if(H.wear_suit)
 				var/obj/item/clothing/suit/S = H.get_item_by_slot(ITEM_SLOT_OCLOTHING)
 				if(S.clothing_flags & FAST_EMBARK)
-					final_delay = enter_delay/2
+					final_delay = enter_delay/2 */
 		visible_message("<span class='notice'>[user] starts to climb into [src].</span>")
 		if(do_after(user, final_delay, target = src) && construction_state == SPACEPOD_ARMOR_WELDED)
 			var/success = add_rider(user)
@@ -569,12 +569,12 @@ GLOBAL_LIST_INIT(spacepod_verb_list,  list(
 
 	to_chat(usr, "<span class='notice'>You begin the ejection procedure.</span>")
 	var/final_exit_delay = exit_delay
-	if(ishuman(usr))
+	/*if(ishuman(usr))
 		var/mob/living/carbon/human/H = usr
 		if(H.wear_suit)
 			var/obj/item/clothing/suit/S = H.get_item_by_slot(ITEM_SLOT_OCLOTHING)
 			if(S.clothing_flags & FAST_EMBARK)
-				final_exit_delay = exit_delay/2
+				final_exit_delay = exit_delay/2 */
 
 	if(do_after(usr, has_gravity() ? final_exit_delay : 0 , target = src))
 		if(remove_rider(usr))

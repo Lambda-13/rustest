@@ -28,7 +28,8 @@
 								"Misc. Machinery",
 								"Computer Parts",
 								"Spacepod Designs", //WS
-								"Integrated Electronics"
+								"Integrated Electronics",
+								"MODsuit Designs"
 								)
 	console_link = FALSE
 	production_animation = "protolathe_n"

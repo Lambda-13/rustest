@@ -177,6 +177,12 @@
 	else
 		. += text("Systems nonfunctional")
 
+/mob/living/silicon/pai/can_interact_with(atom/target)
+	if(istype(target, /obj/item/mod/control)) // A poor workaround for enabling MODsuit control
+		var/obj/item/mod/control/C = target
+		if(C.ai == src)
+			return TRUE
+	return ..()
 
 // See software.dm for Topic()
 
