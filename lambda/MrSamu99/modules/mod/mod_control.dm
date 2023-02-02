@@ -4,7 +4,6 @@
 	desc = "Ты не должен видеть это, сообщи кодерам об этом!"
 	icon = 'icons/obj/clothing/modsuit/mod_clothing.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/modsuit/mod_clothing.dmi'
-	mob_overlay_state = "mod_control"
 	var/component_type = /datum/component/storage/concrete
 	var/max_w_class = WEIGHT_CLASS_TINY			//max size of objects that will fit.
 	var/max_combined_w_class = 0					//max combined sizes of objects that will fit.
