@@ -168,7 +168,7 @@
 	id = "mod_visor_meson"
 	materials = list(/datum/material/uranium = 500, /datum/material/glass = 1000)
 	build_path = /obj/item/mod/module/visor/meson
-	departmental_flags = DEPARTMENTAL_FLAG_SUPPLY
+	departmental_flags = DEPARTMENTAL_FLAG_CARGO
 
 /datum/design/module/mod_visor_welding
 	name = "МОД-Скаф модуль: Защита от вспышек"
@@ -262,7 +262,7 @@
 	id = "mod_gps"
 	materials = list(/datum/material/iron = 500, /datum/material/glass = 500)
 	build_path = /obj/item/mod/module/gps
-	departmental_flags = DEPARTMENTAL_FLAG_SUPPLY
+	departmental_flags = DEPARTMENTAL_FLAG_CARGO
 
 /datum/design/module/mod_constructor
 	name = "МОД-Скаф модуль: Строительный сканер"
@@ -323,21 +323,21 @@
 	id = "mod_clamp"
 	materials = list(/datum/material/iron = 2000)
 	build_path = /obj/item/mod/module/clamp
-	departmental_flags = DEPARTMENTAL_FLAG_SUPPLY
+	departmental_flags = DEPARTMENTAL_FLAG_CARGO
 
 /datum/design/module/mod_drill
 	name = "МОД-Скаф модуль: Бур"
 	id = "mod_drill"
 	materials = list(/datum/material/silver = 1000, /datum/material/iron = 2000)
 	build_path = /obj/item/mod/module/drill
-	departmental_flags = DEPARTMENTAL_FLAG_SUPPLY
+	departmental_flags = DEPARTMENTAL_FLAG_CARGO
 
 /datum/design/module/mod_orebag
 	name = "МОД-Скаф модуль: Сумки для руды"
 	id = "mod_orebag"
 	materials = list(/datum/material/iron = 1500)
 	build_path = /obj/item/mod/module/orebag
-	departmental_flags = DEPARTMENTAL_FLAG_SUPPLY
+	departmental_flags = DEPARTMENTAL_FLAG_CARGO
 
 /datum/design/module/mod_organ_thrower
 	name = "МОД-Скаф модуль: Замена органов"
@@ -391,7 +391,7 @@
 	id = "mod_disposal"
 	materials = list(/datum/material/iron = 2500, /datum/material/titanium = 1000)
 	build_path = /obj/item/mod/module/disposal_connector
-	departmental_flags = DEPARTMENTAL_FLAG_SUPPLY
+	departmental_flags = DEPARTMENTAL_FLAG_CARGO
 
 //MODsuit anomalock modules
 
