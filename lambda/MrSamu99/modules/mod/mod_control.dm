@@ -3,7 +3,7 @@
 	name = "Базовый MOD"
 	desc = "Ты не должен видеть это, сообщи кодерам об этом!"
 	icon = 'icons/obj/clothing/modsuit/mod_clothing.dmi'
-	//worn_icon = 'icons/mob/clothing/modsuit/mod_clothing.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/modsuit/mod_clothing.dmi'
  
 /obj/item/mod/control
 	name = "управляющий модуль"

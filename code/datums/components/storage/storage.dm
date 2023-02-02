@@ -15,9 +15,9 @@
 	var/datum/component/storage/concrete/master		//If not null, all actions act on master and this is just an access point.
 
 	/// the actual item we're attached to
-	
+	var/datum/weakref/parent_location
 	/// the actual item we're storing in
-	var/datum/weakref/real_location
+	var/datum/weakref/storage_location
 
 
 	var/list/can_hold								//if this is set, only items, and their children, will fit
@@ -72,6 +72,8 @@
 		return COMPONENT_INCOMPATIBLE
 	if(master)
 		change_master(master)
+	src.parent_location = WEAKREF(parent)
+	src.storage_location = src.parent_location
 	boxes = new(null, src)
 	closer = new(null, src)
 	orient2hud()
@@ -116,6 +118,8 @@
 	update_actions()
 
 /datum/component/storage/Destroy()
+	parent_location = null
+	storage_location = null
 	close_all()
 	QDEL_NULL(boxes)
 	QDEL_NULL(closer)
@@ -627,6 +631,14 @@
 //This proc return 1 if the item can be picked up and 0 if it can't.
 //Set the stop_messages to stop it from printing messages
 /datum/component/storage/proc/can_be_inserted(obj/item/I, stop_messages = FALSE, mob/M)
+	var/obj/item/resolve_parent = parent_location?.resolve()
+	if(!resolve_parent)
+		return
+
+	var/obj/item/resolve_location = storage_location?.resolve()
+	if(!resolve_location)
+		return
+
 	if(!istype(I) || (I.item_flags & ABSTRACT))
 		return FALSE //Not an item
 	if(I == parent)
@@ -694,6 +706,9 @@
 /datum/component/storage/proc/handle_item_insertion(obj/item/I, prevent_warning = FALSE, mob/M, datum/component/storage/remote)
 	var/atom/parent = src.parent
 	var/datum/component/storage/concrete/master = master()
+	var/obj/item/resolve_location = storage_location?.resolve()
+	if(!resolve_location)
+		return FALSE
 	if(!istype(master))
 		return FALSE
 	if(silent)
@@ -902,17 +917,21 @@
 	if(!real)
 		return
 	change_master(src)
-	var/atom/resolve_location = src.real_location?.resolve()
+	var/atom/resolve_location = src.storage_location?.resolve()
 	if(!resolve_location)
 		return
-
+	//if(I == parent)
+	//	return FALSE
+	var/datum/component/storage/concrete/master = master()
+	if(!istype(master))
+		return FALSE
 	//real.on_slave_link()
-	var/atom/resolve_parent = TRUE//src.master?.resolve()
+	var/atom/resolve_parent = src.parent_location?.resolve()
 	if(!resolve_parent)
 		return
 
 	if(should_drop)
-		dump_content_at(get_turf(src))
+		dump_content_at(get_turf(resolve_parent))
 
 	resolve_location.flags_1 &= ~HAS_DISASSOCIATED_STORAGE_1
 	real.flags_1 |= HAS_DISASSOCIATED_STORAGE_1
@@ -922,4 +941,4 @@
 	//RegisterSignal(real, COMSIG_ATOM_ENTERED, PROC_REF(handle_enter))
 	//RegisterSignal(real, COMSIG_ATOM_EXITED, PROC_REF(handle_exit))
 
-	real_location = WEAKREF(real)
+	storage_location = WEAKREF(real)
