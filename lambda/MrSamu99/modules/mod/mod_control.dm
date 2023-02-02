@@ -4,7 +4,38 @@
 	desc = "Ты не должен видеть это, сообщи кодерам об этом!"
 	icon = 'icons/obj/clothing/modsuit/mod_clothing.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/modsuit/mod_clothing.dmi'
+	mob_overlay_state = "mod_control"
+	var/component_type = /datum/component/storage/concrete
+	var/max_w_class = WEIGHT_CLASS_TINY			//max size of objects that will fit.
+	var/max_combined_w_class = 0					//max combined sizes of objects that will fit.
+	var/max_items = 0	
+	var/locked = TRUE
  
+/obj/item/mod/Initialize()
+	. = ..()
+	PopulateContents()
+	
+/obj/item/mod/ComponentInitialize()
+	AddComponent(component_type)
+
+/obj/item/mod/proc/emptyStorage()
+	var/datum/component/storage/ST = GetComponent(/datum/component/storage)
+	ST.do_quick_empty()
+
+/obj/item/mod/proc/PopulateContents()
+
+/obj/item/mod/on_object_saved(depth = 0)
+	if(depth >= 10)
+		return ""
+	var/dat = ""
+	for(var/obj/item in contents)
+		var/metadata = generate_tgm_metadata(item)
+		dat += "[dat ? ",\n" : ""][item.type][metadata]"
+		//Save the contents of things inside the things inside us, EG saving the contents of bags inside lockers
+		var/custom_data = item.on_object_saved(depth++)
+		dat += "[custom_data ? ",\n[custom_data]" : ""]"
+	return dat
+
 /obj/item/mod/control
 	name = "управляющий модуль"
 	desc = "Блок управления Модульного Устройства Внешней защиты, скафандр с питанием способный защитить от разных сред."
@@ -13,7 +44,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 	strip_delay = 10 SECONDS
-	armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, FIRE = 0, ACID = 0, WOUND = 0)
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "fire" = 0, "acid" = 0)
 	actions_types = list(
 		/datum/action/item_action/mod/deploy,
 		/datum/action/item_action/mod/activate,
@@ -41,7 +72,7 @@
 	/// If the suit wire/module hatch is open.
 	var/open = FALSE
 	/// If the suit is ID locked.
-	var/locked = FALSE
+	var/IDlocked = FALSE
 	/// If the suit is malfunctioning.
 	var/malfunctioning = FALSE
 	/// If the suit is currently activating/deactivating.
@@ -108,7 +139,7 @@
 	initial_modules += theme.inbuilt_modules
 	wires = new /datum/wires/mod(src)
 	if(length(req_access))
-		locked = TRUE
+		IDlocked = TRUE
 	new_core?.install(src)
 	helmet = new /obj/item/clothing/head/mod(src)
 	mod_parts += helmet
@@ -142,6 +173,16 @@
 	RegisterSignal(src, COMSIG_ATOM_EXITED, PROC_REF(on_exit))
 	RegisterSignal(src, COMSIG_SPEED_POTION_APPLIED, PROC_REF(on_potion))
 	movedelay = CONFIG_GET(number/movedelay/run_delay)
+
+/obj/item/mod/control/ComponentInitialize()
+	. = ..()
+	AddComponent(component_type)
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_combined_w_class = 0
+	STR.max_w_class = WEIGHT_CLASS_NORMAL
+	STR.max_items = 0
+	STR.locked = TRUE
+	STR.use_sound = 'sound/items/storage/briefcase.ogg'
 
 /obj/item/mod/control/Destroy()
 	if(active)
@@ -191,8 +232,8 @@
 		for(var/datum/action/action as anything in actions)
 			if(action.owner == ai)
 				action.Remove(ai)
-		new /obj/item/mod/ai_minicard(drop_location(), ai)
-	return ..() */
+		new /obj/item/mod/ai_minicard(drop_location(), ai)*/
+	return ..()
 
 /obj/item/mod/control/examine(mob/user)
 	. = ..()
@@ -401,8 +442,8 @@
 		return ..()
 
 /obj/item/mod/control/emag_act(mob/user)
-	locked = !locked
-	balloon_alert(user, "Достук к скафандру [locked ? "заблокирован" : "разблокирован"]")
+	IDlocked = !IDlocked
+	balloon_alert(user, "Достук к скафандру [IDlocked ? "заблокирован" : "разблокирован"]")
 
 /obj/item/mod/control/emp_act(severity)
 	. = ..()

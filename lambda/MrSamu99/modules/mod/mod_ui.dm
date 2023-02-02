@@ -10,7 +10,7 @@
 	data["malfunctioning"] = malfunctioning
 	data["open"] = open
 	data["active"] = active
-	data["locked"] = locked
+	data["locked"] = IDlocked
 	data["complexity"] = complexity
 	data["selected_module"] = selected_module?.name
 	data["wearer_name"] = wearer ? (wearer.get_authentification_name("Unknown") || "Unknown") : "No Occupant"
@@ -55,7 +55,7 @@
 	. = ..()
 	if(.)
 		return
-	if(locked && !allowed(usr))
+	if(IDlocked && !allowed(usr))
 		balloon_alert(usr, "Доступ запрещен!")
 		playsound(src, 'sound/machines/scanbuzz.ogg', 25, TRUE, SILENCED_SOUND_EXTRARANGE)
 		return
@@ -64,8 +64,8 @@
 		return
 	switch(action)
 		if("lock")
-			locked = !locked
-			balloon_alert(usr, "[locked ? "заблокирован" : "разблокирован"]!")
+			IDlocked = !IDlocked
+			balloon_alert(usr, "[IDlocked ? "заблокирован" : "разблокирован"]!")
 		if("activate")
 			toggle_activate(usr)
 		if("select")

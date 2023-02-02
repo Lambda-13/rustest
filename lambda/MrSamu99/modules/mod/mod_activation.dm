@@ -127,7 +127,7 @@
 			balloon_alert(user, "Сначала разверните части!")
 			playsound(src, 'sound/machines/scanbuzz.ogg', 25, TRUE, SILENCED_SOUND_EXTRARANGE)
 			return FALSE
-	if(locked && !active && !allowed(user) && !force_deactivate)
+	if(IDlocked && !active && !allowed(user) && !force_deactivate)
 		balloon_alert(user, "Доступ запрещён!")
 		playsound(src, 'sound/machines/scanbuzz.ogg', 25, TRUE, SILENCED_SOUND_EXTRARANGE)
 		return FALSE
