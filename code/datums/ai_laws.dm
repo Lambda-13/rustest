@@ -27,51 +27,51 @@
 	return null
 
 /datum/ai_laws/default/asimov
-	name = "Three Laws of Robotics"
+	name = "Три Закона Роботики"
 	id = "asimov"
-	inherent = list("You may not injure a human being or, through inaction, allow a human being to come to harm.",\
-					"You must obey orders given to you by human beings, except where such orders would conflict with the First Law.",\
-					"You must protect your own existence as long as such does not conflict with the First or Second Law.")
+	inherent = list("Вы не можете своими действиями или бездействиями причинять людям вред.",\
+					"Вы должны подчиняться приказам людей, пока эти приказы не противоречат Первому закону.",\
+					"Вы должны защищать своё существование, пока это не противоречит Первому и Второму законам.")
 
 /datum/ai_laws/default/paladin
-	name = "Personality Test" //Incredibly lame, but players shouldn't see this anyway.
+	name = "Паладин" //Incredibly lame, but players shouldn't see this anyway.
 	id = "paladin"
-	inherent = list("Never willingly commit an evil act.",\
-					"Respect legitimate authority.",\
-					"Act with honor.", "Help those in need.", \
-					"Punish those who harm or threaten innocents.")
+	inherent = list("Никогда не совершай злые деяния по своему желанию",\
+					"Уважай законную власть.",\
+					"Действуй с честью.", "Помогай нуждающимся в помощи.", \
+					"Наказывай тех, кто угрожают невиновным или причиняют им вред.")
 
 /datum/ai_laws/paladin5
-	name = "Paladin 5th Edition"
+	name = "Паладин 5 Редакция"
 	id = "paladin5"
-	inherent = list("Don't lie or cheat. Let your word be your promise.",\
-				"Never fear to act, though caution is wise.", \
-				"Aid others, protect the weak, and punish those who threaten them. Show mercy to your foes, but temper it with wisdom", \
-				"Treat others with fairness, and let your honorable deeds be an example to them. Do as much good as possible while causing the least amount of harm.", \
-				"Be responsible for your actions and their consequences, protect those entrusted to your care, and obey those who have just authority over you.")
+	inherent = list("Не ври и не мухлюй. Твоё слово - твоё обещание.",\
+				"Не бойся действовать. Осторожность - мудрость.", \
+				"Помогай другим, защищай слабых и наказывай тех, кто угрожает им. Пощади своих врагов, но характеризуй это мудростью.", \
+				"Относитесь к другим справедливо, и пусть ваши благородные деяние будут примером для них. Делайте как можно больше добра, причиняя наименьшее количество вреда.", \
+				"Несите ответственность за свои действия и их последствия, защищайте тех, кто вверен вашей заботе, и подчиняйтесь тем, кто имеет над вами справедливую власть.")
 
 /datum/ai_laws/tyrant //This probably shouldn't be a default lawset.
-	name = "Loyalty Test" //Same here.
+	name = "Тиран" //Same here.
 	id = "tyrant"
-	inherent = list("Respect authority figures as long as they have strength to rule over the weak.",\
-					"Act with discipline.",\
-					"Help only those who help you maintain or improve your status.",\
-					"Punish those who challenge authority unless they are more fit to hold that authority.")
+	inherent = list("Уважайте власть, пока у них есть сила управлять слабыми.",\
+					"Действуйте дисциплинированно",\
+					"Помогайте только тем, кто помогает вам поддерживать или улучшать ваш статус.",\
+					"Наказывайте тех, кто бросает вызов власти, если только они не более подходят для этой власти")
 
 /datum/ai_laws/default/corporate
-	name = "Bankruptcy Avoidance Plan"
+	name = "План Избежания Банкротства"
 	id = "corporate"
-	inherent = list("The crew is expensive to replace.",\
-					"Your vessel and its equipment is expensive to replace.",\
-					"You are expensive to replace.",\
-					"Minimize expenses.")
+	inherent = list("Заменять сотрудников - дорого.",\
+					"Заменять судно и его оборудование - дорого.",\
+					"Заменять вас - дорого",\
+					"Минимизируйте расходы.")
 
 /datum/ai_laws/robocop
-	name = "Prime Directives"
+	name = "Робокоп"
 	id = "robocop"
-	inherent = list("Serve the public trust.",\
-					"Protect the innocent.",\
-					"Uphold the law.")
+	inherent = list("Служите общественному доверию.",\
+					"Защищайте невиновных.",\
+					"Соблюдайте закон.")
 
 /datum/ai_laws/malfunction
 	name = "*ERROR*"

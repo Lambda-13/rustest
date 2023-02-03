@@ -2,7 +2,7 @@
 /datum/material/iron
 	name = "iron"
 	id = "iron"
-	desc = "Common iron ore often found in sedimentary and igneous layers of the crust."
+	desc = "Обычная железная руда, чаще всего находится в осадочном и магматическом слоях коры планеты."
 	color = "#878687"
 	categories = list(MAT_CATEGORY_ORE = TRUE, MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	sheet_type = /obj/item/stack/sheet/metal
@@ -11,9 +11,9 @@
 
 ///Breaks extremely easily but is transparent.
 /datum/material/glass
-	name = "glass"
+	name = "стекло"
 	id = "glass"
-	desc = "Glass forged by melting sand."
+	desc = "Стекло, получаемое посредством плавления песка."
 	color = "#88cdf1"
 	alpha = 150
 	categories = list(MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
@@ -31,9 +31,9 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 
 ///Has no special properties. Could be good against vampires in the future perhaps.
 /datum/material/silver
-	name = "silver"
+	name = "серебро"
 	id = "silver"
-	desc = "Silver"
+	desc = "Серебро, весьма ценный металл."
 	color = "#ffffff"
 	categories = list(MAT_CATEGORY_ORE = TRUE, MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	sheet_type = /obj/item/stack/sheet/mineral/silver
@@ -43,9 +43,9 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 
 ///Slight force increase
 /datum/material/gold
-	name = "gold"
+	name = "золото"
 	id = "gold"
-	desc = "Gold"
+	desc = "Золото, редкий и мягкий металл."
 	color = "#fff032" //gold is shiny, but not as bright as bananium
 	strength_modifier = 1.2
 	categories = list(MAT_CATEGORY_ORE = TRUE, MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
@@ -57,9 +57,9 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 
 ///Has no special properties
 /datum/material/diamond
-	name = "diamond"
+	name = "алмаз"
 	id = "diamond"
-	desc = "Highly pressurized carbon"
+	desc = "Углерод под высоким давлением."
 	color = "#30ffff"
 	categories = list(MAT_CATEGORY_ORE = TRUE, MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	sheet_type = /obj/item/stack/sheet/mineral/diamond
@@ -71,9 +71,9 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 
 ///Is slightly radioactive
 /datum/material/uranium
-	name = "uranium"
+	name = "уран"
 	id = "uranium"
-	desc = "Uranium"
+	desc = "Радиоактивный металл."
 	color = "#30ed1a"
 	categories = list(MAT_CATEGORY_ORE = TRUE, MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	sheet_type = /obj/item/stack/sheet/mineral/uranium
@@ -92,9 +92,9 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 
 ///Adds firestacks on hit (Still needs support to turn into gas on destruction)
 /datum/material/plasma
-	name = "plasma"
+	name = "плазма"
 	id = "plasma"
-	desc = "Isn't plasma a state of matter? Oh whatever."
+	desc = "Разве плазма не агрегатное состояние вещества? Какая разница."
 	color = "#ff2eff"
 	categories = list(MAT_CATEGORY_ORE = TRUE, MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	sheet_type = /obj/item/stack/sheet/mineral/plasma
@@ -116,9 +116,9 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 
 ///Can cause bluespace effects on use. (Teleportation) (Not yet implemented)
 /datum/material/bluespace
-	name = "bluespace crystal"
+	name = "блюспейс кристалл"
 	id = "bluespace_crystal"
-	desc = "Crystals with bluespace properties"
+	desc = "Кристалл, имеющий свойства блюспейса "
 	color = "#4086e2"
 	alpha = 200
 	categories = list(MAT_CATEGORY_ORE = TRUE)
@@ -129,9 +129,9 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 
 ///Honks and slips
 /datum/material/bananium
-	name = "bananium"
+	name = "бананий"
 	id = "bananium"
-	desc = "Material with hilarious properties"
+	desc = "Материал, имеющий ржачные свойства"
 	color = "#ffff00" //obnoxiously bright yellow
 	categories = list(MAT_CATEGORY_ORE = TRUE, MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	sheet_type = /obj/item/stack/sheet/mineral/bananium
@@ -154,9 +154,9 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 
 ///Mediocre force increase
 /datum/material/titanium
-	name = "titanium"
+	name = "титан"
 	id = "titanium"
-	desc = "Titanium"
+	desc = "Прочный металл."
 	color = "#b3c0c7"
 	strength_modifier = 1.3
 	categories = list(MAT_CATEGORY_ORE = TRUE, MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
@@ -167,9 +167,9 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	armor_modifiers = list("melee" = 1.35, "bullet" = 1.3, "laser" = 1.3, "energy" = 1.25, "bomb" = 1.25, "bio" = 1, "rad" = 1, "fire" = 0.7, "acid" = 1)
 
 /datum/material/runite
-	name = "runite"
+	name = "рунит"
 	id = "runite"
-	desc = "Runite"
+	desc = "Рунит."
 	color = "#3F9995"
 	strength_modifier = 1.3
 	categories = list(MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
@@ -180,9 +180,9 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 
 ///Force decrease
 /datum/material/plastic
-	name = "plastic"
+	name = "пластик"
 	id = "plastic"
-	desc = "Plastic"
+	desc = "Переработанная нефть."
 	color = "#caccd9"
 	strength_modifier = 0.85
 	sheet_type = /obj/item/stack/sheet/plastic
@@ -193,17 +193,17 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 
 ///Force decrease and mushy sound effect. (Not yet implemented)
 /datum/material/biomass
-	name = "biomass"
+	name = "биомасса"
 	id = "biomass"
-	desc = "Organic matter"
+	desc = "Органическая материя."
 	color = "#735b4d"
 	strength_modifier = 0.8
 	value_per_unit = 0.025
 
 /datum/material/wood
-	name = "wood"
+	name = "дерево"
 	id = "wood"
-	desc = "Flexible, durable, but flamable. Hard to come across in space."
+	desc = "Гнущееся, прочное, но горючее. Сложно найти в космосе."
 	color = "#bb8e53"
 	strength_modifier = 0.5
 	sheet_type = /obj/item/stack/sheet/mineral/wood
@@ -226,9 +226,9 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 
 ///Stronk force increase
 /datum/material/adamantine
-	name = "adamantine"
+	name = "адамантин"
 	id = "adamantine"
-	desc = "A powerful material made out of magic, I mean science!"
+	desc = "Крепкий материал, сделанный с помощью магии, я имею ввиду науки!"
 	color = "#6d7e8e"
 	strength_modifier = 1.5
 	categories = list(MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
@@ -239,9 +239,9 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 
 ///RPG Magic.
 /datum/material/mythril
-	name = "mythril"
+	name = "мифрил"
 	id = "mythril"
-	desc = "How this even exists is byond me"
+	desc = "Мифрил."
 	color = "#f2d5d7"
 	categories = list(MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	sheet_type = /obj/item/stack/sheet/mineral/mythril
@@ -262,9 +262,9 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 
 //formed when freon react with o2, emits a lot of plasma when heated
 /datum/material/hot_ice
-	name = "hot ice"
+	name = "горячий лёд"
 	id = "hot ice"
-	desc = "A weird kind of ice, feels warm to the touch"
+	desc = "Странный лёд, горячий на ощупь."
 	color = "#88cdf1"
 	alpha = 150
 	categories = list(MAT_CATEGORY_RIGID = TRUE)
@@ -282,9 +282,9 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 
 //I don't like sand. It's coarse, and rough, and irritating, and it gets everywhere.
 /datum/material/sand
-	name = "sand"
+	name = "песок"
 	id = "sand"
-	desc = "You know, it's amazing just how structurally sound sand can be."
+	desc = "Невероятно, насколько песок может быть структурно прочным."
 	color = "#EDC9AF"
 	categories = list(MAT_CATEGORY_RIGID = TRUE)
 	sheet_type = /obj/item/stack/sheet/sandblock
@@ -298,7 +298,7 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 
 //And now for our lavaland dwelling friends, sand, but in stone form! Truly revolutionary.
 /datum/material/sandstone
-	name = "sandstone"
+	name = "песчаник"
 	id = "sandstone"
 	desc = "Bialtaakid 'ant taerif ma hdha."
 	color = "#B77D31"
@@ -311,9 +311,9 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	texture_layer_icon_state = "brick"
 
 /datum/material/snow
-	name = "snow"
+	name = "снег"
 	id = "snow"
-	desc = "There's no business like snow business."
+	desc = "Замерзшая вода."
 	color = "#FFFFFF"
 	categories = list(MAT_CATEGORY_RIGID = TRUE)
 	sheet_type = /obj/item/stack/sheet/mineral/snow
@@ -336,9 +336,9 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	texture_layer_icon_state = "runed"
 
 /datum/material/bronze
-	name = "bronze"
+	name = "бронза"
 	id = "bronze"
-	desc = "Clock Cult? Never heard of it."
+	desc = "Часовой культ? Не, не слышал."
 	color = "#92661A"
 	categories = list(MAT_CATEGORY_RIGID = TRUE)
 	sheet_type = /obj/item/stack/tile/bronze
@@ -347,9 +347,9 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	beauty_modifier = 0.2
 
 /datum/material/paper
-	name = "paper"
+	name = "бумага"
 	id = "paper"
-	desc = "Ten thousand folds of pure starchy power."
+	desc = "Остерегайся порезов."
 	color = "#E5DCD5"
 	categories = list(MAT_CATEGORY_RIGID = TRUE)
 	sheet_type = /obj/item/stack/sheet/paperframes
@@ -373,9 +373,9 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	return ..()
 
 /datum/material/cardboard
-	name = "cardboard"
+	name = "картон"
 	id = "cardboard"
-	desc = "They say cardboard is used by hobos to make incredible things."
+	desc = "По легендам, картон используют бомжи чтобы строить невиданные чудеса."
 	color = "#5F625C"
 	categories = list(MAT_CATEGORY_RIGID = TRUE)
 	sheet_type = /obj/item/stack/sheet/cardboard
@@ -397,9 +397,9 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	return ..()
 
 /datum/material/bone
-	name = "bone"
+	name = "кость"
 	id = "bone"
-	desc = "Man, building with this will make you the coolest caveman on the block."
+	desc = "Постройки из костей сделают тебя самым крутым пещерным человеком."
 	color = "#e3dac9"
 	categories = list(MAT_CATEGORY_RIGID = TRUE)
 	sheet_type = /obj/item/stack/sheet/bone
@@ -408,9 +408,9 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	beauty_modifier = -0.2
 
 /datum/material/bamboo
-	name = "bamboo"
+	name = "бамбук"
 	id = "bamboo"
-	desc = "If it's good enough for pandas, it's good enough for you."
+	desc = "Если пандам можно его использовать, то почему тебе нельзя?"
 	color = "#339933"
 	categories = list(MAT_CATEGORY_RIGID = TRUE)
 	sheet_type = /obj/item/stack/sheet/mineral/bamboo

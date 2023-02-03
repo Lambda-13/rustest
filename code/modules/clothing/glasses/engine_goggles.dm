@@ -7,8 +7,8 @@
 #define MODE_SHUTTLE "shuttle"
 
 /obj/item/clothing/glasses/meson/engine
-	name = "engineering scanner goggles"
-	desc = "Goggles used by engineers. The Meson Scanner mode lets you see basic structural and terrain layouts through walls, the T-ray Scanner mode lets you see underfloor objects such as cables and pipes, and the Radiation Scanner mode lets you see objects contaminated by radiation."
+	name = "инженерные очки сканеры"
+	desc = "Очки, используемые инженерами. Режим Мезонного Сканера позволит тебе видеть основную структуру и местность, Режим Сканера Т-лучей позволит тебе видеть подпольные объекты, такие как провода и трубы а Режим Сканера Радиации позволит увидеть объекты, подверженные излучению."
 	icon_state = "trayson-meson"
 	item_state = "trayson-meson"
 	actions_types = list(/datum/action/item_action/toggle_mode)
@@ -135,31 +135,31 @@
 	icon_state = item_state = "trayson-[mode]"
 
 /obj/item/clothing/glasses/meson/engine/tray //atmos techs have lived far too long without tray goggles while those damned engineers get their dual-purpose gogles all to themselves
-	name = "optical t-ray scanner"
+	name = "оптический сканер Т-лучей"
 	icon_state = "trayson-t-ray"
 	item_state = "trayson-t-ray"
-	desc = "Used by engineering staff to see underfloor objects such as cables and pipes."
+	desc = "Используются инженерами, чтобы видеть подпольные объекты, такиие как трубы и провода."
 	range = 2
 
 	modes = list(MODE_NONE = MODE_TRAY, MODE_TRAY = MODE_NONE)
 
 /obj/item/clothing/glasses/meson/engine/shuttle
-	name = "shuttle region scanner"
+	name = "сканер региона шаттла"
 	icon_state = "trayson-shuttle"
 	item_state = "trayson-shuttle"
-	desc = "Used to see the boundaries of shuttle regions."
+	desc = "Используются для просмотра границ региона шаттла."
 
 	modes = list(MODE_NONE = MODE_SHUTTLE, MODE_SHUTTLE = MODE_NONE)
 
 /obj/item/clothing/glasses/meson/prescription
-	name = "prescription optical meson scanner"
-	desc = "Used by engineering and mining staff to see basic structural and terrain layouts through walls, regardless of lighting conditions. This pair also corrects nearsightedness."
+	name = "оптический мезонный сканер по рецепту"
+	desc = "Используются инженерным и шахтерским персоналом чтобы увидеть основные компоненты структуры и местности сквозь стены, независимо от уровня света. Так-же исправляют близорукость."
 	icon_state = "prescriptionmeson"
 	vision_correction = 1
 
 /obj/item/clothing/glasses/meson/sunglasses
 	name = "optical meson scannerglasses"
-	desc = "Used by engineering and mining staff to see basic structural and terrain layouts through walls, regardless of lighting conditions. This pair is built into a pair of sunglasses."
+	desc = "Используются инженерным и шахтерским персоналом чтобы увидеть основные компоненты структуры и местности сквозь стены, независимо от уровня света. Со встроенными солнечными очками."
 	icon_state = "sunnmeson"
 	flash_protect = FLASH_PROTECTION_FLASH
 

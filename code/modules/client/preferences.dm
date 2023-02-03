@@ -354,7 +354,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "<table width='100%'><tr><td width='24%' valign='top'>"
 
 			dat += "<b>Раса:</b><BR><a href='?_src_=prefs;preference=species;task=input'>[pref_species.name]</a><BR>"
-			dat += "<a href='?_src_=prefs;preference=species;task=random'>Хочу рандомную расу</A> "
+			dat += "<a href='?_src_=prefs;preference=species;task=random'>Выбрать расу</A> "
 			dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_SPECIES]'>Всегда рандомная раса: [(randomise[RANDOM_SPECIES]) ? "Да" : "Нет"]</A><br>"
 
 			if(!(NO_UNDERWEAR in pref_species.species_traits))
