@@ -105,3 +105,12 @@
 	build_path = /obj/item/solar_assembly
 	category = list("Power Designs","Imported")
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
+
+	/datum/design/cable_coil
+	name = "Cable Coil"
+	id = "cable_coil"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = 10, /datum/material/glass = 5)
+	build_path = /obj/item/stack/cable_coil/random //WS Edit - Smartwire Revert
+	category = list("Misc")
+	maxstack = MAXCOIL
