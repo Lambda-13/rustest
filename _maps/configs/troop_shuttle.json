@@ -7,24 +7,24 @@
 	"map_id": "troop_shuttle",
 	"limit": 2,
 	"job_slots": {
-		"Lietunant": {
-			"outfit": "/datum/outfit/job/captain/inteq/naked",
-			"officer": true,
-			"slots": 1
+			"Lietunant": {
+				"outfit": "/datum/outfit/job/captain/inteq/naked",
+				"officer": true,
+				"slots": 1
+			},
+			"Trooper": {
+				"outfit": "/datum/outfit/job/security/inteq",
+				"slots": 4
+			},
+			"Heavy Trooper": {
+				"outfit": "/datum/outfit/job/security/solgov/elite",
+				"slots": 1
+			},
+			"Sniper": {
+				"outfit": "/datum/outfit/syndicate_empty/sbc/assault",
+				"slots": 1
+			},
 		},
-		"Trooper": {
-			"outfit": "/datum/outfit/job/security/inteq",
-			"slots": 4
-		},
-		"Heavy Trooper": {
-			"outfit": "/datum/outfit/job/security/solgov/elite",
-			"slots": 1
-		},
-		"Sniper": {
-			"outfit": "/datum/outfit/syndicate_empty/sbc/assault",
-			"slots": 1
-		},
-	},
 	"cost": 450,
 	"enabled": false
 }

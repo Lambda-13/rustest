@@ -83,10 +83,12 @@
 "bE" = (/obj/structure/cable{icon_state = "1-8"},/turf/open/floor/plating/catwalk_floor,/area/solar)
 "bF" = (/obj/structure/closet/crate{name = "Heavy kit"},/obj/structure/railing,/obj/item/gun/ballistic/rocketlauncher,/obj/item/clothing/suit/armor/vest/marine/heavy,/obj/item/clothing/head/helmet/marine,/obj/item/gun/ballistic/automatic/hmg/l6_saw,/obj/item/ammo_box/magazine/mm712x82,/obj/item/ammo_box/magazine/mm712x82,/obj/item/ammo_casing/caseless/rocket,/obj/item/ammo_casing/caseless/rocket,/obj/item/clothing/mask/gas/sechailer/swat/spacepol{name = "Utility gas mask"},/obj/machinery/light,/turf/open/floor/pod/light,/area/ship/cargo)
 "bG" = (/obj/structure/closet/crate{name = "Assault kit"},/obj/structure/railing{icon_state = "railing"; dir = 10},/obj/item/gun/ballistic/automatic/smg/aks74u,/obj/item/gun/ballistic/automatic/smg/aks74u,/obj/item/ammo_box/magazine/aks74u,/obj/item/ammo_box/magazine/aks74u,/obj/item/ammo_box/magazine/aks74u,/obj/item/ammo_box/magazine/aks74u,/obj/item/clothing/suit/armor/vest/russian,/obj/item/clothing/suit/armor/vest/russian,/obj/item/clothing/head/helmet/riot{armor = list("melee" = 40, "bullet" = 40, "laser" = 40, "energy" = 40, "bomb" = 40, "bio" = 30, "rad" = 0, "fire" = 100, "acid" = 100); desc = "It's a helmet specifically designed to protect against any attacks."; name = "Ranger helmet"},/obj/item/clothing/head/helmet/riot{armor = list("melee" = 40, "bullet" = 40, "laser" = 40, "energy" = 40, "bomb" = 40, "bio" = 30, "rad" = 0, "fire" = 100, "acid" = 100); desc = "It's a helmet specifically designed to protect against any attacks."; name = "Ranger helmet"},/obj/item/hatchet/wooden,/obj/item/hatchet/wooden,/obj/item/clothing/gloves/krav_maga/combatglovesplus,/obj/item/clothing/gloves/krav_maga/combatglovesplus,/obj/item/clothing/mask/gas/sechailer/swat/spacepol{name = "Utility gas mask"},/obj/item/clothing/mask/gas/sechailer/swat/spacepol{name = "Utility gas mask"},/obj/machinery/airalarm/directional/south,/turf/open/floor/pod/light,/area/ship/cargo)
+"bH" = (/obj/structure/fans/tiny,/obj/machinery/door/poddoor/shutters/indestructible{id = 8121},/obj/docking_port/mobile{icon_state = "pinonclose"; dir = 2},/turf/open/floor/mineral/plastitanium,/area/ship/cargo)
+"bI" = (/obj/structure/fans/tiny,/obj/structure/cable{icon_state = "1-2"},/obj/machinery/door/poddoor/shutters/indestructible{id = 8121},/obj/docking_port/mobile{icon_state = "pinonclose"; dir = 2},/turf/open/floor/mineral/plastitanium,/area/ship/cargo)
 
 (1,1,1) = {"
 aaaaaaaaababacadadadadadaeaaaaaa
-aaafafafagahaiahahafafafajakaaaa
+aaafafafagbHbIbHbHafafafajakaaaa
 afafalamanaoapaoaoaqarafasatauaa
 avawaxayazaAapaBaCaCaDafaEaEaFaE
 avawaxaGbgaAaHaIaJaKaLaMaNaOaPaF

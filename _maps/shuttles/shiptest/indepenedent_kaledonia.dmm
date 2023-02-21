@@ -1,8 +1,7 @@
 "aa" = (/turf/template_noop,/area/template_noop)
-"ab" = (/turf/open/space/basic,/area/template_noop)
 "ac" = (/turf/closed/wall/mineral/plastitanium,/area/ship/crew/office)
 "ad" = (/turf/closed/wall/mineral/plastitanium,/area/ship/crew/toilet)
-"ae" = (/obj/machinery/door/airlock/external/glass,/turf/open/floor/plating,/area/ship/crew/toilet)
+"ae" = (/obj/machinery/door/airlock/external/glass,/obj/docking_port/mobile{callTime = 250; dir = 2; launch_status = 0; name = "Fauna Research Ship"; port_direction = 8; preferred_direction = 4},/turf/open/floor/plating,/area/ship/crew/toilet)
 "af" = (/obj/structure/sign/departments/restroom,/turf/closed/wall/mineral/plastitanium,/area/ship/crew/office)
 "ag" = (/turf/closed/wall/mineral/plastitanium,/area/ship/crew/dorm)
 "ah" = (/obj/machinery/computer/cryopod,/turf/closed/wall/mineral/plastitanium,/area/ship/crew/dorm)
@@ -384,5 +383,5 @@ aaaafPgAgTgUeRfjgVgWfFfGfZeLgugugufHfIfJfKeLfLgneigigigagaaaaaaaaaaaaa
 aaaafPgMfPfPfPgogpfPeieieieieieieieieieieigqeieigigigagaaaaaaaaaaaaaaa
 gagagagagkgkgkgigkgkgkgkgkgkgkgkgkgkgkgkgkgkgkgagagagaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-ababababababababababababababababababababababababababababababababababab
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 "}

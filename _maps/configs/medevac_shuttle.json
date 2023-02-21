@@ -5,19 +5,19 @@
 	"map_path": "_maps/shuttles/shiptest/medevac_shuttle.dmm",
 	"map_id": "medevac_shuttle",
 	"job_slots": {
-	"Lead Doctor": {
-		"outfit": "/datum/outfit/job/cmo/syndicate/nsv",
-		"officer": true,
-		"slots": 1
-	},
-	"Ship Doctor":{
-		"outfit": "/datum/outfit/job/doctor/syndicate/nsv",
-		"slots": 2
-	},
-	"Combat Paramedic":{
-		"outfit": "/datum/outfit/job/paramedic/minutemen",
-		"slots": 4
-	}
-},
+			"Lead Doctor": {
+				"outfit": "/datum/outfit/job/cmo/syndicate/nsv",
+				"officer": true,
+				"slots": 1
+			},
+			"Ship Doctor":{
+				"outfit": "/datum/outfit/job/doctor/syndicate/nsv",
+				"slots": 2
+			},
+			"Combat Paramedic":{
+				"outfit": "/datum/outfit/job/paramedic/minutemen",
+				"slots": 4
+			}
+		},
 "enabled": false
 }

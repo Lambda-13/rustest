@@ -7,23 +7,23 @@
 	"map_path": "_maps/shuttles/shiptest/scrapper_ripper.dmm",
 	"roundstart": true,
 	"job_slots": {
-		"Salvage Leader": {
-			"outfit": "/datum/outfit/job/ce",
-			"officer": true,
-			"slots": 1
+			"Salvage Leader": {
+				"outfit": "/datum/outfit/job/ce",
+				"officer": true,
+				"slots": 1
+			},
+			"Ship Technician": {
+				"outfit": "/datum/outfit/job/engineer/maintenancetechnician",
+				"slots": 3
+			},
+			"Weaponsmith": {
+				"outfit": "/datum/outfit/job/engineer",
+				"slots": 3
+			},
+			"Salvager": {
+				"outfit": "/datum/outfit/job/assistant/engineeringspecialist",
+				"slots": 3
+			}
 		},
-		"Ship Technician": {
-			"outfit": "/datum/outfit/job/engineer/maintenancetechnician",
-			"slots": 3
-		},
-		"Weaponsmith": {
-			"outfit": "/datum/outfit/job/engineer",
-			"slots": 3
-		},
-		"Salvager": {
-			"outfit": "/datum/outfit/job/assistant/engineeringspecialist",
-			"slots": 3
-		}
-	},
 	"enabled": true
 }
