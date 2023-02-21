@@ -129,10 +129,9 @@
 "cy" = (/obj/effect/turf_decal/industrial/defective{icon_state = "stripe"; dir = 6},/obj/machinery/door/poddoor{id = "box_engine4"},/obj/structure/fans/tiny,/turf/open/floor/plasteel/mono/white,/area/ship/bridge)
 "cz" = (/obj/machinery/power/port_gen/pacman/super,/obj/structure/cable,/obj/machinery/power/terminal{icon_state = "term"; dir = 1},/turf/open/floor/plasteel/telecomms_floor,/area/ship/medical)
 "cA" = (/obj/machinery/light,/obj/structure/cable{icon_state = "1-8"},/obj/structure/closet/crate/radiation,/obj/item/stack/sheet/mineral/uranium/fifty,/obj/item/stack/sheet/mineral/uranium/fifty,/obj/item/stack/sheet/metal/fifty,/obj/item/stack/sheet/glass/fifty,/turf/open/floor/plasteel/telecomms_floor,/area/ship/medical)
-"cB" = (/obj/docking_port/mobile{icon_state = "pinonclose"; dir = 2},/turf/open/floor/plating/catwalk_floor,/area/solar)
 
 (1,1,1) = {"
-aaaaaaaaaaaaaaaaaaaaaaaaabacacacaccBcBaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaabacacacacadadaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaeafagahaiacadadajaaaaaaaaaa
 aaakalaladamadanalajaaaeafagaoapacadadaqajaaaaaaaa
 akaradasatauatacacacacacacacavacacawaxayayayazaAaa

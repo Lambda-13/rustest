@@ -18,7 +18,7 @@
 "ar" = (/obj/machinery/turretid{pixel_y = 32},/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3,/turf/open/floor/plasteel/dark,/area/ship/bridge)
 "as" = (/obj/machinery/computer/communications{icon_state = "computer"; dir = 8},/obj/machinery/readybutton{pixel_y = 27},/turf/open/floor/plasteel/mono/dark,/area/ship/bridge)
 "at" = (/turf/closed/wall/mineral/plastitanium,/area/ship/crew)
-"au" = (/obj/machinery/door/airlock/external/glass,/obj/structure/fans/tiny,/obj/docking_port/mobile{icon_state = "pinonclose"; dir = 2},/turf/open/floor/concrete,/area/ship/crew)
+"au" = (/obj/machinery/door/airlock/external/glass,/obj/structure/fans/tiny,/turf/open/floor/concrete,/area/ship/crew)
 "av" = (/obj/machinery/atmospherics/pipe/simple/scrubbers{icon_state = "pipe11-3"; dir = 1},/obj/machinery/button{dir = 4; icon_state = "doorctrl"; id = 1; pixel_x = -26},/turf/open/floor/plating,/area/ship/cargo)
 "aw" = (/obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{icon_state = "pipe11-2"; dir = 6},/turf/open/floor/plating/catwalk_floor,/area/ship/cargo)
 "ax" = (/obj/machinery/atmospherics/components/binary/pump/layer2{icon_state = "pump_map-2"; dir = 8},/turf/open/floor/plating,/area/ship/cargo)
@@ -114,7 +114,6 @@
 "cj" = (/obj/structure/railing,/turf/open/floor/plating,/area/solar)
 "ck" = (/obj/machinery/porta_turret,/obj/structure/railing,/turf/open/floor/plating,/area/ship/bridge)
 "cl" = (/obj/machinery/recharge_station,/turf/open/floor/concrete,/area/ship/crew)
-"cm" = (/obj/machinery/door/airlock/external/glass,/obj/structure/fans/tiny,/obj/docking_port/mobile,/turf/open/floor/concrete,/area/ship/crew)
 
 (1,1,1) = {"
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaababacababadaa
@@ -128,7 +127,7 @@ bebfbqbrbsbtbububvbubwbxbybzataebAbBanbCae
 bebfbDbEbFbGbGbGbHbGbGbIbJbmbKaebobLanbMae
 aobNbObPbQbGbRbSbTbRbGaHbUbVbVbWbXbYbcbMae
 aoaobZcacbbGbRcccdcebGclaHaIcfaeanamanbMae
-cgaoaoaoaobGbRchcicebGatcmatataeanamanbMae
+cgaoaoaoaobGbRchcicebGatauatataeanamanbMae
 aaaaaaaacgbGbGbGbGbGbGabcjcjckaeanamanaeae
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaabaeagagagaeaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaabababababadaa
