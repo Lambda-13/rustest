@@ -7,24 +7,24 @@
 	"map_id": "shuttle_hammerhead",
 	"limit": 2,
 	"job_slots": {
-		"Lietunant": {
-			"outfit": "/datum/outfit/job/captain/inteq/naked",
-			"officer": true,
-			"slots": 1
-		},
-		"Trooper": {
-			"outfit": "/datum/outfit/job/security/inteq",
+			"Lietunant": {
+				"outfit": "/datum/outfit/job/captain/inteq/naked",
+				"officer": true,
+				"slots": 1
+			},
+			"Trooper": {
+				"outfit": "/datum/outfit/job/security/inteq",
 			"slots": 4
+			},
+			"Heavy Trooper": {
+				"outfit": "/datum/outfit/job/security/solgov/elite",
+				"slots": 2
+			}
+			"Combat Engineer": {
+				"outfit": "/datum/outfit/job/engineer/gec",
+				"slots": 1
+			}
 		},
-		"Heavy Trooper": {
-			"outfit": "/datum/outfit/job/security/solgov/elite",
-			"slots": 2
-		}
-		"Combat Engineer": {
-			"outfit": "/datum/outfit/job/engineer/gec",
-			"slots": 1
-		}
-	},
 	"cost": 450,
 	"enabled": false
 }

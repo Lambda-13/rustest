@@ -176,6 +176,7 @@
 "dt" = (/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{icon_state = "manifold-4"; dir = 1},/obj/machinery/airalarm/directional/north,/turf/open/floor/plating,/area/ship/cargo)
 "du" = (/obj/item/clothing/suit/armor/vest/lieutenant,/obj/item/clothing/head/caphat/nt{name = "Lietenant hat"},/obj/item/clothing/under/rank/security/constable,/obj/item/clothing/under/solgov/formal,/obj/item/clothing/accessory/holster/lieutenant,/obj/item/clothing/accessory/medal/gold/heroism,/obj/item/gps,/obj/item/gun/ballistic/automatic/pistol/commander,/obj/item/reagent_containers/food/drinks/bottle/grappa,/obj/item/storage/belt/security,/obj/item/ammo_box/c10mm,/obj/item/ammo_box/c10mm,/turf/open/floor/plasteel/dark,/area/ship/bridge)
 "dv" = (/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{icon_state = "pipe11-4"; dir = 4},/obj/machinery/mineral/ore_redemption{icon_state = "ore_redemption"; dir = 4},/turf/open/floor/plating,/area/ship/cargo)
+"dw" = (/obj/machinery/door/airlock/external/glass,/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,/obj/docking_port/mobile{icon_state = "pinonclose"; dir = 2},/turf/open/floor/plasteel/mono/dark,/area/ship/cargo)
 "dx" = (/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{icon_state = "vent_map_on-2"; dir = 4},/turf/open/floor/plasteel/tech/techmaint,/area/ship/science/robotics)
 "dy" = (/obj/machinery/holopad,/turf/open/floor/carpet/black,/area/ship/security/armory)
 "dz" = (/obj/structure/cable{icon_state = "4-8"},/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{icon_state = "vent_map_on-2"; dir = 8},/turf/open/floor/plasteel/tech/techmaint,/area/ship/science/robotics)
@@ -200,7 +201,7 @@
 "dS" = (/obj/machinery/door/firedoor,/obj/machinery/door/airlock/grunge,/obj/structure/cable{icon_state = "1-2"},/obj/machinery/atmospherics/pipe/simple/supply/visible/layer2,/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,/turf/open/floor/plasteel/mono/dark,/area/ship/engineering)
 "dT" = (/obj/structure/sign/poster/official/build{step_y = 0},/turf/closed/wall/mineral/plastitanium,/area/ship/engineering)
 "dU" = (/obj/machinery/suit_storage_unit/mining,/obj/item/clothing/suit/space/hardsuit/mining,/obj/item/tank/internals/oxygen,/turf/open/floor/plating,/area/ship/cargo)
-"dV" = (/obj/machinery/door/airlock/external/glass,/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,/turf/open/floor/plasteel/mono/dark,/area/ship/cargo)
+"dV" = (/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,/turf/open/floor/engine/hull,/area/ship/cargo)
 "dW" = (/obj/effect/landmark/start/security_officer,/turf/open/floor/carpet/black,/area/ship/security/armory)
 "dX" = (/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{icon_state = "vent_map_on-2"; dir = 4},/obj/effect/landmark/start/lieutenant,/turf/open/floor/plasteel/dark,/area/ship/bridge)
 "dY" = (/obj/structure/railing{dir = 8},/obj/structure/railing{icon_state = "railing"; dir = 4},/obj/structure/cable{icon_state = "1-2"},/obj/machinery/atmospherics/components/binary/pump{icon_state = "pump_map-3"; dir = 1},/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,/turf/open/floor/plating/catwalk_floor,/area/ship/engineering)
@@ -218,7 +219,6 @@
 "ek" = (/obj/structure/window/plasma/reinforced{icon_state = "plasmarwindow"; dir = 4},/obj/structure/window/plasma/reinforced{icon_state = "plasmarwindow"; dir = 1},/turf/open/floor/engine/air,/area/ship/engineering)
 "el" = (/obj/structure/window/plasma/reinforced{icon_state = "plasmarwindow"; dir = 8},/obj/structure/window/plasma/reinforced,/turf/open/floor/engine/air,/area/ship/engineering)
 "em" = (/obj/structure/railing/corner{icon_state = "railing_corner"; dir = 4},/obj/structure/railing/corner,/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{icon_state = "vent_map_on-2"; dir = 8},/turf/open/floor/pod,/area/ship/engineering)
-"en" = (/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,/turf/open/floor/engine/hull,/area/ship/cargo)
 "eo" = (/obj/machinery/atmospherics/components/unary/tank/air,/obj/machinery/light{dir = 8},/turf/open/floor/plating,/area/ship/engineering)
 "ep" = (/obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{icon_state = "pipe11-2"; dir = 4},/turf/open/floor/plating,/area/ship/engineering)
 "eq" = (/obj/structure/railing{icon_state = "railing"; dir = 4},/obj/structure/railing/corner{icon_state = "railing_corner"; dir = 1},/obj/structure/railing/corner{icon_state = "railing_corner"; dir = 8},/obj/structure/cable{icon_state = "1-2"},/obj/machinery/atmospherics/pipe/manifold/supply/visible/layer2{icon_state = "manifold-2"; dir = 4},/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,/turf/open/floor/plating/catwalk_floor,/area/ship/engineering)
@@ -283,8 +283,8 @@ ajdBdxegdzdAdNbxdCdCdDdDaaaaaaaaaaaaaaaaaiaaaaaicGdEdEdFfhdHdIcGdJdKcLeMbs
 ajdecpdMaJcpdhbxdDdDdDaaaaaaaaaaaaaaaaaaaaaaaaaaaaaadEdEdEcGcGcGdUdUeYdLbs
 ajdOcpdMaJeedOajaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabsbsbsbsdPbs
 ajdQbtdMerbtdQajaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabsbseWbs
-dRdRdRdSdTdRdRdRdRaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabsdVbs
-dReiekdYdZdZeaebecedaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaehenfe
+dRdRdRdSdTdRdRdRdRaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabsdwbs
+dReiekdYdZdZeaebecedaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaehdVfe
 dReleuejevezemeFecedaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 dReoepeqesfieteFecedaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 dReieAewexexeyeGdRdRaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
