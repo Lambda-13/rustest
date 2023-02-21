@@ -24,23 +24,5 @@
 			"slots": 2
 		}
 	},
-			"Lord of Cargonia": {
-				"outfit": "/datum/outfit/job/quartermaster",
-				"officer": true,
-				"slots": 1
-			},
-			"Cargonian": {
-				"outfit": "/datum/outfit/job/cargotechnican",
-				"slots": 4
-			},
-			"Cargonian Prospector": {
-				"outfit": "/datum/outfit/job/miner",
-				"slots": 6
-			},
-			"Cargonian Master": {
-				"outfit": "/datum/outfit/job/engineer/hazard",
-				"slots": 2
-			},
-		},
 	"enabled": true
 }
