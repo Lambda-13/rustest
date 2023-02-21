@@ -1250,12 +1250,24 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	cost = 2
 	exclude_modes = list(/datum/game_mode/nuclear) //clown ops are allowed to buy this kit, since it's basically a costume
 
+/datum/uplink_item/stealthy_tools/chameleon/mod
+	name = "Chameleon Module"
+	desc = "A MODsuit module that contain chameleon technology allowing you to disguise as pretty much anything you can think of, and more!"
+	item = /obj/item/mod/module/chameleon
+
 /datum/uplink_item/stealthy_tools/chameleon_proj
 	name = "Chameleon Projector"
 	desc = "Projects an image across a user, disguising them as an object scanned with it, as long as they don't \
 			move the projector from their hand. Disguised users move slowly, and projectiles pass over them."
 	item = /obj/item/chameleon
 	cost = 7
+
+/datum/uplink_item/stealthy_tools/plate_compression
+	name = "Plate Compression Module"
+	desc = "This module for MODsuit allows user to fit control unit into backpacks. Incompatible with storage modules."
+	item = /obj/item/mod/module/plate_compression
+	cost = 2
+	exclude_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops)
 
 /datum/uplink_item/stealthy_tools/codespeak_manual
 	name = "Codespeak Manual"
@@ -1305,6 +1317,13 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	cost = 4
 	exclude_modes = list()
 	include_modes = list(/datum/game_mode/nuclear)
+
+/datum/uplink_item/stealthy_tools/syndigaloshes/mod
+	name = "No-Slip MODsuit Module"
+	desc = "This module will allow the wearer to run on wet floors and slippery objects without falling down. \
+			It does not work on heavily lubricated surfaces."
+	item = /obj/item/mod/module/noslip
+	cost = 3
 
 /datum/uplink_item/stealthy_tools/jammer
 	name = "Radio Jammer"

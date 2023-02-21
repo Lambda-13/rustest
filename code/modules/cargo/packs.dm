@@ -1,6 +1,6 @@
 /datum/supply_pack
 	var/name = "Crate"
-	var/group = "UNCATEGORIZED BULLSHIT"
+	var/group = "Другое"
 	var/hidden = FALSE
 	var/cost = 700
 	var/list/contains = null
@@ -15,7 +15,7 @@
 	var/obj/structure/closet/crate/C
 	if(paying_account)
 		C = new /obj/structure/closet/crate/secure/owned(A, paying_account)
-		C.name = "[crate_name] - Purchased by [paying_account.account_holder]"
+		C.name = "[crate_name] - Заказано [paying_account.account_holder]"
 	else
 		C = new crate_type(A)
 		C.name = crate_name

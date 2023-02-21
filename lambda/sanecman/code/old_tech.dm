@@ -15,6 +15,8 @@
 //
 //
 //
+
+// Старые технологии
 /datum/techweb_node/old_tech
 	id = "old_tech"
 	display_name = "Восстановление затерянных технологий"
@@ -24,6 +26,7 @@
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
 
+// Улучшенные старые технологии
 /datum/techweb_node/adv_old_tech
 	id = "adv_old_tech"
 	display_name = "Полное восстановление затерянных технологий"
@@ -33,15 +36,46 @@
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 25000)
 	export_price = 50000
 
+// MechComp, отсылка на Portal
 /datum/techweb_node/mechcomp_tech
 	id = "mechcomp_tech"
 	display_name = "MechComp машинерия"
-	description = "Используя данные полученные с паралельной вселенной (где существовала лабаратория по изучению порталов), мы можем соеденить их вместе с нашими технологиями и научиться воспроизводить её."
+	description = "Используя данные полученные с паралельной вселенной где существовала лабаратория по изучению порталов, мы можем соеденить их вместе с нашими технологиями и научиться воспроизводить её."
 	prereq_ids = list("old_tech", "adv_datatheory")
 	design_ids = list("mechcomp_button", "mechcomp_delay", "mechcomp_speaker", "mechcomp_textpad", "mechcomp_pressurepad", "mechcomp_grav_accelerator", "mechcomp_math", "mechcomp_list_packer", "mechcomp_list_extractor", "mechcomp_find_regex", "mechcomp_timer", "mechcomp_microphone", "mechcomp_teleport", "mechcomp_disposalconstruct", "mechcomp_multitool", "mechcomp_egunholder", "mechcomp_longrange")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
 	export_price = 10000
 
+// HEV, отсылка на Half Life
+// Для меня: в будущем допилить данную ветку
+/*/datum/techweb_node/black_mesa_tech
+	id = "black_mesa_tech"
+	display_name = "Восстановление технологий создания защиты"
+	description = "Первые шаги в восстановлении технологий из паралельной вселенной где существовала секретная исследовательская лабаратория по изучению телепортаций через транзитный мир."
+	prereq_ids = list("adv_old_tech")
+	design_ids = list()
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 50000)
+	export_price = 25000
+
+// PCV или же энергожилет ну и остальные броники HECUшников
+/datum/techweb_node/adv_black_mesa_tech
+	id = "black_mesa_tech"
+	display_name = "Восстановление технологий создания защиты ч.2"
+	description = "Восстановление военной брони и некоторых военных принадлежностей."
+	prereq_ids = list("black_mesa_tech")
+	design_ids = list()
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 10000)
+	export_price = 10000
+
+// Остальное
+/datum/techweb_node/valve_tech
+	id = "black_mesa_tech"
+	display_name = "Восстановление технологий создания защиты ч.3"
+	description = "Поняв что две вселенные это одна мы решили обьеденить данные и получили возможность синтезировать и воспроизводить ещё неизвестное всему миру оборудование."
+	prereq_ids = list("adv_black_mesa_tech")
+	design_ids = list()
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 20000)
+	export_price = 10000*/
 // Затем идут сами вещи после изучений в рнд
 // Генератор на дереве
 /datum/design/board/power_compressor

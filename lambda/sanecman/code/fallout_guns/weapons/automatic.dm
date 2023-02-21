@@ -1,7 +1,7 @@
 //Guns
 /obj/item/gun/ballistic/automatic/fallout/smg45
-	name = ".45 submachine gun"
-	desc = "A classic .45 submachine gun that takes an expansive 50 round drum magazine."
+	name = ".45 пистолет-пулемёт"
+	desc = "Класический .45 пистолет-пулемёт использующий вместительный барабанный магазин на 50 патронов."
 	icon_state = "smg45"
 	inhand_icon_state = "smg45"
 	w_class = WEIGHT_CLASS_BULKY
@@ -12,13 +12,13 @@
 	can_suppress = FALSE
 	fire_delay = 3
 	burst_size = 3
-//	extra_damage = 15
-//	extra_penetration = 5
+	extra_damage = 15
+	extra_penetration = 5
 	spread = 12
 
 /obj/item/gun/ballistic/automatic/fallout/smg22
-	name = ".22 submachine gun"
-	desc = "A suppressed .22 submachine gun that feeds from a large pan magazine placed on top of the gun. An interesting weapon for interesting people."
+	name = ".22 пистолет-пулемёт"
+	desc = "Пистолет-пулемёт .22 со встроенным глушителемкоторый питается из большого лоткового магазина, расположенного в верхней части ПП. Интересное оружие для интересных людей."
 	icon_state = "smg22"
 	inhand_icon_state = "smg22"
 	w_class = WEIGHT_CLASS_BULKY
@@ -30,12 +30,12 @@
 	fire_sound = 'sound/weapons/gun/smg/shot_suppressed.ogg'
 	fire_delay = 3
 	burst_size = 3
-//	extra_damage = 15
+	extra_damage = 15
 	spread = 12
 
 /obj/item/gun/ballistic/automatic/fallout/smg10mm
-	name = "10mm submachine gun"
-	desc = "A light, one handed 10mm submachine gun. Decent power in a small package."
+	name = "10мм пистолет-пулемёт"
+	desc = "Одноручный 10мм пистолет-пулемёт. Достойная мощность в маленьком корпусе."
 	icon_state = "smg10mm"
 	inhand_icon_state = "smg10mm"
 	w_class = WEIGHT_CLASS_NORMAL
@@ -44,13 +44,13 @@
 	fire_sound = 'lambda/sanecman/sound/fallout/gunsounds/10mmsmg/10mmsmg1.ogg'
 	burst_size = 3
 	fire_delay = 3
-//	extra_damage = 15
-//	extra_penetration = 5
+	extra_damage = 15
+	extra_penetration = 5
 	spread = 12
 
 /obj/item/gun/ballistic/automatic/fallout/smg9mm
-	name = "9mm submachine gun"
-	desc = "A fast firing, old school 9mm submachine gun. Doesn't pack a lot of punch per bullet, but that doesn't matter when you're spitting them out so fast."
+	name = "9mm пистолет-пулемёт"
+	desc = "Скорострельный 9мм пистолет-пулемёт. Не наносит много повреждений за выстрел, но это не имеет значения, когда вы стреляете быстро."
 	icon_state = "smg9mm"
 	inhand_icon_state = "smg9mm"
 	mag_type = /obj/item/ammo_box/magazine/fallout/smgm9mm
@@ -58,13 +58,13 @@
 	can_suppress = FALSE
 	burst_size = 3
 	fire_delay = 3
-//	extra_damage = 15
+	extra_damage = 15
 	force = 15
 	spread = 12
 
 /obj/item/gun/ballistic/automatic/fallout/smg9mm/handmade
-	name = "handmade submachine gun"
-	desc = "A submachine gun made from scratch that fires from a standard 9mm SMG magazine. It's poor design makes it rather hard to control."
+	name = "самодельный пистолет-пулемёт"
+	desc = "Пистолет-пулемёт собраный из хлама и использующий 9мм SMG магазин. Плохо сделанный корпус затрудняет точную стрельбу."
 	icon_state = "hsmg"
 	inhand_icon_state = "hsmg"
 	w_class = WEIGHT_CLASS_BULKY
@@ -72,8 +72,8 @@
 	spread = 16
 
 /obj/item/gun/ballistic/automatic/fallout/smg12mm
-	name = "12.7mm submachine gun"
-	desc = "A heavy duty submachine gun chambered in 12.7mm, can't hold a lot of rounds, but they sure do pack a punch."
+	name = "12.7мм пистолет-пулемёт"
+	desc = "Сверхмощный пистолет-пулемёт под патрон 12,7мм не может вместить много патронов, но несмотря на это он бьёт больно."
 	icon_state = "smg12mm"
 	inhand_icon_state = "smg12mm"
 	mag_type = /obj/item/ammo_box/magazine/fallout/smg12mm
@@ -81,14 +81,14 @@
 	can_suppress = FALSE
 	burst_size = 3
 	fire_delay = 3
-//	extra_damage = 15
-//	extra_penetration = 15
+	extra_damage = 15
+	extra_penetration = 15
 	force = 15
 	spread = 10
 
 /obj/item/gun/ballistic/automatic/fallout/assaultrifle
 	name = "штурмовая винтовка"
-	desc = "A general purpose, standard automatic assault rifle chambered in 5.56. Commonly used by pre-war US military forces."
+	desc = "Стандартная автоматическая штурмовая винтовка общего назначения под патрон 5,56. Обычно использовался довоенными вооруженными силами США в 20-21 веках."
 	icon_state = "assaultrifle"
 	inhand_icon_state = "assaultrifle"
 	slot_flags = 0
@@ -96,21 +96,21 @@
 	fire_sound = 'lambda/sanecman/sound/fallout/arfire.ogg'
 	burst_size = 3
 	fire_delay = 3
-//	extra_damage = 20
-//	extra_penetration = 10
+	extra_damage = 20
+	extra_penetration = 10
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 	spread = 8
 
 /obj/item/gun/ballistic/automatic/fallout/assaultrifle/infiltrator
-	name = "Infiltrator"
-	desc = "A heavily modified and customized assault rifle with a scope and suppressor as it's most notable additions. Sacrifices a little bit of damage for a little more control."
+	name = "\"Уничтожитель\""
+	desc = "Сильно модифицированная штурмовая винтовка с оптическим прицелом и глушителем в качестве наиболее заметных дополнений. Жертвует уроном ради меткости."
 	icon_state = "infiltrator"
 	inhand_icon_state = "infiltrator"
 	suppressed = TRUE
 	can_unsuppress = FALSE
-//	extra_damage = 20
-//	extra_penetration = 0
+	extra_damage = 20
+	extra_penetration = 0
 	fire_sound = 'sound/weapons/gun/smg/shot_suppressed.ogg'
 	spread = 6
 
@@ -119,25 +119,25 @@
 	AddComponent(/datum/component/scope, range_modifier = 2)
 
 /obj/item/gun/ballistic/automatic/fallout/assaultrifle/chinese
-	name = "Chinese assault rifle"
-	desc = "A Chinese made assault rifle chambered in the heavier 7.62 round, packs a bigger punch in exchange for reduced accuracy."
+	name = "китайская штурмовая винтовка"
+	desc = "Штурмовая винтовка китайского производства с более тяжелым патроном калибра 7,62 обладает большей мощностью в обмен на меньшую точность."
 	icon_state = "chinesear"
 	inhand_icon_state = "chinesear"
 	mag_type = /obj/item/ammo_box/magazine/fallout/ar762
 	fire_sound = 'lambda/sanecman/sound/fallout/chinesearfire.ogg'
-//	extra_penetration = 10
+	extra_penetration = 10
 	spread = 10
 
 /obj/item/gun/ballistic/automatic/fallout/assaultrifle/chinese/handmade
-	name = "handmade assault rifle"
-	desc = "A decent quality handmade assault rifle chambered in 7.62."
+	name = "самодельная штурмовая винтовка"
+	desc = "Самодельная штурмовая винтовка достойного качества под патрон 7.62."
 	icon_state = "handmadear"
 	inhand_icon_state = "handmadear"
-//	extra_penetration = 0
+	extra_penetration = 0
 
 /obj/item/gun/ballistic/automatic/fallout/marksman
-	name = "marksman carbine"
-	desc = "A 5.56 carbine with a scope attached to help in long range combat. Packs a good punch for 5.56 rounds, but at the cost of a slower rate of fire."
+	name = "снайперский карабин"
+	desc = "Карабин калибра 5,56 с прикрепленным оптическим прицелом для помощи в бою на дальних дистанциях. Обладает хорошей мощностью, но меньшей скорострельностью."
 	icon_state = "marksman"
 	inhand_icon_state = "marksman"
 	w_class = WEIGHT_CLASS_BULKY
@@ -145,8 +145,8 @@
 	fire_sound = 'lambda/sanecman/sound/fallout/gunsounds/marksman/marksman2.ogg'
 	can_suppress = FALSE
 	fire_delay = 6
-//	extra_damage = 35
-//	extra_penetration = 10
+	extra_damage = 35
+	extra_penetration = 10
 	weapon_weight = WEAPON_HEAVY
 
 /obj/item/gun/ballistic/automatic/fallout/marksman/Initialize(mapload)
@@ -154,56 +154,56 @@
 	AddComponent(/datum/component/scope, range_modifier = 2)
 
 /obj/item/gun/ballistic/automatic/fallout/marksman/american
-	name = "All-American"
-	desc = "A unique and customized marksman carbine. Improved rifling and similar modifications allow for higher damage and an improved paint job allows for higher patriotism."
+	name = "\"Всеамериканский\""
+	desc = "Уникальный снайперский карабин. Усовершенствованные нарезы и подобные модификации позволяют увеличить урон, а окраска — повысить патриотизм."
 	icon_state = "allamerican"
 	inhand_icon_state = "allamerican"
-//	extra_damage = 40
+	extra_damage = 40
 
 /obj/item/gun/ballistic/automatic/fallout/marksman/service
-	name = "service rifle"
-	desc = "A 5.56 semi-automatic rifle manufactured by and for the NCR."
+	name = "служебная винтовка"
+	desc = "Полуавтоматическая винтовка калибра 5,56, произведенная ныне несуществующей республикой." // НКР
 	icon_state = "service"
 	inhand_icon_state = "service"
 	fire_sound = 'lambda/sanecman/sound/fallout/gunsounds/service/service3.ogg'
 	fire_delay = 4
-//	extra_damage = 25
-//	extra_penetration = 5
+	extra_damage = 25
+	extra_penetration = 5
 
 /obj/item/gun/ballistic/automatic/fallout/marksman/service/survival
-	name = "Survivalist rifle"
-	desc = "A unique, heavy duty service rifle. Fires slower but packs a much heavier punch. Has definitely seen it's fair share of battle."
+	name = "боевая винтовка"
+	desc = "Уникальная сверхмощная служебная винтовка. Стреляет медленнее, но наносит гораздо больший удар. Определенно видел, что это справедливая доля битвы."
 	icon_state = "survivalist"
 	inhand_icon_state = "survivalist"
 	fire_delay = 5
-//	extra_damage = 35
-//	extra_penetration = 10
+	extra_damage = 35
+	extra_penetration = 10
 
 /obj/item/gun/ballistic/automatic/fallout/marksman/service/police22
-	name = ".22 police rifle"
-	desc = "A semi-automatic .22 caliber rifle mostly used by pre-war police forces."
+	name = "полицейская винтовка"
+	desc = "Полуавтоматическая винтовка калибра .22, в основном использовавшаяся полицейскими силами 20 века."
 	icon_state = "rugerpolice"
 	inhand_icon_state = "rugerpolice"
 	mag_type = /obj/item/ammo_box/magazine/fallout/r22
 	fire_sound = 'lambda/sanecman/sound/fallout/varmint_rifle.ogg'
 	fire_delay = 4
-//	extra_damage = 20
-//	extra_penetration = 0
+	extra_damage = 20
+	extra_penetration = 0
 
 /obj/item/gun/ballistic/automatic/fallout/marksman/sniper
-	name = "sniper rifle"
-	desc = "A semi-automatic, high powered .308 sniper rifle. Perfect weapon for a determined assassin."
+	name = "снайперская винтовка"
+	desc = "Мощная полуавтоматическая снайперская винтовка калибра .308. Идеальное оружие для решительного убийцы."
 	icon_state = "sniper"
 	inhand_icon_state = "sniper"
 	fire_sound = 'lambda/sanecman/sound/fallout/gunsounds/sniper/sniper2.ogg'
 	fire_delay = 6
-//	extra_damage = 65
-//	extra_penetration = 50
+	extra_damage = 65
+	extra_penetration = 50
 	mag_type = /obj/item/ammo_box/magazine/fallout/r308
 
 //Magazines
 /obj/item/ammo_box/magazine/fallout/r20
-	name = "20 round magazine (5.56mm)"
+	name = "магазин на 20 патронов (5.56mm)"
 	icon = 'lambda/sanecman/icons/fallout/ammo.dmi'
 	icon_state = "556r20"
 	ammo_type = /obj/item/ammo_casing/fallout/a556
@@ -212,7 +212,7 @@
 	multiple_sprites = 2
 
 /obj/item/ammo_box/magazine/fallout/smgm10mm
-	name = "24 round magazine (10mm)"
+	name = "магазин на 24 патрона (10mm)"
 	icon = 'lambda/sanecman/icons/fallout/ammo.dmi'
 	icon_state = "smg10mm"
 	ammo_type = /obj/item/ammo_casing/fallout/c10mm
@@ -221,7 +221,7 @@
 	multiple_sprites = 2
 
 /obj/item/ammo_box/magazine/fallout/smgm9mm
-	name = "30 round magazine (9mm)"
+	name = "магазин на 30 патронов (9mm)"
 	icon = 'lambda/sanecman/icons/fallout/ammo.dmi'
 	icon_state = "smg9mm"
 	ammo_type = /obj/item/ammo_casing/fallout/c9mm
@@ -230,7 +230,7 @@
 	multiple_sprites = 2
 
 /obj/item/ammo_box/magazine/fallout/smgm45
-	name = "50 round drum magazine (.45)"
+	name = "барабанный магазин на 50 патронов (.45)"
 	icon_state = "smg45"
 	ammo_type = /obj/item/ammo_casing/fallout/c45
 	caliber = ".45"
@@ -238,7 +238,7 @@
 	multiple_sprites = 2
 
 /obj/item/ammo_box/magazine/fallout/ar762
-	name = "24 round magazine (7.62mm)"
+	name = "магазин на 24 патронов (7.62mm)"
 	icon = 'lambda/sanecman/icons/fallout/ammo.dmi'
 	icon_state = "ar762"
 	ammo_type = /obj/item/ammo_casing/fallout/a762
@@ -247,7 +247,7 @@
 	multiple_sprites = 2
 
 /obj/item/ammo_box/magazine/fallout/smgm22
-	name = "60 round magazine (.22)"
+	name = "магазин на 60 патронов (.22)"
 	icon_state = "smg22"
 	ammo_type = /obj/item/ammo_casing/fallout/c22
 	caliber = ".22"
@@ -255,7 +255,7 @@
 	multiple_sprites = 2
 
 /obj/item/ammo_box/magazine/fallout/r22
-	name = "15 round magazine (.22)"
+	name = "магазин на 15 патронов (.22)"
 	icon_state = "r22"
 	ammo_type = /obj/item/ammo_casing/fallout/c22
 	caliber = ".22"
@@ -263,7 +263,7 @@
 	multiple_sprites = 2
 
 /obj/item/ammo_box/magazine/fallout/smg12mm
-	name = "21 round magazine (12.7mm)"
+	name = "магазин на 21 патронов (12.7mm)"
 	icon_state = "smg12mm"
 	ammo_type = /obj/item/ammo_casing/fallout/m12mm
 	caliber = "12.7mm"

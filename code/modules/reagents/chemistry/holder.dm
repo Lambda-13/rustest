@@ -1018,6 +1018,15 @@ Needs matabolizing takes into consideration if the chemical is matabolizing when
 	var/picked_reagent = pick(random_reagents)
 	return picked_reagent
 
+/proc/get_random_reagent_id_all()	// Returns a random reagent ID minus blacklisted reagents
+	var/static/list/random_reagents = list()
+	if(!random_reagents.len)
+		for(var/thing  in subtypesof(/datum/reagent))
+			var/datum/reagent/R = thing
+			random_reagents += R
+	var/picked_reagent = pick(random_reagents)
+	return picked_reagent
+
 /proc/get_chem_id(chem_name)
 	for(var/X in GLOB.chemical_reagents_list)
 		var/datum/reagent/R = GLOB.chemical_reagents_list[X]

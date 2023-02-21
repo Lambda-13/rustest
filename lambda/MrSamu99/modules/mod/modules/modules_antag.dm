@@ -233,10 +233,10 @@
 	incompatible_modules = list(/obj/item/mod/module/noslip)
 
 /obj/item/mod/module/noslip/on_suit_activation()
-	ADD_TRAIT(mod.wearer, NOSLIP, MOD_TRAIT)
+	ADD_TRAIT(mod.boots, NOSLIP, MOD_TRAIT)
 
 /obj/item/mod/module/noslip/on_suit_deactivation(deleting = FALSE)
-	REMOVE_TRAIT(mod.wearer, NOSLIP, MOD_TRAIT)
+	REMOVE_TRAIT(mod.boots, NOSLIP, MOD_TRAIT)
 
 //Bite of 87 Springlock - Equips faster, disguised as DNA lock.
 /obj/item/mod/module/springlock/bite_of_87

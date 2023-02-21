@@ -18,10 +18,11 @@
 		"Cargonian Prospector": {
 			"outfit": "/datum/outfit/job/miner",
 			"slots": 6
-	},
+		},
 		"Cargonian Master": {
 			"outfit": "/datum/outfit/job/engineer/hazard",
 			"slots": 2
-		},
+		}
+	},
 	"enabled": true
 }

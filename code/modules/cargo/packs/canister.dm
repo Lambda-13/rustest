@@ -78,8 +78,8 @@
 
 /datum/supply_pack/canister/nob
 	name = "Канистра с гиперноблием"
-	desc = "Содержит тритий. Более благородный, чем все другие газы."
-	cost = 30000
+	desc = "Содержит гиперноблий. Более благородный, чем все другие газы."
+	cost = 3000000
 	contains = list(/obj/machinery/portable_atmospherics/canister/nob)
 	crate_name = "ящик с канистрой гиперноблием"
 

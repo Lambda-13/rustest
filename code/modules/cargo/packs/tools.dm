@@ -7,21 +7,21 @@
 */
 
 /datum/supply_pack/tools/all_terrain_vehicle
-	name = "All Terrain Vehicle"
-	desc = "Contains one ATV and a key, for when you want to explore the frontier in style."
+	name = "Вездеход"
+	desc = "Поставляется с вездеходом и ключом для путешествий по планете со стилем."
 	cost = 2000
 	contains = list(/obj/vehicle/ridden/atv,
 					/obj/item/key)
-	crate_name = "ATV crate"
+	crate_name = "ящик с вездеходом"
 	crate_type = /obj/structure/closet/crate/large
 
 /datum/supply_pack/tools/ripley
-	name = "Surplus APLU MK-I"
-	desc = "A worn cargo loader that has aged out of active use. Comes with an attachable drill."
+	name = "Рипли МК-1"
+	desc = "Сдаваемый всеми каргониями по окончании срока эксплуатации данный мех обретает вторую жизнь при продаже. Поставляется с дрелью."
 	cost = 3000
 	contains = list(/obj/mecha/working/ripley/cargo,
 					/obj/item/mecha_parts/mecha_equipment/drill)
-	crate_name= "APLU MK-I crate"
+	crate_name= "ящик с мехом"
 	crate_type = /obj/structure/closet/crate/large
 
 /*
@@ -29,17 +29,17 @@
 */
 
 /datum/supply_pack/tools/toolbox
-	name = "Tool Crate"
-	desc = "Get some work done. Contains an electrical toolbox, a mechanical toolbox, and a welding helmet."
+	name = "Ящики для инструментов"
+	desc = "Когда много рук но мало инструментов. Поставляется с одним ящиком для электриков и одним ящиком для механиков. И ещё со сварочным шлемом."
 	contains = list(/obj/item/storage/toolbox/electrical,
 					/obj/item/storage/toolbox/mechanical,
 					/obj/item/clothing/head/welding)
 	cost = 500
-	crate_name = "toolbox crate"
+	crate_name = "ящик с ящиками"
 
 /datum/supply_pack/tools/engigear
-	name = "Engineering Gear Crate"
-	desc = "Contains three toolbelts and 2 sets of meson goggles."
+	name = "Снаряжение инженера"
+	desc = "Три пояса для инструментов, двое мезонных очков - что ещё надо для инженера."
 	cost = 750
 	contains = list(/obj/item/storage/belt/utility,
 					/obj/item/storage/belt/utility,
@@ -49,15 +49,15 @@
 	crate_name = "engineering gear crate"
 
 /datum/supply_pack/tools/rped
-	name = "RPED crate"
-	desc = "Tired of deconstructing all of your machines just to replace the power cells? This device has you covered. Actual parts not included."
+	name = "РПИД"
+	desc = "Надоело менять детали разбирая машинерию? У вас рак жопы? Вы пидорас? Тогда всего за 750 кредитов вы можете приобрести устроиство для установки деталей без разбора машинерии! Детали не входят в комплект."
 	cost = 750
 	contains = list(/obj/item/storage/part_replacer)
-	crate_name = "\improper RPED crate"
+	crate_name = "ящик с РПИД"
 
 /datum/supply_pack/tools/mining
-	name = "Basic Mining Crate"
-	desc = "Contains two pickaxes, two ore bags, and two manual mining scanners."
+	name = "Набор шахтёра"
+	desc = "Две кирки, два мешка для руды, два сканера пород. Дворфы оценят."
 	cost = 1000
 	contains = list(
 		/obj/item/pickaxe,
@@ -67,38 +67,37 @@
 		/obj/item/mining_scanner,
 		/obj/item/mining_scanner
 	)
-	crate_name = "basic mining crate"
+	crate_name = "ящик со снаряжением шахтёров"
 
 /datum/supply_pack/tools/metalfoam
-	name = "Metal Foam Grenade Crate"
-	desc = "Seal up those pesky hull breaches with 7 metal foam grenades."
+	name = "Коробка с металпеной"
+	desc = "Нужно срочно заделать дыры или построить быструю стену - это для вас. Внутри коробка с 7 металпенными гранатами."
 	cost = 1000
 	contains = list(/obj/item/storage/box/metalfoam)
 	crate_name = "metal foam grenade crate"
 
 /datum/supply_pack/tools/insulated_gloves
-	name = "Insulated Gloves Crate"
-	desc = "The backbone of modern society. Barely ever ordered for actual engineering. Contains two insulated gloves."
-	cost = 1500
-	contains = list(/obj/item/clothing/gloves/color/yellow,
-					/obj/item/clothing/gloves/color/yellow)
-	crate_name = "insulated gloves crate"
+	name = "Изоляционные перчатки"
+	desc = "Для тех кто устал от постоянного удара током при работе с машинерией под напряжением. Внутри пара перчаток."
+	cost = 750
+	contains = list(/obj/item/clothing/gloves/color/yellow)
+	crate_name = "ящик с перчатками"
 
 /datum/supply_pack/tools/jetpack
-	name = "Jetpack Crate"
-	desc = "For when you need to go fast in space."
+	name = "Джетпак"
+	desc = "Джетпак наполненый СО2 для полётов по космосу."
 	cost = 2000
 	contains = list(/obj/item/tank/jetpack/carbondioxide)
-	crate_name = "jetpack crate"
+	crate_name = "ящик с джетпаком"
 	crate_type = /obj/structure/closet/crate/secure/plasma
 
 /datum/supply_pack/tools/transfer_valves
-	name = "Tank Transfer Valves Crate"
-	desc = "The key ingredient for making a lot of people very angry very fast. Contains two tank transfer valves."
+	name = "Набор учёного-подрывника"
+	desc = "Хотите сделать бомбу? Тогда это для вас. Внутри два клапана для смешивания газов (transfer valve)."
 	cost = 6000
 	contains = list(/obj/item/transfer_valve,
 					/obj/item/transfer_valve)
-	crate_name = "tank transfer valves crate"
+	crate_name = "ящик с клапанами"
 	crate_type = /obj/structure/closet/crate/secure/science
 
 /*
@@ -106,33 +105,33 @@
 */
 
 /datum/supply_pack/tools/fueltank
-	name = "Fuel Tank Crate"
-	desc = "Contains a welding fuel tank, for when your lust for welding is insatiable. Highly flammable."
+	name = "Бак с топливом"
+	desc = "Внутри бак с топливом."
 	cost = 800
 	contains = list(/obj/structure/reagent_dispensers/fueltank)
-	crate_name = "fuel tank crate"
+	crate_name = "ящик с топливным баком"
 	crate_type = /obj/structure/closet/crate/large
 
 /datum/supply_pack/tools/watertank
-	name = "Water Tank Crate"
-	desc = "Contains a tank of dihydrogen monoxide. Sounds dangerous."
+	name = "Бак с водой."
+	desc = "Внутри бак с водой."
 	cost = 600
 	contains = list(/obj/structure/reagent_dispensers/watertank)
-	crate_name = "water tank crate"
+	crate_name = "ящик с водным баком"
 	crate_type = /obj/structure/closet/crate/large
 
 /datum/supply_pack/tools/hightank
-	name = "Large Water Tank Crate"
-	desc = "Contains a high-capacity water tank. Useful for botany or other service jobs."
+	name = "Бак с ёмкостным баком воды"
+	desc = "Для тех кому обычного бака воды недостаточно."
 	cost = 1200
 	contains = list(/obj/structure/reagent_dispensers/watertank/high)
-	crate_name = "high-capacity water tank crate"
+	crate_name = "ящик с ёмкостным водным баком"
 	crate_type = /obj/structure/closet/crate/large
 
 /datum/supply_pack/tools/foamtank
-	name = "Firefighting Foam Tank Crate"
-	desc = "Contains a tank of firefighting foam. Also known as \"plasmaman's bane\"."
+	name = "Бак с пожаротушащей пеной"
+	desc = "Бак с пеной которая отлично подходит тушить пожары в двигателе с суперматерией."
 	cost = 1500
 	contains = list(/obj/structure/reagent_dispensers/foamtank)
-	crate_name = "foam tank crate"
+	crate_name = "ящик с пожаротушащей пеной"
 	crate_type = /obj/structure/closet/crate/large

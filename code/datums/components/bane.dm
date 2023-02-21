@@ -47,3 +47,4 @@
 
 	var/extra_damage = max(0, source.force * damage_multiplier)
 	target.apply_damage(extra_damage, source.damtype, attacker.zone_selected)
+	SEND_SIGNAL(target, COMSIG_LIVING_BANED, source, attacker) // for extra effects when baned.

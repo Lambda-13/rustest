@@ -870,3 +870,5 @@
 #define COMSIG_MOB_RUN_ARMOR "mob_run_armor"
 ///called in /obj/item/gun/ballistic/process_chamber (casing)
 #define COMSIG_CASING_EJECTED "casing_ejected"
+///from base of element/bane/activate(): (item/weapon, mob/user)
+#define COMSIG_LIVING_BANED "living_baned"

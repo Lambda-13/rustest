@@ -76,6 +76,9 @@
 	var/datum/action/toggle_scope_zoom/azoom
 
 	var/pb_knockback = 0
+	var/extra_damage = 0				//Number to add to individual bullets.
+	var/extra_penetration = 0			//Number to add to armor penetration of individual bullets.
+	var/extra_minhitchance = 0			//Number you add to minimal hit chance
 
 	var/legacy_icon_handler = FALSE
 
@@ -296,7 +299,7 @@
 		else //Smart spread
 			sprd = round((((rand_spr/burst_size) * iteration) - (0.5 + (rand_spr * 0.25))) * (randomized_gun_spread + randomized_bonus_spread))
 		before_firing(target,user)
-		if(!chambered.fire_casing(target, user, params, ,suppressed, zone_override, sprd, src))
+		if(!chambered.fire_casing(target, user, params, 0, suppressed, zone_override, sprd, src, extra_damage, extra_penetration))
 			shoot_with_empty_chamber(user)
 			firing_burst = FALSE
 			return FALSE
@@ -345,7 +348,7 @@
 					return
 			sprd = round((rand() - 0.5) * DUALWIELD_PENALTY_EXTRA_MULTIPLIER * (randomized_gun_spread + randomized_bonus_spread))
 			before_firing(target,user)
-			if(!chambered.fire_casing(target, user, params, , suppressed, zone_override, sprd, src))
+			if(!chambered.fire_casing(target, user, params, 0, suppressed, zone_override, sprd, src, extra_damage, extra_penetration))
 				shoot_with_empty_chamber(user)
 				return
 			else

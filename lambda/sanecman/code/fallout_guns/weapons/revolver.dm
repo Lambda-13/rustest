@@ -35,8 +35,8 @@
 	fire_sound = 'lambda/sanecman/sound/fallout/44mag.ogg'
 	w_class = WEIGHT_CLASS_NORMAL
 	fire_delay = 5
-//	extra_damage = 35
-//	extra_penetration = 10
+	extra_damage = 35
+	extra_penetration = 10
 
 /obj/item/gun/ballistic/revolver/fallout/rev44/mysterious
 	name = "Mysterious Magnum"
@@ -44,7 +44,7 @@
 	icon_state = "mysterious"
 	inhand_icon_state = "mysterious"
 	fire_delay = 4
-//	extra_damage = 40
+	extra_damage = 40
 
 /obj/item/gun/ballistic/revolver/fallout/rev44/rifle
 	name = ".44 revolver rifle"
@@ -54,8 +54,8 @@
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 	fire_delay = 6
-//	extra_damage = 45
-//	extra_penetration = 10
+	extra_damage = 45
+	extra_penetration = 10
 
 /obj/item/gun/ballistic/revolver/fallout/rev357
 	name = ".357 Magnum revolver"
@@ -66,8 +66,8 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev357
 	w_class = WEIGHT_CLASS_NORMAL
 	fire_delay = 6
-//	extra_damage = 30
-//	extra_penetration = 10
+	extra_damage = 30
+	extra_penetration = 10
 
 /obj/item/gun/ballistic/revolver/fallout/rev357/lucky
 	name = "Lucky"
@@ -75,7 +75,7 @@
 	icon_state = "lucky"
 	inhand_icon_state = "lucky"
 	fire_delay = 4
-//	extra_damage = 35
+	extra_damage = 35
 
 /obj/item/gun/ballistic/revolver/fallout/rev357/heavy
 	name = "heavy .357 revolver"
@@ -84,8 +84,8 @@
 	inhand_icon_state = "heavy357"
 	fire_sound = 'lambda/sanecman/sound/fallout/magnum_fire.ogg'
 	fire_delay = 6
-//	extra_damage = 40
-//	extra_penetration = 15
+	extra_damage = 40
+	extra_penetration = 15
 
 /obj/item/gun/ballistic/revolver/fallout/rev357/police
 	name = "police pistol"
@@ -95,15 +95,15 @@
 	fire_sound = 'lambda/sanecman/sound/fallout/policepistol.ogg'
 	w_class = WEIGHT_CLASS_SMALL
 	fire_delay = 5
-//	extra_damage = 25
-//	extra_penetration = 10
+	extra_damage = 25
+	extra_penetration = 10
 
 /obj/item/gun/ballistic/revolver/fallout/rev357/handmade
 	name = "handmade revolver"
 	desc = "A revolver made from scratch that fires .357 magnum rounds at a slow rate of fire and without as much penetration."
 	icon_state = "hrev"
 	inhand_icon_state = "hrev"
-//	extra_penetration = 0
+	extra_penetration = 0
 
 /obj/item/gun/ballistic/revolver/fallout/rev357/handmade/rifle
 	name = "handmade revolver rifle"
@@ -113,8 +113,8 @@
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 	fire_delay = 5
-//	extra_damage = 25
-//	extra_penetration = 10
+	extra_damage = 25
+	extra_penetration = 10
 
 /obj/item/gun/ballistic/revolver/fallout/rev10mm
 	name = "10mm revolver"
@@ -125,8 +125,8 @@
 	fire_sound = 'lambda/sanecman/sound/fallout/gunsounds/10mm/10mmfire2.ogg'
 	w_class = WEIGHT_CLASS_NORMAL
 	fire_delay = 5
-//	extra_damage = 25
-//	extra_penetration = 10
+	extra_damage = 25
+	extra_penetration = 10
 
 /obj/item/gun/ballistic/revolver/fallout/huntingrev
 	name = "hunting revolver"
@@ -137,15 +137,15 @@
 	fire_sound = 'lambda/sanecman/sound/fallout/gunsounds/huntingrev/huntingrev5.ogg'
 	w_class = WEIGHT_CLASS_NORMAL
 	fire_delay = 6
-//	extra_damage = 45
+	extra_damage = 45
 
 /obj/item/gun/ballistic/revolver/fallout/huntingrev/sequoia
 	name = "Sequoia"
 	desc = "A unique and modified .45-70 revolver that hits quite a bit harder."
 	icon_state = "sequoia"
 	inhand_icon_state = "sequoia"
-//	extra_damage = 50
-//	extra_penetration = 5
+	extra_damage = 50
+	extra_penetration = 5
 
 /obj/item/gun/ballistic/revolver/fallout/rev556
 	name = "5.56 revolver"
@@ -156,8 +156,8 @@
 	fire_sound = 'lambda/sanecman/sound/fallout/that_gun.ogg'
 	w_class = WEIGHT_CLASS_NORMAL
 	fire_delay = 4
-//	extra_damage = 30
-//	extra_penetration = 10
+	extra_damage = 30
+	extra_penetration = 10
 
 //Magazines
 /obj/item/ammo_box/magazine/internal/shot/caravan
