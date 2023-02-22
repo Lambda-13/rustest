@@ -158,13 +158,13 @@
 	soundloop.volume = 5
 	START_PROCESSING(SSobj, src)
 	for(var/obj/item/part in mod.mod_parts)
-		part.armor = part.armor.modifyRating(arglist(list(RAD = 100)))
+		part.armor = part.armor.modifyRating(arglist(list("rad" = 100)))
 
 /obj/item/mod/module/rad_protection/on_suit_deactivation(deleting = FALSE)
 	QDEL_NULL(soundloop)
 	STOP_PROCESSING(SSobj, src)
 	for(var/obj/item/part in mod.mod_parts)
-		part.armor = part.armor.modifyRating(arglist(list(RAD = -100)))
+		part.armor = part.armor.modifyRating(arglist(list("rad" = -100)))
 
 /*obj/item/mod/module/rad_protection/process(delta_time)
 	radiation_count = LPFILTER(radiation_count, current_tick_amount, delta_time, RAD_GEIGER_RC)
