@@ -135,3 +135,11 @@
 	cost = 1500
 	contains = list(/obj/item/storage/box/lasertagpins)
 	crate_name = "laser tag pin crate"
+
+/datum/supply_pack/gun/lasertag_pins
+	name = "Станковый пулемёт"
+	desc = "Бесконечно стреляет."
+	cost = 50000
+	contains = list(/obj/item/deployable_turret_folded)
+	crate_name = "ящик с пулемётом"
+

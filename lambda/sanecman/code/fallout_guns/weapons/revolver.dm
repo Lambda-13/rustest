@@ -26,9 +26,6 @@
 	desc = "Добовик, сделанный вручную, примерно такой же мощный, как и его брат. Но, может быть, не так надёжен."
 	icon_state = "hshot"
 
-/obj/item/gun/ballistic/revolver/fallout/single/handmade/no_mag
-	spawnwithmagazine = FALSE
-
 /obj/item/gun/ballistic/revolver/fallout/rev44
 	name = "\"магнум\" .44"
 	desc = "Револьвер двойного действия под патроны калибра .44 Magnum. Прилично быстрый и разрушительный одновременно."

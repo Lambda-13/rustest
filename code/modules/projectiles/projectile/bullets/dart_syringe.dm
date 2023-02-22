@@ -1,8 +1,9 @@
 /obj/projectile/bullet/dart
-	name = "dart"
+	name = "дротик"
 	icon_state = "cbbolt"
 	damage = 6
 	var/piercing = FALSE
+	speed = 0.9
 
 /obj/projectile/bullet/dart/Initialize()
 	. = ..()
@@ -18,23 +19,22 @@
 				return BULLET_ACT_HIT
 			else
 				blocked = 100
-				target.visible_message(
-					"<span class='danger'>\The [src] is deflected!</span>", \
-					"<span class='userdanger'>You are protected against \the [src]!</span>")
+				target.visible_message(span_danger("[capitalize(src.name)] был отражен!") , \
+									   span_userdanger("Моя броня отражает [src]!"))
 
 	..(target, blocked)
 	reagents.flags &= ~(NO_REACT)
 	reagents.handle_reactions()
 	return BULLET_ACT_HIT
 
-/obj/projectile/bullet/dart/metalfoam/Initialize()
+/obj/projectile/bullet/dart/metalfoam/Initialize(mapload)
 	. = ..()
 	reagents.add_reagent(/datum/reagent/aluminium, 15)
 	reagents.add_reagent(/datum/reagent/foaming_agent, 5)
 	reagents.add_reagent(/datum/reagent/toxin/acid/fluacid, 5)
 
 /obj/projectile/bullet/dart/tranq
-	name = "syringe"
+	name = "шприц"
 	icon_state = "syringeproj"
 
 /obj/projectile/bullet/dart/tranq/Initialize()
@@ -42,5 +42,5 @@
 	reagents.add_reagent(/datum/reagent/medicine/morphine, 7)
 
 /obj/projectile/bullet/dart/syringe
-	name = "syringe"
+	name = "шприц"
 	icon_state = "syringeproj"

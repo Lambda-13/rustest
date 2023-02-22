@@ -1,9 +1,9 @@
 /obj/effect/ebeam/curse_arm
-	name = "curse arm"
+	name = "проклятие руки"
 	layer = LARGE_MOB_LAYER
 
 /obj/projectile/curse_hand
-	name = "curse hand"
+	name = "проклятие кисти"
 	icon_state = "cursehand0"
 	hitsound = 'sound/effects/curse4.ogg'
 	layer = LARGE_MOB_LAYER
@@ -48,4 +48,12 @@
 		var/obj/effect/ebeam/B = b
 		animate(B, alpha = 0, time = 32)
 	return ..()
+
+/obj/projectile/curse_hand/hel //Used in helbital's impure reagent
+	name = "Hel's grasp"
+	damage = 5
+	paralyze = 0 //Lets not stun people!
+	speed = 1.3
+	range = 20
+	color = "#ff7e7e"//Tint it slightly
 

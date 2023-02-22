@@ -1,5 +1,5 @@
 /obj/projectile/magic
-	name = "bolt"
+	name = "пустяк"
 	icon_state = "energy"
 	damage = 0
 	damage_type = OXY
@@ -8,7 +8,7 @@
 	flag = "magic"
 
 /obj/projectile/magic/death
-	name = "bolt of death"
+	name = "заряд смерти"
 	icon_state = "pulse1_bl"
 
 /obj/projectile/magic/death/on_hit(target)
@@ -25,16 +25,16 @@
 					return BULLET_ACT_BLOCK
 				if(L.revive(full_heal = TRUE, admin_revive = TRUE))
 					L.grab_ghost(force = TRUE) // even suicides
-					to_chat(L, "<span class='notice'>You rise with a start, you're undead!!!</span>")
+					to_chat(L, "<span class='notice'>Восстаю. Я НЕЖИТЬ!!!</span>")
 				else if(L.stat != DEAD)
-					to_chat(L, "<span class='notice'>You feel great!</span>")
+					to_chat(L, "<span class='notice'>Чувствую себя отлично!</span>")
 			else
 				L.death(0)
 		else
 			M.death(0)
 
 /obj/projectile/magic/resurrection
-	name = "bolt of resurrection"
+	name = "заряд воскрешения"
 	icon_state = "ion"
 	damage = 0
 	damage_type = OXY
@@ -44,7 +44,7 @@
 	. = ..()
 	if(isliving(target))
 		if(target.anti_magic_check())
-			target.visible_message("<span class='warning'>[src] vanishes on contact with [target]!</span>")
+			target.visible_message(span_warning("[capitalize(src.name)] испаряется при контакте с [target]!"))
 			return BULLET_ACT_BLOCK
 		if(target.mob_biotypes & MOB_UNDEAD) //positive energy harms the undead
 			target.death(0)
@@ -53,12 +53,12 @@
 				return BULLET_ACT_BLOCK
 			if(target.revive(full_heal = TRUE, admin_revive = TRUE))
 				target.grab_ghost(force = TRUE) // even suicides
-				to_chat(target, "<span class='notice'>You rise with a start, you're alive!!!</span>")
+				to_chat(target, "<span class='notice'>Восстаю. Я ЖИВОЙ!!!</span>")
 			else if(target.stat != DEAD)
-				to_chat(target, "<span class='notice'>You feel great!</span>")
+				to_chat(target, "<span class='notice'>Чувствую себя отлично!</span>")
 
 /obj/projectile/magic/teleport
-	name = "bolt of teleportation"
+	name = "заряд телепортации"
 	icon_state = "bluespace"
 	damage = 0
 	damage_type = OXY
@@ -71,7 +71,7 @@
 	if(ismob(target))
 		var/mob/M = target
 		if(M.anti_magic_check())
-			M.visible_message("<span class='warning'>[src] fizzles on contact with [target]!</span>")
+			M.visible_message(span_warning("[capitalize(src.name)] распадается при контакте с [target]!"))
 			return BULLET_ACT_BLOCK
 	var/teleammount = 0
 	var/teleloc = target
@@ -86,7 +86,7 @@
 				smoke.start()
 
 /obj/projectile/magic/safety
-	name = "bolt of safety"
+	name = "заряд безопасности"
 	icon_state = "bluespace"
 	damage = 0
 	damage_type = OXY
@@ -97,7 +97,7 @@
 	if(ismob(target))
 		var/mob/M = target
 		if(M.anti_magic_check())
-			M.visible_message("<span class='warning'>[src] fizzles on contact with [target]!</span>")
+			M.visible_message(span_warning("[capitalize(src.name)] распадается при контакте с [target]!"))
 			return BULLET_ACT_BLOCK
 	if(isturf(target))
 		return BULLET_ACT_HIT
@@ -112,7 +112,7 @@
 			smoke.start()
 
 /obj/projectile/magic/door
-	name = "bolt of door creation"
+	name = "заряд создания дверей"
 	icon_state = "energy"
 	damage = 0
 	damage_type = OXY
@@ -141,7 +141,7 @@
 	D.open()
 
 /obj/projectile/magic/change
-	name = "bolt of change"
+	name = "заряд изменений"
 	icon_state = "ice_1"
 	damage = 0
 	damage_type = BURN
@@ -152,7 +152,7 @@
 	if(ismob(change))
 		var/mob/M = change
 		if(M.anti_magic_check())
-			M.visible_message("<span class='warning'>[src] fizzles on contact with [M]!</span>")
+			M.visible_message(span_warning("[capitalize(src.name)] распадается при контакте с [M]!"))
 			qdel(src)
 			return BULLET_ACT_BLOCK
 	wabbajack(change)
@@ -290,7 +290,7 @@
 
 	M.wabbajack_act(new_mob)
 
-	to_chat(new_mob, "<span class='warning'>Your form morphs into that of a [randomize].</span>")
+	to_chat(new_mob, span_warning("Внезапно становлюсь [randomize]."))
 
 	var/poly_msg = get_policy(POLICY_POLYMORPH)
 	if(poly_msg)
@@ -302,7 +302,7 @@
 	return new_mob
 
 /obj/projectile/magic/animate
-	name = "bolt of animation"
+	name = "заряд анимации"
 	icon_state = "red_1"
 	damage = 0
 	damage_type = BURN
@@ -319,7 +319,7 @@
 			if(P.petrified_mob)
 				var/mob/living/L = P.petrified_mob
 				var/mob/living/simple_animal/hostile/statue/S = new(P.loc, owner)
-				S.name = "statue of [L.name]"
+				S.name = "статуя [L.name]"
 				if(owner)
 					S.faction = list("[REF(owner)]")
 				S.icon = P.icon
@@ -330,7 +330,7 @@
 				if(L.mind)
 					L.mind.transfer_to(S)
 					if(owner)
-						to_chat(S, "<span class='userdanger'>You are an animate statue. You cannot move when monitored, but are nearly invincible and deadly when unobserved! Do not harm [owner], your creator.</span>")
+						to_chat(S, span_userdanger("Ты одушевленная статуя. Ты не можешь двигаться, когда за тобой следят, но они почти неуязвимы и смертельно опасны, когда их не замечают! Не навреди [owner], твоему создателю."))
 				P.forceMove(S)
 				return
 		else
@@ -347,7 +347,7 @@
 			C.ChangeOwner(owner)
 
 /obj/projectile/magic/spellblade
-	name = "blade energy"
+	name = "энергия лезвия"
 	icon_state = "lavastaff"
 	damage = 15
 	damage_type = BURN
@@ -359,13 +359,13 @@
 	if(ismob(target))
 		var/mob/M = target
 		if(M.anti_magic_check())
-			M.visible_message("<span class='warning'>[src] vanishes on contact with [target]!</span>")
+			M.visible_message(span_warning("[capitalize(src.name)] распадается при контакте с [target]!"))
 			qdel(src)
 			return BULLET_ACT_BLOCK
 	. = ..()
 
 /obj/projectile/magic/arcane_barrage
-	name = "arcane bolt"
+	name = "тайный заряд"
 	icon_state = "arcane_barrage"
 	damage = 20
 	damage_type = BURN
@@ -378,14 +378,14 @@
 	if(ismob(target))
 		var/mob/M = target
 		if(M.anti_magic_check())
-			M.visible_message("<span class='warning'>[src] vanishes on contact with [target]!</span>")
+			M.visible_message(span_warning("[capitalize(src.name)] распадается при контакте с [target]!"))
 			qdel(src)
 			return BULLET_ACT_BLOCK
 	. = ..()
 
 
 /obj/projectile/magic/locker
-	name = "locker bolt"
+	name = "шкафозаряд"
 	icon_state = "locker"
 	nodamage = TRUE
 	flag = "magic"
@@ -394,7 +394,7 @@
 	var/locker_suck = TRUE
 	var/obj/structure/closet/locker_temp_instance = /obj/structure/closet/decay
 
-/obj/projectile/magic/locker/Initialize()
+/obj/projectile/magic/locker/Initialize(mapload)
 	. = ..()
 	locker_temp_instance = new(src)
 
@@ -434,7 +434,7 @@
 	var/weakened_icon = "decursed"
 	var/auto_destroy = TRUE
 
-/obj/structure/closet/decay/Initialize()
+/obj/structure/closet/decay/Initialize(mapload)
 	. = ..()
 	if(auto_destroy)
 		addtimer(CALLBACK(src, .proc/bust_open), 5 MINUTES)
@@ -469,7 +469,7 @@
 	icon_welded = "welded"
 
 /obj/projectile/magic/flying
-	name = "bolt of flying"
+	name = "заряд полёта"
 	icon_state = "flight"
 
 /obj/projectile/magic/flying/on_hit(target)
@@ -477,13 +477,13 @@
 	if(isliving(target))
 		var/mob/living/L = target
 		if(L.anti_magic_check())
-			L.visible_message("<span class='warning'>[src] vanishes on contact with [target]!</span>")
+			L.visible_message(span_warning("[capitalize(src.name)] распадается при контакте с [target]!"))
 			return BULLET_ACT_BLOCK
 		var/atom/throw_target = get_edge_target_turf(L, angle2dir(Angle))
 		L.throw_at(throw_target, 200, 4)
 
 /obj/projectile/magic/bounty
-	name = "bolt of bounty"
+	name = "заряд награды"
 	icon_state = "bounty"
 
 /obj/projectile/magic/bounty/on_hit(target)
@@ -491,12 +491,12 @@
 	if(isliving(target))
 		var/mob/living/L = target
 		if(L.anti_magic_check() || !firer)
-			L.visible_message("<span class='warning'>[src] vanishes on contact with [target]!</span>")
+			L.visible_message(span_warning("[capitalize(src.name)] распадается при контакте с [target]!"))
 			return BULLET_ACT_BLOCK
 		L.apply_status_effect(STATUS_EFFECT_BOUNTY, firer)
 
 /obj/projectile/magic/antimagic
-	name = "bolt of antimagic"
+	name = "заряд антимагии"
 	icon_state = "antimagic"
 
 /obj/projectile/magic/antimagic/on_hit(target)
@@ -504,12 +504,12 @@
 	if(isliving(target))
 		var/mob/living/L = target
 		if(L.anti_magic_check())
-			L.visible_message("<span class='warning'>[src] vanishes on contact with [target]!</span>")
+			L.visible_message(span_warning("[capitalize(src.name)] распадается при контакте с [target]!"))
 			return BULLET_ACT_BLOCK
 		L.apply_status_effect(STATUS_EFFECT_ANTIMAGIC)
 
 /obj/projectile/magic/fetch
-	name = "bolt of fetching"
+	name = "заряд извлечения"
 	icon_state = "fetch"
 
 /obj/projectile/magic/fetch/on_hit(target)
@@ -517,13 +517,13 @@
 	if(isliving(target))
 		var/mob/living/L = target
 		if(L.anti_magic_check() || !firer)
-			L.visible_message("<span class='warning'>[src] vanishes on contact with [target]!</span>")
+			L.visible_message(span_warning("[capitalize(src.name)] распадается при контакте с [target]!"))
 			return BULLET_ACT_BLOCK
 		var/atom/throw_target = get_edge_target_turf(L, get_dir(L, firer))
 		L.throw_at(throw_target, 200, 4)
 
 /obj/projectile/magic/sapping
-	name = "bolt of sapping"
+	name = "заряд иссушения"
 	icon_state = "sapping"
 
 /obj/projectile/magic/sapping/on_hit(target)
@@ -531,12 +531,12 @@
 	if(ismob(target))
 		var/mob/M = target
 		if(M.anti_magic_check())
-			M.visible_message("<span class='warning'>[src] vanishes on contact with [target]!</span>")
+			M.visible_message(span_warning("[capitalize(src.name)] распадается при контакте с [target]!"))
 			return BULLET_ACT_BLOCK
 		SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, src, /datum/mood_event/sapped)
 
 /obj/projectile/magic/necropotence
-	name = "bolt of necropotence"
+	name = "заряд некротической силы"
 	icon_state = "necropotence"
 
 /obj/projectile/magic/necropotence/on_hit(target)
@@ -583,7 +583,7 @@
 			spell.update_icon()
 
 /obj/projectile/magic/wipe
-	name = "bolt of possession"
+	name = "заряд одержимости"
 	icon_state = "wipe"
 
 /obj/projectile/magic/wipe/on_hit(target)
@@ -591,23 +591,23 @@
 	if(iscarbon(target))
 		var/mob/living/carbon/M = target
 		if(M.anti_magic_check())
-			M.visible_message("<span class='warning'>[src] vanishes on contact with [target]!</span>")
+			M.visible_message(span_warning("[capitalize(src.name)] распадается при контакте с [target]!"))
 			return BULLET_ACT_BLOCK
 		for(var/x in M.get_traumas())//checks to see if the victim is already going through possession
 			if(istype(x, /datum/brain_trauma/special/imaginary_friend/trapped_owner))
-				M.visible_message("<span class='warning'>[src] vanishes on contact with [target]!</span>")
+				M.visible_message(span_warning("[capitalize(src.name)] распадается при контакте с [target]!"))
 				return BULLET_ACT_BLOCK
-		to_chat(M, "<span class='warning'>Your mind has been opened to possession!</span>")
+		to_chat(M, span_warning("Мой разум открыт для любого желающего!"))
 		possession_test(M)
 		return BULLET_ACT_HIT
 
 /obj/projectile/magic/wipe/proc/possession_test(mob/living/carbon/M)
 	var/datum/brain_trauma/special/imaginary_friend/trapped_owner/trauma = M.gain_trauma(/datum/brain_trauma/special/imaginary_friend/trapped_owner)
-	var/poll_message = "Do you want to play as [M.real_name]?"
+	var/poll_message = "Хотите быть [M.real_name]?"
 	if(M.mind && M.mind.assigned_role)
-		poll_message = "[poll_message] Job:[M.mind.assigned_role]."
+		poll_message = "[poll_message] Профессия:[M.mind.assigned_role]."
 	if(M.mind && M.mind.special_role)
-		poll_message = "[poll_message] Status:[M.mind.special_role]."
+		poll_message = "[poll_message] Статус:[M.mind.special_role]."
 	else if(M.mind)
 		var/datum/antagonist/A = M.mind.has_antag_datum(/datum/antagonist/)
 		if(A)
@@ -617,7 +617,7 @@
 		return
 	if(LAZYLEN(candidates))
 		var/mob/dead/observer/C = pick(candidates)
-		to_chat(M, "<span class='boldnotice'>You have been noticed by a ghost and it has possessed you!</span>")
+		to_chat(M, span_boldnotice("Был замечен призраком, и он овладел мною!"))
 		var/oldkey = M.key
 		M.ghostize(0)
 		M.key = C.key
@@ -626,7 +626,7 @@
 		trauma.friend.Show()
 		trauma.friend_initialized = TRUE
 	else
-		to_chat(M, "<span class='notice'>Your mind has managed to go unnoticed in the spirit world.</span>")
+		to_chat(M, span_notice("Мой разум сумел остаться незамеченным в духовном мире."))
 		qdel(trauma)
 
 /obj/projectile/magic/aoe
@@ -644,7 +644,7 @@
 
 
 /obj/projectile/magic/aoe/lightning
-	name = "lightning bolt"
+	name = "заряд молнии"
 	icon_state = "tesla_projectile"	//Better sprites are REALLY needed and appreciated!~
 	damage = 15
 	damage_type = BURN
@@ -668,7 +668,7 @@
 	if(ismob(target))
 		var/mob/M = target
 		if(M.anti_magic_check())
-			visible_message("<span class='warning'>[src] fizzles on contact with [target]!</span>")
+			visible_message(span_warning("[capitalize(src.name)] распадается при контакте с [target]!"))
 			qdel(src)
 			return BULLET_ACT_BLOCK
 	tesla_zap(src, zap_range, zap_power, zap_flags)
@@ -679,7 +679,7 @@
 	. = ..()
 
 /obj/projectile/magic/aoe/fireball
-	name = "bolt of fireball"
+	name = "огненный шар"
 	icon_state = "fireball"
 	damage = 10
 	damage_type = BRUTE
@@ -722,7 +722,7 @@
 //still magic related, but a different path
 
 /obj/projectile/temp/chill
-	name = "bolt of chills"
+	name = "заряд озноба"
 	icon_state = "ice_2"
 	damage = 0
 	damage_type = BURN
@@ -732,4 +732,4 @@
 	flag = "magic"
 
 /obj/projectile/magic/nothing
-	name = "bolt of nothing"
+	name = "заряд пустоты"

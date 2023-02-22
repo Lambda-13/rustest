@@ -1,26 +1,26 @@
-// 9mm (Commander, SABR)
+// 9мм (Makarov and Stechkin APS)
 
 /obj/projectile/bullet/c9mm
-	name = "9mm bullet"
 	damage = 20
 
 /obj/projectile/bullet/c9mm_surplus
 	name = "9mm surplus bullet"
 	damage = 15
+	name = "9мм пуля"
 
 /obj/projectile/bullet/c9mm_ap
-	name = "9mm armor-piercing bullet"
-	damage = 15
-	armour_penetration = 40
+	name = "9мм бронебойная пуля"
+	damage = 25
+	armour_penetration = 30
 
 /obj/projectile/bullet/c9mm_hp
-	name = "9mm hollow-point bullet"
-	damage = 30
+	name = "9мм экспансивная пуля"
+	damage = 40
 	armour_penetration = -50
 
 /obj/projectile/bullet/incendiary/c9mm
-	name = "9mm incendiary bullet"
-	damage = 10
+	name = "9мм зажигательная пуля"
+	damage = 20
 	fire_stacks = 2
 
 /obj/projectile/bullet/c9mm/rubbershot
@@ -35,17 +35,17 @@
 	damage = 25
 
 /obj/projectile/bullet/c10mm_surplus
-	name = "10mm surplus bullet"
 	damage = 20
+	name = "10мм пуля"
 
 /obj/projectile/bullet/c10mm_ap
-	name = "10mm armor-piercing bullet"
-	damage = 20
+	name = "10мм бронебойная пуля"
+	damage = 35
 	armour_penetration = 40
 
 /obj/projectile/bullet/c10mm_hp
-	name = "10mm hollow-point bullet"
-	damage = 35
+	name = "10мм экспансивная пуля"
+	damage = 60
 	armour_penetration = -50
 
 /obj/projectile/bullet/incendiary/c10mm

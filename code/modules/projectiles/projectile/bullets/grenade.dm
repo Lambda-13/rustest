@@ -1,10 +1,11 @@
 // 40mm (Grenade Launcher
 
 /obj/projectile/bullet/a40mm
-	name ="40mm grenade"
+	name ="40мм граната"
 	desc = "USE A WEEL GUN"
 	icon_state= "bolter"
 	damage = 60
+	min_hitchance = 20
 
 /obj/projectile/bullet/a40mm/on_hit(atom/target, blocked = FALSE)
 	..()

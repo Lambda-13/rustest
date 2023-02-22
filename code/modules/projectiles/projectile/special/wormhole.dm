@@ -1,7 +1,7 @@
 /obj/projectile/beam/wormhole
-	name = "bluespace beam"
+	name = "блюспейс-луч"
 	icon_state = "spark"
-	hitsound = "sparks"
+	hitsound = "zap"
 	damage = 0
 	nodamage = TRUE
 	pass_flags = PASSGLASS | PASSTABLE | PASSGRILLE | PASSMOB
@@ -13,7 +13,7 @@
 	hitscan = TRUE
 
 /obj/projectile/beam/wormhole/orange
-	name = "orange bluespace beam"
+	name = "оранжевый блюспейс-луч"
 	color = "#FF6600"
 
 /obj/projectile/beam/wormhole/Initialize(mapload, obj/item/ammo_casing/energy/wormhole/casing)

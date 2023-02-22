@@ -36,6 +36,8 @@
 	else
 		BB.def_zone = user.zone_selected
 	BB.suppressed = quiet
+	BB.damage = initial(BB.damage) + extra_damage
+	BB.min_hitchance = initial(BB.min_hitchance) + extra_minhitchance
 	if(isnum(extra_penetration))
 		BB.armour_penetration = initial(BB.armour_penetration) + extra_penetration
 

@@ -23,7 +23,7 @@
 			"Sniper": {
 				"outfit": "/datum/outfit/syndicate_empty/sbc/assault",
 				"slots": 1
-			},
+			}
 		},
 	"cost": 450,
 	"enabled": false

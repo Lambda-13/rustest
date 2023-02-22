@@ -1,5 +1,5 @@
 /obj/projectile/energy/tesla
-	name = "tesla bolt"
+	name = "заряд теслы"
 	icon_state = "tesla_projectile"
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/blue_laser
 	damage = 10 //A worse lasergun
@@ -18,10 +18,10 @@
 	tesla_zap(src, zap_range, power, zap_flags)
 
 /obj/projectile/energy/tesla/revolver
-	name = "energy orb"
+	name = "энергосфера"
 
 /obj/projectile/energy/tesla/cannon
-	name = "tesla orb"
+	name = "сфера теслы"
 	power = 20000
 	damage = 15 //Mech man big
 

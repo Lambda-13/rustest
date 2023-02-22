@@ -842,9 +842,9 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		var/datum/ipintel/res = get_ip_intel(address)
 		if (res.intel >= CONFIG_GET(number/ipintel_rating_bad))
 			message_admins("<span class='adminnotice'>ОБНАРУЖЕН ПРОКСИ: [key_name_admin(src)] возможно на [res.intel*100]% использует прокси или впн.</span>")
-		for(var/client/X in GLOB.admins)
-			if(X.prefs.toggles & SOUND_ADMINVPNPROXYPING)
-				SEND_SOUND(X, sound('lambda/sanecman/sound/detect.ogg'))
+			for(var/client/X in GLOB.admins)
+				if(X.prefs.toggles & SOUND_ADMINVPNPROXYPING)
+					SEND_SOUND(X, sound('lambda/sanecman/sound/detect.ogg'))
 		ip_intel = res.intel
 
 /client/Click(atom/object, atom/location, control, params)
