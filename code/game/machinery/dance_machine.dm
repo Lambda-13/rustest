@@ -1,6 +1,6 @@
 /obj/machinery/jukebox
-	name = "jukebox"
-	desc = "A classic music player."
+	name = "музыкальный автомат"
+	desc = "Старое но рабоющее."
 	icon = 'icons/obj/stationobjs.dmi'
 	icon_state = "jukebox"
 	verb_say = "states"
@@ -13,15 +13,15 @@
 	var/volume = 70
 
 /obj/machinery/jukebox/boombox
-	name = "boombox"
-	desc = "A theoretically-portable music player that's much larger and heavier than it really needs to be."
+	name = "бумбокс"
+	desc = "Теоретически портативный музыкальный плеер, который намного больше и тяжелее, чем он должен быть на самом деле."
 	icon_state = "boombox"
 	density = FALSE
 
 
 /obj/machinery/jukebox/disco
-	name = "radiant dance machine mark IV"
-	desc = "The first three prototypes were discontinued after mass casualty incidents."
+	name = "танцевальная машина марк IV"
+	desc = "Первые три прототипа были сняты с производства после инцидентов с массовыми человеческими жертвами."
 	icon_state = "disco"
 	anchored = FALSE
 	var/list/spotlights = list()
@@ -30,8 +30,8 @@
 	var/dance_chance = 20
 
 /obj/machinery/jukebox/disco/indestructible
-	name = "radiant dance machine mark V"
-	desc = "Now redesigned with data gathered from the extensive disco and plasma research."
+	name = "танцевальная машина марк V"
+	desc = "Теперь переработан с использованием данных, собранных в результате обширных исследований диско и плазмы."
 	anchored = TRUE
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 	flags_1 = NODECONSTRUCT_1
@@ -44,10 +44,10 @@
 	if(!active && !(flags_1 & NODECONSTRUCT_1))
 		if(O.tool_behaviour == TOOL_WRENCH)
 			if(!anchored && !isinspace())
-				to_chat(user,"<span class='notice'>You secure [src] to the floor.</span>")
+				balloon_alert(user,"Прикручиваю [src] к полу")
 				set_anchored(TRUE)
 			else if(anchored)
-				to_chat(user,"<span class='notice'>You unsecure and disconnect [src].</span>")
+				balloon_alert(user,"Откручиваю [src]")
 				set_anchored(FALSE)
 			playsound(src, 'sound/items/deconstruct.ogg', 50, TRUE)
 			return
@@ -61,15 +61,15 @@
 
 /obj/machinery/jukebox/ui_status(mob/user)
 	if(!anchored)
-		to_chat(user,"<span class='warning'>This device must be anchored by a wrench!</span>")
+		balloon_alert(user,"Надо прикрутить для использования!")
 		return UI_CLOSE
 	if(!allowed(user) && !isobserver(user))
-		to_chat(user,"<span class='warning'>Error: Access Denied.</span>")
-		user.playsound_local(src, 'sound/misc/compiler-failure.ogg', 25, TRUE)
+		balloon_alert(user,"Нет доступа")
+		user.playsound_local(src, 'lambda/sanecman/sound/stalker/beep.ogg', 25, TRUE)
 		return UI_CLOSE
 	if(!SSjukeboxes.songs.len && !isobserver(user)) //WS Edit Cit #7367
-		to_chat(user,"<span class='warning'>Error: No music tracks have been authorized for your station. Petition Central Command to resolve this issue.</span>")
-		playsound(src, 'sound/misc/compiler-failure.ogg', 25, TRUE)
+		balloon_alert(user,"Ошибка подключения к БД музыки.")
+		playsound(src, 'lambda/sanecman/sound/stalker/beep.ogg', 25, TRUE)
 		return UI_CLOSE
 	return ..()
 
@@ -109,16 +109,16 @@
 				return
 			if(!active)
 				if(stop > world.time)
-					to_chat(usr, "<span class='warning'>Error: The device is still resetting from the last activation, it will be ready again in [DisplayTimeText(stop-world.time)].</span>")
-					playsound(src, 'sound/misc/compiler-failure.ogg', 50, TRUE)
+					balloon_alert(usr, "Подождите ещё [DisplayTimeText(stop-world.time)] перед следующим включением</span>")
+					playsound(src, 'lambda/sanecman/sound/stalker/beep.ogg', 50, TRUE)
 					return
 				if(!istype(selection)) //WS Edit Cit #7367
-					to_chat(usr, "<span class='warning'>Error: Severe user incompetence detected.</span>")
-					playsound(src, 'sound/misc/compiler-failure.ogg', 50, TRUE)
+					balloon_alert(usr, "Ошибка при выборе музыки")
+					playsound(src, 'lambda/sanecman/sound/stalker/beep.ogg', 50, TRUE)
 					return
 				if(!activate_music()) //WS Edit Cit #7367
-					to_chat(usr, "<span class='warning'>Error: Generic hardware failure.</span>")
-					playsound(src, 'sound/misc/compiler-failure.ogg', 50, TRUE)
+					balloon_alert(usr, "Ошибка при запуске музыки")
+					playsound(src, 'lambda/sanecman/sound/stalker/beep.ogg', 50, TRUE)
 					return
 				return TRUE
 			else
@@ -126,7 +126,7 @@
 				return TRUE
 		if("select_track")
 			if(active)
-				to_chat(usr, "<span class='warning'>Error: You cannot change the song until the current one is over.</span>")
+				balloon_alert(usr, "Не могу сменить музыку пока [src] работает")
 				return
 			var/list/available = list()
 			for(var/datum/track/S in SSjukeboxes.songs) //WS Edit Cit #7367
@@ -452,7 +452,7 @@
 	if(active && world.time >= stop) //WS Edit Cit #7367
 		active = FALSE
 		dance_over()
-		playsound(src,'sound/machines/terminal_off.ogg',50,TRUE)
+		playsound(src,'lambda/sanecman/sound/stalker/off.ogg',50,TRUE)
 		update_icon()
 		stop = world.time + 100
 
