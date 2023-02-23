@@ -7,8 +7,8 @@
 */
 
 /datum/supply_pack/machinery/lightbulbs
-	name = "Replacement Lights"
-	desc = "May the light of Aether shine upon this sector! Or at least, the light of forty two light tubes and twenty one light bulbs."
+	name = "Лампочки"
+	desc = "На случай тотального блэкаута. Содержит 3 коробки с лампочками."
 	cost = 1000
 	contains = list(/obj/item/storage/box/lights/mixed,
 					/obj/item/storage/box/lights/mixed,
@@ -17,27 +17,43 @@
 	crate_type = /obj/structure/closet/crate
 
 /datum/supply_pack/machinery/t1
-	name = "T1 parts crate"
-	desc = "A bundle of basic machine parts, containing 3 of each common part type."
-	cost = 1500
+	name = "Детали - Т1"
+	desc = "Сама жизнь машин."
+	cost = 500
 	contains = list(/obj/item/storage/box/stockparts/basic)
 	crate_name = "\improper T2 parts crate"
 	crate_type = /obj/structure/closet/crate
 
 /datum/supply_pack/machinery/t2
-	name = "T2 parts crate"
-	desc = "A bundle of advanced machine parts, containing 2 of each common part type."
-	cost = 5000
+	name = "Детали - Т2"
+	desc = "Чуть получше Т1."
+	cost = 7500
 	contains = list(/obj/item/storage/box/stockparts/t2)
 	crate_name = "\improper T2 parts crate"
 	crate_type = /obj/structure/closet/crate/science
 
 /datum/supply_pack/machinery/t3
-	name = "T3 parts crate"
-	desc = "A bundle of high-tech machine parts, containing 2 of each common part type."
-	cost = 13000
+	name = "Детали - Т3"
+	desc = "Считались самыми лучшими до изучения блюспейс."
+	cost = 15000
 	contains = list(/obj/item/storage/box/stockparts/t3)
 	crate_name = "\improper T3 parts crate"
+	crate_type = /obj/structure/closet/crate/secure/science
+
+/datum/supply_pack/machinery/t4
+	name = "Детали - Т4"
+	desc = "Пик технологий."
+	cost = 13000
+	contains = list(/obj/item/storage/box/stockparts/t4)
+	crate_name = "\improper T4 parts crate"
+	crate_type = /obj/structure/closet/crate/secure/science
+
+/datum/supply_pack/machinery/t5
+	name = "Детали - Т5"
+	desc = "Технологии Триглава были совмещены с технологиями блюспейс и обработаны плазмой."
+	cost = 13000
+	contains = list(/obj/item/storage/box/stockparts/t5)
+	crate_name = "\improper T5 parts crate"
 	crate_type = /obj/structure/closet/crate/secure/science
 
 /datum/supply_pack/machinery/power

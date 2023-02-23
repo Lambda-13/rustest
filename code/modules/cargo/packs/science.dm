@@ -24,3 +24,32 @@
 	cost = 20000
 	contains = list(/obj/item/choice_beacon/rnd)
 	crate_name = "ящик с маяком рнд плат"
+
+/datum/supply_pack/science/support_beacon
+	name = "Маяк поддержки"
+	desc = "Один маяк для личного использования."
+	cost = 50000
+	contains = list(/obj/item/choice_beacon/support_beacon)
+	crate_name = "ящик с маяком поддержки"
+
+
+/datum/supply_pack/science/research_notes
+	name = "Ящик с научными записями (12к)"
+	desc = "Внутри можно найти записи на сумму 12000 очков."
+	cost = 2000
+	contains = list(/obj/item/research_notes/loot/small, /obj/item/research_notes/loot/small, /obj/item/research_notes/loot/small)
+	crate_name = "ящик с изучениями"
+
+/datum/supply_pack/science/research_notes_big
+	name = "Ящик с научными записями (30к)"
+	desc = "Внутри можно найти записи на сумму 30000 очков."
+	cost = 10000
+	contains = list(/obj/item/research_notes/loot/genius)
+	crate_name = "ящик с изучениями"
+
+/datum/supply_pack/science/fullrnd
+	name = "Ящик с целым РнД"
+	desc = "Незаблокированные на отдел РнД платы."
+	cost = 100000
+	contains = list(/obj/item/storage/box/rndboards/old)
+	crate_name = "ящик с платами рнд"

@@ -110,3 +110,10 @@
 	contains = list(/obj/item/stack/sheet/mineral/wood/fifty)
 	crate_name = "wood planks crate"
 
+/datum/supply_pack/material/everything
+	name = "Шкаф со всеми ресурсами"
+	desc = "Внутри есть шкаф со всеми ресурсами."
+	cost = 2000000
+	contains = list(/obj/structure/closet/syndicate/resources/everything)
+	crate_name = "ящик с шкафом"
+	crate_type = /obj/structure/closet/crate/large
