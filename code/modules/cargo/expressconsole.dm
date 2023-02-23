@@ -6,12 +6,11 @@
 #define SP_UNREADY 5
 
 /obj/machinery/computer/cargo/express
-	name = "outpost communications console"
-	desc = "This console allows the user to communicate with a nearby outpost to \
-			purchase supplies and manage missions. Purchases are delivered near-instantly."
+	name = "консоль связи с оутпостом"
+	desc = "Позволяет связаться с ближайшим оутпостом для взятия миссии и покупки предметов."
 	icon_screen = "supply_express"
 	circuit = /obj/item/circuitboard/computer/cargo/express
-	var/blockade_warning = "Bluespace instability detected. Delivery impossible."
+	var/blockade_warning = "Проблемы с поставками в ваше местоположение."
 
 	var/message
 	/// Number of beacons printed. Used to determine beacon names.
@@ -64,7 +63,7 @@
 		value = H.credits
 	if(value && charge_account)
 		charge_account.adjust_money(value)
-		to_chat(user, "<span class='notice'>You deposit [W]. The Vessel Budget is now [charge_account.account_balance] cr.</span>")
+		to_chat(user, "<span class='notice'>Вставляю [W]. Бюджет теперь составляет [charge_account.account_balance] кредитов.</span>")
 		qdel(W)
 		return TRUE
 	else if(istype(W, /obj/item/supplypod_beacon))
@@ -73,7 +72,7 @@
 			sb.link_console(src, user)
 			return TRUE
 		else
-			to_chat(user, "<span class='alert'>[src] is already linked to [sb].</span>")
+			to_chat(user, "<span class='alert'>[src] уже подключён к [sb].</span>")
 	..()
 
 /obj/machinery/computer/cargo/express/proc/packin_up() // oh shit, I'm sorry
@@ -121,18 +120,18 @@
 	data["usingBeacon"] = use_beacon //is the mode set to deliver to the beacon or the cargobay?
 	data["canBeacon"] = !use_beacon || canBeacon //is the mode set to beacon delivery, and is the beacon in a valid location?
 	data["canBuyBeacon"] = charge_account ? (cooldown <= 0 && charge_account.account_balance >= BEACON_COST) : FALSE
-	data["beaconError"] = use_beacon && !canBeacon ? "(BEACON ERROR)" : ""//changes button text to include an error alert if necessary
+	data["beaconError"] = use_beacon && !canBeacon ? "(СБОЙ СВЯЗИ)" : ""//changes button text to include an error alert if necessary
 	data["hasBeacon"] = beacon != null//is there a linked beacon?
-	data["beaconName"] = beacon ? beacon.name : "No Beacon Found"
-	data["printMsg"] = cooldown > 0 ? "Print Beacon for [BEACON_COST] credits ([cooldown])" : "Print Beacon for [BEACON_COST] credits"//buttontext for printing beacons
+	data["beaconName"] = beacon ? beacon.name : "Маяк не обнаружен"
+	data["printMsg"] = cooldown > 0 ? "ПЕРЕЗАРЯДКА: ЕЩЁ [cooldown]" : "Распечатать маяк за [BEACON_COST] кредитов"//buttontext for printing beacons
 	data["supplies"] = list()
-	message = "Sales are near-instantaneous - please choose carefully."
+	message = "Под прилетает почти моментально - пожалуйста, выбирайте внимательно."
 	if(SSshuttle.supplyBlocked)
 		message = blockade_warning
 	if(use_beacon && !beacon)
-		message = "BEACON ERROR: BEACON MISSING"//beacon was destroyed
+		message = "ОШИБКА МАЯКА: СИГНАЛ ПОТЕРЯН"//beacon was destroyed
 	else if (use_beacon && !canBeacon)
-		message = "BEACON ERROR: MUST BE EXPOSED"//beacon's loc/user's loc must be a turf
+		message = "ОШИБКА МАЯКА: ПРОБЛЕМЫ СО СВЯЗЬЮ"//beacon's loc/user's loc must be a turf
 	data["message"] = message
 	if(!meme_pack_data)
 		packin_up()
@@ -188,7 +187,7 @@
 				var/obj/item/supplypod_beacon/C = new /obj/item/supplypod_beacon(drop_location())
 				C.link_console(src, usr)//rather than in beacon's Initialize(), we can assign the computer to the beacon by reusing this proc)
 				printed_beacons++//printed_beacons starts at 0, so the first one out will be called beacon # 1
-				beacon.name = "Supply Pod Beacon #[printed_beacons]"
+				beacon.name = "Маяк карго #[printed_beacons]"
 
 		if("add")
 			var/area/ship/current_area = get_area(src)

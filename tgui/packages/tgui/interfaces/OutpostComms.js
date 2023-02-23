@@ -19,7 +19,7 @@ export const OutpostComms = (props, context) => {
       <Window.Content scrollable>
         <Section
           fitted
-          title={Math.round(data.points) + ' credits'}
+          title={'Счёт: ' + Math.round(data.points) + ' кр.'}
           buttons={
             <Stack textAlign="center">
               <Stack.Item>
@@ -52,7 +52,7 @@ export const OutpostComms = (props, context) => {
               </Stack.Item>
               <Stack.Item>
                 <Button.Input
-                  content="Withdraw Cash"
+                  content="Вывести деньги"
                   currentValue={100}
                   defaultValue={100}
                   onCommit={(e, value) =>
@@ -79,9 +79,9 @@ const CargoExpressContent = (props, context) => {
   const { act, data } = useBackend(context);
   return (
     <>
-      <Section title="Cargo Express">
+      <Section title="Карго 2.0™">
         <LabeledList>
-          <LabeledList.Item label="Landing Location">
+          <LabeledList.Item label="Место доставки">
             <Button
               content="Cargo Bay"
               selected={!data.usingBeacon}
@@ -100,7 +100,7 @@ const CargoExpressContent = (props, context) => {
               onClick={() => act('printBeacon')}
             />
           </LabeledList.Item>
-          <LabeledList.Item label="Notice">{data.message}</LabeledList.Item>
+          <LabeledList.Item label="Заметка">{data.message}</LabeledList.Item>
         </LabeledList>
       </Section>
       <CargoCatalog express />
@@ -112,7 +112,7 @@ const ShipMissionsContent = (props, context) => {
   const { act, data } = useBackend(context);
   return (
     <Section
-      title={'Current Missions ' + data.numMissions + '/' + data.maxMissions}
+      title={'Текущие миссии ' + data.numMissions + '/' + data.maxMissions}
     >
       <MissionsList
         showButton={data.outpostDocked}
@@ -126,7 +126,7 @@ const OutpostMissionsContent = (props, context) => {
   const { act, data } = useBackend(context);
   return (
     <Section
-      title={'Available Missions ' + data.numMissions + '/' + data.maxMissions}
+      title={'Доступные миссии ' + data.numMissions + '/' + data.maxMissions}
     >
       <MissionsList
         showButton={data.outpostDocked}

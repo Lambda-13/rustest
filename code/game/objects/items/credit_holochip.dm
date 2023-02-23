@@ -1,6 +1,6 @@
 /obj/item/holochip
-	name = "credit holochip"
-	desc = "A hard-light chip encoded with an amount of credits. It is a modern replacement for physical money that can be directly converted to virtual currency and viceversa. Keep away from magnets."
+	name = "голочип"
+	desc = "Полупрозрачный чип состоящий из чистого света. Это современная замена физическим деньгам, которые могут быть напрямую конвертированы в виртуальную валюту и наоборот. Держите подальше от магнитов."
 	icon = 'icons/obj/economy.dmi'
 	icon_state = "holochip"
 	throwforce = 0
@@ -15,14 +15,14 @@
 
 /obj/item/holochip/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>It's loaded with [credits] credit[(credits > 1) ? "s" : ""]</span>\n"+\
-	"<span class='notice'>Alt-Click to split.</span>"
+	. += "<span class='notice'>По минидисплею можно понять что тут записано [credits] кредит[get_num_string(credits)]</span>\n"+\
+	"<span class='notice'>Альт-клик для разделения.</span>"
 
 /obj/item/holochip/get_item_credit_value()
 	return credits
 
 /obj/item/holochip/update_icon()
-	name = "\improper [credits] credit holochip"
+	name = "голочип - [credits] кредит[get_num_string(credits)]"
 	var/rounded_credits = credits
 	switch(credits)
 		if(1 to 999)
@@ -77,14 +77,14 @@
 	if(istype(I, /obj/item/holochip))
 		var/obj/item/holochip/H = I
 		credits += H.credits
-		to_chat(user, "<span class='notice'>You insert the credits into [src].</span>")
+		to_chat(user, "<span class='notice'>Вставляю деньги на голочипе в [src].</span>")
 		update_icon()
 		qdel(H)
 
 /obj/item/holochip/AltClick(mob/user)
 	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
 		return
-	var/split_amount = round(input(user,"How many credits do you want to extract from the holochip?") as null|num)
+	var/split_amount = round(input(user,"На сколько разделяем?") as null|num)
 	if(split_amount == null || split_amount <= 0 || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
 		return
 	else
@@ -95,7 +95,7 @@
 				H.forceMove(user.drop_location())
 			add_fingerprint(user)
 		H.add_fingerprint(user)
-		to_chat(user, "<span class='notice'>You extract [split_amount] credits into a new holochip.</span>")
+		to_chat(user, "<span class='notice'>Отделяю [split_amount] кредит[get_num_string(split_amount)] от голочипа.</span>")
 
 /obj/item/holochip/emp_act(severity)
 	. = ..()
@@ -103,5 +103,5 @@
 		return
 	var/wipe_chance = 60 / severity
 	if(prob(wipe_chance))
-		visible_message("<span class='warning'>[src] fizzles and disappears!</span>")
+		visible_message("<span class='warning'>[src] начинает распадаться!</span>")
 		qdel(src) //rip cash
