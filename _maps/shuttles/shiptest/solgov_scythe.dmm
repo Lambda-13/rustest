@@ -200,7 +200,7 @@
 "dR" = (/turf/closed/wall/mineral/plastitanium,/area/ship/engineering)
 "dS" = (/obj/machinery/power/apc/auto_name/west,/obj/structure/cable,/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{icon_state = "pipe11-4"; dir = 5},/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,/turf/open/floor/plating,/area/ship/cargo)
 "dT" = (/turf/closed/wall/mineral/plastitanium/nodiagonal,/area/ship/crew)
-"dU" = (/obj/machinery/suit_storage_unit/mining,/obj/item/clothing/suit/space/hardsuit/mining,/obj/item/tank/internals/oxygen,/turf/open/floor/plating,/area/ship/cargo)
+"dU" = (/obj/item/stack/sheet/mineral/plasma/fifty,/turf/open/floor/plating,/area/ship/cargo)
 "dV" = (/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,/turf/open/floor/engine/hull,/area/ship/cargo)
 "dW" = (/obj/effect/landmark/start/security_officer,/turf/open/floor/carpet/black,/area/ship/security/armory)
 "dX" = (/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{icon_state = "vent_map_on-2"; dir = 4},/obj/effect/landmark/start/lieutenant,/turf/open/floor/plasteel/dark,/area/ship/bridge)
@@ -247,7 +247,7 @@
 "eM" = (/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,/obj/machinery/firealarm{step_x = 29; step_y = 0},/turf/open/floor/plating,/area/ship/cargo)
 "eN" = (/obj/structure/cable{icon_state = "2-8"},/turf/open/floor/plating,/area/ship/engineering)
 "eO" = (/obj/structure/railing/corner{icon_state = "railing_corner"; dir = 1},/obj/structure/railing/corner{icon_state = "railing_corner"; dir = 4},/obj/structure/railing/corner,/obj/structure/railing/corner{icon_state = "railing_corner"; dir = 8},/obj/structure/cable{icon_state = "1-2"},/obj/structure/cable{icon_state = "1-4"},/turf/open/floor/plating/catwalk_floor,/area/ship/engineering)
-"eP" = (/obj/machinery/power/port_gen/pacman,/obj/structure/cable,/obj/machinery/light{dir = 8},/turf/open/floor/plating,/area/ship/engineering)
+"eP" = (/obj/item/clothing/suit/space/hardsuit/mining,/obj/item/tank/internals/oxygen,/obj/machinery/suit_storage_unit,/turf/open/floor/plating,/area/ship/cargo)
 "eQ" = (/obj/structure/railing{dir = 8},/obj/structure/railing{icon_state = "railing"; dir = 4},/obj/structure/closet/firecloset/full,/turf/open/floor/plating/catwalk_floor,/area/ship/engineering)
 "eR" = (/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{icon_state = "pipe11-4"; dir = 4},/obj/structure/cable{icon_state = "1-2"},/obj/structure/cable{icon_state = "2-4"},/turf/open/floor/plating,/area/ship/engineering)
 "eS" = (/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{icon_state = "scrub_map_on-4"; dir = 8},/obj/machinery/power/terminal{dir = 4},/obj/structure/cable{icon_state = "0-8"},/turf/open/floor/plating,/area/ship/engineering)
@@ -276,6 +276,7 @@
 "fp" = (/turf/closed/wall/mineral/plastitanium/nodiagonal,/area/ship/engineering)
 "fq" = (/obj/structure/sign/poster/official/build{step_y = 0},/turf/closed/wall/mineral/plastitanium/nodiagonal,/area/ship/engineering)
 "fr" = (/obj/machinery/door/firedoor,/obj/machinery/door/airlock/grunge,/obj/structure/cable{icon_state = "1-2"},/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,/turf/open/floor/plasteel/mono/dark,/area/ship/engineering)
+"fs" = (/obj/machinery/power/port_gen/pacman,/obj/structure/cable,/obj/machinery/light{dir = 8},/obj/item/stack/sheet/mineral/plasma/fifty,/turf/open/floor/plating,/area/ship/engineering)
 
 (1,1,1) = {"
 aaaaaaaaaaaaaaaaadabababababafababababababanananalaaaaaaaaaaaaaaaaaaaaaaaa
@@ -285,11 +286,11 @@ aaaaagagauaJaKasaLaSaPabaQaRbaaDaUbNbSaVabanbbanbxaWaXaYbicfbxbHaaaaaaaaaa
 aaagagaZbcbdbdbfbgbebgbhbjbkciblbmbmbgbgbhbneTbobwbybGbIbpbqbrbxcJbsaaaaaa
 aaasbubvbKaJdGdTdTbQdTdTaQbzbabAbBbCbDabenbFbTenfkbqbJcbbLbqbMbxbRcJbsaaaa
 ajasbObPcdaJcndTcacjbUdTbVbVbWbAbXbYbZenccceckcgencychclcmctcucHcKcZcJbsaa
-ascobtcqcrcscodTcDcPcvdTcwcxfgczbXcAcBencCdycEcFenbxflfmcQbxbxbxdacLcMcJcI
+ascobtcqcrcscodTcDcPcvdTcwcxfgczbXcAcBencCdycEcFenbxflfmcQbxbxbxdadUcMcJcI
 fncNdldddfcpcRdTcScTcUdTabababababababencVdWdWcWencXcYdudpdbdcfodqcJcJcJcJ
 asdecOdsdgcpdhdTdidjdkdTaiaaaaaaaaaaaabEbEdmdmenendndodXdMefdrfodSdtdveXcJ
 asdBdxegdzdAdHdTdCdCdDdDaaaaaaaaaaaaaaaaaiaaaaaicGdEdEdFfhdNdIfodJdKcLeMcJ
-asdecpeUaJcpdhdTdDdDdDaaaaaaaaaaaaaaaaaaaaaaaaaaaaaadEdEdEfofofodUdUeYdLcJ
+asdecpeUaJcpdhdTdDdDdDaaaaaaaaaaaaaaaaaaaaaaaaaaaaaadEdEdEfofofoePePeYdLcJ
 asdOcpeUaJeedOasaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabscJcJcJdPcJ
 asdQbteUerbtdQasaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabscJeWcJ
 fpfpfpfrfqfpfpfpdRaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabsdwbs
@@ -300,7 +301,7 @@ fpeieAewexexeyeGfpfpaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 fpeleVeBeCeDeEeReSecedaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 dRfpeHeIfjeJeKeZfaecedaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aadRfpeLffeNeOfbfaecedaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaidRfpfpePeQfcfdecedaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaidRfpfpfseQfcfdecedaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaadRfpfpfpfpdRaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 "}

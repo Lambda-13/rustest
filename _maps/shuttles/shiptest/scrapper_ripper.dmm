@@ -130,7 +130,7 @@
 "cz" = (/obj/machinery/power/smes/engineering,/obj/structure/cable,/turf/open/floor/plating,/area/ship/engineering)
 "cA" = (/obj/machinery/power/terminal{icon_state = "term"; dir = 8},/obj/structure/cable{icon_state = "0-4"},/turf/open/floor/plating,/area/ship/engineering)
 "cB" = (/obj/machinery/atmospherics/components/binary/pump/layer4,/obj/structure/cable{icon_state = "4-8"},/turf/open/floor/plating,/area/ship/engineering)
-"cC" = (/obj/machinery/power/port_gen/pacman,/obj/structure/cable{icon_state = "0-8"},/turf/open/floor/plating,/area/ship/engineering)
+"cC" = (/obj/machinery/power/port_gen/pacman,/obj/structure/cable{icon_state = "0-8"},/obj/item/stack/sheet/mineral/plasma/fifty,/turf/open/floor/plating,/area/ship/engineering)
 "cD" = (/obj/structure/reagent_dispensers/fueltank,/obj/machinery/light,/turf/open/floor/plating,/area/ship/engineering)
 "cE" = (/obj/machinery/rnd/production/techfab/department/cargo,/turf/open/floor/plasteel/mono/dark,/area/ship/construction)
 "cF" = (/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{dir = 8},/obj/item/trash/boritos,/turf/open/floor/plasteel/dark,/area/ship/construction)
