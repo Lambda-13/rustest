@@ -602,17 +602,17 @@ Recharging stations are available in robotics, the dormitory bathrooms, and the 
 	desc = "Unit's plasma core has no charge remaining. No modules available until plasma core is recharged. \
 		Unit can be refilled through plasma fuel."
 
-/*atom/movable/screen/alert/emptycell/plasma/update_desc()
+/atom/movable/screen/alert/emptycell/plasma/update_desc()
 	. = ..()
-	desc = initial(desc)*/
+	desc = initial(desc)
 
 /atom/movable/screen/alert/lowcell/plasma
 	name = "Low Charge"
 	desc = "Unit's plasma core is running low. Unit can be refilled through plasma fuel."
 
-/*atom/movable/screen/alert/lowcell/plasma/update_desc()
+/atom/movable/screen/alert/lowcell/plasma/update_desc()
 	. = ..()
-	desc = initial(desc)*/
+	desc = initial(desc)
 
 //Need to cover all use cases - emag, illegal upgrade module, malf AI hack, traitor cyborg
 /atom/movable/screen/alert/hacked
