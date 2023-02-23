@@ -36,14 +36,14 @@
 /datum/supply_pack/science/research_notes
 	name = "Ящик с научными записями (12к)"
 	desc = "Внутри можно найти записи на сумму 12000 очков."
-	cost = 2000
+	cost = 6000
 	contains = list(/obj/item/research_notes/loot/small, /obj/item/research_notes/loot/small, /obj/item/research_notes/loot/small)
 	crate_name = "ящик с изучениями"
 
 /datum/supply_pack/science/research_notes_big
 	name = "Ящик с научными записями (30к)"
 	desc = "Внутри можно найти записи на сумму 30000 очков."
-	cost = 10000
+	cost = 15000
 	contains = list(/obj/item/research_notes/loot/genius)
 	crate_name = "ящик с изучениями"
 
