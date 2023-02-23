@@ -1,6 +1,6 @@
 /obj/item/supplypod_beacon
-	name = "Supply Pod Beacon"
-	desc = "A device that can be linked to an Express Supply Console for precision supply pod deliveries. Alt-click to remove link."
+	name = "маяк карго"
+	desc = "Маяк для подключения к консоли снабжения и сброса на него заказанных вещей."
 	icon = 'icons/obj/device.dmi'
 	icon_state = "supplypod_beacon"
 	item_state = "radio"
@@ -47,9 +47,9 @@
 /obj/item/supplypod_beacon/examine(user)
 	. = ..()
 	if(!express_console)
-		. += "<span class='notice'>[src] is not currently linked to an Express Supply console.</span>"
+		. += "<span class='notice'>[src] не подключён к консоли.</span>"
 	else
-		. += "<span class='notice'>Alt-click to unlink it from the Express Supply console.</span>"
+		. += "<span class='notice'>Альт-клик для разрыва связи.</span>"
 
 /obj/item/supplypod_beacon/Destroy()
 	if(express_console)
@@ -73,7 +73,7 @@
 	update_status(SP_LINKED)
 	if (express_console.use_beacon)
 		update_status(SP_READY)
-	to_chat(user, "<span class='notice'>[src] linked to [C].</span>")
+	to_chat(user, "<span class='notice'>[src] подключён к [C].</span>")
 
 /obj/item/supplypod_beacon/AltClick(mob/user)
 	if (!user.canUseTopic(src, !issilicon(user)))
@@ -81,11 +81,11 @@
 	if (express_console)
 		unlink_console()
 	else
-		to_chat(user, "<span class='alert'>There is no linked console.</span>")
+		to_chat(user, "<span class='alert'>Консоль не подключена.</span>")
 
 /obj/item/supplypod_beacon/attackby(obj/item/W, mob/user)
 	if(istype(W, /obj/item/pen)) //give a tag that is visible from the linked express console
-		var/new_beacon_name = stripped_input(user, "What would you like the tag to be?")
+		var/new_beacon_name = stripped_input(user, "Как назовём маяк?")
 		if(!user.canUseTopic(src, BE_CLOSE))
 			return
 		if(new_beacon_name)
