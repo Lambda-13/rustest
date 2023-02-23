@@ -1188,7 +1188,7 @@
 "ly" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor{
-	id = "gecko_port"
+	id = "gecko_bridge"
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -1784,7 +1784,7 @@
 /obj/structure/railing,
 /obj/machinery/computer/atmos_control/incinerator{
 	dir = 4;
-	sensors = list("gecko_burn_sensor" = "Combustion Chamber")
+	sensors = list("gecko_burn_sensor"="Combustion Chamber")
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/engine)
@@ -2451,7 +2451,7 @@
 "AG" = (
 /obj/machinery/computer/atmos_control/tank/oxygen_tank{
 	dir = 8;
-	sensors = list("gecko_o2_sensor" = "Oxygen Tank")
+	sensors = list("gecko_o2_sensor"="Oxygen Tank")
 	},
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
 	dir = 4
@@ -2961,7 +2961,7 @@
 	sync_doors = 0
 	},
 /obj/machinery/computer/atmos_control/tank/toxin_tank{
-	sensors = list("gecko_tox_sensor" = "Plasma Tank")
+	sensors = list("gecko_tox_sensor"="Plasma Tank")
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/engineering/communications)
@@ -3165,7 +3165,7 @@
 	sync_doors = 0
 	},
 /obj/machinery/computer/atmos_control/tank/oxygen_tank{
-	sensors = list("gecko_o2_sensor" = "Oxygen Tank")
+	sensors = list("gecko_o2_sensor"="Oxygen Tank")
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/engineering/communications)
@@ -4715,7 +4715,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/computer/atmos_control/tank/toxin_tank{
 	dir = 8;
-	sensors = list("gecko_tox_sensor" = "Plasma Tank")
+	sensors = list("gecko_tox_sensor"="Plasma Tank")
 	},
 /obj/machinery/atmospherics/pipe/simple/purple/hidden{
 	dir = 5
