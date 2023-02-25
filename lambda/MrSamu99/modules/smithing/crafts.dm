@@ -3,7 +3,7 @@
 	time = 30
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 1)
 	result = /obj/item/stick
-	subcategory = CAT_MISC
+	//subcategory = CAT_MISC
 	category = CAT_MISC
 
 
@@ -12,7 +12,7 @@
 	time = 30
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 2)
 	result = /obj/item/swordhandle
-	subcategory = CAT_MISC
+	//subcategory = CAT_MISC
 	category = CAT_MISC
 
 /datum/crafting_recipe/bone_anvil
@@ -33,7 +33,7 @@
 	/obj/item/stack/sheet/metal = 4,
 	/obj/item/stack/rods = 2)
 	tools = list(TOOL_CROWBAR)
-	subcategory = CAT_MISC
+	//subcategory = CAT_MISC
 	category = CAT_MISC
 
 /datum/crafting_recipe/tableanvil
@@ -43,7 +43,7 @@
 	reqs = list(/obj/item/stack/sheet/metal = 4,
 		        /obj/item/stack/rods = 2)
 	tools = list(TOOL_SCREWDRIVER, TOOL_WRENCH, TOOL_WELDER)
-	subcategory = CAT_MISC
+	//subcategory = CAT_MISC
 	category = CAT_MISC
 
 /datum/crafting_recipe/sandvil
@@ -52,7 +52,7 @@
 	time = 300
 	reqs = list(/obj/item/stack/sheet/mineral/sandstone = 24)
 	tools = list(TOOL_CROWBAR)
-	subcategory = CAT_MISC
+	//subcategory = CAT_MISC
 	category = CAT_MISC
 
 /datum/supply_pack/machinery/anvil
