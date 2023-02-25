@@ -19,7 +19,7 @@
 			"Heavy Trooper": {
 				"outfit": "/datum/outfit/job/security/solgov/elite",
 				"slots": 2
-			}
+			},
 			"Combat Engineer": {
 				"outfit": "/datum/outfit/job/engineer/gec",
 				"slots": 1
