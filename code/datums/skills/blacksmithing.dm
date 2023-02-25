@@ -10,6 +10,6 @@
 	desc = "Worn by the most skilled smithies, this legendary cloak is only attainable by knowing every inch of the blacksmith's forge. \
 	This status symbol represents a being who has forged some of the finest weapons and armors."
 	icon = 'lambda/MrSamu99/icons/smithing/cloaks.dmi'
-	worn_icon = 'lambda/MrSamu99/icons/smithing/neck.dmi'
+	mob_overlay_icon = 'lambda/MrSamu99/icons/smithing/neck.dmi'
 	icon_state = "smithingcloak"
 	associated_skill_path = /datum/skill/blacksmithing
