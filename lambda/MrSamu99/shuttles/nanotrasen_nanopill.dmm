@@ -3,7 +3,6 @@
 /turf/template_noop,
 /area/template_noop)
 "f" = (
-/obj/structure/grille,
 /obj/effect/spawner/structure/window/shuttle,
 /turf/open/floor/plating,
 /area/ship/bridge)
