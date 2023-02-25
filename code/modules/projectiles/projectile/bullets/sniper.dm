@@ -1,7 +1,7 @@
 // .50 (Sniper)
 
 /obj/projectile/bullet/p50
-	name =".50 bullet"
+	name = "пуля .50 калибра"
 	speed = 0.4
 	damage = 70
 	paralyze = 100
@@ -16,10 +16,10 @@
 	return ..()
 
 /obj/projectile/bullet/p50/soporific
-	name =".50 soporific bullet"
+	name = "усыпляющая пуля .50 калибра"
 	armour_penetration = 0
 	damage = 0
-	dismemberment = 0
+	dismemberment = 25
 	paralyze = 0
 	breakthings = FALSE
 
@@ -30,12 +30,12 @@
 	return ..()
 
 /obj/projectile/bullet/p50/penetrator
-	name = "penetrator round"
+	name = "бронебойная пуля .50 калибра"
 	icon_state = "gauss"
 	damage = 60
 	projectile_piercing = PASSMOB
 	projectile_phasing = (ALL & (~PASSMOB))
-	dismemberment = 0 //It goes through you cleanly.
+	dismemberment = 25 //It goes through you cleanly.
 	paralyze = 0
 	breakthings = FALSE
 

@@ -1,8 +1,14 @@
 // 5.56mm (M-90gl Carbine)
 
 /obj/projectile/bullet/a556
-	name = "5.56mm bullet"
-	damage = 30
+	name = "пуля калибра 5.56мм"
+	damage = 35
+	armour_penetration = 30
+/obj/projectile/bullet/a556/phasic
+	name = "блюспейс пуля калибра 5.56мм"
+	icon_state = "gaussphase"
+	damage = 20
+	armour_penetration = 70
 
 // 7.62 (Nagant Rifle)
 
@@ -16,7 +22,7 @@
 	stamina = 10
 
 /obj/projectile/bullet/a762_enchanted
-	name = "enchanted 7.62 bullet"
+	name = "травматическая пуля калибра 7.62мм"
 	damage = 20
 	stamina = 80
 

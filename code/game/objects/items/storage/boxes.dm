@@ -1321,6 +1321,32 @@
 		/obj/item/stock_parts/matter_bin/super = 2)
 	generate_items_inside(items_inside,src)
 
+/obj/item/storage/box/stockparts/t4
+	name = "box of T4 stock parts"
+	desc = "Contains a variety of deluxe stock parts."
+
+/obj/item/storage/box/stockparts/t4/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/stock_parts/capacitor/quadratic = 2,
+		/obj/item/stock_parts/scanning_module/triphasic = 2,
+		/obj/item/stock_parts/manipulator/femto = 2,
+		/obj/item/stock_parts/micro_laser/quadultra = 2,
+		/obj/item/stock_parts/matter_bin/bluespace = 2)
+	generate_items_inside(items_inside,src)
+
+/obj/item/storage/box/stockparts/t5
+	name = "box of T5 stock parts"
+	desc = "Contains a variety of noneuclid stock parts."
+
+/obj/item/storage/box/stockparts/t5/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/stock_parts/capacitor/noneuclid = 2,
+		/obj/item/stock_parts/scanning_module/noneuclid = 2,
+		/obj/item/stock_parts/manipulator/noneuclid = 2,
+		/obj/item/stock_parts/micro_laser/noneuclid = 2,
+		/obj/item/stock_parts/matter_bin/noneuclid = 2)
+	generate_items_inside(items_inside,src)
+
 /obj/item/storage/box/stockparts/deluxe
 	name = "box of deluxe stock parts"
 	desc = "Contains a variety of deluxe stock parts."

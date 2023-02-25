@@ -111,3 +111,11 @@
 					/obj/item/multitool)
 	crate_name = "bomb suit crate"
 	crate_type = /obj/structure/closet/crate/science
+
+/datum/supply_pack/emergency/uplink
+	name = "Аплинк"
+	desc = "Нам приходится постоянно терять людей ради таких штук."
+	cost = 100000
+	contains = list(/obj/item/uplink/emengercy)
+	crate_name = "ящик с аплинком"
+	crate_type = /obj/structure/closet/crate/science

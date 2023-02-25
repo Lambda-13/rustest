@@ -53,29 +53,38 @@
 // 7.12x82mm (SAW)
 
 /obj/projectile/bullet/mm712x82
-	name = "7.12x82mm bullet"
 	damage = 35
+	name = "пуля калибра 7.12x82"
 	armour_penetration = 5
 
 /obj/projectile/bullet/mm712x82_ap
-	name = "7.12x82mm armor-piercing bullet"
-	armour_penetration = 75
+	name = "бронебойная пуля калибра 7.12x82"
+	damage = 35
+	armour_penetration = 40
 
 /obj/projectile/bullet/mm712x82_hp
-	name = "7.12x82mm hollow-point bullet"
+	name = "экспансивная пуля калибра 7.12x82"
 	damage = 50
 	armour_penetration = -60
 
 /obj/projectile/bullet/incendiary/mm712x82
-	name = "7.12x82mm incendiary bullet"
 	damage = 15
+	name = "зажигательная пуля калибра 7.12x82"
 	fire_stacks = 3
 
 /obj/projectile/bullet/mm712x82_match
-	name = "7.12x82mm match bullet"
+	name = "самонаводящаяся пуля калибра 7.12x82"
 	damage = 40
 	ricochets_max = 2
 	ricochet_chance = 60
 	ricochet_auto_aim_range = 4
-	ricochet_incidence_leeway = 35
+	ricochet_incidence_leeway = 55
 
+/obj/projectile/bullet/mm712x82_bouncy
+	name = "резиновая пуля калибра 7.12x82"
+	damage = 15
+	ricochets_max = 40
+	ricochet_chance = 500 // will bounce off anything and everything, whether they like it or not
+	ricochet_auto_aim_range = 4
+	ricochet_incidence_leeway = 0
+	ricochet_decay_chance = 0.9

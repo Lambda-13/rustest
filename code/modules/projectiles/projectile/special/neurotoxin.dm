@@ -1,13 +1,16 @@
 /obj/projectile/bullet/neurotoxin
-	name = "neurotoxin spit"
+	name = "нейротоксиновый плевок"
 	icon_state = "neurotoxin"
-	damage = 20
+	damage = 5
 	damage_type = TOX
-	paralyze = 5
 	flag = "bio"
+	nodamage = FALSE
+	knockdown = 100
+	stamina = 60
 
 /obj/projectile/bullet/neurotoxin/on_hit(atom/target, blocked = FALSE)
 	if(isalien(target))
-		paralyze = 0
+		knockdown = 0
+		stamina = 0
 		nodamage = TRUE
 	return ..()

@@ -1,5 +1,5 @@
 /obj/projectile/energy/electrode
-	name = "electrode"
+	name = "электрод"
 	icon_state = "spark"
 	color = "#FFFF00"
 	nodamage = FALSE
@@ -8,6 +8,7 @@
 	damage_type = STAMINA
 	stutter = 5
 	jitter = 20
+	hitsound = 'sound/weapons/taserhit.ogg'
 	range = 6
 	tracer_type = /obj/effect/projectile/tracer/stun
 	muzzle_type = /obj/effect/projectile/muzzle/stun

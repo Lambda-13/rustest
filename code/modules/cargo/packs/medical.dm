@@ -172,3 +172,17 @@
 	contains = list(/obj/machinery/iv_drip/saline)
 	crate_name = "saline glucose crate"
 	crate_type = /obj/structure/closet/crate/large
+
+/datum/supply_pack/medical/autosurgeon
+	name = "Ручной автохирург"
+	desc = "Содержит ручной автохирург, позволящий вставлять органы и импланты не используя громоздкие машины."
+	cost = 25000
+	contains = list(/obj/item/autosurgeon)
+	crate_name = "ящик с автохирургом"
+
+/datum/supply_pack/medical/augments
+	name = "Маяк аугментаций"
+	desc = "Внутри находится маяк аугментаций который можно использовать 3 раза."
+	cost = 25000
+	contains = list(/obj/item/choice_beacon/augments)
+	crate_name = "ящик с маяком аугментаций"

@@ -1,7 +1,7 @@
 //Guns
 /obj/item/gun/ballistic/revolver/fallout/caravan
-	name = "caravan shotgun"
-	desc = "A well worn but reliable double barrel shotgun."
+	name = "дробовик караванщика"
+	desc = "Изношенное, но надежное двуствольное ружье."
 	icon_state = "caravan"
 	inhand_icon_state = "caravan"
 	force = 20
@@ -11,8 +11,8 @@
 	weapon_weight = WEAPON_HEAVY
 
 /obj/item/gun/ballistic/revolver/fallout/single
-	name = "single shotgun"
-	desc = "A very cheap and very common shotgun with only a single round, better make it count."
+	name = "одноствольное ружье"
+	desc = "Очень дешевый и очень распространённый дробовик который вмещает один патрон."
 	icon_state = "singleshot"
 	inhand_icon_state = "singleshot"
 	force = 15
@@ -22,13 +22,13 @@
 	weapon_weight = WEAPON_HEAVY
 
 /obj/item/gun/ballistic/revolver/fallout/single/handmade
-	name = "handmade shotgun"
-	desc = "A single shotgun fashioned by hand, about as powerful as it's cleaner brother. But maybe not as reliable."
+	name = "самодельный дробовик"
+	desc = "Добовик, сделанный вручную, примерно такой же мощный, как и его брат. Но, может быть, не так надёжен."
 	icon_state = "hshot"
 
 /obj/item/gun/ballistic/revolver/fallout/rev44
-	name = ".44 Magnum revolver"
-	desc = "A double action revolver chambered for .44 Magnum rounds. Decently fast and damaging at the same time."
+	name = "\"магнум\" .44"
+	desc = "Револьвер двойного действия под патроны калибра .44 Magnum. Прилично быстрый и разрушительный одновременно."
 	icon_state = "44magnum"
 	inhand_icon_state = "44magnum"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev44
@@ -39,16 +39,16 @@
 	extra_penetration = 10
 
 /obj/item/gun/ballistic/revolver/fallout/rev44/mysterious
-	name = "Mysterious Magnum"
-	desc = "A unique .44 Magnum with a silver finish for style, and a higher rate of fire and damage for killing. Something sure is mysterious about this gun though."
+	name = "мистический \"Магнум\""
+	desc = "Уникальный .44 Magnum с серебряной отделкой для стиля, более высокой скорострельностью и уроном для убийства. Однако что-то таинственное в этом пистолете есть своё."
 	icon_state = "mysterious"
 	inhand_icon_state = "mysterious"
 	fire_delay = 4
 	extra_damage = 40
 
 /obj/item/gun/ballistic/revolver/fallout/rev44/rifle
-	name = ".44 revolver rifle"
-	desc = "A slow firing revolver rifle chambered for .44 Magnum rounds."
+	name = "револьверная винтовка .44"
+	desc = "Медленно стреляющая револьверная винтовка под патроны .44 Magnum."
 	icon_state = "revrifle"
 	inhand_icon_state = "revrifle"
 	w_class = WEIGHT_CLASS_BULKY
@@ -58,8 +58,8 @@
 	extra_penetration = 10
 
 /obj/item/gun/ballistic/revolver/fallout/rev357
-	name = ".357 Magnum revolver"
-	desc = "A classic .357 Magnum revolver, doesn't fire very fast but packs a decent punch."
+	name = "\"магнум\" .357"
+	desc = "Классический револьвер .357 Magnum стреляет не очень быстро, но наносит приличный урон."
 	icon_state = "rev357"
 	inhand_icon_state = "rev357"
 	fire_sound = 'lambda/sanecman/sound/fallout/gunsounds/357/357fire3.ogg'
@@ -70,16 +70,16 @@
 	extra_penetration = 10
 
 /obj/item/gun/ballistic/revolver/fallout/rev357/lucky
-	name = "Lucky"
-	desc = "A unique .357 Magnum with fancy engravings and a nice finish, fires faster and hits harder than it's lamer brother too."
+	name = "\"Счастливчик\""
+	desc = "Уникальный .357 Magnum с причудливой гравировкой и красивой отделкой стреляет и наносит урона сильнее, чем его более слабый брат."
 	icon_state = "lucky"
 	inhand_icon_state = "lucky"
 	fire_delay = 4
 	extra_damage = 35
 
 /obj/item/gun/ballistic/revolver/fallout/rev357/heavy
-	name = "heavy .357 revolver"
-	desc = "A modern, heavy duty .357 revolver with much more damage."
+	name = "сверхмощный револьвер .357"
+	desc = "Современный сверхмощный револьвер калибра .357 с гораздо большим уроном."
 	icon_state = "heavy357"
 	inhand_icon_state = "heavy357"
 	fire_sound = 'lambda/sanecman/sound/fallout/magnum_fire.ogg'
@@ -88,8 +88,8 @@
 	extra_penetration = 15
 
 /obj/item/gun/ballistic/revolver/fallout/rev357/police
-	name = "police pistol"
-	desc = "A lightweight .357 revolver that can be easily stored and hidden, commonly used by pre-war police forces."
+	name = "полицейский револьвер"
+	desc = "Легкий револьвер калибра .357, который можно легко хранить и прятать, обычно использовался полицией 20 века."
 	icon_state = "policerev"
 	inhand_icon_state = "policerev"
 	fire_sound = 'lambda/sanecman/sound/fallout/policepistol.ogg'
@@ -99,15 +99,15 @@
 	extra_penetration = 10
 
 /obj/item/gun/ballistic/revolver/fallout/rev357/handmade
-	name = "handmade revolver"
-	desc = "A revolver made from scratch that fires .357 magnum rounds at a slow rate of fire and without as much penetration."
+	name = "самодельный револьвер"
+	desc = "Револьвер, сделанный с нуля, который стреляет патронами калибра .357 с низкой скорострельностью и без особого пробития."
 	icon_state = "hrev"
 	inhand_icon_state = "hrev"
 	extra_penetration = 0
 
 /obj/item/gun/ballistic/revolver/fallout/rev357/handmade/rifle
-	name = "handmade revolver rifle"
-	desc = "A handmade rifle with a revolver cylinder that fires .357 magnum rounds. Not too slow, decent damage, and with a handmade sight attached."
+	name = "самодельная револьверная винтовка"
+	desc = "Самодельная винтовка с револьверным цилиндром, стреляющим патронами калибра .357. Не слишком медленный, с приличным уроном и самодельным прицелом."
 	icon_state = "hrifle"
 	inhand_icon_state = "hrifle"
 	w_class = WEIGHT_CLASS_BULKY
@@ -117,8 +117,8 @@
 	extra_penetration = 10
 
 /obj/item/gun/ballistic/revolver/fallout/rev10mm
-	name = "10mm revolver"
-	desc = "A bulky revolver chambered for 10mm rounds with a five round capacity."
+	name = "револьвер 10мм"
+	desc = "Громоздкий револьвер под патрон 10 мм с емкостью пять патронов."
 	icon_state = "rev10mm"
 	inhand_icon_state = "rev10mm"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev10mm
@@ -129,8 +129,8 @@
 	extra_penetration = 10
 
 /obj/item/gun/ballistic/revolver/fallout/huntingrev
-	name = "hunting revolver"
-	desc = "A double action revolver chambered for heavy .45-70 rounds and only carrying five at a time. Make every shot count."
+	name = "охотничий револьвер"
+	desc = "Револьвер двойного действия, рассчитанный на мощные патроны калибра .45-70 и вмещающий только пять патронов одновременно."
 	icon_state = "huntingrev"
 	inhand_icon_state = "huntingrev"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev4570
@@ -140,16 +140,16 @@
 	extra_damage = 45
 
 /obj/item/gun/ballistic/revolver/fallout/huntingrev/sequoia
-	name = "Sequoia"
-	desc = "A unique and modified .45-70 revolver that hits quite a bit harder."
+	name = "\"Секвойя\""
+	desc = "Уникальный и модифицированный револьвер .45-70, который бьет немного сильнее чем его брат."
 	icon_state = "sequoia"
 	inhand_icon_state = "sequoia"
 	extra_damage = 50
 	extra_penetration = 5
 
 /obj/item/gun/ballistic/revolver/fallout/rev556
-	name = "5.56 revolver"
-	desc = "A modern and fast firing revolver firing 5.56 rifle rounds."
+	name = "револьвер 5.56"
+	desc = "Современный и скорострельный револьвер калибра 5.56."
 	icon_state = "556rev"
 	inhand_icon_state = "556rev"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev556
@@ -206,7 +206,7 @@
 
 //Loaders
 /obj/item/ammo_box/fallout/rev4570
-	name = ".45-70 speed loader"
+	name = "скорозарядник .45-70"
 	icon = 'lambda/sanecman/icons/fallout/ammo.dmi'
 	icon_state = "rev4570"
 	ammo_type = /obj/item/ammo_casing/fallout/c4570
@@ -214,7 +214,7 @@
 	max_ammo = 5
 
 /obj/item/ammo_box/fallout/rev44
-	name = ".44 Magnum speed loader"
+	name = "скорозарядник .44 Магнум"
 	icon = 'lambda/sanecman/icons/fallout/ammo.dmi'
 	icon_state = "rev44"
 	ammo_type = /obj/item/ammo_casing/fallout/m44
@@ -222,7 +222,7 @@
 	max_ammo = 6
 
 /obj/item/ammo_box/fallout/rev357
-	name = ".357 Magnum speed loader"
+	name = "скорозарядник .357 Магнум"
 	icon = 'lambda/sanecman/icons/fallout/ammo.dmi'
 	icon_state = "rev357"
 	ammo_type = /obj/item/ammo_casing/fallout/a357
@@ -230,7 +230,7 @@
 	max_ammo = 6
 
 /obj/item/ammo_box/fallout/rev556
-	name = "5.56 speed loader"
+	name = "скорозарядник 5.56"
 	icon = 'lambda/sanecman/icons/fallout/ammo.dmi'
 	icon_state = "rev556"
 	ammo_type = /obj/item/ammo_casing/fallout/a556
@@ -238,7 +238,7 @@
 	max_ammo = 5
 
 /obj/item/ammo_box/fallout/rev10mm
-	name = "10mm speed loader"
+	name = "скорозарядник 10мм"
 	icon = 'lambda/sanecman/icons/fallout/ammo.dmi'
 	icon_state = "rev10mm"
 	ammo_type = /obj/item/ammo_casing/fallout/c10mm

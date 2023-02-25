@@ -2166,7 +2166,6 @@
 /obj/item/stack/spacecash/c1000,
 /obj/item/antag_spawner/contract,
 /obj/item/antag_spawner/contract,
-/obj/item/spellbook,
 /obj/item/gun/energy/e_gun/smg{
 	name = "staff of bombardment";
 	desc = "A powerful staff that required almost 100 assistant souls to create.";

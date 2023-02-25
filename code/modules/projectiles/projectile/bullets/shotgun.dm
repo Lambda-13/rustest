@@ -1,23 +1,27 @@
 /obj/projectile/bullet/shotgun_slug
-	name = "12g shotgun slug"
-	damage = 45					//WS Edit - Shotgun Nerf
+	name = "пуля 12 калибра"
+	damage = 50
 
 /obj/projectile/bullet/shotgun_beanbag
-	name = "beanbag slug"
-	damage = 5
-	stamina = 45					//WS Edit - Shotgun Nerf
 	armour_penetration = -10		//WS Edit - Shotgun Nerf
+	name = "резиновая пуля 12 калибра"
+	damage = 10
+	stamina = 55
+	ricochets_max = 6
+	ricochet_incidence_leeway = 0
+	ricochet_chance = 130
+	ricochet_decay_damage = 0.8
 
 /obj/projectile/bullet/incendiary/shotgun
-	name = "incendiary slug"
-	damage = 20
+	name = "зажигательная пуля 12 калибра"
+	damage = 40
 
 /obj/projectile/bullet/incendiary/shotgun/dragonsbreath
-	name = "dragonsbreath pellet"
-	damage = 5
+	name = "гранула драконьего дыхания"
+	damage = 10
 
 /obj/projectile/bullet/shotgun_stunslug
-	name = "stunslug"
+	name = "электропуля 12 калибра"
 	damage = 5
 	paralyze = 100
 	stutter = 5
@@ -27,12 +31,12 @@
 	color = "#FFFF00"
 
 /obj/projectile/bullet/shotgun_meteorslug
-	name = "meteorslug"
+	name = "пуля-метеор 12 калибра"
 	icon = 'icons/obj/meteor.dmi'
 	icon_state = "dust"
-	damage = 30
+	damage = 25
 	paralyze = 15
-	knockdown = 80
+	knockdown = 60
 	hitsound = 'sound/effects/meteorimpact.ogg'
 
 /obj/projectile/bullet/shotgun_meteorslug/on_hit(atom/target, blocked = FALSE)
@@ -42,14 +46,14 @@
 		var/atom/throw_target = get_edge_target_turf(M, get_dir(src, get_step_away(M, src)))
 		M.safe_throw_at(throw_target, 3, 2)
 
-/obj/projectile/bullet/shotgun_meteorslug/Initialize()
+/obj/projectile/bullet/shotgun_meteorslug/Initialize(mapload)
 	. = ..()
 	SpinAnimation()
 
 /obj/projectile/bullet/shotgun_frag12
-	name ="frag12 slug"
-	damage = 25
-	paralyze = 50
+	name = "разрывная пуля 12 калибра"
+	damage = 15
+	paralyze = 10
 
 /obj/projectile/bullet/shotgun_frag12/on_hit(atom/target, blocked = FALSE)
 	..()
@@ -88,12 +92,39 @@
 	if(damage < 0 && stamina < 0)
 		qdel(src)
 
-/obj/projectile/bullet/pellet/shotgun_improvised
-	tile_dropoff = 0.45		//Come on it does 4.5 damage don't be like that.		//WS Edit - Shotgun nerf
-	damage = 6			//WS Edit - Shotgun nerf
-	armour_penetration = -20		//WS Edit - Shotgun nerf
+/obj/projectile/bullet/pellet/shotgun_buckshot
+	name = "дробинки картечи"
+	damage = 7.5
+/obj/projectile/bullet/pellet/shotgun_rubbershot
+	name = "резиновые дробинки"
+	damage = 3
+	stamina = 11
+	speed = 1.2
+	ricochets_max = 4
+	ricochet_chance = 120
+	ricochet_decay_chance = 0.9
+	ricochet_decay_damage = 0.8
+	ricochet_auto_aim_range = 2
+	ricochet_auto_aim_angle = 30
+	ricochet_incidence_leeway = 75
+	/// Subtracted from the ricochet chance for each tile traveled
+	var/tile_dropoff_ricochet = 4
 
-/obj/projectile/bullet/pellet/shotgun_improvised/Initialize()
+/obj/projectile/bullet/pellet/shotgun_rubbershot/Range()
+	if(ricochet_chance > 0)
+		ricochet_chance -= tile_dropoff_ricochet
+	. = ..()
+
+/obj/projectile/bullet/pellet/shotgun_incapacitate
+	name = "обезвреживающие дробинки"
+	damage = 1
+	stamina = 6
+/obj/projectile/bullet/pellet/shotgun_improvised
+	armour_penetration = -20		//WS Edit - Shotgun nerf
+	tile_dropoff = 0.35		//Come on it does 6 damage don't be like that.
+	damage = 6
+
+/obj/projectile/bullet/pellet/shotgun_improvised/Initialize(mapload)
 	. = ..()
 	range = rand(1, 8)
 

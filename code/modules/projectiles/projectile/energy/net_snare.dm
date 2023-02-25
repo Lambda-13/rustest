@@ -1,12 +1,12 @@
 /obj/projectile/energy/net
-	name = "energy netting"
+	name = "энергосеть"
 	icon_state = "e_netting"
 	damage = 10
 	damage_type = STAMINA
 	hitsound = 'sound/weapons/taserhit.ogg'
 	range = 10
 
-/obj/projectile/energy/net/Initialize()
+/obj/projectile/energy/net/Initialize(mapload)
 	. = ..()
 	SpinAnimation()
 
@@ -22,14 +22,14 @@
 	..()
 
 /obj/effect/nettingportal
-	name = "DRAGnet teleportation field"
-	desc = "A field of bluespace energy, locking on to teleport a target."
+	name = "DRAGnet телепортационное поле"
+	desc = "Поле энергии блюспейса, привязанное к телепортации цели."
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "dragnetfield"
 	light_range = 3
 	anchored = TRUE
 
-/obj/effect/nettingportal/Initialize()
+/obj/effect/nettingportal/Initialize(mapload)
 	. = ..()
 	var/obj/item/beacon/teletarget = null
 	for(var/obj/machinery/computer/teleporter/com in GLOB.machines)
@@ -56,7 +56,7 @@
 	return
 
 /obj/projectile/energy/trap
-	name = "energy snare"
+	name = "энергосеть"
 	icon_state = "e_snare"
 	nodamage = TRUE
 	hitsound = 'sound/weapons/taserhit.ogg'
@@ -75,7 +75,7 @@
 	..()
 
 /obj/projectile/energy/trap/cyborg
-	name = "Energy Bola"
+	name = "энергобола"
 	icon_state = "e_snare"
 	nodamage = TRUE
 	paralyze = 0

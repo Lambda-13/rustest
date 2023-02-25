@@ -1,5 +1,5 @@
 /obj/projectile/beam
-	name = "laser"
+	name = "луч"
 	icon_state = "laser"
 	pass_flags = PASSTABLE | PASSGLASS | PASSGRILLE
 	damage = 20
@@ -10,7 +10,7 @@
 	eyeblur = 2
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/red_laser
 	light_system = MOVABLE_LIGHT
-	light_range = 1.5
+	light_range = 1
 	light_power = 1
 	light_color = COLOR_SOFT_RED
 	ricochets_max = 50	//Honk!
@@ -22,9 +22,18 @@
 	tracer_type = /obj/effect/projectile/tracer/laser
 	muzzle_type = /obj/effect/projectile/muzzle/laser
 	impact_type = /obj/effect/projectile/impact/laser
+//overclocked laser, does a bit more damage but has much higher wound power (-0 vs -20)
+/obj/projectile/beam/laser/hellfire
+	name = "адский луч"
+	damage = 30
+	speed = 0.5 // higher power = faster, that's how light works right
+
+/obj/projectile/beam/laser/hellfire/Initialize(mapload)
+	. = ..()
+	transform *= 2
 
 /obj/projectile/beam/laser/heavylaser
-	name = "heavy laser"
+	name = "тяжелый луч"
 	icon_state = "heavylaser"
 	damage = 40
 	tracer_type = /obj/effect/projectile/tracer/heavy_laser
@@ -57,17 +66,17 @@
 	range = 6
 
 /obj/projectile/beam/practice
-	name = "practice laser"
+	name = "безвредный луч"
 	damage = 0
 	nodamage = TRUE
 
 /obj/projectile/beam/scatter
-	name = "laser pellet"
+	name = "лучевой осколок"
 	icon_state = "scatterlaser"
 	damage = 5
 
 /obj/projectile/beam/xray
-	name = "\improper X-ray beam"
+	name = "\improper X-ray луч"
 	icon_state = "xray"
 	flag = "rad"
 	damage = 15
@@ -82,7 +91,7 @@
 	impact_type = /obj/effect/projectile/impact/xray
 
 /obj/projectile/beam/disabler
-	name = "disabler beam"
+	name = "останавливающий луч"
 	icon_state = "omnilaser"
 	damage = 30
 	damage_type = STAMINA
@@ -106,7 +115,7 @@
 	range = 6
 
 /obj/projectile/beam/pulse
-	name = "pulse"
+	name = "импульсный луч"
 	icon_state = "u_laser"
 	damage = 50
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/blue_laser
@@ -128,13 +137,13 @@
 	targets_turf.IgniteTurf(rand(8,22), "blue")
 
 /obj/projectile/beam/pulse/shotgun
-	damage = 40
 
 /obj/projectile/beam/pulse/condor
 	range = 128
+	damage = 30
 
 /obj/projectile/beam/pulse/heavy
-	name = "heavy pulse laser"
+	name = "тяжелый импульсный луч"
 	icon_state = "pulse1_bl"
 	var/life = 20
 
@@ -145,7 +154,7 @@
 	..()
 
 /obj/projectile/beam/emitter
-	name = "emitter beam"
+	name = "луч излучателя"
 	icon_state = "emitter"
 	damage = 30
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/green_laser
@@ -155,7 +164,7 @@
 	return //don't want the emitters to miss
 
 /obj/projectile/beam/lasertag
-	name = "laser tag beam"
+	name = "луч тэга"
 	icon_state = "omnilaser"
 	hitsound = null
 	damage = 0
@@ -196,7 +205,7 @@
 	hitscan = TRUE
 
 /obj/projectile/beam/instakill
-	name = "instagib laser"
+	name = "взрыватор"
 	icon_state = "purple_laser"
 	damage = 200
 	damage_type = BURN
@@ -217,12 +226,12 @@
 	. = ..()
 	if(iscarbon(target))
 		var/mob/living/carbon/M = target
-		M.visible_message("<span class='danger'>[M] explodes into a shower of gibs!</span>")
+		M.visible_message(span_danger("[M] explodes into a shower of gibs!"))
 		M.gib()
 
 //a shrink ray that shrinks stuff, which grows back after a short while.
 /obj/projectile/beam/shrink
-	name = "shrink ray"
+	name = "уменьшающий луч"
 	icon_state = "blue_laser"
 	hitsound = 'sound/weapons/shrink_hit.ogg'
 	damage = 0

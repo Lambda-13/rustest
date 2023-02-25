@@ -1,7 +1,7 @@
 // Honker
 
 /obj/projectile/bullet/honker
-	name = "banana"
+	name = "банан"
 	damage = 0
 	movement_type = FLYING
 	projectile_piercing = ALL
@@ -11,7 +11,7 @@
 	icon_state = "banana"
 	range = 200
 
-/obj/projectile/bullet/honker/Initialize()
+/obj/projectile/bullet/honker/Initialize(mapload)
 	. = ..()
 	SpinAnimation()
 

@@ -253,8 +253,8 @@
 	crate_name = "high-traction floor tiles crate"
 
 /datum/supply_pack/civilian/jukebox
-	name = "Jukebox"
-	desc = "Things a bit dull in the workplace? How about jamming out to some tunes!"
-	cost = 35000
-	contains = list(/obj/machinery/jukebox)
-	crate_name = "Jukebox"
+	name = "Напольный бумбокс"
+	desc = "Для тех кто хочет послушать музыку."
+	cost = 15000
+	contains = list(/obj/machinery/jukebox/boombox)
+	crate_name = "взрыв каропка"
