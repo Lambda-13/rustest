@@ -3478,7 +3478,7 @@
 #include "lambda\MrSamu99\modules\smithing\finished_items.dm"
 #include "lambda\MrSamu99\modules\smithing\furnace.dm"
 #include "lambda\MrSamu99\modules\smithing\smithed_items.dm"
-#include "lambda\MrSamu99\game\objects\items\gigacross.dm"
+//#include "lambda\MrSamu99\game\objects\items\gigacross.dm"
 #include "lambda\MrSamu99\game\objects\items\kinetic_crusher.dm"
 #include "lambda\sanecman\code\autolathe_designs.dm"
 #include "lambda\sanecman\code\FURRY.dm"
