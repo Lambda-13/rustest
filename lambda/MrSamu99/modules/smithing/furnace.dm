@@ -23,7 +23,7 @@
 	if(debug)
 		reagents.add_reagent(/datum/reagent/fuel, 1)
 		return TRUE
-	if(reagents.remove_reagent(/datum/reagent/fuel, fueluse))
+	if(reagents.remove_reagent(/datum/reagent/fuel, fueluse) || reagents.remove_reagent(/datum/reagent/cellulose, fueluse * 3))
 		working = TRUE
 		if(icon_state == "furnace0")
 			icon_state = "furnace1"
