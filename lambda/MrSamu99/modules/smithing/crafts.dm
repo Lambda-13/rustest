@@ -60,3 +60,14 @@
 	desc = "An anvil in a crate, we had to dig this out of the old warehouse. It's got wheels on it so you can move it."
 	cost = 5000
 	contains = list(/obj/structure/anvil/obtainable/basic)
+
+/datum/crafting_recipe/toolboxhammer
+	name = "Toolbox Hammer"
+	result = /obj/item/melee/smith/hammer/toolbox
+	tools = list(TOOL_SCREWDRIVER, TOOL_WRENCH, TOOL_WELDER)
+	reqs = list(/obj/item/storage/toolbox = 1,
+							/obj/item/stack/sheet/metal = 4,
+							/obj/item/stack/rods = 2)
+	time = 40
+	subcategory = CAT_TOOL
+	category = CAT_MISC
