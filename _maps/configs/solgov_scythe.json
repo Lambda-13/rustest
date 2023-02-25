@@ -4,30 +4,30 @@
 	"map_short_name": "Scythe-class",
 	"map_path": "_maps/shuttles/shiptest/solgov_scythe.dmm",
 	"job_slots": {
-			"Captain": {
-				"outfit": "/datum/outfit/job/captain/solgov",
-				"officer": true,
-				"slots": 1
-			},
-			"Lietenant": {
-				"outfit": "/datum/outfit/job/head_of_personnel/solgov",
-				"officer": true,
-				"slots": 1
-			},
-			"Marine": {
-				"outfit": "/datum/outfit/job/security/solgov/elite",
-				"slots": 4
-			},
-			"Janitor": 1,
-			"Bartender": 1,
-			"Mech Pilot": {
-				"outfit": "/datum/outfit/job/assistant/solgov",
-				"slots": 4
-			},
-			"Machinist": {
-				"outfit": "/datum/outfit/job/engineer/solgov",
-				"slots": 2
-			}
+		"Captain": {
+			"outfit": "/datum/outfit/job/captain/solgov",
+			"officer": true,
+			"slots": 1
 		},
-	"enabled": false
+		"Lietenant": {
+			"outfit": "/datum/outfit/job/head_of_personnel/solgov",
+			"officer": true,
+			"slots": 1
+		},
+		"Marine": {
+			"outfit": "/datum/outfit/job/security/solgov/elite",
+			"slots": 4
+		},
+		"Janitor": 1,
+		"Bartender": 1,
+		"Mech Pilot": {
+			"outfit": "/datum/outfit/job/assistant/solgov",
+			"slots": 4
+		},
+		"Machinist": {
+			"outfit": "/datum/outfit/job/engineer/solgov",
+			"slots": 2
+		}
+	},
+	"enabled": true
 }
