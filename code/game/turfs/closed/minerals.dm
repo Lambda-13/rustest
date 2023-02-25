@@ -76,10 +76,15 @@
 			return
 		last_act = world.time
 		balloon_alert(user, "digging...")
-
+		var/obj/item/pickaxe/E = I
 		if(I.use_tool(src, user, 40, volume=50))
 			if(ismineralturf(src))
-				gets_drilled(user, TRUE)
+				if(E.digrange > 0)
+					for(var/turf/closed/mineral/M in range(user,E.digrange))
+						if(get_dir(user,M)&user.dir)
+							M.gets_drilled(user, TRUE)
+				else 
+					gets_drilled(user, TRUE)
 				SSblackbox.record_feedback("tally", "pick_used_mining", 1, I.type)
 	else
 		return attack_hand(user)
