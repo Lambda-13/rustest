@@ -69,5 +69,5 @@
 							/obj/item/stack/sheet/metal = 4,
 							/obj/item/stack/rods = 2)
 	time = 40
-	subcategory = CAT_TOOL
+	//subcategory = CAT_TOOL
 	category = CAT_MISC
