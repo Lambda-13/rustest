@@ -3608,8 +3608,4 @@
 #include "lambda\sanecman\code\serverside\text_ru.dm"
 #include "lambda\sanecman\code\unsorted\gun_hud.dm"
 #include "lambda\sanecman\code\unsorted\mre.dm"
-#include "interface\interface.dm"
-#include "interface\menu.dm"
-#include "interface\stylesheet.dm"
-#include "interface\skin.dmf"
 // END_INCLUDE
