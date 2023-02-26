@@ -795,3 +795,13 @@
 	build_path = /obj/item/gun/ballistic/rifle/boltaction
 	category = list("Weapons","Imported")
 	departmental_flags = DEPARTMENTAL_FLAG_BALLISTICS
+
+/datum/design/speedload12gauge
+	name = "Ускоритель заряжания для дробовиков"
+	desc = "Ускоритель заряжания дробовиков под 12 патрон"
+	id = "speedload_12_gauge"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = 1000)
+	build_path = /obj/item/ammo_box/magazine/shotgun
+	category = list("Ammo")
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_BALLISTICS

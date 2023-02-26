@@ -300,3 +300,16 @@
 	caliber = "9mm"
 	max_ammo = 4
 	custom_materials = list(/datum/material/iron = 20000)
+
+/obj/item/ammo_box/magazine/shotgun
+	name = "ускоритель заряжания для 12 патрона"
+	desc = "Ускоритель заряжания для дробовиков"
+	icon_state = "47x33mm-50"
+	ammo_type = /obj/item/ammo_casing/shotgun
+	caliber = "shotgun"
+	max_ammo = 10
+	start_empty = TRUE
+
+/obj/item/ammo_box/magazine/shotgun/update_icon()
+	..()
+	icon_state = "47x33mm-[ammo_count()*5]"
