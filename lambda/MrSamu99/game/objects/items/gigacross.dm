@@ -19,6 +19,7 @@
 	toolspeed = 0.5
 	usesound = list('sound/effects/picaxe1.ogg', 'sound/effects/picaxe2.ogg', 'sound/effects/picaxe3.ogg')
 	attack_verb = list("ударил со святой силой", "проткнул со святой", "разрубил со святой силой", "атаковал со святой силой")
+	var/wielded = FALSE
 
 /obj/item/gigacross/ComponentInitialize()
 	. = ..()
@@ -26,3 +27,11 @@
 
 /obj/item/gigacross/update_icon_state()
 	item_state = "gigacross[wielded]"
+
+/// triggered on wield of two handed item
+/obj/item/gigacross/proc/on_wield(obj/item/source, mob/user)
+	wielded = TRUE
+
+/// triggered on unwield of two handed item
+/obj/item/gigacross/proc/on_unwield(obj/item/source, mob/user)
+	wielded = FALSE

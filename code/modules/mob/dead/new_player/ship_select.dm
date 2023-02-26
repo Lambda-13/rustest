@@ -1,6 +1,6 @@
 #define BUY_MINIMUM_AGE 14
 
-datum/ship_select
+/datum/ship_select
 
 /datum/ship_select/ui_state(mob/user)
 	return GLOB.always_state

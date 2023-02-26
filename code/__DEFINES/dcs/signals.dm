@@ -508,25 +508,6 @@
 ///When a carbon mob is headpatted, this is called on the carbon that is headpatted. (mob/living/headpatter)
 #define COMSIG_CARBON_HEADPAT "carbon_headpatted"
 
-///When a carbon slips. Called on /turf/open/handle_slip()
-#define COMSIG_ON_CARBON_SLIP "carbon_slip"
-///When a carbon gets a vending machine tilted on them
-#define COMSIG_ON_VENDOR_CRUSH "carbon_vendor_crush"
-///from base of mob/living/carbon/soundbang_act(): (list(intensity))
-#define COMSIG_CARBON_SOUNDBANG "carbon_soundbang"
-///from /item/organ/proc/Insert() (/obj/item/organ/)
-#define COMSIG_CARBON_GAIN_ORGAN "carbon_gain_organ"
-///from /item/organ/proc/Remove() (/obj/item/organ/)
-#define COMSIG_CARBON_LOSE_ORGAN "carbon_lose_organ"
-///from /mob/living/carbon/doUnEquip(obj/item/I, force, newloc, no_move, invdrop, silent)
-#define COMSIG_CARBON_EQUIP_HAT "carbon_equip_hat"
-///from /mob/living/carbon/doUnEquip(obj/item/I, force, newloc, no_move, invdrop, silent)
-#define COMSIG_CARBON_UNEQUIP_HAT "carbon_unequip_hat"
-///defined twice, in carbon and human's topics, fired when interacting with a valid embedded_object to pull it out (mob/living/carbon/target, /obj/item, /obj/item/bodypart/L)
-#define COMSIG_CARBON_EMBED_RIP "item_embed_start_rip"
-///called when removing a given item from a mob, from mob/living/carbon/remove_embedded_object(mob/living/carbon/target, /obj/item)
-#define COMSIG_CARBON_EMBED_REMOVAL "item_embed_remove_safe"
-
 // /mob/living/simple_animal/hostile signals
 #define COMSIG_HOSTILE_ATTACKINGTARGET "hostile_attackingtarget"
 	#define COMPONENT_HOSTILE_NO_ATTACK 1
@@ -683,11 +664,11 @@
 #define COMSIG_MECHA_ACTION_ACTIVATE "mecha_action_activate"	//sent from mecha action buttons to the mecha they're linked to
 
 // /mob/living/carbon/human signals
-#define COMSIG_HUMAN_EARLY_UNARMED_ATTACK "human_early_unarmed_attack" //from mob/living/carbon/human/UnarmedAttack(): (atom/target, proximity)
-#define COMSIG_HUMAN_MELEE_UNARMED_ATTACK "human_melee_unarmed_attack" //from mob/living/carbon/human/UnarmedAttack(): (atom/target, proximity)
-#define COMSIG_HUMAN_MELEE_UNARMED_ATTACKBY "human_melee_unarmed_attackby" //from mob/living/carbon/human/UnarmedAttack(): (mob/living/carbon/human/attacker)
-#define COMSIG_HUMAN_DISARM_HIT "human_disarm_hit"	//Hit by successful disarm attack (mob/living/carbon/human/attacker,zone_targeted)
-#define COMSIG_JOB_RECEIVED "job_received" //Whenever EquipRanked is called, called after job is set
+//#define COMSIG_HUMAN_EARLY_UNARMED_ATTACK "human_early_unarmed_attack" //from mob/living/carbon/human/UnarmedAttack(): (atom/target, proximity)
+//#define COMSIG_HUMAN_MELEE_UNARMED_ATTACK "human_melee_unarmed_attack" //from mob/living/carbon/human/UnarmedAttack(): (atom/target, proximity)
+//#define COMSIG_HUMAN_MELEE_UNARMED_ATTACKBY "human_melee_unarmed_attackby" //from mob/living/carbon/human/UnarmedAttack(): (mob/living/carbon/human/attacker)
+//#define COMSIG_HUMAN_DISARM_HIT "human_disarm_hit"	//Hit by successful disarm attack (mob/living/carbon/human/attacker,zone_targeted)
+//#define COMSIG_JOB_RECEIVED "job_received" //Whenever EquipRanked is called, called after job is set
 
 // /datum/species signals
 #define COMSIG_SPECIES_GAIN "species_gain" //from datum/species/on_species_gain(): (datum/species/new_species, datum/species/old_species)
@@ -847,9 +828,6 @@
 #define COMSIG_PORT_OUTPUT_CONNECT "port_output_connect"
 
 //Портируем с вайта пытаетмся не сломать игру
-///called in /obj/item/gun/fire_gun (user, target, flag, params)
-#define COMSIG_GUN_TRY_FIRE "gun_try_fire"
-	#define COMPONENT_CANCEL_GUN_FIRE (1<<0)
 ///called in /obj/item/gun/fire_gun (user, target, flag, params)
 #define COMSIG_GUN_TRY_FIRE "gun_try_fire"
 	#define COMPONENT_CANCEL_GUN_FIRE (1<<0)
