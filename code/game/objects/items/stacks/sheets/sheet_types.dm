@@ -109,7 +109,8 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 	new/datum/stack_recipe("mortar", /obj/item/reagent_containers/glass/mortar/metal, 3), \
 	new/datum/stack_recipe("pestle", /obj/item/pestle, 1, time = 50), \
 	new/datum/stack_recipe("hygienebot assembly", /obj/item/bot_assembly/hygienebot, 2, time = 50), \
-	new/datum/stack_recipe("shower", /obj/machinery/shower, 3, time = 25)
+	new/datum/stack_recipe("shower", /obj/machinery/shower, 3, time = 25), \
+	new/datum/stack_recipe("iron ingot", /obj/item/ingot/iron, 1), \
 ))
 
 /obj/item/stack/sheet/metal
@@ -549,6 +550,8 @@ GLOBAL_LIST_INIT(runed_metal_recipes, list ( \
 	new/datum/stack_recipe("forge", /obj/structure/destructible/cult/forge, 3, time = 40, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("archives", /obj/structure/destructible/cult/tome, 3, time = 40, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("altar", /obj/structure/destructible/cult/talisman, 3, time = 40, one_per_turf = TRUE, on_floor = TRUE), \
+	new/datum/stack_recipe("runed ingot", /obj/item/ingot/cult, 1), \
+	new/datum/stack_recipe("rune furnace", /obj/structure/furnace/infinite/narsie, 3, time = 40, one_per_turf = TRUE, on_floor = TRUE), \
 	))
 
 /obj/item/stack/sheet/runed_metal
@@ -600,6 +603,7 @@ GLOBAL_LIST_INIT(bronze_recipes, list ( \
 	null,
 	new/datum/stack_recipe("bronze chair", /obj/structure/chair/bronze, 1, time = 0, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("Marx Bust", /obj/structure/statue/bronze/marx, 15, one_per_turf = 1, on_floor = 1), \
+	new/datum/stack_recipe("bronze ingot", /obj/item/ingot/bronze, 1), \
 ))
 
 /obj/item/stack/tile/bronze
@@ -666,7 +670,9 @@ GLOBAL_LIST_INIT(bone_recipes, list( \
 	new /datum/stack_recipe("bone armor", /obj/item/clothing/suit/armor/bone, 6), \
 	new /datum/stack_recipe("skull helmet", /obj/item/clothing/head/helmet/skull, 4), \
 	new /datum/stack_recipe("bone dagger", /obj/item/kitchen/knife/combat/bone, 2), \
-	new /datum/stack_recipe("club", /obj/item/melee/baseball_bat/bone, 6)))
+	new /datum/stack_recipe("club", /obj/item/melee/baseball_bat/bone, 6), \
+	new /datum/stack_recipe("bone ingot", /obj/item/ingot/bone, 1), \
+	))
 /obj/item/stack/sheet/bone
 	name = "bones"
 	icon = 'icons/obj/mining.dmi'

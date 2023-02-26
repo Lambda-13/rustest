@@ -1,0 +1,20 @@
+{
+    "map_name": "Cyanide-class Interceptor",
+    "prefix": "SSV",
+    "map_short_name": "Cyanide-class",
+    "map_path": "lambda/MrSamu99/shuttles/syndicate_cyanide.dmm",
+    "map_id": "cyanide",
+    "job_slots": {
+        "Syndicate Captain": {
+            "outfit": "/datum/outfit/job/captain/syndicate/gorlex",
+            "officer": true,
+            "slots": 1
+        },
+        "Syndicate Marine":{
+            "outfit": "/datum/outfit/job/security/syndicate/gorlex",
+            "slots": 2
+        }
+    },
+    "cost": 235,
+	"enabled": true
+}

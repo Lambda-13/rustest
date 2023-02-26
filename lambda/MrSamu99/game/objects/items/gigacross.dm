@@ -8,15 +8,30 @@
 	throwforce = 10
 	block_chance = 50
 	item_state = "krestik"
-	//lefthand_file = 'icons/mob/inhands/equipment/mining_lefthand.dmi'
-	//righthand_file = 'icons/mob/inhands/equipment/mining_righthand.dmi'
+	lefthand_file = 'lambda/MrSamu99/icons/holy_eblo2.dmi'
+	righthand_file = 'lambda/MrSamu99/icons/holy_eblo.dmi'
+	item_state = "gigacross0"
+	mob_overlay_icon = 'lambda/MrSamu99/icons/holy_eblo.dmi'
+	mob_overlay_state = "krestik_weared"
 	w_class = WEIGHT_CLASS_BULKY
 	custom_materials = list(/datum/material/gold=4000) //two sheet, but where can you make them?
 	tool_behaviour = TOOL_MINING
 	toolspeed = 0.5
 	usesound = list('sound/effects/picaxe1.ogg', 'sound/effects/picaxe2.ogg', 'sound/effects/picaxe3.ogg')
 	attack_verb = list("ударил со святой силой", "проткнул со святой", "разрубил со святой силой", "атаковал со святой силой")
+	var/wielded = FALSE
 
 /obj/item/gigacross/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/two_handed, force_unwielded=10, force_wielded=25)
+
+/obj/item/gigacross/update_icon_state()
+	item_state = "gigacross[wielded]"
+
+/// triggered on wield of two handed item
+/obj/item/gigacross/proc/on_wield(obj/item/source, mob/user)
+	wielded = TRUE
+
+/// triggered on unwield of two handed item
+/obj/item/gigacross/proc/on_unwield(obj/item/source, mob/user)
+	wielded = FALSE

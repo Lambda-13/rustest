@@ -5,7 +5,7 @@
 	"prefix": "ISV",
 	"namelists": ["BEASTS", "SPACE"],
 	"map_path": "_maps/shuttles/shiptest/scrapper_ripper.dmm",
-	"roundstart": false,
+	"roundstart": true,
 	"job_slots": {
 			"Salvage Leader": {
 				"outfit": "/datum/outfit/job/ce",
@@ -25,5 +25,5 @@
 				"slots": 3
 			}
 		},
-	"enabled": false
+	"enabled": true
 }

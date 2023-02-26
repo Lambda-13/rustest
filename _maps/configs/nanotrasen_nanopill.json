@@ -1,0 +1,13 @@
+{
+	"prefix": "NTSV",
+	"map_name": "Nanopill-class Trasport Pill",
+	"map_short_name": "Nanopill-class",
+	"map_path": "lambda/MrSamu99/shuttles/nanotrasen_nanopill.dmm",
+	"map_id": "nt_nanopill",
+	"roundstart": false,
+	"job_slots": {
+		"Security Officer": 3
+	},
+	"cost": 295,
+	"enabled": true
+}
