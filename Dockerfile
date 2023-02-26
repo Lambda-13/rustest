@@ -58,9 +58,9 @@ RUN tools/build/build \
     && rm -rf /var/lib/apt/lists/*
 
 FROM base
-WORKDIR /shiptest
+WORKDIR /rustest
 COPY --from=dm-build /deploy ./
 COPY --from=rustg /build/target/i686-unknown-linux-gnu/release/librust_g.so /root/.byond/bin/rust_g
-VOLUME [ "/shiptest/config", "/shiptest/data" ]
+VOLUME [ "/rustest/config", "/rustest/data" ]
 ENTRYPOINT [ "DreamDaemon", "shiptest.dmb", "-port", "1337", "-trusted", "-close", "-verbose" ]
 EXPOSE 1337
