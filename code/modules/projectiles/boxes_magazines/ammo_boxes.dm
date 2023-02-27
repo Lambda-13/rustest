@@ -317,6 +317,7 @@
 /obj/item/ammo_box/shotgunbox
 	name = "Коробка c пулевыми для дробовика"
 	desc = "Коробка с патронами 12 калибра(пулевой)"
+	icon = 'lambda/SS7V/icons/obj/ammo.dmi'
 	ammo_type = /obj/item/ammo_casing/shotgun
 	icon_state = "slug"
 	max_ammo = 20
@@ -335,7 +336,7 @@
 
 /obj/item/ammo_box/shotgunbox/rubber
 	name = "Коробка c резиновой картечью для дробовика"
-	desc = "Коробка с патронами 12 калибра(резиновая картечь)
+	desc = "Коробка с патронами 12 калибра(резиновая картечь)"
 	ammo_type = /obj/item/ammo_casing/shotgun/rubbershot
 	icon_state = "rubber"
 
