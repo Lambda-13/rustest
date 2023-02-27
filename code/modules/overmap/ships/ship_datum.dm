@@ -80,6 +80,49 @@
 	token.update_screen()
 
 /**
+ * Ticks the autopiloting system.
+ * Returns if there's no target, decelerates and returns if target reached.
+ * If stopped, burn towards the target, otherwise if going in the right direction, do nothing, if going in the wrong direction, stop.
+ * returns FALSE until destination is reached
+ */
+/datum/overmap/ship/proc/tick_autopilot()
+	if(!current_autopilot_target)
+		return
+	if(QDELETED(current_autopilot_target))
+		current_autopilot_target = null
+		return
+	if(get_turf(src) == get_turf(current_autopilot_target))
+		if(!is_still())
+			burn_engines(null)
+			return tick_autopilot()
+		return TRUE //Destination reached
+	var/target_direction = get_dir(src, current_autopilot_target)
+	var/current_distance = get_dist(src, current_autopilot_target)
+	var/heading = get_heading()
+	if(current_distance >= SSovermap.size / 2)
+		target_direction = REVERSE_DIR(target_direction)
+	if(is_still())
+		burn_engines(target_direction)
+		if(is_still())
+			return
+		return tick_autopilot()
+	else if(heading == target_direction)
+		if(get_speed() < 4) //4 SpM
+			burn_engines(target_direction)
+			return tick_autopilot()
+		return
+	else if(heading & target_direction)
+		for(var/newdir in GLOB.cardinals)
+			if(newdir == heading)
+				continue
+			if(newdir & target_direction)
+				burn_engines(newdir)
+				break
+	else
+		burn_engines(null)
+		return tick_autopilot()
+
+/**
  * Returns whether or not the ship is moving in any direction.
  */
 /datum/overmap/ship/proc/is_still()

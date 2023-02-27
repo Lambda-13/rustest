@@ -124,6 +124,17 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SERVICE
 	research_icon_state = "cosmohonk-plating"
 
+/datum/design/mod_plating/mining
+	id = "mod_plating_mining"
+	name = "МОД Шахтёрская обшивка. ERROR 404, no design found!"
+	build_type = MECHFAB
+	category = list("MODsuit Chassis")
+	construction_time = 15 SECONDS
+	build_path = /obj/item/mod/construction/plating
+	materials = list(/datum/material/iron = 6000, /datum/material/titanium = 4000, /datum/material/glass = 1000, /datum/material/plasma = 4000)
+	departmental_flags = DEPARTMENTAL_FLAG_SERVICE
+	research_icon_state = "mining-plating"
+
 /datum/design/mod_paint_kit
 	name = "Набор покраски MOD-Скафандра"
 	desc = "Этот комплект перекрасит ваш скафандр во что-то уникальное."
@@ -143,6 +154,7 @@
 	materials = list(/datum/material/iron = 1000, /datum/material/glass = 1000)
 	build_path = /obj/item/mod/module
 	category = list("MODsuit Modules")
+	var/department_type// = MODULE_GENERAL
 
 /datum/design/module/New()
 	. = ..()
