@@ -13,7 +13,7 @@
 "bm" = (/obj/machinery/power/terminal{dir = 1},/obj/structure/cable/green{icon_state = "0-4"},/obj/structure/cable/orange{icon_state = "5-8"},/turf/open/floor/plating/rust,/area/ship/engineering/electrical)
 "bv" = (/obj/structure/cable/orange{icon_state = "1-2"},/obj/structure/mineral_door/wood,/turf/open/floor/plasteel/tech,/area/ship/engineering/engine)
 "bN" = (/mob/living/simple_animal/hostile/asteroid/gutlunch/grublunch,/turf/open/floor/plating/asteroid/basalt/lava_land_surface,/area/ship/roumain)
-"bW" = (/obj/machinery/hydroponics/soil,/obj/item/seeds/tower,/obj/item/seeds/tower,/obj/item/hatchet/wooden,/obj/structure/railing/corner/wood{dir = 1},/turf/open/floor/plating/asteroid/basalt/lava_land_surface,/area/ship/roumain)
+"bW" = (/obj/machinery/hydroponics/soil,/obj/structure/railing/corner/wood{dir = 1},/turf/open/floor/plating/asteroid/basalt/lava_land_surface,/area/ship/roumain)
 "bY" = (/turf/open/floor/wood,/area/ship/construction)
 "ce" = (/obj/structure/bed,/turf/open/floor/wood/ebony,/area/ship/crew/dorm)
 "cg" = (/obj/structure/railing/corner/wood{dir = 8},/obj/structure/flora/ausbushes/sparsegrass/hell,/turf/open/floor/plating/asteroid/basalt/lava_land_surface,/area/ship/roumain)
@@ -32,7 +32,7 @@
 "fi" = (/turf/closed/wall/mineral/wood/nonmetal,/area/ship/medical)
 "fm" = (/turf/closed/wall/r_wall/rust,/area/ship/crew/dorm)
 "fs" = (/turf/closed/wall/r_wall/rust,/area/ship/engineering)
-"fv" = (/obj/machinery/computer/cargo/express,/turf/open/floor/wood,/area/ship/storage)
+"fv" = (/obj/structure/closet/crate/wooden,/obj/item/cultivator/rake,/obj/item/plant_analyzer,/obj/item/storage/bag/plants,/obj/item/storage/bag/plants/portaseeder,/obj/item/shovel/spade,/obj/item/hatchet/wooden,/turf/open/floor/plating/asteroid/basalt/lava_land_surface,/area/ship/roumain)
 "fz" = (/obj/machinery/power/port_gen/pacman,/obj/structure/cable/green{icon_state = "0-4"},/turf/open/floor/plating,/area/ship/engineering/electrical)
 "fC" = (/obj/effect/turf_decal/siding/wood/end,/turf/open/floor/wood,/area/ship/roumain)
 "fP" = (/obj/effect/turf_decal/siding/wood/end,/obj/structure/railing/wood{dir = 6},/turf/open/floor/wood,/area/ship/roumain)
@@ -47,7 +47,6 @@
 "hh" = (/obj/effect/spawner/structure/window/reinforced,/obj/structure/curtain/cloth/grey,/turf/open/floor/plating,/area/ship/crew/dorm)
 "hp" = (/obj/structure/destructible/tribal_torch,/obj/effect/turf_decal/industrial/warning/full,/turf/open/floor/wood,/area/ship/storage)
 "hu" = (/obj/machinery/button/door{id = "port_blasts"; name = "port blasts control"; pixel_y = 27},/turf/open/floor/engine/hull,/area/ship/external/dark)
-"hz" = (/obj/machinery/hydroponics/soil,/obj/item/seeds/wheat,/obj/item/seeds/wheat,/obj/item/seeds/carrot,/obj/item/seeds/carrot,/obj/item/seeds/lavaland/puce,/obj/item/seeds/lavaland/puce,/obj/item/shovel/spade,/turf/open/floor/plating/asteroid/basalt/lava_land_surface,/area/ship/roumain)
 "hT" = (/obj/structure/cable/orange{icon_state = "1-8"},/turf/open/floor/wood{icon_state = "wood-broken2"},/area/ship/medical)
 "ie" = (/obj/structure/railing/corner/wood{dir = 8},/turf/open/floor/plating/asteroid/basalt/lava_land_surface,/area/ship/roumain)
 "iq" = (/obj/structure/table/wood,/obj/item/spear/bonespear{pixel_y = 8; pixel_x = -4},/obj/item/spear/bonespear{pixel_y = 7},/obj/item/spear/bonespear{pixel_x = 6; pixel_y = 7},/turf/open/floor/plating/asteroid/basalt/lava_land_surface,/area/ship/roumain)
@@ -73,10 +72,9 @@
 "lk" = (/obj/effect/turf_decal/siding/wood/corner,/obj/effect/turf_decal/siding/wood/corner{dir = 1},/obj/effect/turf_decal/siding/wood/corner{dir = 4},/obj/effect/turf_decal/siding/wood/corner{dir = 8},/turf/open/floor/wood,/area/ship/roumain)
 "ln" = (/obj/effect/turf_decal/spline/fancy{dir = 1},/obj/structure/cable/orange{icon_state = "8-10"},/obj/machinery/button/door{id = "port_blasts"; name = "port blasts control"; pixel_x = -6; pixel_y = 2},/obj/structure/table/wood,/obj/machinery/button/shieldwallgen{pixel_x = 4; id = "glaive_shields"},/obj/structure/railing/wood{dir = 4},/turf/open/floor/wood,/area/ship/storage)
 "lA" = (/obj/structure/sink/puddle,/obj/item/reagent_containers/glass/bucket/wooden{pixel_y = -3; pixel_x = 6},/obj/item/reagent_containers/glass/bucket/wooden{pixel_y = 9; pixel_x = -4},/turf/open/floor/plating/asteroid/basalt/lava_land_surface,/area/ship/roumain)
-"lM" = (/obj/machinery/hydroponics/soil,/obj/item/seeds/cotton,/obj/item/seeds/cotton,/obj/item/storage/bag/plants/portaseeder,/obj/item/storage/bag/plants,/obj/structure/railing/corner/wood{dir = 4},/obj/item/plant_analyzer,/turf/open/floor/plating/asteroid/basalt/lava_land_surface,/area/ship/roumain)
+"lM" = (/obj/machinery/hydroponics/soil,/obj/structure/railing/corner/wood{dir = 4},/turf/open/floor/plating/asteroid/basalt/lava_land_surface,/area/ship/roumain)
 "lO" = (/obj/structure/cable/orange{icon_state = "4-5"},/obj/structure/cable/orange{icon_state = "8-10"},/turf/open/floor/wood,/area/ship/storage)
 "md" = (/obj/docking_port/mobile{callTime = 250; launch_status = 0; name = "Trident-class"; port_direction = 2},/turf/open/floor/engine/hull,/area/ship/external/dark)
-"mj" = (/obj/machinery/hydroponics/soil,/obj/item/seeds/plump,/obj/item/seeds/cannabis,/turf/open/floor/plating/asteroid/basalt/lava_land_surface,/area/ship/roumain)
 "mr" = (/obj/structure/cable/orange{icon_state = "4-5"},/obj/structure/cable/orange{icon_state = "2-6"},/obj/structure/closet/cabinet,/obj/item/clothing/head/helmet/gladiator,/obj/item/clothing/under/costume/gladiator/ash_walker,/obj/item/gun/ballistic/bow/ashen,/obj/item/ammo_casing/caseless/arrow/bone,/obj/item/ammo_casing/caseless/arrow/bone,/obj/item/ammo_casing/caseless/arrow/bone,/obj/item/ammo_casing/caseless/arrow/bone,/obj/item/ammo_casing/caseless/arrow/bone,/obj/item/ammo_casing/caseless/arrow/bone,/turf/open/floor/wood/ebony,/area/ship/crew/dorm)
 "mD" = (/obj/effect/spawner/structure/window/reinforced,/obj/structure/curtain/cloth/grey,/turf/open/floor/plating,/area/ship/medical)
 "mE" = (/obj/structure/window/reinforced/spawner{dir = 1},/obj/machinery/power/shuttle/engine/electric{dir = 1},/obj/structure/cable/pink,/obj/machinery/door/poddoor/shutters{id = "starboard_shutters"; name = "Starboard Engine Shutters"},/turf/open/floor/engine/hull,/area/ship/engineering/engine)
@@ -86,20 +84,19 @@
 "nj" = (/turf/closed/wall/mineral/wood/nonmetal,/area/ship/storage)
 "nk" = (/obj/item/pickaxe/mini,/obj/structure/closet/crate/wooden,/obj/item/shovel/serrated,/obj/item/reagent_containers/hypospray/medipen/survival,/obj/item/flashlight/flare/torch,/turf/open/floor/wood,/area/ship/storage)
 "nt" = (/obj/effect/turf_decal/siding/wood/end{dir = 4},/obj/structure/railing/wood{dir = 4},/turf/open/floor/wood,/area/ship/roumain)
-"nO" = (/obj/structure/table/wood,/obj/item/storage/toolbox/emergency/old{pixel_x = 3; pixel_y = 6},/obj/item/storage/toolbox/mechanical/old,/obj/item/melee/baton/cattleprod{pixel_x = -6; pixel_y = 7},/obj/item/stack/cable_coil/random/five,/turf/open/floor/plating,/area/ship/engineering/electrical)
+"nO" = (/obj/structure/table/wood,/obj/item/melee/baton/cattleprod{pixel_x = -6; pixel_y = 7},/obj/item/stack/cable_coil/random/five,/obj/item/crowbar/ashwalker,/obj/item/screwdriver/ashwalker,/obj/item/wirecutters/ashwalker,/obj/item/wrench/ashwalker,/obj/item/weldingtool/mini,/turf/open/floor/plating,/area/ship/engineering/electrical)
 "nZ" = (/obj/effect/turf_decal/siding/wood{dir = 4},/obj/structure/barricade/wooden,/turf/open/floor/wood,/area/ship/construction)
 "oC" = (/obj/structure/cable/orange{icon_state = "8-10"},/obj/structure/cable/orange{icon_state = "4-6"},/turf/open/floor/wood,/area/ship/storage)
 "pb" = (/obj/structure/cable/orange{icon_state = "4-10"},/obj/machinery/button/door{id = "starboard_shutters"; name = "starboard shutters control"; pixel_y = 23},/obj/item/flashlight/flare/torch,/turf/open/floor/plating,/area/ship/engineering/engine)
 "pd" = (/obj/effect/turf_decal/siding/wood{dir = 8},/obj/effect/turf_decal/siding/wood{dir = 4},/turf/open/floor/wood{icon_state = "wood-broken3"},/area/ship/roumain)
 "pH" = (/obj/structure/cable/orange{icon_state = "4-5"},/obj/structure/cable/orange{icon_state = "2-5"},/turf/open/floor/wood,/area/ship/medical)
-"qv" = (/obj/structure/cable/orange{icon_state = "2-9"},/obj/structure/table/wood,/obj/item/lighter{pixel_x = -5; pixel_y = 2},/turf/open/floor/wood,/area/ship/medical)
+"qv" = (/obj/structure/cable/orange{icon_state = "2-9"},/obj/structure/table/wood,/turf/open/floor/wood,/area/ship/medical)
 "qz" = (/obj/machinery/door/poddoor{id = "port_blasts"; name = "Port Blast Door"},/turf/open/floor/wood,/area/ship/storage)
 "qJ" = (/obj/structure/destructible/tribal_torch,/turf/open/floor/plating/asteroid/basalt/lava_land_surface,/area/ship/roumain)
 "qN" = (/obj/structure/railing/corner/wood{dir = 1},/obj/structure/flora/ausbushes/genericbush/hell,/turf/open/floor/plating/asteroid/basalt/lava_land_surface,/area/ship/roumain)
 "qQ" = (/obj/structure/cable/orange{icon_state = "2-8"},/turf/open/floor/engine/hull,/area/ship/external/dark)
 "rj" = (/obj/structure/table/wood,/obj/item/reagent_containers/glass/bowl/mushroom_bowl,/obj/item/reagent_containers/food/snacks/soup/blood,/turf/open/floor/plating/asteroid/basalt/lava_land_surface,/area/ship/roumain)
 "rE" = (/turf/closed/wall/mineral/wood/nonmetal,/area/ship/engineering/engine)
-"sb" = (/obj/effect/turf_decal/industrial/warning,/obj/structure/reagent_dispensers/fueltank,/turf/open/floor/wood,/area/ship/storage)
 "sm" = (/obj/structure/railing/wood{dir = 10},/obj/structure/flora/rock/hell,/turf/open/floor/plating/asteroid/basalt/lava_land_surface,/area/ship/roumain)
 "sr" = (/obj/structure/mineral_door/wood,/turf/open/floor/wood{icon_state = "wood-broken4"},/area/ship/construction)
 "ss" = (/obj/structure/window/reinforced/spawner,/obj/machinery/power/smes/shuttle/precharged{dir = 1},/obj/structure/cable/pink{icon_state = "0-2"},/turf/open/floor/plating,/area/ship/engineering)
@@ -113,7 +110,7 @@
 "tF" = (/obj/structure/cable/orange{icon_state = "1-6"},/obj/structure/cable/orange{icon_state = "2-10"},/turf/open/floor/wood,/area/ship/medical)
 "tM" = (/obj/effect/turf_decal/industrial/warning,/obj/effect/turf_decal/industrial/caution,/obj/structure/cable/orange{icon_state = "4-8"},/turf/open/floor/wood{icon_state = "wood-broken2"},/area/ship/storage)
 "uI" = (/obj/structure/railing/wood,/turf/open/floor/plating/asteroid/basalt/lava_land_surface,/area/ship/roumain)
-"uM" = (/obj/item/lighter,/obj/structure/railing/corner/wood{dir = 1},/turf/open/floor/plating/asteroid/basalt/lava_land_surface,/area/ship/roumain)
+"uM" = (/obj/structure/railing/corner/wood{dir = 1},/turf/open/floor/plating/asteroid/basalt/lava_land_surface,/area/ship/roumain)
 "uP" = (/obj/effect/turf_decal/industrial/warning,/obj/effect/turf_decal/industrial/caution,/turf/open/floor/wood{icon_state = "wood-broken2"},/area/ship/storage)
 "vd" = (/obj/structure/window/reinforced/spawner{dir = 1},/obj/machinery/power/shuttle/engine/fueled/plasma{dir = 1},/obj/machinery/door/poddoor/shutters{id = "starboard_shutters"; name = "Starboard Engine Shutters"},/turf/open/floor/engine/hull,/area/ship/engineering/engine)
 "vn" = (/obj/structure/cable/orange{icon_state = "4-8"},/obj/structure/cable/orange{icon_state = "1-4"},/turf/open/floor/plating/asteroid/basalt/lava_land_surface,/area/ship/crew/toilet)
@@ -127,7 +124,6 @@
 "wD" = (/obj/item/melee/transforming/cleaving_saw/old,/turf/open/floor/plating/asteroid/basalt/lava_land_surface,/area/ship/roumain)
 "wE" = (/obj/structure/cable/orange{icon_state = "4-8"},/obj/structure/mineral_door/wood,/turf/open/floor/plating/asteroid/basalt/lava_land_surface,/area/ship/crew/toilet)
 "xe" = (/obj/structure/table/wood,/turf/open/floor/wood,/area/ship/construction)
-"xC" = (/obj/structure/railing/corner/wood{dir = 2},/obj/item/seeds/glowshroom/glowcap,/turf/open/floor/plating/asteroid/basalt/lava_land_surface,/area/ship/roumain)
 "xD" = (/obj/structure/sink/puddle,/turf/open/floor/wood,/area/ship/medical)
 "yn" = (/obj/structure/cable/orange{icon_state = "8-10"},/obj/machinery/portable_atmospherics/canister/toxins,/obj/machinery/atmospherics/components/unary/portables_connector/visible,/turf/open/floor/plating,/area/ship/engineering/engine)
 "yp" = (/obj/structure/cable/orange{icon_state = "4-6"},/turf/open/floor/wood{icon_state = "wood-broken4"},/area/ship/storage)
@@ -154,7 +150,7 @@
 "Bu" = (/obj/effect/spawner/structure/window/reinforced,/obj/structure/cable/orange{icon_state = "1-2"},/obj/structure/curtain/cloth/grey,/turf/open/floor/plating,/area/ship/medical)
 "Bx" = (/obj/machinery/smartfridge/drying_rack,/obj/structure/railing/corner/wood{dir = 8},/turf/open/floor/plating/asteroid/basalt/lava_land_surface,/area/ship/roumain)
 "Bz" = (/obj/structure/railing/wood{dir = 1},/turf/open/floor/plating/asteroid/basalt/lava_land_surface,/area/ship/roumain)
-"BB" = (/obj/structure/table/wood,/obj/item/book/manual/wiki/surgery,/obj/item/reagent_containers/food/drinks/bottle/whiskey{pixel_x = 7; pixel_y = 6},/turf/open/floor/wood,/area/ship/medical)
+"BB" = (/obj/structure/closet/crate/wooden,/obj/item/surgicaldrill/ashwalker,/obj/item/scalpel/ashwalker,/obj/item/retractor/ashwalker,/obj/item/hemostat/ashwalker,/obj/item/circular_saw/ashwalker,/obj/item/cautery/ashwalker,/turf/open/floor/wood,/area/ship/medical)
 "BK" = (/turf/open/floor/plating,/area/ship/engineering/engine)
 "BO" = (/obj/structure/flora/ausbushes/fernybush/hell,/turf/open/floor/plating/asteroid/basalt/lava_land_surface,/area/ship/roumain)
 "Cr" = (/obj/structure/cable/orange{icon_state = "1-8"},/turf/open/floor/engine/hull,/area/ship/external/dark)
@@ -178,7 +174,7 @@
 "Fd" = (/obj/effect/turf_decal/siding/wood{dir = 8},/obj/effect/turf_decal/siding/wood{dir = 4},/obj/structure/destructible/tribal_torch,/obj/structure/railing/wood{dir = 8},/turf/open/floor/wood,/area/ship/roumain)
 "Fn" = (/obj/structure/table/wood,/obj/item/reagent_containers/syringe/calomel{pixel_x = 3; pixel_y = -5},/obj/item/reagent_containers/syringe/antiviral{pixel_y = -6; pixel_x = 8},/obj/item/reagent_containers/hypospray/medipen/stimpack{pixel_x = -4},/obj/item/reagent_containers/hypospray/medipen/survival{pixel_x = -7; pixel_y = -5},/obj/item/reagent_containers/glass/bottle/potass_iodide{pixel_y = 10; pixel_x = -7},/obj/item/reagent_containers/glass/bottle/atropine{pixel_y = 9},/obj/structure/cable/orange{icon_state = "2-10"},/turf/open/floor/wood,/area/ship/medical)
 "Fp" = (/obj/structure/railing/wood{dir = 5},/turf/open/floor/plating/asteroid/basalt/lava_land_surface,/area/ship/roumain)
-"Fr" = (/obj/structure/table/wood,/obj/item/storage/box/stockparts/basic,/turf/open/floor/wood,/area/ship/construction)
+"Fr" = (/obj/structure/closet/crate/wooden,/obj/item/seeds/cannabis,/obj/item/seeds/plump,/obj/item/seeds/lavaland/fern,/obj/item/seeds/garlic,/obj/item/seeds/lavaland/puce,/obj/item/seeds/lavaland/puce,/obj/item/seeds/carrot,/obj/item/seeds/carrot,/obj/item/seeds/wheat,/obj/item/seeds/wheat,/obj/item/seeds/tower,/obj/item/seeds/tower,/obj/item/seeds/peas,/obj/item/seeds/potato,/obj/item/seeds/ambrosia,/obj/item/seeds/glowshroom,/obj/item/seeds/cabbage,/obj/item/seeds/lavaland/cactus,/obj/item/seeds/lavaland/porcini,/obj/item/seeds/lavaland/polypore,/obj/item/seeds/lavaland/inocybe,/obj/item/seeds/lavaland/ember,/obj/item/seeds/cotton,/obj/item/seeds/cotton,/turf/open/floor/plating/asteroid/basalt/lava_land_surface,/area/ship/roumain)
 "Fu" = (/obj/structure/railing/corner/wood{dir = 2},/obj/structure/kitchenspike,/turf/open/floor/plating/asteroid/basalt/lava_land_surface,/area/ship/roumain)
 "FA" = (/turf/open/floor/engine/hull,/area/ship/external/dark)
 "FE" = (/obj/structure/cable/orange{icon_state = "2-4"},/turf/open/floor/plating,/area/ship/engineering/electrical)
@@ -222,8 +218,7 @@
 "Nd" = (/obj/structure/cable/orange{icon_state = "4-8"},/obj/structure/mineral_door/wood,/turf/open/floor/wood/ebony,/area/ship/construction)
 "Ng" = (/obj/machinery/power/apc/auto_name/north,/obj/structure/cable/orange{icon_state = "0-8"},/obj/structure/cable/orange{icon_state = "0-2"},/turf/open/floor/plating/rust,/area/ship/engineering/engine)
 "Nm" = (/obj/machinery/holopad/emergency/command,/obj/effect/turf_decal/siding/wood{dir = 1},/obj/structure/cable/orange{icon_state = "4-8"},/obj/effect/turf_decal/siding/wood,/turf/open/floor/wood,/area/ship/roumain)
-"Nq" = (/obj/machinery/hydroponics/soil,/obj/item/seeds/lavaland/ember,/obj/item/seeds/lavaland/inocybe,/obj/item/seeds/lavaland/polypore,/obj/item/seeds/lavaland/porcini,/obj/item/seeds/lavaland/cactus,/obj/item/cultivator/rake,/turf/open/floor/plating/asteroid/basalt/lava_land_surface,/area/ship/roumain)
-"NE" = (/obj/structure/sink/oil_well,/turf/open/floor/plating/asteroid/basalt/lava_land_surface,/area/ship/crew/toilet)
+"NE" = (/obj/structure/sink/oil_well{dispensedreagent = /datum/reagent/fuel; name = "fuel well"; desc = "A bubbling pool of fuel.This one was created by ashwalker shaman to fulfill their needs."},/turf/open/floor/plating/asteroid/basalt/lava_land_surface,/area/ship/crew/toilet)
 "NL" = (/obj/structure/lavaland/ash_walker,/turf/open/floor/plating/asteroid/basalt/lava_land_surface,/area/ship/roumain)
 "NT" = (/obj/structure/railing/corner/wood{dir = 8},/mob/living/simple_animal/hostile/asteroid/gutlunch/grublunch,/turf/open/floor/plating/asteroid/basalt/lava_land_surface,/area/ship/roumain)
 "NV" = (/obj/item/reagent_containers/glass/bottle/mutagen,/obj/item/reagent_containers/glass/bottle/mutagen,/turf/open/floor/plating/asteroid/basalt/lava_land_surface,/area/ship/construction)
@@ -243,8 +238,7 @@
 "QQ" = (/obj/machinery/power/apc/auto_name/north,/obj/effect/turf_decal/siding/wood{dir = 1},/obj/structure/cable/orange{icon_state = "0-4"},/turf/open/floor/wood,/area/ship/construction)
 "QX" = (/obj/structure/bonfire/dense,/turf/open/floor/plating/asteroid/basalt/lava_land_surface,/area/ship/roumain)
 "Ra" = (/obj/structure/cable/orange{icon_state = "4-8"},/obj/structure/cable/orange{icon_state = "1-9"},/turf/open/floor/wood,/area/ship/storage)
-"Rm" = (/obj/item/seeds/garlic,/obj/item/seeds/lavaland/fern,/turf/open/floor/plating/asteroid/basalt/lava_land_surface,/area/ship/roumain)
-"Rn" = (/obj/structure/table/wood,/obj/effect/turf_decal/siding/wood{dir = 4},/obj/item/circuitboard/machine/autolathe,/turf/open/floor/wood,/area/ship/construction)
+"Rn" = (/obj/structure/table/wood,/obj/effect/turf_decal/siding/wood{dir = 4},/turf/open/floor/wood,/area/ship/construction)
 "RF" = (/obj/effect/turf_decal/siding/wood/end{dir = 8},/obj/structure/railing/wood{dir = 8},/turf/open/floor/wood{icon_state = "wood-broken2"},/area/ship/roumain)
 "RJ" = (/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/plating/asteroid/basalt/lava_land_surface,/area/ship/roumain)
 "RT" = (/obj/structure/cable/orange{icon_state = "1-2"},/turf/open/floor/plating/asteroid/basalt/lava_land_surface,/area/ship/crew/toilet)
@@ -256,7 +250,7 @@
 "SL" = (/obj/machinery/power/shuttle/engine/electric{dir = 1},/obj/structure/cable/pink,/obj/machinery/door/poddoor/shutters{id = "port_shutters"; name = "Engine Shutters"},/turf/open/floor/engine/hull,/area/ship/engineering)
 "Tc" = (/obj/effect/turf_decal/siding/wood{dir = 8},/obj/effect/turf_decal/siding/wood{dir = 4},/turf/open/floor/wood,/area/ship/roumain)
 "Tj" = (/obj/structure/cable/orange{icon_state = "4-8"},/obj/structure/mineral_door/wood,/turf/open/floor/plating/asteroid/basalt/lava_land_surface,/area/ship/engineering/electrical)
-"Tx" = (/obj/structure/table/wood,/obj/effect/turf_decal/siding/wood{dir = 8},/obj/item/stack/rods/ten,/obj/item/stack/sheet/metal/ten,/obj/item/stack/sheet/glass/five,/turf/open/floor/wood,/area/ship/construction)
+"Tx" = (/obj/structure/table/wood,/obj/effect/turf_decal/siding/wood{dir = 8},/obj/item/stack/rods/ten,/turf/open/floor/wood,/area/ship/construction)
 "TO" = (/obj/effect/decal/cleanable/dirt/dust,/obj/structure/railing/wood{dir = 4},/obj/structure/flora/ausbushes/genericbush/hell,/turf/open/floor/plating/asteroid/basalt/lava_land_surface,/area/ship/roumain)
 "Ue" = (/obj/effect/spawner/structure/window/reinforced,/obj/structure/curtain/cloth/grey,/turf/open/floor/plating,/area/ship/roumain)
 "Ul" = (/obj/effect/turf_decal/siding/wood{dir = 5},/obj/structure/cable/orange{icon_state = "4-10"},/obj/structure/cable/orange{icon_state = "4-8"},/turf/open/floor/wood,/area/ship/construction)
@@ -269,7 +263,6 @@
 "VI" = (/obj/effect/turf_decal/siding/wood{dir = 8},/obj/effect/turf_decal/siding/wood{dir = 4},/turf/open/floor/wood{icon_state = "wood-broken4"},/area/ship/roumain)
 "VL" = (/obj/effect/spawner/structure/window/reinforced,/obj/structure/cable/orange{icon_state = "4-8"},/obj/machinery/door/poddoor/shutters{name = "Body Shutters"; id = "body_shutters"},/turf/open/floor/plating,/area/ship/roumain)
 "VQ" = (/obj/structure/flora/ausbushes/hell,/turf/open/floor/plating/asteroid/basalt/lava_land_surface,/area/ship/roumain)
-"VX" = (/obj/item/seeds/cabbage,/obj/item/seeds/ambrosia,/turf/open/floor/plating/asteroid/basalt/lava_land_surface,/area/ship/roumain)
 "Wd" = (/obj/structure/cable/orange{icon_state = "4-5"},/obj/structure/destructible/tribal_torch,/obj/effect/turf_decal/industrial/warning/full,/obj/structure/cable/orange{icon_state = "8-9"},/turf/open/floor/wood,/area/ship/storage)
 "Wr" = (/turf/open/floor/wood{icon_state = "wood-broken2"},/area/ship/storage)
 "WS" = (/obj/effect/turf_decal/siding/wood{dir = 1},/turf/open/floor/wood,/area/ship/construction)
@@ -286,7 +279,7 @@
 "Yx" = (/obj/structure/railing/wood{dir = 4},/turf/open/floor/plating/asteroid/basalt/lava_land_surface,/area/ship/roumain)
 "YE" = (/obj/machinery/power/apc/auto_name/west,/obj/structure/chair/wood/wings{dir = 1},/obj/effect/turf_decal/siding/wood/corner{dir = 4},/obj/effect/turf_decal/siding/wood{dir = 8},/obj/structure/cable/orange{icon_state = "0-4"},/obj/effect/turf_decal/siding/wood/corner,/turf/open/floor/wood,/area/ship/roumain)
 "YM" = (/obj/structure/cable/orange{icon_state = "6-9"},/obj/structure/barricade/wooden,/turf/open/floor/wood,/area/ship/construction)
-"YP" = (/obj/machinery/hydroponics/soil,/obj/item/seeds/potato,/obj/item/seeds/peas,/turf/open/floor/plating/asteroid/basalt/lava_land_surface,/area/ship/roumain)
+"YP" = (/obj/machinery/hydroponics/soil,/turf/open/floor/plating/asteroid/basalt/lava_land_surface,/area/ship/roumain)
 "YT" = (/obj/structure/flora/ausbushes/sparsegrass/hell,/turf/open/floor/plating/asteroid/basalt/lava_land_surface,/area/ship/roumain)
 "Zh" = (/obj/structure/mineral_door/wood,/turf/open/floor/wood,/area/ship/construction)
 "Zs" = (/obj/effect/turf_decal/siding/wood{dir = 1},/obj/effect/turf_decal/siding/wood/corner,/obj/effect/turf_decal/siding/wood/corner{dir = 8},/turf/open/floor/wood,/area/ship/roumain)
@@ -305,8 +298,8 @@ sHsHVBVBOoOoVBsHsHcRCrOdANANZVZEGPfPZVANANwpQmqQsHsHDGDGyNAZAZsHsH
 sHdqVBaYOoaYOoOocRCrwpOdZVZVZVZVnaZVZVZVZVwpOdIoFAAZyNzTQJEJAZyNsH
 sHVBNEmJLSmJtCOoyZUeOdlMkoXBFpZVnaZVMZCCkobWOdsDUeAZFEbmRUIrEtyNsH
 OoVBwwmJVBALvnwECHDStsDSDSbNiPBzQiBzqNRJDSDStscJLLTjlffzXKMWacyNAZ
-OosvyVmJOoRTzXOoUeUeOdNqVXDXxCuIcgRJVQDXRmhzOdsDUeAZirKkyAKkvznOyN
-LGfsfsfsLGIDfsfsFAFAOdOdYPDSTOQXLjlADSDSmjwpOdIoFArEjyrEbvcWcWcWwm
+OosvyVmJOoRTzXOoUeUeOdYPDSDXFauIcgRJVQDXDSYPOdsDUeAZirKkyAKkvznOyN
+LGfsfsfsLGIDfsfsFAFAOdOdYPfvTOQXLjlADSFrYPwpOdIoFArEjyrEbvcWcWcWwm
 LGDRHSIlSgjmfssHsHFAFAANqJYTaaBzuMRJbNDSqJANcRCrsHFArEBKUSNgpbynwm
 LGaFAYcoJyjrVusHsHsHFAANDzVQYTBODSYTDSVQfeANIosHsHFAjyBKGMVnFWNXjy
 LGjvssssAMfsfssHsHsHFAANHBaMRJDSNLDSDSLkSzANIosHsHsHrErEtuQDQDSxjy
@@ -324,12 +317,12 @@ sHsHsHsHsHsHsHsHsHhhmrFGyqIFDXDSfCYTDSfiaSiRXpmDsHsHsHsHsHsHsHsHsH
 sHsHsHsHsHsHsHsHsHhhZKDuMhIZbibisrIZIZIZpHEOBBmDsHsHsHsHsHsHsHsHsH
 sHsHsHsHsHsHsHsHsHIFIFcUgONdPUkDWSQQUlQAhTzcfifisHsHsHsHsHsHsHsHsH
 sHsHsHsHsHsHsHsHsHsHbigegeIZjqPybYmSFRIZIZIZIZsHsHsHsHsHsHsHsHsHsH
-sHsHsHsHsHsHsHsHsHsHbiUZXqIZTxxeYbFrRnIZNVENIZsHsHsHsHsHsHsHsHsHsH
+sHsHsHsHsHsHsHsHsHsHbiUZXqIZTxxeYbxeRnIZNVENIZsHsHsHsHsHsHsHsHsHsH
 sHsHsHsHsHsHsHsHsHsHbibiIZIZHAMGZhYMnZIZgegeIZsHsHsHsHsHsHsHsHsHsH
-sHsHsHsHsHsHsHsHsHsHsHLNMUnklglnapzZHwWrfvalsHsHsHsHsHsHsHsHsHsHsH
+sHsHsHsHsHsHsHsHsHsHsHLNMUnklglnapzZHwWrapalsHsHsHsHsHsHsHsHsHsHsH
 sHsHsHsHsHsHsHsHsHsHsHLNgoXtlOZWyzSKaujkapLNsHsHsHsHsHsHsHsHsHsHsH
 sHsHsHsHsHsHsHsHsHsHsHnjypJGYioCRajkapGiapLNsHsHsHsHsHsHsHsHsHsHsH
-sHsHsHsHsHsHsHsHsHsHsHnjOFfaWdtMeUuPhpgbsbalsHsHsHsHsHsHsHsHsHsHsH
+sHsHsHsHsHsHsHsHsHsHsHnjOFfaWdtMeUuPhpgbOFalsHsHsHsHsHsHsHsHsHsHsH
 sHsHsHsHsHsHsHsHsHsHsHnjcpAQqzqzqzqzqzqzORnjsHsHsHsHsHsHsHsHsHsHsH
 sHsHsHsHsHsHsHsHsHsHsHFAFAFAFAFAmdFAFAFAFAhusHsHsHsHsHsHsHsHsHsHsH
 "}

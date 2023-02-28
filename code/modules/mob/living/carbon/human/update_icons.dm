@@ -135,7 +135,7 @@ There are several things that need to be remembered:
 			//Kapu's autistic attempt at digitigrade handling
 			//Hi Kapu
 			if((dna.species.bodytype & BODYTYPE_DIGITIGRADE) && (U.supports_variations & DIGITIGRADE_VARIATION))
-				icon_file = DIGITIGRADE_PATH
+				icon_file = U.worn_icon_digi? U.worn_icon_digi : DIGITIGRADE_PATH
 
 			else if((dna.species.bodytype & BODYTYPE_VOX) && (U.supports_variations & VOX_VARIATION))
 				icon_file = VOX_UNIFORM_PATH
@@ -315,7 +315,7 @@ There are several things that need to be remembered:
 		if((dna.species.bodytype & BODYTYPE_DIGITIGRADE) && (I.supports_variations & DIGITIGRADE_VARIATION))
 			var/obj/item/bodypart/leg = src.get_bodypart(BODY_ZONE_L_LEG)
 			if(leg.limb_id == "digitigrade")//Snowflakey and bad. But it makes it look consistent.
-				icon_file = DIGITIGRADE_SHOES_PATH
+				icon_file = I.worn_icon_digi? I.worn_icon_digi : DIGITIGRADE_SHOES_PATH
 
 		if(!(icon_exists(icon_file, RESOLVE_ICON_STATE(I))))
 			handled_by_bodytype = FALSE
@@ -426,7 +426,7 @@ There are several things that need to be remembered:
 		var/handled_by_bodytype = TRUE
 		if(dna.species.bodytype & BODYTYPE_DIGITIGRADE)
 			if(I.supports_variations & DIGITIGRADE_VARIATION)
-				icon_file = DIGITIGRADE_SUIT_PATH
+				icon_file = I.worn_icon_digi? I.worn_icon_digi : DIGITIGRADE_SUIT_PATH
 
 		else if((dna.species.bodytype & BODYTYPE_VOX) && (I.supports_variations & VOX_VARIATION))
 			icon_file = VOX_SUIT_PATH
