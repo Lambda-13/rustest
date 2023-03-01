@@ -1,5 +1,5 @@
 /obj/item/circuitboard/machine/subverter
-	name = "Interdictor (Machine Board)"
+	name = "Ниспровергатель (Машинерия)"
 	icon_state = "engineering"
 	build_path = /obj/machinery/subverter
 	custom_materials = list(/datum/material/glass = 1000, /datum/material/bluespace = 8000)
@@ -10,7 +10,7 @@
 		/obj/item/stock_parts/capacitor = 1) //power efficiency, how much heat is produced etc
 
 /datum/design/board/shuttle/subverter
-	name = "Machine Design (Interdictor)"
+	name = "Machine Design (Ниспровергатель)"
 	desc = "The circuit board for an interdictor."
 	id = "shuttle_subverter"
 	materials = list(/datum/material/glass = 1000, /datum/material/bluespace = 8000)

@@ -1,6 +1,6 @@
 /datum/wires/subverter
 	holder_type = /obj/machinery/subverter
-	proper_name = "Subverter"
+	proper_name = "ниспровергатель"
 
 /datum/wires/subverter/New(atom/holder)
 	wires = list(
@@ -18,9 +18,9 @@
 /datum/wires/subverter/get_status()
 	var/obj/machinery/subverter/subv = holder
 	var/list/status = list()
-	status += "The red light is [subv.disabled ? "on" : "off"]."
-	status += "The blue light is [subv.hacked ? "on" : "off"]."
-	status += "The green indicator is [!COOLDOWN_FINISHED(subv, subverter_cooldown) ? "blinking" : "off"]."
+	status += "Красный индикатор [subv.disabled ? "горит" : "не горит"]."
+	status += "Синий индикатор [subv.hacked ? "горит" : "не горит"]."
+	status += "Зелёный индикатор [!COOLDOWN_FINISHED(subv, subverter_cooldown) ? "мигает" : "не горит"]."
 	return status
 
 /datum/wires/subverter/on_pulse(wire)
