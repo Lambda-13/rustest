@@ -118,7 +118,7 @@
 	var/turf/spawn_turf = locate(rand(1,255), rand(1,255), success_rune.z)
 
 	var/anti_endless = 0
-	while(!istype(spawn_turf, /turf/open/misc/asteroid) && anti_endless < 100)
+	while(!istype(spawn_turf, /turf/open/floor/plating/asteroid) && anti_endless < 100)
 		spawn_turf = locate(rand(1,255), rand(1,255), success_rune.z)
 		anti_endless++
 
