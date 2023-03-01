@@ -1265,6 +1265,14 @@
 			. |= welder_act(user, I)
 		if(TOOL_ANALYZER)
 			. |= analyzer_act(user, I)
+		if(TOOL_BILLOW)
+			. |= billow_act(user, I)
+		if(TOOL_TONG)
+			. |= tong_act(user, I)
+		if(TOOL_HAMMER)
+			. |= hammer_act(user, I)
+		if(TOOL_BLOWROD)
+			. |= blowrod_act(user, I)
 	if(. & COMPONENT_BLOCK_TOOL_ATTACK)
 		return TRUE
 

@@ -150,7 +150,7 @@
 
 /obj/structure/simple_farm/attackby(obj/item/attacking_item, mob/user, params)
 	//if its a shovel or knife, dismantle
-	if(attacking_item.tool_behaviour == TOOL_SHOVEL)// || attacking_item.tool_behaviour == TOOL_KNIFE)
+	if(attacking_item.tool_behaviour == TOOL_SHOVEL || attacking_item.sharpness == IS_SHARP)
 		var/turf/src_turf = get_turf(src)
 		src_turf.balloon_alert_to_viewers("the plant crumbles!")
 		Destroy()
@@ -237,6 +237,6 @@
 
 		new creating_obj(get_turf(src))
 
-/turf/open/misc/asteroid/basalt/Initialize(mapload)
+/turf/open/floor/plating/asteroid/basalt/Initialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/simple_farm)

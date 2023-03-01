@@ -3,7 +3,7 @@
 	name = "primitive screwdriver"
 	icon = 'lambda/MrSamu99/modules/ashwalkers/icons/ashwalker_tools.dmi'
 	icon_state = "screwdriver"
-
+	random_color = FALSE
 	greyscale_colors = null
 /*	greyscale_config = null
 	greyscale_config_inhand_left = null
@@ -18,7 +18,7 @@
 	name = "primitive wirecutters"
 	icon = 'lambda/MrSamu99/modules/ashwalkers/icons/ashwalker_tools.dmi'
 	icon_state = "cutters"
-
+	random_color = FALSE
 	greyscale_colors = null
 /*	greyscale_config = null
 	greyscale_config_inhand_left = null
@@ -84,7 +84,7 @@
 /obj/item/tendril_seed/attack_self(mob/user, modifiers)
 	. = ..()
 	var/turf/src_turf = get_turf(src)
-	if(/*!is_mining_level(src_turf.z) || */!istype(src_turf, /turf/open/misc/asteroid))
+	if(/*!is_mining_level(src_turf.z) || */!istype(src_turf, /turf/open/floor/plating/asteroid))
 		return
 	if(!isliving(user))
 		return
