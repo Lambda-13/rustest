@@ -3608,5 +3608,6 @@
 #include "lambda\sanecman\code\serverside\text.dm"
 #include "lambda\sanecman\code\serverside\text_ru.dm"
 #include "lambda\sanecman\code\unsorted\gun_hud.dm"
+#include "lambda\sanecman\code\unsorted\keybindings_reset.dm"
 #include "lambda\sanecman\code\unsorted\mre.dm"
 // END_INCLUDE
