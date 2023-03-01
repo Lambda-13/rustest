@@ -291,6 +291,17 @@
 	category = list("Equipment")
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
+/datum/design/internals_tactical
+	name = "Тактический кислородный баллон"
+	desc = "Кислородный баллон военно-космического назначения."
+	id = "internals_tactical"
+	build_path = /obj/item/tank/internals/tactical/empty
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = 5000, /datum/material/titanium = 1000)
+	category = list("Equipment")
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_CARGO
+
+
 /datum/design/id
 	name = "Identification Card"
 	desc = "A card used to provide ID and determine access across known space."

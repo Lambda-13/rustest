@@ -805,3 +805,38 @@
 	build_path = /obj/item/ammo_box/magazine/shotgun
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_BALLISTICS
+
+/datum/design/shotgunbox
+	name = "Коробка c пулевыми для дробовика"
+	desc = "Коробка с патронами 12 калибра(пулевой)"
+	id = "slug_box"
+	build_path = /obj/item/ammo_box/shotgunbox
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = 80000)
+	category = list("Ammo")
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_BALLISTICS
+
+/datum/design/shotgunbox/buckshot
+	name = "Коробка c картечью для дробовика"
+	desc = "Коробка с патронами 12 калибра(картечь)"
+	id = "buckshot_box"
+	build_path = /obj/item/ammo_box/shotgunbox/buckshot
+
+/datum/design/shotgunbox/beanbag
+	name = "Коробка с резиновыми пулями для дробовика"
+	desc = "Коробка с патронами 12 калибра(резиновый пулевой)"
+	materials = list(/datum/material/iron = 40000)
+	id = "beanbag_box"
+	build_path = /obj/item/ammo_box/shotgunbox/beanbag
+
+/datum/design/shotgunbox/rubber
+	name = "Коробка c резиновой картечью для дробовика"
+	desc = "Коробка с патронами 12 калибра(резиновая картечь)"
+	id = "rubber_box"
+	build_path = /obj/item/ammo_box/shotgunbox/rubber
+
+/datum/design/shotgunbox/incendiary
+	name = "Коробка c зажигательными"
+	desc = "Коробка с патронами 12 калибра(зажигательный)"
+	id = "incendiary_box"
+	build_path = /obj/item/ammo_box/shotgunbox/incendiary
