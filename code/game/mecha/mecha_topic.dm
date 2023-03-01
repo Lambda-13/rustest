@@ -61,19 +61,19 @@
 	var/cabin_pressure = 0
 	if (internal_tank)
 		int_tank_air = internal_tank.return_air()
-		tank_pressure = internal_tank ? round(int_tank_air.return_pressure(),0.01) : "None"
-		tank_temperature = internal_tank ? int_tank_air.return_temperature() : "Unknown"
+		tank_pressure = internal_tank ? round(int_tank_air.return_pressure(),0.01) : "---"
+		tank_temperature = internal_tank ? int_tank_air.return_temperature() : "---"
 		cabin_pressure = round(return_pressure(),0.01)
 	. =	{"[report_internal_damage()]
-		[integrity<30?"<span class='userdanger'>DAMAGE LEVEL CRITICAL</span><br>":null]
-		<b>Integrity: </b> [integrity]%<br>
-		<b>Powercell charge: </b>[isnull(cell_charge)?"No powercell installed":"[cell.percent()]%"]<br>
-		<b>Air source: </b>[internal_tank?"[use_internal_tank?"Internal Airtank":"Environment"]":"Environment"]<br>
-		<b>Airtank pressure: </b>[internal_tank?"[tank_pressure]kPa":"N/A"]<br>
-		<b>Airtank temperature: </b>[internal_tank?"[tank_temperature]&deg;K|[tank_temperature - T0C]&deg;C":"N/A"]<br>
-		<b>Cabin pressure: </b>[internal_tank?"[cabin_pressure>WARNING_HIGH_PRESSURE ? "<span class='danger'>[cabin_pressure]</span>": cabin_pressure]kPa":"N/A"]<br>
-		<b>Cabin temperature: </b> [internal_tank?"[return_temperature()]&deg;K|[return_temperature() - T0C]&deg;C":"N/A"]<br>
-		[dna_lock?"<b>DNA-locked:</b><br> <span style='font-size:10px;letter-spacing:-1px;'>[dna_lock]</span> \[<a href='?src=[REF(src)];reset_dna=1'>Reset</a>\]<br>":""]<br>"}
+		[integrity<30?"<span class='userdanger'>ВНИМАНИЕ: КРИТИЧЕСКИЕ ПОВРЕЖДЕНИЯ</span><br>":null]
+		<b>Состояние: </b> [integrity]%<br>
+		<b>Заряд: </b>[isnull(cell_charge)?"БАТАРЕЯ НЕ УСТАНОВЛЕНА":"[cell.percent()]%"]<br>
+		<b>Атмосфера: </b>[internal_tank?"[use_internal_tank?"Внутренняя":"Внешняя"]":"Внешняя"]<br>
+		<b>Давление (канистра): </b>[internal_tank?"[tank_pressure]кПа":"НЕИЗВЕСТНО"]<br>
+		<b>Температура (канистра): </b>[internal_tank?"[tank_temperature]&deg;К|[tank_temperature - T0C]&deg;С":"НЕИЗВЕСТНО"]<br>
+		<b>Давление (кабина): </b>[internal_tank?"[cabin_pressure>WARNING_HIGH_PRESSURE ? "<span class='danger'>[cabin_pressure]</span>": cabin_pressure]кПа":"НЕИЗВЕСТНО"]<br>
+		<b>Температура (кабина): </b> [internal_tank?"[return_temperature()]&deg;К|[return_temperature() - T0C]&deg;С":"НЕИЗВЕСТНО"]<br>
+		[dna_lock?"<b>ДНК-ключ:</b><br> <span style='font-size:10px;letter-spacing:-1px;'>[dna_lock]</span> \[<a href='?src=[REF(src)];reset_dna=1'>СБРОС</a>\]<br>":""]<br>"}
 	. += "[get_actions()]<br>"
 
 ///Returns HTML for mech actions. Ideally, this proc would be empty for the base mecha. Segmented for easy refactoring.
@@ -90,11 +90,11 @@
 /obj/mecha/proc/report_internal_damage()
 	. = ""
 	var/list/dam_reports = list(
-		"[MECHA_INT_FIRE]" = "<span class='userdanger'>INTERNAL FIRE</span>",
-		"[MECHA_INT_TEMP_CONTROL]" = "<span class='userdanger'>LIFE SUPPORT SYSTEM MALFUNCTION</span>",
-		"[MECHA_INT_TANK_BREACH]" = "<span class='userdanger'>GAS TANK BREACH</span>",
-		"[MECHA_INT_CONTROL_LOST]" = "<span class='userdanger'>COORDINATION SYSTEM CALIBRATION FAILURE</span> - <a href='?src=[REF(src)];repair_int_control_lost=1'>Recalibrate</a>",
-		"[MECHA_INT_SHORT_CIRCUIT]" = "<span class='userdanger'>SHORT CIRCUIT</span>"
+		"[MECHA_INT_FIRE]" = "<span class='userdanger'>ВНУТРЕННИЙ ПОЖАР</span>",
+		"[MECHA_INT_TEMP_CONTROL]" = "<span class='userdanger'>СБОЙ СИСТЕМЫ ЖИЗНЕОБЕСПЕЧЕНИЯ</span>",
+		"[MECHA_INT_TANK_BREACH]" = "<span class='userdanger'>УТЕЧКА ВОЗДУХА ИЗ КАНИСТРЫ</span>",
+		"[MECHA_INT_CONTROL_LOST]" = "<span class='userdanger'>ОШИБКА КАЛИБРОВКИ СИСТЕМЫ КООРДИНАЦИИ</span> - <a href='?src=[REF(src)];repair_int_control_lost=1'>ЗАПУСТИТЬ РЕКАЛИБРОВКУ</a>",
+		"[MECHA_INT_SHORT_CIRCUIT]" = "<span class='userdanger'>КОРОТКОЕ ЗАМЫКАНИЕ</span>"
 								)
 	for(var/tflag in dam_reports)
 		var/intdamflag = text2num(tflag)
@@ -102,13 +102,13 @@
 			. += dam_reports[tflag]
 			. += "<br />"
 	if(return_pressure() > WARNING_HIGH_PRESSURE)
-		. += "<span class='userdanger'>DANGEROUSLY HIGH CABIN PRESSURE</span><br />"
+		. += "<span class='userdanger'>ВНИМАНИЕ: ОПАСНЫЙ УРОВЕНЬ ДАВЛЕНИЯ В КАБИНЕ</span><br />"
 
 ///HTML for list of equipment.
 /obj/mecha/proc/get_equipment_list() //outputs mecha equipment list in html
 	if(!equipment.len)
 		return
-	. = "<b>Equipment:</b><div style=\"margin-left: 15px;\">"
+	. = "<b>Экипировка:</b><div style=\"margin-left: 15px;\">"
 	for(var/obj/item/mecha_parts/mecha_equipment/MT in equipment)
 		. += "<div id='[REF(MT)]'>[MT.get_equip_info()]</div>"
 	. += "</div>"
@@ -117,16 +117,16 @@
 /obj/mecha/proc/get_commands()
 	. = {"
 	<div class='wr'>
-		<div class='header'>Electronics</div>
+		<div class='header'>Электроника</div>
 		<div class='links'>
-			<b>Radio settings:</b><br>
-			Microphone:
+			<b>Встроенная гарнитура:</b><br>
+			Микрофон:
 			[radio? "<a href='?src=[REF(src)];rmictoggle=1'>\
 			<span id=\"rmicstate\">[radio.broadcasting?"Engaged":"Disengaged"]</span></a>":"Error"]<br>
-			Speaker:
+			Динамик:
 			[radio? "<a href='?src=[REF(src)];rspktoggle=1'><span id=\"rspkstate\">\
 			[radio.listening?"Engaged":"Disengaged"]</span></a>":"Error"]<br>
-			Frequency:
+			Частота:
 			[radio? "<a href='?src=[REF(src)];rfreq=-10'>-</a>":"-"]
 			[radio? "<a href='?src=[REF(src)];rfreq=-2'>-</a>":"-"]
 			<span id=\"rfreq\">[radio?"[format_frequency(radio.frequency)]":"Error"]</span>
@@ -135,13 +135,13 @@
 		</div>
 	</div>
 	<div class='wr'>
-		<div class='header'>Permissions & Logging</div>
+		<div class='header'>Доступ</div>
 		<div class='links'>
-			<a href='?src=[REF(src)];toggle_id_upload=1'><span id='t_id_upload'>[add_req_access?"L":"Unl"]ock ID upload panel</span></a><br>
-			<a href='?src=[REF(src)];toggle_maint_access=1'><span id='t_maint_access'>[maint_access?"Forbid":"Permit"] maintenance protocols</span></a><br>
+			<a href='?src=[REF(src)];toggle_id_upload=1'><span id='t_id_upload'>[add_req_access?"За":"Раз"]блокировать ID панель</span></a><br>
+			<a href='?src=[REF(src)];toggle_maint_access=1'><span id='t_maint_access'>[maint_access?"Отключить":"Включить"] технические протоколы</span></a><br>
 			[internal_tank?"<a href='?src=[REF(src)];toggle_port_connection=1'><span id='t_port_connection'>[internal_tank.connected_port?"Disconnect from":"Connect to"] gas port</span></a><br>":""]
-			<a href='?src=[REF(src)];dna_lock=1'>DNA-lock</a><br>
-			<a href='?src=[REF(src)];change_name=1'>Change exosuit name</a>
+			<a href='?src=[REF(src)];dna_lock=1'>ДНК-ключ</a><br>
+			<a href='?src=[REF(src)];change_name=1'>Сменить имя меха</a>
 		</div>
 	</div>"}
 
@@ -149,13 +149,13 @@
 /obj/mecha/proc/get_equipment_menu() //outputs mecha html equipment menu
 	. = {"
 	<div class='wr'>
-	<div class='header'>Equipment</div>
+	<div class='header'>Экипировка</div>
 	<div class='links'>"}
 	if(equipment.len)
 		for(var/X in equipment)
 			var/obj/item/mecha_parts/mecha_equipment/W = X
-			. += "[W.name] [W.detachable?"<a href='?src=[REF(W)];detach=1'>Detach</a><br>":"\[Non-removable\]<br>"]"
-	. += {"<b>Available equipment slots:</b> [max_equip-equipment.len]
+			. += "[W.name] [W.detachable?"<a href='?src=[REF(W)];detach=1'>Отсоеденить</a><br>":"\[НЕВОЗМОЖНО ОТСОЕДЕНИТЬ\]<br>"]"
+	. += {"<b>Доступные слоты:</b> [max_equip-equipment.len]
 	</div>
 	</div>"}
 
@@ -172,19 +172,19 @@
 				</style>
 			</head>
 			<body>
-				<h1>Following keycodes are present in this system:</h1>"}
+				<h1>В этой системе присутствуют следующие ключевые коды:</h1>"}
 	for(var/a in operation_req_access)
 		. += "[get_access_desc(a)] - <a href='?src=[REF(src)];del_req_access=[a];user=[REF(user)];id_card=[REF(id_card)]'>Delete</a><br>"
-	. += "<hr><h1>Following keycodes were detected on portable device:</h1>"
+	. += "<hr><h1>На портативном устройстве обнаружены следующие ключевые коды:</h1>"
 	for(var/a in id_card.access)
 		if(a in operation_req_access)
 			continue
 		var/a_name = get_access_desc(a)
 		if(!a_name)
 			continue //there's some strange access without a name
-		. += "[a_name] - <a href='?src=[REF(src)];add_req_access=[a];user=[REF(user)];id_card=[REF(id_card)]'>Add</a><br>"
-	. +={"<hr><a href='?src=[REF(src)];finish_req_access=1;user=[REF(user)]'>Lock ID panel</a><br>
-		<span class='danger'>(Warning! The ID upload panel can be unlocked only through Exosuit Interface.)</span>
+		. += "[a_name] - <a href='?src=[REF(src)];add_req_access=[a];user=[REF(user)];id_card=[REF(id_card)]'>Добавить</a><br>"
+	. +={"<hr><a href='?src=[REF(src)];finish_req_access=1;user=[REF(user)]'>Заблокировать ID панель</a><br>
+		<span class='danger'>(Предупреждение! Панель загрузки ID можно разблокировать только через интерфейс Exosuit.)</span>
 		</body>
 		</html>"}
 	user << browse(., "window=exosuit_add_access")

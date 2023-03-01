@@ -1,5 +1,5 @@
 #define BUTTON_COOLDOWN 60 // cant delay the bomb forever
-#define BUTTON_DELAY 50 //five seconds
+#define BUTTON_DELAY	50 //five seconds
 
 /obj/machinery/syndicatebomb
 	icon = 'icons/obj/assemblies.dmi'
@@ -81,7 +81,7 @@
 		update_icon()
 		try_detonate(TRUE)
 
-/obj/machinery/syndicatebomb/Initialize()
+/obj/machinery/syndicatebomb/Initialize(mapload)
 	. = ..()
 	wires = new /datum/wires/syndicatebomb(src)
 	if(payload)
@@ -98,9 +98,10 @@
 
 /obj/machinery/syndicatebomb/examine(mob/user)
 	. = ..()
-	. += {"A digital display on it reads "[seconds_remaining()]"."}
+	. += {"<hr>A digital display on it reads "[seconds_remaining()]"."}
 
 /obj/machinery/syndicatebomb/update_icon_state()
+	. = ..()
 	icon_state = "[initial(icon_state)][active ? "-active" : "-inactive"][open_panel ? "-wires" : ""]"
 
 /obj/machinery/syndicatebomb/proc/seconds_remaining()
@@ -110,28 +111,31 @@
 		. = timer_set
 
 /obj/machinery/syndicatebomb/attackby(obj/item/I, mob/user, params)
+	if(HAS_TRAIT(user, TRAIT_PACIFISM))
+		to_chat(user, span_warning("Не могу как-то взаимодействовать с бомбой!"))
+		return FALSE
 	if(I.tool_behaviour == TOOL_WRENCH && can_unanchor)
 		if(!anchored)
 			if(!isturf(loc) || isspaceturf(loc))
-				to_chat(user, "<span class='notice'>The bomb must be placed on solid ground to attach it.</span>")
+				to_chat(user, span_notice("The bomb must be placed on solid ground to attach it."))
 			else
-				to_chat(user, "<span class='notice'>You firmly wrench the bomb to the floor.</span>")
+				to_chat(user, span_notice("You firmly wrench the bomb to the floor."))
 				I.play_tool_sound(src)
 				set_anchored(TRUE)
 				if(active)
-					to_chat(user, "<span class='notice'>The bolts lock in place.</span>")
+					to_chat(user, span_notice("The bolts lock in place."))
 		else
 			if(!active)
-				to_chat(user, "<span class='notice'>You wrench the bomb from the floor.</span>")
+				to_chat(user, span_notice("You wrench the bomb from the floor."))
 				I.play_tool_sound(src)
 				set_anchored(FALSE)
 			else
-				to_chat(user, "<span class='warning'>The bolts are locked down!</span>")
+				to_chat(user, span_warning("The bolts are locked down!"))
 
 	else if(I.tool_behaviour == TOOL_SCREWDRIVER)
 		open_panel = !open_panel
 		update_icon()
-		to_chat(user, "<span class='notice'>You [open_panel ? "open" : "close"] the wire panel.</span>")
+		to_chat(user, span_notice("You [open_panel ? "open" : "close"] the wire panel."))
 
 	else if(is_wire_tool(I) && open_panel)
 		wires.interact(user)
@@ -139,23 +143,23 @@
 	else if(I.tool_behaviour == TOOL_CROWBAR)
 		if(open_panel && wires.is_all_cut())
 			if(payload)
-				to_chat(user, "<span class='notice'>You carefully pry out [payload].</span>")
+				to_chat(user, span_notice("You carefully pry out [payload]."))
 				payload.forceMove(drop_location())
 				payload = null
 			else
-				to_chat(user, "<span class='warning'>There isn't anything in here to remove!</span>")
+				to_chat(user, span_warning("Нечего вытаскивать!"))
 		else if (open_panel)
-			to_chat(user, "<span class='warning'>The wires connecting the shell to the explosives are holding it down!</span>")
+			to_chat(user, span_warning("Провода, соединяющие оболочку со взрывчаткой удерживают её!"))
 		else
-			to_chat(user, "<span class='warning'>The cover is screwed on, it won't pry off!</span>")
+			to_chat(user, span_warning("Крышка прикручена, она не вскрывается!"))
 	else if(istype(I, /obj/item/bombcore))
 		if(!payload)
 			if(!user.transferItemToLoc(I, src))
 				return
 			payload = I
-			to_chat(user, "<span class='notice'>You place [payload] into [src].</span>")
+			to_chat(user, span_notice("Помещаю [payload] в [src]."))
 		else
-			to_chat(user, "<span class='warning'>[payload] is already loaded into [src]! You'll have to remove it first.</span>")
+			to_chat(user, span_warning("[payload] уже загружена в [src]! Нужно бы вытянуть её сначала."))
 	else if(I.tool_behaviour == TOOL_WELDER)
 		if(payload || !wires.is_all_cut() || !open_panel)
 			return
@@ -163,16 +167,16 @@
 		if(!I.tool_start_check(user, amount=5))  //uses up 5 fuel
 			return
 
-		to_chat(user, "<span class='notice'>You start to cut [src] apart...</span>")
+		to_chat(user, span_notice("Начинаю разрезать [src] на части..."))
 		if(I.use_tool(src, user, 20, volume=50, amount=5)) //uses up 5 fuel
-			to_chat(user, "<span class='notice'>You cut [src] apart.</span>")
-			new /obj/item/stack/sheet/plasteel(loc, 5)
+			to_chat(user, span_notice("Разрезал [src] на части."))
+			new /obj/item/stack/sheet/plasteel( loc, 5)
 			qdel(src)
 	else
 		var/old_integ = obj_integrity
 		. = ..()
 		if((old_integ > obj_integrity) && active  && (payload in src))
-			to_chat(user, "<span class='warning'>That seems like a really bad idea...</span>")
+			to_chat(user, span_warning("Кажется это плохая идея..."))
 
 /obj/machinery/syndicatebomb/interact(mob/user)
 	wires.interact(user)
@@ -180,7 +184,7 @@
 		if(!active)
 			settings(user)
 		else if(anchored)
-			to_chat(user, "<span class='warning'>The bomb is bolted to the floor!</span>")
+			to_chat(user, span_warning("Бомба прикручена к полу!"))
 
 /obj/machinery/syndicatebomb/proc/activate()
 	active = TRUE
@@ -189,9 +193,13 @@
 	next_beep = world.time + 10
 	detonation_timer = world.time + (timer_set * 10)
 	playsound(loc, 'sound/machines/click.ogg', 30, TRUE)
-	notify_ghosts("\A [src] has been activated at [get_area(src)]!", source = src, action = NOTIFY_ORBIT, flashwindow = FALSE, header = "Bomb Planted")
+	notify_ghosts("<b>[capitalize(src)]</b> has been activated at [get_area(src)]!", source = src, action = NOTIFY_ORBIT, flashwindow = FALSE, header = "Bomb Planted")
 
 /obj/machinery/syndicatebomb/proc/settings(mob/user)
+	if(HAS_TRAIT(user, TRAIT_PACIFISM))
+		to_chat(user, span_warning("Не могу заставить себя поставить бомбу! Это ведь навредит кому-то!"))
+		return FALSE
+
 	var/new_timer = input(user, "Please set the timer.", "Timer", "[timer_set]") as num|null
 
 	if (isnull(new_timer))
@@ -199,10 +207,10 @@
 
 	if(in_range(src, user) && isliving(user)) //No running off and setting bombs from across the station
 		timer_set = clamp(new_timer, minimum_timer, maximum_timer)
-		loc.visible_message("<span class='notice'>[icon2html(src, viewers(src))] timer set for [timer_set] seconds.</span>")
-	if(alert(user,"Would you like to start the countdown now?",,"Yes","No") == "Yes" && in_range(src, user) && isliving(user))
+		loc.visible_message(span_notice("[icon2html(src, viewers(src))] timer set for [timer_set] seconds."))
+	if(tgui_alert(user,"Would you like to start the countdown now?",,list("Yes","No")) == "Yes" && in_range(src, user) && isliving(user))
 		if(!active)
-			visible_message("<span class='danger'>[icon2html(src, viewers(loc))] [timer_set] seconds until detonation, please clear the area.</span>")
+			visible_message(span_danger("[icon2html(src, viewers(loc))] [timer_set] секунд до детонации, пожалуйста, покиньте зону."))
 			activate()
 			update_icon()
 			add_fingerprint(user)
@@ -214,49 +222,54 @@
 ///Bomb Subtypes///
 
 /obj/machinery/syndicatebomb/training
-	name = "training bomb"
+	name = "тренировочная бомба"
 	icon_state = "training-bomb"
-	desc = "A salvaged syndicate device gutted of its explosives to be used as a training aid for aspiring bomb defusers."
+	desc = "Устройство Синдиката с вынутой взрывчаткой внутри, которая используется для тренировки начинающих сапёров."
 	payload = /obj/item/bombcore/training
+
+/obj/machinery/syndicatebomb/emp
+	name = "ЭМИ бомба"
+	desc = "Модифицированная бомба, сделанная для выпуска разрушительного электромагнетического пульса вместо взрыва."
+	payload = /obj/item/bombcore/emp
 
 /obj/machinery/syndicatebomb/badmin
 	name = "generic summoning badmin bomb"
-	desc = "Oh god what is in this thing?"
+	desc = "О боже, что это за штука?"
 	payload = /obj/item/bombcore/badmin/summon
 
 /obj/machinery/syndicatebomb/badmin/clown
-	name = "clown bomb"
+	name = "клоунская бомба"
 	icon_state = "clown-bomb"
-	desc = "HONK."
+	desc = "ХОНК."
 	payload = /obj/item/bombcore/badmin/summon/clown
 	beepsound = 'sound/items/bikehorn.ogg'
 
 /obj/machinery/syndicatebomb/empty
-	name = "bomb"
+	name = "бомба"
 	icon_state = "base-bomb"
-	desc = "An ominous looking device designed to detonate an explosive payload. Can be bolted down using a wrench."
+	desc = "Зловеще выглядящее устройство, предназначенное для детонации взрывного боезаряда. Может быть прикручено к полу с помощью гаечного ключа."
 	payload = null
 	open_panel = TRUE
 	timer_set = 120
 
-/obj/machinery/syndicatebomb/empty/Initialize()
+/obj/machinery/syndicatebomb/empty/Initialize(mapload)
 	. = ..()
 	wires.cut_all()
 
 /obj/machinery/syndicatebomb/self_destruct
-	name = "self destruct device"
-	desc = "Do not taunt. Warranty invalid if exposed to high temperature. Not suitable for agents under 3 years of age."
+	name = "механизм самоуничтожения"
+	desc = "Не трогать. Гарантия недействительна, если подвергается высоким температурам. Не подходит для агентов возрастом ниже трёх лет."
 	payload = /obj/item/bombcore/large
 	can_unanchor = FALSE
 
 ///Bomb Cores///
 
 /obj/item/bombcore
-	name = "bomb payload"
-	desc = "A powerful secondary explosive of syndicate design and unknown composition, it should be stable under normal conditions..."
+	name = "боезаряд бомбы"
+	desc = "Мощная взрывчатка неизвестной структуры произведённая Синдикатом. Она должна быть стабильной в нормальных условиях..."
 	icon = 'icons/obj/assemblies.dmi'
 	icon_state = "bombcore"
-	item_state = "eshield0"
+	inhand_icon_state = "eshield0"
 	lefthand_file = 'icons/mob/inhands/equipment/shields_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/shields_righthand.dmi'
 	w_class = WEIGHT_CLASS_NORMAL
@@ -290,8 +303,8 @@
 ///Bomb Core Subtypes///
 
 /obj/item/bombcore/training
-	name = "dummy payload"
-	desc = "A Nanotrasen replica of a syndicate payload. It's not intended to explode but to announce that it WOULD have exploded, then rewire itself to allow for more training."
+	name = "тренировочный боезаряд"
+	desc = "Точная копия боезаряда Синдиката, сделанная NanoTrasen. Полностью лишенная взрывчатки, на ней можно практиковать свои навыки обезвреживания бомб."
 	var/defusals = 0
 	var/attempts = 0
 
@@ -312,7 +325,7 @@
 	var/obj/machinery/syndicatebomb/holder = loc
 	if(istype(holder))
 		attempts++
-		holder.loc.visible_message("<span class='danger'>[icon2html(holder, viewers(holder))] Alert: Bomb has detonated. Your score is now [defusals] for [attempts]. Resetting wires...</span>")
+		holder.loc.visible_message(span_danger("[icon2html(holder, viewers(holder))] Внимание: Бомба сдетонировала. Теперь ваш счёт [defusals] на [attempts]. Перенастройка проводов в течение 5 секунд..."))
 		reset()
 	else
 		qdel(src)
@@ -322,14 +335,14 @@
 	if(istype(holder))
 		attempts++
 		defusals++
-		holder.loc.visible_message("<span class='notice'>[icon2html(holder, viewers(holder))] Alert: Bomb has been defused. Your score is now [defusals] for [attempts]! Resetting wires in 5 seconds...</span>")
-		sleep(50)	//Just in case someone is trying to remove the bomb core this gives them a little window to crowbar it out
+		holder.loc.visible_message(span_notice("[icon2html(holder, viewers(holder))] Внимание: Бомба обезврежена. Теперь ваш счёт [defusals] на [attempts]! Перенастройка проводов в течение 5 секунд..."))
+		sleep(50)	//Just in case someone пытается remove the bomb core this gives them a little window to crowbar it out
 		if(istype(holder))
 			reset()
 
 /obj/item/bombcore/badmin
 	name = "badmin payload"
-	desc = "If you're seeing this someone has either made a mistake or gotten dangerously savvy with var editing!"
+	desc = "Если вы видите это, значит кто-то обосрался!"
 
 /obj/item/bombcore/badmin/defuse() //because we wouldn't want them being harvested by players
 	var/obj/machinery/syndicatebomb/B = loc
@@ -337,7 +350,7 @@
 	qdel(src)
 
 /obj/item/bombcore/badmin/summon
-	var/summon_path = /obj/item/reagent_containers/food/snacks/cookie
+	var/summon_path = /obj/item/food/cookie
 	var/amt_summon = 1
 
 /obj/item/bombcore/badmin/summon/detonate()
@@ -347,7 +360,7 @@
 	qdel(src)
 
 /obj/item/bombcore/badmin/summon/clown
-	summon_path = /mob/living/simple_animal/hostile/retaliate/clown
+	summon_path = /mob/living/simple_animal/hostile/clown
 	amt_summon 	= 50
 
 /obj/item/bombcore/badmin/summon/clown/defuse()
@@ -355,14 +368,14 @@
 	..()
 
 /obj/item/bombcore/large
-	name = "large bomb payload"
+	name = "боезаряд большой бомбы"
 	range_heavy = 5
 	range_medium = 10
 	range_light = 20
 	range_flame = 20
 
 /obj/item/bombcore/miniature
-	name = "small bomb core"
+	name = "ядро малой бомбы"
 	w_class = WEIGHT_CLASS_SMALL
 	range_heavy = 1
 	range_medium = 2
@@ -370,8 +383,8 @@
 	range_flame = 2
 
 /obj/item/bombcore/chemical
-	name = "chemical payload"
-	desc = "An explosive payload designed to spread chemicals, dangerous or otherwise, across a large area. Properties of the core may vary with grenade casing type, and must be loaded before use."
+	name = "химичиский заряд"
+	desc = "Взрывоопасный заряд предназначенный для распространения химикатов. Свойства ядра могут варьироваться с типом корпуса гранаты. Граната должна быть установлена перед использованием"
 	icon_state = "chemcore"
 	var/list/beakers = list()
 	var/max_beakers = 1 // Read on about grenade casing properties below
@@ -400,7 +413,7 @@
 		chem_splash(get_turf(src), spread_range, list(reactants), temp_boost)
 
 		// Detonate it again in one second, until it's out of juice.
-		addtimer(CALLBACK(src, .proc/detonate), 10)
+		addtimer(CALLBACK(src, PROC_REF(detonate)), 10)
 
 	// If it's not a time release bomb, do normal explosion
 
@@ -443,9 +456,9 @@
 			if(!user.transferItemToLoc(I, src))
 				return
 			beakers += I
-			to_chat(user, "<span class='notice'>You load [src] with [I].</span>")
+			to_chat(user, span_notice("Устанавливаю [src] вместе с [I]."))
 		else
-			to_chat(user, "<span class='warning'>[I] won't fit! \The [src] can only hold up to [max_beakers] containers.</span>")
+			to_chat(user, span_warning("[I] не вмещается! <b>[src.name]</b> может содержать до [max_beakers] контейнеров."))
 			return
 	..()
 
@@ -489,17 +502,29 @@
 
 		qdel(G)
 
+/obj/item/bombcore/emp
+	name = "ЭМИ заряд"
+	desc = "Сборка сверхпроводящих электромагнитных катушек предназначенных для выпуска мощного импульса для того, чтобы уничтожить электронику"
+	range_heavy = 15
+	range_medium = 25
 
+/obj/item/bombcore/emp/detonate()
+	if(adminlog)
+		message_admins(adminlog)
+		log_game(adminlog)
 
+	empulse(src, range_heavy, range_medium)
+
+	qdel(src)
 
 ///Syndicate Detonator (aka the big red button)///
 
 /obj/item/syndicatedetonator
-	name = "big red button"
-	desc = "Your standard issue bomb synchronizing button. Five second safety delay to prevent 'accidents'."
+	name = "большая красная кнопка"
+	desc = "Кнопка синхронизации взрыва нескольких бомб. Чтобы избежать инцидентов, взрыв бомб происходит спустя пять секунд после активации."
 	icon = 'icons/obj/assemblies.dmi'
 	icon_state = "bigred"
-	item_state = "electronic"
+	inhand_icon_state = "electronic"
 	lefthand_file = 'icons/mob/inhands/misc/devices_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/devices_righthand.dmi'
 	w_class = WEIGHT_CLASS_TINY
@@ -515,7 +540,7 @@
 				detonated++
 			existent++
 		playsound(user, 'sound/machines/click.ogg', 20, TRUE)
-		to_chat(user, "<span class='notice'>[existent] found, [detonated] triggered.</span>")
+		to_chat(user, span_notice("Найдено [existent] бомб. Активировано [detonated] бомб."))
 		if(detonated)
 			detonated--
 			log_bomber(user, "remotely detonated [detonated ? "syndicate bombs" : "a syndicate bomb"] using a", src)
