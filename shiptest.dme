@@ -3610,4 +3610,5 @@
 #include "lambda\sanecman\code\unsorted\gun_hud.dm"
 #include "lambda\sanecman\code\unsorted\keybindings_reset.dm"
 #include "lambda\sanecman\code\unsorted\mre.dm"
+#include "lambda\ss7v\code\tactical.dm"
 // END_INCLUDE
