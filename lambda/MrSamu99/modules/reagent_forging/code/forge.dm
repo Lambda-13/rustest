@@ -343,13 +343,13 @@
 	icon_state = "forge_active"
 	set_light(3, 1, LIGHT_COLOR_FIRE)*/
 
-/*obj/structure/reagent_forge/attack_hand(mob/living/user, list/modifiers)
+/obj/structure/reagent_forge/attack_hand(mob/living/user, list/modifiers)
 	. = ..()
-	if(used_tray)
-		remove_tray_from_forge(user)
-		return
+	//if(used_tray)
+	//	remove_tray_from_forge(user)
+	//	return
 
-	upgrade_forge(user)*/
+	upgrade_forge(user)
 
 /obj/structure/reagent_forge/proc/upgrade_forge(mob/living/user, forced = FALSE)
 	var/level_to_upgrade_to
