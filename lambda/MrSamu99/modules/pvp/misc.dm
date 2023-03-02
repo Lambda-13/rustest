@@ -24,7 +24,7 @@
 	if (istype(O, /obj/item/disk/antivirus))
 		current_ship.antivirus_nodes++
 		playsound(loc, 'sound/misc/compiler-stage2.ogg', 90, 1, 0)
-		say("Uploaded antiviral node!")
+		say("Антивирус загружен в систему судна.")
 		qdel(O)
 	else
 		return ..()
@@ -47,18 +47,18 @@
 */
 /datum/overmap/ship/controlled/proc/systems_restored()
 	COOLDOWN_START(src, sub_grace, SHIP_GRACE_TIME)
-	most_recent_helm.say("Helm controls restored!")
+	most_recent_helm.say("Управление восстановлено.")
 
 //Prevent subverted ship from being able to do anything
 /obj/machinery/computer/helm/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
 	if (!COOLDOWN_FINISHED(current_ship, engine_cooldown))
-		say("Helm controls subverted!")
+		say("Ошибка управления!")
 	else
 		return ..()
 
 /obj/machinery/computer/autopilot/ui_act(action, params)
 	if (!COOLDOWN_FINISHED(ship, engine_cooldown))
-		say("Auxillary console unresponsive!")
+		say("Вспомогательная консоль не отвечает!")
 	else
 		return ..()
 
@@ -85,13 +85,13 @@
 */
 /datum/overmap/ship/controlled/proc/ship_act(mob/user, datum/overmap/ship/controlled/acting)
 	if (acting.sent_request)
-		acting.most_recent_helm.say("Request already sent.")
+		acting.most_recent_helm.say("Запрос уже отправлен.")
 		return
 	if (requesting_ship)
-		acting.most_recent_helm.say("That ship is already dealing with a docking request.")
+		acting.most_recent_helm.say("Этот корабль уже обрабатывает запрос на стыковку.")
 		return
 	if (!COOLDOWN_FINISHED(acting, request_cooldown))
-		acting.most_recent_helm.say("[num2text(COOLDOWN_TIMELEFT(acting, request_cooldown)/10)] seconds before you can request another dock.")
+		acting.most_recent_helm.say("Подождите [num2text(COOLDOWN_TIMELEFT(acting, request_cooldown)/10)] секунд, прежде чем вы сможете запросить стыковку.")
 		return
 	/*if (state != OVERMAP_SHIP_FLYING)
 		acting.most_recent_helm.say("The [name] is busy.")

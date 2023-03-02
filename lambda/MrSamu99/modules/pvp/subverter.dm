@@ -24,8 +24,8 @@
 #define SUB_OUT_OF_RANGE 11
 
 /obj/machinery/subverter
-	name = "interdictor"
-	desc = "A piece of equipment used to upload programs to other vessels. It has no interface: It could be linked to an auxiliary console or the wires could be pulsed manually."
+	name = "ниспровергатель"
+	desc = "Машинерия, используемая для загрузки программ на другие суда. У него нет интерфейса: его можно подключить к вспомогательному пульту управления или управлять через проводку."
 	icon = 'lambda/MrSamu99/modules/pvp/sound_n_icons/space_hacking.dmi'
 	icon_state = "subverter"
 	density = TRUE
@@ -94,34 +94,34 @@
 *	subvert_flag - The context of the subversion attempt, returned by can_subvert
 *	bark_success_message - (optional) Text displayed upon a successful subversion
 */
-/obj/machinery/subverter/proc/bark_processing(subvert_flag, bark_success_message = "Agent was successful! Bringing target vessel out of hyperspace.")
+/obj/machinery/subverter/proc/bark_processing(subvert_flag, bark_success_message = "Перехват успешен! Выведение корабля-цели из гиперпространства.")
 	switch (subvert_flag)
 		if (SUB_SUCCESS)
 			subvert_bark(bark_success_message, SUBVERTER_BARK_SUCCESS)
 		if (SUB_TARGET_IS_NEU)
-			subvert_bark("Cannot subvert NEU vessels!")
+			subvert_bark("Перехват мирных судов запрещён на подпрограмном уровне!")
 		if (SUB_WE_ARE_NEU)
-			subvert_bark("NEU Vessels cannot use the subverter!")
+			subvert_bark("Мирные суда не имеют права использовать систему перехватов.")
 		if (SUB_TARGET_IS_ALLY)
-			subvert_bark("Cannot subvert allied vessels!")
+			subvert_bark("Перехват союзных судов запрещён!")
 		if (SUB_RECHARGING)
-			subvert_bark("Subverter recharging!")
+			subvert_bark("Ниспровергатель перезаряжается.")
 		if (SUB_TARGET_SUBVERTED)
-			subvert_bark("Target vessel is already subverted.")
+			subvert_bark("Данное судно уже было перехвачено.")
 		if (SUB_TARGET_DOCKED)
-			subvert_bark("Target vessel is currently docked (outside of hyperspace).")
+			subvert_bark("Судно-цель вышла из гиперпространства.")
 		if (SUB_TARGET_DOCKING)
-			subvert_bark("Target vessel is currently docking.")
+			subvert_bark("Судно-цель совершает стыковку - в целях безопасности перехват отменяется.")
 		if (SUB_TARGET_UNDOCKING)
-			subvert_bark("Target vessel is currently undocking.")
+			subvert_bark("Судно-цель совершает отстыковку.")
 		if (SUB_TARGET_GRACE)
-			subvert_bark("Cannot subvert that vessel currently (Grace period).")
+			subvert_bark("Перехват этого судна временно невозможен.")
 		if (SUB_TARGET_ANTIVIRUS)
-			subvert_bark("Agent failed! Reason: Antivirus")
+			subvert_bark("Обнаружен антивирусный модуль, отмена.")
 		if (SUB_OUT_OF_RANGE)
-			subvert_bark("Target vessel is out of range ([range] tiles).")
+			subvert_bark("Судно-цель далеко ([range] парсек).")
 		else
-			subvert_bark("Failed to subvert (Unknown error)")
+			subvert_bark("Неизвестная ошибка.")
 
 /**
 *	Returns int used to determine the context of the subversion attempt
@@ -173,7 +173,7 @@
 	target_ship.decelerate(target_ship.max_speed)
 	target_ship.dock_in_empty_space(usr)
 	COOLDOWN_START(target_ship, engine_cooldown, sub_engine)
-	target_ship.most_recent_helm.say("CRITICAL ERROR: SYSTEM TAKEOVER")
+	target_ship.most_recent_helm.say("ОШИБКА: ОБНАРУЖЕН ПЕРЕХВАТ. ТРЕВОГА.")
 	playsound(target_ship.most_recent_helm, 'lambda/MrSamu99/modules/pvp/sound_n_icons/booterattack.ogg', 100, 0, 0)
 
 /**
@@ -202,7 +202,7 @@
 		addtimer(CALLBACK(target_ship, /datum/overmap/ship/controlled/.proc/systems_restored), COOLDOWN_TIMELEFT(target_ship, engine_cooldown))
 		return TRUE
 	else
-		target_ship.most_recent_helm.say("Viral agent blocked. Source: [ship.name]")
+		target_ship.most_recent_helm.say("Попытка перехвата предотвращена. Источник: [ship.name].")
 		COOLDOWN_START(target_ship, sub_grace, 5 MINUTES)
 
 /**
@@ -244,7 +244,7 @@
 	if (!hacked)
 		return
 	if (ship.faction_prefix == "NEU")
-		subvert_bark("NEU Vessels cannot use the subverter!")
+		subvert_bark("Нейтральные суда не могут использовать перехватчик.")
 		return
 	//find nearest non-allied pvp ship and attempt to subvert
 	var/datum/overmap/ship/controlled/nearest
@@ -315,11 +315,11 @@
 		var/obj/machinery/computer/autopilot/console = multi.buffer
 		console.sub = src
 		aux = console
-		visible_message("Linked to [console]!")
-		aux.say("External device found! Subverter mode enabled.")
+		balloon_alert("Передаю данные с мультитула в [console]!")
+		aux.say("Внешнее устроиство обнаружено - режим \"перехват\" доступен.")
 	else
 		multi.buffer = src
-		visible_message("Saved [src] to buffer.")
+		balloon_alert("Сохраняю данные [src] в буфер.")
 	return TRUE
 
 #undef SUBVERTER_BARK_FAILURE
