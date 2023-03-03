@@ -320,7 +320,7 @@
 	item_state = "rd_envirohelm"
 	armor = list("melee" = 30, "bullet" = 5, "laser" = 10, "energy" = 20, "bomb" = 100, "bio" = 100, "rad" = 60, "fire" = 100, "acid" = 75)
 	var/explosion_detection_dist = 21
-	clothing_flags = list(STOPSPRESSUREDAMAGE, THICKMATERIAL, SCAN_REAGENTS, SNUG_FIT, BLOCK_GAS_SMOKE_EFFECT, ALLOWINTERNALS) //WS Port - Cit Internals
+	clothing_flags = STOPSPRESSUREDAMAGE | THICKMATERIAL | SCAN_REAGENTS | SNUG_FIT | BLOCK_GAS_SMOKE_EFFECT | ALLOWINTERNALS //WS Port - Cit Internals
 	actions_types = list(/datum/action/item_action/toggle_helmet_light, /datum/action/item_action/toggle_research_scanner)
 
 //bomb scanner for RD helmet

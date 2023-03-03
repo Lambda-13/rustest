@@ -115,3 +115,12 @@
 
 /obj/item/research_notes/loot/genius
 	value = 30000
+
+/datum/export/research_notes
+	unit_name = "research note"
+	cost = 0.25
+	export_types = /obj/item/research_notes
+
+/datum/export/research_notes/get_amount(obj/O)
+	var/obj/item/research_notes/value = O
+	return value.value
