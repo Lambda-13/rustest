@@ -1,5 +1,5 @@
 //Зачем?
-	/mob/living/simple_animal/hostile/megafauna/colossus/reimu
+/mob/living/simple_animal/hostile/megafauna/colossus/reimu
 	name = "Reimu Hakurei"
 	desc = "Wow, cute anime girl."
 	health = 1250
