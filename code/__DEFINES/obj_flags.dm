@@ -45,15 +45,16 @@
 #define THICKMATERIAL (1<<6)	//prevents syringes, parapens and hypos if the external suit or helmet (if targeting head) has this flag. Example: space suits, biosuit, bombsuits, thick suits that cover your body.
 #define VOICEBOX_TOGGLABLE (1<<7) // The voicebox in this clothing can be toggled.
 #define VOICEBOX_DISABLED (1<<8) // The voicebox is currently turned off.
-#define BLOCKS_SHOVE_KNOCKDOWN (1<<9) // Prevents shovies against a dense object from knocking the wearer down.
-#define SNUG_FIT (1<<10) //Prevents knock-off from things like hat-throwing.
-#define ANTI_TINFOIL_MANEUVER (1<<11) //Hats with negative effects when worn (i.e the tinfoil hat).
-#define DANGEROUS_OBJECT (1<<12) //Clothes that cause a larger notification when placed on a person.
-#define LARGE_WORN_ICON (1<<13) //Clothes that use large icons, for applying the proper overlays like blood
+#define SCAN_REAGENTS (1<<9) // Allows helmets, masks and glasses to scan reagents.
+#define BLOCKS_SHOVE_KNOCKDOWN (1<<10) // Prevents shovies against a dense object from knocking the wearer down.
+#define SNUG_FIT (1<<11) //Prevents knock-off from things like hat-throwing.
+#define ANTI_TINFOIL_MANEUVER (1<<12) //Hats with negative effects when worn (i.e the tinfoil hat).
+#define DANGEROUS_OBJECT (1<<13) //Clothes that cause a larger notification when placed on a person.
+#define LARGE_WORN_ICON (1<<14) //Clothes that use large icons, for applying the proper overlays like blood
 /// Clothes that block speech (i.e the muzzle). Can be applied to any clothing piece.
-#define BLOCKS_SPEECH (1<<14)
+#define BLOCKS_SPEECH (1<<15)
 /// Usable as casting clothes by wizards (only matters for suits and headwear)
-#define CASTING_CLOTHES (1<<15)
+#define CASTING_CLOTHES (1<<16)
 /// Flags for the organ_flags var on /obj/item/organ
 
 #define ORGAN_SYNTHETIC (1<<0)	//Synthetic organs, or cybernetic organs. Reacts to EMPs and don't deteriorate or heal

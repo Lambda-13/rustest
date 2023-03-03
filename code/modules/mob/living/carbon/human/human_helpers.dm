@@ -165,11 +165,13 @@
 	. = ..()
 	if(.) //No need to run through all of this if it's already true.
 		return
-	if(isclothing(glasses) && (glasses.clothing_flags & TRAIT_REAGENT_SCANNER))
+	if(isclothing(glasses) && (glasses.clothing_flags & SCAN_REAGENTS))
 		return TRUE
-	if(isclothing(head) && (head.clothing_flags & TRAIT_REAGENT_SCANNER))
+	if(isclothing(head) && (head.clothing_flags & SCAN_REAGENTS))
 		return TRUE
-	if(isclothing(wear_mask) && (wear_mask.clothing_flags & TRAIT_REAGENT_SCANNER))
+	if(isclothing(wear_mask) && (wear_mask.clothing_flags & SCAN_REAGENTS))
+		return TRUE
+	if(HAS_TRAIT(src, TRAIT_REAGENT_SCANNER))
 		return TRUE
 
 ///copies over clothing preferences like underwear to another human

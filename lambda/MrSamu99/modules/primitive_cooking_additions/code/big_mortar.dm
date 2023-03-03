@@ -1,5 +1,6 @@
 #define LARGE_MORTAR_STAMINA_MINIMUM 50 //What is the amount of stam damage that we prevent mortar use at
 #define LARGE_MORTAR_STAMINA_USE 70 //How much stam damage is given to people when the mortar is used
+#define MORTAR_CONTAINER (DRAINABLE | TRANSPARENT)
 
 /obj/structure/large_mortar
 	name = "large mortar"
@@ -13,17 +14,18 @@
 	custom_materials = list(/datum/material/wood = MINERAL_MATERIAL_AMOUNT * 10)
 	/// The maximum number of items this structure can store
 	var/maximum_contained_items = 10
+	obj_flags = NONE
 
 /obj/structure/large_mortar/Initialize(mapload)
 	. = ..()
-	create_reagents(200, OPENCONTAINER)
+	create_reagents(200, DRAINABLE | TRANSPARENT)
 
 	//AddElement(/datum/element/falling_hazard, damage = 20, wound_bonus = 5, hardhat_safety = TRUE, crushes = FALSE)
 
 /obj/structure/large_mortar/examine(mob/user)
 	. = ..()
 	. += span_notice("It currently contains <b>[length(contents)]/[maximum_contained_items]</b> items.")
-	. += span_notice("It can be (un)secured with <b>Right Click</b>")
+	. += span_notice("It can be (un)secured with <b>wrench</b>")
 	. += span_notice("You can empty all of the items out of it with <b>Alt Click</b>")
 
 /obj/structure/large_mortar/Destroy()
@@ -59,6 +61,23 @@
 	return //SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 
 /obj/structure/large_mortar/attackby(obj/item/attacking_item, mob/living/carbon/human/user)
+	if(istype(attacking_item, /obj/item/wrench))
+		return
+	if(istype(attacking_item, /obj/item/reagent_containers))
+		if(attacking_item.is_refillable())
+			var/obj/structure/target = src // Taken from reagent_containters/glass afterattack proc
+			if(!target.reagents.total_volume)
+				to_chat(user, "<span class='warning'>[target] is empty and can't be drained!</span>")
+				return
+
+			if(reagents.holder_full())
+				to_chat(user, "<span class='warning'>[attacking_item] is full.</span>")
+				return
+
+			var/trans = target.reagents.trans_to(attacking_item, target.reagents.total_volume, transfered_by = user)
+			to_chat(user, "<span class='notice'>You fill [attacking_item] with [trans] unit\s of the contents of [target].</span>")
+			return
+
 	if(istype(attacking_item, /obj/item/pestle))
 		if(!anchored)
 			balloon_alert(user, "secure to ground first")
@@ -137,3 +156,4 @@
 
 #undef LARGE_MORTAR_STAMINA_MINIMUM
 #undef LARGE_MORTAR_STAMINA_USE
+#undef MORTAR_CONTAINER
