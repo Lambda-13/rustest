@@ -189,11 +189,12 @@
 	"}
 
 	//body tag start + onload and onkeypress (onkeyup) javascript event calls
-	dat += "<body onload='selectTextField(); updateSearch();' onkeyup='updateSearch();'>"
+	dat += "<meta charset='utf-8'><body onload='selectTextField(); updateSearch();' onkeyup='updateSearch();'><meta charset='utf-8'>"
 
 	//title + search bar
 	dat += {"
 
+		<meta charset='utf-8'>
 		<table width='560' align='center' cellspacing='0' cellpadding='5' id='maintable'>
 			<tr id='title_tr'>
 				<td align='center'>
@@ -213,6 +214,7 @@
 
 	//player table header
 	dat += {"
+		<meta charset='utf-8'>
 		<span id='maintable_data_archive'>
 		<table width='560' align='center' cellspacing='0' cellpadding='5' id='maintable_data'>"}
 
@@ -289,6 +291,7 @@
 			//output for each mob
 			dat += {"
 
+				<meta charset='utf-8'>
 				<tr id='data[i]' name='[i]' onClick="addToLocked('item[i]','data[i]','notice_span[i]')">
 					<td align='center' bgcolor='[color]'>
 						<span id='notice_span[i]'></span>
@@ -320,6 +323,7 @@
 		</table>
 		</span>
 
+		<meta charset='utf-8'>
 		<script type='text/javascript'>
 			var maintable = document.getElementById("maintable_data_archive");
 			var complete_list = maintable.innerHTML;
