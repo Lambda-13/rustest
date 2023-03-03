@@ -12,6 +12,7 @@
 
 	anchored = TRUE
 	density = TRUE
+	obj_flags = NONE
 
 	/// What the currently picked recipe is
 	var/datum/crafting_bench_recipe/selected_recipe

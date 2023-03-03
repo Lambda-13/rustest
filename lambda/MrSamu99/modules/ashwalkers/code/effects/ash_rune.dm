@@ -25,7 +25,7 @@ GLOBAL_LIST_EMPTY(ash_rituals)
 	. += span_warning("<br>The required components are as follows:")
 	for(var/the_components in current_ritual.required_components)
 		var/atom/component_name = current_ritual.required_components[the_components]
-		. += span_warning("[the_components] component is [initial(component_name.name)]")
+		. += span_warning("<br>[the_components] component is [initial(component_name.name)]")
 
 /obj/effect/ash_rune/Initialize(mapload)
 	. = ..()
@@ -59,6 +59,16 @@ GLOBAL_LIST_EMPTY(ash_rituals)
 		return
 	current_ritual = GLOB.ash_rituals[current_ritual]
 	balloon_alert_to_viewers("ritual has been chosen-- examine the central rune for more information.")
+
+/obj/effect/ash_rune/Moved(atom/OldLoc, Dir)
+	. = ..()
+	for(var/obj/side_rune as anything in side_runes)
+		qdel(side_rune)
+	for(var/direction in GLOB.cardinals)
+		var/obj/effect/side_rune/spawning_rune = new (get_step(src, direction))
+		side_runes += spawning_rune
+		spawning_rune.icon_state = "[initial(icon_state)]_[direction]"
+		spawning_rune.connected_rune = src
 
 // this is solely for aesthetics... though the central rune will check the directions, of which this is on
 /obj/effect/side_rune

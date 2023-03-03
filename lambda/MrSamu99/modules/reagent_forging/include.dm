@@ -10,3 +10,4 @@
 #include "code\smith_skill.dm"
 #include "code\tool_override.dm"
 #include "code\water_basin.dm"
+#include "code\crafting.dm"

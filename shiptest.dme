@@ -3608,4 +3608,5 @@
 #include "lambda\sanecman\code\unsorted\keybindings_reset.dm"
 #include "lambda\sanecman\code\unsorted\mre.dm"
 #include "lambda\ss7v\code\tactical.dm"
+#include "lambda\ss7v\code\shitspawnstuff.dm"
 // END_INCLUDE
