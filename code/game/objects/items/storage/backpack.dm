@@ -722,3 +722,17 @@
 	name = "police bag"
 	desc = "A large duffel bag for holding extra police gear."
 	slowdown = 0
+
+/obj/item/storage/backpack/duffelbag/durathread
+	slowdown = 0
+	name = "Вещмешок из дюрткани"
+	desc = "Большой и удобный вещмешок состоящий из волокон дюртакани. Он переливается под действием электромагнитных волн"
+	icon_state = "duffel-drone"
+	item_state = "duffel-drone"
+	resistance_flags = FIRE_PROOF
+
+/obj/item/storage/backpack/duffelbag/durathread/emag_act(mob/user)
+	. = ..()
+	icon_state = "duffel-syndie"
+	item_state = "duffel-syndie"
+	update_icon()
