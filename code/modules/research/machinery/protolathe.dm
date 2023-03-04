@@ -16,10 +16,9 @@
 								"Ammo",
 								"Firing Pins",
 								"Computer Parts",
-								"Spacepod Designs", //WS
 								"Integrated Electronics",
 								"MODsuit Designs",
-								"MechComp"
+								"MechComp",
 								)
 	production_animation = "protolathe_n"
 	allowed_buildtypes = PROTOLATHE
