@@ -50,6 +50,7 @@
 	name = "sandals"
 	icon_state = "wizard"
 	custom_materials = list(/datum/material/wood = MINERAL_MATERIAL_AMOUNT * 0.5)
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 	strip_delay = 5
 	equip_delay_other = 50
 	permeability_coefficient = 0.9

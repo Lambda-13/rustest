@@ -3447,6 +3447,7 @@
 #include "lambda\MrSamu99\modules\mod\modules\modules_storage.dm"
 #include "lambda\MrSamu99\modules\mod\modules\modules_supply.dm"
 #include "lambda\MrSamu99\modules\mod\modules\modules_visor.dm"
+#include "lambda\MrSamu99\modules\multicellcharger\code\multi_cell_charger.dm"
 #include "lambda\MrSamu99\modules\reagent_forging\include.dm"
 #include "lambda\MrSamu99\modules\primitive_cooking_additions\include.dm"
 #include "lambda\MrSamu99\modules\primitive_production\include.dm"
