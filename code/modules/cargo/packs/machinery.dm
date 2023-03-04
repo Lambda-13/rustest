@@ -373,8 +373,22 @@
 
 /datum/supply_pack/machinery/mechcomp
 	name = "Ящик вендомата MechComp"
-	desc = "Содержит внутри вендомат для создания своих ~~тестовых камер~~ быстрых способов перемещения."
+	desc = "Содержит внутри Goon интегралки для создания своих неповторимых кастомных систем."
 	cost = 5000
-	contains = list(/obj/machinery/vending/mechcomp)
-	crate_name = "tesla generator crate"
+	contains = list(/obj/item/mechcomp/button = 10,
+					/obj/item/mechcomp/delay = 15,
+					/obj/item/mechcomp/speaker = 5,
+					/obj/item/mechcomp/textpad = 5,
+					/obj/item/mechcomp/pressurepad = 3,
+					/obj/item/mechcomp/grav_accelerator = 1,
+					/obj/item/mechcomp/math = 30,
+					/obj/item/mechcomp/list_packer = 10,
+					/obj/item/mechcomp/list_extractor = 10,
+					/obj/item/mechcomp/find_regex = 5,
+					/obj/item/mechcomp/timer = 1,
+					/obj/item/mechcomp/microphone = 3,
+					/obj/item/mechcomp/teleport = 2,
+					/obj/structure/disposalconstruct/mechcomp = 1,
+					/obj/item/multitool/mechcomp = 1)
+	crate_name = "ящик с MechComp"
 	crate_type = /obj/structure/closet/crate/secure/engineering
