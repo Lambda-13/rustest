@@ -1094,7 +1094,7 @@
 	icon_state = "space-pilot"
 	item_state = "space-pilot"
 	desc = "A lightweight, unarmored space suit designed for mech and fighter pilots. Special attachment points make mounting and dismounting from mechs much easier."
-	clothing_flags = STOPSPRESSUREDAMAGE | THICKMATERIAL | FAST_EMBARK
+	clothing_flags = STOPSPRESSUREDAMAGE | THICKMATERIAL // | FAST_EMBARK
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/exo/large
 
 /obj/item/clothing/head/helmet/space/pilot
