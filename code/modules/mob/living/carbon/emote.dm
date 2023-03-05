@@ -79,9 +79,33 @@
 /datum/emote/living/carbon/moan
 	key = "moan"
 	key_third_person = "moans"
-	message = "moans!"
-	message_mime = "appears to moan!"
+	message = "стонет!"
+	message_mime = "изображает стон!"
 	emote_type = EMOTE_AUDIBLE
+
+/datum/emote/living/carbon/moan/get_sound(mob/living/user)
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		if(!H.mind || !H.mind.miming)
+			if(user.gender == FEMALE)
+				return pick('lambda/ss7v/sounds/exrp/interactions/moan_f1.ogg',\
+							'lambda/ss7v/sounds/exrp/interactions/moan_f2.ogg',\
+							'lambda/ss7v/sounds/exrp/interactions/moan_f3.ogg',\
+							'lambda/ss7v/sounds/exrp/interactions/moan_f4.ogg',\
+							'lambda/ss7v/sounds/exrp/interactions/moan_f5.ogg',\
+							'lambda/ss7v/sounds/exrp/interactions/moan_f6.ogg',\
+							'lambda/ss7v/sounds/exrp/interactions/moan_f7.ogg')
+			else
+				return pick('lambda/ss7v/sounds/exrp/interactions/moan_m0.ogg',\
+							'lambda/ss7v/sounds/exrp/interactions/moan_m1.ogg',\
+							'lambda/ss7v/sounds/exrp/interactions/moan_m2.ogg',\
+							'lambda/ss7v/sounds/exrp/interactions/moan_m3.ogg',\
+							'lambda/ss7v/sounds/exrp/interactions/moan_m4.ogg',\
+							'lambda/ss7v/sounds/exrp/interactions/moan_m5.ogg',\
+							'lambda/ss7v/sounds/exrp/interactions/moan_m6.ogg',\
+							'lambda/ss7v/sounds/exrp/interactions/moan_m7.ogg',\
+							'lambda/ss7v/sounds/exrp/interactions/moan_m12.ogg')
+
 
 /datum/emote/living/carbon/roll
 	key = "roll"
