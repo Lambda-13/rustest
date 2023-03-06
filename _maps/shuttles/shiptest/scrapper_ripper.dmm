@@ -15,12 +15,12 @@
 "ao" = (/obj/machinery/computer,/turf/open/floor/plasteel/dark,/area/ship/bridge)
 "ap" = (/turf/open/floor/plasteel/dark,/area/ship/bridge)
 "aq" = (/turf/closed/wall/mineral/plastitanium,/area/ship/engineering)
-"ar" = (/obj/structure/toilet{pixel_y = 5; pixel_y = 0},/obj/machinery/shower{pixel_y = 21; pixel_y = 0},/obj/machinery/light/small{icon_state = "bulb"; dir = 4},/turf/open/floor/plastic,/area/ship/construction)
+"ar" = (/obj/structure/toilet{pixel_y = 0},/obj/machinery/shower{pixel_y = 0},/obj/machinery/light/small{icon_state = "bulb"; dir = 4},/turf/open/floor/plastic,/area/ship/construction)
 "as" = (/turf/open/floor/plasteel/grimy,/area/ship/construction)
 "at" = (/obj/machinery/computer/launchpad{icon_state = "computer"; dir = 4},/turf/open/floor/plasteel/dark,/area/ship/bridge)
 "au" = (/obj/machinery/computer/cargo/express{icon_state = "computer"; dir = 8},/turf/open/floor/plasteel/dark,/area/ship/bridge)
 "av" = (/obj/machinery/atmospherics/components/unary/tank/air,/turf/open/floor/plating,/area/ship/engineering)
-"aw" = (/obj/structure/extinguisher_cabinet{pixel_x = -28; pixel_y = 0},/obj/structure/extinguisher_cabinet{pixel_x = 28; pixel_y = 0},/obj/structure/sink{dir = 8; icon_state = "sink"; pixel_x = 12; pixel_x = 0},/turf/open/floor/plastic,/area/ship/construction)
+"aw" = (/obj/structure/extinguisher_cabinet{pixel_x = -28; pixel_y = 0},/obj/structure/extinguisher_cabinet{pixel_x = 28; pixel_y = 0},/obj/structure/sink{dir = 8; icon_state = "sink"; pixel_x = 0},/turf/open/floor/plastic,/area/ship/construction)
 "ax" = (/obj/structure/chair/wood,/turf/open/floor/plasteel/grimy,/area/ship/construction)
 "ay" = (/obj/machinery/blackbox_recorder,/turf/open/floor/plasteel/dark,/area/ship/bridge)
 "az" = (/obj/machinery/computer/helm{dir = 8},/turf/open/floor/plasteel/dark,/area/ship/bridge)
@@ -36,7 +36,7 @@
 "aJ" = (/obj/structure/railing,/obj/structure/chair/wood{icon_state = "wooden_chair"; dir = 4},/turf/open/floor/plasteel/grimy,/area/ship/construction)
 "aK" = (/obj/structure/railing,/obj/structure/table/wood,/obj/item/pizzabox/meat,/turf/open/floor/plasteel/grimy,/area/ship/construction)
 "aL" = (/turf/closed/wall/mineral/plastitanium/nodiagonal,/area/ship/engineering)
-"aM" = (/obj/item/clothing/suit/space/hardsuit/engine/elite{armor = list("melee" = 30, "bullet" = 35, "laser" = 10, "energy" = 20, "bomb" = 10, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100); name = "Budget advanced hardsuit"},/obj/item/tank/jetpack/oxygen/captain,/obj/machinery/suit_storage_unit,/turf/open/floor/plasteel/dark,/area/ship/bridge)
+"aM" = (/obj/item/clothing/suit/space/hardsuit/engine/elite{armor = list("melee"=30,"bullet"=35,"laser"=10,"energy"=20,"bomb"=10,"bio"=100,"rad"=100,"fire"=100,"acid"=100); name = "Budget advanced hardsuit"},/obj/item/tank/jetpack/oxygen/captain,/obj/machinery/suit_storage_unit,/turf/open/floor/plasteel/dark,/area/ship/bridge)
 "aN" = (/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,/turf/open/floor/plasteel/dark,/area/ship/bridge)
 "aO" = (/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,/turf/open/floor/plasteel/dark,/area/ship/bridge)
 "aP" = (/obj/machinery/computer/bounty{icon_state = "computer"; dir = 8},/turf/open/floor/plasteel/dark,/area/ship/bridge)
@@ -88,7 +88,7 @@
 "bJ" = (/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{icon_state = "vent_map_on-2"; dir = 1},/turf/open/floor/plasteel/dark,/area/ship/bridge)
 "bK" = (/obj/machinery/light,/turf/open/floor/plasteel/dark,/area/ship/bridge)
 "bL" = (/obj/structure/cable{icon_state = "4-8"},/obj/structure/railing{icon_state = "railing"; dir = 4},/obj/structure/railing/corner{icon_state = "railing_corner"; dir = 1},/obj/structure/railing/corner{icon_state = "railing_corner"; dir = 8},/turf/open/floor/plating/catwalk_floor,/area/ship/engineering)
-"bM" = (/obj/item/gun/energy/kinetic_accelerator/crossbow/large{charge_delay = 2; custom_materials = list(/datum/material/iron = 10000); damage_deflection = 20; desc = "It`s handmade energy crossbow created with love and bluespace crystal."; force = 15; light_power = 3; light_range = 4; name = "Bratskiy shot"; power_use_amount = 10},/obj/item/jammer,/obj/item/storage/belt/utility/chief/full,/obj/item/clothing/glasses/meson/engine,/obj/item/clothing/head/supply_chief,/obj/item/clothing/mask/gas/atmos/captain,/obj/item/wrench/combat,/obj/item/coin/gold,/obj/item/modular_computer/laptop,/obj/structure/closet/wall/white{icon_state = "freezer_wall"; dir = 4; pixel_x = -32},/obj/item/gun/energy/plasmacutter,/obj/item/kitchen/knife/combat,/obj/item/firing_pin,/turf/open/floor/plasteel/dark,/area/ship/bridge)
+"bM" = (/obj/item/gun/energy/kinetic_accelerator/crossbow/large{charge_delay = 2; custom_materials = list(/datum/material/iron=10000); damage_deflection = 20; desc = "It`s handmade energy crossbow created with love and bluespace crystal."; force = 15; light_power = 3; light_range = 4; name = "Bratskiy shot"; power_use_amount = 10},/obj/item/jammer,/obj/item/storage/belt/utility/chief/full,/obj/item/clothing/glasses/meson/engine,/obj/item/clothing/head/supply_chief,/obj/item/clothing/mask/gas/atmos/captain,/obj/item/wrench/combat,/obj/item/coin/gold,/obj/item/modular_computer/laptop,/obj/structure/closet/wall/white{icon_state = "freezer_wall"; dir = 4; pixel_x = -32},/obj/item/gun/energy/plasmacutter,/obj/item/kitchen/knife/combat,/obj/item/firing_pin,/turf/open/floor/plasteel/dark,/area/ship/bridge)
 "bN" = (/obj/machinery/power/terminal{icon_state = "term"; dir = 8},/obj/structure/cable{icon_state = "1-2"},/obj/structure/cable{icon_state = "0-2"},/obj/structure/railing/corner{pixel_x = -1; pixel_y = 1},/obj/structure/railing/corner{icon_state = "railing_corner"; dir = 4},/turf/open/floor/plating,/area/ship/engineering)
 "bO" = (/obj/structure/railing,/obj/structure/railing{dir = 1},/turf/open/floor/plating/catwalk_floor,/area/ship/engineering)
 "bP" = (/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,/obj/structure/cable{icon_state = "4-8"},/obj/structure/cable{icon_state = "5-8"},/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,/turf/open/floor/plating,/area/ship/engineering)
@@ -193,8 +193,6 @@
 "dK" = (/obj/machinery/door/airlock/survival_pod,/turf/open/floor/plasteel/mono/dark,/area/ship/cargo)
 "dL" = (/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,/turf/open/floor/plating,/area/ship/cargo)
 "dM" = (/turf/open/floor/plating,/area/ship/maintenance)
-"dN" = (/obj/item/pod_parts/pod_frame/fore_starboard{icon_state = "pod_fs"; dir = 8},/turf/open/floor/plating,/area/ship/maintenance)
-"dO" = (/obj/item/pod_parts/pod_frame/aft_starboard{icon_state = "pod_as"; dir = 8},/turf/open/floor/plating,/area/ship/maintenance)
 "dP" = (/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,/turf/open/floor/plating,/area/ship/maintenance)
 "dQ" = (/obj/structure/sign/poster/minutemen/random,/turf/closed/wall/mineral/plastitanium/nodiagonal,/area/ship/hallway)
 "dR" = (/obj/effect/decal/remains/robot{icon_state = "floor3"},/turf/open/floor/plating,/area/ship/engineering)
@@ -205,9 +203,8 @@
 "dW" = (/obj/machinery/vending/snack/random,/obj/machinery/light/small{icon_state = "bulb"; dir = 1},/turf/open/floor/pod/dark,/area/ship/hallway)
 "dX" = (/obj/structure/cable{icon_state = "1-2"},/obj/structure/cable{icon_state = "2-4"},/obj/effect/decal/cleanable/plastic,/obj/machinery/light/small{icon_state = "bulb"; dir = 8},/turf/open/floor/plating,/area/ship/engineering)
 "dY" = (/obj/structure/cable{icon_state = "4-8"},/turf/open/floor/plasteel/dark,/area/ship/cargo)
-"dZ" = (/obj/item/pod_parts/core,/obj/item/pod_parts/armor/industrial,/obj/item/spacepod_equipment/weaponry/plasma_cutter,/obj/item/spacepod_equipment/cargo/large,/obj/item/spacepod_equipment/cargo/large/ore,/obj/item/spacepod_equipment/weaponry/pod_ka,/obj/structure/rack,/obj/item/stack/cable_coil/random,/obj/item/stack/cable_coil/random,/obj/item/stack/rods/fifty,/obj/item/stack/sheet/metal/fifty,/obj/machinery/light/small{icon_state = "bulb"; dir = 4},/turf/open/floor/plasteel/tech,/area/ship/maintenance)
-"ea" = (/obj/item/pod_parts/pod_frame/fore_port{icon_state = "pod_fp"; dir = 8},/turf/open/floor/plating,/area/ship/maintenance)
-"eb" = (/obj/item/pod_parts/pod_frame/aft_port{icon_state = "pod_ap"; dir = 8},/turf/open/floor/plating,/area/ship/maintenance)
+"dZ" = (/obj/machinery/light/small{icon_state = "bulb"; dir = 4},/obj/machinery/mecha_part_fabricator,/turf/open/floor/plasteel/tech,/area/ship/maintenance)
+"ea" = (/obj/mecha/working/ripley/cargo,/turf/open/floor/plating,/area/ship/maintenance)
 "ec" = (/obj/structure/rack,/obj/item/storage/toolbox/mechanical,/obj/item/storage/toolbox/mechanical,/obj/item/storage/toolbox/mechanical,/obj/item/storage/toolbox/mechanical,/obj/item/storage/crayons,/obj/item/reagent_containers/food/snacks/notasandwich,/turf/open/floor/plasteel/mono/dark,/area/ship/cargo)
 "ed" = (/obj/structure/rack,/obj/item/storage/toolbox/electrical,/obj/item/storage/toolbox/electrical,/obj/item/storage/toolbox/electrical,/obj/item/storage/toolbox/electrical,/obj/item/stack/cable_coil/random,/obj/item/stack/cable_coil/random,/obj/item/multitool,/obj/item/multitool,/obj/item/multitool,/obj/item/multitool,/obj/item/multitool,/obj/item/restraints/handcuffs/cable,/turf/open/floor/plasteel/mono/dark,/area/ship/cargo)
 "ee" = (/obj/structure/railing{icon_state = "railing"; dir = 4},/obj/structure/railing/corner{icon_state = "railing_corner"; dir = 1},/turf/open/floor/plating/catwalk_floor,/area/ship/engineering)
@@ -254,7 +251,7 @@
 "eT" = (/obj/machinery/airalarm/directional/east,/obj/effect/decal/cleanable/plastic,/turf/open/floor/plasteel/mono/dark,/area/ship/construction)
 "eU" = (/obj/structure/railing{icon_state = "railing"; dir = 4},/turf/open/floor/plating/catwalk_floor,/area/ship/engineering)
 "eV" = (/obj/structure/extinguisher_cabinet{pixel_y = 30},/obj/item/reagent_containers/food/snacks/candy_trash,/obj/effect/decal/cleanable/wrapping,/turf/open/floor/pod/dark,/area/ship/hallway)
-"eW" = (/obj/machinery/advanced_airlock_controller{pixel_x = 28; pixel_x = 0},/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{dir = 9},/obj/machinery/light,/turf/open/floor/plating,/area/ship/engineering)
+"eW" = (/obj/machinery/advanced_airlock_controller{pixel_x = 0},/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{dir = 9},/obj/machinery/light,/turf/open/floor/plating,/area/ship/engineering)
 "eX" = (/obj/item/reagent_containers/food/snacks/candy_trash/nicotine,/obj/effect/decal/cleanable/blood/old,/turf/open/floor/pod/dark,/area/ship/hallway)
 "eY" = (/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{icon_state = "scrub_map_on-4"; dir = 4},/obj/structure/cable{icon_state = "4-8"},/obj/item/trash/can/food,/turf/open/floor/pod/dark,/area/ship/hallway)
 "eZ" = (/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{dir = 8},/obj/structure/cable{icon_state = "4-8"},/obj/effect/decal/cleanable/blood/old,/turf/open/floor/pod/dark,/area/ship/hallway)
@@ -278,7 +275,7 @@
 "fr" = (/obj/structure/rack,/obj/item/storage/pill_bottle/aranesp,/obj/item/storage/pill_bottle/mining,/obj/item/storage/pill_bottle/potassiodide,/obj/item/storage/pill_bottle/charcoal,/obj/item/storage/box/ids,/obj/item/storage/box/survival/engineer,/obj/item/storage/box/survival/radio,/obj/item/grenade/clusterbuster/metalfoam,/obj/item/grenade/clusterbuster/soap,/obj/item/airlock_painter,/obj/effect/decal/cleanable/blood/old,/turf/open/floor/plasteel/mono/dark,/area/ship/cargo)
 "fs" = (/obj/effect/decal/cleanable/oil/slippery,/turf/open/floor/plasteel/tech,/area/ship/maintenance)
 "ft" = (/obj/item/trash/semki,/turf/open/floor/plasteel/tech,/area/ship/maintenance)
-"fu" = (/obj/machinery/airalarm/directional/east,/obj/effect/decal/cleanable/oil/streak,/turf/open/floor/plasteel/tech,/area/ship/maintenance)
+"fu" = (/obj/machinery/airalarm/directional/east,/obj/effect/decal/cleanable/oil/streak,/obj/structure/rack,/obj/item/stack/sheet/metal/fifty,/obj/item/stack/rods/fifty,/obj/item/stack/cable_coil/random,/obj/item/stack/cable_coil/random,/obj/item/mecha_parts/concealed_weapon_bay,/obj/item/mecha_parts/concealed_weapon_bay,/obj/item/mecha_parts/concealed_weapon_bay,/obj/item/mecha_parts/mecha_equipment/drill/diamonddrill,/obj/item/mecha_parts/mecha_equipment/generator,/obj/item/mecha_parts/mecha_equipment/hydraulic_clamp,/obj/item/mecha_parts/mecha_equipment/mining_scanner,/obj/item/mecha_parts/mecha_equipment/tesla_energy_relay,/obj/item/mecha_parts/mecha_equipment/thrusters/ion,/turf/open/floor/plasteel/tech,/area/ship/maintenance)
 "fv" = (/obj/effect/decal/remains/robot{icon_state = "floor2"},/turf/open/floor/plasteel/dark,/area/ship/cargo)
 "fw" = (/obj/effect/decal/cleanable/wrapping,/turf/open/floor/plasteel/dark,/area/ship/cargo)
 "fx" = (/obj/effect/decal/cleanable/shreds,/turf/open/floor/plasteel/dark,/area/ship/cargo)
@@ -328,8 +325,8 @@ aafFcPcJcrcJfReVeOdacUcVdzdzdzcXdWcZcSdfdbeXdcaaaaaaaaaaaa
 aafGfHdpeWaLdqeYeZdjdkdkePePePdkdldmfafbfcfddcaaaaaaaaaaaa
 aaaafIdEdEdEdgdQdgdrdgdgfJfJfJdtdudvdweMdCffdcaaaaaaaaaaaa
 aaaaaafKfLdBeIdDfQfhdZfVfVfVfVfVdIdJdKfVfVfVfVfVfVfVdLdLaa
-aaaaaafCdMfidMdNdOdPdMfVfWeQeveGfldTdVfefjdYdYeofmfSfodLaa
-aaaaaafCfpdMdMeaebdPfqfVecedfMeffreheiejekelemenfVfTepdLaa
+aaaaaafCdMfidMdMdMdPeafVfWeQeveGfldTdVfefjdYdYeofmfSfodLaa
+aaaaaafCfpdMdMdMdMdPfqfVecedfMeffreheiejekelemenfVfTepdLaa
 aaaaaafNfOeqdAfsfterfufVesfnfvdUfwetdUfxdUdUfyeufVfVfVdHaa
 aaaaaadEdEdEdEdEdEdEdEfVfkewexeyfBfzfAfPeDeEeFfZfVaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaadHfVfVfVfVfVeHeHfVfVfVfVfVdHaaaaaaaa
