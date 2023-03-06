@@ -1,5 +1,5 @@
 # RUStest Codebase
-[![Checks](https://github.com/Lambda-13/rustest/workflows/Checks/badge.svg)](https://github.com/Lambda-13/rustest/actions/workflows/ci_suite.yml) [![GitHub issues](https://img.shields.io/github/issues/shiptest-ss13/Shiptest)](https://github.com/shiptest-ss13/Shiptest/issues) ![Discord](https://img.shields.io/discord/1068259051529572392) ![GitHub top language](https://img.shields.io/github/languages/top/Lambda-13/rustest)
+[![Checks](https://github.com/Lambda-13/rustest/workflows/Checks/badge.svg)](https://github.com/Lambda-13/rustest/actions/workflows/ci_suite.yml) [![GitHub issues](https://img.shields.io/github/issues/Lambda-13/rustest)](https://github.com/Lambda-13/rustest/issues) ![Discord](https://img.shields.io/discord/1068259051529572392) ![GitHub top language](https://img.shields.io/github/languages/top/Lambda-13/rustest)
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/Lambda-13/rustest?label=%D0%A0%D0%B0%D0%B7%D0%BC%D0%B5%D1%80%20%D1%80%D0%B5%D0%BF%D0%BE%D0%B7%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D1%8F&style=for-the-badge) [![forinfinityandbyond](https://user-images.githubusercontent.com/5211576/29499758-4efff304-85e6-11e7-8267-62919c3688a9.gif)](https://www.reddit.com/r/SS13/comments/5oplxp/what_is_the_main_problem_with_byond_as_an_engine/dclbu1a)
 
@@ -11,7 +11,7 @@
 -   **Дискорд:** <https://discord.gg/kghbBm4z6X>
 -   **Русский кодербус:** <https://discord.gg/fRsn7RxdQp>
 
-Эта кодовая база является форком [оригинального шиптеста](https://github.com/shiptest-ss13/Shiptest "оригинального шиптеста") которая является форком [белых песков](https://github.com/Whitesands13/Whitesands "белых песков") которая является форком [/ТГ/ Станции](https://github.com/tgstation/tgstation "/ТГ/ Станции").
+Эта кодовая база является форком [оригинального шиптеста](https://github.com/Lambda-13/rustest "оригинального шиптеста") которая является форком [белых песков](https://github.com/Whitesands13/Whitesands "белых песков") которая является форком [/ТГ/ Станции](https://github.com/tgstation/tgstation "/ТГ/ Станции").
 Шиптест - это билд про исследование космоса на своих личных кораблях. Будете ли вы строить колонию или завоёвывать новые земли - решать вам.
 
 ## УСТАНОВКА

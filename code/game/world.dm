@@ -314,7 +314,7 @@ GLOBAL_VAR(restart_counter)
 	s += "</a>"
 	s += ")"
 	s += " ("
-	s += "<a href=\"https://github.com/shiptest-ss13/Shiptest\">"
+	s += "<a href=\"https://github.com/Lambda-13/rustest\">"
 	s += "Github"
 	s += "</a>"
 	s += ")"

@@ -156,6 +156,8 @@ GLOBAL_LIST_INIT(blacklisted_automated_baseturfs, typecacheof(list(
 		QUEUE_SMOOTH_NEIGHBORS(W)
 		QUEUE_SMOOTH(W)
 
+	SSdemo.mark_turf(W)
+
 	return W
 
 /turf/open/ChangeTurf(path, list/new_baseturfs, flags) //Resist the temptation to make this default to keeping air.

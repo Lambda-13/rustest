@@ -568,6 +568,18 @@
 	id = /obj/item/card/id/syndicate_command/operative
 	backpack_contents = list(/obj/item/melee/baton/loaded=1, /obj/item/storage/box/survival/syndie=1)
 
+// бля похуй
+/datum/outfit/syndicate_empty/sbc/assault/operative/oneway
+	name = "Syndicate Frontier Agent"
+	uniform = /obj/item/clothing/under/syndicate/combat
+	id = /obj/item/card/id/syndicate_command/operative
+	backpack_contents = list(/obj/item/melee/baton/loaded=1, /obj/item/storage/box/survival/syndie=1, /obj/item/uplink/nuclear)
+
+/datum/outfit/syndicate_empty/sbc/assault/operative/oneway/post_equip(mob/living/carbon/human/H)
+	. = ..()
+	H.mind.add_antag_datum(/datum/antagonist/traitor)
+
+
 /obj/effect/mob_spawn/human/syndicate/battlecruiser/captain
 	name = "Syndicate Battlecruiser Captain"
 	short_desc = "You are the captain aboard the Syndicate flagship <i>Starfury</i>."

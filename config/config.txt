@@ -266,7 +266,7 @@ CHECK_RANDOMIZER
 # RULESURL https://shiptest.net/wiki/Rules
 
 ## Github address
-# GITHUBURL https://github.com/Shiptest-SS13/Shiptest
+# GITHUBURL https://github.com/Lambda-13/rustest
 
 ## Discord address
 # DISCORDURL https://shiptest.net/discord

@@ -8,7 +8,7 @@
 /datum/supply_pack/food/donkpockets
 	name = "Donk Pocket Variety Crate"
 	desc = "Featuring a line up of Donk Co.'s most popular pastry!"
-	cost = 2000
+	cost = COST_MIN * 2000
 	contains = list(/obj/item/storage/box/donkpockets/donkpocketspicy,
 					/obj/item/storage/box/donkpockets/donkpocketteriyaki,
 					/obj/item/storage/box/donkpockets/donkpocketpizza,
@@ -25,7 +25,7 @@
 /datum/supply_pack/food/pizza
 	name = "Pizza Crate"
 	desc = "Best prices on this side of the galaxy. All deliveries are guaranteed to be 99% anomaly-free!"
-	cost = 6000 // Best prices this side of the galaxy.
+	cost = COST_MED * 6000 // Best prices this side of the galaxy.
 	contains = list(/obj/item/pizzabox/margherita,
 					/obj/item/pizzabox/mushroom,
 					/obj/item/pizzabox/meat,
@@ -49,7 +49,7 @@
 /datum/supply_pack/food/ingredients_basic
 	name = "Basic Ingredients Crate"
 	desc = "Get things cooking with this crate full of useful ingredients! Contains a dozen eggs, three bananas, and some flour, rice, milk, soymilk, salt, pepper, enzyme, sugar, and monkeymeat."
-	cost = 1000
+	cost = COST_MIN * 1000
 	contains = list(/obj/item/reagent_containers/food/condiment/flour,
 					/obj/item/reagent_containers/food/condiment/rice,
 					/obj/item/reagent_containers/food/condiment/milk,
@@ -69,7 +69,7 @@
 /datum/supply_pack/food/ingredients_randomized
 	name = "Variety Meat Crate"
 	desc = "The best cuts in the whole galaxy."
-	cost = 1000
+	cost = COST_MIN * 1000
 	contains = list(/obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/slime,
 					/obj/item/reagent_containers/food/snacks/meat/slab/killertomato,
 					/obj/item/reagent_containers/food/snacks/meat/slab/bear,
@@ -91,7 +91,7 @@
 /datum/supply_pack/food/ingredients_randomized/vegetables
 	name = "Vegetables Crate"
 	desc = "Grown in vats."
-	cost = 1300
+	cost = COST_MIN * 1300
 	contains = list(/obj/item/reagent_containers/food/snacks/grown/chili,
 					/obj/item/reagent_containers/food/snacks/grown/corn,
 					/obj/item/reagent_containers/food/snacks/grown/tomato,
@@ -106,7 +106,7 @@
 /datum/supply_pack/food/ingredients_randomized/fruits
 	name = "Fruit Crate"
 	desc = "Rich of vitamins, may contain oranges."
-	cost = 1500
+	cost = COST_MIN * 1500
 	contains = list(/obj/item/reagent_containers/food/snacks/grown/citrus/lime,
 					/obj/item/reagent_containers/food/snacks/grown/citrus/orange,
 					/obj/item/reagent_containers/food/snacks/grown/watermelon,
@@ -123,7 +123,7 @@
 /datum/supply_pack/food/grill
 	name = "Grilling Starter Kit"
 	desc = "Sometimes the stresses of the world are too much to bear. Some times, for God's sake, you just want to grill. This crate is for those times."
-	cost = 5000
+	cost = COST_MED * 5000
 	contains = list(/obj/item/stack/sheet/mineral/coal/five,
 					/obj/machinery/grill/unwrenched,
 					/obj/item/reagent_containers/food/drinks/soda_cans/monkey_energy)
@@ -133,7 +133,7 @@
 /datum/supply_pack/food/grillfuel
 	name = "Grilling Fuel Kit"
 	desc = "Contains propane and propane accessories. (Note: doesn't contain any actual propane.)"
-	cost = 2000
+	cost = COST_MIN * 2000
 	contains = list(/obj/item/stack/sheet/mineral/coal/ten)
 	crate_name = "grilling fuel kit crate"
 
@@ -144,7 +144,7 @@
 /datum/supply_pack/food/hydrotank
 	name = "Hydroponics Backpack Crate"
 	desc = "Bring on the flood with this high-capacity backpack crate. Contains 500 units of life-giving H2O."
-	cost = 1000
+	cost = COST_MIN * 1000
 	contains = list(/obj/item/watertank)
 	crate_name = "hydroponics backpack crate"
 	crate_type = /obj/structure/closet/crate/hydroponics
@@ -152,7 +152,7 @@
 /datum/supply_pack/food/gardening
 	name = "Gardening Crate"
 	desc = "Supplies for growing a great garden! Contains two bottles of ammonia, two Plant-B-Gone spray bottles, a hatchet, cultivator, plant analyzer, as well as a pair of leather gloves and a botanist's apron."
-	cost = 1500
+	cost = COST_MIN * 1500
 	contains = list(/obj/item/reagent_containers/spray/plantbgone,
 					/obj/item/reagent_containers/spray/plantbgone,
 					/obj/item/reagent_containers/glass/bottle/ammonia,
@@ -169,7 +169,7 @@
 /datum/supply_pack/food/weedcontrol
 	name = "Weed Control Crate"
 	desc = "Contains a scythe, gasmask, and two anti-weed defoliant grenades, for when your garden grows out of control."
-	cost = 1500
+	cost = COST_MIN * 1500
 	contains = list(/obj/item/scythe,
 					/obj/item/clothing/mask/gas,
 					/obj/item/grenade/chem_grenade/antiweed,
@@ -180,7 +180,7 @@
 /datum/supply_pack/food/seeds
 	name = "Seeds Crate"
 	desc = "Big things have small beginnings. Contains fourteen different seeds."
-	cost = 2000
+	cost = COST_MED * 2000
 	contains = list(/obj/item/seeds/chili,
 					/obj/item/seeds/cotton,
 					/obj/item/seeds/berry,
@@ -201,7 +201,7 @@
 /datum/supply_pack/food/exoticseeds
 	name = "Exotic Seeds Crate"
 	desc = "Any entrepreneuring botanist's dream. Contains eleven different seeds, including two mystery seeds!"
-	cost = 3000
+	cost = COST_HIGH * 3000
 	contains = list(/obj/item/seeds/nettle,
 					/obj/item/seeds/plump,
 					/obj/item/seeds/liberty,
@@ -223,7 +223,7 @@
 /datum/supply_pack/food/beekeeping_suits
 	name = "Beekeeper Suit Crate"
 	desc = "Bee business booming? Better be benevolent and boost botany by bestowing bi-Beekeeper-suits! Contains two beekeeper suits and matching headwear."
-	cost = 2000
+	cost = COST_MIN * 2000
 	contains = list(/obj/item/clothing/head/beekeeper_head,
 					/obj/item/clothing/suit/beekeeper_suit,
 					/obj/item/clothing/head/beekeeper_head,
@@ -234,7 +234,7 @@
 /datum/supply_pack/food/beekeeping_fullkit
 	name = "Beekeeping Starter Crate"
 	desc = "BEES BEES BEES. Contains three honey frames, a beekeeper suit and helmet, flyswatter, bee house, and, of course, a pure-bred Nanotrasen-Standardized Queen Bee!"
-	cost = 3000
+	cost = COST_MIN * 3000
 	contains = list(/obj/structure/beebox/unwrenched,
 					/obj/item/honey_frame,
 					/obj/item/honey_frame,
