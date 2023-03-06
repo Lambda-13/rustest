@@ -2,7 +2,7 @@
 "b" = (/turf/closed/wall/mineral/plastitanium/nodiagonal,/area/ship/bridge)
 "c" = (/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,/obj/machinery/door/poddoor/preopen{id = 12344; name = "Lockdown"},/turf/open/floor/plating,/area/ship/bridge)
 "d" = (/obj/structure/fans/tiny,/obj/machinery/door/poddoor{id = 5434},/turf/open/floor/plasteel/mono/dark,/area/ship/bridge)
-"e" = (/obj/machinery/power/port_gen/pacman,/obj/machinery/power/terminal{dir = 4},/obj/item/stack/sheet/mineral/plasma/fifty,/obj/machinery/light{icon_state = "tube"; dir = 8},/turf/open/floor/plasteel/dark,/area/ship/bridge)
+"e" = (/obj/machinery/power/port_gen/pacman,/obj/machinery/power/terminal{dir = 4},/obj/item/stack/sheet/mineral/plasma/fifty,/obj/machinery/light{icon_state = "tube"; dir = 8},/obj/structure/cable{icon_state = "0-4"},/turf/open/floor/plasteel/dark,/area/ship/bridge)
 "f" = (/obj/machinery/power/smes/engineering,/obj/structure/cable{icon_state = "0-2"},/obj/machinery/button/door{id = 5434; name = "Poddoors"; pixel_y = 24},/turf/open/floor/plasteel/dark,/area/ship/bridge)
 "g" = (/turf/open/floor/plasteel/dark,/area/ship/bridge)
 "h" = (/obj/structure/closet/wall/white/med{icon_state = "freezer_wall"; dir = 8; pixel_x = 30},/obj/item/healthanalyzer/advanced,/obj/item/hypospray/mkii,/obj/item/storage/firstaid/tactical,/obj/item/storage/firstaid/o2,/obj/item/storage/firstaid/toxin,/obj/item/storage/mrebag,/obj/item/defibrillator/compact/combat/loaded,/obj/item/reagent_containers/hypospray/combat,/turf/open/floor/plasteel/dark,/area/ship/bridge)
