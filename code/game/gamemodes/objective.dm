@@ -5,7 +5,7 @@ GLOBAL_LIST_EMPTY(objectives)
 	var/datum/mind/owner				//The primary owner of the objective. !!SOMEWHAT DEPRECATED!! Prefer using 'team' for new code.
 	var/datum/team/team					//An alternative to 'owner': a team. Use this when writing new code.
 	var/name = "generic objective" 		//Name for admin prompts
-	var/explanation_text = "Nothing"	//What that person is supposed to do.
+	var/explanation_text = "Ничего."		//What that person is supposed to do.
 	var/team_explanation_text			//For when there are multiple owners.
 	var/datum/mind/target = null		//If they are focused on a particular person.
 	var/target_amount = 0				//If they are focused on a particular number. Steal objectives have their own counter.
@@ -41,7 +41,7 @@ GLOBAL_LIST_EMPTY(objectives)
 	if (!new_target)
 		return
 
-	if (new_target == "Free objective")
+	if (new_target == "Ничего.")
 		target = null
 	else if (new_target == "Random")
 		find_target()
@@ -179,10 +179,10 @@ GLOBAL_LIST_EMPTY(objectives)
 
 /datum/objective/assassinate/update_explanation_text()
 	..()
-	if(target && target.current)
-		explanation_text = "Assassinate [target.name], the [!target_role_type ? target.assigned_role : target.special_role]."
+	if(target?.current)
+		explanation_text = "Убить [target.name], на должности [ru_job_parse(!target_role_type ? target.assigned_role : target.special_role)]."
 	else
-		explanation_text = "Free Objective"
+		explanation_text = "Ничего."
 
 /datum/objective/assassinate/admin_edit(mob/admin)
 	admin_simple_target_pick(admin)
@@ -193,7 +193,7 @@ GLOBAL_LIST_EMPTY(objectives)
 /datum/objective/assassinate/internal/update_explanation_text()
 	..()
 	if(target && !target.current)
-		explanation_text = "Assassinate [target.name], who was obliterated"
+		explanation_text = "Убить [target.name], который был уничтожен"
 
 /datum/objective/mutiny
 	name = "mutiny"
@@ -213,9 +213,9 @@ GLOBAL_LIST_EMPTY(objectives)
 /datum/objective/mutiny/update_explanation_text()
 	..()
 	if(target && target.current)
-		explanation_text = "Assassinate or exile [target.name], the [!target_role_type ? target.assigned_role : target.special_role]."
+		explanation_text = "Убить или проимплантировать и отправить в ссылку в гейтвей [target.name], на должности [ru_job_parse(!target_role_type ? target.assigned_role : target.special_role)]."
 	else
-		explanation_text = "Free Objective"
+		explanation_text = "Ничего."
 
 /datum/objective/maroon
 	name = "maroon"
@@ -232,9 +232,9 @@ GLOBAL_LIST_EMPTY(objectives)
 
 /datum/objective/maroon/update_explanation_text()
 	if(target && target.current)
-		explanation_text = "Prevent [target.name], the [!target_role_type ? target.assigned_role : target.special_role], from escaping alive."
+		explanation_text = "Не дать [target.name], на должности [ru_job_parse(!target_role_type ? target.assigned_role : target.special_role)], покинуть станцию в живом виде."
 	else
-		explanation_text = "Free Objective"
+		explanation_text = "Ничего."
 
 /datum/objective/maroon/admin_edit(mob/admin)
 	admin_simple_target_pick(admin)
@@ -265,10 +265,10 @@ GLOBAL_LIST_EMPTY(objectives)
 
 /datum/objective/debrain/update_explanation_text()
 	..()
-	if(target && target.current)
-		explanation_text = "Steal the brain of [target.name], the [!target_role_type ? target.assigned_role : target.special_role]."
+	if(target?.current)
+		explanation_text = "Украсть мозг [target.name], на должности [ru_job_parse(!target_role_type ? target.assigned_role : target.special_role)]."
 	else
-		explanation_text = "Free Objective"
+		explanation_text = "Ничего."
 
 /datum/objective/debrain/admin_edit(mob/admin)
 	admin_simple_target_pick(admin)
@@ -290,10 +290,10 @@ GLOBAL_LIST_EMPTY(objectives)
 
 /datum/objective/protect/update_explanation_text()
 	..()
-	if(target && target.current)
-		explanation_text = "Protect [target.name], the [!target_role_type ? target.assigned_role : target.special_role]."
+	if(target?.current)
+		explanation_text = "Защитить [target.name], на должности [ru_job_parse(!target_role_type ? target.assigned_role : target.special_role)]."
 	else
-		explanation_text = "Free Objective"
+		explanation_text = "Ничего."
 
 /datum/objective/protect/admin_edit(mob/admin)
 	admin_simple_target_pick(admin)
@@ -302,89 +302,10 @@ GLOBAL_LIST_EMPTY(objectives)
 	name = "protect nonhuman"
 	human_check = FALSE
 
-/datum/objective/jailbreak
-	name = "jailbreak"
-	martyr_compatible = TRUE //why not?
-	var/target_role_type
-
-/datum/objective/jailbreak/find_target_by_role(role, role_type, invert=FALSE)
-	if(!invert)
-		target_role_type = role_type
-	return ..()
-
-/datum/objective/jailbreak/check_completion()
-	return completed || (considered_escaped(target))
-
-/datum/objective/jailbreak/update_explanation_text()
-	..()
-	if(target?.current)
-		explanation_text = "Ensure that [target.name], the [!target_role_type ? target.assigned_role : target.special_role] escapes alive and out of custody."
-	else
-		explanation_text = "Free Objective"
-
-/datum/objective/jailbreak/admin_edit(mob/admin)
-	admin_simple_target_pick(admin)
-
-/datum/objective/jailbreak/detain
-	name = "detain"
-
-/datum/objective/jailbreak/detain/check_completion()
-	return completed || (!considered_escaped(target) && (considered_alive(target) && target.current.onCentCom()))
-
-/datum/objective/jailbreak/detain/update_explanation_text()
-	..()
-	if(target && target.current)
-		explanation_text = "Ensure that [target.name], the [!target_role_type ? target.assigned_role : target.special_role] is delivered to nanotrasen alive and in custody."
-	else
-		explanation_text = "Free Objective"
-
-/datum/objective/hijack
-	name = "hijack"
-	explanation_text = "Hijack the emergency shuttle by hacking its navigational protocols through the control console (alt click emergency shuttle console)."
-	team_explanation_text = "Hijack the emergency shuttle by hacking its navigational protocols through the control console (alt click emergency shuttle console). Leave no team member behind."
-	martyr_compatible = FALSE //Technically you won't get both anyway.
-	/// Overrides the hijack speed of any antagonist datum it is on ONLY, no other datums are impacted.
-	var/hijack_speed_override = 1
-
-/datum/objective/hijack/check_completion() // Requires all owners to escape.
-	return FALSE // PLACEHOLDER
-
-/datum/objective/elimination
-	name = "elimination"
-	explanation_text = "Slaughter all loyalist crew aboard the shuttle. You, and any likeminded individuals, must be the only remaining people on the shuttle."
-	team_explanation_text = "Slaughter all loyalist crew aboard the shuttle. You, and any likeminded individuals, must be the only remaining people on the shuttle. Leave no team member behind."
-	martyr_compatible = FALSE
-
-/datum/objective/elimination/check_completion()
-	return FALSE // PLACEHOLDER
-
-/datum/objective/elimination/highlander
-	name="highlander elimination"
-	explanation_text = "Escape on the shuttle alone. Ensure that nobody else makes it out."
-
-/datum/objective/elimination/highlander/check_completion()
-	return FALSE // PLACEHOLDER
-
-/datum/objective/block
-	name = "no organics on shuttle"
-	explanation_text = "Do not allow any organic lifeforms to escape on the shuttle alive."
-	martyr_compatible = 1
-
-/datum/objective/block/check_completion()
-	return FALSE // PLACEHOLDER
-
-/datum/objective/purge
-	name = "no mutants on shuttle"
-	explanation_text = "Ensure no mutant humanoid species are present aboard the escape shuttle."
-	martyr_compatible = 1
-
-/datum/objective/purge/check_completion()
-	return FALSE // PLACEHOLDER
-
 /datum/objective/robot_army
 	name = "robot army"
-	explanation_text = "Have at least eight active cyborgs synced to you."
-	martyr_compatible = 0
+	explanation_text = "По крайней мере восемь активных киборгов синхронизировались со мной."
+	martyr_compatible = FALSE
 
 /datum/objective/robot_army/check_completion()
 	var/counter = 0
@@ -400,8 +321,8 @@ GLOBAL_LIST_EMPTY(objectives)
 
 /datum/objective/escape
 	name = "escape"
-	explanation_text = "Escape on the shuttle or an escape pod alive and without being in custody."
-	team_explanation_text = "Have all members of your team escape on a shuttle or pod alive, without being in custody."
+	explanation_text = "Сбежать на шаттле или спасательной капсуле живым и без содержания под стражей."
+	team_explanation_text = "Сбежать на шаттле или спасательной капсуле живым и без содержания под стражей."
 
 /datum/objective/escape/check_completion()
 	// Require all owners escape safely.
@@ -421,20 +342,20 @@ GLOBAL_LIST_EMPTY(objectives)
 	update_explanation_text()
 
 /datum/objective/escape/escape_with_identity/update_explanation_text()
-	if(target && target.current)
+	if(target?.current)
 		target_real_name = target.current.real_name
-		explanation_text = "Escape on the shuttle or an escape pod with the identity of [target_real_name], the [target.assigned_role]"
+		explanation_text = "Сбежать на шаттле или спасательной капсуле под личностью [target_real_name], на должности [ru_job_parse(target.assigned_role)]"
 		var/mob/living/carbon/human/H
 		if(ishuman(target.current))
 			H = target.current
 		if(H && H.get_id_name() != target_real_name)
 			target_missing_id = 1
 		else
-			explanation_text += " while wearing their identification card"
+			explanation_text += " имея при себе карту цели."
 		explanation_text += "." //Proper punctuation is important!
 
 	else
-		explanation_text = "Free Objective."
+		explanation_text = "Ничего."
 
 /datum/objective/escape/escape_with_identity/check_completion()
 	if(!target || !target_real_name)
@@ -453,7 +374,7 @@ GLOBAL_LIST_EMPTY(objectives)
 
 /datum/objective/survive
 	name = "survive"
-	explanation_text = "Stay alive until the end."
+	explanation_text = "Выжить."
 
 /datum/objective/survive/check_completion()
 	var/list/datum/mind/owners = get_owners()
@@ -474,7 +395,7 @@ GLOBAL_LIST_EMPTY(objectives)
 
 /datum/objective/martyr
 	name = "martyr"
-	explanation_text = "Die a glorious death."
+	explanation_text = "Погибнуть красиво."
 
 /datum/objective/martyr/check_completion()
 	var/list/datum/mind/owners = get_owners()
@@ -487,8 +408,8 @@ GLOBAL_LIST_EMPTY(objectives)
 
 /datum/objective/nuclear
 	name = "nuclear"
-	explanation_text = "Destroy the station with a nuclear device."
-	martyr_compatible = 1
+	explanation_text = "Уничтожить станцию ядерным устройством."
+	martyr_compatible = TRUE
 
 /datum/objective/nuclear/check_completion()
 	if(SSticker && SSticker.mode && SSticker.mode.station_was_nuked)
@@ -500,7 +421,7 @@ GLOBAL_LIST_EMPTY(possible_items)
 	name = "steal"
 	var/datum/objective_item/targetinfo = null //Save the chosen item datum so we can access it later.
 	var/obj/item/steal_target = null //Needed for custom objectives (they're just items, not datums).
-	martyr_compatible = 0
+	martyr_compatible = FALSE
 
 /datum/objective/steal/get_target()
 	return steal_target
@@ -532,11 +453,11 @@ GLOBAL_LIST_EMPTY(possible_items)
 	if(item)
 		targetinfo = item
 		steal_target = targetinfo.targetitem
-		explanation_text = "Steal [targetinfo.name]"
+		explanation_text = "Украсть [targetinfo.name]"
 		give_special_equipment(targetinfo.special_equipment)
 		return steal_target
 	else
-		explanation_text = "Free objective"
+		explanation_text = "Ничего."
 		return
 
 /datum/objective/steal/admin_edit(mob/admin)
@@ -555,7 +476,7 @@ GLOBAL_LIST_EMPTY(possible_items)
 		if (!custom_name)
 			return
 		steal_target = custom_target
-		explanation_text = "Steal [custom_name]."
+		explanation_text = "Украсть [custom_name]."
 
 	else
 		set_target(new_target)
@@ -642,7 +563,7 @@ GLOBAL_LIST_EMPTY(possible_items_special)
 
 /datum/objective/download/update_explanation_text()
 	..()
-	explanation_text = "Download [target_amount] research node\s."
+	explanation_text = "Скачать [target_amount] исследований на диск."
 
 /datum/objective/download/check_completion()
 	var/datum/techweb/checking = new
@@ -676,7 +597,7 @@ GLOBAL_LIST_EMPTY(possible_items_special)
 
 /datum/objective/capture/update_explanation_text()
 	. = ..()
-	explanation_text = "Capture [target_amount] lifeform\s with an energy net. Live, rare specimens are worth more."
+	explanation_text = "Захватить [target_amount] жизненных форм энергосетью. Живые и редкие космонавты будут дороже."
 
 /datum/objective/capture/check_completion()//Basically runs through all the mobs in the area to determine how much they are worth.
 	var/captured_amount = 0
@@ -723,9 +644,9 @@ GLOBAL_LIST_EMPTY(possible_items_special)
 /datum/objective/protect_object/update_explanation_text()
 	. = ..()
 	if(protect_target)
-		explanation_text = "Protect \the [protect_target] at all costs."
+		explanation_text = "Защитить [protect_target] любой ценой."
 	else
-		explanation_text = "Free objective."
+		explanation_text = "Ничего."
 
 /datum/objective/protect_object/check_completion()
 	return !QDELETED(protect_target)
@@ -755,7 +676,7 @@ GLOBAL_LIST_EMPTY(possible_items_special)
 
 /datum/objective/absorb/update_explanation_text()
 	. = ..()
-	explanation_text = "Extract [target_amount] compatible genome\s."
+	explanation_text = "Извлечь [target_amount] совместимых геномов."
 
 /datum/objective/absorb/admin_edit(mob/admin)
 	var/count = input(admin,"How many people to absorb?","absorb",target_amount) as num|null
@@ -777,7 +698,7 @@ GLOBAL_LIST_EMPTY(possible_items_special)
 
 /datum/objective/absorb_most
 	name = "absorb most"
-	explanation_text = "Extract more compatible genomes than any other Changeling."
+	explanation_text = "Извлечь геномов больше, чем все остальные Генокрады."
 
 /datum/objective/absorb_most/check_completion()
 	var/list/datum/mind/owners = get_owners()
@@ -798,7 +719,7 @@ GLOBAL_LIST_EMPTY(possible_items_special)
 
 /datum/objective/absorb_changeling
 	name = "absorb changeling"
-	explanation_text = "Absorb another Changeling."
+	explanation_text = "Поглотить другого Генокрада."
 
 /datum/objective/absorb_changeling/check_completion()
 	var/list/datum/mind/owners = get_owners()
@@ -821,7 +742,7 @@ GLOBAL_LIST_EMPTY(possible_items_special)
 
 /datum/objective/destroy
 	name = "destroy AI"
-	martyr_compatible = 1
+	martyr_compatible = TRUE
 
 /datum/objective/destroy/find_target(dupe_search_range)
 	var/list/possible_targets = active_ais(1)
@@ -831,16 +752,16 @@ GLOBAL_LIST_EMPTY(possible_items_special)
 	return target
 
 /datum/objective/destroy/check_completion()
-	if(target && target.current)
+	if(target?.current)
 		return target.current.stat == DEAD || target.current.z > 6 || !target.current.ckey //Borgs/brains/AIs count as dead for traitor objectives.
 	return TRUE
 
 /datum/objective/destroy/update_explanation_text()
 	..()
-	if(target && target.current)
-		explanation_text = "Destroy [target.name], the experimental AI."
+	if(target?.current)
+		explanation_text = "Уничтожить [target.name], экспериментальный ИИ."
 	else
-		explanation_text = "Free Objective"
+		explanation_text = "Ничего."
 
 /datum/objective/destroy/admin_edit(mob/admin)
 	var/list/possible_targets = active_ais(1)
@@ -848,7 +769,7 @@ GLOBAL_LIST_EMPTY(possible_items_special)
 		var/mob/new_target = input(admin,"Select target:", "Objective target") as null|anything in sortNames(possible_targets)
 		target = new_target.mind
 	else
-		to_chat(admin, "<span class='boldwarning'>No active AIs with minds.</span>")
+		to_chat(admin, span_boldwarning("No active AIs with minds."))
 	update_explanation_text()
 
 /datum/objective/destroy/internal
@@ -856,7 +777,7 @@ GLOBAL_LIST_EMPTY(possible_items_special)
 
 /datum/objective/steal_five_of_type
 	name = "steal five of"
-	explanation_text = "Steal at least five items!"
+	explanation_text = "Украсть пять предметов!"
 	var/list/wanted_items = list()
 
 /datum/objective/steal_five_of_type/New()
@@ -877,12 +798,12 @@ GLOBAL_LIST_EMPTY(possible_items_special)
 
 /datum/objective/steal_five_of_type/summon_guns
 	name = "steal guns"
-	explanation_text = "Steal at least five guns!"
+	explanation_text = "Украсть пять пушек!"
 	wanted_items = list(/obj/item/gun)
 
 /datum/objective/steal_five_of_type/summon_magic
 	name = "steal magic"
-	explanation_text = "Steal at least five magical artefacts!"
+	explanation_text = "Украсть пять магических штук!"
 	wanted_items = list()
 
 /datum/objective/steal_five_of_type/summon_magic/New()

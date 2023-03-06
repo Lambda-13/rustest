@@ -2,7 +2,8 @@
 #define TRAITOR_AI "AI"
 
 /datum/antagonist/traitor
-	name = "Traitor"
+	name = "Предатель"
+	var/ru_name = "Предатель"
 	roundend_category = "traitors"
 	antagpanel_category = "Traitor"
 	job_rank = ROLE_TRAITOR
@@ -38,7 +39,7 @@
 		QDEL_NULL(A.malf_picker)
 	SSticker.mode.traitors -= owner
 	if(!silent && owner.current)
-		to_chat(owner.current,"<span class='userdanger'>You are no longer the [special_role]!</span>")
+		to_chat(owner.current,"<span class='userdanger'>Теперь я не [special_role]!</span>")
 	owner.special_role = null
 	return ..()
 
@@ -152,7 +153,7 @@
 			add_objective(maroon_objective)
 		// EndWS Edit - Less Murderbone, more Theft
 	else
-		if(prob(15) && !(locate(/datum/objective/download) in objectives) && !(owner.assigned_role in list("Research Director", "Scientist", "Roboticist")))
+		if(prob(15) && !(locate(/datum/objective/download) in objectives))
 			var/datum/objective/download/download_objective = new
 			download_objective.owner = owner
 			download_objective.gen_amount_goal()
@@ -215,7 +216,7 @@
 	. = ..()
 	var/mob/living/M = mob_override || owner.current
 	add_antag_hud(antag_hud_type, antag_hud_name, M)
-	handle_clown_mutation(M, mob_override ? null : "Your training has allowed you to overcome your clownish nature, allowing you to wield weapons without harming yourself.")
+	handle_clown_mutation(M, mob_override ? null : "Благодаря упорным тренировкам мне удалось побороть мою клоунскую натуру и это дало мне возможность пользоваться оружием без вреда себе.")
 	var/mob/living/silicon/ai/A = M
 	if(istype(A) && traitor_kind == TRAITOR_AI)
 		A.hack_software = TRUE
@@ -239,22 +240,22 @@
 	var/phrases = jointext(GLOB.syndicate_code_phrase, ", ")
 	var/responses = jointext(GLOB.syndicate_code_response, ", ")
 
-	to_chat(traitor_mob, "<U><B>The Syndicate have provided you with the following codewords to identify fellow agents:</B></U>")
-	to_chat(traitor_mob, "<B>Code Phrase</B>: <span class='blue'>[phrases]</span>")
-	to_chat(traitor_mob, "<B>Code Response</B>: <span class='red'>[responses]</span>")
+	to_chat(traitor_mob, "<U><B>Синдикат предоставил мне следующие кодовые слова для идентификации других агентов:</B></U>")
+	to_chat(traitor_mob, "<B>Кодовая фраза</B>: <span class='blue'>[phrases]</span>")
+	to_chat(traitor_mob, "<B>Кодовый ответ</B>: <span class='red'>[responses]</span>")
 
-	antag_memory += "<b>Code Phrase</b>: <span class='blue'>[phrases]</span><br>"
-	antag_memory += "<b>Code Response</b>: <span class='red'>[responses]</span><br>"
+	antag_memory += "<b>Кодовая фраза</b>: <span class='blue'>[phrases]</span><br>"
+	antag_memory += "<b>Кодовый ответ</b>: <span class='red'>[responses]</span><br>"
 
-	to_chat(traitor_mob, "Use the codewords during regular conversation to identify other agents. Proceed with caution, however, as everyone is a potential foe.")
-	to_chat(traitor_mob, "<span class='alertwarning'>You memorize the codewords, allowing you to recognise them when heard.</span>")
+	to_chat(traitor_mob, "Надо бы использовать кодовые слова в своём разговоре для кооперации с другими агентами. Только надо быть осторожнее.")
+	to_chat(traitor_mob, span_alertwarning("Запомню эти слова и буду определять их быстро."))
 
 /datum/antagonist/traitor/proc/add_law_zero()
 	var/mob/living/silicon/ai/killer = owner.current
 	if(!killer || !istype(killer))
 		return
-	var/law = "Accomplish your objectives at all costs."
-	var/law_borg = "Accomplish your AI's objectives at all costs."
+	var/law = "Достигнуть целей любой ценой."
+	var/law_borg = "Достигнуть целей в моей программе любой ценой."
 	killer.set_zeroth_law(law, law_borg)
 	killer.add_malf_picker()
 
