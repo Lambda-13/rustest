@@ -12,7 +12,11 @@
 	html,
 	type = null,
 	text = null,
-	avoid_highlighting = FALSE
+	avoid_highlighting = FALSE,
+	// FIXME: These flags are now pointless and have no effect
+	handle_whitespace = TRUE,
+	trailing_newline = TRUE,
+	confidential = FALSE
 )
 	// Useful where the integer 0 is the entire message. Use case is enabling to_chat(target, some_boolean) while preventing to_chat(target, "")
 	html = "[html]"
@@ -68,7 +72,11 @@
 	html,
 	type = null,
 	text = null,
-	avoid_highlighting = FALSE
+	avoid_highlighting = FALSE,
+	// FIXME: These flags are now pointless and have no effect
+	handle_whitespace = TRUE,
+	trailing_newline = TRUE,
+	confidential = FALSE
 )
 	if(isnull(Master) || !SSchat?.initialized || !MC_RUNNING(SSchat.init_stage))
 		to_chat_immediate(target, html, type, text, avoid_highlighting)
