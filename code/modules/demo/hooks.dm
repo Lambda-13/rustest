@@ -1,9 +1,3 @@
-/atom
-	var/image/demo_last_appearance
-
-/atom/movable
-	var/atom/demo_last_loc
-
 /mob/Login()
 	. = ..()
 	SSdemo.write_event_line("setmob [client.ckey] \ref[src]")
