@@ -539,6 +539,7 @@
 
 	SEND_SIGNAL(src, COMSIG_MOVABLE_MOVED, OldLoc, Dir, Forced, old_locs)
 
+	SSdemo.mark_dirty(src)
 	return TRUE
 
 

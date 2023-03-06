@@ -25,18 +25,22 @@
 	if(!target)
 		return
 	if(!html && !text)
-		CRASH("Empty or null string in to_chat proc call.")
+		return // just ignore them
 	if(target == world)
 		target = GLOB.clients
 
 	// Build a message
 	var/message = list()
 	if(type) message["type"] = type
-	if(text) message["text"] = text
-	if(html) message["html"] = html
+	if(text) message["text"] = replacetext(text, "the ", "")
+	if(html) message["html"] = replacetext(html, "the ", "")
 	if(avoid_highlighting) message["avoidHighlighting"] = avoid_highlighting
 	var/message_blob = TGUI_CREATE_MESSAGE("chat/message", message)
 	var/message_html = message_to_html(message)
+
+	if(!(type in list(MESSAGE_TYPE_ADMINPM, MESSAGE_TYPE_ADMINCHAT, MESSAGE_TYPE_ADMINLOG)))
+		SSdemo.write_chat(target, message)
+
 	if(islist(target))
 		for(var/_target in target)
 			var/client/client = CLIENT_FROM_VAR(_target)
@@ -85,14 +89,14 @@
 	if(!target)
 		return
 	if(!html && !text)
-		CRASH("Empty or null string in to_chat proc call.")
+		return // go fuck too
 	if(target == world)
 		target = GLOB.clients
 
 	// Build a message
 	var/message = list()
 	if(type) message["type"] = type
-	if(text) message["text"] = text
-	if(html) message["html"] = html
+	if(text) message["text"] = replacetext(text, "the ", "")
+	if(html) message["html"] = replacetext(html, "the ", "")
 	if(avoid_highlighting) message["avoidHighlighting"] = avoid_highlighting
-	SSchat.queue(target, message)
+	SSchat.queue(target, message, type)
