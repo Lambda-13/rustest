@@ -1,3 +1,7 @@
+#define COST_MIN rand(1.0, 1.5)
+#define COST_MED rand(1.5, 2.0)
+#define COST_HIGH rand(2.0, 3.0)
+
 /datum/supply_pack
 	var/name = "Crate"
 	var/group = "Другое"
