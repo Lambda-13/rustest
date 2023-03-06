@@ -102,7 +102,7 @@
 		to_chat(user, "<span class='danger'>The [src] isn't in proper shape to get a reading!</span>")
 		return TRUE
 	if(powernet && (above || below))//we have a powernet and at least one connected relay
-		to_chat(user, "<span class='danger'>Total power: [DisplayPower(powernet.avail)]\nLoad: [DisplayPower(powernet.load)]\nExcess power: [DisplayPower(surplus())]</span>")
+		to_chat(user, "<span class='danger'>Суммарная мощность: [DisplayPower(powernet.avail)]\nНагрузка: [DisplayPower(powernet.load)]\nИзлишки: [DisplayPower(surplus())]</span>")
 	if(!above && !below)
 		to_chat(user, "<span class='danger'>Cannot access valid powernet. Attempting to re-establish. Ensure any relays above and below are aligned properly and on cable nodes.</span>")
 		find_relays()

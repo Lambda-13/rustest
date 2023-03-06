@@ -149,7 +149,7 @@
 /datum/design/cable_coil
 	name = "Cable Coil"
 	id = "cable_coil"
-	build_type = AUTOLATHE
+	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 10, /datum/material/glass = 5)
 	build_path = /obj/item/stack/cable_coil/random //WS Edit - Smartwire Revert
 	category = list("initial","Tools","Tool Designs")

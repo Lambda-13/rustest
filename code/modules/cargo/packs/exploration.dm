@@ -9,7 +9,7 @@
 /datum/supply_pack/exploration/lava
 	name = "Набор исследователя лаваленда"
 	desc = "Содержит две кирки 60 стержней с антилавовым покрытием, и очки для защиты от жары."
-	cost = 1500
+	cost = COST_MIN * 1500
 	contains = list(
 		/obj/item/pickaxe/mini,
 		/obj/item/pickaxe/mini,
@@ -25,7 +25,7 @@
 /datum/supply_pack/exploration/ice
 	name = "Набор исследователя айсленда"
 	desc = "Содержит две кирки, два набора одежды, и очки защищающие от холода."
-	cost = 1500
+	cost = COST_MIN * 1500
 	contains = list(
 		/obj/item/pickaxe/mini,
 		/obj/item/pickaxe/mini,
@@ -43,7 +43,7 @@
 /datum/supply_pack/exploration/jungle
 	name = "Набор исследователя джунглей"
 	desc = "Содержит топорик, две банки с активированым углём, и две кирки."
-	cost = 750
+	cost = COST_MIN * 750
 	contains = list(
 		/obj/item/pickaxe/mini,
 		/obj/item/pickaxe/mini,
@@ -56,7 +56,7 @@
 /datum/supply_pack/exploration/beach
 	name = "Набор исследователя пляжа"
 	desc = "Две кирки а остальное для купания."
-	cost = 500
+	cost = COST_MIN * 500
 	contains = list(
 		/obj/item/pickaxe/mini,
 		/obj/item/pickaxe/mini,
@@ -82,7 +82,7 @@
 /datum/supply_pack/exploration/capsules
 	name = "Набор капсул быстрой развёртки"
 	desc = "Содержит три капсулы для быстрой развёртки убежища три на три."
-	cost = 3000
+	cost = COST_MIN * 3000
 	contains = list(
 		/obj/item/survivalcapsule,
 		/obj/item/survivalcapsule,

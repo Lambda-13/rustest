@@ -1,6 +1,6 @@
 /obj/item/binoculars
-	name = "binoculars"
-	desc = "Used for long-distance surveillance."
+	name = "бинокль"
+	desc = "Для просмотра вдаль."
 	item_state = "binoculars"
 	icon_state = "binoculars"
 	lefthand_file = 'icons/mob/inhands/items_lefthand.dmi'
@@ -59,3 +59,9 @@
 	item_state = "binoculars"
 	user.regenerate_icons()
 	user.client.view_size.zoomIn()
+
+/obj/item/binoculars/adv
+	name = "улучшенный бинокль"
+	desc = "Для разведывания обстановки."
+	zoom_out_amt = 11
+	zoom_amt = 20

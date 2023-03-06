@@ -17,6 +17,11 @@
 	if(QDELETED(src) || QDELETED(target))
 		attack_qdeleted(target, user, TRUE, params)
 		return
+	SSdemo.mark_dirty(src)
+	if(isturf(target))
+		SSdemo.mark_turf(target)
+	else
+		SSdemo.mark_dirty(target)
 	afterattack(target, user, TRUE, params)
 
 /// Called when the item is in the active hand, and clicked; alternately, there is an 'activate held object' verb or you can hit pagedown.

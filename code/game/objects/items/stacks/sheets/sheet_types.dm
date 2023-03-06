@@ -110,7 +110,6 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 	new/datum/stack_recipe("pestle", /obj/item/pestle, 1, time = 50), \
 	new/datum/stack_recipe("hygienebot assembly", /obj/item/bot_assembly/hygienebot, 2, time = 50), \
 	new/datum/stack_recipe("shower", /obj/machinery/shower, 3, time = 25), \
-	new/datum/stack_recipe("iron ingot", /obj/item/ingot/iron, 1), \
 ))
 
 /obj/item/stack/sheet/metal
@@ -256,6 +255,7 @@ GLOBAL_LIST_INIT(wood_recipes, list ( \
 	null, \
 	new/datum/stack_recipe("wooden railing", /obj/structure/railing/wood, 3, time = 18, window_checks = TRUE), \
 	new/datum/stack_recipe("wooden railing corner", /obj/structure/railing/corner/wood, 1, time = 10, window_checks = TRUE), \
+	new/datum/stack_recipe("wooden shelf", /obj/structure/rack/shelf, 5, time = 20, one_per_turf = TRUE, on_floor = TRUE), \
 	))
 
 /obj/item/stack/sheet/mineral/wood
@@ -288,6 +288,7 @@ GLOBAL_LIST_INIT(wood_recipes, list ( \
 GLOBAL_LIST_INIT(bamboo_recipes, list ( \
 	new/datum/stack_recipe("punji sticks trap", /obj/structure/punji_sticks, 5, time = 30, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("blow gun", /obj/item/gun/syringe/blowgun, 10, time = 70), \
+	new/datum/stack_recipe("crude syringe", /obj/item/reagent_containers/syringe/crude, 5, time = 10), \
 	))
 
 /obj/item/stack/sheet/mineral/bamboo
@@ -353,6 +354,7 @@ GLOBAL_LIST_INIT(cloth_recipes, list ( \
 	new/datum/stack_recipe("white beanie", /obj/item/clothing/head/beanie, 2), \
 	null, \
 	new/datum/stack_recipe("blindfold", /obj/item/clothing/glasses/blindfold, 2), \
+	new/datum/stack_recipe("повязка на глаз", /obj/item/clothing/glasses/eyepatch, 2), \
 	null, \
 	new/datum/stack_recipe("19x19 canvas", /obj/item/canvas/nineteenXnineteen, 3), \
 	new/datum/stack_recipe("23x19 canvas", /obj/item/canvas/twentythreeXnineteen, 4), \
@@ -412,6 +414,7 @@ GLOBAL_LIST_INIT(durathread_recipes, list ( \
 	new/datum/stack_recipe("durathread beret", /obj/item/clothing/head/beret/durathread, 2, time = 40), \
 	new/datum/stack_recipe("durathread beanie", /obj/item/clothing/head/beanie/durathread, 2, time = 40), \
 	new/datum/stack_recipe("durathread bandana", /obj/item/clothing/mask/bandana/durathread, 1, time = 25), \
+	new/datum/stack_recipe("Дюрткановый вещмешок", /obj/item/storage/backpack/duffelbag/durathread, 6, time = 40), \
 	))
 
 /obj/item/stack/sheet/durathread
@@ -550,8 +553,6 @@ GLOBAL_LIST_INIT(runed_metal_recipes, list ( \
 	new/datum/stack_recipe("forge", /obj/structure/destructible/cult/forge, 3, time = 40, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("archives", /obj/structure/destructible/cult/tome, 3, time = 40, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("altar", /obj/structure/destructible/cult/talisman, 3, time = 40, one_per_turf = TRUE, on_floor = TRUE), \
-	new/datum/stack_recipe("runed ingot", /obj/item/ingot/cult, 1), \
-	new/datum/stack_recipe("rune furnace", /obj/structure/furnace/infinite/narsie, 3, time = 40, one_per_turf = TRUE, on_floor = TRUE), \
 	))
 
 /obj/item/stack/sheet/runed_metal
@@ -603,7 +604,6 @@ GLOBAL_LIST_INIT(bronze_recipes, list ( \
 	null,
 	new/datum/stack_recipe("bronze chair", /obj/structure/chair/bronze, 1, time = 0, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("Marx Bust", /obj/structure/statue/bronze/marx, 15, one_per_turf = 1, on_floor = 1), \
-	new/datum/stack_recipe("bronze ingot", /obj/item/ingot/bronze, 1), \
 ))
 
 /obj/item/stack/tile/bronze
@@ -671,7 +671,6 @@ GLOBAL_LIST_INIT(bone_recipes, list( \
 	new /datum/stack_recipe("skull helmet", /obj/item/clothing/head/helmet/skull, 4), \
 	new /datum/stack_recipe("bone dagger", /obj/item/kitchen/knife/combat/bone, 2), \
 	new /datum/stack_recipe("club", /obj/item/melee/baseball_bat/bone, 6), \
-	new /datum/stack_recipe("bone ingot", /obj/item/ingot/bone, 1), \
 	))
 /obj/item/stack/sheet/bone
 	name = "bones"

@@ -23,6 +23,8 @@
 	heat_protection = CHEST|GROIN
 	cold_protection = CHEST|GROIN
 	obj_flags = IMMUTABLE_SLOW
+	supports_variations = DIGITIGRADE_VARIATION
+	worn_icon_digi = 'lambda/MrSamu99/modules/mod/icons/mod_digi.dmi'
 
 /obj/item/clothing/gloves/mod
 	name = "MOD перчатки"
@@ -50,3 +52,9 @@
 	supports_variations = DIGITIGRADE_VARIATION
 	can_be_tied = FALSE
 	visor_flags_inv = HIDESHOES
+	worn_icon_digi = 'lambda/MrSamu99/modules/mod/icons/mod_digi.dmi'
+
+/*obj/item/clothing/head/mod STOLEN FROM SKYRAT
+	supports_variations_flags = CLOTHING_SNOUTED_VARIATION
+	worn_icon_muzzled = 'lambda/MrSamu99/modules/mod/icons/mod_digi.dmi'
+	worn_icon_better_vox = 'modular_skyrat/modules/better_vox/icons/clothing/mod.dmi'*/

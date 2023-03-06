@@ -30,6 +30,7 @@ other types of metals and chemistry for reagents).
 	var/build_path = null				//The file path of the object that gets created
 	var/list/make_reagents = list()			//Reagents produced. Format: "id" = amount. Currently only supported by the biogenerator.
 	var/list/category = null 			//Primarily used for Mech Fabricators, but can be used for anything
+	var/list/sub_category = null		//Подкатегория
 	var/list/reagents_list = list()			//List of reagents. Format: "id" = amount.
 	var/maxstack = 1
 	var/lathe_time_factor = 1			//How many times faster than normal is this to build on the protolathe
@@ -39,6 +40,8 @@ other types of metals and chemistry for reagents).
 	var/research_icon					//Replaces the item icon in the research console
 	var/research_icon_state
 	var/icon_cache
+	/// Optional string that interfaces can use as part of search filters. See- item/borg/upgrade/ai and the Exosuit Fabs.
+	var/search_metadata
 
 /datum/design/error_design
 	name = "ERROR"
@@ -63,6 +66,11 @@ other types of metals and chemistry for reagents).
 	var/datum/asset/spritesheet/sheet = get_asset_datum(/datum/asset/spritesheet/research_designs)
 	sheet.send(user)
 	return sheet.icon_tag(id)
+
+/datum/design/proc/get_description()
+	var/obj/object_build_item_path = build_path
+
+	return isnull(desc) ? initial(object_build_item_path.desc) : desc
 
 ////////////////////////////////////////
 //Disks for transporting design datums//

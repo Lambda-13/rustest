@@ -854,8 +854,6 @@
 	ntnet_send(list("data" = get_pin_data(IC_INPUT, 2), "data_secondary" = get_pin_data(IC_INPUT, 3), "enc_key" = get_pin_data(IC_INPUT, 4)))
 
 /obj/item/integrated_circuit_old/input/ntnet_packet/ntnet_receive(datum/source, datum/netdata/data)
-	SIGNAL_HANDLER
-
 	set_pin_data(IC_OUTPUT, 1, data.sender_id)
 	set_pin_data(IC_OUTPUT, 2, data.data["data"])
 	set_pin_data(IC_OUTPUT, 3, data.data["data_secondary"])
@@ -913,8 +911,6 @@
 	ntnet_send(data)
 
 /obj/item/integrated_circuit_old/input/ntnet_advanced/ntnet_receive(datum/source, datum/netdata/data)
-	SIGNAL_HANDLER
-
 	set_pin_data(IC_OUTPUT, 1, data.data)
 	push_data()
 	activate_pin(2)

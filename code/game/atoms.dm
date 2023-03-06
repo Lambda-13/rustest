@@ -231,11 +231,15 @@
 		update_light()
 
 	if (length(smoothing_groups))
-		sortTim(smoothing_groups) //In case it's not properly ordered, let's avoid duplicate entries with the same values.
+		// There used to be a sort here to prevent duplicate bitflag signatures
+		// in the bitflag list cache; the cost of always timsorting every group list every time added up.
+		// The sort now only happens if the initial key isn't found. This leads to some duplicate keys.
+		// /tg/ has a better approach; a unit test to see if any atoms have mis-sorted smoothing_groups
+		// or canSmoothWith. This is a better idea than what I do, and should be done instead.
 		SET_BITFLAG_LIST(smoothing_groups)
 	if (length(canSmoothWith))
-		sortTim(canSmoothWith)
-		if(canSmoothWith[length(canSmoothWith)] > MAX_S_TURF) //If the last element is higher than the maximum turf-only value, then it must scan turf contents for smoothing targets.
+		// If the last element is higher than the maximum turf-only value, then it must scan turf contents for smoothing targets.
+		if(canSmoothWith[length(canSmoothWith)] > MAX_S_TURF)
 			smoothing_flags |= SMOOTH_OBJ
 		SET_BITFLAG_LIST(canSmoothWith)
 
@@ -1265,6 +1269,14 @@
 			. |= welder_act(user, I)
 		if(TOOL_ANALYZER)
 			. |= analyzer_act(user, I)
+		if(TOOL_BILLOW)
+			. |= billow_act(user, I)
+		if(TOOL_TONG)
+			. |= tong_act(user, I)
+		if(TOOL_HAMMER)
+			. |= hammer_act(user, I)
+		if(TOOL_BLOWROD)
+			. |= blowrod_act(user, I)
 	if(. & COMPONENT_BLOCK_TOOL_ATTACK)
 		return TRUE
 

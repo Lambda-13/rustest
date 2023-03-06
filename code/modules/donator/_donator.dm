@@ -22,24 +22,24 @@ GLOBAL_PROTECT(donators)
 		donator = null
 
 /client/proc/do_donator_redemption()
-	set name = "Redeem Donator Reward"
-	set category = "Donator"
-	set desc = "Redeem a reward"
+	set name = "Получить награду (ДОНАТ)"
+	set category = "OOC"
+	set desc = "Получить награду за донат."
 
 	var/mob/client_mob = mob
 
 	if(client_mob.next_move > world.time)
 		return
 	if(!isliving(client_mob))
-		to_chat(client_mob, "<span class='notice'>You must be alive to use this!</span>")
+		to_chat(client_mob, "<span class='notice'>Может мне стоит сначала быть в мире живых?</span>")
 		return
 	if(!donator?.handle_redemption(client_mob))
 		client_mob.changeNext_move(CLICK_CD_MELEE)
 
 /client/proc/do_donator_wcir()
-	set name = "What Can I Redeem"
-	set category = "Donator"
-	set desc = "Currently available redemptions"
+	set name = "Лист наград (ДОНАТ)"
+	set category = "OOC"
+	set desc = "Донатерские приколы."
 
 	donator?.what_can_i_redeem(src.mob)
 
@@ -181,27 +181,28 @@ GLOBAL_PROTECT(donators)
 
 /datum/donator/proc/what_can_i_redeem(mob/user)
 	var/resp = list()
-	resp += "<span class='fakespan0'>----------</span>"
-	resp += "Your current redeemable rewards are as follows:"
+	resp += "<div class='examine_block'>"
+	resp += "За помощь проекту вы можете получить следующие вещи:"
 
 	resp += "\tFlat Rewards:"
 	for(var/atom/flat as anything in get_valid_flats())
 		resp += "\t\t[initial(flat.name)]"
-	resp += "<span class='fakespan1'>----------</span>"
+	resp += "<hr>"
 
 	resp += "\tConversion Rewards:"
 	for(var/atom/conv as anything in get_valid_conversions(null))
 		resp += "\t\t[initial(conv.name)]"
-	resp += "<span class='fakespan2'>----------</span>"
+	resp += "<hr>"
 
-	resp += "<b>Note that redeemed rewards will not be present in the above lists!</b>"
-	resp += "<span class='fakespan3'>----------</span>"
+	resp += "<b>Обратите внимание, что выданные вам вещи не будут представлены в приведенных выше списках!</b>"
+	resp += "<hr>"
 
-	resp += "\tReskinnable Items:"
+	resp += "\tРескин вещей:"
 	for(var/atom/reskin as anything in reskin_rewards)
 		resp += "\t\t[initial(reskin.name)]"
-	resp += "<span class='fakespan4'>----------</span>"
+	resp += "<hr>"
 
+	resp += "</div>"
 	for(var/line in resp)
 		to_chat(user, "<span class='donator'>[line]</span>")
 
@@ -222,7 +223,7 @@ GLOBAL_PROTECT(donators)
 	var/r_all = r_flat + r_conv + r_resk
 
 	if(!r_all)
-		to_chat(user, "<span class='notice'>You do not have any rewards able to be redeemed currently.</span>")
+		to_chat(user, "<span class='notice'>Ты использовал все доступные к выдаче награды. Возращайтесь завтра!</span>")
 		return FALSE
 
 	var/choice
@@ -236,7 +237,7 @@ GLOBAL_PROTECT(donators)
 		available += "Reskin"
 	available += "Cancel"
 
-	switch(tgui_alert(user, "Type of Reward?", "Choice Time", available))
+	switch(tgui_alert(user, "Что берём?", "Выбирай", available))
 		if("Flat")
 			choice = REWARD_FLAT
 
@@ -256,7 +257,7 @@ GLOBAL_PROTECT(donators)
 				choices[initial(ftype.name)] = ftype
 			choices["Cancel"] = TRUE
 
-			var/resp = tgui_input_list(user, "Select your Reward", "Chance Time", choices)
+			var/resp = tgui_input_list(user, "Время выбрать награду", "Выбирай", choices)
 			if(!resp || resp == "Cancel")
 				return FALSE
 
@@ -275,7 +276,7 @@ GLOBAL_PROTECT(donators)
 				choices[rtype.name] = rtype
 			choices["Cancel"] = TRUE
 
-			var/resp = tgui_input_list(user, "What do you want to reskin?", "Chance Time", choices)
+			var/resp = tgui_input_list(user, "Что ты хочешь рескинуть?", "Выбирай", choices)
 			if(!resp || resp == "Cancel")
 				return FALSE
 
@@ -284,7 +285,7 @@ GLOBAL_PROTECT(donators)
 				message_admins("Error handling reward conversion for [ckey]. Attempted to redeem an invalid reskin: [reward.type]")
 				return FALSE
 
-			var/reskin_target = tgui_input_list(user, "What do you want it to reskin into?", "Chance Time", reskin_rewards[reward.type] + list("Cancel"))
+			var/reskin_target = tgui_input_list(user, "Во что превращаем?", "Выбирай", reskin_rewards[reward.type] + list("Cancel"))
 			if(!reskin_target || reskin_target == "Cancel")
 				return FALSE
 
@@ -299,7 +300,7 @@ GLOBAL_PROTECT(donators)
 				choices[ctype.name] = ctype
 			choices["Cancel"] = TRUE
 
-			var/resp = tgui_input_list(user, "What do you want to convert?", "Chance Time", choices)
+			var/resp = tgui_input_list(user, "Что конвентируем?", "Выбирай", choices)
 			if(!resp || resp == "Cancel")
 				return FALSE
 
@@ -313,7 +314,7 @@ GLOBAL_PROTECT(donators)
 				convs[initial(conv_target.name)] = conv_target
 			convs["Cancel"] = TRUE
 
-			var/conv_target = tgui_input_list(user, "What do you want it to convert into?", "Chance Time", convs)
+			var/conv_target = tgui_input_list(user, "Во что конвентируем?", "Выбирай", convs)
 			if(!conv_target || conv_target == "Cancel")
 				return FALSE
 
@@ -343,7 +344,7 @@ GLOBAL_PROTECT(donators)
 	if(!donator_key || donator_allow_other_usage || check_donator(equipper) || check_donator(target))
 		return ..()
 
-	to_chat(target, "<span class='warning'>A strange force prevents you from equipping [src]...</span>")
+	to_chat(target, "<span class='warning'>Не могу получить [src]...</span>")
 	return FALSE
 
 /obj/item/clothing/examine(mob/user)
@@ -354,7 +355,7 @@ GLOBAL_PROTECT(donators)
 		. += "<span class='notice'><ul>This is one of your donator items, to <b>[(donator_allow_other_usage ? "allow" : "disallow")]</b> sharing <b>CtrlShiftClick</b> it.</ul></span>"
 	else
 		if(!donator_allow_other_usage)
-			. += "<span class='warning'>A strange force prevents you from making eye contact with it.</span>"
+			. += "<span class='warning'>Что-то мешает мне увидеть это.</span>"
 
 /obj/item/clothing/proc/check_donator(mob/user)
 	return ckey(user.key) == ckey(donator_key)

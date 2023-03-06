@@ -293,7 +293,7 @@ Code:
 						var/obj/machinery/power/apc/A = term.master
 						L += A
 
-				menu += "<PRE>Location: [get_area_name(powmonitor, TRUE)]<BR>Total power: [DisplayPower(connected_powernet.viewavail)]<BR>Total load:  [DisplayPower(connected_powernet.viewload)]<BR>"
+				menu += "<PRE>Location: [get_area_name(powmonitor, TRUE)]<BR>Суммарная мощность: [DisplayPower(connected_powernet.viewavail)]<BR>Total Нагрузка:  [DisplayPower(connected_powernet.viewload)]<BR>"
 
 				menu += "<FONT SIZE=-1>"
 
@@ -588,7 +588,7 @@ Code:
 		if(active_bot.bot_type == MULE_BOT)
 			var/mob/living/simple_animal/bot/mulebot/MULE = active_bot
 			var/atom/Load = MULE.load
-			menu += "<BR>Current Load: [ !Load ? "<i>None</i>" : "[Load.name] (<A href='byond://?src=[REF(src)];mule=unload'><i>Unload</i></A>)" ]<BR>"
+			menu += "<BR>Current Нагрузка: [ !Load ? "<i>None</i>" : "[Load.name] (<A href='byond://?src=[REF(src)];mule=unload'><i>Unload</i></A>)" ]<BR>"
 			menu += "Destination: [MULE.destination ? MULE.destination : "<i>None</i>"] <A href='byond://?src=[REF(src)];mule=destination'><i>Set</i></A><BR>"
 			menu += "Set ID: [MULE.suffix] <A href='byond://?src=[REF(src)];mule=setid'><i> Modify</i></A><BR>"
 			menu += "Power: [MULE.cell ? MULE.cell.percent() : 0]%<BR>"

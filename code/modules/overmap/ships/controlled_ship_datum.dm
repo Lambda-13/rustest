@@ -99,6 +99,10 @@
 	. = ..()
 	if(creation_template)
 		source_template = creation_template
+		if(isnull(source_template.faction_prefix))
+			faction_prefix = "NEU"
+		else
+			faction_prefix = source_template.faction_prefix
 		unique_ship_access = source_template.unique_ship_access
 		job_slots = source_template.job_slots?.Copy()
 		if(create_shuttle)

@@ -465,7 +465,7 @@
 /datum/mind/proc/show_memory(mob/recipient, window=1)
 	if(!recipient)
 		recipient = current
-	var/output = "<meta charset='utf=8'><B>Память [current.real_name]:</B><br>"
+	var/output = "<meta charset='utf-8'><B>Память [current.real_name]:</B><br>"
 	output += memory
 
 

@@ -3,22 +3,65 @@
 //Damage and status effect defines
 
 //Damage defines //TODO: merge these down to reduce on defines
+/// Physical fracturing and warping of the material.
 #define BRUTE "brute"
 #define BURN "fire"
+/// Scorching and charring of the material.
+/// Poisoning. Mostly caused by reagents.
 #define TOX "toxin"
+/// Suffocation.
 #define OXY "oxygen"
+/// Cellular degredation. Rare and difficult to treat.
 #define CLONE "clone"
+/// Exhaustion and nonlethal damage.
 #define STAMINA "stamina"
+/// Brain damage. Should probably be decomissioned and replaced with proper organ damage.
 #define BRAIN "brain"
+
+//Damage flag defines //
+/// Involves a melee attack or a thrown object.
+#define MELEE "melee"
+/// Involves a solid projectile.
+#define BULLET "bullet"
+/// Involves a laser.
+#define LASER "laser"
+/// Involves an EMP or energy-based projectile.
+#define ENERGY "energy"
+/// Involves a shockwave, usually from an explosion.
+#define BOMB "bomb"
+/// Involved in checking wheter a disease can infect or spread. Also involved in xeno neurotoxin.
+#define BIO "bio"
+/// Involves ionizing radiation.
+#define RAD "rad"
+/// Involves fire or temperature extremes.
+#define FIRE "fire"
+/// Involves corrosive substances.
+#define ACID "acid"
+/// Involves magic.
+#define MAGIC "magic"
+/// Involved in checking the likelyhood of applying a wound to a mob.
+#define WOUND "wound"
+/// Involves being eaten
+#define CONSUME "consume"
+
+// Weather immunities //
+#define WEATHER_STORM "storm"
+#define WEATHER_ACID "acid"
+#define WEATHER_ASH "ash"
+#define WEATHER_LAVA "lava"
+#define WEATHER_RAD "rad"
+#define WEATHER_SNOW "snow"
+#define WEATHER_VOID "void"
+#define WEATHER_ALL "all"
 
 //bitflag damage defines used for suicide_act
 #define BRUTELOSS (1<<0)
 #define FIRELOSS (1<<1)
 #define TOXLOSS (1<<2)
 #define OXYLOSS (1<<3)
-#define SHAME (1<<4)
-#define MANUAL_SUICIDE (1<<5)	//suicide_act will do the actual killing.
-#define MANUAL_SUICIDE_NONLETHAL (1<<6) //when the suicide is conditionally lethal
+#define SHAME             (1<<4)
+#define MANUAL_SUICIDE (1<<5) //suicide_act will do the actual killing.
+#define MANUAL_SUICIDE_NONLETHAL (1<<6)  //when the suicide is conditionally lethal
 
 #define EFFECT_STUN "stun"
 #define EFFECT_KNOCKDOWN "knockdown"
@@ -50,10 +93,11 @@
 
 //click cooldowns, in tenths of a second, used for various combat actions
 #define CLICK_CD_MELEE 8
+#define CLICK_CD_THROW 8
 #define CLICK_CD_RANGE 4
 #define CLICK_CD_RAPID 2
 #define CLICK_CD_CLICK_ABILITY 6
-#define CLICK_CD_BREAKOUT 100
+#define CLICK_CD_BREAKOUT 30
 #define CLICK_CD_HANDCUFFED 10
 #define CLICK_CD_RESIST 20
 #define CLICK_CD_GRABBING 10
@@ -70,7 +114,7 @@
 #define GRAB_KILL 3
 
 //Grab breakout odds
-#define BASE_GRAB_RESIST_CHANCE 30
+#define BASE_GRAB_RESIST_CHANCE 60 //base chance for whether or not you can escape from a grab
 
 //slowdown when in softcrit. Note that crawling slowdown will also apply at the same time!
 #define SOFTCRIT_ADD_SLOWDOWN 2
@@ -107,15 +151,16 @@
 #define INTENT_HOTKEY_RIGHT "right"
 
 //the define for visible message range in combat
+#define SAMETILE_MESSAGE_RANGE 1
 #define COMBAT_MESSAGE_RANGE 3
 #define DEFAULT_MESSAGE_RANGE 7
 
 //Shove knockdown lengths (deciseconds)
-#define SHOVE_KNOCKDOWN_SOLID 30
-#define SHOVE_KNOCKDOWN_HUMAN 30
-#define SHOVE_KNOCKDOWN_TABLE 30
-#define SHOVE_KNOCKDOWN_COLLATERAL 10
-#define SHOVE_CHAIN_PARALYZE 40
+#define SHOVE_KNOCKDOWN_SOLID 20
+#define SHOVE_KNOCKDOWN_HUMAN 20
+#define SHOVE_KNOCKDOWN_TABLE 20
+#define SHOVE_KNOCKDOWN_COLLATERAL 1
+#define SHOVE_CHAIN_PARALYZE 30
 //Shove slowdown
 #define SHOVE_SLOWDOWN_LENGTH 30
 #define SHOVE_SLOWDOWN_STRENGTH 0.85 //multiplier
@@ -156,16 +201,16 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(
 #define TRIGGER_GUARD_NORMAL 1
 //Gun bolt types
 ///Gun has a bolt, it stays closed while not cycling. The gun must be racked to have a bullet chambered when a mag is inserted.
-/// Example: c20, shotguns, m90
+///  Example: c20, shotguns, m90
 #define BOLT_TYPE_STANDARD 1
 ///Gun has a bolt, it is open when ready to fire. The gun can never have a chambered bullet with no magazine, but the bolt stays ready when a mag is removed.
-/// Example: Some SMGs, the L6
+///  Example: Some SMGs, the L6
 #define BOLT_TYPE_OPEN 2
 ///Gun has no moving bolt mechanism, it cannot be racked. Also dumps the entire contents when emptied instead of a magazine.
-/// Example: Break action shotguns, revolvers
+///  Example: Break action shotguns, revolvers
 #define BOLT_TYPE_NO_BOLT 3
 ///Gun has a bolt, it locks back when empty. It can be released to chamber a round if a magazine is in.
-/// Example: Pistols with a slide lock, some SMGs
+///  Example: Pistols with a slide lock, some SMGs
 #define BOLT_TYPE_LOCKING 4
 //Sawn off nerfs
 ///accuracy penalty of sawn off guns
@@ -209,7 +254,8 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(
 #define EXPLODE_DEVASTATE 1
 #define EXPLODE_HEAVY 2
 #define EXPLODE_LIGHT 3
-#define EXPLODE_GIB_THRESHOLD 50	//ex_act() with EXPLODE_DEVASTATE severity will gib mobs with less than this much bomb armor
+/// ex_act() with EXPLODE_DEVASTATE severity will gib mobs with less than this much bomb armor
+#define EXPLODE_GIB_THRESHOLD 50
 
 #define EMP_HEAVY 1
 #define EMP_LIGHT 2
@@ -239,7 +285,7 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(
 //bullet_act() return values
 #define BULLET_ACT_HIT "HIT" //It's a successful hit, whatever that means in the context of the thing it's hitting.
 #define BULLET_ACT_BLOCK "BLOCK" //It's a blocked hit, whatever that means in the context of the thing it's hitting.
-#define BULLET_ACT_FORCE_PIERCE "PIERCE"	//It pierces through the object regardless of the bullet being piercing by default.
+#define BULLET_ACT_FORCE_PIERCE "PIERCE" //It pierces through the object regardless of the bullet being piercing by default.
 
 #define NICE_SHOT_RICOCHET_BONUS 10 //if the shooter has the NICE_SHOT trait and they fire a ricocheting projectile, add this to the ricochet chance and auto aim angle
 
@@ -258,7 +304,7 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(
 /// Compatible firemode is in the gun. Wait until it's held in the user hands.
 #define AUTOFIRE_STAT_IDLE (1<<0)
 /// Gun is active and in the user hands. Wait until user does a valid click.
-#define AUTOFIRE_STAT_ALERT (1<<1)
+#define AUTOFIRE_STAT_ALERT	(1<<1)
 /// Gun is shooting.
 #define AUTOFIRE_STAT_FIRING (1<<2)
 

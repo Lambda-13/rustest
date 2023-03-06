@@ -12,7 +12,7 @@
 	contains = list(/obj/item/ammo_box/magazine/co9mm,
 					/obj/item/ammo_box/magazine/co9mm,
 					/obj/item/ammo_box/magazine/co9mm)
-	cost = 1500
+	cost = COST_MIN * 1500
 
 /datum/supply_pack/ammo/m10mm_ammo
 	name = "Ящик с патронами 10мм калибра (Stechkin)"
@@ -20,7 +20,7 @@
 	contains = list(/obj/item/ammo_box/magazine/m10mm,
 					/obj/item/ammo_box/magazine/m10mm,
 					/obj/item/ammo_box/magazine/m10mm)
-	cost = 1500
+	cost = COST_MIN * 1500
 
 /*
 		Shotgun ammo
@@ -29,14 +29,14 @@
 /datum/supply_pack/ammo/buckshot
 	name = "Ящик с картечью 12мм (Buckshot)"
 	desc = "Содержит две коробки картечи для охоты или защиты. Или доказывания своей правоты."
-	cost = 2000
+	cost = COST_MIN * 2000
 	contains = list(/obj/item/storage/box/lethalshot,
 					/obj/item/storage/box/lethalshot)
 
 /datum/supply_pack/ammo/slugs
 	name = "Ящик с патронами 12мм (Slug)"
 	desc = "Содержит две коробки картечи для охоты или защиты. Или доказывания своей правоты."
-	cost = 2000
+	cost = COST_MIN * 2000
 	contains = list(/obj/item/storage/box/slugshot,
 					/obj/item/storage/box/slugshot)
 
@@ -47,15 +47,15 @@
 /datum/supply_pack/ammo/winchester_ammo
 	name = "Ящик с патронами .38 калибра (Winchester and Detective Special)"
 	desc = "Содержит два ящика с патронами на 30 патронов для перезарядки оружия .38 калибра."
-	cost = 2500
+	cost = COST_MIN * 2500
 	contains = list(/obj/item/ammo_box/c38_box,
 					/obj/item/ammo_box/c38_box)
 	crate_name = "оружейный ящик"
 
 /datum/supply_pack/ammo/winchester_hunting_ammo
 	name = "Ящик с охотничьими патронами .38 калибра (Winchester and Detective Special)"
-	desc = "Содержит два ящика с патронами на 30 патронов для перезарядки оружия .38 калибра для охоты на слонов."
-	cost = 2000
+	desc = "Содержит два ящика на 30 патронов для перезарядки оружия .38 калибра для охоты на слонов."
+	cost = COST_MIN * 2000
 	contains = list(/obj/item/ammo_box/c38_box/hunting,
 					/obj/item/ammo_box/c38_box/hunting)
 	crate_name = "оружейный ящик"
@@ -63,7 +63,7 @@
 /datum/supply_pack/ammo/match
 	name = "Спидлоадер .38 калибра"
 	desc = "Содержит один спидлоадер с патронами калибра .38, идеально подходящий для демонстрации самой быстрой руки в этом секторе."
-	cost = 1200
+	cost = COST_MIN * 1200
 	small_item = TRUE
 	contains = list(/obj/item/ammo_box/c38/match)
 	crate_name = "ящик со спидлоадером .38 калибра"
@@ -71,7 +71,7 @@
 /datum/supply_pack/ammo/dumdum
 	name = "Спидлоадер .38 калибра (DumDum)"
 	desc = "Содержит один спидлоадер с патронами калибра .38, идеально подходящий для демонстрации самой быстрой руки в этом секторе. Теперь с разрывными патронами."
-	cost = 1200
+	cost = COST_MIN * 1200
 	small_item = TRUE
 	contains = list(/obj/item/ammo_box/c38/dumdum)
 	crate_name = "ящик со спидлоадером .38 калибра"

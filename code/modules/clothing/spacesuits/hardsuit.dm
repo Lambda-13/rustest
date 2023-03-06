@@ -536,7 +536,7 @@
 	hardsuit_type = "medical"
 	flash_protect = FLASH_PROTECTION_NONE
 	armor = list("melee" = 30, "bullet" = 5, "laser" = 10, "energy" = 20, "bomb" = 10, "bio" = 100, "rad" = 60, "fire" = 60, "acid" = 75)
-	clothing_flags = list(STOPSPRESSUREDAMAGE, THICKMATERIAL, TRAIT_REAGENT_SCANNER, SNUG_FIT, BLOCK_GAS_SMOKE_EFFECT, ALLOWINTERNALS) //WS Port - Cit Internals
+	clothing_flags = STOPSPRESSUREDAMAGE | THICKMATERIAL | SCAN_REAGENTS | SNUG_FIT | BLOCK_GAS_SMOKE_EFFECT | ALLOWINTERNALS //WS Port - Cit Internals
 
 /obj/item/clothing/suit/space/hardsuit/medical
 	name = "medical hardsuit"
@@ -568,7 +568,7 @@
 	max_heat_protection_temperature = FIRE_SUIT_MAX_TEMP_PROTECT
 	armor = list("melee" = 30, "bullet" = 5, "laser" = 10, "energy" = 20, "bomb" = 100, "bio" = 100, "rad" = 60, "fire" = 60, "acid" = 80)
 	var/explosion_detection_dist = 21
-	clothing_flags = list(STOPSPRESSUREDAMAGE, THICKMATERIAL, TRAIT_REAGENT_SCANNER, SNUG_FIT, BLOCK_GAS_SMOKE_EFFECT, ALLOWINTERNALS) //WS Port - Cit Internals
+	clothing_flags = STOPSPRESSUREDAMAGE | THICKMATERIAL | SCAN_REAGENTS | SNUG_FIT | BLOCK_GAS_SMOKE_EFFECT | ALLOWINTERNALS //WS Port - Cit Internals
 	actions_types = list(/datum/action/item_action/toggle_helmet_light, /datum/action/item_action/toggle_research_scanner)
 
 /obj/item/clothing/head/helmet/space/hardsuit/rd/Initialize()
@@ -1093,15 +1093,15 @@
 	name = "pilot space suit"
 	icon_state = "space-pilot"
 	item_state = "space-pilot"
-	desc = "A lightweight, unarmored space suit designed for mech and spacepod pilots. Special attachment points make mounting and dismounting from spacepods and mechs much easier."
-	clothing_flags = STOPSPRESSUREDAMAGE | THICKMATERIAL //| FAST_EMBARK
+	desc = "A lightweight, unarmored space suit designed for mech and fighter pilots. Special attachment points make mounting and dismounting from mechs much easier."
+	clothing_flags = STOPSPRESSUREDAMAGE | THICKMATERIAL // | FAST_EMBARK
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/exo/large
 
 /obj/item/clothing/head/helmet/space/pilot
 	name = "pilot helmet"
 	icon_state = "space-pilot-plain0"
 	item_state = "space-pilot-plain"
-	desc = "A specialized space helmet designed for mech and spacepod pilots. Offers limited impact protection."
+	desc = "A specialized space helmet designed for mech and fighter pilots. Offers limited impact protection."
 	var/skin = "plain"
 	var/blurb = " Its simple design is quite ancient."
 	up = FALSE
@@ -1133,7 +1133,7 @@
 		if("corvid")
 			blurb = " It is sloppily painted with thin teal and red paint. There are some dark stains on the lining..."
 
-	desc = "A specialized space helmet designed for mech and spacepod pilots. Offers limited impact protection.[blurb]"
+	desc = "A specialized space helmet designed for mech and fighter pilots. Offers limited impact protection.[blurb]"
 	update_icon_state()
 
 /obj/item/clothing/head/helmet/space/pilot/random/New()

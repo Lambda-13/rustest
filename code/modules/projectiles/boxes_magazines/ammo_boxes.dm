@@ -313,3 +313,35 @@
 /obj/item/ammo_box/magazine/shotgun/update_icon()
 	..()
 	icon_state = "47x33mm-[ammo_count()*5]"
+
+/obj/item/ammo_box/shotgunbox
+	name = "Коробка c пулевыми для дробовика"
+	desc = "Коробка с патронами 12 калибра(пулевой)"
+	icon = 'lambda/SS7V/icons/obj/ammo.dmi'
+	ammo_type = /obj/item/ammo_casing/shotgun
+	icon_state = "slug"
+	max_ammo = 20
+
+/obj/item/ammo_box/shotgunbox/buckshot
+	name = "Коробка c картечью для дробовика"
+	desc = "Коробка с патронами 12 калибра(картечь)"
+	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
+	icon_state = "buckshot"
+
+/obj/item/ammo_box/shotgunbox/beanbag
+	name = "Коробка с резиновыми пулями для дробовика"
+	desc = "Коробка с патронами 12 калибра(резиновый пулевой)"
+	ammo_type = /obj/item/ammo_casing/shotgun/beanbag
+	icon_state = "beanbag"
+
+/obj/item/ammo_box/shotgunbox/rubber
+	name = "Коробка c резиновой картечью для дробовика"
+	desc = "Коробка с патронами 12 калибра(резиновая картечь)"
+	ammo_type = /obj/item/ammo_casing/shotgun/rubbershot
+	icon_state = "rubber"
+
+/obj/item/ammo_box/shotgunbox/incendiary
+	name = "Коробка c зажигательными"
+	desc = "Коробка с патронами 12 калибра(зажигательный)"
+	ammo_type = /obj/item/ammo_casing/shotgun/incendiary
+	icon_state = "incendiary"
