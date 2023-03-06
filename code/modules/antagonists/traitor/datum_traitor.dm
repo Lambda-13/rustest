@@ -10,7 +10,6 @@
 	antag_moodlet = /datum/mood_event/focused
 	antag_hud_type = ANTAG_HUD_TRAITOR
 	antag_hud_name = "traitor"
-	hijack_speed = 0.5				//10 seconds per hijack stage by default
 	var/special_role = ROLE_TRAITOR
 	var/employer = "The Syndicate"
 	var/give_objectives = TRUE
@@ -63,11 +62,11 @@
 			forge_human_objectives()
 
 /datum/antagonist/traitor/proc/forge_human_objectives()
-	var/is_hijacker = FALSE
+	var/is_secondary = FALSE
 	if (GLOB.joined_player_list.len >= 30) // Less murderboning on lowpop thanks
-		is_hijacker = prob(10)
+		is_secondary = prob(10)
 	var/martyr_chance = prob(20)
-	var/objective_count = is_hijacker 			//Hijacking counts towards number of objectives
+	var/objective_count = is_secondary
 	if(!SSticker.mode.exchange_blue && SSticker.mode.traitors.len >= 8) 	//Set up an exchange if there are enough traitors
 		if(!SSticker.mode.exchange_red)
 			SSticker.mode.exchange_red = owner
@@ -80,12 +79,11 @@
 	for(var/i = objective_count, i < toa, i++)
 		forge_single_objective()
 
-	if(is_hijacker && objective_count <= toa) //Don't assign hijack if it would exceed the number of objectives set in config.traitor_objectives_amount
-		if (!(locate(/datum/objective/hijack) in objectives))
-			var/datum/objective/hijack/hijack_objective = new
-			hijack_objective.owner = owner
-			add_objective(hijack_objective)
-			return
+	if(is_secondary && objective_count <= toa)
+		var/datum/objective/assassinate/secondary_objective = new
+		secondary_objective.owner = owner
+		add_objective(secondary_objective)
+		return
 
 
 	var/martyr_compatibility = 1 //You can't succeed in stealing if you're dead.
@@ -101,11 +99,10 @@
 		return
 
 	else
-		if(!(locate(/datum/objective/escape) in objectives))
-			var/datum/objective/escape/escape_objective = new
-			escape_objective.owner = owner
-			add_objective(escape_objective)
-			return
+		var/datum/objective/assassinate/assassinate_objective = new
+		assassinate_objective.owner = owner
+		add_objective(assassinate_objective)
+		return
 
 /datum/antagonist/traitor/proc/forge_ai_objectives()
 	var/objective_count = 1
@@ -171,13 +168,13 @@
 		var/special_pick = rand(1,3)
 		switch(special_pick)
 			if(1)
-				var/datum/objective/block/block_objective = new
-				block_objective.owner = owner
-				add_objective(block_objective)
+				var/datum/objective/assassinate/assassinate_objective = new
+				assassinate_objective.owner = owner
+				add_objective(assassinate_objective)
 			if(2)
-				var/datum/objective/purge/purge_objective = new
-				purge_objective.owner = owner
-				add_objective(purge_objective)
+				var/datum/objective/escape/escape_objective = new
+				escape_objective.owner = owner
+				add_objective(escape_objective)
 			if(3)
 				var/datum/objective/robot_army/robot_objective = new
 				robot_objective.owner = owner

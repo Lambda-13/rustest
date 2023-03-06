@@ -6,7 +6,6 @@
 	antag_hud_type = ANTAG_HUD_WIZ
 	antag_hud_name = "wizard"
 	antag_moodlet = /datum/mood_event/focused
-	hijack_speed = 0.5
 	var/give_objectives = TRUE
 	var/strip = TRUE //strip before equipping
 	var/allow_rename = TRUE
@@ -69,21 +68,11 @@
 			kill_objective.find_target()
 			objectives += kill_objective
 
-			if (!(locate(/datum/objective/escape) in objectives))
-				var/datum/objective/escape/escape_objective = new
-				escape_objective.owner = owner
-				objectives += escape_objective
-
 		if(31 to 60)
 			var/datum/objective/steal/steal_objective = new
 			steal_objective.owner = owner
 			steal_objective.find_target()
 			objectives += steal_objective
-
-			if (!(locate(/datum/objective/escape) in objectives))
-				var/datum/objective/escape/escape_objective = new
-				escape_objective.owner = owner
-				objectives += escape_objective
 
 		if(61 to 85)
 			var/datum/objective/assassinate/kill_objective = new
@@ -102,10 +91,10 @@
 				objectives += survive_objective
 
 		else
-			if (!(locate(/datum/objective/hijack) in objectives))
-				var/datum/objective/hijack/hijack_objective = new
-				hijack_objective.owner = owner
-				objectives += hijack_objective
+			if (!(locate(/datum/objective/assassinate) in objectives))
+				var/datum/objective/assassinate/assassinate_objective = new
+				assassinate_objective.owner = owner
+				objectives += assassinate_objective
 
 /datum/antagonist/wizard/on_removal()
 	unregister()

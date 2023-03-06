@@ -62,8 +62,6 @@ GLOBAL_LIST_EMPTY(objectives)
 	if(SSshuttle.jump_mode != BS_JUMP_COMPLETED)
 		return FALSE
 	var/turf/location = get_turf(M.current)
-	if(!location || istype(location, /turf/open/floor/mineral/plastitanium/red/brig)) // Fails if they are in the shuttle brig
-		return FALSE
 	return location.onCentCom() || location.onSyndieBase()
 
 /datum/objective/proc/check_completion()
@@ -180,7 +178,7 @@ GLOBAL_LIST_EMPTY(objectives)
 /datum/objective/assassinate/update_explanation_text()
 	..()
 	if(target?.current)
-		explanation_text = "Убить [target.name], на должности [ru_job_parse(!target_role_type ? target.assigned_role : target.special_role)]."
+		explanation_text = "Убить [target.name], на должности [!target_role_type ? target.assigned_role : target.special_role]."
 	else
 		explanation_text = "Ничего."
 
@@ -213,7 +211,7 @@ GLOBAL_LIST_EMPTY(objectives)
 /datum/objective/mutiny/update_explanation_text()
 	..()
 	if(target && target.current)
-		explanation_text = "Убить или проимплантировать и отправить в ссылку в гейтвей [target.name], на должности [ru_job_parse(!target_role_type ? target.assigned_role : target.special_role)]."
+		explanation_text = "Убить или проимплантировать и отправить в ссылку в гейтвей [target.name], на должности [!target_role_type ? target.assigned_role : target.special_role]."
 	else
 		explanation_text = "Ничего."
 
@@ -232,7 +230,7 @@ GLOBAL_LIST_EMPTY(objectives)
 
 /datum/objective/maroon/update_explanation_text()
 	if(target && target.current)
-		explanation_text = "Не дать [target.name], на должности [ru_job_parse(!target_role_type ? target.assigned_role : target.special_role)], покинуть станцию в живом виде."
+		explanation_text = "Не дать [target.name], на должности [!target_role_type ? target.assigned_role : target.special_role], покинуть сектор в живом виде."
 	else
 		explanation_text = "Ничего."
 
@@ -266,7 +264,7 @@ GLOBAL_LIST_EMPTY(objectives)
 /datum/objective/debrain/update_explanation_text()
 	..()
 	if(target?.current)
-		explanation_text = "Украсть мозг [target.name], на должности [ru_job_parse(!target_role_type ? target.assigned_role : target.special_role)]."
+		explanation_text = "Украсть мозг [target.name], на должности [!target_role_type ? target.assigned_role : target.special_role]."
 	else
 		explanation_text = "Ничего."
 
@@ -291,7 +289,7 @@ GLOBAL_LIST_EMPTY(objectives)
 /datum/objective/protect/update_explanation_text()
 	..()
 	if(target?.current)
-		explanation_text = "Защитить [target.name], на должности [ru_job_parse(!target_role_type ? target.assigned_role : target.special_role)]."
+		explanation_text = "Защитить [target.name], на должности [!target_role_type ? target.assigned_role : target.special_role]."
 	else
 		explanation_text = "Ничего."
 
@@ -321,8 +319,8 @@ GLOBAL_LIST_EMPTY(objectives)
 
 /datum/objective/escape
 	name = "escape"
-	explanation_text = "Сбежать на шаттле или спасательной капсуле живым и без содержания под стражей."
-	team_explanation_text = "Сбежать на шаттле или спасательной капсуле живым и без содержания под стражей."
+	explanation_text = "Покинуть сектор с помощью блюспейс прыжка."
+	team_explanation_text = "Покинуть сектор с помощью блюспейс прыжка."
 
 /datum/objective/escape/check_completion()
 	// Require all owners escape safely.
@@ -344,7 +342,7 @@ GLOBAL_LIST_EMPTY(objectives)
 /datum/objective/escape/escape_with_identity/update_explanation_text()
 	if(target?.current)
 		target_real_name = target.current.real_name
-		explanation_text = "Сбежать на шаттле или спасательной капсуле под личностью [target_real_name], на должности [ru_job_parse(target.assigned_role)]"
+		explanation_text = "Покинуть сектор с помощью блюспейс прыжка под личностью [target_real_name], на должности [target.assigned_role]"
 		var/mob/living/carbon/human/H
 		if(ishuman(target.current))
 			H = target.current
@@ -857,10 +855,7 @@ GLOBAL_LIST_EMPTY(possible_items_special)
 		/datum/objective/maroon,
 		/datum/objective/debrain,
 		/datum/objective/protect,
-		/datum/objective/jailbreak,
-		/datum/objective/jailbreak/detain,
 		/datum/objective/destroy,
-		/datum/objective/hijack,
 		/datum/objective/escape,
 		/datum/objective/survive,
 		/datum/objective/martyr,

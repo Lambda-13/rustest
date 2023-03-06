@@ -5,7 +5,6 @@
 	var/special_role = ROLE_BROTHER
 	antag_hud_type = ANTAG_HUD_BROTHER
 	antag_hud_name = "brother"
-	hijack_speed = 0.5
 	var/datum/team/brother_team/team
 	antag_moodlet = /datum/mood_event/focused
 
@@ -147,14 +146,14 @@
 
 /datum/team/brother_team/proc/forge_brother_objectives()
 	objectives = list()
-	var/is_hijacker = prob(10)
-	for(var/i = 1 to max(1, CONFIG_GET(number/brother_objectives_amount) + (members.len > 2) - is_hijacker))
+	var/is_protect = prob(10)
+	for(var/i = 1 to max(1, CONFIG_GET(number/brother_objectives_amount) + (members.len > 2) - is_protect))
 		forge_single_objective()
-	if(is_hijacker)
-		if(!locate(/datum/objective/hijack) in objectives)
-			add_objective(new/datum/objective/hijack)
-	else if(!locate(/datum/objective/escape) in objectives)
-		add_objective(new/datum/objective/escape)
+	if(is_protect)
+		if(!locate(/datum/objective/protect) in objectives)
+			add_objective(new/datum/objective/protect)
+	else if(!locate(/datum/objective/assassinate) in objectives)
+		add_objective(new/datum/objective/assassinate)
 
 /datum/team/brother_team/proc/forge_single_objective()
 	if(prob(50))
