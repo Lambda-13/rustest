@@ -173,6 +173,18 @@
 	category = list("Equipment")
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_CARGO
 
+/datum/design/portable_recharger
+	name = "Переносной Зарядный Комплекс"
+	desc = "Металлический чемодан. Имеет специальный порт для зарядки оружия работающего на энергии."
+	id = "portable_recharger"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = 2500, /datum/material/glass = 1000)
+	construction_time=100
+	build_path = /obj/item/case_portable_recharger
+	category = list("Misc","Equipment")
+	departmental_flags =  DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_BALLISTICS
+
+
 /datum/design/night_vision_goggles
 	name = "Night Vision Goggles"
 	desc = "Goggles that let you see through darkness unhindered."

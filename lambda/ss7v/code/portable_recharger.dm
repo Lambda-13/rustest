@@ -1,6 +1,6 @@
 /obj/machinery/recharger/portable_recharger
 	name = "Переносной Зарядный Комплекс"
-	desc = "Металлический чемодан. Имеет специальный порт для зарядки оружия работающего на энергии. Не имеет прямого доступа к компонентам"
+	desc = "Металлический чемодан. Имеет специальный порт для зарядки оружия работающего на энергии. Из-за компактной конструкции не имеет доступа к внутренним компонентам"
 	icon = 'lambda/ss7v/icons/obj/portable_recharger.dmi'
 	icon_state = "portable_recharger"
 	anchored = FALSE
@@ -120,8 +120,8 @@
 	desc = "Металлический кейс с маленькой надписью \"Переносной Зарядный Комплекс.\"."
 	icon = 'lambda/ss7v/icons/obj/portable_recharger.dmi'
 	icon_state = "case_portable_recharger"
-	lefthand_file = 'icons/mob/inhands/equipment/briefcase_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/equipment/briefcase_righthand.dmi'
+	lefthand_file = 'lambda/ss7v/icons/obj/lefthand.dmi'
+	righthand_file = 'lambda/ss7v/icons/obj/righthand.dmi'
 	force = 8
 	hitsound = "swing_hit"
 	throw_speed = 2
@@ -153,7 +153,7 @@
 	if(!isturf(user.loc))
 		return
 	add_fingerprint(user)
-	user.visible_message("<span class='notice'>[user] начинает ставить [link]...", "Начинаю ставить [link]...</span>")
+	user.visible_message("<span class='notice'>[user] начинает ставить [link]...</span>", "<span class='notice'>Начинаю ставить [link]...</span>")
 	if(do_after(user, 10, target = user))
 		link.forceMove(get_turf(src))
 		link.closed = FALSE
@@ -167,7 +167,7 @@
 			to_chat(user, "<span class='warning'>[src] нет места для второго [W]!</span>")
 		if(!incell)
 			incell = W
-			W = null
+			user.transferItemToLoc(W, src)
 			update_icon()
 			to_chat(user, "<span class='notice'>Вставляю [incell] в [src].</span>")
 	else
