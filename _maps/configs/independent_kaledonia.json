@@ -12,7 +12,7 @@
 			"slots": 1
 		},
 		"Cargonian": {
-			"outfit": "/datum/outfit/job/cargotechnican",
+			"outfit": "/datum/outfit/job/cargo_tech",
 			"slots": 4
 		},
 		"Cargonian Prospector": {

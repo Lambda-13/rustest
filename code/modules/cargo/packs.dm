@@ -1,6 +1,6 @@
-#define COST_MIN 1.5
-#define COST_MED 2.5
-#define COST_HIGH 3.5
+#define COST_MIN 1
+#define COST_MED 1.5
+#define COST_HIGH 2
 
 /datum/supply_pack
 	var/name = "Crate"

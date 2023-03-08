@@ -53,9 +53,6 @@
 	},
 /turf/open/floor/wood,
 /area/ship/crew/solgov)
-"aT" = (
-/turf/closed/wall/mineral/titanium,
-/area/ship/construction)
 "bc" = (
 /obj/structure/closet/cardboard,
 /obj/effect/spawner/lootdrop/maintenance/three,
@@ -673,10 +670,6 @@
 /obj/structure/filingcabinet,
 /turf/open/floor/wood,
 /area/ship/crew/solgov)
-"kM" = (
-/obj/structure/catwalk,
-/turf/template_noop,
-/area/ship/external)
 "kP" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -2209,9 +2202,6 @@
 /obj/structure/curtain/cloth/fancy,
 /turf/open/floor/plating,
 /area/ship/crew/solgov)
-"Ce" = (
-/turf/closed/wall/mineral/titanium,
-/area/ship/crew)
 "Cf" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
@@ -4535,20 +4525,20 @@ WU
 Ly
 "}
 (6,1,1) = {"
-Ce
+UY
 UY
 bC
 bC
 bC
-kM
-kM
-kM
-kM
-kM
-kM
-kM
-kM
-kM
+Ly
+Ly
+Ly
+Ly
+Ly
+Ly
+Ly
+Ly
+Ly
 vm
 XM
 VG
@@ -4582,7 +4572,7 @@ Ly
 Ly
 Ly
 Ly
-kM
+Ly
 vm
 mK
 GQ
@@ -4616,7 +4606,7 @@ Ly
 Ly
 Ly
 Ly
-kM
+Ly
 vm
 XM
 ZP
@@ -4820,7 +4810,7 @@ Ly
 Ly
 Ly
 Ly
-kM
+Ly
 vm
 oh
 SA
@@ -4854,7 +4844,7 @@ Ly
 Ly
 Ly
 Ly
-kM
+Ly
 vm
 ai
 yd
@@ -4888,7 +4878,7 @@ Ly
 Ly
 Ly
 Ly
-kM
+Ly
 vm
 oh
 ch
@@ -4919,7 +4909,7 @@ Ly
 Ly
 Ly
 Ly
-kM
+Ly
 YG
 YG
 YG
@@ -4953,7 +4943,7 @@ Ly
 Ly
 Ly
 Ly
-kM
+Ly
 sT
 NW
 QU
@@ -4987,7 +4977,7 @@ Ly
 Ly
 Ly
 Ly
-kM
+Ly
 sT
 uu
 yZ
@@ -5021,7 +5011,7 @@ Ly
 Ly
 Ly
 Ly
-kM
+Ly
 sT
 wJ
 EQ
@@ -5055,7 +5045,7 @@ Ly
 Ly
 Ly
 Ly
-kM
+Ly
 sT
 wJ
 GU
@@ -5089,7 +5079,7 @@ Ly
 Ly
 Ly
 Ly
-kM
+Ly
 sT
 uu
 IA
@@ -5123,7 +5113,7 @@ Ly
 Ly
 Ly
 Ly
-kM
+Ly
 sT
 wJ
 Ji
@@ -5157,7 +5147,7 @@ Ly
 Ly
 Ly
 Ly
-kM
+Ly
 YG
 YG
 YG
@@ -5194,7 +5184,7 @@ Ly
 Ly
 Ly
 Ly
-kM
+Ly
 vm
 Iq
 EI
@@ -5228,7 +5218,7 @@ Ly
 Ly
 Ly
 Ly
-kM
+Ly
 vm
 zr
 EJ
@@ -5249,20 +5239,20 @@ Ly
 Ly
 "}
 (27,1,1) = {"
-aT
+kK
 kK
 OR
 OR
 OR
-kM
-kM
-kM
-kM
-kM
-kM
-kM
-kM
-kM
+Ly
+Ly
+Ly
+Ly
+Ly
+Ly
+Ly
+Ly
+Ly
 NU
 nz
 sH

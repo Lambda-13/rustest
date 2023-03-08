@@ -5,7 +5,7 @@
 	"map_path": "_maps/shuttles/shiptest/independent_oneway.dmm",
 	"job_slots": {
 		"Operative": {
-			"outfit": "/datum/outfit/syndicate_empty/sbc/assault/operative/oneway",
+			"outfit": "/datum/outfit/syndicate_empty/sbc/assault/operative",
 			"officer": true,
 			"slots": 1
 		}

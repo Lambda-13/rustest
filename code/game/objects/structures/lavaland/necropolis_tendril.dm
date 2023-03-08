@@ -38,7 +38,7 @@ GLOBAL_LIST_INIT(tendrils, list())
 		if(ismineralturf(F))
 			var/turf/closed/mineral/M = F
 			M.ScrapeAway(null, CHANGETURF_IGNORE_AIR)
-	AddComponent(/datum/component/gps, "Eerie Signal")
+	AddComponent(/datum/component/gps, "Жуткий сигнал")
 	GLOB.tendrils += src
 
 /obj/structure/spawner/lavaland/deconstruct(disassembled)

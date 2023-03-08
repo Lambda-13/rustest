@@ -62,7 +62,7 @@
 
 	real_name = src.name
 
-	AddComponent(/datum/component/gps, "Regal Signal")
+	AddComponent(/datum/component/gps, "Королевский сигнал")
 	AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/repulse/xeno(src))
 	AddAbility(new/obj/effect/proc_holder/alien/royal/queen/promote())
 	smallsprite.Grant(src)

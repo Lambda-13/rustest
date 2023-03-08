@@ -1,0 +1,16 @@
+{
+	"$schema": "https://raw.githubusercontent.com/Lambda-13/rustest/master/_maps/ship_config_schema.json",
+	"map_name": "Antagship Traitor Shuttle",
+	"map_short_name": "Antag-class",
+	"map_path": "lambda/sanecman/shuttles/antagship_traitor.dmm",
+	"description": "Шаттл разработанный Синдикатом для выполнения предательских диверсий и задач на пограничных мирах.",
+	"job_slots": {
+		"Operative": {
+			"outfit": "/datum/outfit/antagship_traitor",
+			"officer": true,
+			"slots": 1
+		}
+	},
+	"limit": 1,
+	"enabled": true
+}
