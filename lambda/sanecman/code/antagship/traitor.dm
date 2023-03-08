@@ -9,4 +9,5 @@
 /datum/outfit/antagship_traitor/post_equip(mob/living/carbon/human/H)
 	. = ..()
 	H.faction |= ROLE_SYNDICATE
+	H.mind.add_antag_datum(/datum/antagonist/traitor)
 	H.AddComponent(/datum/component/gps, "Зашифрованный предательский сигнал")
