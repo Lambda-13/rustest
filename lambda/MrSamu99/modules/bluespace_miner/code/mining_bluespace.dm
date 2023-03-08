@@ -284,7 +284,7 @@
 		return
 	var/obj/chosen_sheet = pickweight(ore_chance)
 	playsound(src, 'sound/machines/ping.ogg', 50, FALSE)
-	materials.mat_container.insert_item_materials(chosen_sheet)
+	materials.mat_container.insert_item(chosen_sheet)
 	update_icon_state()
 
 /obj/machinery/bluespace_miner/crowbar_act(mob/living/user, obj/item/tool)
