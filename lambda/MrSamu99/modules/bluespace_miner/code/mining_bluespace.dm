@@ -228,7 +228,7 @@
 /obj/machinery/bluespace_miner/examine(mob/user)
 	. = ..()
 	. += "<hr>"
-	. += span_notice("[processing_speed] секунд для одной партии ресурсов")
+	. += span_notice("[processing_speed*0.1] секунд для одной партии ресурсов")
 	if(!materials?.silo)
 		. += span_notice("\nБункер для руды не подключен. Используйте многофункциональный инструмент, чтобы связать бункер для руды с этой машиной.")
 	else if(materials?.on_hold())
@@ -274,17 +274,18 @@
 	return TRUE
 
 //if check_factors is good, then we spawn materials
-/*obj/machinery/bluespace_miner/proc/spawn_mats()
-	var/obj/chosen_sheet = pick_weight(ore_chance)
-	new chosen_sheet(get_turf(src))*/
+/obj/machinery/bluespace_miner/proc/spawn_mats()
+	var/obj/chosen_sheet = pickweight(ore_chance)
+	new chosen_sheet(get_turf(src))
 
 /obj/machinery/bluespace_miner/process()
 	if(!check_factors())
 		update_icon_state()
 		return
-	var/obj/chosen_sheet = pickweight(ore_chance)
+	//var/obj/chosen_sheet = pickweight(ore_chance)
 	playsound(src, 'sound/machines/ping.ogg', 50, FALSE)
-	materials.mat_container.insert_item(chosen_sheet)
+	//materials.mat_container.insert_item_materials(chosen_sheet)
+	spawn_mats()
 	update_icon_state()
 
 /obj/machinery/bluespace_miner/crowbar_act(mob/living/user, obj/item/tool)
