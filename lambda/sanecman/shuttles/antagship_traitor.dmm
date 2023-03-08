@@ -1,493 +1,518 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
-"a" = (
-/turf/template_noop,
-/area/template_noop)
-"b" = (
-/turf/closed/wall,
-/area/shuttle/hunter)
-"c" = (
-/obj/structure/shuttle/engine/propulsion{
+"aa" = (
+/obj/machinery/modular_computer/console/preset/command{
 	dir = 8
 	},
-/turf/open/floor/plating/airless,
-/area/shuttle/hunter)
-"d" = (
-/obj/structure/shuttle/engine/heater{
-	dir = 8
-	},
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/turf/open/floor/plating/airless,
-/area/shuttle/hunter)
-"e" = (
-/obj/machinery/portable_atmospherics/scrubber/huge,
-/turf/open/floor/plating,
-/area/shuttle/hunter)
-"f" = (
-/obj/machinery/power/smes,
-/turf/open/floor/plating,
-/area/shuttle/hunter)
-"g" = (
-/turf/open/floor/plating,
-/area/shuttle/hunter)
-"h" = (
-/obj/machinery/door/airlock/security/glass,
-/turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/hunter)
-"i" = (
-/obj/machinery/door/airlock/security/glass,
-/obj/structure/fans/tiny,
-/turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/hunter)
-"j" = (
-/obj/effect/turf_decal/industrial/outline/yellow,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating,
-/area/shuttle/hunter)
-"k" = (
-/turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/hunter)
-"m" = (
-/obj/structure/reagent_dispensers/fueltank,
-/obj/item/weldingtool/largetank,
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/hunter)
-"n" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/reagent_dispensers/watertank,
-/obj/item/reagent_containers/glass/bucket,
-/obj/item/mop,
-/obj/item/storage/bag/trash{
-	pixel_x = 6
-	},
-/turf/open/floor/mineral/plastitanium,
-/area/shuttle/hunter)
-"o" = (
-/obj/effect/mob_spawn/human/fugitive/russian{
-	dir = 4
-	},
-/turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/hunter)
-"p" = (
-/obj/effect/turf_decal/industrial/outline/yellow,
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/closet/crate{
-	icon_state = "crateopen"
-	},
-/turf/open/floor/plating,
-/area/shuttle/hunter)
-"q" = (
-/turf/open/floor/mineral/plastitanium,
-/area/shuttle/hunter)
-"r" = (
-/obj/effect/turf_decal/arrows{
-	dir = 4
-	},
-/turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/hunter)
-"s" = (
-/obj/structure/table,
-/obj/item/storage/fancy/cigarettes/cigars/cohiba{
-	pixel_y = 6
-	},
-/turf/open/floor/mineral/plastitanium,
-/area/shuttle/hunter)
-"t" = (
-/obj/effect/turf_decal/industrial/outline/yellow,
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/closet/crate/large{
-	icon_state = "crittercrate"
-	},
-/turf/open/floor/plating,
-/area/shuttle/hunter)
-"u" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/mineral/plastitanium,
-/area/shuttle/hunter)
-"v" = (
-/obj/effect/spawner/structure/window/reinforced,
-/turf/open/floor/plating,
-/area/shuttle/hunter)
-"w" = (
-/obj/machinery/fugitive_capture,
-/turf/open/floor/mineral/plastitanium,
-/area/shuttle/hunter)
-"x" = (
-/obj/effect/turf_decal/industrial/outline/yellow,
-/turf/open/floor/plating,
-/area/shuttle/hunter)
-"y" = (
-/turf/template_noop,
-/area/shuttle/hunter)
-"z" = (
-/obj/structure/chair{
-	dir = 4
-	},
-/turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/hunter)
-"A" = (
+/area/ship/bridge)
+"ab" = (
 /obj/machinery/computer/helm{
 	dir = 8
 	},
-/turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/hunter)
-"B" = (
-/obj/effect/turf_decal/industrial/outline/yellow,
-/obj/structure/closet/crate{
-	icon_state = "crateopen"
-	},
-/turf/open/floor/plating,
-/area/shuttle/hunter)
-"C" = (
-/obj/machinery/computer/camera_advanced{
-	dir = 8
-	},
-/turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/hunter)
-"D" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/hunter)
-"E" = (
-/obj/structure/frame/computer{
-	anchored = 1;
-	dir = 8
-	},
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/hunter)
-"F" = (
-/obj/effect/turf_decal/industrial/outline/yellow,
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/closet/crate/engineering{
-	icon_state = "engi_crateopen"
-	},
-/turf/open/floor/plating,
-/area/shuttle/hunter)
-"G" = (
-/obj/structure/table,
-/obj/item/reagent_containers/food/drinks/bottle/vodka,
-/turf/open/floor/mineral/plastitanium,
-/area/shuttle/hunter)
-"H" = (
-/obj/effect/turf_decal/industrial/outline/yellow,
-/obj/structure/closet/crate/coffin{
-	icon_state = "coffinopen"
-	},
-/turf/open/floor/plating,
-/area/shuttle/hunter)
-"I" = (
-/obj/effect/turf_decal/industrial/outline/yellow,
-/obj/structure/mecha_wreckage/ripley,
-/turf/open/floor/plating,
-/area/shuttle/hunter)
-"J" = (
-/obj/machinery/portable_atmospherics/canister/oxygen,
-/turf/open/floor/mineral/plastitanium,
-/area/shuttle/hunter)
-"K" = (
-/obj/machinery/door/airlock/security/glass,
+/area/ship/bridge)
+"ac" = (
 /obj/structure/fans/tiny,
+/obj/machinery/door/poddoor{
+	id = 5434
+	},
 /obj/docking_port/mobile{
-	dheight = 3;
-	dwidth = 3;
-	height = 13;
-	movement_force = list("KNOCKDOWN"=0,"THROW"=0);
-	name = "hunter shuttle";
-	rechargeTime = 1800;
-	width = 15
+	icon_state = "pinonclose";
+	dir = 4
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ship/bridge)
+"ae" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/machinery/button/door{
+	id = 5434;
+	name = "Poddoors";
+	pixel_y = 24
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/hunter)
-"L" = (
-/obj/effect/mob_spawn/human/fugitive/russian{
+/area/ship/bridge)
+"af" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/ship/bridge)
+"ag" = (
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/effect/turf_decal/industrial/hatch/yellow,
+/obj/machinery/power/port_gen/pacman/wood,
+/obj/item/stack/sheet/mineral/wood/fifty,
+/turf/open/floor/mineral/plastitanium,
+/area/ship/bridge)
+"ah" = (
+/obj/effect/turf_decal/industrial/hatch/yellow,
+/obj/machinery/power/terminal{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/item/wrench,
+/obj/machinery/power/port_gen/pacman/wood,
+/turf/open/floor/mineral/plastitanium,
+/area/ship/bridge)
+"aj" = (
+/obj/effect/turf_decal/box,
+/obj/machinery/computer/cryopod{
+	dir = 8;
+	icon_state = "wallconsole_old";
+	pixel_x = 28
+	},
+/obj/machinery/cryopod{
+	icon_state = "cryopod-open";
+	dir = 8
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ship/bridge)
+"ak" = (
+/obj/structure/chair/comfy/shuttle{
 	dir = 1
 	},
-/turf/open/floor/plating,
-/area/shuttle/hunter)
-"N" = (
-/obj/machinery/suit_storage_unit/standard_unit,
+/turf/open/floor/mineral/plastitanium/red,
+/area/ship/bridge)
+"al" = (
 /obj/effect/turf_decal/industrial/warning{
-	dir = 2
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/caution{
+	dir = 4
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/ship/bridge)
+"aw" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/ship/bridge)
+"bY" = (
+/obj/structure/chair/comfy/shuttle,
+/turf/open/floor/mineral/plastitanium/red,
+/area/ship/bridge)
+"gi" = (
+/obj/structure/table,
+/obj/machinery/recharger{
+	pixel_x = -4
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/hunter)
-"Q" = (
-/obj/item/book/manual/ripley_build_and_repair,
+/area/ship/bridge)
+"hB" = (
+/obj/machinery/power/shuttle/engine/electric{
+	icon_state = "burst";
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/door/poddoor/preopen{
+	id = 12345;
+	name = "Engine Poddoor"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"hJ" = (
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/door/poddoor/preopen{
+	id = 12344;
+	name = "Lockdown"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"hS" = (
+/obj/machinery/power/apc/auto_name/north,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/button/door{
+	id = 12344;
+	name = "Lockdown";
+	pixel_x = -28;
+	pixel_y = -8;
+	dir = 4
+	},
+/obj/machinery/button/door{
+	id = 12345;
+	name = "Engine Poddoor";
+	pixel_x = -28;
+	pixel_y = 8;
+	dir = 4
+	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/hunter)
-"Y" = (
-/obj/machinery/suit_storage_unit/standard_unit,
+/area/ship/bridge)
+"jY" = (
+/obj/effect/turf_decal/box,
+/obj/structure/closet/crate/freezer,
+/obj/item/reagent_containers/food/snacks/rationpack,
+/obj/item/reagent_containers/food/snacks/rationpack,
+/obj/item/reagent_containers/food/snacks/rationpack,
+/obj/item/reagent_containers/food/snacks/rationpack,
+/obj/item/reagent_containers/food/snacks/rationpack,
+/obj/item/reagent_containers/food/drinks/waterbottle/large{
+	pixel_x = 5
+	},
+/obj/item/reagent_containers/food/drinks/waterbottle/large{
+	pixel_x = 5
+	},
+/obj/item/reagent_containers/food/drinks/waterbottle/large{
+	pixel_x = 5
+	},
+/obj/item/reagent_containers/food/drinks/waterbottle/large{
+	pixel_x = 5
+	},
+/obj/item/reagent_containers/food/drinks/waterbottle/large{
+	pixel_x = 5
+	},
+/obj/item/storage/cans/sixbeer,
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/hunter)
+/area/ship/bridge)
+"ku" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/bridge)
+"kB" = (
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/bridge)
+"lp" = (
+/obj/machinery/power/smes/engineering,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/effect/turf_decal/industrial/hatch/yellow,
+/turf/open/floor/mineral/plastitanium,
+/area/ship/bridge)
+"mo" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/machinery/door/poddoor/preopen{
+	id = 12345;
+	name = "Engine Poddoor"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"mX" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/bridge)
+"rR" = (
+/obj/machinery/door/airlock/titanium,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/ship/bridge)
+"te" = (
+/obj/structure/fans/tiny,
+/obj/machinery/door/poddoor{
+	id = 5434
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ship/bridge)
+"uJ" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/bridge)
+"wh" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/bridge)
+"xc" = (
+/obj/effect/turf_decal/box,
+/obj/structure/closet/crate/internals,
+/obj/item/areaeditor/shuttle,
+/obj/effect/spawner/lootdrop/maintenance/three,
+/obj/item/tank/internals/emergency_oxygen,
+/obj/item/clothing/mask/breath,
+/turf/open/floor/mineral/plastitanium,
+/area/ship/bridge)
+"An" = (
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/structure/cable,
+/obj/machinery/door/poddoor/preopen{
+	id = 12344;
+	name = "Lockdown"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"Av" = (
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/bridge)
+"Es" = (
+/obj/structure/chair/comfy/shuttle,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/ship/bridge)
+"ES" = (
+/obj/item/radio/intercom/wideband{
+	dir = 1;
+	icon_state = "intercom-wideband";
+	pixel_x = -9;
+	pixel_y = -24;
+	step_x = 0;
+	step_y = 0
+	},
+/obj/item/radio/intercom{
+	dir = 1;
+	icon_state = "intercom";
+	pixel_x = 9;
+	pixel_y = -20
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/ship/bridge)
+"Kz" = (
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/bridge)
+"Pq" = (
+/turf/template_noop,
+/area/template_noop)
+"PT" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/bridge)
+"Rd" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/bridge)
+"Rz" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 4
+	},
+/obj/machinery/holopad/emergency/command,
+/obj/effect/landmark/start/nukeop_leader,
+/turf/open/floor/mineral/plastitanium/red,
+/area/ship/bridge)
+"RL" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/machinery/door/poddoor/preopen{
+	id = 12345;
+	name = "Engine Poddoor"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"RO" = (
+/turf/open/floor/mineral/plastitanium/red,
+/area/ship/bridge)
+"Sh" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/bridge)
+"Tk" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/bridge)
+"Uo" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/bridge)
+"XU" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/ship/bridge)
 
 (1,1,1) = {"
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+Pq
+kB
+te
+ac
+te
+kB
+Pq
 "}
 (2,1,1) = {"
-a
-a
-a
-a
-a
-a
-b
-c
-c
-b
-a
-a
-a
-a
-a
-a
+Pq
+kB
+ae
+al
+af
+kB
+Pq
 "}
 (3,1,1) = {"
-a
-c
-c
-a
-b
-b
-b
-d
-d
-b
-b
-b
-a
-c
-c
-a
+Pq
+kB
+bY
+RO
+ak
+kB
+Pq
 "}
 (4,1,1) = {"
-b
-d
-d
-b
-b
-p
-t
-x
-B
-B
-F
-b
-b
-d
-d
-b
+hB
+kB
+bY
+RO
+ak
+kB
+hB
 "}
 (5,1,1) = {"
-b
-e
-g
-b
-j
-q
-u
-q
-q
-u
-u
-H
-b
-g
-L
-b
+RL
+Kz
+Es
+aw
+XU
+Av
+mo
 "}
 (6,1,1) = {"
-b
-e
-g
-h
-k
-k
-k
-k
-k
-D
-k
-k
-h
-g
-L
-b
+Pq
+hJ
+ag
+RO
+jY
+hJ
+Pq
 "}
 (7,1,1) = {"
-b
-f
-g
-b
-x
-k
-Y
-Y
-Y
-Y
-Q
-I
-b
-g
-L
-b
+Pq
+hJ
+ah
+RO
+xc
+hJ
+Pq
 "}
 (8,1,1) = {"
-b
-b
-b
-b
-b
-h
-b
-b
-b
-b
-h
-b
-b
-b
-b
-b
+Pq
+uJ
+lp
+RO
+aj
+mX
+Pq
 "}
 (9,1,1) = {"
-a
-b
-b
-b
-m
-k
-b
-y
-y
-b
-k
-N
-b
-b
-b
-a
+hB
+mX
+PT
+rR
+Rd
+Uo
+hB
 "}
 (10,1,1) = {"
-a
-a
-a
-i
-k
-k
-v
-y
-y
-v
-k
-k
-K
-a
-a
-a
+RL
+ku
+hS
+Rz
+ES
+Sh
+mo
 "}
 (11,1,1) = {"
-a
-a
-a
-b
-n
-r
-b
-y
-y
-b
-r
-J
-b
-a
-a
-a
+Pq
+hJ
+aa
+gi
+ab
+hJ
+Pq
 "}
 (12,1,1) = {"
-a
-a
-a
-b
-b
-h
-b
-b
-b
-b
-h
-b
-b
-a
-a
-a
-"}
-(13,1,1) = {"
-a
-a
-a
-b
-o
-k
-r
-z
-z
-k
-k
-o
-b
-a
-a
-a
-"}
-(14,1,1) = {"
-a
-a
-a
-b
-b
-s
-w
-A
-C
-E
-G
-b
-b
-a
-a
-a
-"}
-(15,1,1) = {"
-a
-a
-a
-a
-b
-b
-v
-v
-v
-v
-b
-b
-a
-a
-a
-a
+Pq
+wh
+An
+An
+An
+Tk
+Pq
 "}
