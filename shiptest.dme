@@ -3458,6 +3458,7 @@
 #include "lambda\MrSamu99\modules\pvp\include.dm"
 #include "lambda\MrSamu99\game\objects\items\gigacross.dm"
 #include "lambda\MrSamu99\game\objects\items\kinetic_crusher.dm"
+#include "lambda\MrSamu99\game\objects\machinery\musicwriter.dm"
 #include "lambda\sanecman\code\autolathe_designs.dm"
 #include "lambda\sanecman\code\FURRY.dm"
 #include "lambda\sanecman\code\triglavian.dm"

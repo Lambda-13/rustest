@@ -13,8 +13,8 @@
 			"Professional Scientist": {
 				"outfit": "/datum/outfit/job/scientist",
 				"slots": 4
-			"Medical Doctor": 1,
-			}
+			},
+			"Medical Doctor": 1
 		},
 	"enabled": true
 }
