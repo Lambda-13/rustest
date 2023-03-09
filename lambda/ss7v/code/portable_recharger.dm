@@ -59,6 +59,10 @@
 
 
 /obj/machinery/recharger/portable_recharger/attackby(obj/item/G, mob/user, params)
+	if(G.tool_behaviour == TOOL_WRENCH)
+		return
+	if(G.tool_behaviour == TOOL_SCREWDRIVER)
+		return
 	var/allowed = is_type_in_typecache(G, allowed_devices)
 
 	if(allowed)
