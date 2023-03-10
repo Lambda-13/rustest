@@ -7,29 +7,29 @@
 import { clamp, round, toFixed } from 'common/math';
 
 const SI_SYMBOLS = [
-  'f', // femto
-  'p', // pico
-  'n', // nano
-  'μ', // micro
-  'm', // milli
+  'ф', // femto
+  'п', // pico
+  'н', // nano
+  'у', // micro
+  'м', // milli
   // NOTE: This is a space for a reason. When we right align si numbers,
   // in monospace mode, we want to units and numbers stay in their respective
   // columns. If rendering in HTML mode, this space will collapse into
   // a single space anyway.
   ' ',
-  'k', // kilo
-  'M', // mega
-  'G', // giga
-  'T', // tera
-  'P', // peta
-  'E', // exa
-  'Z', // zetta
-  'Y', // yotta
-  'R', // ronna
-  'Q', // quecca
-  'F',
-  'N',
-  'H',
+  'к', // kilo
+  'М', // mega
+  'Г', // giga
+  'Т', // tera
+  'П', // peta
+  'Э', // exa
+  'З', // zetta
+  'Ё', // yotta
+  'Р', // ronna
+  'К', // quecca
+  'Ф',
+  'Н',
+  'Х',
 ];
 
 const SI_BASE_INDEX = SI_SYMBOLS.indexOf(' ');
@@ -53,17 +53,12 @@ export const formatSiUnit = (
   const symbolIndex = clamp(SI_BASE_INDEX + base1000, 0, SI_SYMBOLS.length);
   const symbol = SI_SYMBOLS[symbolIndex];
   const scaledNumber = value / Math.pow(1000, base1000);
-  // prettier-ignore
-  const scaledPrecision = realBase1000 > minBase1000
-    ? (2 + base1000 * 3 - base10)
-    : 0;
+  const scaledPrecision =
+    realBase1000 > minBase1000 ? 2 + base1000 * 3 - base10 : 0;
   // TODO: Make numbers bigger than precision value show
   // up to 2 decimal numbers.
-  // prettier-ignore
-  const finalString = (
-    toFixed(scaledNumber, scaledPrecision)
-    + ' ' + symbol + unit
-  );
+  const finalString =
+    toFixed(scaledNumber, scaledPrecision) + ' ' + symbol + unit;
   return finalString.trim();
 };
 
@@ -103,7 +98,7 @@ export const formatMoney = (value, precision = 0) => {
  */
 export const formatDb = (value) => {
   const db = (20 * Math.log(value)) / Math.log(10);
-  const sign = db >= 0 ? '+' : '–';
+  const sign = db >= 0 ? '+' : db < 0 ? '–' : '';
   let formatted = Math.abs(db);
   if (formatted === Infinity) {
     formatted = 'Inf';
@@ -155,17 +150,12 @@ export const formatSiBaseTenUnit = (
   );
   const symbol = SI_BASE_TEN_UNIT[symbolIndex];
   const scaledNumber = value / Math.pow(1000, base1000);
-  // prettier-ignore
-  const scaledPrecision = realBase1000 > minBase1000
-    ? (2 + base1000 * 3 - base10)
-    : 0;
+  const scaledPrecision =
+    realBase1000 > minBase1000 ? 2 + base1000 * 3 - base10 : 0;
   // TODO: Make numbers bigger than precision value show
   // up to 2 decimal numbers.
-  // prettier-ignore
-  const finalString = (
-    toFixed(scaledNumber, scaledPrecision)
-    + ' ' + symbol + ' ' + unit
-  );
+  const finalString =
+    toFixed(scaledNumber, scaledPrecision) + ' ' + symbol + ' ' + unit;
   return finalString.trim();
 };
 

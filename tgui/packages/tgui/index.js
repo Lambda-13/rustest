@@ -18,6 +18,10 @@ import './styles/themes/retro.scss';
 import './styles/themes/syndicate.scss';
 import './styles/themes/wizard.scss';
 import './styles/themes/admin.scss';
+import './styles/themes/clockwork.scss';
+import './styles/themes/scarlet.scss';
+import './styles/themes/flight.scss';
+import './styles/themes/scpaiad.scss';
 
 import { perf } from 'common/perf';
 import { setupHotReloading } from 'tgui-dev-server/link/client.cjs';
@@ -62,15 +66,12 @@ const setupApp = () => {
   // Enable hot module reloading
   if (module.hot) {
     setupHotReloading();
-    // prettier-ignore
-    module.hot.accept([
-      './components',
-      './debug',
-      './layouts',
-      './routes',
-    ], () => {
-      renderApp();
-    });
+    module.hot.accept(
+      ['./components', './debug', './layouts', './routes'],
+      () => {
+        renderApp();
+      }
+    );
   }
 };
 
