@@ -1,16 +1,19 @@
+/**
+ * Copyright (c) 2020 Aleksej Komarov
+ * SPDX-License-Identifier: MIT
+ */
+
 @use 'sass:color';
 @use 'sass:meta';
 
 @use '../colors.scss' with (
-  $primary: #00ff00,
+  $primary: #397439,
   $fg-map-keys: (),
   $bg-map-keys: ()
 );
 @use '../base.scss' with (
-  $color-bg: #000000,
-  $color-bg-grad-spread: 1%,
-  $border-radius: 0,
-  $color-fg: #00ff00
+  $color-bg: #550202,
+  $color-bg-grad-spread: 6%
 );
 
 .theme-scpaiad {
@@ -23,22 +26,22 @@
     $with: (
       'color-default': colors.$primary,
       'color-disabled': #363636,
-      'color-selected': #465899,
+      'color-selected': #9d0808,
       'color-caution': #be6209,
       'color-danger': #9a9d00
     )
   );
   @include meta.load-css(
     '../components/Input.scss',
-    $with: ('border-color': #404b6e)
+    $with: ('border-color': #87ce87)
   );
   @include meta.load-css(
     '../components/NoticeBox.scss',
-    $with: ('background-color': #00ff00)
+    $with: ('background-color': #910101)
   );
   @include meta.load-css(
     '../components/NumberInput.scss',
-    $with: ('border-color': #404b6e)
+    $with: ('border-color': #87ce87)
   );
   @include meta.load-css(
     '../components/ProgressBar.scss',
@@ -47,7 +50,7 @@
   @include meta.load-css('../components/Section.scss');
   @include meta.load-css(
     '../components/Tooltip.scss',
-    $with: ('background-color': #000000)
+    $with: ('background-color': #4a0202)
   );
 
   // Layouts
@@ -55,27 +58,14 @@
   @include meta.load-css('../layouts/Window.scss');
   @include meta.load-css(
     '../layouts/TitleBar.scss',
-    $with: ('background-color': #000000, 'text-color': #00ff00)
+    $with: ('background-color': #910101)
   );
 
-  .LabeledList__label {
-    color: #00ff00 !important;
-  }
-
   .Layout__content {
-    background-image: none;
-  }
-
-  .TitleBar,
-  .Window,
-  .Button,
-  .Table__cell {
-    border: 1px solid #00ff00;
-  }
-
-  .TitleBar__close {
-    border-top: 1px solid #00ff00;
-    border-left: 1px solid #00ff00;
-    border-bottom: 1px solid #00ff00;
+    background: linear-gradient(
+        rgba(255, 255, 255, 0.22),
+        rgba(255, 255, 255, 0.96)
+      ),
+      url('https://files.scpfoundation.net/local--files/aiad-homescreen/blue_squares_2.gif');
   }
 }
