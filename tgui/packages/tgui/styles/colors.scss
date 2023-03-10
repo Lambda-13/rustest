@@ -11,7 +11,7 @@
 $black: #000000 !default;
 $white: #ffffff !default;
 $red: #db2828 !default;
-$orange: #f2711c !default;
+$orange: #ff9900 !default;
 $yellow: #fbd608 !default;
 $olive: #b5cc18 !default;
 $green: #20b142 !default;
@@ -22,13 +22,12 @@ $purple: #a333c8 !default;
 $pink: #e03997 !default;
 $brown: #a5673f !default;
 $grey: #767676 !default;
-$light-grey: #aaa !default;
 
-$primary: #4972a1 !default;
-$good: #5baa27 !default;
+$primary: #f4f4f4 !default;
+$good: #80a326 !default;
 $average: #f08f11 !default;
 $bad: #db2828 !default;
-$label: #7e90a7 !default;
+$label: #a4a4a4 !default;
 
 // Background and foreground color lightness ratios
 $bg-lightness: -15% !default;
@@ -59,7 +58,6 @@ $_gen_map: (
   'pink': $pink,
   'brown': $brown,
   'grey': $grey,
-  'light-grey': $light-grey,
   'good': $good,
   'average': $average,
   'bad': $bad,
@@ -73,16 +71,20 @@ $bg-map-keys: map.keys($_gen_map) !default;
 
 $fg-map: ();
 @each $color-name in $fg-map-keys {
-  // prettier-ignore
-  $fg-map: map-merge($fg-map, (
-    $color-name: fg(map.get($_gen_map, $color-name)),
-  ));
+  $fg-map: map-merge(
+    $fg-map,
+    (
+      $color-name: fg(map.get($_gen_map, $color-name)),
+    )
+  );
 }
 
 $bg-map: ();
 @each $color-name in $bg-map-keys {
-  // prettier-ignore
-  $bg-map: map-merge($bg-map, (
-    $color-name: bg(map.get($_gen_map, $color-name)),
-  ));
+  $bg-map: map-merge(
+    $bg-map,
+    (
+      $color-name: bg(map.get($_gen_map, $color-name)),
+    )
+  );
 }

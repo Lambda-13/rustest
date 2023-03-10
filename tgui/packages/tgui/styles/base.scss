@@ -6,8 +6,8 @@
 @use 'sass:color';
 @use 'sass:math';
 
-$color-fg: #ffffff !default;
-$color-bg: #252525 !default;
+$color-fg: #aaaaaa !default;
+$color-bg: #151515 !default;
 $color-bg-section: rgba(0, 0, 0, 0.33) !default;
 $color-bg-grad-spread: 2% !default;
 $color-bg-start: color.adjust(
@@ -21,7 +21,7 @@ $color-bg-end: color.adjust(
 
 $unit: 12px;
 $font-size: 1 * $unit !default;
-$border-radius: 0.16em !default;
+$border-radius: 0.12em !default;
 
 @function em($px) {
   @return 1em * math.div($px, $unit);
