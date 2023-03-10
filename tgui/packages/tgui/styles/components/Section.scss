@@ -10,7 +10,11 @@
 
 $title-text-color: base.$color-fg !default;
 $background-color: base.$color-bg-section !default;
-$separator-color: colors.$primary !default;
+$separator-color: lighten(base.$color-bg-section, 20%) !default;
+$shadow-color: rgba(0, 0, 0, 0.7) !default;
+$shadow-type: inset !default;
+$shadow-size: 0.5em !default;
+$shadow-offset: 0 0 !default;
 
 .Section {
   position: relative;
@@ -18,20 +22,27 @@ $separator-color: colors.$primary !default;
   background-color: functions.fake-alpha($background-color, base.$color-bg);
   background-color: $background-color;
   box-sizing: border-box;
+  border: base.em(1px) solid $separator-color;
 
   &:last-child {
     margin-bottom: 0;
   }
 }
 
+.Section__noborder {
+  border: none;
+}
+
 .Section__title {
   position: relative;
-  padding: 0.5em;
-  border-bottom: base.em(2px) solid $separator-color;
+  padding: 0.3em;
+  padding-bottom: 0.5em;
+  background-color: $background-color;
+  border-bottom: base.em(1px) solid $separator-color;
 }
 
 .Section__titleText {
-  font-size: base.em(14px);
+  font-size: base.em(13px);
   font-weight: bold;
   color: $title-text-color;
 }
@@ -97,6 +108,26 @@ $separator-color: colors.$primary !default;
   & > .Section__rest > .Section__content {
     overflow-y: scroll;
     overflow-x: hidden;
+  }
+}
+
+.Section--scrollableHorizontal {
+  overflow-x: hidden;
+  overflow-y: hidden;
+
+  & > .Section__rest > .Section__content {
+    overflow-y: hidden;
+    overflow-x: scroll;
+  }
+}
+
+.Section--scrollable.Section--scrollableHorizontal {
+  overflow-x: hidden;
+  overflow-y: hidden;
+
+  & > .Section__rest > .Section__content {
+    overflow-y: scroll;
+    overflow-x: scroll;
   }
 }
 

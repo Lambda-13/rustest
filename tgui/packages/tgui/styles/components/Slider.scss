@@ -11,6 +11,9 @@ $popup-text-color: #ffffff !default;
 
 .Slider {
   cursor: e-resize;
+  font-weight: bold;
+  text-shadow: -1px -1px 0 rgba(0, 0, 0, 1), 1px -1px 0 rgba(0, 0, 0, 1),
+    -1px 1px 0 rgba(0, 0, 0, 1), 1px 1px 0 rgba(0, 0, 0, 1);
 }
 
 .Slider__cursorOffset {
