@@ -31,8 +31,8 @@
 	linked_account?.adjust_money(tier)
 	exp++
 	maptext = MAPTEXT("[exp]")
-	user.adjustStaminaLoss(tier)
-	playsound(L, 'sound/machines/shower/shower_mid1.ogg', 90, TRUE)
+	var/mob/living/carbon/human/STUPID
+	STUPID.adjustStaminaLoss(tier)
 	if(exp >= 100 * tier)
 		tier++
 		exp = 0
