@@ -33,6 +33,9 @@
 #define DYNAMIC_WORLD_ASTEROID "asteroid"
 #define DYNAMIC_WORLD_SPACERUIN "space"
 
+// Лямбда эдишон
+//#define DYNAMIC_WORLD_RUINPLANET "ruinplanet" // Руины планеты-города
+
 /// Make sure you are adding new planet types to this, in order as seen above preferrably
 #define DYNAMIC_WORLD_LIST_ALL list(\
 	DYNAMIC_WORLD_LAVA,\

@@ -80,6 +80,11 @@
 	virtual_levels -= subsub
 	subsub.parent_map_zone = null
 
+/datum/map_zone/proc/get_holding_beacon()
+	. = list()
+	for(var/datum/virtual_level/vlevel as anything in virtual_levels)
+		. += vlevel.get_holding_beacon()
+
 #define MAPPING_MARGIN 5
 
 /datum/virtual_level
@@ -589,6 +594,14 @@
 			CHECK_TICK
 			if(QDELETED(src))
 				return
+
+/datum/virtual_level/proc/get_holding_beacon()
+	. = list()
+	for(var/mob/living/holding_beacon as anything in GLOB.holding_beacon_list)
+		if(!holding_beacon.active)
+			continue
+		if(is_in_bounds(holding_beacon))
+			. += holding_beacon
 
 /turf/closed/indestructible/edge
 	name = "edge"

@@ -91,6 +91,9 @@
 	if(length(mapzone?.get_mind_mobs()))
 		return //Dont fuck over stranded people? tbh this shouldn't be called on this condition, instead of bandaiding it inside
 
+	if(length(mapzone?.get_holding_beacon()))
+		return
+
 	log_shuttle("[src] [REF(src)] UNLOAD")
 	var/list/results = SSovermap.get_unused_overmap_square()
 	overmap_move(results["x"], results["y"])
@@ -120,6 +123,7 @@
 		DYNAMIC_WORLD_ROCKPLANET = min(length(SSmapping.rock_ruins_templates), 20),
 		DYNAMIC_WORLD_BEACHPLANET = min(length(SSmapping.beach_ruins_templates), 20),
 		//DYNAMIC_WORLD_REEBE = 0, //unspawnable because of major lack of skill. //you fucking probablitiy zero does not equal one you dumbass
+//		DYNAMIC_WORLD_RUINPLANET = min(length(SSmapping.planet_ruins_templates), 20),
 		DYNAMIC_WORLD_ASTEROID = 30)
 
 	if(force_encounter)
@@ -196,6 +200,20 @@
 			default_baseturf = /turf/open/floor/plating/asteroid/wasteplanet
 
 			weather_controller_type = /datum/weather_controller/chlorine //let's go??
+
+/*		if(DYNAMIC_WORLD_RUINPLANET)
+			Rename("город-планета")
+			token.desc = "Очень слабый энергетический сигнал, исходящий от планеты, помеченной как мёртвый город."
+			planet = DYNAMIC_WORLD_RUINLANET
+			token.icon_state = "globe"
+			token.color = "#4f4f4f"
+			planet_name = gen_planet_name()
+
+			ruin_list = SSmapping.waste_ruins_templates
+			mapgen = /datum/map_generator/single_biome/wasteplanet
+			default_baseturf = /turf/open/floor/plating/asteroid/wasteplanet
+
+			weather_controller_type = /datum/weather_controller/chlorine*/
 
 		if(DYNAMIC_WORLD_ROCKPLANET)
 			Rename("каменистая планета")
