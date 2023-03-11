@@ -292,4 +292,10 @@
 			ref = REF(disk),
 			name = disk.name,
 			)
+	var/obj/item/key/ship/key = locate() in GLOB.poi_list
+	if(trackable(key))
+		var/list/nukeinfo = list(
+			ref = REF(key),
+			name = key.name,
+			)
 		objects += list(nukeinfo)
