@@ -88,16 +88,17 @@
 	user.put_in_hands(charging)
 	charging.add_fingerprint(user)
 
-	user.visible_message("<span class='notice'>[user] removes [charging] from [src].</span>", "<span class='notice'>You remove [charging] from [src].</span>")
+	user.visible_message(span_notice("[user] достаёт [charging] из [src].") , span_notice("Достаю [charging] из [src]."))
 
 	removecell()
+
 
 /obj/machinery/cell_charger/attack_tk(mob/user)
 	if(!charging)
 		return
 
 	charging.forceMove(loc)
-	to_chat(user, "<span class='notice'>You telekinetically remove [charging] from [src].</span>")
+	to_chat(user, span_notice("Телекинетически достаю [charging] из [src]."))
 
 	removecell()
 
