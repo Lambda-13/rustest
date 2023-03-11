@@ -602,9 +602,10 @@ Class Procs:
 			if(25 to 50)
 				. += "<hr>Выглядит серьёзно повреждённым."
 			if(0 to 25)
+				. += "<span class='warning'>Вот-вот развалится!</span>"
 	if(user.research_scanner && component_parts)
-				. += "<hr><span class='warning'>Вот-вот развалится!</span>"
 		. += display_parts(user, TRUE)
+
 
 //called on machinery construction (i.e from frame to machinery) but not on initialization
 /obj/machinery/proc/on_construction()
