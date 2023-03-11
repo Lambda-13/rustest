@@ -8,8 +8,8 @@
 @use '../colors.scss';
 
 $text-color: rgba(255, 255, 255, 0.75) !default;
-$background-color: #363636 !default;
-$shadow-color-core: #161616 !default;
+$background-color: #101010 !default;
+$shadow-color-core: #090909 !default;
 $shadow-color: rgba(0, 0, 0, 0.1) !default;
 
 .TitleBar {
@@ -24,7 +24,7 @@ $shadow-color: rgba(0, 0, 0, 0.1) !default;
 .TitleBar__clickable {
   color: color.change($text-color, $alpha: 0.5);
   background-color: $background-color;
-  transition: color 250ms ease-out, background-color 250ms ease-out;
+  transition: color 250ms, background-color 250ms;
 
   &:hover {
     color: rgba(255, 255, 255, 1);
@@ -37,13 +37,13 @@ $shadow-color: rgba(0, 0, 0, 0.1) !default;
   position: absolute;
   display: inline-block;
   top: 0;
-  left: 46px;
-  left: base.rem(46px);
+  left: 30px;
+  left: base.rem(30px);
   color: $text-color;
-  font-size: 14px;
+  font-size: 13px;
   font-size: base.rem(14px);
-  line-height: 31px;
-  line-height: base.rem(31px);
+  line-height: 23px;
+  line-height: base.rem(23px);
   white-space: nowrap;
   pointer-events: none;
 }
@@ -60,20 +60,20 @@ $shadow-color: rgba(0, 0, 0, 0.1) !default;
   top: 0;
   left: 0;
   right: 0;
-  height: 32px;
-  height: base.rem(32px);
+  height: 25px;
+  height: base.rem(25px);
 }
 
 .TitleBar__statusIcon {
   position: absolute;
   top: 0;
-  left: 12px;
-  left: base.rem(12px);
+  left: 5px;
+  left: base.rem(5px);
   transition: color 0.5s;
-  font-size: 20px;
-  font-size: base.rem(20px);
-  line-height: 32px !important;
-  line-height: base.rem(32px) !important;
+  font-size: 16px;
+  font-size: base.rem(16px);
+  line-height: 25px !important;
+  line-height: base.rem(25px) !important;
 }
 
 .TitleBar__close {
@@ -82,19 +82,19 @@ $shadow-color: rgba(0, 0, 0, 0.1) !default;
   right: 0;
   width: 45px;
   width: base.rem(45px);
-  height: 32px;
-  height: base.rem(32px);
+  height: 25px;
+  height: base.rem(25px);
   font-size: 20px;
   font-size: base.rem(20px);
-  line-height: 31px;
-  line-height: base.rem(31px);
+  line-height: 24px;
+  line-height: base.rem(24px);
   text-align: center;
 }
 
 .TitleBar__devBuildIndicator {
   position: absolute;
-  top: 6px;
-  top: base.rem(6px);
+  top: 3px;
+  top: base.rem(3px);
   right: 52px;
   right: base.rem(52px);
   min-width: 20px;

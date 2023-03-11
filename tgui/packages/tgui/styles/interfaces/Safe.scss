@@ -68,6 +68,10 @@
   background-image: linear-gradient(to bottom, #b2ae74 0%, #8e8b5d 100%);
   transform: rotate(-1deg);
 
+  .Section__titleText {
+    color: black !important;
+  }
+
   &:before {
     content: ' ';
     display: block;

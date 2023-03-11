@@ -9,14 +9,14 @@
 @use '../colors.scss' with (
   $primary: #397439,
   $fg-map-keys: (),
-  $bg-map-keys: (),
+  $bg-map-keys: ()
 );
 @use '../base.scss' with (
   $color-bg: #550202,
-  $color-bg-grad-spread: 6%,
+  $color-bg-grad-spread: 6%
 );
 
-.theme-syndicate {
+.theme-scpaiad {
   // Atomic classes
   @include meta.load-css('../atomic/color.scss');
 
@@ -62,6 +62,10 @@
   );
 
   .Layout__content {
-    background-image: url('../../assets/bg-syndicate.svg');
+    background: linear-gradient(
+        rgba(255, 255, 255, 0.22),
+        rgba(255, 255, 255, 0.96)
+      ),
+      url('https://files.scpfoundation.net/local--files/aiad-homescreen/blue_squares_2.gif');
   }
 }
