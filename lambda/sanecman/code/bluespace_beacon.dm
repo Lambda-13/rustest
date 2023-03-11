@@ -54,3 +54,4 @@
 	anchored = FALSE
 	GLOB.holding_beacon_list -= src
 	say("КРИТИЧЕСКИЕ ПОВРЕЖДЕНИЯ, ДЕА-А-А.")
+	return ..()
