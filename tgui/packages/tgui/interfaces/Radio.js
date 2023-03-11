@@ -15,6 +15,7 @@ export const Radio = (props, context) => {
     listening,
     broadcasting,
     command,
+    theme,
     useCommand,
     subspace,
     subspaceSwitchable,
@@ -36,7 +37,7 @@ export const Radio = (props, context) => {
     }
   }
   return (
-    <Window width={360} height={height}>
+    <Window width={360} height={height} theme={theme}>
       <Window.Content>
         <Section>
           <LabeledList>

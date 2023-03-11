@@ -97,6 +97,7 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	icon_state = "syndie_headset"
 	item_state = "syndie_headset"
 	keyslot = new /obj/item/encryptionkey/syndicate
+	theme = "syndicate"
 
 /obj/item/radio/headset/syndicate/captain
 	name = "гарнитура лидера синдиката"
@@ -130,6 +131,7 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	desc = "С гордостью носят потрепанные остатки пограничных владений Нанотрайзена."
 	icon_state = "nanotrasen_headset"
 	keyslot = new /obj/item/encryptionkey/nanotrasen
+	theme = "ntos"
 
 /obj/item/radio/headset/nanotrasen/captain
 	name = "nгарнитура капитана нанотрайзен"
@@ -159,6 +161,7 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	desc = "Используется пятизвёздочными Колониальными Минитимами."
 	icon_state = "cmm_headset"
 	keyslot = new /obj/item/encryptionkey/minutemen
+	theme = "neutral"
 
 /obj/item/radio/headset/minutemen/captain
 	name = "гарнитура офицера морпехов"
@@ -188,6 +191,7 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	desc = "Им пользуются наемники Inteq Risk Management Group."
 	icon_state = "inteq_headset"
 	keyslot = new /obj/item/encryptionkey/inteq
+	theme = "neutral"
 
 /obj/item/radio/headset/inteq/captain
 	name = "гарнитура элитного наёмника"
@@ -217,6 +221,7 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	desc = "Раньше через них пели лачуги в безбрежной космической пустоте и жаловались на патрули Минитменов."
 	icon_state = "pirate_headset"
 	keyslot = new /obj/item/encryptionkey/pirate
+	theme = "syndicate"
 
 /obj/item/radio/headset/pirate/captain
 	name = "гарнитура капитана пиратов"
@@ -246,6 +251,7 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	desc = "Носят бюрократы, а иногда и Sonnensoldneren." // Чё за хуйня Sonnensoldneren
 	icon_state = "solgov_headset"
 	keyslot = new /obj/item/encryptionkey/solgov
+	theme = "flight"
 
 /obj/item/radio/headset/solgov/captain
 	name = "гарнитура офицера SolGov"

@@ -22,6 +22,7 @@ import './styles/themes/clockwork.scss';
 import './styles/themes/scarlet.scss';
 import './styles/themes/flight.scss';
 import './styles/themes/scpaiad.scss';
+import './styles/themes/solgov.scss';
 
 import { perf } from 'common/perf';
 import { setupHotReloading } from 'tgui-dev-server/link/client.cjs';
