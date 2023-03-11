@@ -3588,7 +3588,9 @@
 #include "lambda\sanecman\code\unsorted\gun_hud.dm"
 #include "lambda\sanecman\code\unsorted\keybindings_reset.dm"
 #include "lambda\sanecman\code\unsorted\mre.dm"
+#include "lambda\sanecman\code\bluespace_beacon.dm"
 #include "lambda\ss7v\code\tactical.dm"
 #include "lambda\ss7v\code\shitspawnstuff.dm"
 #include "lambda\ss7v\code\portable_recharger.dm"
+#include "lambda\ss7v\code\mainer\miners.dm"
 // END_INCLUDE

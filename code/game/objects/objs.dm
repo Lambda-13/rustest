@@ -326,9 +326,11 @@
 /obj/examine(mob/user)
 	. = ..()
 	if(obj_flags & UNIQUE_RENAME)
-		. += "<span class='notice'>Use a pen on it to rename it or change its description.</span>"
+		. += "<hr>"
+		. += span_smallnotice("Можно переименовать это используя ручку или что-то подобное.")
 	if(unique_reskin && !current_skin)
-		. += "<span class='notice'>Alt-click it to reskin it.</span>"
+		. += "<hr>"
+		. += span_smallnotice("Альт-клик по предмету, чтобы изменить облик.")
 
 /obj/AltClick(mob/user)
 	. = ..()

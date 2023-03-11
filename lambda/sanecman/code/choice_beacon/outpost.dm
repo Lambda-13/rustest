@@ -48,5 +48,5 @@
 			return
 		to_chat(user, span_warning("На карте нет аккаунта!"))
 		return
-
+	user.adjustStaminaLoss(tier)
 	. = ..()

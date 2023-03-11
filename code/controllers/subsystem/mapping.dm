@@ -21,6 +21,7 @@ SUBSYSTEM_DEF(mapping)
 	var/list/rock_ruins_templates = list()
 	var/list/beach_ruins_templates = list()
 	var/list/waste_ruins_templates = list()
+//	var/list/planet_ruins_templates = list()
 	var/list/yellow_ruins_templates = list()
 
 	var/list/maplist
