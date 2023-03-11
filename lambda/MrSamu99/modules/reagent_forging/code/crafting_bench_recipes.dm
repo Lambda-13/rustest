@@ -130,7 +130,7 @@
 	recipe_requirements = list(
 		/obj/item/forging/complete/plate = 1,
 	)
-	resulting_item = /obj/item/reagent_containers/cup/primitive_centrifuge
+	resulting_item = /obj/item/reagent_containers/glass/primitive_centrifuge
 	required_good_hits = 4
 
 /datum/crafting_bench_recipe/bokken
