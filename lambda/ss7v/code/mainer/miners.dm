@@ -291,6 +291,80 @@ SUBSYSTEM_DEF(spm)
 	tech_name = "NTX3090Ti"
 	hashrate = 700
 
+/datum/techweb_node/base_cryptominer
+	id = "base_cryptominer"
+	display_name = "Базовый криптомайнинг"
+	description = "Почти всё нужное!"
+	design_ids = list(
+		"nvidia",
+	)
+	prereq_ids = list(
+		"comptech",
+	)
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 12500)
+
+/datum/techweb_node/adv_cryptominer
+	id = "adv_cryptominer"
+	display_name = "Продвинутый криптомайнинг"
+	description = "Новая карточка!"
+	design_ids = list(
+		"ntx420",
+	)
+	prereq_ids = list(
+		"base_cryptominer",
+	)
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 25000)
+
+/datum/techweb_node/qua_cryptominer
+	id = "qua_cryptominer"
+	display_name = "Квантовый криптомайнинг"
+	description = "Ещё одна карточка у нас в кармане!"
+	design_ids = list(
+		"ntx970",
+	)
+	prereq_ids = list(
+		"adv_cryptominer",
+	)
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 50000)
+
+/datum/techweb_node/super_cryptominer
+	id = "super_cryptominer"
+	display_name = "Блюспейс криптомайнинг"
+	description = "Так тоже бывает."
+	design_ids = list(
+		"ntx1666",
+	)
+	prereq_ids = list(
+		"qua_cryptominer",
+	)
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 100000)
+
+/datum/techweb_node/ultra_cryptominer
+	id = "ultra_cryptominer"
+	display_name = "Ультра криптомайнинг"
+	description = "А почему бы и да?"
+	design_ids = list(
+		"ntx2080",
+	)
+	prereq_ids = list(
+		"super_cryptominer",
+	)
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 200000)
+
+/datum/techweb_node/noneuclid_cryptominer
+	id = "noneuclid_cryptominer"
+	display_name = "Неевклидовый криптомайнинг"
+	description = "Нарушение законов физики как основа."
+	design_ids = list(
+		"ntx3090ti",
+	)
+	prereq_ids = list(
+		"ultra_cryptominer",
+	)
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 500000)
+	required_experiments = list(/datum/experiment/explosion/medium)
+	discount_experiments = list(/datum/experiment/explosion/calibration = 200000)
+
 /datum/design/mining_thing/nvidia
 	name = "GT9600x8"
 	desc = "Самая слабая карточка из всей доступной линейки."
