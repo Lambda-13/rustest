@@ -3425,7 +3425,6 @@
 #include "lambda\MrSamu99\datums\components\shielded.dm"
 #include "lambda\MrSamu99\datums\storage\storage.dm"
 #include "lambda\MrSamu99\modules\ashwalkers\include.dm"
-#include "lambda\MrSamu99\modules\bluespace_miner\code\mining_bluespace.dm"
 #include "lambda\MrSamu99\modules\mod\mod_actions.dm"
 #include "lambda\MrSamu99\modules\mod\mod_activation.dm"
 #include "lambda\MrSamu99\modules\mod\mod_ai.dm"
