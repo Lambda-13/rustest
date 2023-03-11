@@ -598,7 +598,7 @@
 /datum/virtual_level/proc/get_holding_beacon()
 	. = list()
 	for(var/mob/living/holding_beacon as anything in GLOB.holding_beacon_list)
-		if(!holding_beacon.active)
+		if(!holding_beacon.anchored)
 			continue
 		if(is_in_bounds(holding_beacon))
 			. += holding_beacon
