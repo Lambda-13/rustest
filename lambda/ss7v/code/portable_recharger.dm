@@ -3,7 +3,7 @@
 	desc = "Металлический чемодан. Имеет специальный порт для зарядки оружия работающего на энергии. Из-за компактной конструкции не имеет доступа к внутренним компонентам"
 	icon = 'lambda/ss7v/icons/obj/portable_recharger.dmi'
 	icon_state = "portable_recharger"
-	anchored = FALSE
+	anchored = TRUE
 	idle_power_usage = 0
 	active_power_usage = 0
 	var/closed = TRUE
@@ -59,10 +59,16 @@
 
 
 /obj/machinery/recharger/portable_recharger/attackby(obj/item/G, mob/user, params)
+	if(G.tool_behaviour == TOOL_WRENCH)
+		return
+	if(G.tool_behaviour == TOOL_SCREWDRIVER)
+		return
 	var/allowed = is_type_in_typecache(G, allowed_devices)
 
 	if(allowed)
-
+		if(charging)
+			to_chat(user, "<span class='warning'>В [src] только один порт зарядки.</span>")
+			return TRUE
 		if (istype(G, /obj/item/gun/energy))
 			var/obj/item/gun/energy/E = G
 			if(!E.can_charge)
@@ -74,10 +80,10 @@
 		setCharging(G)
 
 		return TRUE
-	return ..()
 
 /obj/machinery/recharger/portable_recharger/Destroy()
 	QDEL_NULL(portable_recharger)
+	end_processing()
 	return ..()
 
 //складывание
@@ -92,7 +98,8 @@
 			usr.visible_message(self_message = "<span class='notice'>Ещё заряжает [charging]...</span>")
 			return
 		usr.visible_message("<span class='notice'>[usr] начинает закрывать [src]...</span>", "<span class='notice'>Закрываю [src]...</span>")
-		if(do_after(usr, 10, target = usr))
+		if(do_after(usr, 5, target = usr))
+			end_processing()
 			usr.put_in_hands(portable_recharger)
 			moveToNullspace()
 			closed = TRUE
@@ -103,7 +110,11 @@
 	SSvis_overlays.remove_vis_overlay(src, managed_vis_overlays)
 	luminosity = 1
 	if (charging)
-		if(using_power)
+
+		if(portable_recharger.incell.charge < 200 * recharge_coeff)
+			SSvis_overlays.add_vis_overlay(src, icon, "recharger-fail", layer, plane, dir, alpha)
+			SSvis_overlays.add_vis_overlay(src, icon, "recharger-fail", EMISSIVE_LAYER, EMISSIVE_PLANE, dir, alpha)
+		else if(using_power)
 			SSvis_overlays.add_vis_overlay(src, icon, "recharger-charging", layer, plane, dir, alpha)
 			SSvis_overlays.add_vis_overlay(src, icon, "recharger-charging", EMISSIVE_LAYER, EMISSIVE_PLANE, dir, alpha)
 		else
@@ -154,7 +165,7 @@
 		return
 	add_fingerprint(user)
 	user.visible_message("<span class='notice'>[user] начинает ставить [link]...</span>", "<span class='notice'>Начинаю ставить [link]...</span>")
-	if(do_after(user, 10, target = user))
+	if(do_after(user, 5, target = user))
 		link.forceMove(get_turf(src))
 		link.closed = FALSE
 		user.transferItemToLoc(src, link, TRUE)
@@ -178,6 +189,7 @@
 	if(incell)
 		user.put_in_hands(incell)
 		incell = null
+		incell.update_icon()
 		to_chat(user, "<span class='notice'>Вытаскиваю [incell] из [src].</span>")
 	else
 		to_chat(user, "<span class='notice'>Внутри ничего нет.</span>")
