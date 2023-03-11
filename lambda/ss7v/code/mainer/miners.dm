@@ -51,6 +51,7 @@ SUBSYSTEM_DEF(spm)
 	name = "Криптополка #[rand(1, 99999)]"
 	if(anchored)
 		connect_to_network()
+	linked_account = SSeconomy.get_dep_account(ACCOUNT_CAR)
 
 /obj/machinery/power/mining_rack/connect_to_network()
 	. = ..()
