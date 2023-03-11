@@ -1,7 +1,7 @@
 /obj/machinery/cell_charger
-	name = "cell charger"
-	desc = "It charges power cells."
 	icon = 'icons/obj/power.dmi'
+	name = "зарядник батарей"
+	desc = "Заряжает аккумуляторные батареи, не подходит для вооружения."
 	icon_state = "ccharger"
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 5
@@ -25,35 +25,35 @@
 
 /obj/machinery/cell_charger/examine(mob/user)
 	. = ..()
-	. += "There's [charging ? "a" : "no"] cell in the charger."
+	. += "<hr>Внутри [charging ? "батарейка" : "нет батарейки"] в заряднике."
 	if(charging)
-		. += "Current charge: [round(charging.percent(), 1)]%."
+		. += "<hr><b>Заряд:</b> [round(charging.percent(), 1)]%."
 	if(in_range(user, src) || isobserver(user))
-		. += "<span class='notice'>The status display reads: Charge rate at <b>[charge_rate]J</b> per cycle.</span>"
+		. += "<hr><span class='notice'>Дисплей: [charge_rate == 1 ? "Стандартная скорость зарядки." : "Скорость зарядки увеличена в <b>[charge_rate]</b> раза."]</span>"
 
 /obj/machinery/cell_charger/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/stock_parts/cell) && !panel_open)
 		if(machine_stat & BROKEN)
-			to_chat(user, "<span class='warning'>[src] is broken!</span>")
+			to_chat(user, span_warning("[capitalize(src.name)] сломан!"))
 			return
 		if(!anchored)
-			to_chat(user, "<span class='warning'>[src] isn't attached to the ground!</span>")
+			to_chat(user, span_warning("[capitalize(src.name)] не прикручен!"))
 			return
 		if(charging)
-			to_chat(user, "<span class='warning'>There is already a cell in the charger!</span>")
+			to_chat(user, span_warning("Здесь уже есть батарейка!"))
 			return
 		else
 			var/area/a = loc.loc // Gets our locations location, like a dream within a dream
 			if(!isarea(a))
 				return
 			if(a.power_equip == 0) // There's no APC in this area, don't try to cheat power!
-				to_chat(user, "<span class='warning'>[src] blinks red as you try to insert the cell!</span>")
+				to_chat(user, span_warning("[capitalize(src.name)] мигает красным диодом!"))
 				return
 			if(!user.transferItemToLoc(W,src))
 				return
 
 			charging = W
-			user.visible_message("<span class='notice'>[user] inserts a cell into [src].</span>", "<span class='notice'>You insert a cell into [src].</span>")
+			user.visible_message(span_notice("[user] вставляет батарейку в [src].") , span_notice("Вставляю батарейку в [src]."))
 			update_icon()
 	else
 		if(!charging && default_deconstruction_screwdriver(user, icon_state, icon_state, W))

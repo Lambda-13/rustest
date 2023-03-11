@@ -179,20 +179,17 @@
 	var/obj/machinery/copytech/ct = null
 	var/working = FALSE
 	var/atom/movable/active_item = null
-/*	var/list/blacklisted_items = list( // Раскоментить если абузают
+	var/list/blacklisted_items = list(
 			/obj/item/card/id,
 			/obj/item/stack/telecrystal,
 			/obj/item/uplink,
 			/obj/item/pen/uplink,
 			/obj/item/multitool/uplink,
-			/obj/item/dice/d20/fate/one_use,
-			/obj/item/dice/d100/fate/one_use,
 			/obj/item/storage/box/syndie_kit,
-			/obj/structure/closet/crate/necropolis,
-			/obj/item/book/granter,
+			/obj/item/sbeacondrop/exploration,
 			/obj/item/storage/box/syndicate,
 			/obj/item/spellbook
-		)*/
+		)
 	var/list/blacklisted_items = list()
 	var/obj/structure/cable/attached_cable
 	var/siphoned_power = 0
@@ -304,7 +301,7 @@
 	for(var/type in blacklisted_items)
 		if(istype(D, type))
 			if(user)
-				message_admins("[key_name(user)] попытался скопировать [D.name] ([D.type])!")
+				message_admins("[key_name(user)] попытался скопировать запрещённый предмет [D.name] ([D.type])!")
 			say("ОБНАРУЖЕН ЗАПРЕЩЁННЫЙ ПРЕДМЕТ!")
 			sleep(3 SECONDS)
 			say("АКТИВАЦИЯ ПРОТОКОЛ \"УНИЧТОЖИТЕЛЬ\"!")
@@ -315,13 +312,6 @@
 				M.Paralyze(get_replication_speed(tier_rate) * 2)
 				M.emote("agony")
 				M.layer = ABOVE_MOB_LAYER
-			sleep(1 SECONDS)
-			if(user)
-				to_chat(user, span_alert("Ну бл~"))
-				explosion(src, light_impact_range = 1)
-			if(isliving(user))
-				var/mob/living/L = user
-				L.gib()
 			return
 
 	say("Приступаю к процессу дезинтеграции объекта...")
