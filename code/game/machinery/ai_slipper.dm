@@ -34,7 +34,7 @@
 		to_chat(user, span_warning("[capitalize(src.name)] полностью разряжен!"))
 		return
 	if(cooldown_time > world.time)
-		to_chat(user, span_warning("[capitalize(src.name)] на перезарядке, осталось <b>[COOLDOWN_TIMELEFT(src, foam_cooldown)]</b>!"))
+		to_chat(user, span_warning("[capitalize(src.name)] на перезарядке, осталось <b>[DisplayTimeText(world.time - cooldown_time)]</b>!"))
 		return
 	new /obj/effect/particle_effect/foam(loc)
 	uses--
