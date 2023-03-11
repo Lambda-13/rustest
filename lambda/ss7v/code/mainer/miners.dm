@@ -1,6 +1,6 @@
 SUBSYSTEM_DEF(spm)
 	name = "Криптомайнинг"
-	wait = 25
+	wait = 100
 	var/list/miners	= list()
 	var/crypto = "BTC"
 
@@ -43,7 +43,6 @@ SUBSYSTEM_DEF(spm)
 	var/datum/techweb/linked_techweb
 	var/datum/bank_account/linked_account
 	var/mining = FALSE
-	var/research_mode = FALSE
 	var/bound_key = "FUCKME"
 
 /obj/machinery/power/mining_rack/Initialize(mapload)
@@ -131,14 +130,21 @@ SUBSYSTEM_DEF(spm)
 	if(I.tool_behaviour == TOOL_MULTITOOL)
 		var/obj/item/multitool/multi = I
 		if(istype(multi.buffer, /obj/machinery/rnd/server))
-
 			if(!linked_techweb)
 				visible_message("Подключаю к серверу.")
 				var/obj/machinery/rnd/server/serv = multi.buffer
 				linked_techweb = serv.stored_research
-			else
-				visible_message("Отключаю от сервера.")
-				linked_techweb = null
+		else
+			visible_message("Отключаю от сервера.")
+			linked_techweb = null
+
+
+	if(I.tool_behaviour == TOOL_SCREWDRIVER)
+		var/new_key = stripped_input(usr, "Текущий ключ \"[bound_key]\"", "Установка нового ключа.")
+		if(!new_key)
+			return
+		bound_key = new_key
+		to_chat(user, span_notice("Ключ \"[new_key]\" установлен."))
 		return
 
 	if(I.tool_behaviour == TOOL_CROWBAR)
@@ -160,20 +166,6 @@ SUBSYSTEM_DEF(spm)
 		TFM.forceMove(T)
 		recalculate_hashrate()
 
-	if(I.tool_behaviour == TOOL_SCREWDRIVER)
-		if(research_mode)
-			balloon_alert(user, "Переключаю в режим майнинга исследований")
-		else
-			balloon_alert(user, "Переключаю в режим майнинга [SSspm.crypto]")
-		research_mode = !research_mode
-
-/obj/machinery/power/mining_rack/attack_hand(mob/living/user)
-	. = ..()
-	if(mining)
-		balloon_alert(user,"Включаю [src]")
-	else
-		balloon_alert(user,"Выключаю [src]")
-	mining = !mining
 
 /obj/machinery/power/mining_rack/set_anchored(anchorvalue)
 	. = ..()
@@ -190,14 +182,15 @@ SUBSYSTEM_DEF(spm)
 
 	if(mining)
 		if(!hashrate_total * 10 || surplus() >= hashrate_total * 10)
-			add_load(hashrate_total * 10)
+			add_load(hashrate_total * 500)
 		else
 			idle_power_usage = 1000 //временно
 			mining = FALSE
 			return
 
 		var/datum/gas_mixture/env = loc.return_air()
-
+		if(env.return_pressure() < 5)
+			explosion(1, hashrate_total/100, hashrate_total/100, hashrate_total/100)
 		env.set_temperature(env.return_temperature() + (hashrate_total / 100))
 		air_update_turf()
 
@@ -221,11 +214,11 @@ SUBSYSTEM_DEF(spm)
 						QDEL_IN(src, 1 SECONDS)
 				return
 
-		if(!research_mode)
-			linked_account.adjust_money(max((hashrate_total)/10, 1))
-		else
-			linked_techweb.add_point_list(list(TECHWEB_POINT_TYPE_DEFAULT = max((hashrate_total)/100, 1)))
+		linked_account.adjust_money(max((hashrate_total)/10, 1))
 
+		linked_techweb.add_point_list(list(TECHWEB_POINT_TYPE_DEFAULT = max((hashrate_total), 1)))
+
+//Карточки
 /obj/item/mining_thing
 	name = "куча хлама"
 	desc = "Набор из восьми видеокарт одинаковой мощности."
@@ -291,6 +284,7 @@ SUBSYSTEM_DEF(spm)
 	tech_name = "NTX3090Ti"
 	hashrate = 700
 
+//Изучения
 /datum/techweb_node/base_cryptominer
 	id = "base_cryptominer"
 	display_name = "Базовый криптомайнинг"
@@ -301,8 +295,8 @@ SUBSYSTEM_DEF(spm)
 	prereq_ids = list(
 		"comptech",
 	)
-	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 12500)
-
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 1250)
+	export_price = 2000
 /datum/techweb_node/adv_cryptominer
 	id = "adv_cryptominer"
 	display_name = "Продвинутый криптомайнинг"
@@ -313,8 +307,8 @@ SUBSYSTEM_DEF(spm)
 	prereq_ids = list(
 		"base_cryptominer",
 	)
-	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 25000)
-
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	export_price = 5000
 /datum/techweb_node/qua_cryptominer
 	id = "qua_cryptominer"
 	display_name = "Квантовый криптомайнинг"
@@ -325,8 +319,8 @@ SUBSYSTEM_DEF(spm)
 	prereq_ids = list(
 		"adv_cryptominer",
 	)
-	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 50000)
-
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
+	export_price = 10000
 /datum/techweb_node/super_cryptominer
 	id = "super_cryptominer"
 	display_name = "Блюспейс криптомайнинг"
@@ -337,8 +331,8 @@ SUBSYSTEM_DEF(spm)
 	prereq_ids = list(
 		"qua_cryptominer",
 	)
-	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 100000)
-
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 10000)
+	export_price = 20000
 /datum/techweb_node/ultra_cryptominer
 	id = "ultra_cryptominer"
 	display_name = "Ультра криптомайнинг"
@@ -349,21 +343,8 @@ SUBSYSTEM_DEF(spm)
 	prereq_ids = list(
 		"super_cryptominer",
 	)
-	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 200000)
-
-/datum/techweb_node/noneuclid_cryptominer
-	id = "noneuclid_cryptominer"
-	display_name = "Неевклидовый криптомайнинг"
-	description = "Нарушение законов физики как основа."
-	design_ids = list(
-		"ntx3090ti",
-	)
-	prereq_ids = list(
-		"ultra_cryptominer",
-	)
-	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 500000)
-	required_experiments = list(/datum/experiment/explosion/medium)
-	discount_experiments = list(/datum/experiment/explosion/calibration = 200000)
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 20000)
+	export_price = 40000
 
 /datum/design/mining_thing/nvidia
 	name = "GT9600x8"
@@ -373,8 +354,7 @@ SUBSYSTEM_DEF(spm)
 	construction_time = 40
 	materials = list(/datum/material/iron = 500, /datum/material/silver = 300, /datum/material/gold = 300)
 	build_path = /obj/item/mining_thing/nvidia
-	category = list("Электроника", "Научное оборудование", "Карго оборудование")
-	sub_category = list("Майнеры")
+	category = list("Misc. Machinery")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/mining_thing/nvidia/ntx420
@@ -402,14 +382,14 @@ SUBSYSTEM_DEF(spm)
 	name = "NTX2080x8"
 	desc = "Затратный вариант видеокарты для богатых исследовательских станций."
 	id = "ntx2080"
-	materials = list(/datum/material/iron = 4000, /datum/material/silver = 4000, /datum/material/gold = 4000, /datum/material/diamond = 2000, /datum/material/bluespace = 1500, /datum/material/plasma = 20000)
+	materials = list(/datum/material/iron = 4000, /datum/material/silver = 4000, /datum/material/gold = 4000, /datum/material/diamond = 2000, /datum/material/bluespace = 1500, /datum/material/plasma = 2000)
 	build_path = /obj/item/mining_thing/nvidia/ntx2080
 
 /datum/design/mining_thing/nvidia/ntx3090ti
 	name = "NTX3090Tix8"
 	desc = "Лучший вариант из всех. Слишком сложен в производстве."
 	id = "ntx3090ti"
-	materials = list(/datum/material/iron = 40000, /datum/material/silver = 40000, /datum/material/gold = 40000, /datum/material/diamond = 20000, /datum/material/bluespace = 15000, /datum/material/plasma = 60000)
+	materials = list(/datum/material/iron = 8000, /datum/material/silver = 8000, /datum/material/gold = 8000, /datum/material/diamond = 4000, /datum/material/bluespace = 3000, /datum/material/plasma = 12000)
 	build_path = /obj/item/mining_thing/nvidia/ntx3090ti
 
 /datum/supply_pack/misc/spaceminer
@@ -419,6 +399,8 @@ SUBSYSTEM_DEF(spm)
 	contains = list(/obj/machinery/power/mining_rack)
 	crate_name = "ящик стойки для майнинга"
 
+
+//TGUI
 /datum/computer_file/program/minnet
 	filename = "minnet"
 	filedesc = "Min-net Controller"
