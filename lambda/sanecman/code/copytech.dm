@@ -190,7 +190,6 @@
 			/obj/item/storage/box/syndicate,
 			/obj/item/spellbook
 		)
-	var/list/blacklisted_items = list()
 	var/obj/structure/cable/attached_cable
 	var/siphoned_power = 0
 	var/siphon_max = 1e7
