@@ -292,10 +292,33 @@
 			ref = REF(disk),
 			name = disk.name,
 			)
+
+/datum/computer_file/program/radar/keymaster
+	filename = "keymaster"
+	filedesc = "KeyMaster"
+	program_icon_state = "radarsyndicate"
+	extended_desc = "Пилингатор активных ключей судов в радиусе 250 метров."
+	requires_ntnet = FALSE
+	transfer_access = null
+	available_on_ntnet = FALSE
+	available_on_syndinet = TRUE
+	tgui_id = "NtosRadarFlight"
+	program_icon = "bomb"
+	arrowstyle = "ntosradarpointerS.png"
+	pointercolor = "yellow"
+
+/datum/computer_file/program/radar/keymaster/find_atom()
+	return locate(selected) in GLOB.poi_list
+
+/datum/computer_file/program/radar/keymaster/scan()
+	if(world.time < next_scan)
+		return
+	next_scan = world.time + (2 SECONDS)
+	objects = list()
 	var/obj/item/key/ship/key = locate() in GLOB.poi_list
 	if(trackable(key))
-		var/list/nukeinfo = list(
+		var/list/shipkey = list(
 			ref = REF(key),
 			name = key.name,
 			)
-		objects += list(nukeinfo)
+		objects += list(shipkey)
