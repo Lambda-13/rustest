@@ -31,8 +31,6 @@
 	linked_account?.adjust_money(tier)
 	exp++
 	maptext = MAPTEXT("[exp]")
-	var/mob/living/carbon/human/STUPID
-	STUPID.adjustStaminaLoss(tier)
 	if(exp >= 100 * tier)
 		tier++
 		exp = 0
@@ -50,5 +48,5 @@
 			return
 		to_chat(user, span_warning("На карте нет аккаунта!"))
 		return
-
+	user.adjustStaminaLoss(tier)
 	. = ..()
