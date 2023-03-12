@@ -292,6 +292,7 @@
 			ref = REF(disk),
 			name = disk.name,
 			)
+		objects += list(nukeinfo)
 
 /datum/computer_file/program/radar/keymaster
 	filename = "keymaster"
