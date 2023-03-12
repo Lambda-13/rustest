@@ -22,7 +22,7 @@ export const NtosRadarContent = (props, context) => {
           <Section>
             <Button
               icon="redo-alt"
-              content={scanning ? 'Scanning...' : 'Scan'}
+              content={scanning ? 'Сканируем...' : 'Сканировать'}
               color="blue"
               disabled={scanning}
               onClick={() => act('scan')}

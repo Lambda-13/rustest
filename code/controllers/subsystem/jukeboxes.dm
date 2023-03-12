@@ -134,6 +134,6 @@ SUBSYSTEM_DEF(jukeboxes)
 			if(jukebox.volume <= 0)
 				song_played.status = SOUND_MUTE
 
-			M.playsound_local(currentturf, null, jukebox.volume, channel = jukeinfo[2], S = song_played, envwet = (inrange ? -250 : 0), envdry = (inrange ? 0 : -10000), distance_multiplier = 3)
+			M.playsound_local(currentturf, null, jukebox.volume, channel = jukeinfo[2], S = song_played, envwet = (inrange ? -250 : 0), envdry = (inrange ? 0 : -10000))
 			CHECK_TICK
 	return
