@@ -95,7 +95,7 @@ export const ShipSelect = (props, context) => {
                   {selectedShip.joinMode}
                 </LabeledList.Item>
                 <LabeledList.Item label="Описание">
-                  {template.desc || 'Нет описания'}
+                  {selectedShip.desc || 'Нет описания'}
                 </LabeledList.Item>
                 <LabeledList.Item label="От капитана">
                   {selectedShip.memo || '-'}
