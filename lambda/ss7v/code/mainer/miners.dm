@@ -1,6 +1,6 @@
 SUBSYSTEM_DEF(spm)
 	name = "Криптомайнинг"
-	wait = 100
+	wait = 75
 	var/list/miners	= list()
 	var/crypto = "BTC"
 
@@ -128,18 +128,6 @@ SUBSYSTEM_DEF(spm)
 		return
 
 	if(I.tool_behaviour == TOOL_MULTITOOL)
-		var/obj/item/multitool/multi = I
-		if(istype(multi.buffer, /obj/machinery/rnd/server))
-			if(!linked_techweb)
-				visible_message("Подключаю к серверу.")
-				var/obj/machinery/rnd/server/serv = multi.buffer
-				linked_techweb = serv.stored_research
-		else
-			visible_message("Отключаю от сервера.")
-			linked_techweb = null
-
-
-	if(I.tool_behaviour == TOOL_SCREWDRIVER)
 		var/new_key = stripped_input(usr, "Текущий ключ \"[bound_key]\"", "Установка нового ключа.")
 		if(!new_key)
 			return
@@ -177,20 +165,19 @@ SUBSYSTEM_DEF(spm)
 		disconnect_from_network()
 
 /obj/machinery/power/mining_rack/proc/update()
-	if(!mining || (!powernet && hashrate_total * 10))
+	if(!mining || (!powernet && hashrate_total * 50))
 		return
 
 	if(mining)
-		if(!hashrate_total * 10 || surplus() >= hashrate_total * 10)
-			add_load(hashrate_total * 500)
+		if(surplus() >= hashrate_total * 50)
+			add_load(hashrate_total * 50)
 		else
-			idle_power_usage = 1000 //временно
-			mining = FALSE
+			mining = !mining
 			return
 
 		var/datum/gas_mixture/env = loc.return_air()
-		if(env.return_pressure() < 5)
-			explosion(1, hashrate_total/100, hashrate_total/100, hashrate_total/100)
+		if(env.return_pressure() < 1)
+			explosion(src.loc, 0, (hashrate_total/500), (hashrate_total/350), (hashrate_total/125), 0)
 		env.set_temperature(env.return_temperature() + (hashrate_total / 100))
 		air_update_turf()
 
@@ -213,10 +200,8 @@ SUBSYSTEM_DEF(spm)
 					if(src)
 						QDEL_IN(src, 1 SECONDS)
 				return
+		linked_account.adjust_money(max((hashrate_total*0.25), 1))
 
-		linked_account.adjust_money(max((hashrate_total)/10, 1))
-
-		linked_techweb.add_point_list(list(TECHWEB_POINT_TYPE_DEFAULT = max((hashrate_total), 1)))
 
 //Карточки
 /obj/item/mining_thing
@@ -228,6 +213,10 @@ SUBSYSTEM_DEF(spm)
 	var/tech_name = "NTX-2228 Plasma"
 	var/hashrate = 1 // debug
 	var/overclock = 0
+
+/obj/item/mining_thing/examine(mob/user)
+	. = ..()
+	. += "<hr><span class='notice'>Мощность видеокарт равна: [hashrate]	</span>"
 
 /obj/item/mining_thing/attackby(obj/item/I, mob/living/user, params)
 
@@ -260,27 +249,33 @@ SUBSYSTEM_DEF(spm)
 	hashrate = rand(-10000, 1)
 
 /obj/item/mining_thing/nvidia
+	name = "GT9600"
 	tech_name = "GT9600"
 	maintainer = "NanoVIDIA"
 	hashrate = 40
 
 /obj/item/mining_thing/nvidia/ntx420
+	name = "NTX420"
 	tech_name = "NTX420"
 	hashrate = 100
 
 /obj/item/mining_thing/nvidia/ntx970
+	name = "NTX970"
 	tech_name = "NTX970"
 	hashrate = 225
 
 /obj/item/mining_thing/nvidia/ntx1666
+	name = "NTX1666"
 	tech_name = "NTX1666"
 	hashrate = 350
 
 /obj/item/mining_thing/nvidia/ntx2080
+	name = "NTX2080"
 	tech_name = "NTX2080"
 	hashrate = 525
 
 /obj/item/mining_thing/nvidia/ntx3090ti
+	name = "NTX3090Ti"
 	tech_name = "NTX3090Ti"
 	hashrate = 700
 
@@ -424,7 +419,7 @@ SUBSYSTEM_DEF(spm)
 			"hashrate" = MC.hashrate_total,
 			"mining" = MC.mining,
 			"temp" = MC.get_env_temp(),
-			"powerusage" = MC.hashrate_total * 10
+			"powerusage" = MC.hashrate_total * 50
 		)))
 
 	data["miners"] = all_entries
