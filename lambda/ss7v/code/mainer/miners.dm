@@ -1,6 +1,6 @@
 SUBSYSTEM_DEF(spm)
 	name = "Криптомайнинг"
-	wait = 25
+	wait = 75
 	var/list/miners	= list()
 	var/crypto = "BTC"
 
