@@ -1,4 +1,4 @@
-#define BUY_MINIMUM_AGE 14
+#define BUY_MINIMUM_AGE 3
 
 /datum/ship_select
 

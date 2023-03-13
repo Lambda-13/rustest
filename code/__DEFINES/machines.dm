@@ -99,6 +99,16 @@
 #define SUPERMATTER_EMERGENCY 5 // Integrity < 25%
 #define SUPERMATTER_DELAMINATING 6	// Pretty obvious.
 
+// Код один в один взят с суперматерии
+#define ANTIMATTER_ERROR -1 // Неизвестный статус
+#define ANTIMATTER_INACTIVE 0 // Отключён
+#define ANTIMATTER_NORMAL 1 // Работает без ошибок
+#define ANTIMATTER_NOTIFY 2 // Средняя стабильность ниже 75%
+#define ANTIMATTER_WARNING 3 // Средняя стабильность ниже 25%
+#define ANTIMATTER_DANGER 4 // Текущая стабильность ниже 100%
+#define ANTIMATTER_EMERGENCY 5 // Текущая стабильность ниже 75%
+#define ANTIMATTER_DESTRUCTION 6	// Текущая стабильность ниже 25%
+
 //Nuclear bomb stuff
 #define NUKESTATE_INTACT 5
 #define NUKESTATE_UNSCREWED 4

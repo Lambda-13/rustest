@@ -94,6 +94,9 @@ export const ShipSelect = (props, context) => {
                 <LabeledList.Item label="Статус">
                   {selectedShip.joinMode}
                 </LabeledList.Item>
+                <LabeledList.Item label="Описание">
+                  {selectedShip.desc || 'Нет описания'}
+                </LabeledList.Item>
                 <LabeledList.Item label="От капитана">
                   {selectedShip.memo || '-'}
                 </LabeledList.Item>
@@ -175,7 +178,7 @@ export const ShipSelect = (props, context) => {
               >
                 <LabeledList>
                   <LabeledList.Item label="Описание">
-                    {template.description || 'Нет описания'}
+                    {template.desc || 'Нет описания'}
                   </LabeledList.Item>
                   <LabeledList.Item label="Кол-во экипажа">
                     {template.crewCount}

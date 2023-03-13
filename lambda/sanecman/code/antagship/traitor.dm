@@ -6,7 +6,7 @@
 	implants = list(/obj/item/implant/weapons_auth)
 	id = /obj/item/card/id/syndicate
 	ears = /obj/item/radio/headset/syndicate/alt
-	backpack_contents = list(/obj/item/toy/plush/among)
+	backpack_contents = list(/obj/item/modular_computer/tablet/nukeops)
 
 /datum/outfit/antagship_traitor/post_equip(mob/living/carbon/human/H)
 	. = ..()

@@ -625,6 +625,7 @@
 #include "code\datums\elements\bsa_blocker.dm"
 #include "code\datums\elements\cleaning.dm"
 #include "code\datums\elements\connect_loc.dm"
+#include "code\datums\elements\climbable.dm"
 #include "code\datums\elements\delete_on_drop.dm"
 #include "code\datums\elements\digitalcamo.dm"
 #include "code\datums\elements\dunkable.dm"
@@ -3589,8 +3590,11 @@
 #include "lambda\sanecman\code\unsorted\keybindings_reset.dm"
 #include "lambda\sanecman\code\unsorted\mre.dm"
 #include "lambda\sanecman\code\bluespace_beacon.dm"
+#include "lambda\sanecman\code\antimatter.dm"
 #include "lambda\ss7v\code\tactical.dm"
 #include "lambda\ss7v\code\shitspawnstuff.dm"
 #include "lambda\ss7v\code\portable_recharger.dm"
 #include "lambda\ss7v\code\mainer\miners.dm"
+#include "lambda\ss7v\code\manual_cell_recharger.dm"
+
 // END_INCLUDE

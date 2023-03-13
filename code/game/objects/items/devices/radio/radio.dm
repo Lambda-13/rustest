@@ -33,6 +33,7 @@
 	var/freqlock = FALSE  // Frequency lock to stop the user from untuning specialist radios.
 	var/use_command = FALSE  // If true, broadcasts will be large and BOLD.
 	var/command = FALSE  // If true, use_command can be toggled at will.
+	var/theme = "undefined" // Тема TGUI
 
 	// Encryption key handling
 	var/obj/item/encryptionkey/keyslot
@@ -140,6 +141,7 @@
 	for(var/channel in channels)
 		data["channels"][channel] = channels[channel] & FREQ_LISTENING
 	data["command"] = command
+	data["theme"] = theme
 	data["useCommand"] = use_command
 	data["subspace"] = subspace_transmission
 	data["subspaceSwitchable"] = subspace_switchable
@@ -438,3 +440,4 @@
 	name = "old radio"
 	icon_state = "radio"
 	desc = "An old handheld radio. You could use it, if you really wanted to."
+	theme = "hackerman"

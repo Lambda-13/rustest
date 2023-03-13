@@ -14,7 +14,7 @@
 
 /obj/machinery/jukebox/boombox
 	name = "бумбокс"
-	desc = "Теоретически портативный музыкальный плеер, который намного больше и тяжелее, чем он должен быть на самом деле."
+	desc = "Портативный музыкальный плеер, который намного больше и тяжелее, чем он должен быть на самом деле."
 	icon_state = "boombox"
 	density = FALSE
 
@@ -109,7 +109,7 @@
 				return
 			if(!active)
 				if(stop > world.time)
-					balloon_alert(usr, "Подождите ещё [DisplayTimeText(stop-world.time)] перед следующим включением</span>")
+					balloon_alert(usr, "Подождите ещё [DisplayTimeText(stop-world.time)] перед следующим включением")
 					playsound(src, 'lambda/sanecman/sound/stalker/beep.ogg', 50, TRUE)
 					return
 				if(!istype(selection)) //WS Edit Cit #7367
