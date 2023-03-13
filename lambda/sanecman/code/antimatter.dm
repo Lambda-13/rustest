@@ -368,6 +368,7 @@
 	if(fueljar)
 		data["fueljar"] = uppertext(fueljar.name)
 		data["fuel"] = fueljar.fuel
+		data["fuelmax"] = fueljar.fuel_max
 		data["fuel_injection"] = fuel_injection
 	else
 		data["fueljar"] = null
