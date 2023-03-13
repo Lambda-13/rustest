@@ -130,17 +130,15 @@
 	if(!(in_range(src, user) || issilicon(user)))
 		return
 
-/*//Эта хуйня создана для защиты от новореггов, #port
 	if(!isnum(user?.client?.player_age))
-		if(user.client.player_age < 14)
+		if(user.client.holder == null && user.client.player_age < 14)
 			to_chat(user, span_boldannounce("СЛОЖНО!"))
 			var/list/turf/targets = list()
 			for(var/turf/T in oview(user, 3))
 				targets += T
 			user.throw_item(pick(targets))
-//			SSspd.check_action(user?.client, SPD_INTEGRATED_CIRCUIT) // Нету подсистемы SPD которая проверяет новоакки
 			return
-*/
+
 
 	if(isnull(current_category))
 		current_category = SScircuit.circuit_fabricator_recipe_list[1]
