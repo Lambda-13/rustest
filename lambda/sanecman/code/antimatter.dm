@@ -416,10 +416,10 @@
 	if(stored_core_stability < 10 && stability < 25)
 		return ANTIMATTER_DESTRUCTION
 
-	if(stored_core_stability < 10 && stability < 75)
+	if(stability < 75)
 		return ANTIMATTER_EMERGENCY
 
-	if(stored_core_stability < 10 && stability < 100)
+	if(stability < 100)
 		return ANTIMATTER_DANGER
 
 	if(stored_core_stability < 25)
@@ -475,7 +475,6 @@
 /obj/machinery/am_shielding/Initialize(mapload)
 	. = ..()
 	addtimer(CALLBACK(src, PROC_REF(controllerscan)), 10)
-	AddElement(/datum/element/climbable)
 
 /obj/machinery/am_shielding/proc/overheat()
 	visible_message(span_danger("<b>[capitalize(src)]</b> тает!"))

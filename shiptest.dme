@@ -625,7 +625,6 @@
 #include "code\datums\elements\bsa_blocker.dm"
 #include "code\datums\elements\cleaning.dm"
 #include "code\datums\elements\connect_loc.dm"
-#include "code\datums\elements\climbable.dm"
 #include "code\datums\elements\delete_on_drop.dm"
 #include "code\datums\elements\digitalcamo.dm"
 #include "code\datums\elements\dunkable.dm"
