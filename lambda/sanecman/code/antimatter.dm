@@ -345,6 +345,7 @@
 	for(var/obj/machinery/am_shielding/AMS in linked_cores)
 		stored_core_stability += AMS.stability
 	stored_core_stability/=linked_cores.len
+	alarm()
 	addtimer(CALLBACK(src, PROC_REF(reset_stored_core_stability_delay)), 40)
 
 /obj/machinery/power/am_control_unit/proc/reset_stored_core_stability_delay()
@@ -400,6 +401,48 @@
 		if("strengthinput")
 			fuel_injection = clamp(text2num(params["target"]), 0, 1000)
 			. = TRUE
+
+/obj/machinery/power/am_control_unit/proc/get_status()
+	var/turf/T = get_turf(src)
+	if(!T)
+		return ANTIMATTER_ERROR
+	var/datum/gas_mixture/air = T.return_air()
+	if(!air)
+		return ANTIMATTER_ERROR
+
+	if(!active)
+		return ANTIMATTER_INACTIVE
+
+	if(stored_core_stability < 10 && stability < 25)
+		return ANTIMATTER_DESTRUCTION
+
+	if(stored_core_stability < 10 && stability < 75)
+		return ANTIMATTER_EMERGENCY
+
+	if(stored_core_stability < 10 && stability < 100)
+		return ANTIMATTER_DANGER
+
+	if(stored_core_stability < 25)
+		return ANTIMATTER_WARNING
+
+	if(stored_core_stability < 75)
+		return ANTIMATTER_NOTIFY
+
+	if(!active)
+		return ANTIMATTER_NORMAL
+
+	return ANTIMATTER_INACTIVE
+
+/obj/machinery/power/am_control_unit/proc/alarm()
+	switch(get_status())
+		if(SUPERMATTER_DELAMINATING)
+			playsound(src, 'lambda/sanecman/sound/stalker/bomb_timer.ogg', 100, FALSE, 40, 30, falloff_distance = 10)
+		if(SUPERMATTER_EMERGENCY)
+			playsound(src, 'lambda/sanecman/sound/stalker/radio_call.ogg', 100, FALSE, 30, 30, falloff_distance = 10)
+		if(SUPERMATTER_DANGER)
+			playsound(src, 'lambda/sanecman/sound/stalker/pda_alarm.ogg', 100, FALSE, 30, 30, falloff_distance = 10)
+		if(SUPERMATTER_WARNING)
+			playsound(src, 'lambda/sanecman/sound/stalker/beepbeep.ogg', 75)
 
 //like orange but only checks north/south/east/west for one step
 /proc/cardinalrange(var/center)
