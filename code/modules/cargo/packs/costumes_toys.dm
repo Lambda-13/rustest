@@ -8,7 +8,7 @@
 /datum/supply_pack/costumes_toys/training_toolbox
 	name = "Training Toolbox Crate"
 	desc = "Hone your combat abiltities with two AURUMILL-Brand Training Toolboxes! Guarenteed to count hits made against living beings!"
-	cost = 1000
+	cost = COST_MED * 1000
 	contains = list(/obj/item/training_toolbox,
 					/obj/item/training_toolbox
 					)
@@ -17,7 +17,7 @@
 /datum/supply_pack/costumes_toys/foamforce
 	name = "Foam Force Crate"
 	desc = "Break out the big guns with eight Foam Force shotguns!"
-	cost = 1000
+	cost = COST_MED * 1000
 	contains = list(/obj/item/gun/ballistic/shotgun/toy,
 					/obj/item/gun/ballistic/shotgun/toy,
 					/obj/item/gun/ballistic/shotgun/toy,
@@ -31,7 +31,7 @@
 /datum/supply_pack/costumes_toys/foamforce/bonus
 	name = "Foam Force Pistols Crate"
 	desc = "Psst.. hey bud... remember those old foam force pistols that got discontinued for being too cool? Well I got two of those right here with your name on em. I'll even throw in a spare mag for each, waddya say?"
-	cost = 1000
+	cost = COST_MED * 1000
 	contains = list(/obj/item/gun/ballistic/automatic/toy/pistol,
 					/obj/item/gun/ballistic/automatic/toy/pistol,
 					/obj/item/ammo_box/magazine/toy/pistol,
@@ -41,7 +41,7 @@
 /datum/supply_pack/costumes_toys/lasertag
 	name = "Laser Tag Crate"
 	desc = "Foam Force is for boys. Laser Tag is for men. Contains three sets of red suits, blue suits, matching helmets, and matching laser tag guns."
-	cost = 1500
+	cost = COST_MED * 1500
 	contains = list(/obj/item/gun/energy/laser/redtag,
 					/obj/item/gun/energy/laser/redtag,
 					/obj/item/gun/energy/laser/redtag,
@@ -65,7 +65,7 @@
 /datum/supply_pack/costumes_toys/arcade_toys
 	name = "Toy Crate"
 	desc = "Who cares about pride and accomplishment? Skip the gaming and get straight to the sweet rewards with this product! Contains five random toys. Warranty void if used to prank research directors."
-	cost = 2000 // or play the arcade machines ya lazy bum
+	cost = COST_MED * 2000 // or play the arcade machines ya lazy bum
 	contains = list()
 	crate_name = "toy crate"
 
@@ -85,7 +85,7 @@
 /datum/supply_pack/costumes_toys/costume_original
 	name = "Original Costume Crate"
 	desc = "Reenact Shakespearean plays with this assortment of outfits. Contains eight different costumes!"
-	cost = 1000
+	cost = COST_MED * 1000
 	contains = list(/obj/item/clothing/head/snowman,
 					/obj/item/clothing/suit/snowman,
 					/obj/item/clothing/head/chicken,
@@ -105,7 +105,7 @@
 /datum/supply_pack/costumes_toys/costume
 	name = "Standard Costume Crate"
 	desc = "Supply the sector's entertainers with the equipment of their trade with these hilarious costumes! Contains a full clown and mime outfit, along with a bike horn and a bottle of nothing."
-	cost = 1000
+	cost = COST_MED * 1000
 	contains = list(/obj/item/storage/backpack/clown,
 					/obj/item/clothing/shoes/clown_shoes,
 					/obj/item/clothing/mask/gas/clown_hat,
@@ -125,7 +125,7 @@
 /datum/supply_pack/costumes_toys/mafia
 	name = "Cosa Nostra Starter Pack"
 	desc = "This crate contains everything you need to set up your own ethnicity-based racketeering operation."
-	cost = 1000
+	cost = COST_MED * 1000
 	contains = list()
 
 /datum/supply_pack/costumes_toys/mafia/fill(obj/structure/closet/crate/C)
@@ -140,7 +140,7 @@
 /datum/supply_pack/costumes_toys/mech_suits
 	name = "Mech Pilot's Suit Crate"
 	desc = "Suits for piloting big robots. Contains all three colors!"
-	cost = 1500 //state-of-the-art technology doesn't come cheap
+	cost = COST_MED * 1500 //state-of-the-art technology doesn't come cheap
 	contains = list(/obj/item/clothing/under/costume/mech_suit,
 					/obj/item/clothing/under/costume/mech_suit/white,
 					/obj/item/clothing/under/costume/mech_suit/blue)
@@ -150,7 +150,7 @@
 /datum/supply_pack/costumes_toys/wizard
 	name = "Wizard Costume Crate"
 	desc = "Pretend to join the Wizard Federation with this full wizard outfit! As required by interstellar law, the seller reminds potential buyers that the Wizard Federation is not real and cannot hurt you."
-	cost = 2000
+	cost = COST_MED * 2000
 	contains = list(/obj/item/staff,
 					/obj/item/clothing/suit/wizrobe/fake,
 					/obj/item/clothing/shoes/sandal,
@@ -161,7 +161,7 @@
 /datum/supply_pack/costumes_toys/formalwear
 	name = "Formalwear Crate"
 	desc = "You're gonna like the way you look, I guaranteed it. Contains an asston of fancy clothing."
-	cost = 3000 //Lots of very expensive items. You gotta pay up to look good!
+	cost = COST_MED * 3000 //Lots of very expensive items. You gotta pay up to look good!
 	contains = list(/obj/item/clothing/under/dress/blacktango,
 					/obj/item/clothing/under/misc/assistantformal,
 					/obj/item/clothing/under/misc/assistantformal,
@@ -195,7 +195,7 @@
 /datum/supply_pack/costumes_toys/justiceinbound
 	name = "Standard Justice Enforcer Crate"
 	desc = "This is it. The Bee's Knees. The Creme of the Crop. The Pick of the Litter. The best of the best of the best. The Crown Jewel of Nanotrasen. The Alpha and the Omega of security headwear. Guaranteed to strike fear into the hearts of each and every criminal unfortunate enough to hear its screeching wail bore into their soul. Also comes with a security gasmask."
-	cost = 6000 //justice comes at a price. An expensive, noisy price.
+	cost = COST_MED * 6000 //justice comes at a price. An expensive, noisy price.
 	contains = list(/obj/item/clothing/head/helmet/justice,
 					/obj/item/clothing/mask/gas/sechailer)
 	crate_name = "security clothing crate"
@@ -203,7 +203,7 @@
 /datum/supply_pack/costumes_toys/collectable_hats
 	name = "Collectable Hats Crate"
 	desc = "Flaunt your status with three unique, highly-collectable hats!"
-	cost = 20000
+	cost = COST_HIGH * 20000
 	contains = list(/obj/item/clothing/head/collectable/chef,
 					/obj/item/clothing/head/collectable/paper,
 					/obj/item/clothing/head/collectable/tophat,

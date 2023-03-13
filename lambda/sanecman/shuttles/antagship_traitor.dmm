@@ -1,0 +1,553 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"aa" = (
+/obj/machinery/modular_computer/console/preset/command{
+	dir = 8
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ship/bridge)
+"ab" = (
+/obj/machinery/computer/helm{
+	dir = 8
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ship/bridge)
+"ac" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 1
+	},
+/obj/machinery/light,
+/turf/open/floor/mineral/plastitanium/red,
+/area/ship/bridge)
+"ae" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/machinery/button/door{
+	id = 5434;
+	name = "Poddoors";
+	pixel_y = 24
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/ship/bridge)
+"af" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/ship/bridge)
+"ag" = (
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/effect/turf_decal/industrial/hatch/yellow,
+/obj/machinery/power/port_gen/pacman/wood,
+/obj/item/stack/sheet/mineral/wood/fifty,
+/turf/open/floor/mineral/plastitanium,
+/area/ship/bridge)
+"ah" = (
+/obj/effect/turf_decal/industrial/hatch/yellow,
+/obj/machinery/power/terminal{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/item/wrench,
+/obj/machinery/power/port_gen/pacman/wood,
+/turf/open/floor/mineral/plastitanium,
+/area/ship/bridge)
+"aj" = (
+/obj/effect/turf_decal/box,
+/obj/machinery/computer/cryopod{
+	dir = 8;
+	icon_state = "wallconsole_old";
+	pixel_x = 28
+	},
+/obj/machinery/cryopod{
+	icon_state = "cryopod-open";
+	dir = 8
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ship/bridge)
+"ak" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 1
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/ship/bridge)
+"al" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/caution{
+	dir = 4
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/ship/bridge)
+"aw" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/ship/bridge)
+"bY" = (
+/obj/structure/chair/comfy/shuttle,
+/turf/open/floor/mineral/plastitanium/red,
+/area/ship/bridge)
+"gi" = (
+/obj/structure/table,
+/obj/machinery/recharger{
+	pixel_x = -4
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ship/bridge)
+"hB" = (
+/obj/machinery/power/shuttle/engine/electric{
+	icon_state = "burst";
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/door/poddoor/preopen{
+	id = 12345;
+	name = "Engine Poddoor"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"hJ" = (
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/door/poddoor/preopen{
+	id = 12344;
+	name = "Lockdown"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"hS" = (
+/obj/machinery/power/apc/auto_name/north,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/button/door{
+	id = 12344;
+	name = "Lockdown";
+	pixel_x = -28;
+	pixel_y = -8;
+	dir = 4
+	},
+/obj/machinery/button/door{
+	id = 12345;
+	name = "Engine Poddoor";
+	pixel_x = -28;
+	pixel_y = 8;
+	dir = 4
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/ship/bridge)
+"jY" = (
+/obj/effect/turf_decal/box,
+/obj/structure/closet/crate/freezer,
+/obj/item/reagent_containers/food/snacks/rationpack,
+/obj/item/reagent_containers/food/snacks/rationpack,
+/obj/item/reagent_containers/food/snacks/rationpack,
+/obj/item/reagent_containers/food/snacks/rationpack,
+/obj/item/reagent_containers/food/snacks/rationpack,
+/obj/item/reagent_containers/food/drinks/waterbottle/large{
+	pixel_x = 5
+	},
+/obj/item/reagent_containers/food/drinks/waterbottle/large{
+	pixel_x = 5
+	},
+/obj/item/reagent_containers/food/drinks/waterbottle/large{
+	pixel_x = 5
+	},
+/obj/item/reagent_containers/food/drinks/waterbottle/large{
+	pixel_x = 5
+	},
+/obj/item/reagent_containers/food/drinks/waterbottle/large{
+	pixel_x = 5
+	},
+/obj/item/storage/cans/sixbeer,
+/turf/open/floor/mineral/plastitanium,
+/area/ship/bridge)
+"ku" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/bridge)
+"kB" = (
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/bridge)
+"lp" = (
+/obj/machinery/power/smes/engineering,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/effect/turf_decal/industrial/hatch/yellow,
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ship/bridge)
+"mo" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/machinery/door/poddoor/preopen{
+	id = 12345;
+	name = "Engine Poddoor"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"mX" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/bridge)
+"rR" = (
+/obj/machinery/door/airlock/titanium,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/ship/bridge)
+"te" = (
+/obj/structure/fans/tiny,
+/obj/machinery/door/poddoor{
+	id = 5434
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ship/bridge)
+"uJ" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/bridge)
+"wh" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/bridge)
+"xc" = (
+/obj/effect/turf_decal/box,
+/obj/structure/closet/crate/internals,
+/obj/item/areaeditor/shuttle,
+/obj/effect/spawner/lootdrop/maintenance/three,
+/obj/item/tank/internals/emergency_oxygen,
+/obj/item/clothing/mask/breath,
+/turf/open/floor/mineral/plastitanium,
+/area/ship/bridge)
+"An" = (
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/structure/cable,
+/obj/machinery/door/poddoor/preopen{
+	id = 12344;
+	name = "Lockdown"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"Av" = (
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/bridge)
+"Es" = (
+/obj/structure/chair/comfy/shuttle,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/ship/bridge)
+"ES" = (
+/obj/item/radio/intercom/wideband{
+	dir = 1;
+	icon_state = "intercom-wideband";
+	pixel_x = -9;
+	pixel_y = -24;
+	step_x = 0;
+	step_y = 0
+	},
+/obj/item/radio/intercom{
+	dir = 1;
+	icon_state = "intercom";
+	pixel_x = 9;
+	pixel_y = -20
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/ship/bridge)
+"Gb" = (
+/obj/structure/chair/comfy/shuttle,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/ship/bridge)
+"Jd" = (
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/structure/cable,
+/obj/machinery/door/poddoor/preopen{
+	id = 12344;
+	name = "Lockdown"
+	},
+/obj/docking_port/mobile{
+	can_move_docking_ports = 1;
+	dir = 8;
+	launch_status = 0
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"Kz" = (
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/bridge)
+"Pq" = (
+/turf/template_noop,
+/area/template_noop)
+"PT" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/bridge)
+"Rd" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/bridge)
+"Rz" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 4
+	},
+/obj/machinery/holopad/emergency/command,
+/obj/effect/landmark/start/nukeop_leader,
+/turf/open/floor/mineral/plastitanium/red,
+/area/ship/bridge)
+"RL" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/machinery/door/poddoor/preopen{
+	id = 12345;
+	name = "Engine Poddoor"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"RO" = (
+/turf/open/floor/mineral/plastitanium/red,
+/area/ship/bridge)
+"Sh" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/bridge)
+"Tk" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/bridge)
+"Uo" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/bridge)
+"XU" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/ship/bridge)
+
+(1,1,1) = {"
+Pq
+kB
+te
+te
+te
+kB
+Pq
+"}
+(2,1,1) = {"
+Pq
+kB
+ae
+al
+af
+kB
+Pq
+"}
+(3,1,1) = {"
+Pq
+kB
+bY
+RO
+ak
+kB
+Pq
+"}
+(4,1,1) = {"
+hB
+kB
+Gb
+RO
+ac
+kB
+hB
+"}
+(5,1,1) = {"
+RL
+Kz
+Es
+aw
+XU
+Av
+mo
+"}
+(6,1,1) = {"
+Pq
+hJ
+ag
+RO
+jY
+hJ
+Pq
+"}
+(7,1,1) = {"
+Pq
+hJ
+ah
+RO
+xc
+hJ
+Pq
+"}
+(8,1,1) = {"
+Pq
+uJ
+lp
+RO
+aj
+mX
+Pq
+"}
+(9,1,1) = {"
+hB
+mX
+PT
+rR
+Rd
+Uo
+hB
+"}
+(10,1,1) = {"
+RL
+ku
+hS
+Rz
+ES
+Sh
+mo
+"}
+(11,1,1) = {"
+Pq
+hJ
+aa
+gi
+ab
+hJ
+Pq
+"}
+(12,1,1) = {"
+Pq
+wh
+An
+Jd
+An
+Tk
+Pq
+"}

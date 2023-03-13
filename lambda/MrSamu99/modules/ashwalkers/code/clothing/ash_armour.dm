@@ -20,7 +20,7 @@
 
 /obj/item/clothing/head/ash_headdress/Initialize(mapload)
 	. = ..()
-	AddComponent(/datum/component/armor_plate, 2, /obj/item/stack/sheet/animalhide/goliath_hide, list(MELEE = 5, BULLET = 2, LASER = 2))
+	AddComponent(/datum/component/armor_plate, 2, /obj/item/stack/sheet/animalhide/goliath_hide, list("melee" = 5, "bullet" = 2, "laser" = 2))
 
 /obj/item/clothing/head/ash_headdress/winged
 	name = "winged ash headdress"
@@ -50,7 +50,7 @@
 
 /obj/item/clothing/under/costume/gladiator/ash_walker/ash_robes/Initialize(mapload)
 	. = ..()
-	AddComponent(/datum/component/armor_plate, 2, /obj/item/stack/sheet/animalhide/goliath_hide, list(MELEE = 5, BULLET = 2, LASER = 2))
+	AddComponent(/datum/component/armor_plate, 2, /obj/item/stack/sheet/animalhide/goliath_hide, list("melee" = 5, "bullet" = 2, "laser" = 2))
 
 /obj/item/clothing/suit/ash_plates
 	name = "ash combat plates"
@@ -73,7 +73,7 @@
 
 /obj/item/clothing/suit/ash_plates/Initialize(mapload)
 	. = ..()
-	AddComponent(/datum/component/armor_plate, 2, /obj/item/stack/sheet/animalhide/goliath_hide, list(MELEE = 5, BULLET = 2, LASER = 2))
+	AddComponent(/datum/component/armor_plate, 2, /obj/item/stack/sheet/animalhide/goliath_hide, list("melee" = 5, "bullet" = 2, "laser" = 2))
 
 /obj/item/clothing/suit/ash_plates/decorated
 	name = "decorated ash combat plates"

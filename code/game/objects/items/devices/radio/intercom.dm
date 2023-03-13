@@ -154,6 +154,7 @@
 	freqlock = TRUE
 	freerange = TRUE
 	wallframe = /obj/item/wallframe/intercom/wideband
+	theme = "malfunction"
 
 /obj/item/radio/intercom/wideband/Initialize(mapload, ndir, building)
 	. = ..()

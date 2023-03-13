@@ -15,20 +15,20 @@
 
 /obj/item/gps/science
 	icon_state = "gps-s"
-	gpstag = "SCI0"
+	gpstag = "НАУЧ0"
 
 /obj/item/gps/engineering
 	icon_state = "gps-e"
-	gpstag = "ENG0"
+	gpstag = "ИНЖ0"
 
 /obj/item/gps/mining
 	icon_state = "gps-m"
-	gpstag = "MINE0"
+	gpstag = "ШАХТ0"
 	desc = "A positioning system helpful for rescuing trapped or injured miners, keeping one on you at all times while mining might just save your life."
 
 /obj/item/gps/cyborg
 	icon_state = "gps-b"
-	gpstag = "BORG0"
+	gpstag = "БОРГ0"
 	desc = "A mining cyborg internal positioning system. Used as a recovery beacon for damaged cyborg assets, or a collaboration tool for mining teams."
 
 /obj/item/gps/cyborg/Initialize()
@@ -37,12 +37,12 @@
 
 /obj/item/gps/mining/internal
 	icon_state = "gps-m"
-	gpstag = "MINER"
+	gpstag = "ШАХТА"
 	desc = "A positioning system helpful for rescuing trapped or injured miners, keeping one on you at all times while mining might just save your life."
 
 /obj/item/gps/visible_debug
 	name = "visible GPS"
-	gpstag = "ADMIN"
+	gpstag = "ПЕДАЛЬ"
 	desc = "This admin-spawn GPS unit leaves the coordinates visible \
 		on any turf that it passes over, for debugging. Especially useful \
 		for marking the area around the transition edges."

@@ -465,7 +465,7 @@
 /datum/mind/proc/show_memory(mob/recipient, window=1)
 	if(!recipient)
 		recipient = current
-	var/output = "<meta charset='utf=8'><B>Память [current.real_name]:</B><br>"
+	var/output = "<meta charset='utf-8'><B>Память [current.real_name]:</B><br>"
 	output += memory
 
 
@@ -793,12 +793,6 @@
 	. = G
 	if(G)
 		G.reenter_corpse()
-
-/// Sets our can_hijack to the fastest speed our antag datums allow.
-/datum/mind/proc/get_hijack_speed()
-	. = 0
-	for(var/datum/antagonist/A in antag_datums)
-		. = max(., A.hijack_speed())
 
 /datum/mind/proc/has_objective(objective_type)
 	for(var/datum/antagonist/A in antag_datums)

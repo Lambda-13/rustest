@@ -9,35 +9,35 @@
 /datum/supply_pack/medical/firstaid_single
 	name = "First Aid Kit Single-Pack"
 	desc = "Contains one first aid kit for healing most types of wounds."
-	cost = 750
+	cost = COST_MIN * 750
 	small_item = TRUE
 	contains = list(/obj/item/storage/firstaid/regular)
 
 /datum/supply_pack/medical/firstaidbruises_single
 	name = "Bruise Treatment Kit Single-Pack"
 	desc = "Contains one first aid kit focused on healing bruises and broken bones."
-	cost = 1250
+	cost = COST_MIN * 1250
 	small_item = TRUE
 	contains = list(/obj/item/storage/firstaid/brute)
 
 /datum/supply_pack/medical/firstaidburns_single
 	name = "Burn Treatment Kit Single-Pack"
 	desc = "Contains one first aid kit focused on healing severe burns."
-	cost = 1250
+	cost = COST_MIN * 1250
 	small_item = TRUE
 	contains = list(/obj/item/storage/firstaid/fire)
 
 /datum/supply_pack/medical/firstaidoxygen_single
 	name = "Oxygen Deprivation Kit Single-Pack"
 	desc = "Contains one first aid kit focused on helping oxygen deprivation victims."
-	cost = 1250
+	cost = COST_MIN * 1250
 	small_item = TRUE
 	contains = list(/obj/item/storage/firstaid/o2)
 
 /datum/supply_pack/medical/firstaidtoxins_single
 	name = "Toxin Treatment Kit Single-Pack"
 	desc = "Contains one first aid kit focused on healing damage dealt by heavy toxins."
-	cost = 1250
+	cost = COST_MIN * 1250
 	small_item = TRUE
 	contains = list(/obj/item/storage/firstaid/toxin)
 
@@ -48,14 +48,14 @@
 /datum/supply_pack/medical/iv_drip
 	name = "IV Drip Crate"
 	desc = "Contains a single IV drip for administering blood to patients."
-	cost = 1000
+	cost = COST_MIN * 1000
 	contains = list(/obj/machinery/iv_drip)
 	crate_name = "iv drip crate"
 
 /datum/supply_pack/medical/defibs
 	name = "Defibrillator Crate"
 	desc = "Contains two defibrillators for bringing the recently deceased back to life."
-	cost = 1500
+	cost = COST_MIN * 1500
 	contains = list(/obj/item/defibrillator/loaded,
 					/obj/item/defibrillator/loaded)
 	crate_name = "defibrillator crate"
@@ -63,7 +63,7 @@
 /datum/supply_pack/medical/surgery
 	name = "Surgical Supplies Crate"
 	desc = "Do you want to perform surgery, but don't have one of those fancy shmancy degrees? Just get started with this crate containing a medical duffelbag, Sterilizine spray and collapsible roller bed."
-	cost = 3000
+	cost = COST_MIN * 3000
 	contains = list(/obj/item/storage/backpack/duffelbag/med/surgery,
 					/obj/item/reagent_containers/medigel/sterilizine,
 					/obj/item/roller)
@@ -76,7 +76,7 @@
 /datum/supply_pack/medical/bloodpacks
 	name = "Blood Pack Variety Crate"
 	desc = "Contains several different blood packs for reintroducing blood to patients."
-	cost = 1000
+	cost = COST_MIN * 1000
 	contains = list(/obj/item/reagent_containers/blood,
 					/obj/item/reagent_containers/blood,
 					/obj/item/reagent_containers/blood/APlus,
@@ -92,7 +92,7 @@
 /datum/supply_pack/medical/chemical
 	name = "Chemical Starter Kit Crate"
 	desc = "Contains thirteen different chemicals, for all the fun experiments you can make."
-	cost = 1000 // This is intentionally underpriced; the hope is that people will start using ghettochem, upon which time the price can be raised.
+	cost = COST_HIGH * 1000 // This is intentionally underpriced; the hope is that people will start using ghettochem, upon which time the price can be raised.
 	contains = list(/obj/item/reagent_containers/glass/bottle/hydrogen,
 					/obj/item/reagent_containers/glass/bottle/carbon,
 					/obj/item/reagent_containers/glass/bottle/nitrogen,
@@ -114,7 +114,7 @@
 /datum/supply_pack/medical/surplus
 	name = "Medical Surplus Crate"
 	desc = "Contains an assortment of medical supplies haphazardly pulled from storage. German doctor not included."
-	cost = 3000
+	cost = COST_MED * 3000
 	contains = list(/obj/item/reagent_containers/glass/bottle/charcoal,
 					/obj/item/reagent_containers/glass/bottle/epinephrine,
 					/obj/item/reagent_containers/glass/bottle/morphine,
@@ -146,7 +146,7 @@
 /datum/supply_pack/medical/virus
 	name = "Virus Crate"
 	desc = "Contains twelve different bottles, containing several viral samples for virology research. Also includes seven beakers and syringes. Balled-up jeans not included."
-	cost = 3500
+	cost = COST_MED * 3500
 	contains = list(/obj/item/reagent_containers/glass/bottle/flu_virion,
 					/obj/item/reagent_containers/glass/bottle/cold,
 					/obj/item/reagent_containers/glass/bottle/random_virus,
@@ -168,7 +168,7 @@
 /datum/supply_pack/medical/salglucanister
 	name = "Heavy-Duty Saline Canister"
 	desc = "Contains a bulk supply of saline-glucose condensed into a single canister that should last a long time, with a large pump to fill containers with. Direct injection of saline should be left to medical professionals as the pump is capable of overdosing patients."
-	cost = 5000
+	cost = COST_MED * 5000
 	contains = list(/obj/machinery/iv_drip/saline)
 	crate_name = "saline glucose crate"
 	crate_type = /obj/structure/closet/crate/large
@@ -176,13 +176,13 @@
 /datum/supply_pack/medical/autosurgeon
 	name = "Ручной автохирург"
 	desc = "Содержит ручной автохирург, позволящий вставлять органы и импланты не используя громоздкие машины."
-	cost = 25000
+	cost = COST_HIGH * 50000
 	contains = list(/obj/item/autosurgeon)
 	crate_name = "ящик с автохирургом"
 
 /datum/supply_pack/medical/augments
 	name = "Маяк аугментаций"
 	desc = "Внутри находится маяк аугментаций который можно использовать 3 раза."
-	cost = 25000
+	cost = COST_HIGH * 10000
 	contains = list(/obj/item/choice_beacon/augments)
 	crate_name = "ящик с маяком аугментаций"

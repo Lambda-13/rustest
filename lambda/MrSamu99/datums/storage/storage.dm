@@ -989,6 +989,9 @@ GLOBAL_LIST_EMPTY(cached_storage_typecaches)
 	for(var/mob/user in is_using)
 		hide_from(user)
 
+/datum/storage/proc/close(mob/M)
+	hide_from(M)
+
 /// Refresh the views of everyone currently viewing the storage.
 /datum/storage/proc/refresh_views()
 	for (var/mob/user in can_see_contents())

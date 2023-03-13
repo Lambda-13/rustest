@@ -30,32 +30,22 @@
 		/obj/item/gun/energy/pulse = "pulse",
 		/obj/item/gun/energy/pulse/pistol = "pistol",
 	)
-
-/obj/item/tank/internals/tactical/Initialize(mapload)
-	. = ..()
-	create_storage(type = /datum/storage)
-
-//Наполнение баллона воздухом (стандарт)
-/obj/item/tank/internals/tactical/populate_gas()
-	air_contents.set_moles(GAS_O2, (6*ONE_ATMOSPHERE)*volume/(R_IDEAL_GAS_EQUATION*T20C))
-
-
-//Параметры кармана
-/datum/storage
-	max_slots = 1
-	max_specific_storage = WEIGHT_CLASS_BULKY
-	rustle_sound = FALSE
-	attack_hand_interact = TRUE
-
-//Тип хранимого
-/datum/storage/New(atom/parent, max_slots, max_specific_storage, max_total_storage, numerical_stacking, allow_quick_gather, allow_quick_empty, collection_mode, attack_hand_interact)
-	. = ..()
-	set_holdable(list(
+	var/list/holdable = list( //Тип хранимого
 		/obj/item/gun/ballistic,
 		/obj/item/gun/energy,
 		/obj/item/kinetic_crusher,
 		/obj/item/gun/grenadelauncher
-	))
+	)
+
+/obj/item/tank/internals/tactical/Initialize(mapload)
+	. = ..()
+	create_storage(max_specific_storage = WEIGHT_CLASS_BULKY, max_slots = 1, canhold = holdable) //Параметры кармана
+	atom_storage.rustle_sound = FALSE
+	atom_storage.attack_hand_interact = TRUE
+
+//Наполнение баллона воздухом (стандарт)
+/obj/item/tank/internals/tactical/populate_gas()
+	air_contents.set_moles(GAS_O2, (6*ONE_ATMOSPHERE)*volume/(R_IDEAL_GAS_EQUATION*T20C))
 
 //Быстрое извлечение через altclick, быстрое разоружение через "E" тут code\modules\mob\inventory.dm
 /obj/item/tank/internals/tactical/AltClick(mob/user)

@@ -190,8 +190,8 @@
 	update_name()
 	update_icon()
 
-/obj/structure/poddoor_assembly/proc/update_names(updates)
-
+/obj/structure/poddoor_assembly/update_name(updates)
+	. = ..()
 	switch(state)
 		if(AIRLOCK_ASSEMBLY_NEEDS_ELECTRONICS)
 			name = "wired "

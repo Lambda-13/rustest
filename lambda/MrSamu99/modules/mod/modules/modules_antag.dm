@@ -398,6 +398,7 @@
 	mod.icon_state = initial(current_disguise.icon_state)
 	mod.icon = initial(current_disguise.icon)
 	mod.mob_overlay_icon = initial(current_disguise.mob_overlay_icon)
+	mod.worn_icon_digi = initial(current_disguise.worn_icon_digi)
 	mod.alternate_worn_layer = initial(current_disguise.alternate_worn_layer)
 	mod.lefthand_file = initial(current_disguise.lefthand_file)
 	mod.righthand_file = initial(current_disguise.righthand_file)
@@ -413,6 +414,7 @@
 	var/list/mod_skin = mod.theme.skins[mod.skin]
 	mod.icon = mod_skin[MOD_ICON_OVERRIDE] || 'icons/obj/clothing/modsuit/mod_clothing.dmi'
 	mod.mob_overlay_icon = mod_skin[MOD_WORN_ICON_OVERRIDE] || 'icons/mob/clothing/modsuit/mod_clothing.dmi'
+	mod.worn_icon_digi = mod_skin[MOD_WORN_ICON_OVERRIDE] || 'lambda/MrSamu99/modules/mod/icons/mod_digi.dmi'
 	mod.alternate_worn_layer = mod_skin[CONTROL_LAYER]
 	mod.lefthand_file = initial(mod.lefthand_file)
 	mod.righthand_file = initial(mod.righthand_file)

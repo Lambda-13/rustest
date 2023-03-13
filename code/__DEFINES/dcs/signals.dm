@@ -59,6 +59,8 @@
 	#define COMPONENT_SECONDARY_CANCEL_ATTACK_CHAIN (1<<0)
 	#define COMPONENT_SECONDARY_CONTINUE_ATTACK_CHAIN (1<<1)
 	#define COMPONENT_SECONDARY_CALL_NORMAL_ATTACK_CHAIN (1<<2)
+/// From base of [/obj/item/proc/attack_secondary()]: (atom/target, mob/user, params)
+#define COMSIG_ITEM_ATTACK_SECONDARY "item_pre_attack_secondary"
 #define COMSIG_PARENT_ATTACKBY_SECONDARY "atom_attackby_secondary"
 /// From base of [/atom/proc/attack_hand_secondary]: (mob/user, list/modifiers) - Called when the atom receives a secondary unarmed attack.
 #define COMSIG_ATOM_ATTACK_HAND_SECONDARY "atom_attack_hand_secondary"

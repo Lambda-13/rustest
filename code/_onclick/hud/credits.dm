@@ -13,7 +13,7 @@ GLOBAL_LIST_INIT(patrons, world.file2list("[global.config.directory]/patrons.txt
 		GLOB.end_titles += "<br>"
 
 		if(length(GLOB.patrons))
-			GLOB.end_titles += "<center><h1>Thank you to our patrons!</h1></center>"
+			GLOB.end_titles += "<center><h1>Спасибо поддержавшим!</h1></center>"
 			for(var/patron in GLOB.patrons)
 				GLOB.end_titles += "<center><h2>[sanitize(patron)]</h2></center>"
 			GLOB.end_titles += "<br>"
@@ -21,13 +21,13 @@ GLOBAL_LIST_INIT(patrons, world.file2list("[global.config.directory]/patrons.txt
 
 		var/list/contribs = get_contribs()
 		if(length(contribs))
-			GLOB.end_titles += "<center><h1>Top Code Contributors</h1></center>"
+			GLOB.end_titles += "<center><h1>Топ кодеры</h1></center>"
 			for(var/contrib in contribs)
 				GLOB.end_titles += "<center><h2>[sanitize(contrib)]</h2></center>"
 			GLOB.end_titles += "<br>"
 			GLOB.end_titles += "<br>"
 
-		GLOB.end_titles += "<center><h1>Thanks for playing!</h1></center>"
+		GLOB.end_titles += "<center><h1>Спасибо за игру!</h1></center>"
 	for(var/client/C in GLOB.clients)
 		if(C.prefs.show_credits)
 			C.screen += new /atom/movable/screen/credit/title_card(null, null, SSticker.mode.title_icon)

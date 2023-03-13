@@ -1,5 +1,5 @@
 {
-	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"$schema": "https://raw.githubusercontent.com/Lambda-13/rustest/master/_maps/ship_config_schema.json",
 	"map_name": "Kaledonia Cargonia Vessel",
 	"prefix": "FCV",
 	"namelists": ["MERCANTILE", "NATURAL", "REVOLUTIONARY"],
@@ -12,7 +12,7 @@
 			"slots": 1
 		},
 		"Cargonian": {
-			"outfit": "/datum/outfit/job/cargotechnican",
+			"outfit": "/datum/outfit/job/cargo_tech",
 			"slots": 4
 		},
 		"Cargonian Prospector": {

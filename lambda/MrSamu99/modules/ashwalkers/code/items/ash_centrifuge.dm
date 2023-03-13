@@ -1,16 +1,16 @@
-/obj/item/reagent_containers/cup/primitive_centrifuge
+/obj/item/reagent_containers/glass/primitive_centrifuge
 	name = "primitive centrifuge"
 	desc = "A small cup that allows a person to slowly spin out liquids they do not desire."
 	icon = 'lambda/MrSamu99/modules/ashwalkers/icons/misc_tools.dmi'
 	icon_state = "primitive_centrifuge"
 	material_flags = /*MATERIAL_EFFECTS | */MATERIAL_ADD_PREFIX | /*MATERIAL_GREYSCALE | */MATERIAL_COLOR
 
-/obj/item/reagent_containers/cup/primitive_centrifuge/examine()
+/obj/item/reagent_containers/glass/primitive_centrifuge/examine()
 	. = ..()
 	. += span_notice("<b>Ctrl + Click</b> to select chemicals to remove.")
 	. += span_notice("<b>Ctrl + Shift + Click</b> to select a chemical to keep, the rest removed.")
 
-/obj/item/reagent_containers/cup/primitive_centrifuge/CtrlClick(mob/user)
+/obj/item/reagent_containers/glass/primitive_centrifuge/CtrlClick(mob/user)
 	if(!length(reagents.reagent_list))
 		return
 
@@ -28,7 +28,7 @@
 	reagents.del_reagent(user_input.type)
 	balloon_alert(user, "removed reagent from [src]")
 
-/obj/item/reagent_containers/cup/primitive_centrifuge/CtrlShiftClick(mob/user)
+/obj/item/reagent_containers/glass/primitive_centrifuge/CtrlShiftClick(mob/user)
 	if(!length(reagents.reagent_list))
 		return
 

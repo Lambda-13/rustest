@@ -5,17 +5,6 @@
 // 2. Пиздите
 // 3. Получаете деньги или очки
 
-/datum/supply_pack/innovations
-	group = "Инновации"
-
-/datum/supply_pack/innovations/farmbox
-	name = "Ударогенератор"
-	desc = "Эта штука служит для выращивания денег в прогрессии."
-	cost = 25500
-	contains = list(/obj/structure/punching_bag/trade)
-	crate_name = "коробка с ударогенератором"
-	crate_type = /obj/structure/closet/crate/large
-
 /obj/structure/punching_bag/trade
 	name = "ударогенератор"
 	desc = "Лучшее, что создало человечество. Работает за счёт превращения кинетической энергии в денежную."
@@ -59,5 +48,5 @@
 			return
 		to_chat(user, span_warning("На карте нет аккаунта!"))
 		return
-
+	user.adjustStaminaLoss(tier)
 	. = ..()

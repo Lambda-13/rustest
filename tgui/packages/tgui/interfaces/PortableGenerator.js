@@ -19,7 +19,9 @@ export const PortableGenerator = (props, context) => {
   return (
     <Window width={450} height={340} resizable>
       <Window.Content scrollable>
-        {!data.anchored && <NoticeBox>Generator not anchored.</NoticeBox>}
+        {!data.anchored && (
+          <NoticeBox>Генератор не прикручен к полу.</NoticeBox>
+        )}
         <Section title="Status">
           <LabeledList>
             <LabeledList.Item label="Power switch">
