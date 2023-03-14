@@ -14,6 +14,7 @@
 			"Professional Scientist": {
 				"outfit": "/datum/outfit/job/scientist",
 				"slots": 4
+			},
 			"Medical Doctor": 1,
 			}
 		},
