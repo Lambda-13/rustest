@@ -3,6 +3,7 @@
 	"map_name": "BYO-class Do-It-Yourself Enthusiast Special",
 	"map_short_name": "BYO-class",
 	"map_path": "_maps/shuttles/shiptest/independent_byo.dmm",
+	"description":"Вы устали от предложеных вариантов? Вы хотите чего-то своего? Тогда вот вам чистый лист, на котором вы можете построить что угодно! Используйте детали, ресурсы и платы предоставленные вам, для чего вам угодно"
 	"job_slots": {
 		"Architect": {
 			"outfit": "/datum/outfit/job/engineer/hazard",

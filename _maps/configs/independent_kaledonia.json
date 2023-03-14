@@ -5,6 +5,7 @@
 	"namelists": ["MERCANTILE", "NATURAL", "REVOLUTIONARY"],
 	"map_short_name": "Kaledonia-Class",
 	"map_path": "_maps/shuttles/shiptest/independent_kaledonia.dmm",
+	"description": "Корабль ВЕЛИКОЙ и НЕЗАВИСИМОЙ Каргонии. Полнится снаряжением для шахтёрства, знамёнами независимости и отлично подходит для изничтожения фауны и камней. Имеется система откачки и фильтрации воздуха снаружи внутрь, а также 3 мощных ионных двигателя и мех-отсек"
 	"job_slots": {
 		"Lord of Cargonia": {
 			"outfit": "/datum/outfit/job/quartermaster",
