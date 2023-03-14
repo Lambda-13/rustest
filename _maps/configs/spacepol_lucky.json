@@ -1,0 +1,25 @@
+{
+	"$schema": "https://raw.githubusercontent.com/Lambda-13/rustest/master/_maps/ship_config_schema.json",
+	"map_name": "Space-Pol Patrol Ship",
+	"prefix": "SPS",
+	"namelists": ["GENERAL", "BRITISH_NAVY", "MYTHOLOGICAL", "WEAPONS"],
+	"map_short_name": "Lucky-class",
+	"map_path": "_maps/shuttles/shiptest/spacepol_lucky.dmm",
+	"description": "Полицейский патрульный корабль имеющий в себе неплохой арсенал для противодействия уклонщикам от налогов и аж две камеры для зеков. Основной выход снабжён маленькими вентиляторами. Также на борту используется сек-фаб"
+	"job_slots": {
+		"Police Captain": {
+			"outfit": "/datum/outfit/job/hos",
+			"officer": true,
+			"slots": 1
+		},
+		"Cop": {
+			"outfit": "/datum/outfit/job/security",
+			"slots": 4
+		},
+		"Deputized Prisoner": {
+			"outfit": "/datum/outfit/job/assistant/ex_prisoner",
+			"slots": 1
+		}
+	},
+	"enabled": true
+}
