@@ -1,0 +1,46 @@
+{
+	"$schema": "https://raw.githubusercontent.com/Lambda-13/rustest/master/_maps/ship_config_schema.json",
+	"map_name": "Rigoureux(D)-class Auxiliary Cutter",
+	"map_short_name": "Rigoureux(D)-class",
+	"map_path": "_maps/shuttles/shiptest/rigger_c.dmm",
+	"description": "Корабль повстанцев Правительства Солнечной Системы. Он сейчас не в лучшем состоянии, но экипаж гарантировано ощущает себя гордым и свободным... Тут есть всё для кофортной жизни. От бара с мед-отсеком до шахт-части. Есть оружие. Проблемы могут возникнуть разве-что только с питанием этой махины, ибо требуется сразу аж 3 пакмана, которые потребляют немало плазмы"
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/captain/solgov/rebel",
+			"officer": true,
+			"slots": 1
+		},
+		"Executive Officer": {
+			"outfit": "/datum/outfit/job/head_of_personnel/solgov/rebel",
+			"officer": true,
+			"slots": 1
+		},
+		"Signal Officer": {
+			"outfit": "/datum/outfit/job/solgov/rebel",
+			"officer": true,
+			"slots": 1
+		},
+		"Naval Surgeon": {
+			"outfit": "/datum/outfit/job/doctor/solgov/rebel",
+			"slots": 1
+		},
+		"Machinist": {
+			"outfit": "/datum/outfit/job/engineer/solgov/rebel",
+			"slots": 2
+		},
+		"Field Engineer": {
+			"outfit": "/datum/outfit/job/miner/solgov/rebel",
+			"slots": 2
+		},
+		"Cook": 1,
+		"Boarding Specialist": {
+			"outfit": "/datum/outfit/job/security/solgov/rebel",
+			"slots": 3
+		},
+		"Sailor": {
+			"outfit": "/datum/outfit/job/assistant/solgov/rebel",
+			"slots": 4
+		}
+	},
+	"enabled": true
+}
