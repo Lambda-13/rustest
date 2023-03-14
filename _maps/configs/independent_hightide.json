@@ -3,6 +3,7 @@
 	"map_name": "HighTide-Class Entrepreneur Ship",
 	"map_short_name": "HighTide-class",
 	"map_path": "_maps/shuttles/shiptest/independent_hightide.dmm",
+	"description": "Ещё одно судно серии тайд. Собрано их мусора и имеет то назначение которое ему придумает экипаж. Тут есть всё для жизни..! Но если яестно - к чёрту так жить. Также тут могут быть незванные гости, которые скорей всего спутали корабль с куском мусора и хотели просто поживится...",
 	"limit": 2,
 	"job_slots": {
 		"Assistant": 8
