@@ -1,6 +1,5 @@
 import { useBackend } from '../backend';
 import { Box, Button, LabeledList, Section } from '../components';
-import { LabeledListItem } from '../components/LabeledList';
 import { Window } from '../layouts';
 import { AIOptions, Options, Toner } from './Photocopier';
 
@@ -47,17 +46,17 @@ const FaxContent = (props, context) => {
       }
     >
       <LabeledList>
-        <LabeledListItem label="Authentication">
+        <LabeledList.Item label="Authentication">
           <Box color="label">
             {data.authenticated ? data.authenticated : 'None'}
           </Box>
-        </LabeledListItem>
-        <LabeledListItem label="Network">
+        </LabeledList.Item>
+        <LabeledList.Item label="Network">
           <Box color="label">
             {data.network ? data.network : 'Disconnected'}
           </Box>
-        </LabeledListItem>
-        <LabeledListItem label="Currently Sending">
+        </LabeledList.Item>
+        <LabeledList.Item label="Currently Sending">
           <Button
             icon={'eject'}
             onClick={() => act('paper')}
@@ -69,16 +68,16 @@ const FaxContent = (props, context) => {
             content={'Rename'}
             disabled={!data.paperinserted}
           />
-        </LabeledListItem>
-        <LabeledListItem label="Sending to">
+        </LabeledList.Item>
+        <LabeledList.Item label="Sending to">
           <Button
             icon={'print'}
             onClick={() => act('dept')}
             content={data.destination}
             disabled={!data.authenticated}
           />
-        </LabeledListItem>
-        <LabeledListItem label="Action">
+        </LabeledList.Item>
+        <LabeledList.Item label="Action">
           <Button
             icon={
               data.cooldown && data.respectcooldown ? 'clock-o' : 'envelope-o'
@@ -91,7 +90,7 @@ const FaxContent = (props, context) => {
               data.cooldown && data.respectcooldown ? 'Realigning' : 'Send'
             }
           />
-        </LabeledListItem>
+        </LabeledList.Item>
       </LabeledList>
     </Section>
   );

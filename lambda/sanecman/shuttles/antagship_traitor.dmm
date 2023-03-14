@@ -12,15 +12,11 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
 "ac" = (
-/obj/structure/fans/tiny,
-/obj/machinery/door/poddoor{
-	id = 5434
+/obj/structure/chair/comfy/shuttle{
+	dir = 1
 	},
-/obj/docking_port/mobile{
-	icon_state = "pinonclose";
-	dir = 4
-	},
-/turf/open/floor/mineral/plastitanium,
+/obj/machinery/light,
+/turf/open/floor/mineral/plastitanium/red,
 /area/ship/bridge)
 "ae" = (
 /obj/effect/turf_decal/industrial/warning{
@@ -70,6 +66,9 @@
 /obj/machinery/cryopod{
 	icon_state = "cryopod-open";
 	dir = 8
+	},
+/obj/machinery/light{
+	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
@@ -155,6 +154,9 @@
 	pixel_y = 8;
 	dir = 4
 	},
+/obj/machinery/light{
+	dir = 8
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/bridge)
 "jY" = (
@@ -207,6 +209,9 @@
 	icon_state = "1-4"
 	},
 /obj/effect/turf_decal/industrial/hatch/yellow,
+/obj/machinery/light{
+	dir = 4
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
 "mo" = (
@@ -315,7 +320,37 @@
 	pixel_x = 9;
 	pixel_y = -20
 	},
+/obj/machinery/light{
+	dir = 8
+	},
 /turf/open/floor/mineral/plastitanium/red,
+/area/ship/bridge)
+"Gb" = (
+/obj/structure/chair/comfy/shuttle,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/ship/bridge)
+"Jd" = (
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/structure/cable,
+/obj/machinery/door/poddoor/preopen{
+	id = 12344;
+	name = "Lockdown"
+	},
+/obj/docking_port/mobile{
+	can_move_docking_ports = 1;
+	dir = 8;
+	launch_status = 0
+	},
+/turf/open/floor/plating,
 /area/ship/bridge)
 "Kz" = (
 /obj/structure/cable{
@@ -412,7 +447,7 @@
 Pq
 kB
 te
-ac
+te
 te
 kB
 Pq
@@ -438,9 +473,9 @@ Pq
 (4,1,1) = {"
 hB
 kB
-bY
+Gb
 RO
-ak
+ac
 kB
 hB
 "}
@@ -511,7 +546,7 @@ Pq
 Pq
 wh
 An
-An
+Jd
 An
 Tk
 Pq

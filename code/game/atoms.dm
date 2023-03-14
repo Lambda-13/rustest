@@ -1710,6 +1710,16 @@
 ///Called when something resists while this atom is its loc
 /atom/proc/container_resist_act(mob/living/user)
 
+
+///Setter for the `density` variable to append behavior related to its changing.
+/atom/proc/set_density(new_value)
+	SHOULD_CALL_PARENT(TRUE)
+	if(density == new_value)
+		return
+	. = density
+	density = new_value
+
+
 ///Setter for the "base_pixel_x" var to append behavior related to it's changing
 /atom/proc/set_base_pixel_x(new_value)
 	if(base_pixel_x == new_value)

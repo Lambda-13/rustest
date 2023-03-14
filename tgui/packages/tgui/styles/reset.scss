@@ -20,7 +20,7 @@ html {
 
 body {
   overflow: auto;
-  font-family: Verdana, Geneva, sans-serif;
+  font-family: Tahoma, 'Segoe UI', Geneva, Verdana, sans-serif;
 }
 
 *,
@@ -29,8 +29,12 @@ body {
   box-sizing: inherit;
 }
 
-// prettier-ignore
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   display: block;
   margin: 0;
   padding: 6px 0;

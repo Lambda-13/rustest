@@ -8,7 +8,8 @@
 @use '../functions.scss' as *;
 
 $color-default: colors.bg(colors.$primary) !default;
-$color-disabled: #999999 !default;
+$color-disabled: #555555 !default;
+$color-disabled-text: #111111 !default;
 $color-selected: colors.bg(colors.$green) !default;
 $color-caution: colors.bg(colors.$yellow) !default;
 $color-danger: colors.bg(colors.$red) !default;
@@ -19,23 +20,28 @@ $bg-map: colors.$bg-map !default;
 @mixin button-color($color) {
   // Adapt text color to background luminance to ensure high contast
   $luminance: luminance($color);
-  $text-color: if($luminance > 0.4, rgba(0, 0, 0, 1), rgba(255, 255, 255, 1));
+  $text-color: if($luminance > 0.2, rgba(0, 0, 0, 1), rgba(255, 255, 255, 1));
 
-  transition: color 50ms, background-color 50ms;
-  background-color: $color;
-  color: $text-color;
+  transition: color 50ms, background-color 50ms, border-color 50ms;
+  background-color: lighten(base.$color-bg, 10%);
+  border-top: 1px solid rgba(44, 44, 44, 0.8);
+  border-left: 1px solid rgba(33, 33, 33, 0.8);
+  border-right: 1px solid rgba(33, 33, 33, 0.8);
+  border-bottom: 1px solid rgba(33, 33, 33, 0.8);
+  color: $color;
 
   &:hover {
-    transition: color 0ms, background-color 0ms;
+    transition: color 0ms, background-color 0ms, border-color 0ms;
   }
 
   &:focus {
-    transition: color 100ms, background-color 100ms;
+    transition: color 100ms, background-color 100ms, border-color 100ms;
   }
 
   &:hover,
   &:focus {
-    background-color: lighten($color, 30%);
+    border-color: darken($color, 10%);
+    background-color: darken($color, 5%);
     color: $text-color;
   }
 }
@@ -43,13 +49,13 @@ $bg-map: colors.$bg-map !default;
 .Button {
   position: relative;
   display: inline-block;
-  line-height: 1.667em;
-  padding: 0 0.5em;
+  line-height: 1.4em;
+  padding: 0 0.4em;
   margin-right: base.em(2px);
   white-space: nowrap;
   outline: 0;
   border-radius: $border-radius;
-  margin-bottom: base.em(2px);
+  margin-bottom: base.em(3px);
   // Disable selection in buttons
   user-select: none;
   -ms-user-select: none;
@@ -62,8 +68,6 @@ $bg-map: colors.$bg-map !default;
   .fa,
   .fas,
   .far {
-    margin-left: -0.25em;
-    margin-right: -0.25em;
     min-width: 1.333em;
     text-align: center;
   }
@@ -129,10 +133,13 @@ $bg-map: colors.$bg-map !default;
   @include button-color(base.$color-bg);
   background-color: rgba(base.$color-bg, 0);
   color: $color-transparent-text;
+  border: none;
 }
 
 .Button--disabled {
-  background-color: $color-disabled !important;
+  background-color: $color-disabled-text !important;
+  color: $color-disabled !important;
+  border: 1px solid $color-disabled !important;
 }
 
 .Button--selected {

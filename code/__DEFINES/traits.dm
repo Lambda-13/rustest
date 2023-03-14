@@ -291,6 +291,9 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 ///every object that is currently the active storage of some client mob has this trait
 #define TRAIT_ACTIVE_STORAGE "active_storage"
 
+/// Climbable trait, given and taken by the climbable element when added or removed. Exists to be easily checked via HAS_TRAIT().
+#define TRAIT_CLIMBABLE "trait_climbable"
+
 #define TRAIT_KEEP_TOGETHER "keep-together"
 
 // item traits

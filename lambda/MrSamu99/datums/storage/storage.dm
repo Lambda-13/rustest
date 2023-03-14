@@ -792,7 +792,7 @@ GLOBAL_LIST_EMPTY(cached_storage_typecaches)
 		return
 	if(user.active_storage == src && resolve_parent.loc == user)
 		user.active_storage.close(user)
-		//hide_contents(user)
+		close(user)
 		return TRUE
 	if(ishuman(user))
 		var/mob/living/carbon/human/hum = user
@@ -988,6 +988,9 @@ GLOBAL_LIST_EMPTY(cached_storage_typecaches)
 /datum/storage/proc/close_all()
 	for(var/mob/user in is_using)
 		hide_from(user)
+
+/datum/storage/proc/close(mob/M)
+	hide_from(M)
 
 /// Refresh the views of everyone currently viewing the storage.
 /datum/storage/proc/refresh_views()

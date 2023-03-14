@@ -17,3 +17,12 @@
 	contains = list(/obj/item/uplink/emengercy)
 	crate_name = "ящик с аплинком"
 	crate_type = /obj/structure/closet/crate/science
+
+
+/datum/supply_pack/innovations/exploration
+	name = "Блюспейс-маяк"
+	desc = "Содержит внутри маяк который может удержать на месте планету или регион в космосе."
+	cost = COST_HIGH * 300000
+	contains = list(/obj/item/sbeacondrop/exploration)
+	crate_name = "ящик с маяком"
+	crate_type = /obj/structure/closet/crate/science
