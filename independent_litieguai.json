@@ -1,0 +1,24 @@
+{
+	"$schema": "https://raw.githubusercontent.com/Lambda-13/rustest/master/_maps/ship_config_schema.json",
+	"map_name": "Li Tieguai-class Rescue Ship",
+	"map_short_name": "Li Tieguai-class",
+	"map_path": "_maps/shuttles/shiptest/independent_litieguai.dmm",
+	"description": "Модификация судна Халфтрак под медецинский корабль эдакой траума-тим. На борту имеется всё для оказания мед-помощи всем нуждающимся и для того что-бы забрать их из горячей точки, ибо от халфтрака остался неплохой арсенал, который поможет врачам дать бой тем кто создаёт нуждающихся в мед-помощи"
+	"job_slots": {
+		"Captain": 1,
+		"Chief Medical Officer": {
+			"outfit": "/datum/outfit/job/cmo/medicaldirector",
+			"officer": true,
+			"slots": 1
+		},
+		"Trauma Team Technician": {
+			"outfit": "/datum/outfit/job/paramedic/traumateam",
+			"slots": 3
+		},
+		"Medical Intern": {
+			"outfit": "/datum/outfit/job/doctor/juniordoctor",
+			"slots": 3
+		}
+	},
+	"enabled": true
+}

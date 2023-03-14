@@ -1,0 +1,21 @@
+{
+	"$schema": "https://raw.githubusercontent.com/Lambda-13/rustest/master/_maps/ship_config_schema.json",
+	"map_name": "Zarya Class Professional Research Vessel",
+	"map_short_name": "Zarya-class",
+	"map_path": "_maps/shuttles/shiptest/research_zarya.dmm",
+	"description": "Научное судно с профессиональной командой исследователей. Имеет полный набор для исследований, зарядку от солнечных панелей, медбей и ксено-био. Тут имеются особые исследовательские скафандры"
+	"limit": 2,
+	"job_slots": {
+			"Expedition Leader": {
+				"outfit": "/datum/outfit/job/rd",
+				"officer": true,
+				"slots": 1
+			},
+			"Professional Scientist": {
+				"outfit": "/datum/outfit/job/scientist",
+				"slots": 4
+			"Medical Doctor": 1,
+			}
+		},
+	"enabled": true
+}
