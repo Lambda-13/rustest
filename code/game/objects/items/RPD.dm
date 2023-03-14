@@ -14,67 +14,68 @@ RPD
 
 
 GLOBAL_LIST_INIT(atmos_pipe_recipes, list(
-	"Pipes" = list(
-		new /datum/pipe_info/pipe("Pipe",				/obj/machinery/atmospherics/pipe/simple, TRUE),
-		new /datum/pipe_info/pipe("Manifold",			/obj/machinery/atmospherics/pipe/manifold, TRUE),
-		new /datum/pipe_info/pipe("4-Way Manifold",		/obj/machinery/atmospherics/pipe/manifold4w, TRUE),
-		new /datum/pipe_info/pipe("Layer Manifold",		/obj/machinery/atmospherics/pipe/layer_manifold, TRUE),
+	"Трубы" = list(
+		new /datum/pipe_info/pipe("Трубы",				/obj/machinery/atmospherics/pipe/simple, TRUE),
+		new /datum/pipe_info/pipe("Адаптер",			/obj/machinery/atmospherics/pipe/manifold, TRUE),
+		new /datum/pipe_info/pipe("Перекресток",		/obj/machinery/atmospherics/pipe/manifold4w, TRUE),
+		new /datum/pipe_info/pipe("Адаптер уровней",		/obj/machinery/atmospherics/pipe/layer_manifold, TRUE),
 	),
-	"Devices" = list(
-		new /datum/pipe_info/pipe("Connector",			/obj/machinery/atmospherics/components/unary/portables_connector, TRUE),
-		new /datum/pipe_info/pipe("Gas Pump",			/obj/machinery/atmospherics/components/binary/pump, TRUE),
-		new /datum/pipe_info/pipe("Volume Pump",		/obj/machinery/atmospherics/components/binary/volume_pump, TRUE),
-		new /datum/pipe_info/pipe("Gas Filter",			/obj/machinery/atmospherics/components/trinary/filter, TRUE),
-		new /datum/pipe_info/pipe("Gas Mixer",			/obj/machinery/atmospherics/components/trinary/mixer, TRUE),
-		new /datum/pipe_info/pipe("Passive Gate",		/obj/machinery/atmospherics/components/binary/passive_gate, TRUE),
-		new /datum/pipe_info/pipe("Injector",			/obj/machinery/atmospherics/components/unary/outlet_injector, TRUE),
-		new /datum/pipe_info/pipe("Scrubber",			/obj/machinery/atmospherics/components/unary/vent_scrubber, TRUE),
-		new /datum/pipe_info/pipe("Unary Vent",			/obj/machinery/atmospherics/components/unary/vent_pump, TRUE),
-		new /datum/pipe_info/pipe("Passive Vent",		/obj/machinery/atmospherics/components/unary/passive_vent, TRUE),
-		new /datum/pipe_info/pipe("Dual Port Air Vent",	/obj/machinery/atmospherics/components/binary/dp_vent_pump, TRUE),
-		new /datum/pipe_info/pipe("Manual Valve",		/obj/machinery/atmospherics/components/binary/valve, TRUE),
-		new /datum/pipe_info/pipe("Digital Valve",		/obj/machinery/atmospherics/components/binary/valve/digital, TRUE),
-		new /datum/pipe_info/pipe("Relief Valve (Binary)",		/obj/machinery/atmospherics/components/binary/relief_valve, TRUE), //WS Edit - Port of Relief Valves from Cit
-		new /datum/pipe_info/pipe("Relief Valve (Unary)",		/obj/machinery/atmospherics/components/unary/relief_valve, TRUE), //WS Edit - Port of Relief Valves from Cit
-		new /datum/pipe_info/pipe("Temperature Gate",	/obj/machinery/atmospherics/components/binary/temperature_gate, TRUE),
-		new /datum/pipe_info/pipe("Temperature Pump",	/obj/machinery/atmospherics/components/binary/temperature_pump, TRUE),
-		new /datum/pipe_info/meter("Meter"),
+	"Устройства" = list(
+		new /datum/pipe_info/pipe("Коннектор",			/obj/machinery/atmospherics/components/unary/portables_connector, TRUE),
+		new /datum/pipe_info/pipe("Газовый насос",			/obj/machinery/atmospherics/components/binary/pump, TRUE),
+		new /datum/pipe_info/pipe("Объемный насос",		/obj/machinery/atmospherics/components/binary/volume_pump, TRUE),
+		new /datum/pipe_info/pipe("Газовый фильтр",			/obj/machinery/atmospherics/components/trinary/filter, TRUE),
+		new /datum/pipe_info/pipe("Газовый смеситель",			/obj/machinery/atmospherics/components/trinary/mixer, TRUE),
+		new /datum/pipe_info/pipe("Пассивный клапан",		/obj/machinery/atmospherics/components/binary/passive_gate, TRUE),
+		new /datum/pipe_info/pipe("Инжектор",			/obj/machinery/atmospherics/components/unary/outlet_injector, TRUE),
+		new /datum/pipe_info/pipe("Фильтр",			/obj/machinery/atmospherics/components/unary/vent_scrubber, TRUE),
+		new /datum/pipe_info/pipe("Вентиляция",			/obj/machinery/atmospherics/components/unary/vent_pump, TRUE),
+		new /datum/pipe_info/pipe("Пассивная вентиляция",		/obj/machinery/atmospherics/components/unary/passive_vent, TRUE),
+		new /datum/pipe_info/pipe("Двойная вентиляция",	/obj/machinery/atmospherics/components/binary/dp_vent_pump, TRUE),
+		new /datum/pipe_info/pipe("Ручной вентиль",		/obj/machinery/atmospherics/components/binary/valve, TRUE),
+		new /datum/pipe_info/pipe("Цифровой вентиль",		/obj/machinery/atmospherics/components/binary/valve/digital, TRUE),
+		new /datum/pipe_info/pipe("Вентиль давления",		/obj/machinery/atmospherics/components/binary/pressure_valve, TRUE),
+		new /datum/pipe_info/pipe("Выпускной клапан (конечный)",		/obj/machinery/atmospherics/components/binary/relief_valve, TRUE), //WS Edit - Port of Relief Valves from Cit
+		new /datum/pipe_info/pipe("Выпускной клапан (промежуточный)",		/obj/machinery/atmospherics/components/unary/relief_valve, TRUE), //WS Edit - Port of Relief Valves from Cit
+		new /datum/pipe_info/pipe("Температурный клапан",	/obj/machinery/atmospherics/components/binary/temperature_gate, TRUE),
+		new /datum/pipe_info/pipe("Температурный насос",	/obj/machinery/atmospherics/components/binary/temperature_pump, TRUE),
+		new /datum/pipe_info/meter("Измеритель"),
 	),
-	"Heat Exchange" = list(
-		new /datum/pipe_info/pipe("Pipe",				/obj/machinery/atmospherics/pipe/heat_exchanging/simple, FALSE),
-		new /datum/pipe_info/pipe("Manifold",			/obj/machinery/atmospherics/pipe/heat_exchanging/manifold, FALSE),
-		new /datum/pipe_info/pipe("4-Way Manifold",		/obj/machinery/atmospherics/pipe/heat_exchanging/manifold4w, FALSE),
-		new /datum/pipe_info/pipe("Junction",			/obj/machinery/atmospherics/pipe/heat_exchanging/junction, FALSE),
-		new /datum/pipe_info/pipe("Heat Exchanger",		/obj/machinery/atmospherics/components/unary/heat_exchanger, FALSE),
+	"Теплообменники" = list(
+		new /datum/pipe_info/pipe("Труба",				/obj/machinery/atmospherics/pipe/heat_exchanging/simple, FALSE),
+		new /datum/pipe_info/pipe("Тройник",			/obj/machinery/atmospherics/pipe/heat_exchanging/manifold, FALSE),
+		new /datum/pipe_info/pipe("Перекресток",		/obj/machinery/atmospherics/pipe/heat_exchanging/manifold4w, FALSE),
+		new /datum/pipe_info/pipe("Соединительный узел",			/obj/machinery/atmospherics/pipe/heat_exchanging/junction, FALSE),
+		new /datum/pipe_info/pipe("Теплообменник",		/obj/machinery/atmospherics/components/unary/heat_exchanger, FALSE),
 	)
 ))
 
 GLOBAL_LIST_INIT(disposal_pipe_recipes, list(
-	"Disposal Pipes" = list(
-		new /datum/pipe_info/disposal("Pipe",			/obj/structure/disposalpipe/segment, PIPE_BENDABLE),
-		new /datum/pipe_info/disposal("Junction",		/obj/structure/disposalpipe/junction, PIPE_TRIN_M),
-		new /datum/pipe_info/disposal("Y-Junction",		/obj/structure/disposalpipe/junction/yjunction),
-		new /datum/pipe_info/disposal("Sort Junction",	/obj/structure/disposalpipe/sorting/mail, PIPE_TRIN_M),
-		new /datum/pipe_info/disposal("Trunk",			/obj/structure/disposalpipe/trunk),
-		new /datum/pipe_info/disposal("Bin",			/obj/machinery/disposal/bin, PIPE_ONEDIR),
-		new /datum/pipe_info/disposal("Outlet",			/obj/structure/disposaloutlet),
-		new /datum/pipe_info/disposal("Chute",			/obj/machinery/disposal/deliveryChute),
+	"Мусорные трубы" = list(
+		new /datum/pipe_info/disposal("Трубы",			/obj/structure/disposalpipe/segment, PIPE_BENDABLE),
+		new /datum/pipe_info/disposal("Прямой тройник",		/obj/structure/disposalpipe/junction, PIPE_TRIN_M),
+		new /datum/pipe_info/disposal("Объединяющий тройник",		/obj/structure/disposalpipe/junction/yjunction),
+		new /datum/pipe_info/disposal("Сортировочные трубы",	/obj/structure/disposalpipe/sorting/mail, PIPE_TRIN_M),
+		new /datum/pipe_info/disposal("Порт подключения",			/obj/structure/disposalpipe/trunk),
+		new /datum/pipe_info/disposal("Мусорка",			/obj/machinery/disposal/bin, PIPE_ONEDIR),
+		new /datum/pipe_info/disposal("Пневмовыход",			/obj/structure/disposaloutlet),
+		new /datum/pipe_info/disposal("Пневмовход",			/obj/machinery/disposal/deliveryChute),
 	)
 ))
 
 GLOBAL_LIST_INIT(transit_tube_recipes, list(
-	"Transit Tubes" = list(
-		new /datum/pipe_info/transit("Straight Tube",				/obj/structure/c_transit_tube, PIPE_STRAIGHT),
-		new /datum/pipe_info/transit("Straight Tube with Crossing",	/obj/structure/c_transit_tube/crossing, PIPE_STRAIGHT),
-		new /datum/pipe_info/transit("Curved Tube",					/obj/structure/c_transit_tube/curved, PIPE_UNARY_FLIPPABLE),
-		new /datum/pipe_info/transit("Diagonal Tube",				/obj/structure/c_transit_tube/diagonal, PIPE_STRAIGHT),
-		new /datum/pipe_info/transit("Diagonal Tube with Crossing",	/obj/structure/c_transit_tube/diagonal/crossing, PIPE_STRAIGHT),
-		new /datum/pipe_info/transit("Junction",					/obj/structure/c_transit_tube/junction, PIPE_UNARY_FLIPPABLE),
+	"Транзитные трубы" = list(
+		new /datum/pipe_info/transit("Трубы",				/obj/structure/c_transit_tube, PIPE_STRAIGHT),
+		new /datum/pipe_info/transit("Труба с переходом",	/obj/structure/c_transit_tube/crossing, PIPE_STRAIGHT),
+		new /datum/pipe_info/transit("Поворотная труба",					/obj/structure/c_transit_tube/curved, PIPE_UNARY_FLIPPABLE),
+		new /datum/pipe_info/transit("Диагональная труба",				/obj/structure/c_transit_tube/diagonal, PIPE_STRAIGHT),
+		new /datum/pipe_info/transit("Диагональная труба с переходом",	/obj/structure/c_transit_tube/diagonal/crossing, PIPE_STRAIGHT),
+		new /datum/pipe_info/transit("Тройник",					/obj/structure/c_transit_tube/junction, PIPE_UNARY_FLIPPABLE),
 	),
-	"Station Equipment" = list(
-		new /datum/pipe_info/transit("Through Tube Station",		/obj/structure/c_transit_tube/station, PIPE_STRAIGHT),
-		new /datum/pipe_info/transit("Terminus Tube Station",		/obj/structure/c_transit_tube/station/reverse, PIPE_UNARY),
-		new /datum/pipe_info/transit("Transit Tube Pod",			/obj/structure/c_transit_tube_pod, PIPE_ONEDIR),
+	"Станции" = list(
+		new /datum/pipe_info/transit("Промежуточная станция",		/obj/structure/c_transit_tube/station, PIPE_STRAIGHT),
+		new /datum/pipe_info/transit("Конечная станция",		/obj/structure/c_transit_tube/station/reverse, PIPE_UNARY),
+		new /datum/pipe_info/transit("Транзитная капсула",			/obj/structure/c_transit_tube_pod, PIPE_ONEDIR),
 	)
 ))
 
