@@ -27,16 +27,16 @@
 	illustration = "spbox"
 
 /obj/item/storage/box/spacecash_c10000/PopulateContents()
-	new /obj/item/stack/spacecash/c1000(src)
-	new /obj/item/stack/spacecash/c1000(src)
-	new /obj/item/stack/spacecash/c1000(src)
-	new /obj/item/stack/spacecash/c1000(src)
-	new /obj/item/stack/spacecash/c1000(src)
-	new /obj/item/stack/spacecash/c1000(src)
-	new /obj/item/stack/spacecash/c1000(src)
-	new /obj/item/stack/spacecash/c1000(src)
-	new /obj/item/stack/spacecash/c1000(src)
-	new /obj/item/stack/spacecash/c1000(src)
+	new /obj/item/spacecash/bundle/c1000(src)
+	new /obj/item/spacecash/bundle/c1000(src)
+	new /obj/item/spacecash/bundle/c1000(src)
+	new /obj/item/spacecash/bundle/c1000(src)
+	new /obj/item/spacecash/bundle/c1000(src)
+	new /obj/item/spacecash/bundle/c1000(src)
+	new /obj/item/spacecash/bundle/c1000(src)
+	new /obj/item/spacecash/bundle/c1000(src)
+	new /obj/item/spacecash/bundle/c1000(src)
+	new /obj/item/spacecash/bundle/c1000(src)
 
 /obj/item/uplink/emengercy
 	name = "экстренный аплинк"

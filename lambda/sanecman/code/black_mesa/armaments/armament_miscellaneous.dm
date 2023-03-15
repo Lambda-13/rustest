@@ -38,7 +38,7 @@
 	cost = 1
 
 /datum/armament_entry/hecu/misc/dosh
-	item_type = /obj/item/stack/spacecash/c1000
+	item_type = /obj/item/spacecash/bundle/c1000
 	max_purchase = 8
 	cost = 1
 
