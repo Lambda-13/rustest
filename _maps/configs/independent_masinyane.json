@@ -5,6 +5,7 @@
 	"prefix": "ISV",
 	"namelists": ["MYTHOLOGICAL", "NATURAL"],
 	"map_path": "_maps/shuttles/shiptest/independent_masinyane.dmm",
+	"description": "Приватный корабль существующий только для добычи полезнх ископаемых. Более на нём ничего нет кроме снаряжения для шахтёрства",
 	"job_slots": {
 		"Private Ship Owner": {
 			"outfit": "/datum/outfit/job/captain/independent/owner",
