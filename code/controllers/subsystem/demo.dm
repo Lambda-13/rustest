@@ -4,6 +4,7 @@ SUBSYSTEM_DEF(demo)
 	flags = SS_TICKER | SS_BACKGROUND
 	init_order = INIT_ORDER_DEMO
 	runlevels = RUNLEVELS_DEFAULT | RUNLEVEL_LOBBY
+	can_fire = 0 // Демо срёт и забивает память так что я его отключил
 
 	var/list/pre_init_lines = list() // stuff like chat before the init
 	var/list/icon_cache = list()
