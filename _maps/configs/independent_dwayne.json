@@ -5,6 +5,7 @@
 	"namelists": ["GENERAL", "SPACE", "NATURAL", "MERCANTILE"],
 	"map_short_name": "Dwayne-class",
 	"map_path": "_maps/shuttles/shiptest/independent_dwayne.dmm",
+	"description": "Судно для истинных шахтёров. Тут есть солнечные панели, и предостаточно снаряжения для шахтёров, а весте с этим всем - тут есть ещё и оружие с мед-отсеком! Потрясающий корабль для любителей долбить камни",
 	"roundstart": true,
 	"job_slots": {
 		"Captain": {

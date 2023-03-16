@@ -49,6 +49,7 @@ export const ShipSelect = (props, context) => {
             buttons={
               <Button
                 content="Купить судно"
+                disabled={!BuyNewShip}
                 onClick={() => {
                   setTab(3);
                 }}
@@ -168,6 +169,7 @@ export const ShipSelect = (props, context) => {
                 buttons={
                   <Button
                     content="Купить"
+                    disabled={!BuyNewShip}
                     onClick={() => {
                       act('buy', {
                         name: template.name,

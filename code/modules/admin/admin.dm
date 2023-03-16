@@ -636,6 +636,20 @@
 	world.update_status()
 	SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Toggle Entering", "[GLOB.enter_allowed ? "Enabled" : "Disabled"]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
+/datum/admins/proc/togglebuyship()
+	set category = "Server"
+	set desc="People can('t) buy new ship's"
+	set name="Toggle Buy Ship"
+	GLOB.buy_ship_allowed = !(GLOB.buy_ship_allowed)
+	if (!(GLOB.buy_ship_allowed))
+		to_chat(world, "<B>Покупка новых кораблей отключена.</B>", confidential = TRUE)
+	else
+		to_chat(world, "<B>Покупка новых кораблей включена.</B>", confidential = TRUE)
+	log_admin("[key_name(usr)] переключает режим покупки кораблей.")
+	message_admins("<span class='adminnotice'>[key_name_admin(usr)]переключает режим покупки кораблей.</span>")
+	world.update_status()
+	SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Toggle Buy Ship", "[GLOB.buy_ship_allowed ? "Enabled" : "Disabled"]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+
 /datum/admins/proc/toggleAI()
 	set category = "Server"
 	set desc="People can't be AI"
