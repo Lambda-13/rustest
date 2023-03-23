@@ -48,13 +48,8 @@ const setWindowSize = (vec) => {
   });
 };
 
-// prettier-ignore
-const getScreenPosition = () => [
-  0 - screenOffset[0],
-  0 - screenOffset[1],
-];
+const getScreenPosition = () => [0 - screenOffset[0], 0 - screenOffset[1]];
 
-// prettier-ignore
 const getScreenSize = () => [
   window.screen.availWidth * pixelRatio,
   window.screen.availHeight * pixelRatio,
@@ -114,11 +109,7 @@ export const recallWindowGeometry = async (options = {}) => {
   let size = options.size;
   // Convert size from css-pixels to display-pixels
   if (size) {
-    // prettier-ignore
-    size = [
-      size[0] * pixelRatio,
-      size[1] * pixelRatio,
-    ];
+    size = [size[0] * pixelRatio, size[1] * pixelRatio];
   }
   // Wait until screen offset gets resolved
   await screenOffsetPromise;
@@ -126,7 +117,6 @@ export const recallWindowGeometry = async (options = {}) => {
   // Set window size
   if (size) {
     // Constraint size to not exceed available screen area
-    // prettier-ignore
     size = [
       Math.min(areaAvailable[0], size[0]),
       Math.min(areaAvailable[1], size[1]),
@@ -155,12 +145,11 @@ export const recallWindowGeometry = async (options = {}) => {
 export const setupDrag = async () => {
   // Calculate screen offset caused by the windows taskbar
   let windowPosition = getWindowPosition();
-  // prettier-ignore
-  screenOffsetPromise = Byond.winget(Byond.windowId, 'pos')
-    .then((pos) => [
-      pos.x - windowPosition[0],
-      pos.y - windowPosition[1],
-    ]);
+
+  screenOffsetPromise = Byond.winget(Byond.windowId, 'pos').then((pos) => [
+    pos.x - windowPosition[0],
+    pos.y - windowPosition[1],
+  ]);
   screenOffset = await screenOffsetPromise;
   logger.debug('screen offset', screenOffset);
 };
@@ -191,6 +180,7 @@ const constraintPosition = (pos, size) => {
 export const dragStartHandler = (event) => {
   logger.log('drag start');
   dragging = true;
+  let windowPosition = getWindowPosition();
   dragPointOffset = vecSubtract(
     [event.screenX, event.screenY],
     getWindowPosition()

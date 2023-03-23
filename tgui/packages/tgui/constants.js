@@ -84,7 +84,7 @@ export const RADIO_CHANNELS = [
   {
     name: 'Yellow Team',
     freq: 1221,
-    color: '#fdfd34',
+    color: '#d1ba22',
   },
   {
     name: 'CentCom',
@@ -109,7 +109,7 @@ export const RADIO_CHANNELS = [
   {
     name: 'Command',
     freq: 1353,
-    color: '#fcdf03',
+    color: '#5177ff',
   },
   {
     name: 'Medical',
@@ -263,20 +263,18 @@ const GASES = [
 
 export const getGasLabel = (gasId, fallbackValue) => {
   const gasSearchString = String(gasId).toLowerCase();
-  // prettier-ignore
-  const gas = GASES.find((gas) => (
-    gas.id === gasSearchString
-      || gas.name.toLowerCase() === gasSearchString
-  ));
+  const gas = GASES.find(
+    (gas) =>
+      gas.id === gasSearchString || gas.name.toLowerCase() === gasSearchString
+  );
   return (gas && gas.label) || fallbackValue || gasId;
 };
 
 export const getGasColor = (gasId) => {
   const gasSearchString = String(gasId).toLowerCase();
-  // prettier-ignore
-  const gas = GASES.find((gas) => (
-    gas.id === gasSearchString
-      || gas.name.toLowerCase() === gasSearchString
-  ));
+  const gas = GASES.find(
+    (gas) =>
+      gas.id === gasSearchString || gas.name.toLowerCase() === gasSearchString
+  );
   return gas && gas.color;
 };

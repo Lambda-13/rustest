@@ -4,11 +4,12 @@
  */
 
 @use '../base.scss';
+@use '../colors.scss';
 @use '../functions.scss' as *;
 
 $text-color: base.$color-fg !default;
 $background-color: #0a0a0a !default;
-$border-color: #88bfff !default;
+$border-color: colors.$primary !default;
 $border-radius: base.$border-radius !default;
 
 .Input {
@@ -22,7 +23,7 @@ $border-radius: base.$border-radius !default;
   background-color: $background-color;
   padding: 0 base.em(4px);
   margin-right: base.em(2px);
-  line-height: base.em(17px);
+  line-height: base.em(14px);
   overflow: visible;
 }
 
@@ -47,8 +48,8 @@ $border-radius: base.$border-radius !default;
   outline: 0;
   width: 100%;
   font-size: base.em(12px);
-  line-height: base.em(17px);
-  height: base.em(17px);
+  line-height: base.em(14px);
+  height: base.em(14px);
   margin: 0;
   padding: 0 0.5em;
   font-family: Verdana, sans-serif;

@@ -176,7 +176,7 @@ const ShipContent = (_props, context) => {
                 value={speed}
                 format={(value) => Math.round(value * 10) / 10}
               />
-              spM
+              спМ
             </ProgressBar>
           </LabeledList.Item>
           <LabeledList.Item label="Направление">
@@ -387,7 +387,7 @@ const ShipControlContent = (_props, context) => {
           </Table.Cell>
           <Table.Cell width={1}>
             <Button
-              tooltip="Stop"
+              tooltip="Стоп"
               icon="circle"
               mb={1}
               disabled={!data.speed || !flyable}

@@ -1,10 +1,11 @@
 {
-	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"$schema": "https://raw.githubusercontent.com/Lambda-13/rustest/master/_maps/ship_config_schema.json",
 	"map_name": "Boyardee-class Entertainment Vessel",
 	"prefix": "ISV",
 	"namelists": ["GENERAL", "MERCANTILE"],
 	"map_short_name": "Boyardee-class",
 	"map_path": "_maps/shuttles/shiptest/independent_boyardee.dmm",
+	"description": "Судно для отдыха. Существует дабы быть космо-баром для уставших капитанов которые будут травить байки и жаловатся на то что их корабль сожрал хиерофант. Много вещей для обслуживания клиентов, кухня, бар, и немного космического снаряжения для поддержания работоспособности этой машины",
 	"job_slots": {
 		"Bartender": 1,
 		"Cook": 5,

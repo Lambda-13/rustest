@@ -1,8 +1,9 @@
 {
-	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"$schema": "https://raw.githubusercontent.com/Lambda-13/rustest/master/_maps/ship_config_schema.json",
 	"map_name": "Rigoureux(D)-class Auxiliary Cutter",
 	"map_short_name": "Rigoureux(D)-class",
-	"map_path": "_maps/shuttles/shiptest/rigger_c.dmm",
+	"map_path": "_maps/shuttles/shiptest/independent_rigger_c.dmm",
+	"description": "Корабль повстанцев Правительства Солнечной Системы. Он сейчас не в лучшем состоянии, но экипаж гарантировано ощущает себя гордым и свободным... Тут есть всё для кофортной жизни. От бара с мед-отсеком до шахт-части. Есть оружие. Проблемы могут возникнуть разве-что только с питанием этой махины, ибо требуется сразу аж 3 пакмана, которые потребляют немало плазмы",
 	"job_slots": {
 		"Captain": {
 			"outfit": "/datum/outfit/job/captain/solgov/rebel",

@@ -2,14 +2,14 @@
 #define TRAITOR_AI "AI"
 
 /datum/antagonist/traitor
-	name = "Traitor"
+	name = "Предатель"
+	var/ru_name = "Предатель"
 	roundend_category = "traitors"
 	antagpanel_category = "Traitor"
 	job_rank = ROLE_TRAITOR
 	antag_moodlet = /datum/mood_event/focused
 	antag_hud_type = ANTAG_HUD_TRAITOR
 	antag_hud_name = "traitor"
-	hijack_speed = 0.5				//10 seconds per hijack stage by default
 	var/special_role = ROLE_TRAITOR
 	var/employer = "The Syndicate"
 	var/give_objectives = TRUE
@@ -38,7 +38,7 @@
 		QDEL_NULL(A.malf_picker)
 	SSticker.mode.traitors -= owner
 	if(!silent && owner.current)
-		to_chat(owner.current,"<span class='userdanger'>You are no longer the [special_role]!</span>")
+		to_chat(owner.current,"<span class='userdanger'>Теперь я не [special_role]!</span>")
 	owner.special_role = null
 	return ..()
 
@@ -62,11 +62,11 @@
 			forge_human_objectives()
 
 /datum/antagonist/traitor/proc/forge_human_objectives()
-	var/is_hijacker = FALSE
+	var/is_secondary = FALSE
 	if (GLOB.joined_player_list.len >= 30) // Less murderboning on lowpop thanks
-		is_hijacker = prob(10)
+		is_secondary = prob(10)
 	var/martyr_chance = prob(20)
-	var/objective_count = is_hijacker 			//Hijacking counts towards number of objectives
+	var/objective_count = is_secondary
 	if(!SSticker.mode.exchange_blue && SSticker.mode.traitors.len >= 8) 	//Set up an exchange if there are enough traitors
 		if(!SSticker.mode.exchange_red)
 			SSticker.mode.exchange_red = owner
@@ -79,12 +79,11 @@
 	for(var/i = objective_count, i < toa, i++)
 		forge_single_objective()
 
-	if(is_hijacker && objective_count <= toa) //Don't assign hijack if it would exceed the number of objectives set in config.traitor_objectives_amount
-		if (!(locate(/datum/objective/hijack) in objectives))
-			var/datum/objective/hijack/hijack_objective = new
-			hijack_objective.owner = owner
-			add_objective(hijack_objective)
-			return
+	if(is_secondary && objective_count <= toa)
+		var/datum/objective/assassinate/secondary_objective = new
+		secondary_objective.owner = owner
+		add_objective(secondary_objective)
+		return
 
 
 	var/martyr_compatibility = 1 //You can't succeed in stealing if you're dead.
@@ -100,11 +99,10 @@
 		return
 
 	else
-		if(!(locate(/datum/objective/escape) in objectives))
-			var/datum/objective/escape/escape_objective = new
-			escape_objective.owner = owner
-			add_objective(escape_objective)
-			return
+		var/datum/objective/assassinate/assassinate_objective = new
+		assassinate_objective.owner = owner
+		add_objective(assassinate_objective)
+		return
 
 /datum/antagonist/traitor/proc/forge_ai_objectives()
 	var/objective_count = 1
@@ -152,7 +150,7 @@
 			add_objective(maroon_objective)
 		// EndWS Edit - Less Murderbone, more Theft
 	else
-		if(prob(15) && !(locate(/datum/objective/download) in objectives) && !(owner.assigned_role in list("Research Director", "Scientist", "Roboticist")))
+		if(prob(15) && !(locate(/datum/objective/download) in objectives))
 			var/datum/objective/download/download_objective = new
 			download_objective.owner = owner
 			download_objective.gen_amount_goal()
@@ -170,13 +168,13 @@
 		var/special_pick = rand(1,3)
 		switch(special_pick)
 			if(1)
-				var/datum/objective/block/block_objective = new
-				block_objective.owner = owner
-				add_objective(block_objective)
+				var/datum/objective/assassinate/assassinate_objective = new
+				assassinate_objective.owner = owner
+				add_objective(assassinate_objective)
 			if(2)
-				var/datum/objective/purge/purge_objective = new
-				purge_objective.owner = owner
-				add_objective(purge_objective)
+				var/datum/objective/escape/escape_objective = new
+				escape_objective.owner = owner
+				add_objective(escape_objective)
 			if(3)
 				var/datum/objective/robot_army/robot_objective = new
 				robot_objective.owner = owner
@@ -215,7 +213,7 @@
 	. = ..()
 	var/mob/living/M = mob_override || owner.current
 	add_antag_hud(antag_hud_type, antag_hud_name, M)
-	handle_clown_mutation(M, mob_override ? null : "Your training has allowed you to overcome your clownish nature, allowing you to wield weapons without harming yourself.")
+	handle_clown_mutation(M, mob_override ? null : "Благодаря упорным тренировкам мне удалось побороть мою клоунскую натуру и это дало мне возможность пользоваться оружием без вреда себе.")
 	var/mob/living/silicon/ai/A = M
 	if(istype(A) && traitor_kind == TRAITOR_AI)
 		A.hack_software = TRUE
@@ -239,22 +237,22 @@
 	var/phrases = jointext(GLOB.syndicate_code_phrase, ", ")
 	var/responses = jointext(GLOB.syndicate_code_response, ", ")
 
-	to_chat(traitor_mob, "<U><B>The Syndicate have provided you with the following codewords to identify fellow agents:</B></U>")
-	to_chat(traitor_mob, "<B>Code Phrase</B>: <span class='blue'>[phrases]</span>")
-	to_chat(traitor_mob, "<B>Code Response</B>: <span class='red'>[responses]</span>")
+	to_chat(traitor_mob, "<U><B>Синдикат предоставил мне следующие кодовые слова для идентификации других агентов:</B></U>")
+	to_chat(traitor_mob, "<B>Кодовая фраза</B>: <span class='blue'>[phrases]</span>")
+	to_chat(traitor_mob, "<B>Кодовый ответ</B>: <span class='red'>[responses]</span>")
 
-	antag_memory += "<b>Code Phrase</b>: <span class='blue'>[phrases]</span><br>"
-	antag_memory += "<b>Code Response</b>: <span class='red'>[responses]</span><br>"
+	antag_memory += "<b>Кодовая фраза</b>: <span class='blue'>[phrases]</span><br>"
+	antag_memory += "<b>Кодовый ответ</b>: <span class='red'>[responses]</span><br>"
 
-	to_chat(traitor_mob, "Use the codewords during regular conversation to identify other agents. Proceed with caution, however, as everyone is a potential foe.")
-	to_chat(traitor_mob, "<span class='alertwarning'>You memorize the codewords, allowing you to recognise them when heard.</span>")
+	to_chat(traitor_mob, "Надо бы использовать кодовые слова в своём разговоре для кооперации с другими агентами. Только надо быть осторожнее.")
+	to_chat(traitor_mob, span_alertwarning("Запомню эти слова и буду определять их быстро."))
 
 /datum/antagonist/traitor/proc/add_law_zero()
 	var/mob/living/silicon/ai/killer = owner.current
 	if(!killer || !istype(killer))
 		return
-	var/law = "Accomplish your objectives at all costs."
-	var/law_borg = "Accomplish your AI's objectives at all costs."
+	var/law = "Достигнуть целей любой ценой."
+	var/law_borg = "Достигнуть целей в моей программе любой ценой."
 	killer.set_zeroth_law(law, law_borg)
 	killer.add_malf_picker()
 

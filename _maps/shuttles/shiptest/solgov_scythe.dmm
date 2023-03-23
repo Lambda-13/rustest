@@ -1,16 +1,16 @@
 "aa" = (/turf/template_noop,/area/template_noop)
 "ab" = (/turf/closed/wall/mineral/plastitanium/nodiagonal,/area/ship/crew/canteen)
-"ac" = (/obj/effect/turf_decal/siding/wood,/obj/structure/chair/comfy/brown{icon_state = "comfychair"; dir = 4},/obj/structure/sign/solgov_flag{pixel_y = 31; pixel_y = 0},/obj/effect/landmark/start/assistant,/turf/open/floor/wood,/area/ship/crew/canteen)
+"ac" = (/obj/effect/turf_decal/siding/wood,/obj/structure/chair/comfy/brown{icon_state = "comfychair"; dir = 4},/obj/structure/sign/solgov_flag{pixel_y = 32},/obj/effect/landmark/start/assistant,/turf/open/floor/wood,/area/ship/crew/canteen)
 "ad" = (/turf/closed/wall/mineral/plastitanium,/area/ship/crew/canteen)
-"ae" = (/obj/effect/turf_decal/siding/wood,/obj/structure/table/wood,/obj/structure/sign/solgov_flag/right{pixel_y = 31; pixel_y = 0},/turf/open/floor/wood,/area/ship/crew/canteen)
+"ae" = (/obj/effect/turf_decal/siding/wood,/obj/structure/table/wood,/obj/structure/sign/solgov_flag/right{pixel_y = 32},/turf/open/floor/wood,/area/ship/crew/canteen)
 "af" = (/obj/machinery/status_display{pixel_y = -3},/turf/closed/wall/mineral/plastitanium/nodiagonal,/area/ship/crew/canteen)
 "ag" = (/obj/machinery/door/poddoor{id = 2221},/obj/structure/fans/tiny,/turf/open/floor/plasteel/tech/techmaint,/area/ship/science/robotics)
-"ah" = (/obj/machinery/button/door{id = 2221; name = "Hangar door"; pixel_y = 27; pixel_y = 0},/turf/open/floor/plasteel/mono,/area/ship/science/robotics)
+"ah" = (/obj/machinery/button/door{id = 2221; name = "Hangar door"; pixel_y = 24},/turf/open/floor/plasteel/mono,/area/ship/science/robotics)
 "ai" = (/obj/structure/sign/solgov_seal,/turf/template_noop,/area/template_noop)
 "aj" = (/turf/closed/wall/mineral/plastitanium,/area/ship/science/robotics)
-"ak" = (/obj/structure/closet/l3closet/janitor,/obj/item/clothing/head/bio_hood/janitor,/obj/item/clothing/suit/bio_suit/janitor,/obj/machinery/light{dir = 8},/obj/machinery/firealarm{pixel_y = 29},/turf/open/floor/plasteel/tech,/area/ship/crew/janitor)
-"al" = (/obj/structure/sign/solgov_seal{pixel_y = -27},/turf/closed/wall/mineral/plastitanium,/area/ship/medical)
-"am" = (/obj/machinery/washing_machine,/turf/open/floor/plasteel/tech,/area/ship/crew/janitor)
+"ak" = (/obj/structure/closet/l3closet/janitor,/obj/item/clothing/head/bio_hood/janitor,/obj/item/clothing/suit/bio_suit/janitor,/obj/machinery/firealarm{pixel_y = 29},/turf/open/floor/plasteel/tech,/area/ship/crew/janitor)
+"al" = (/obj/machinery/atmospherics/components/unary/outlet_injector/on/layer4{icon_state = "inje_map-4"; dir = 4},/turf/open/floor/engine/hull,/area/ship/cargo)
+"am" = (/obj/machinery/washing_machine,/obj/machinery/light/small{icon_state = "bulb"; dir = 4},/turf/open/floor/plasteel/tech,/area/ship/crew/janitor)
 "an" = (/turf/closed/wall/mineral/plastitanium/nodiagonal,/area/ship/crew/janitor)
 "ao" = (/obj/effect/turf_decal/siding/wood/corner{icon_state = "siding_wood_corner"; dir = 8},/obj/structure/chair/comfy/brown{icon_state = "comfychair"; dir = 8},/turf/open/floor/wood,/area/ship/crew/canteen)
 "ap" = (/obj/machinery/power/apc/auto_name/north,/obj/structure/cable{icon_state = "0-2"},/turf/open/floor/wood,/area/ship/crew/canteen)
@@ -63,7 +63,7 @@
 "bk" = (/obj/structure/cable{icon_state = "4-8"},/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer4,/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{dir = 4},/turf/open/floor/carpet,/area/ship/crew/canteen)
 "bl" = (/obj/structure/cable{icon_state = "4-8"},/obj/structure/cable{icon_state = "1-4"},/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{icon_state = "pipe11-4"; dir = 4},/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{dir = 4},/turf/open/floor/wood,/area/ship/crew/canteen)
 "bm" = (/obj/structure/chair/stool,/obj/structure/cable{icon_state = "4-8"},/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{icon_state = "pipe11-4"; dir = 4},/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{dir = 4},/turf/open/floor/wood,/area/ship/crew/canteen)
-"bn" = (/obj/structure/cable{icon_state = "4-8"},/obj/structure/cable{icon_state = "2-8"},/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{icon_state = "pipe11-4"; dir = 4},/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{dir = 4},/turf/open/floor/plasteel/dark,/area/ship/crew/janitor)
+"bn" = (/obj/structure/cable{icon_state = "4-8"},/obj/structure/cable{icon_state = "2-8"},/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{icon_state = "pipe11-4"; dir = 4},/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{dir = 4},/obj/machinery/light/small{icon_state = "bulb"; dir = 1},/turf/open/floor/plasteel/dark,/area/ship/crew/janitor)
 "bo" = (/obj/structure/cable{icon_state = "4-8"},/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{icon_state = "pipe11-4"; dir = 4},/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{dir = 4},/turf/open/floor/plasteel/dark,/area/ship/crew/janitor)
 "bp" = (/obj/structure/cable{icon_state = "2-8"},/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{icon_state = "vent_map_on-2"; dir = 8},/turf/open/floor/plasteel/white,/area/ship/medical)
 "bq" = (/turf/open/floor/plasteel/white,/area/ship/medical)
@@ -83,7 +83,7 @@
 "bE" = (/turf/closed/wall/mineral/plastitanium,/area/ship/security/armory)
 "bF" = (/obj/machinery/door/firedoor,/obj/machinery/door/airlock/security/glass,/obj/structure/cable{icon_state = "1-2"},/turf/open/floor/plasteel/mono/dark,/area/ship/security/armory)
 "bG" = (/obj/structure/cable{icon_state = "4-8"},/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer4,/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{dir = 4},/turf/open/floor/plasteel/white,/area/ship/medical)
-"bH" = (/obj/structure/sign/solgov_seal{pixel_y = -27},/turf/closed/wall/mineral/plastitanium/nodiagonal,/area/ship/medical)
+"bH" = (/obj/machinery/atmospherics/components/unary/outlet_injector/on/layer4{icon_state = "inje_map-4"; dir = 8},/turf/open/floor/engine/hull,/area/ship/cargo)
 "bI" = (/obj/structure/cable{icon_state = "4-8"},/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{icon_state = "scrub_map_on-4"; dir = 8},/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{dir = 1},/turf/open/floor/plasteel/white,/area/ship/medical)
 "bJ" = (/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,/turf/open/floor/plasteel/white,/area/ship/medical)
 "bK" = (/obj/structure/cable{icon_state = "1-8"},/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,/turf/open/floor/plasteel/dark,/area/ship/science/robotics)
@@ -96,7 +96,7 @@
 "bR" = (/obj/structure/closet/secure_closet/miningcloset,/obj/item/gps/mining,/obj/machinery/power/apc/auto_name/west,/obj/structure/cable{icon_state = "0-2"},/obj/item/pickaxe/mini,/obj/item/radio/headset/headset_cargo/mining,/obj/item/storage/backpack/duffelbag/mining_conscript,/obj/item/storage/belt/mining,/obj/item/storage/firstaid/brute,/obj/item/t_scanner/adv_mining_scanner/lesser,/obj/item/clothing/glasses/meson,/obj/item/storage/bag/ore,/turf/open/floor/plating,/area/ship/cargo)
 "bS" = (/obj/effect/turf_decal/siding/blue,/obj/structure/table/wood,/obj/item/reagent_containers/food/snacks/burger,/obj/item/reagent_containers/food/snacks/burger/blue,/obj/item/reagent_containers/food/snacks/burger/bigbite,/obj/machinery/chem_dispenser/drinks/beer/fullupgrade,/turf/open/floor/carpet,/area/ship/crew/canteen)
 "bT" = (/obj/machinery/door/firedoor,/obj/machinery/door/airlock/security/glass,/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,/turf/open/floor/plasteel/mono/dark,/area/ship/security/armory)
-"bU" = (/obj/structure/closet,/obj/item/clothing/suit/toggle/solgov,/obj/item/clothing/suit/toggle/solgov,/obj/item/clothing/suit/toggle/solgov,/obj/item/clothing/suit/toggle/solgov,/obj/item/clothing/suit/toggle/solgov,/obj/item/clothing/under/solgov,/obj/item/clothing/under/solgov,/obj/item/clothing/under/solgov,/obj/item/clothing/under/solgov,/obj/item/clothing/under/solgov,/obj/item/clothing/under/solgov/formal,/obj/item/clothing/under/solgov/formal,/obj/item/clothing/under/solgov/formal,/obj/item/clothing/under/solgov/formal,/obj/item/clothing/under/solgov/formal,/obj/item/clothing/under/utility/skirt,/obj/item/clothing/under/utility/skirt,/obj/item/clothing/under/utility/skirt,/obj/item/clothing/under/utility/skirt,/obj/item/clothing/under/utility/skirt,/turf/open/floor/wood/ebony,/area/ship/crew)
+"bU" = (/obj/structure/closet,/obj/item/clothing/suit/toggle/solgov,/obj/item/clothing/suit/toggle/solgov,/obj/item/clothing/suit/toggle/solgov,/obj/item/clothing/suit/toggle/solgov,/obj/item/clothing/suit/toggle/solgov,/obj/item/clothing/under/solgov,/obj/item/clothing/under/solgov,/obj/item/clothing/under/solgov,/obj/item/clothing/under/solgov,/obj/item/clothing/under/solgov,/obj/item/clothing/under/solgov/formal,/obj/item/clothing/under/solgov/formal,/obj/item/clothing/under/solgov/formal,/obj/item/clothing/under/solgov/formal,/obj/item/clothing/under/solgov/formal,/obj/item/clothing/under/utility/skirt,/obj/item/clothing/under/utility/skirt,/obj/item/clothing/under/utility/skirt,/obj/item/clothing/under/utility/skirt,/obj/item/clothing/under/utility/skirt,/obj/machinery/light/small{icon_state = "bulb"; dir = 4},/turf/open/floor/wood/ebony,/area/ship/crew)
 "bV" = (/obj/effect/turf_decal/siding/wood{icon_state = "siding_wood_line"; dir = 1},/turf/open/floor/wood,/area/ship/crew/canteen)
 "bW" = (/obj/effect/turf_decal/siding/wood/corner{icon_state = "siding_wood_corner"; dir = 1},/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{icon_state = "vent_map_on-2"; dir = 1},/turf/open/floor/wood,/area/ship/crew/canteen)
 "bX" = (/obj/effect/turf_decal/siding/yellow{icon_state = "siding_line"; dir = 8},/turf/open/floor/wood/ebony,/area/ship/crew/canteen)
@@ -104,11 +104,11 @@
 "bZ" = (/obj/structure/chair/sofa/right{icon_state = "sofaend_right"; dir = 8},/turf/open/floor/wood/ebony,/area/ship/crew/canteen)
 "ca" = (/obj/machinery/power/apc/auto_name/west,/obj/structure/cable{icon_state = "0-4"},/turf/open/floor/plasteel/grimy,/area/ship/crew)
 "cb" = (/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,/turf/open/floor/plasteel/white,/area/ship/medical)
-"cc" = (/obj/structure/closet/secure_closet/tac,/obj/item/clothing/suit/armor/vest/marine/medium,/obj/item/clothing/head/helmet/marine,/obj/item/gun/energy/e_gun/stun,/obj/item/clothing/under/solgov/elite,/obj/item/clothing/accessory/holster/marine,/obj/item/gps,/obj/machinery/power/apc/auto_name/north,/obj/structure/cable{icon_state = "0-4"},/obj/machinery/light{dir = 8},/obj/item/storage/belt/military,/obj/item/clothing/suit/space/hardsuit/solgov,/obj/item/gun/ballistic/automatic/pistol/m1911,/obj/item/ammo_box/magazine/m45,/obj/item/ammo_box/magazine/m45,/obj/item/ammo_box/c45,/turf/open/floor/plasteel/mono/dark,/area/ship/security/armory)
+"cc" = (/obj/structure/closet/secure_closet/tac,/obj/item/clothing/suit/armor/vest/marine/medium,/obj/item/clothing/head/helmet/marine,/obj/item/gun/energy/e_gun/stun,/obj/item/clothing/under/solgov/elite,/obj/item/clothing/accessory/holster/marine,/obj/item/gps,/obj/machinery/power/apc/auto_name/north,/obj/structure/cable{icon_state = "0-4"},/obj/machinery/light{dir = 8},/obj/item/storage/belt/military,/obj/item/clothing/suit/space/hardsuit/solgov,/obj/item/gun/ballistic/automatic/pistol/m1911,/obj/item/ammo_box/magazine/m45,/obj/item/ammo_box/magazine/m45,/obj/item/ammo_box/c45,/obj/item/ammo_box/magazine/wt550m9,/obj/item/ammo_box/magazine/wt550m9,/turf/open/floor/plasteel/mono/dark,/area/ship/security/armory)
 "cd" = (/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,/turf/open/floor/plasteel/dark,/area/ship/science/robotics)
 "ce" = (/obj/structure/cable{icon_state = "1-8"},/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{icon_state = "scrub_map_on-4"; dir = 4},/obj/effect/landmark/start/security_officer,/turf/open/floor/carpet/black,/area/ship/security/armory)
 "cf" = (/obj/structure/closet/firecloset/full,/turf/open/floor/plasteel/mono/white,/area/ship/medical)
-"cg" = (/obj/structure/closet/secure_closet/tac,/obj/item/clothing/suit/armor/vest/marine/medium,/obj/item/clothing/head/helmet/marine,/obj/item/gun/energy/e_gun/stun,/obj/item/clothing/under/solgov/elite,/obj/item/clothing/accessory/holster/marine,/obj/item/gps,/obj/machinery/airalarm/directional/east,/obj/item/storage/belt/military,/obj/item/clothing/suit/space/hardsuit/solgov,/obj/item/gun/ballistic/automatic/pistol/m1911,/obj/machinery/firealarm{pixel_y = 29},/obj/item/ammo_box/magazine/m45,/obj/item/ammo_box/magazine/m45,/obj/item/ammo_box/c45,/turf/open/floor/plasteel/mono/dark,/area/ship/security/armory)
+"cg" = (/obj/structure/closet/secure_closet/tac,/obj/item/clothing/suit/armor/vest/marine/medium,/obj/item/clothing/head/helmet/marine,/obj/item/gun/energy/e_gun/stun,/obj/item/clothing/under/solgov/elite,/obj/item/clothing/accessory/holster/marine,/obj/item/gps,/obj/machinery/airalarm/directional/east,/obj/item/storage/belt/military,/obj/item/clothing/suit/space/hardsuit/solgov,/obj/item/gun/ballistic/automatic/pistol/m1911,/obj/machinery/firealarm{pixel_y = 29},/obj/item/ammo_box/magazine/m45,/obj/item/ammo_box/magazine/m45,/obj/item/ammo_box/c45,/obj/item/ammo_box/magazine/wt550m9,/obj/item/ammo_box/magazine/wt550m9,/turf/open/floor/plasteel/mono/dark,/area/ship/security/armory)
 "ch" = (/obj/machinery/stasis{icon_state = "stasis"; dir = 4},/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{icon_state = "pipe11-4"; dir = 5},/turf/open/floor/plasteel/mono/white,/area/ship/medical)
 "ci" = (/obj/effect/turf_decal/siding/wood{icon_state = "siding_wood_line"; dir = 8},/obj/structure/cable{icon_state = "4-8"},/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer2,/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{icon_state = "pipe11-4"; dir = 4},/obj/machinery/holopad,/turf/open/floor/wood,/area/ship/crew/canteen)
 "cj" = (/obj/structure/cable{icon_state = "1-8"},/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,/turf/open/floor/plasteel/grimy,/area/ship/crew)
@@ -131,12 +131,12 @@
 "cA" = (/obj/structure/chair/sofa/left{icon_state = "sofaend_left"; dir = 1},/turf/open/floor/wood/ebony,/area/ship/crew/canteen)
 "cB" = (/obj/structure/chair/sofa/corner{icon_state = "sofacorner"; dir = 8},/turf/open/floor/wood/ebony,/area/ship/crew/canteen)
 "cC" = (/obj/machinery/vending/security/marine,/turf/open/floor/plasteel/mono/dark,/area/ship/security/armory)
-"cD" = (/obj/machinery/light{dir = 8},/obj/machinery/holopad,/turf/open/floor/plasteel/grimy,/area/ship/crew)
+"cD" = (/obj/machinery/holopad,/turf/open/floor/plasteel/grimy,/area/ship/crew)
 "cE" = (/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{icon_state = "vent_map_on-2"; dir = 1},/turf/open/floor/carpet/black,/area/ship/security/armory)
-"cF" = (/obj/machinery/recharger{pixel_y = 10},/obj/structure/table,/obj/item/storage/firstaid/tactical,/obj/machinery/button/door{id = 3312; name = "Fast exit"; pixel_x = -8; pixel_y = -5; pixel_x = 0; pixel_y = 0},/turf/open/floor/plasteel/mono/dark,/area/ship/security/armory)
+"cF" = (/obj/machinery/recharger{pixel_y = 10},/obj/structure/table,/obj/item/storage/firstaid/tactical,/obj/machinery/button/door{id = 3312; name = "Fast exit"; pixel_x = -7; pixel_y = -5},/turf/open/floor/plasteel/mono/dark,/area/ship/security/armory)
 "cG" = (/turf/closed/wall/mineral/plastitanium,/area/ship/bridge)
 "cH" = (/obj/machinery/door/firedoor,/obj/machinery/door/airlock/medical/glass,/obj/structure/cable{icon_state = "4-8"},/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{icon_state = "pipe11-4"; dir = 4},/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{dir = 4},/turf/open/floor/plasteel/mono/dark,/area/ship/medical)
-"cI" = (/obj/structure/sign/solgov_seal{pixel_y = -27},/turf/closed/wall/mineral/plastitanium/nodiagonal,/area/ship/cargo)
+"cI" = (/obj/item/clothing/suit/armor/vest/lieutenant,/obj/item/clothing/head/caphat/nt{name = "Lietenant hat"},/obj/item/clothing/under/rank/security/constable,/obj/item/clothing/under/solgov/formal,/obj/item/clothing/accessory/medal/gold/heroism,/obj/item/gps,/obj/item/gun/ballistic/automatic/pistol/commander,/obj/item/reagent_containers/food/drinks/bottle/grappa,/obj/item/storage/belt/security,/obj/structure/closet/wall/blue{pixel_y = 26},/obj/item/ammo_box/c9mm,/obj/item/ammo_box/c9mm,/obj/item/areaeditor/shuttle,/turf/open/floor/plasteel/dark,/area/ship/bridge)
 "cJ" = (/turf/closed/wall/mineral/plastitanium/nodiagonal,/area/ship/cargo)
 "cK" = (/obj/structure/cable{icon_state = "2-8"},/obj/structure/cable{icon_state = "1-8"},/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{icon_state = "pipe11-4"; dir = 10},/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{dir = 10},/turf/open/floor/plating,/area/ship/cargo)
 "cL" = (/turf/open/floor/plating,/area/ship/cargo)
@@ -148,15 +148,15 @@
 "cR" = (/obj/effect/turf_decal/rechargefloor,/obj/mecha/medical/odysseus,/turf/open/floor/plasteel/tech/grid,/area/ship/science/robotics)
 "cS" = (/obj/structure/railing{icon_state = "railing"; dir = 4},/obj/machinery/firealarm{pixel_x = -25},/turf/open/floor/plasteel/stairs{icon_state = "stairs"; dir = 1},/area/ship/crew)
 "cT" = (/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{icon_state = "vent_map_on-2"; dir = 1},/turf/open/floor/wood/ebony,/area/ship/crew)
-"cU" = (/obj/structure/closet,/obj/machinery/light{dir = 4},/obj/item/gun_voucher/solgov,/obj/item/gun_voucher/solgov,/obj/item/gun_voucher/solgov,/obj/item/gun_voucher/solgov,/turf/open/floor/wood/ebony,/area/ship/crew)
-"cV" = (/obj/structure/closet/secure_closet/tac,/obj/item/clothing/suit/armor/vest/marine/medium,/obj/item/clothing/head/helmet/marine,/obj/item/gun/energy/e_gun/stun,/obj/item/clothing/under/solgov/elite,/obj/item/clothing/accessory/holster/marine,/obj/item/gps,/obj/item/storage/belt/military,/obj/item/clothing/suit/space/hardsuit/solgov,/obj/item/gun/ballistic/automatic/pistol/m1911,/obj/item/ammo_box/magazine/m45,/obj/item/ammo_box/magazine/m45,/obj/item/ammo_box/c45,/turf/open/floor/plasteel/mono/dark,/area/ship/security/armory)
-"cW" = (/obj/structure/closet/secure_closet/tac,/obj/item/clothing/suit/armor/vest/marine/medium,/obj/item/clothing/head/helmet/marine,/obj/item/gun/energy/e_gun/stun,/obj/item/clothing/under/solgov/elite,/obj/item/clothing/accessory/holster/marine,/obj/item/gps,/obj/machinery/light{dir = 4},/obj/item/storage/belt/military,/obj/item/clothing/suit/space/hardsuit/solgov,/obj/item/gun/ballistic/automatic/pistol/m1911,/obj/item/ammo_box/magazine/m45,/obj/item/ammo_box/magazine/m45,/obj/item/ammo_box/c45,/turf/open/floor/plasteel/mono/dark,/area/ship/security/armory)
+"cU" = (/obj/structure/closet,/obj/item/gun_voucher/solgov,/obj/item/gun_voucher/solgov,/obj/item/gun_voucher/solgov,/obj/item/gun_voucher/solgov,/turf/open/floor/wood/ebony,/area/ship/crew)
+"cV" = (/obj/structure/closet/secure_closet/tac,/obj/item/clothing/suit/armor/vest/marine/medium,/obj/item/clothing/head/helmet/marine,/obj/item/gun/energy/e_gun/stun,/obj/item/clothing/under/solgov/elite,/obj/item/clothing/accessory/holster/marine,/obj/item/gps,/obj/item/storage/belt/military,/obj/item/clothing/suit/space/hardsuit/solgov,/obj/item/gun/ballistic/automatic/pistol/m1911,/obj/item/ammo_box/magazine/m45,/obj/item/ammo_box/magazine/m45,/obj/item/ammo_box/c45,/obj/item/ammo_box/magazine/wt550m9,/obj/item/ammo_box/magazine/wt550m9,/turf/open/floor/plasteel/mono/dark,/area/ship/security/armory)
+"cW" = (/obj/structure/closet/secure_closet/tac,/obj/item/clothing/suit/armor/vest/marine/medium,/obj/item/clothing/head/helmet/marine,/obj/item/gun/energy/e_gun/stun,/obj/item/clothing/under/solgov/elite,/obj/item/clothing/accessory/holster/marine,/obj/item/gps,/obj/machinery/light{dir = 4},/obj/item/storage/belt/military,/obj/item/clothing/suit/space/hardsuit/solgov,/obj/item/gun/ballistic/automatic/pistol/m1911,/obj/item/ammo_box/magazine/m45,/obj/item/ammo_box/magazine/m45,/obj/item/ammo_box/c45,/obj/item/ammo_box/magazine/wt550m9,/obj/item/ammo_box/magazine/wt550m9,/turf/open/floor/plasteel/mono/dark,/area/ship/security/armory)
 "cX" = (/obj/machinery/computer/security{icon_state = "computer"; dir = 4},/obj/machinery/light{dir = 8},/turf/open/floor/plasteel/mono/dark,/area/ship/bridge)
 "cY" = (/obj/structure/chair/comfy/shuttle{icon_state = "shuttle_chair"; dir = 8},/turf/open/floor/plasteel/dark,/area/ship/bridge)
 "cZ" = (/obj/structure/closet/secure_closet/miningcloset,/obj/item/gps/mining,/obj/item/pickaxe/mini,/obj/item/radio/headset/headset_cargo/mining,/obj/item/storage/backpack/duffelbag/mining_conscript,/obj/item/storage/belt/mining,/obj/item/storage/firstaid/brute,/obj/item/t_scanner/adv_mining_scanner/lesser,/obj/item/clothing/glasses/meson,/obj/item/storage/bag/ore,/turf/open/floor/plating,/area/ship/cargo)
 "da" = (/obj/structure/cable{icon_state = "1-2"},/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,/obj/machinery/light{dir = 8},/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,/turf/open/floor/plating,/area/ship/cargo)
 "db" = (/obj/structure/chair/comfy/shuttle{desc = "STOP! YOU'RE GOING TO TEST THIS SHIP RIGHT INTO AN ICEBERG!"; dir = 4; name = "Helmsman"},/turf/open/floor/plasteel/dark,/area/ship/bridge)
-"dc" = (/obj/machinery/computer/helm{dir = 8},/obj/item/radio/intercom/wideband{pixel_x = -8; pixel_y = 24; pixel_x = 0; pixel_y = 0},/obj/item/radio/intercom{pixel_x = 10; pixel_y = 20; pixel_x = 0; pixel_y = 0},/turf/open/floor/plasteel/mono/dark,/area/ship/bridge)
+"dc" = (/obj/machinery/computer/helm{dir = 8},/obj/item/radio/intercom/wideband{pixel_x = -9; pixel_y = 26},/obj/item/radio/intercom{pixel_x = 9; pixel_y = 27},/turf/open/floor/plasteel/mono/dark,/area/ship/bridge)
 "dd" = (/obj/structure/cable{icon_state = "1-2"},/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer4,/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{dir = 6},/turf/open/floor/plasteel/dark,/area/ship/science/robotics)
 "de" = (/obj/machinery/computer/mech_bay_power_console{icon_state = "computer"; dir = 4},/obj/machinery/light{dir = 8},/turf/open/floor/plasteel/tech/grid,/area/ship/science/robotics)
 "df" = (/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{icon_state = "scrub_map_on-4"; dir = 8},/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{dir = 9},/turf/open/floor/plasteel/dark,/area/ship/science/robotics)
@@ -174,7 +174,7 @@
 "dr" = (/obj/machinery/blackbox_recorder,/obj/machinery/light{dir = 4},/turf/open/floor/plasteel/mono/dark,/area/ship/bridge)
 "ds" = (/obj/structure/cable{icon_state = "1-2"},/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer4,/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,/turf/open/floor/plasteel/dark,/area/ship/science/robotics)
 "dt" = (/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{icon_state = "manifold-4"; dir = 1},/obj/machinery/airalarm/directional/north,/turf/open/floor/plating,/area/ship/cargo)
-"du" = (/obj/item/clothing/suit/armor/vest/lieutenant,/obj/item/clothing/head/caphat/nt{name = "Lietenant hat"},/obj/item/clothing/under/rank/security/constable,/obj/item/clothing/under/solgov/formal,/obj/item/clothing/accessory/holster/lieutenant,/obj/item/clothing/accessory/medal/gold/heroism,/obj/item/gps,/obj/item/gun/ballistic/automatic/pistol/commander,/obj/item/reagent_containers/food/drinks/bottle/grappa,/obj/item/storage/belt/security,/obj/item/ammo_box/c10mm,/obj/item/ammo_box/c10mm,/obj/structure/closet/wall/blue{pixel_y = 31; pixel_y = 0},/turf/open/floor/plasteel/dark,/area/ship/bridge)
+"du" = (/obj/structure/closet,/obj/item/clothing/glasses/welding,/obj/item/clothing/glasses/welding,/obj/item/clothing/glasses/welding,/obj/item/clothing/glasses/welding,/obj/item/storage/belt/military,/obj/item/storage/belt/military,/obj/item/storage/belt/military,/obj/item/storage/belt/military,/obj/item/weldingtool/hugetank,/obj/item/weldingtool/hugetank,/obj/item/weldingtool/hugetank,/obj/item/weldingtool/hugetank,/obj/item/ammo_box/c45,/obj/item/ammo_box/c45,/obj/item/gun/ballistic/automatic/pistol/m1911,/obj/item/gun/ballistic/automatic/pistol/m1911,/obj/item/ammo_box/magazine/m45,/obj/item/ammo_box/magazine/m45,/obj/item/ammo_box/magazine/m45,/obj/item/ammo_box/magazine/m45,/turf/open/floor/plasteel/dark,/area/ship/science/robotics)
 "dv" = (/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{icon_state = "pipe11-4"; dir = 4},/obj/machinery/mineral/ore_redemption{icon_state = "ore_redemption"; dir = 4},/turf/open/floor/plating,/area/ship/cargo)
 "dw" = (/obj/machinery/door/airlock/external/glass,/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,/obj/docking_port/mobile{icon_state = "pinonclose"; dir = 2},/turf/open/floor/plasteel/mono/dark,/area/ship/cargo)
 "dx" = (/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{icon_state = "vent_map_on-2"; dir = 4},/turf/open/floor/plasteel/tech/techmaint,/area/ship/science/robotics)
@@ -213,7 +213,7 @@
 "ee" = (/obj/effect/landmark/start/assistant,/turf/open/floor/plasteel/tech/grid,/area/ship/science/robotics)
 "ef" = (/obj/effect/landmark/start/lieutenant,/obj/machinery/holopad/emergency,/turf/open/floor/plasteel/dark,/area/ship/bridge)
 "eg" = (/obj/structure/cable{icon_state = "2-4"},/obj/structure/cable{icon_state = "1-2"},/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer2,/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,/obj/machinery/holopad/emergency,/turf/open/floor/plasteel/tech/techmaint,/area/ship/science/robotics)
-"eh" = (/obj/machinery/atmospherics/components/unary/outlet_injector/on/layer4{icon_state = "inje_map-4"; dir = 4},/obj/structure/sign/solgov_seal{pixel_y = 0},/turf/open/floor/engine/hull,/area/ship/cargo)
+"eh" = (/obj/machinery/light/small{icon_state = "bulb"; dir = 8},/turf/open/floor/wood/walnut,/area/ship/crew)
 "ei" = (/obj/structure/window/plasma/reinforced{icon_state = "plasmarwindow"; dir = 1},/obj/structure/window/plasma/reinforced{icon_state = "plasmarwindow"; dir = 8},/turf/open/floor/engine/air,/area/ship/engineering)
 "ej" = (/obj/structure/railing{dir = 8},/obj/structure/railing/corner{icon_state = "railing_corner"; dir = 4},/obj/structure/railing/corner,/obj/structure/cable{icon_state = "1-2"},/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer2,/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,/turf/open/floor/plating/catwalk_floor,/area/ship/engineering)
 "ek" = (/obj/structure/window/plasma/reinforced{icon_state = "plasmarwindow"; dir = 4},/obj/structure/window/plasma/reinforced{icon_state = "plasmarwindow"; dir = 1},/turf/open/floor/engine/air,/area/ship/engineering)
@@ -223,7 +223,6 @@
 "eo" = (/obj/machinery/light{dir = 8},/obj/machinery/atmospherics/components/unary/portables_connector/visible/layer2{icon_state = "connector_map-2"; dir = 4},/turf/open/floor/plating,/area/ship/engineering)
 "ep" = (/obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{icon_state = "pipe11-2"; dir = 4},/turf/open/floor/plating,/area/ship/engineering)
 "eq" = (/obj/structure/railing{icon_state = "railing"; dir = 4},/obj/structure/railing/corner{icon_state = "railing_corner"; dir = 1},/obj/structure/railing/corner{icon_state = "railing_corner"; dir = 8},/obj/structure/cable{icon_state = "1-2"},/obj/machinery/atmospherics/pipe/manifold/supply/visible/layer2{icon_state = "manifold-2"; dir = 4},/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,/turf/open/floor/plating/catwalk_floor,/area/ship/engineering)
-"er" = (/obj/structure/closet,/obj/item/clothing/glasses/welding,/obj/item/clothing/glasses/welding,/obj/item/clothing/glasses/welding,/obj/item/clothing/glasses/welding,/obj/item/storage/belt/military,/obj/item/storage/belt/military,/obj/item/storage/belt/military,/obj/item/storage/belt/military,/obj/item/weldingtool/hugetank,/obj/item/weldingtool/hugetank,/obj/item/weldingtool/hugetank,/obj/item/weldingtool/hugetank,/obj/item/ammo_box/c45,/obj/item/ammo_box/c45,/obj/item/ammo_box/c45,/obj/item/ammo_box/c45,/obj/item/gun/ballistic/automatic/pistol/m1911,/obj/item/gun/ballistic/automatic/pistol/m1911,/obj/item/gun/ballistic/automatic/pistol/m1911,/obj/item/gun/ballistic/automatic/pistol/m1911,/obj/item/ammo_box/magazine/m45,/obj/item/ammo_box/magazine/m45,/obj/item/ammo_box/magazine/m45,/obj/item/ammo_box/magazine/m45,/turf/open/floor/plasteel/dark,/area/ship/science/robotics)
 "es" = (/obj/structure/closet/secure_closet/engineering_personal,/obj/item/clothing/accessory/armband/engine,/obj/item/clothing/glasses/meson/engine,/obj/item/clothing/head/helmet/marine/engineer,/obj/item/clothing/under/rank/engineering/engineer/maintenance_tech,/obj/item/clothing/under/rank/engineering/engineer/maintenance_tech/skirt,/obj/item/holosign_creator/engineering,/obj/item/storage/backpack/duffelbag/engineering,/obj/item/pipe_dispenser,/obj/item/storage/belt/utility/full/engi,/obj/item/storage/belt/utility/full/engi,/obj/item/weldingtool/hugetank,/turf/open/floor/pod,/area/ship/engineering)
 "et" = (/obj/structure/railing{icon_state = "railing"; dir = 4},/obj/machinery/rnd/production/protolathe/department/engineering,/turf/open/floor/pod,/area/ship/engineering)
 "eu" = (/obj/structure/window/plasma/reinforced{icon_state = "plasmarwindow"; dir = 4},/obj/structure/window/plasma/reinforced,/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{icon_state = "scrub_map_on-2"; dir = 4},/turf/open/floor/engine/air,/area/ship/engineering)
@@ -262,7 +261,6 @@
 "fb" = (/obj/structure/cable{icon_state = "2-8"},/obj/structure/cable{icon_state = "1-2"},/obj/structure/cable{icon_state = "2-4"},/turf/open/floor/plating,/area/ship/engineering)
 "fc" = (/obj/machinery/power/apc/auto_name/south,/obj/structure/cable,/obj/structure/cable{icon_state = "1-4"},/turf/open/floor/plating,/area/ship/engineering)
 "fd" = (/obj/machinery/airalarm/directional/south,/obj/machinery/power/terminal{dir = 4},/obj/structure/cable{icon_state = "0-8"},/turf/open/floor/plating,/area/ship/engineering)
-"fe" = (/obj/machinery/atmospherics/components/unary/outlet_injector/on/layer4{icon_state = "inje_map-4"; dir = 8},/obj/structure/sign/solgov_seal,/turf/open/floor/engine/hull,/area/ship/cargo)
 "ff" = (/obj/machinery/power/terminal{dir = 8},/obj/structure/cable{icon_state = "0-4"},/obj/machinery/firealarm{pixel_x = 0; pixel_y = -28},/turf/open/floor/plating,/area/ship/engineering)
 "fg" = (/obj/structure/closet/firecloset/full,/turf/open/floor/wood,/area/ship/crew/canteen)
 "fh" = (/obj/structure/cable{icon_state = "1-4"},/obj/structure/closet/firecloset/full,/turf/open/floor/plasteel/dark,/area/ship/bridge)
@@ -270,37 +268,37 @@
 "fj" = (/obj/machinery/holopad,/turf/open/floor/plating,/area/ship/engineering)
 "fk" = (/obj/machinery/smartfridge/chemistry/preloaded{pixel_x = 0},/turf/closed/wall/mineral/plastitanium/nodiagonal,/area/ship/medical)
 "fl" = (/obj/machinery/status_display{pixel_y = -3},/turf/closed/wall/mineral/plastitanium/nodiagonal,/area/ship/medical)
+"fm" = (/obj/structure/cable,/obj/machinery/light{dir = 8},/obj/machinery/power/port_gen/pacman/super,/obj/item/stack/sheet/mineral/uranium/twenty,/turf/open/floor/plating,/area/ship/engineering)
 "fn" = (/obj/effect/turf_decal/rechargefloor,/turf/closed/wall/mineral/plastitanium/nodiagonal,/area/ship/science/robotics)
 "fo" = (/turf/closed/wall/mineral/plastitanium/nodiagonal,/area/ship/bridge)
 "fp" = (/turf/closed/wall/mineral/plastitanium/nodiagonal,/area/ship/engineering)
 "fq" = (/obj/structure/sign/poster/official/build{pixel_y = 0},/turf/closed/wall/mineral/plastitanium/nodiagonal,/area/ship/engineering)
 "fr" = (/obj/machinery/door/firedoor,/obj/machinery/door/airlock/grunge,/obj/structure/cable{icon_state = "1-2"},/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,/turf/open/floor/plasteel/mono/dark,/area/ship/engineering)
-"fs" = (/obj/machinery/power/port_gen/pacman,/obj/structure/cable,/obj/machinery/light{dir = 8},/obj/item/stack/sheet/mineral/plasma/fifty,/turf/open/floor/plating,/area/ship/engineering)
 
 (1,1,1) = {"
-aaaaaaaaaaaaaaaaadabababababafababababababanananalaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaadabababababafababababababanananataaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaagasasasababababacaeaoapaqararavabakaEambxbxbxataaaaaaaaaaaaaaaaaa
 aaaaaaagagahawasaxayazaAaBaBaCaDaGaOaBaFabaMaNaTbxaHaIbxbxbxataaaaaaaaaaaa
-aaaaagagauaJaKasaLaSaPabaQaRbaaDaUbNbSaVabanbbanbxaWaXaYbicfbxbHaaaaaaaaaa
+aaaaagagauaJaKasaLaSaPabaQaRbaaDaUbNbSaVabanbbanbxaWaXaYbicfbxbxaaaaaaaaaa
 aaagagaZbcbdbdbfbgbebgbhbjbkciblbmbmbgbgbhbneTbobwbybGbIbpbqbrbxcJbsaaaaaa
 aaasbubvbKaJdGdTdTbQdTdTaQbzbabAbBbCbDabenbFbTenfkbqbJcbbLbqbMbxbRcJbsaaaa
 ajasbObPcdaJcndTcacjbUdTbVbVbWbAbXbYbZenccceckcgencychclcmctcucHcKcZcJbsaa
-ascobtcqcrcscodTcDcPcvdTcwcxfgczbXcAcBencCdycEcFenbxflbxcQbxbxbxdadUcMcJcI
-fncNdldddfcpcRdTcScTcUdTabababababababencVdWdWcWencXcYdudpdbdcfodqcJcJcJcJ
-asdecOdsdgcpdhdTdidjdkdTaiaaaaaaaaaaaabEendmdmenendndodXdMefdrfodSdtdveXcJ
-asdBdxegdzdAdHdTdCdCdDdDaaaaaaaaaaaaaaaaaiaaaaaicGdEdEdFfhdNdIfodJdKcLeMcJ
+ascobtcqcrcscodTcDcPcvdTcwcxfgczbXcAcBencCdycEcFenbxflbxcQbxbxbxdadUcMcJcJ
+fncNdldddfcpcRdTcScTcUdTabababababababencVdWdWcWencXcYcIdpdbdcfodqcJcJcJcJ
+asdecOdsdgcpdhdTdidjdkdTaaaaaaaaaaaaaabEendmdmenendndodXdMefdrfodSdtdveXcJ
+asdBdxegdzdAdHdTehdCdDdDaaaaaaaaaaaaaaaaaiaaaaaicGdEdEdFfhdNdIfodJdKcLeMcJ
 asdecpeUaJcpdhdTdDdDdDaaaaaaaaaaaaaaaaaaaaaaaaaaaaaadEdEdEfofofoePePeYdLcJ
 asdOcpeUaJeedOasaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabscJcJcJdPcJ
-asdQbteUerbtdQasaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabscJeWcJ
+asdQbteUdubtdQasaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabscJeWcJ
 fpfpfpfrfqfpfpfpdRaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaacJdwcJ
-fpeiekdYdZdZeaebecedaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaehdVfe
+fpeiekdYdZdZeaebecedaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaldVbH
 fpeleuejevezemeFecedaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 fpeoepeqesfieteFecedaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 fpeieAewexexeyeGfpfpaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 fpeleVeBeCeDeEeReSecedaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 fpfpeHeIfjeJeKeZfaecedaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aafpfpeLffeNeOfbfaecedaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaifpfpfpfseQfcfdecedaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaifpfpfpfmeQfcfdecedaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaadRfpfpfpfpdRaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 "}

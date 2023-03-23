@@ -4,19 +4,25 @@ $background-color: rgba(0, 0, 0, 0.33) !default;
 
 .CameraConsole__left {
   position: absolute;
-  top: 0;
+  top: 16px;
   bottom: 0;
   left: 0;
   width: base.em(220px);
+  &_long {
+    width: base.em(620px);
+  }
 }
 
 .CameraConsole__right {
   position: absolute;
-  top: 0;
+  top: 28px;
   bottom: 0;
   left: base.em(220px);
   right: 0;
   background-color: $background-color;
+  &_short {
+    left: base.em(620px);
+  }
 }
 
 .CameraConsole__toolbar {
@@ -27,6 +33,13 @@ $background-color: rgba(0, 0, 0, 0.33) !default;
   height: 2em;
   line-height: 2em;
   margin: 0.25em 1em 0;
+}
+
+.CameraConsole__header {
+  display: flex;
+  height: 24px;
+  line-height: 24px;
+  margin: 4px 6px 0;
 }
 
 .CameraConsole__toolbarRight {

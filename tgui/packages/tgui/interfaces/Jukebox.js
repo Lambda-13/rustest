@@ -17,7 +17,7 @@ export const Jukebox = (props, context) => {
   const { active, track_selected, track_length, track_beat, volume } = data;
   const songs = flow([sortBy((song) => song.name)])(data.songs || []);
   return (
-    <Window width={370} height={313}>
+    <Window width={410} height={313} theme="scarlet">
       <Window.Content>
         <Section
           title="Song Player"
@@ -45,12 +45,12 @@ export const Jukebox = (props, context) => {
                 }
               />
             </LabeledList.Item>
-            <LabeledList.Item label="Track Length">
-              {track_selected ? track_length : 'No Track Selected'}
+            <LabeledList.Item label="Продолжительность">
+              {track_selected ? track_length : 'Трек не выбран'}
             </LabeledList.Item>
-            <LabeledList.Item label="Track Beat">
-              {track_selected ? track_beat : 'No Track Selected'}
-              {track_beat === 1 ? ' beat' : ' beats'}
+            <LabeledList.Item label="Ударов">
+              {track_selected ? track_beat : 'Трек не выбран'}
+              {track_beat === 1 ? ' бит' : ' битов'}
             </LabeledList.Item>
           </LabeledList>
         </Section>

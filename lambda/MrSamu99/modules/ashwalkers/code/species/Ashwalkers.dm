@@ -65,7 +65,10 @@
 	var/datum/species/species_target = human_target.dna.species
 	switch(current_stage)
 		if(1)
-			ADD_TRAIT(human_target, TRAIT_ASHSTORM_IMMUNE, REF(src))
+			//ADD_TRAIT(human_target, TRAIT_ASHSTORM_IMMUNE, REF(src))
+			human_target.weather_immunities |= "ash"
+			human_target.weather_immunities |= "snow"
+			human_target.weather_immunities |= "sand"
 			to_chat(human_target, span_notice("The biting wind seems to sting less..."))
 		if(2)
 			species_target.armor += 10
@@ -84,7 +87,8 @@
 			to_chat(human_target, span_notice("Your arms seem denser..."))*/
 			human_target.dna.add_mutation(STRONG)
 		if(4)
-			ADD_TRAIT(human_target, LAVA_PROOF, REF(src))
+			//ADD_TRAIT(human_target, LAVA_PROOF, REF(src)) Переводим на легаси вариант
+			human_target.weather_immunities |= "lava"
 			to_chat(human_target, span_notice("Your body feels hotter..."))
 		if(5)
 			human_target.dna.add_mutation(FIREBREATH)

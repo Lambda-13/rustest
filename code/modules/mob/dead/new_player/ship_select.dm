@@ -1,4 +1,4 @@
-#define BUY_MINIMUM_AGE 14
+#define BUY_MINIMUM_AGE 3
 
 /datum/ship_select
 
@@ -71,6 +71,10 @@
 				to_chat(spawnee, "<span class='danger'>Тебе ещё рано иметь лицензию на владение кораблём, возращайся к покупке через [BUY_MINIMUM_AGE - spawnee.client.player_age] дней.</span>")
 				spawnee.new_player_panel()
 				return
+			if(!GLOB.buy_ship_allowed)
+				to_chat(spawnee, "<span class='danger'>Новые суда запрещено покупать.</span>")
+				spawnee.new_player_panel()
+				return
 			var/datum/map_template/shuttle/template = SSmapping.ship_purchase_list[params["name"]]
 			if(!template.enabled)
 				to_chat(spawnee, "<span class='danger'>Этот корабль нельзя купить!</span>")
@@ -89,6 +93,7 @@
 
 /datum/ship_select/ui_static_data(mob/user)
 	. = list()
+	.["BuyNewShip"] = GLOB.buy_ship_allowed
 	.["ships"] = list()
 	for(var/datum/overmap/ship/controlled/S as anything in SSovermap.controlled_ships)
 		if(!S.is_join_option())

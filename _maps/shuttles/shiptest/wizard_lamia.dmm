@@ -2161,17 +2161,17 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/item/stack/spacecash/c1000,
-/obj/item/stack/spacecash/c1000,
-/obj/item/stack/spacecash/c1000,
+/obj/item/spacecash/bundle/c1000,
+/obj/item/spacecash/bundle/c1000,
+/obj/item/spacecash/bundle/c1000,
 /obj/item/antag_spawner/contract,
 /obj/item/antag_spawner/contract,
 /obj/item/gun/energy/e_gun/smg{
 	name = "staff of bombardment";
+	pixel_x = -5;
 	desc = "A powerful staff that required almost 100 assistant souls to create.";
 	icon = 'icons/obj/items_and_weapons.dmi';
 	icon_state = "godstaff-red";
-	pixel_x = -5;
 	lefthand_file = 'icons/mob/inhands/items_lefthand.dmi';
 	righthand_file = 'icons/mob/inhands/items_righthand.dmi'
 	},

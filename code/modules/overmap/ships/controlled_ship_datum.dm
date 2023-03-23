@@ -444,7 +444,9 @@
 		var/our_color = pick(key_colors)
 		add_atom_colour(key_colors[our_color], FIXED_COLOUR_PRIORITY)
 		update_icon()
-	name = "ship key ([master_ship.name])"
+	GLOB.poi_list |= src
+	name = "ключ от судна ([master_ship.name])"
+	START_PROCESSING(SSobj, src)
 
 /obj/item/key/ship/update_overlays()
 	. = ..()
@@ -457,6 +459,7 @@
 /obj/item/key/ship/Destroy()
 	master_ship.shipkey = null
 	master_ship = null
+	GLOB.poi_list -= src
 	return ..()
 
 /obj/item/key/ship/attack_self(mob/user)

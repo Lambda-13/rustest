@@ -9,11 +9,11 @@
 @use '../colors.scss' with (
   $primary: #00ff00,
   $fg-map-keys: (),
-  $bg-map-keys: ()
+  $bg-map-keys: (),
 );
 @use '../base.scss' with (
   $color-bg: #121b12,
-  $color-bg-grad-spread: 0%
+  $color-bg-grad-spread: 0%,
 );
 
 .theme-hackerman {
@@ -27,14 +27,6 @@
       'color-default': colors.$primary,
       'color-disabled': #4a6a4a,
       'color-selected': #00ff00
-    )
-  );
-  @include meta.load-css(
-    '../components/Tabs.scss',
-    $with: (
-      'color-default': colors.$primary,
-      'tab-color-selected': #00ff003f,
-      'text-color': #e7e7e7
     )
   );
   @include meta.load-css(

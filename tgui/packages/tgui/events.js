@@ -159,10 +159,9 @@ export class KeyEvent {
   }
 
   isModifierKey() {
-    // prettier-ignore
-    return this.code === KEY_CTRL
-      || this.code === KEY_SHIFT
-      || this.code === KEY_ALT;
+    return (
+      this.code === KEY_CTRL || this.code === KEY_SHIFT || this.code === KEY_ALT
+    );
   }
 
   isDown() {

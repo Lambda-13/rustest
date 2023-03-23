@@ -48,6 +48,9 @@
 /area/ship/bridge)
 "r" = (
 /obj/item/areaeditor/shuttle,
+/obj/item/radio/intercom/wideband{
+	pixel_y = 20
+	},
 /turf/open/floor/carpet/executive,
 /area/ship/bridge)
 "s" = (
@@ -87,9 +90,7 @@
 /obj/machinery/cryopod{
 	dir = 4
 	},
-/turf/open/floor/plasteel{
-	icon_state = "steel"
-	},
+/turf/open/floor/carpet/executive,
 /area/ship/bridge)
 "z" = (
 /obj/machinery/mineral/ore_redemption{
@@ -102,9 +103,7 @@
 /obj/machinery/door/window{
 	dir = 8
 	},
-/turf/open/floor/plasteel{
-	icon_state = "steel"
-	},
+/turf/open/floor/carpet/executive,
 /area/ship/bridge)
 "B" = (
 /obj/effect/turf_decal/box/white,
@@ -115,9 +114,7 @@
 	pixel_x = -32
 	},
 /obj/machinery/suit_storage_unit/security,
-/turf/open/floor/plasteel{
-	icon_state = "steel"
-	},
+/turf/open/floor/carpet/executive,
 /area/ship/bridge)
 "C" = (
 /obj/machinery/power/apc/auto_name/east,
@@ -133,14 +130,16 @@
 /obj/item/reagent_containers/glass/bucket,
 /obj/item/mop,
 /obj/structure/reagent_dispensers/watertank,
+/obj/item/radio/intercom{
+	dir = 8;
+	pixel_x = 37
+	},
 /turf/open/floor/carpet/executive,
 /area/ship/bridge)
 "D" = (
 /obj/effect/turf_decal/box/white,
 /obj/machinery/suit_storage_unit/security,
-/turf/open/floor/plasteel{
-	icon_state = "steel"
-	},
+/turf/open/floor/carpet/executive,
 /area/ship/bridge)
 "F" = (
 /obj/structure/cable{
@@ -162,9 +161,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plasteel{
-	icon_state = "steel"
-	},
+/turf/open/floor/carpet/executive,
 /area/ship/bridge)
 "K" = (
 /obj/structure/sign/nanotrasen,
@@ -188,9 +185,7 @@
 "O" = (
 /obj/machinery/power/smes/engineering,
 /obj/structure/cable,
-/turf/open/floor/plasteel{
-	icon_state = "steel"
-	},
+/turf/open/floor/carpet/executive,
 /area/ship/bridge)
 "P" = (
 /obj/structure/closet/crate/engineering,

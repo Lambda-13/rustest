@@ -49,6 +49,7 @@ export const ShipSelect = (props, context) => {
             buttons={
               <Button
                 content="Купить судно"
+                disabled={!BuyNewShip}
                 onClick={() => {
                   setTab(3);
                 }}
@@ -93,6 +94,9 @@ export const ShipSelect = (props, context) => {
                 </LabeledList.Item>
                 <LabeledList.Item label="Статус">
                   {selectedShip.joinMode}
+                </LabeledList.Item>
+                <LabeledList.Item label="Описание">
+                  {selectedShip.desc || 'Нет описания'}
                 </LabeledList.Item>
                 <LabeledList.Item label="От капитана">
                   {selectedShip.memo || '-'}
@@ -165,6 +169,7 @@ export const ShipSelect = (props, context) => {
                 buttons={
                   <Button
                     content="Купить"
+                    disabled={!BuyNewShip}
                     onClick={() => {
                       act('buy', {
                         name: template.name,
@@ -175,7 +180,7 @@ export const ShipSelect = (props, context) => {
               >
                 <LabeledList>
                   <LabeledList.Item label="Описание">
-                    {template.description || 'Нет описания'}
+                    {template.desc || 'Нет описания'}
                   </LabeledList.Item>
                   <LabeledList.Item label="Кол-во экипажа">
                     {template.crewCount}

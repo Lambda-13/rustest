@@ -2,12 +2,11 @@
 	name = "Wishgranter Avatar"
 	show_in_antagpanel = FALSE
 	show_name_in_check_antagonists = TRUE
-	hijack_speed = 2 //You literally are here to do nothing else. Might as well be fast about it.
 
 /datum/antagonist/wishgranter/proc/forge_objectives()
-	var/datum/objective/hijack/hijack = new
-	hijack.owner = owner
-	objectives += hijack
+	var/datum/objective/assassinate/secondary = new
+	secondary.owner = owner
+	objectives += secondary
 
 /datum/antagonist/wishgranter/on_gain()
 	owner.special_role = "Avatar of the Wish Granter"

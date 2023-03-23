@@ -14,7 +14,7 @@ Also with some tweaks done to read environment variables, like database config a
 ## Quickstart:
 
 1. Open a terminal (bash,powershell,cmd,whatever)
-2. Clone [the Shiptest repository](https://github.com/shiptest-ss13/Shiptest) ( CLI: `git clone https://github.com/shiptest-ss13/Shiptest`)
+2. Clone [the Shiptest repository](https://github.com/Lambda-13/rustest) ( CLI: `git clone https://github.com/Lambda-13/rustest`)
 3. Enter this directory (`cd Shiptest/tools/DockerTestServer`)
 4. Make a copy of the `example.env` file and call it `.env` (`cp example.env .env`)
 5. Edit the values in `.env` (the content and commented out sections, seriously, read it)

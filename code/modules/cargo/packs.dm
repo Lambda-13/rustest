@@ -1,3 +1,7 @@
+#define COST_MIN 1
+#define COST_MED 1.5
+#define COST_HIGH 2
+
 /datum/supply_pack
 	var/name = "Crate"
 	var/group = "Другое"

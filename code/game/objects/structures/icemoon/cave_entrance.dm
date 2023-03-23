@@ -107,7 +107,7 @@ GLOBAL_LIST_INIT(ore_probability, list(
 
 /obj/structure/spawner/ice_moon/demonic_portal/Initialize()
 	. = ..()
-	AddComponent(/datum/component/gps, "Netheric Signal")
+	AddComponent(/datum/component/gps, "Демонический сигнал")
 
 /obj/structure/spawner/ice_moon/demonic_portal/destroy_effect()
 	new /obj/effect/collapsing_demonic_portal(loc)
@@ -612,8 +612,8 @@ GLOBAL_LIST_INIT(ore_probability, list(
 			playsound(loc,'sound/lavaland/cursed_slot_machine_jackpot.ogg', 150, FALSE, 50, TRUE, TRUE)
 			new /obj/structure/cursed_slot_machine(loc)
 			if(prob(35))
-				new /obj/item/stack/spacecash/c1000(loc)
-				new /obj/item/stack/spacecash/c1000(loc)
+				new /obj/item/spacecash/bundle/mediumrand(loc)
+				new /obj/item/spacecash/bundle/mediumrand(loc)
 				new /obj/item/coin/gold(loc)
 				new /mob/living/simple_animal/hostile/faithless(loc)
 			if(prob(35))

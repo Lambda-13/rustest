@@ -195,10 +195,7 @@ export class Changelog extends Component {
           {'Current project maintainers can be found '}
           <a href="https://github.com/shiptest-ss13?tab=members">here</a>
           {', recent GitHub contributors can be found '}
-          <a href="https://github.com/shiptest-ss13/Shiptest/pulse/monthly">
-            here
-          </a>
-          .
+          <a href="https://github.com/Lambda-13/rustest/pulse/monthly">here</a>.
         </p>
         <p>
           {'You can also join our discord '}
