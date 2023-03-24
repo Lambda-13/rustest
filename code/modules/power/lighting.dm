@@ -84,7 +84,7 @@
 		else
 			. += "The casing has no power cell for backup power."
 	else
-		. += "<span class='danger'>This casing doesn't support power cells for backup power.</span>"
+		. += "<hr><span class='danger'>This casing doesn't support power cells for backup power.</span>"
 
 /obj/structure/light_construct/attack_hand(mob/user)
 	if(cell)
@@ -108,7 +108,7 @@
 			to_chat(user, "<span class='warning'>This [name] can't support a power cell!</span>")
 			return
 		if(HAS_TRAIT(W, TRAIT_NODROP))
-			to_chat(user, "<span class='warning'>[W] is stuck to your hand!</span>")
+			to_chat(user, "<span class='warning'>[W] прилип к рукеr hand!</span>")
 			return
 		if(cell)
 			to_chat(user, "<span class='warning'>There is a power cell already installed!</span>")
@@ -533,7 +533,7 @@
 				"<span class='notice'>You open [src]'s casing.</span>", "<span class='hear'>You hear a noise.</span>")
 			deconstruct()
 		else
-			to_chat(user, "<span class='userdanger'>You stick \the [W] into the light socket!</span>")
+			to_chat(user, "<span class='userdanger'>You stick [W] into the light socket!</span>")
 			if(has_power() && (W.flags_1 & CONDUCT_1))
 				do_sparks(3, TRUE, src)
 				if (prob(75))
@@ -820,10 +820,10 @@
 
 /obj/item/light/suicide_act(mob/living/carbon/user)
 	if (status == LIGHT_BROKEN)
-		user.visible_message("<span class='suicide'>[user] begins to stab [user.p_them()]self with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+		user.visible_message("<span class='suicide'>[user] begins to stab [user.p_them()]self with [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 		return BRUTELOSS
 	else
-		user.visible_message("<span class='suicide'>[user] begins to eat \the [src]! It looks like [user.p_theyre()] not very bright!</span>")
+		user.visible_message("<span class='suicide'>[user] begins to eat [src]! It looks like [user.p_theyre()] not very bright!</span>")
 		shatter()
 		return BRUTELOSS
 
@@ -898,7 +898,7 @@
 	if(istype(I, /obj/item/reagent_containers/syringe))
 		var/obj/item/reagent_containers/syringe/S = I
 
-		to_chat(user, "<span class='notice'>You inject the solution into \the [src].</span>")
+		to_chat(user, "<span class='notice'>You inject the solution into [src].</span>")
 
 		if(S.reagents.has_reagent(/datum/reagent/toxin/plasma, 5))
 

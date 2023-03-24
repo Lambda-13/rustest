@@ -51,7 +51,7 @@
 /obj/structure/AIcore/latejoin_inactive/examine(mob/user)
 	. = ..()
 	. += "Its transmitter seems to be <b>[active? "on" : "off"]</b>."
-	. += "<span class='notice'>You could [active? "deactivate" : "activate"] it with a multitool.</span>"
+	. += "<hr><span class='notice'>You could [active? "deactivate" : "activate"] it with a multitool.</span>"
 
 /obj/structure/AIcore/latejoin_inactive/proc/is_available()			//If people still manage to use this feature to spawn-kill AI latejoins ahelp them.
 	if(!available)
@@ -75,7 +75,7 @@
 /obj/structure/AIcore/latejoin_inactive/attackby(obj/item/P, mob/user, params)
 	if(P.tool_behaviour == TOOL_MULTITOOL)
 		active = !active
-		to_chat(user, "<span class='notice'>You [active? "activate" : "deactivate"] \the [src]'s transmitters.</span>")
+		to_chat(user, "<span class='notice'>You [active? "activate" : "deactivate"] [src]'s transmitters.</span>")
 		return
 	return ..()
 

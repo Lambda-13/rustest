@@ -221,7 +221,7 @@ GLOBAL_VAR_INIT(dynamic_forced_threat_level, -1)
 			. += "<b>Contested System</b></center><BR>"
 			. += "Your station's orbit passes along the edge of Nanotrasen's sphere of influence. While subversive elements remain the most likely threat against your station, hostile organizations are bolder here, where our grip is weaker. Exercise increased caution against elite Syndicate strike forces, or Executives forbid, some kind of ill-conceived unionizing attempt."
 		if(66 to 79)
-			. += "<b>Uncharted Space</b></center><BR>"
+			. += "<b>неизведанный космос</b></center><BR>"
 			. += "Congratulations and thank you for participating in the NT 'Frontier' space program! Your station is actively orbiting a high value system far from the nearest support stations. Little is known about your region of space, and the opportunity to encounter the unknown invites greater glory. You are encouraged to elevate security as necessary to protect Nanotrasen assets."
 		if(80 to 99)
 			. += "<b>Black Orbit</b></center><BR>"

@@ -51,7 +51,7 @@
 
 /obj/item/mechcomp/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>It is <i>[!anchored ? "un":""]anchored</i>. To <i>[anchored ? "un":""]anchor</i> it, <b>click</b> on it with a <b>wrench</b> while on</span> <span class='alert'>harm</span> <span class='notice'>intent.</span><br>"
+	. += "<hr><span class='notice'>It is <i>[!anchored ? "un":""]anchored</i>. To <i>[anchored ? "un":""]anchor</i> it, <b>click</b> on it with a <b>wrench</b> while on</span> <span class='alert'>harm</span> <span class='notice'>intent.</span><br>"
 	. += span_notice("<b>Click</b> on the component with a <b>C.U.M.</b> while on</span> <span class='alert'>harm</span> <span class='notice'>intent  to access it's properties, <b>drag-n-drop</b> the <i>anchored</i> component onto another <i>anchored</i> component while on</span> <span class='alert'>harm</span> <span class='notice'>intent to connect them.")
 	. += "<br>"
 

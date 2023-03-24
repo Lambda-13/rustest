@@ -609,7 +609,7 @@
 	. = !(state_open || panel_open || is_operational || locked || (flags_1 & NODECONSTRUCT_1)) && I.tool_behaviour == TOOL_CROWBAR
 	if(.)
 		I.play_tool_sound(src, 50)
-		visible_message("<span class='notice'>[usr] pries open \the [src].</span>", "<span class='notice'>You pry open \the [src].</span>")
+		visible_message("<span class='notice'>[usr] вскрывает [src].</span>", "<span class='notice'>Вскрываю [src].</span>")
 		open_machine()
 
 // Mapping helper unit takes whatever lies on top of it

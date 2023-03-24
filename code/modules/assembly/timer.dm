@@ -34,7 +34,7 @@
 
 /obj/item/assembly/timer/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>The timer is [timing ? "counting down from [time]":"set for [time] seconds"].</span>"
+	. += "<hr><span class='notice'>The timer is [timing ? "counting down from [time]":"set for [time] seconds"].</span>"
 
 /obj/item/assembly/timer/activate()
 	if(!..())

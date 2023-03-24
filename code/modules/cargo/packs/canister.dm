@@ -1,5 +1,5 @@
 /datum/supply_pack/canister
-	group = "Газ. канистры"
+	group = "Канистры"
 	crate_type = /obj/structure/closet/crate/large
 
 /*
@@ -82,11 +82,4 @@
 	cost = COST_HIGH * 25000
 	contains = list(/obj/machinery/portable_atmospherics/canister/nitryl)
 	crate_name = "ящик с канистрой нитрила"
-
-/datum/supply_pack/canister/fusion_test
-	name = "Канистра фужион теста"
-	desc = "Содержит самые опасные газы. Не покупай это."
-	cost = COST_HIGH * 2000000
-	contains = list(/obj/machinery/portable_atmospherics/canister/fusion_test)
-	crate_name = "ящик с канистрой фужион теста"
 

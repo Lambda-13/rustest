@@ -94,7 +94,7 @@
 /mob/living/proc/MobBump(mob/M)
 
 	SEND_SIGNAL(src, COMSIG_LIVING_MOB_BUMP, M)
-	
+
 	//Even if we don't push/swap places, we "touched" them, so spread fire
 	spreadFire(M)
 
@@ -973,7 +973,7 @@
 // Override if a certain type of mob should be behave differently when stripping items (can't, for example)
 /mob/living/stripPanelUnequip(obj/item/what, mob/who, where)
 	if(!what.canStrip(who))
-		to_chat(src, "<span class='warning'>You can't remove \the [what.name], it appears to be stuck!</span>")
+		to_chat(src, "<span class='warning'>You can't remove [what.name], it appears to be stuck!</span>")
 		return
 	who.visible_message("<span class='warning'>[src] tries to remove [who]'s [what.name].</span>", \
 					"<span class='userdanger'>[src] tries to remove your [what.name].</span>", null, null, src)
@@ -1002,7 +1002,7 @@
 /mob/living/stripPanelEquip(obj/item/what, mob/who, where)
 	what = src.get_active_held_item()
 	if(what && (HAS_TRAIT(what, TRAIT_NODROP)))
-		to_chat(src, "<span class='warning'>You can't put \the [what.name] on [who], it's stuck to your hand!</span>")
+		to_chat(src, "<span class='warning'>You can't put [what.name] on [who], it's stuck to your hand!</span>")
 		return
 	if(what)
 		var/list/where_list
@@ -1015,7 +1015,7 @@
 			final_where = where
 
 		if(!what.mob_can_equip(who, src, final_where, TRUE, TRUE))
-			to_chat(src, "<span class='warning'>\The [what.name] doesn't fit in that place!</span>")
+			to_chat(src, "<span class='warning'>[what.name] doesn't fit in that place!</span>")
 			return
 		if(istype(what,/obj/item/clothing))
 			var/obj/item/clothing/c = what
@@ -1898,7 +1898,7 @@
 /mob/living/proc/seizure()
 	set waitfor = 0
 	if(!IsParalyzed() && stat == CONSCIOUS)
-		visible_message("<span class='danger'>\The [src] starts having a seizure!</span>", "<span class='userdanger'>Your muscles spasm violently!</span>")
+		visible_message("<span class='danger'>[src] starts having a seizure!</span>", "<span class='userdanger'>Your muscles spasm violently!</span>")
 		var/howfuck = rand(8,16)
 		AdjustParalyzed(howfuck)
 		AdjustKnockdown(howfuck)

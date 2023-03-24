@@ -81,7 +81,7 @@ field_generator power level display
 			else
 				user.visible_message("<span class='notice'>[user] turns on [src].</span>", \
 					"<span class='notice'>You turn on [src].</span>", \
-					"<span class='hear'>You hear heavy droning.</span>")
+					"<span class='hear'>Слышу нарастающий гул.</span>")
 				turn_on()
 				investigate_log("<font color='green'>activated</font> by [key_name(user)].", INVESTIGATE_SINGULO)
 
@@ -100,7 +100,7 @@ field_generator power level display
 /obj/machinery/field/generator/can_be_unfasten_wrench(mob/user, silent)
 	if(active)
 		if(!silent)
-			to_chat(user, "<span class='warning'>Turn \the [src] off first!</span>")
+			to_chat(user, "<span class='warning'>Turn [src] off first!</span>")
 		return FAILED_UNFASTEN
 
 	else if(state == FG_WELDED)
@@ -137,8 +137,8 @@ field_generator power level display
 			if(!I.tool_start_check(user, amount=0))
 				return TRUE
 			user.visible_message("<span class='notice'>[user] starts to weld [src] to the floor.</span>", \
-				"<span class='notice'>You start to weld \the [src] to the floor...</span>", \
-				"<span class='hear'>You hear welding.</span>")
+				"<span class='notice'>You start to weld [src] to the floor...</span>", \
+				"<span class='hear'>Слышу сварку.</span>")
 			if(I.use_tool(src, user, 20, volume=50) && state == FG_SECURED)
 				state = FG_WELDED
 				to_chat(user, "<span class='notice'>You weld the field generator to the floor.</span>")
@@ -147,11 +147,11 @@ field_generator power level display
 			if(!I.tool_start_check(user, amount=0))
 				return TRUE
 			user.visible_message("<span class='notice'>[user] starts to cut [src] free from the floor.</span>", \
-				"<span class='notice'>You start to cut \the [src] free from the floor...</span>", \
-				"<span class='hear'>You hear welding.</span>")
+				"<span class='notice'>You start to cut [src] free from the floor...</span>", \
+				"<span class='hear'>Слышу сварку.</span>")
 			if(I.use_tool(src, user, 20, volume=50) && state == FG_WELDED)
 				state = FG_SECURED
-				to_chat(user, "<span class='notice'>You cut \the [src] free from the floor.</span>")
+				to_chat(user, "<span class='notice'>You cut [src] free from the floor.</span>")
 
 	return TRUE
 

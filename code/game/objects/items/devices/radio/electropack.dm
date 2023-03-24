@@ -43,7 +43,7 @@
 		A.icon = 'icons/obj/assemblies.dmi'
 
 		if(!user.transferItemToLoc(W, A))
-			to_chat(user, "<span class='warning'>[W] is stuck to your hand, you cannot attach it to [src]!</span>")
+			to_chat(user, "<span class='warning'>[W] прилип к рукеr hand, you cannot attach it to [src]!</span>")
 			return
 		W.master = A
 		A.part1 = W

@@ -91,7 +91,7 @@
 				return OXYLOSS
 
 	else
-		user.visible_message("<span class='suicide'>[user] begins beating [user.p_them()]self to death with \the [src]'s handle! It probably would've been cooler if [user.p_they()] turned it on first!</span>")
+		user.visible_message("<span class='suicide'>[user] begins beating [user.p_them()]self to death with [src]'s handle! It probably would've been cooler if [user.p_they()] turned it on first!</span>")
 	return BRUTELOSS
 
 /obj/item/dualsaber/Initialize()

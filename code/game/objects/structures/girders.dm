@@ -16,16 +16,16 @@
 	. = ..()
 	switch(state)
 		if(GIRDER_REINF)
-			. += "<span class='notice'>The support struts are <b>screwed</b> in place.</span>"
+			. += "<hr><span class='notice'>The support struts are <b>screwed</b> in place.</span>"
 		if(GIRDER_REINF_STRUTS)
-			. += "<span class='notice'>The support struts are <i>unscrewed</i> and the inner <b>grille</b> is intact.</span>"
+			. += "<hr><span class='notice'>The support struts are <i>unscrewed</i> and the inner <b>grille</b> is intact.</span>"
 		if(GIRDER_NORMAL)
 			if(can_displace)
-				. += "<span class='notice'>The bolts are <b>wrenched</b> in place.</span>"
+				. += "<hr><span class='notice'>The bolts are <b>wrenched</b> in place.</span>"
 		if(GIRDER_DISPLACED)
-			. += "<span class='notice'>The bolts are <i>loosened</i>, but the <b>screws</b> are holding [src] together.</span>"
+			. += "<hr><span class='notice'>The bolts are <i>loosened</i>, but the <b>screws</b> are holding [src] together.</span>"
 		if(GIRDER_DISASSEMBLED)
-			. += "<span class='notice'>[src] is disassembled! You probably shouldn't be able to see this examine message.</span>"
+			. += "<hr><span class='notice'>[src] is disassembled! You probably shouldn't be able to see this examine message.</span>"
 
 /obj/structure/girder/attackby(obj/item/W, mob/user, params)
 	var/platingmodifier = 1
@@ -217,7 +217,7 @@
 		if (P.pipe_type in list(0, 1, 5))	//simple pipes, simple bends, and simple manifolds.
 			if(!user.transferItemToLoc(P, drop_location()))
 				return
-			to_chat(user, "<span class='notice'>You fit the pipe into \the [src].</span>")
+			to_chat(user, "<span class='notice'>You fit the pipe into [src].</span>")
 	else
 		return ..()
 

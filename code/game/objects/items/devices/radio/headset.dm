@@ -30,7 +30,7 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	supports_variations = VOX_VARIATION
 
 /obj/item/radio/headset/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins putting \the [src]'s antenna up [user.p_their()] nose! It looks like [user.p_theyre()] trying to give [user.p_them()]self cancer!</span>")
+	user.visible_message("<span class='suicide'>[user] begins putting [src]'s antenna up [user.p_their()] nose! It looks like [user.p_theyre()] trying to give [user.p_them()]self cancer!</span>")
 	return TOXLOSS
 
 /obj/item/radio/headset/examine(mob/user)
@@ -47,12 +47,12 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 					avail_chans += "[MODE_TOKEN_DEPARTMENT] или [GLOB.channel_tokens[channels[i]]] для [lowertext(ru_comms(channels[i]))]"
 				else
 					avail_chans += "[GLOB.channel_tokens[channels[i]]] для [lowertext(channels[i])]"
-		. += "<span class='notice'>Дисплей показывает следующие частоты:\n[english_list(avail_chans)].</span>"
+		. += "<hr><span class='notice'>Дисплей показывает следующие частоты:\n[english_list(avail_chans)].</span>"
 
 		if(command)
-			. += "<span class='info'>Alt-клик для включения усилителя голоса.</span>"
+			. += "<hr><span class='info'>Alt-клик для включения усилителя голоса.</span>"
 	else
-		. += "<span class='notice'>Дисплей настолько маленький что отсюда я ничего не вижу.</span>"
+		. += "<hr><span class='notice'>Дисплей настолько маленький что отсюда я ничего не вижу.</span>"
 
 /obj/item/radio/headset/Initialize()
 	. = ..()

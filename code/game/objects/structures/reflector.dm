@@ -39,9 +39,9 @@
 		. += "It is set to [rotation_angle] degrees, and the rotation is [can_rotate ? "unlocked" : "locked"]."
 		if(!admin)
 			if(can_rotate)
-				. += "<span class='notice'>Alt-click to adjust its direction.</span>"
+				. += "<hr><span class='notice'>Alt-клик to adjust its direction.</span>"
 			else
-				. += "<span class='notice'>Use screwdriver to unlock the rotation.</span>"
+				. += "<hr><span class='notice'>Use screwdriver to unlock the rotation.</span>"
 
 /obj/structure/reflector/proc/setAngle(new_angle)
 	if(can_rotate)
@@ -102,7 +102,7 @@
 
 			user.visible_message("<span class='notice'>[user] starts to repair [src].</span>",
 								"<span class='notice'>You begin repairing [src]...</span>",
-								"<span class='hear'>You hear welding.</span>")
+								"<span class='hear'>Слышу сварку.</span>")
 			if(W.use_tool(src, user, 40, volume=40))
 				obj_integrity = max_integrity
 				user.visible_message("<span class='notice'>[user] repairs [src].</span>", \
@@ -114,17 +114,17 @@
 
 			user.visible_message("<span class='notice'>[user] starts to weld [src] to the floor.</span>",
 								"<span class='notice'>You start to weld [src] to the floor...</span>",
-								"<span class='hear'>You hear welding.</span>")
+								"<span class='hear'>Слышу сварку.</span>")
 			if (W.use_tool(src, user, 20, volume=50))
 				set_anchored(TRUE)
-				to_chat(user, "<span class='notice'>You weld [src] to the floor.</span>")
+				to_chat(user, "<span class='notice'>Привариваю [src] к полу.</span>")
 		else
 			if(!W.tool_start_check(user, amount=0))
 				return
 
 			user.visible_message("<span class='notice'>[user] starts to cut [src] free from the floor.</span>",
 								"<span class='notice'>You start to cut [src] free from the floor...</span>",
-								"<span class='hear'>You hear welding.</span>")
+								"<span class='hear'>Слышу сварку.</span>")
 			if (W.use_tool(src, user, 20, volume=50))
 				set_anchored(FALSE)
 				to_chat(user, "<span class='notice'>You cut [src] free from the floor.</span>")

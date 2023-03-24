@@ -8,9 +8,9 @@
 	. = ..()
 	if(. && silent && !prevent_warning)
 		if(quickdraw)
-			to_chat(user, "<span class='notice'>You discreetly slip [I] into [parent]. Alt-click [parent] to remove it.</span>")
+			to_chat(user, "<span class='notice'>Незаметно скидываю [I] в [parent]. Alt-клик что-бы достать вещь из [parent].</span>")
 		else
-			to_chat(user, "<span class='notice'>You discreetly slip [I] into [parent].</span>")
+			to_chat(user, "<span class='notice'>Незаметно скидываю [I] в [parent].</span>")
 
 /datum/component/storage/concrete/pockets/small
 	max_items = 1

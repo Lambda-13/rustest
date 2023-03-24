@@ -104,18 +104,18 @@
 
 /obj/item/clothing/neck/cloak/skill_reward/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>You notice a powerful aura about this cloak, suggesting that only the truly experienced may wield it.</span>"
+	. += "<hr><span class='notice'>You notice a powerful aura about this cloak, suggesting that only the truly experienced may wield it.</span>"
 
 /obj/item/clothing/neck/cloak/skill_reward/equipped(mob/user, slot)
 	if (user.mind?.get_skill_level(associated_skill_path) < SKILL_LEVEL_LEGENDARY)
-		to_chat(user, "<span class = 'notice'>You feel completely and utterly unworthy to even touch \the [src].</span>")
+		to_chat(user, "<span class = 'notice'>You feel completely and utterly unworthy to even touch [src].</span>")
 		user.dropItemToGround(src, TRUE)
 		return FALSE
 	return ..()
 
 /obj/item/clothing/neck/cloak/skill_reward/attack_hand(mob/user)
 	if (user.mind?.get_skill_level(associated_skill_path) < SKILL_LEVEL_LEGENDARY)
-		to_chat(user, "<span class = 'notice'>You feel completely and utterly unworthy to even touch \the [src]!</span>")
+		to_chat(user, "<span class = 'notice'>You feel completely and utterly unworthy to even touch [src]!</span>")
 		return FALSE
 	return ..()
 

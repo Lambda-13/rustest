@@ -64,9 +64,9 @@
 
 /obj/machinery/hydroponics/constructable/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>Use <b>Ctrl-Click</b> to activate autogrow. <b>Alt-Click</b> to empty the tray's nutrients.</span>"
+	. += "<hr><span class='notice'>Use <b>Ctrl-Click</b> to activate autogrow. <b>Alt-клик</b> to empty the tray's nutrients.</span>"
 	if(in_range(user, src) || isobserver(user))
-		. += "<span class='notice'>The status display reads: Tray efficiency at <b>[rating*100]%</b>.</span>"
+		. += "<hr><span class='notice'>The status display reads: Tray efficiency at <b>[rating*100]%</b>.</span>"
 
 
 /obj/machinery/hydroponics/Destroy()
@@ -328,20 +328,20 @@
 /obj/machinery/hydroponics/examine(user)
 	. = ..()
 	if(myseed)
-		. += "<span class='info'>It has <span class='name'>[myseed.plantname]</span> planted.</span>"
+		. += "<hr><span class='info'>It has <span class='name'>[myseed.plantname]</span> planted.</span>"
 		if (dead)
-			. += "<span class='warning'>It's dead!</span>"
+			. += "<hr><span class='warning'>It's dead!</span>"
 		else if (harvest)
-			. += "<span class='info'>It's ready to harvest.</span>"
+			. += "<hr><span class='info'>It's ready to harvest.</span>"
 		else if (plant_health <= (myseed.endurance / 2))
-			. += "<span class='warning'>It looks unhealthy.</span>"
+			. += "<hr><span class='warning'>It looks unhealthy.</span>"
 	else
-		. += "<span class='info'>It's empty.</span>"
+		. += "<hr><span class='info'>It's empty.</span>"
 
-	. += "<span class='info'>Water: [waterlevel]/[maxwater].</span>\n"+\
+	. += "<hr><span class='info'>Water: [waterlevel]/[maxwater].</span>\n"+\
 	"<span class='info'>Nutrient: [reagents.total_volume]/[maxnutri].</span>"
 	if(self_sustaining)
-		. += "<span class='info'>The tray's autogrow is active, halving active reagent drain, and actively maintaning the plant.</span>"
+		. += "<hr><span class='info'>The tray's autogrow is active, halving active reagent drain, and actively maintaning the plant.</span>"
 
 	if(weedlevel >= 5)
 		to_chat(user, "<span class='warning'>It's filled with weeds!</span>")

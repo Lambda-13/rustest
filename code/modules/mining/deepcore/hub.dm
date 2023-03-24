@@ -22,8 +22,8 @@ GLOBAL_DATUM(dcm_net_default, /datum/dcm_net)
 
 /obj/machinery/deepcore/hub/examine(mob/user)
 	. = ..()
-	. += "<span class='info'>Linked to [network.connected.len] machines.</span>"
-	. += "<span class='notice'>Deep core mining equipment can be linked to [src] with a multitool.</span>"
+	. += "<hr><span class='info'>Linked to [network.connected.len] machines.</span>"
+	. += "<hr><span class='notice'>Deep core mining equipment can be linked to [src] with a multitool.</span>"
 
 /obj/machinery/deepcore/hub/RefreshParts()
 	//Matter bins = size of container

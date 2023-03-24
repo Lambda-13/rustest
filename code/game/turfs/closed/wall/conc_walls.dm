@@ -81,7 +81,7 @@
 // we use this to show health + drying percentage
 /turf/closed/wall/concrete/deconstruction_hints(mob/user)
 	. = list()
-	. += "<span class='notice'>[p_they(TRUE)] look[p_s()] like you could <b>smash</b> [p_them()].</span>"
+	. += "<hr><span class='notice'>[p_they(TRUE)] look[p_s()] like you could <b>smash</b> [p_them()].</span>"
 	switch(harden_lvl)
 		if(0.8 to 0.99)
 			. += "[p_they(TRUE)] look[p_s()] nearly dry."
@@ -95,7 +95,7 @@
 		if(0.25 to 0.5)
 			. += "[p_they(TRUE)] appear[p_s()] heavily damaged."
 		if(0 to 0.25)
-			. += "<span class='warning'>[p_theyre(TRUE)] falling apart!</span>"
+			. += "<hr><span class='warning'>[p_theyre(TRUE)] falling apart!</span>"
 	return
 
 /turf/closed/wall/concrete/create_girder()
@@ -169,8 +169,8 @@
 	if(!arm || arm.bodypart_disabled)
 		return FALSE
 	playsound(src, 'sound/effects/meteorimpact.ogg', 100, TRUE)
-	user.visible_message("<span class='danger'>[user] smashes \the [src]!</span>", \
-				"<span class='danger'>You smash \the [src]!</span>", \
+	user.visible_message("<span class='danger'>[user] smashes [src]!</span>", \
+				"<span class='danger'>You smash [src]!</span>", \
 				"<span class='hear'>You hear a booming smash!</span>")
 	user.say(pick(";RAAAAAAAARGH!", ";HNNNNNNNNNGGGGGGH!", ";GWAAAAAAAARRRHHH!", "NNNNNNNNGGGGGGGGHH!", ";AAAAAAARRRGH!" ), forced = "hulk")
 	alter_health(-250)

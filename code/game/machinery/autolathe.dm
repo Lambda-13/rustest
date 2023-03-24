@@ -381,9 +381,9 @@
 	. += ..()
 	var/datum/component/material_container/materials = GetComponent(/datum/component/material_container)
 	if(in_range(user, src) || isobserver(user))
-		. += "<span class='notice'>Дисплей показывает: Максимум вмещается <b>[materials.max_amount]</b> материалов.<br>Расход материала <b>[creation_efficiency*100]%</b>.</span>"
+		. += "<hr><span class='notice'>Дисплей показывает: Максимум вмещается <b>[materials.max_amount]</b> материалов.<br>Расход материала <b>[creation_efficiency*100]%</b>.</span>"
 		if (d_disk)
-			. += "<span class='notice'>[d_disk.name] вставлен, Alt-Click для вытаскивания.</span>"
+			. += "<hr><span class='notice'>[d_disk.name] вставлен, Alt-клик для вытаскивания.</span>"
 
 /obj/machinery/autolathe/proc/can_build(datum/design/D, amount = 1)
 	if(D.make_reagents.len)

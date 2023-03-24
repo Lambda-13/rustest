@@ -168,7 +168,7 @@
 /obj/item/gun/ballistic/automatic/pistol/commissar/examine(mob/user)
 	. = ..()
 	if(funnysounds)
-		. += "<span class='info'>Alt-click to use \the [src] vox hailer.</span>"
+		. += "<hr><span class='info'>Alt-клик to use [src] vox hailer.</span>"
 
 /obj/item/gun/ballistic/automatic/pistol/solgov
 	name = "\improper SolGov M9C"

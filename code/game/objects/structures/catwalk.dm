@@ -56,7 +56,7 @@
 /obj/structure/catwalk/examine(mob/user)
 	. = ..()
 	if(!(resistance_flags & INDESTRUCTIBLE))
-		. += "<span class='notice'>The supporting rods look like they could be <b>sliced</b>.</span>"
+		. += "<hr><span class='notice'>The supporting rods look like they could be <b>sliced</b>.</span>"
 
 /obj/structure/catwalk/attackby(obj/item/C, mob/user, params)
 	if(C.tool_behaviour == TOOL_WELDER && !(resistance_flags & INDESTRUCTIBLE))
@@ -67,17 +67,17 @@
 		hatch_open = !hatch_open
 		if(hatch_open)
 			C.play_tool_sound(src, 100)
-			to_chat(user, "<span class='notice'>You pry open \the [src]'s maintenance hatch.</span>")
+			to_chat(user, "<span class='notice'>Вскрываю [src]'s maintenance hatch.</span>")
 		else
 			playsound(src, 'sound/items/Deconstruct.ogg', 100, 2)
-			to_chat(user, "<span class='notice'>You shut \the [src]'s maintenance hatch.</span>")
+			to_chat(user, "<span class='notice'>You shut [src]'s maintenance hatch.</span>")
 		update_icon()
 		return
 	if(istype(C, /obj/item/stack/tile) && !plated_tile)
 		var/obj/item/stack/tile/plasteel/ST = C
 		to_chat(user, "<span class='notice'>Placing tile...</span>")
 		if(do_after(user, 30, target = src))
-			to_chat(user, "<span class='notice'>You plate \the [src]</span>")
+			to_chat(user, "<span class='notice'>You plate [src]</span>")
 			name = "plated catwalk"
 			src.add_fingerprint(user)
 			if(ST.use(1))

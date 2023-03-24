@@ -6,8 +6,8 @@
 #define SP_UNREADY 5
 
 /obj/machinery/computer/cargo/express
-	name = "консоль связи с оутпостом"
-	desc = "Позволяет связаться с ближайшим оутпостом для взятия миссии и покупки предметов."
+	name = "консоль связи с аванпостом"
+	desc = "Позволяет связаться с ближайшим аванпостом для взятия миссии и покупки предметов."
 	icon_screen = "supply_express"
 	circuit = /obj/item/circuitboard/computer/cargo/express
 	var/blockade_warning = "Проблемы с поставками в ваше местоположение."

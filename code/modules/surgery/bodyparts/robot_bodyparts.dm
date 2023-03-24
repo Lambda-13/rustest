@@ -203,12 +203,12 @@
 		. += {"It has a [cell] inserted.\n
 		<span class='info'>You can use a <b>screwdriver</b> to remove [cell].</span>"}
 	else
-		. += "<span class='info'>It has an empty port for a <b>power cell</b>.</span>"
+		. += "<hr><span class='info'>It has an empty port for a <b>power cell</b>.</span>"
 	if(wired)
 		. += "Its all wired up[cell ? " and ready for usage" : ""].\n"+\
 		"<span class='info'>You can use <b>wirecutters</b> to remove the wiring.</span>"
 	else
-		. += "<span class='info'>It has a couple spots that still need to be <b>wired</b>.</span>"
+		. += "<hr><span class='info'>It has a couple spots that still need to be <b>wired</b>.</span>"
 
 /obj/item/bodypart/chest/robot/drop_organs(mob/user, violent_removal)
 	if(wired)
@@ -264,7 +264,7 @@
 /obj/item/bodypart/head/robot/examine(mob/user)
 	. = ..()
 	if(!flash1 && !flash2)
-		. += "<span class='info'>It has two empty eye sockets for <b>flashes</b>.</span>"
+		. += "<hr><span class='info'>It has two empty eye sockets for <b>flashes</b>.</span>"
 	else
 		var/single_flash = FALSE
 		if(!flash1 || !flash2)
@@ -273,7 +273,7 @@
 			<span class='info'>It has an empty eye socket for another <b>flash</b>.</span>"}
 		else
 			. += "It has two eye sockets occupied by flashes."
-		. += "<span class='notice'>You can remove the seated flash[single_flash ? "":"es"] with a <b>crowbar</b>.</span>"
+		. += "<hr><span class='notice'>You can remove the seated flash[single_flash ? "":"es"] with a <b>crowbar</b>.</span>"
 
 /obj/item/bodypart/head/robot/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/assembly/flash/handheld))

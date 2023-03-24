@@ -200,7 +200,7 @@
 					buildstage = 1
 					W.play_tool_sound(src)
 					new /obj/item/stack/cable_coil(user.loc, 5)
-					to_chat(user, "<span class='notice'>You cut the wires from \the [src].</span>")
+					to_chat(user, "<span class='notice'>You cut the wires from [src].</span>")
 					update_icon()
 					return
 
@@ -219,7 +219,7 @@
 					else
 						coil.use(5)
 						buildstage = 2
-						to_chat(user, "<span class='notice'>You wire \the [src].</span>")
+						to_chat(user, "<span class='notice'>You wire [src].</span>")
 						update_icon()
 					return
 

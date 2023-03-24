@@ -18,7 +18,7 @@
 			displayed = I
 			update_icon()
 		else
-			to_chat(user, "<span class=notice>\The [src] already contains a photo.</span>")
+			to_chat(user, "<span class=notice>[src] already contains a photo.</span>")
 	..()
 
 //ATTACK HAND IGNORING PARENT RETURN VALUE
@@ -29,7 +29,7 @@
 	if(contents.len)
 		var/obj/item/I = pick(contents)
 		user.put_in_hands(I)
-		to_chat(user, "<span class='notice'>You carefully remove the photo from \the [src].</span>")
+		to_chat(user, "<span class='notice'>You carefully remove the photo from [src].</span>")
 		displayed = null
 		update_icon()
 	return ..()
@@ -137,7 +137,7 @@
 			framed = P
 			update_icon()
 		else
-			to_chat(user, "<span class=notice>\The [src] already contains a photo.</span>")
+			to_chat(user, "<span class=notice>[src] already contains a photo.</span>")
 
 	..()
 

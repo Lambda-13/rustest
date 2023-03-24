@@ -104,9 +104,9 @@
 	. = ..()
 	if(!(resistance_flags & INDESTRUCTIBLE))
 		if(resistance_flags & ON_FIRE)
-			. += "<span class='warning'>It's on fire!</span>"
+			. += "<hr><span class='warning'>It's on fire!</span>"
 		if(broken)
-			. += "<span class='notice'>It appears to be broken.</span>"
+			. += "<hr><span class='notice'>It appears to be broken.</span>"
 		var/examine_status = examine_status(user)
 		if(examine_status)
 			. += examine_status

@@ -142,7 +142,7 @@
 /obj/machinery/droneDispenser/examine(mob/user)
 	. = ..()
 	if((mode == DRONE_RECHARGING) && !machine_stat && recharging_text)
-		. += "<span class='warning'>[recharging_text]</span>"
+		. += "<hr><span class='warning'>[recharging_text]</span>"
 
 /obj/machinery/droneDispenser/process()
 	..()

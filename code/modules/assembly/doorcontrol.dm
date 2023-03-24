@@ -1,6 +1,6 @@
 /obj/item/assembly/control
-	name = "blast door controller"
-	desc = "A small electronic device able to control a blast door remotely."
+	name = "контроллер бронеставней"
+	desc = "Небольшое электронное устройство, способное дистанционно управлять бронированными ставнями."
 	icon_state = "control"
 	attachable = TRUE
 	var/id = null
@@ -11,13 +11,13 @@
 /obj/item/assembly/control/examine(mob/user)
 	. = ..()
 	if(id)
-		. += "<span class='notice'>Its channel ID is '[id]'.</span>"
+		. += "<hr><span class='notice'>ID контроллера '[id]'.</span>"
 
 /obj/item/assembly/control/multitool_act(mob/living/user)
-	var/change_id = input("Set [src] ID. It must be a number between 1 and 100.", "ID", id) as num|null
+	var/change_id = input("Установите ID [src]. Это должно быть число от 1 до 100.", "ID", id) as num|null
 	if(change_id)
 		id = clamp(round(change_id, 1), 1, 100)
-		to_chat(user, "<span class='notice'>You change the ID to [id].</span>")
+		to_chat(user, "<span class='notice'>Новый ID теперь [id].</span>")
 
 /obj/item/assembly/control/activate()
 	var/openclose
@@ -32,8 +32,8 @@
 	addtimer(VARSET_CALLBACK(src, cooldown, FALSE), 10)
 
 /obj/item/assembly/control/airlock
-	name = "airlock controller"
-	desc = "A small electronic device able to control an airlock remotely."
+	name = "контроллер шлюза"
+	desc = "Небольшое электронное устройство, способное дистанционно управлять воздушным шлюзом."
 	id = "badmin" // Set it to null for MEGAFUN.
 	var/specialfunctions = OPEN
 	/*
@@ -77,8 +77,8 @@
 
 
 /obj/item/assembly/control/massdriver
-	name = "mass driver controller"
-	desc = "A small electronic device able to control a mass driver."
+	name = "контроллер массового привода"
+	desc = "Небольшое электронное устройство, способное управлять массовым приводом."
 
 /obj/item/assembly/control/massdriver/activate()
 	if(cooldown)
@@ -104,8 +104,8 @@
 
 
 /obj/item/assembly/control/igniter
-	name = "ignition controller"
-	desc = "A remote controller for a mounted igniter."
+	name = "контроллер зажигания"
+	desc = "Пульт дистанционного управления для воспламенителя."
 
 /obj/item/assembly/control/igniter/activate()
 	if(cooldown)
@@ -124,8 +124,8 @@
 	addtimer(VARSET_CALLBACK(src, cooldown, FALSE), 30)
 
 /obj/item/assembly/control/flasher
-	name = "flasher controller"
-	desc = "A remote controller for a mounted flasher."
+	name = "контролер флэшера"
+	desc = "Контролер дистанционного управления для активации настенного флэшера."
 
 /obj/item/assembly/control/flasher/activate()
 	if(cooldown)
@@ -139,8 +139,8 @@
 
 
 /obj/item/assembly/control/crematorium
-	name = "crematorium controller"
-	desc = "An evil-looking remote controller for a crematorium."
+	name = "контролер крематория"
+	desc = "Активирует крематорий."
 
 /obj/item/assembly/control/crematorium/activate()
 	if(cooldown)
@@ -155,8 +155,8 @@
 //how long it spends on each floor when moving somewhere, so it'd take 4 seconds to reach you if it had to travel up 2 floors
 #define FLOOR_TRAVEL_TIME 2 SECONDS
 /obj/item/assembly/control/elevator
-	name = "elevator controller"
-	desc = "A small device used to call elevators to the current floor."
+	name = "контролер лифта"
+	desc = "Небольшое устройство, используемое для вызова лифтов на текущий этаж."
 
 /obj/item/assembly/control/elevator/activate()
 	if(cooldown)
@@ -172,7 +172,7 @@
 	if(!lift)
 		addtimer(VARSET_CALLBACK(src, cooldown, FALSE), 2 SECONDS)
 		return
-	lift.visible_message("<span class='notice'>[src] clinks and whirrs into automated motion, locking controls.</span")
+	lift.visible_message("<span class='notice'>[src] звенит и жужжит, блокируя управление.</span")
 	lift.lift_master_datum.set_controls(LOCKED)
 	var/difference = abs(z - lift.z)
 	var/direction = lift.z > z ? UP : DOWN
@@ -183,14 +183,14 @@
 		if(QDELETED(lift) || QDELETED(src))//elevator control or button gone = don't go up anymore
 			return
 		lift.lift_master_datum.MoveLift(direction, null)
-	lift.visible_message("<span class='notice'>[src] clicks, ready to be manually operated again.</span")
+	lift.visible_message("<span class='notice'>[src] щёлкает и готов к ручному управлению снова.</span")
 	lift.lift_master_datum.set_controls(UNLOCKED)
 
 #undef FLOOR_TRAVEL_TIME
 
 /obj/item/assembly/control/shieldwallgen
-	name = "holofield controller"
-	desc = "A small device used to remotely operate holofield generators."
+	name = "контроллер голополя"
+	desc = "Небольшое устройство, используемое для дистанционного управления генераторами голополя."
 
 /obj/item/assembly/control/shieldwallgen/activate()
 	if(cooldown)

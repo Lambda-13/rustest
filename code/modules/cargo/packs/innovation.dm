@@ -26,3 +26,11 @@
 	contains = list(/obj/item/sbeacondrop/exploration)
 	crate_name = "ящик с маяком"
 	crate_type = /obj/structure/closet/crate/science
+
+/datum/supply_pack/innovations/exploration
+	name = "Коробка копировальных плат"
+	desc = "Содержит внутри коробку с копировальным платами. Из-за некоторых нюансов с законом цены данных плат необычайно возросли."
+	cost = COST_HIGH * 1000000
+	contains = list(/obj/item/storage/box/copytech)
+	crate_name = "ящик с копировальными платами"
+	crate_type = /obj/structure/closet/crate/science

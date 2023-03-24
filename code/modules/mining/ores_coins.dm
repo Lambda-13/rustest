@@ -158,7 +158,7 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 	C.adjust_blurriness(6)
 	C.adjustStaminaLoss(15)//the pain from your eyes burning does stamina damage
 	C.confused += 5
-	to_chat(C, "<span class='userdanger'>\The [src] gets into your eyes! The pain, it burns!</span>")
+	to_chat(C, "<span class='userdanger'>[src] gets into your eyes! The pain, it burns!</span>")
 	qdel(src)
 
 /obj/item/stack/ore/glass/ex_act(severity, target)
@@ -331,7 +331,7 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 			log_game(bomb_message)
 			GLOB.bombers += bomb_message
 		else
-			user.visible_message("<span class='warning'>[user] strikes \the [src], causing a chain reaction!</span>", "<span class='danger'>You strike \the [src], causing a chain reaction.</span>")
+			user.visible_message("<span class='warning'>[user] strikes [src], causing a chain reaction!</span>", "<span class='danger'>You strike [src], causing a chain reaction.</span>")
 			log_bomber(user, "has primed a", src, "for detonation", notify_admins)
 		det_timer = addtimer(CALLBACK(src, .proc/detonate, notify_admins), det_time, TIMER_STOPPABLE)
 
@@ -395,9 +395,9 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 		value += M.value_per_unit * custom_materials[M]
 
 /obj/item/coin/suicide_act(mob/living/user)
-	user.visible_message("<span class='suicide'>[user] contemplates suicide with \the [src]!</span>")
+	user.visible_message("<span class='suicide'>[user] contemplates suicide with [src]!</span>")
 	if (!attack_self(user))
-		user.visible_message("<span class='suicide'>[user] couldn't flip \the [src]!</span>")
+		user.visible_message("<span class='suicide'>[user] couldn't flip [src]!</span>")
 		return SHAME
 	addtimer(CALLBACK(src, .proc/manual_suicide, user), 10)//10 = time takes for flip animation
 	return MANUAL_SUICIDE_NONLETHAL
@@ -405,13 +405,13 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 /obj/item/coin/proc/manual_suicide(mob/living/user)
 	var/index = sideslist.Find(coinflip)
 	if (index==2)//tails
-		user.visible_message("<span class='suicide'>\the [src] lands on [coinflip]! [user] promptly falls over, dead!</span>")
+		user.visible_message("<span class='suicide'>[src] lands on [coinflip]! [user] promptly falls over, dead!</span>")
 		user.adjustOxyLoss(200)
 		user.death(0)
 		user.set_suicide(TRUE)
 		user.suicide_log()
 	else
-		user.visible_message("<span class='suicide'>\the [src] lands on [coinflip]! [user] keeps on living!</span>")
+		user.visible_message("<span class='suicide'>[src] lands on [coinflip]! [user] keeps on living!</span>")
 
 /obj/item/coin/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/stack/cable_coil))

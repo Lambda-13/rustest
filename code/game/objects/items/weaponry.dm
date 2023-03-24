@@ -128,7 +128,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	. = ..()
 	. += "It has [!notches ? "nothing" : "[notches] notches"] scratched into the blade."
 	if(nuke_disk)
-		. += "<span class='boldwarning'>It's holding the nuke disk!</span>"
+		. += "<hr><span class='boldwarning'>It's holding the nuke disk!</span>"
 
 /obj/item/claymore/highlander/attack(mob/living/target, mob/living/user)
 	. = ..()
@@ -253,7 +253,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 
 /obj/item/katana/cursed/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>To cut into the flesh of your target with this weapon is to feed the gluttonous emptiness within. Burn the blood of your enemies to replenish your own spent essence.</span>"
+	. += "<hr><span class='notice'>To cut into the flesh of your target with this weapon is to feed the gluttonous emptiness within. Burn the blood of your enemies to replenish your own spent essence.</span>"
 
 /obj/item/katana/cursed/attack(mob/living/target, mob/living/user)
 	. = ..()

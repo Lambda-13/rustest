@@ -422,7 +422,7 @@
 /mob/living/simple_animal/hostile/swarmer/proc/Integrate(atom/movable/target)
 	var/resource_gain = target.IntegrateAmount()
 	if(resources + resource_gain > max_resources)
-		to_chat(src, "<span class='warning'>We cannot hold more materials!</span>")
+		to_chat(src, "<span class='warning'>We не может содержать more materials!</span>")
 		return TRUE
 	if(resource_gain)
 		resources += resource_gain

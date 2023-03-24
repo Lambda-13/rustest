@@ -108,19 +108,19 @@
 
 /obj/item/gun/energy/proc/insert_cell(mob/user, obj/item/stock_parts/cell/gun/C)
 	if(small_gun && !istype(C, /obj/item/stock_parts/cell/gun/mini))
-		to_chat(user, "<span class='warning'>\The [C] doesn't seem to fit into \the [src]...</span>")
+		to_chat(user, "<span class='warning'>\The [C] doesn't seem to fit into [src]...</span>")
 		return FALSE
 	if(!big_gun && istype(C, /obj/item/stock_parts/cell/gun/large))
-		to_chat(user, "<span class='warning'>\The [C] doesn't seem to fit into \the [src]...</span>")
+		to_chat(user, "<span class='warning'>\The [C] doesn't seem to fit into [src]...</span>")
 		return FALSE
 	if(user.transferItemToLoc(C, src))
 		cell = C
-		to_chat(user, "<span class='notice'>You load the [C] into \the [src].</span>")
+		to_chat(user, "<span class='notice'>You load the [C] into [src].</span>")
 		playsound(src, load_sound, sound_volume, load_sound_vary)
 		update_icon()
 		return TRUE
 	else
-		to_chat(user, "<span class='warning'>You cannot seem to get \the [src] out of your hands!</span>")
+		to_chat(user, "<span class='warning'>You cannot seem to get [src] out of your hands!</span>")
 		return FALSE
 
 /obj/item/gun/energy/proc/eject_cell(mob/user, obj/item/stock_parts/cell/gun/tac_load = null)
@@ -128,13 +128,13 @@
 	cell.forceMove(drop_location())
 	var/obj/item/stock_parts/cell/gun/old_cell = cell
 	/*if(insert_cell(user, tac_load))
-		to_chat(user, "<span class='notice'>You perform a tactical reload on \the [src].</span>")
+		to_chat(user, "<span class='notice'>You perform a tactical reload on [src].</span>")
 	else
 		to_chat(user, "<span class='warning'>You dropped the old cell, but the new one doesn't fit. How embarassing.</span>")*/
 	cell = null
 	user.put_in_hands(old_cell)
 	old_cell.update_icon()
-	to_chat(user, "<span class='notice'>You pull the cell out of \the [src].</span>")
+	to_chat(user, "<span class='notice'>You pull the cell out of [src].</span>")
 	update_icon()
 
 /obj/item/gun/energy/screwdriver_act(mob/living/user, obj/item/I)

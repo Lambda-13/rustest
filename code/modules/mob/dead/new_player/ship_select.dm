@@ -93,7 +93,6 @@
 
 /datum/ship_select/ui_static_data(mob/user)
 	. = list()
-	.["BuyNewShip"] = GLOB.buy_ship_allowed
 	.["ships"] = list()
 	for(var/datum/overmap/ship/controlled/S as anything in SSovermap.controlled_ships)
 		if(!S.is_join_option())
@@ -133,3 +132,4 @@
 			"crewCount" = length(T.job_slots)
 		)
 		.["templates"] += list(ship_data)
+		.["BuyNewShip"] = GLOB.buy_ship_allowed

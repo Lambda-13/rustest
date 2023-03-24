@@ -60,11 +60,11 @@
 	var/healthpercent = round((obj_integrity/max_integrity) * 100, 1)
 	switch(healthpercent)
 		if(50 to 99)
-			. += "<span class='info'>It looks slightly damaged.</span>"
+			. += "<hr><span class='info'>It looks slightly damaged.</span>"
 		if(25 to 50)
-			. += "<span class='info'>It appears heavily damaged.</span>"
+			. += "<hr><span class='info'>It appears heavily damaged.</span>"
 		if(0 to 25)
-			. += "<span class='warning'>It's falling apart!</span>"
+			. += "<hr><span class='warning'>It's falling apart!</span>"
 
 /obj/item/shield/riot/proc/shatter(mob/living/carbon/human/owner)
 	playsound(owner, 'sound/effects/glassbr3.ogg', 100)
@@ -184,7 +184,7 @@
 /obj/item/shield/riot/flash/examine(mob/user)
 	. = ..()
 	if (embedded_flash?.burnt_out)
-		. += "<span class='info'>The mounted bulb has burnt out. You can try replacing it with a new one.</span>"
+		. += "<hr><span class='info'>The mounted bulb has burnt out. You can try replacing it with a new one.</span>"
 
 /obj/item/shield/energy
 	name = "energy combat shield"
@@ -268,7 +268,7 @@
 		throw_speed = 2
 		w_class = WEIGHT_CLASS_BULKY
 		slot_flags = ITEM_SLOT_BACK
-		to_chat(user, "<span class='notice'>You extend \the [src].</span>")
+		to_chat(user, "<span class='notice'>You extend [src].</span>")
 	else
 		force = 3
 		throwforce = 3

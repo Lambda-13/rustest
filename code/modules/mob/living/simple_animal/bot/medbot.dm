@@ -334,9 +334,9 @@
 		if(MEDBOT_PANIC_MED to MEDBOT_PANIC_HIGH)
 			. += "They are tipped over and appear visibly distressed." // now we humanize the medbot as a they, not an it
 		if(MEDBOT_PANIC_HIGH to MEDBOT_PANIC_FUCK)
-			. += "<span class='warning'>They are tipped over and visibly panicking!</span>"
+			. += "<hr><span class='warning'>They are tipped over and visibly panicking!</span>"
 		if(MEDBOT_PANIC_FUCK to INFINITY)
-			. += "<span class='warning'><b>They are freaking out from being tipped over!</b></span>"
+			. += "<hr><span class='warning'><b>They are freaking out from being tipped over!</b></span>"
 
 /mob/living/simple_animal/bot/medbot/handle_automated_action()
 	if(!..())

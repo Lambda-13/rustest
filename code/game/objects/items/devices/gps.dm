@@ -1,7 +1,7 @@
 
 /obj/item/gps
-	name = "global positioning system"
-	desc = "Helping lost spacemen find their way through the planets since 2016."
+	name = "глобальная поисковая система"
+	desc = "Помогает искать людям дорогу с 2016 года."
 	icon = 'icons/obj/telescience.dmi'
 	icon_state = "gps-c"
 	w_class = WEIGHT_CLASS_SMALL
@@ -24,12 +24,12 @@
 /obj/item/gps/mining
 	icon_state = "gps-m"
 	gpstag = "ШАХТ0"
-	desc = "A positioning system helpful for rescuing trapped or injured miners, keeping one on you at all times while mining might just save your life."
+	desc = "Глобальная поисковая система, полезная для спасения застрявших или раненых шахтеров, всегда держите одну при себе, пока копаете - это может просто спасти вашу жизнь."
 
 /obj/item/gps/cyborg
 	icon_state = "gps-b"
 	gpstag = "БОРГ0"
-	desc = "A mining cyborg internal positioning system. Used as a recovery beacon for damaged cyborg assets, or a collaboration tool for mining teams."
+	desc = "Глобальная поисковая система киборга-шахтёра. Используется в качестве маяка для восстановления поврежденных активов киборгов или инструмента совместной работы для команд шахтёров."
 
 /obj/item/gps/cyborg/Initialize()
 	. = ..()
@@ -43,9 +43,7 @@
 /obj/item/gps/visible_debug
 	name = "visible GPS"
 	gpstag = "ПЕДАЛЬ"
-	desc = "This admin-spawn GPS unit leaves the coordinates visible \
-		on any turf that it passes over, for debugging. Especially useful \
-		for marking the area around the transition edges."
+	desc = "Этот созданный администратором модуль GPS оставляет координаты видимыми на любой территории, которую он пересекает, для отладки. Особенно полезно для маркировки области вокруг краев перехода."
 	var/list/turf/tagged
 
 /obj/item/gps/visible_debug/Initialize()

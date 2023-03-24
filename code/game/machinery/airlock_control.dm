@@ -85,9 +85,9 @@
 	return ..()
 
 /obj/machinery/airlock_sensor
+	name = "сенсор шлюза"
 	icon = 'icons/obj/airlock_machines.dmi'
 	icon_state = "airlock_sensor_off"
-	name = "airlock sensor"
 	resistance_flags = FIRE_PROOF
 
 	power_channel = AREA_USAGE_ENVIRON

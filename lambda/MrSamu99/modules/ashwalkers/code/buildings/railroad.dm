@@ -72,7 +72,7 @@
 
 /obj/vehicle/ridden/rail_cart/examine(mob/user)
 	. = ..()
-	. += span_notice("<br><b>Alt-Click</b> to attach a rail cart to this cart.")
+	. += span_notice("<br><b>Alt-клик</b> to attach a rail cart to this cart.")
 	. += span_notice("<br>Filling it with <b>10 sand</b> will allow it to be used as a planter!")
 
 /obj/vehicle/ridden/rail_cart/Initialize(mapload)

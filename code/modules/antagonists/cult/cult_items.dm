@@ -137,7 +137,7 @@
 
 /obj/item/cult_bastard/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>This weapon will absorb the souls of unconscious human foes.</span>"
+	. += "<hr><span class='notice'>This weapon will absorb the souls of unconscious human foes.</span>"
 	if(contents.len)
 		. += "<b>There are [contents.len] souls trapped within the sword's core.</b>"
 	else
@@ -483,9 +483,9 @@
 /obj/item/cult_shift/examine(mob/user)
 	. = ..()
 	if(uses)
-		. += "<span class='cult'>It has [uses] use\s remaining.</span>"
+		. += "<hr><span class='cult'>It has [uses] use\s remaining.</span>"
 	else
-		. += "<span class='cult'>It seems drained.</span>"
+		. += "<hr><span class='cult'>It seems drained.</span>"
 
 /obj/item/cult_shift/proc/handle_teleport_grab(turf/T, mob/user)
 	var/mob/living/carbon/C = user
@@ -496,7 +496,7 @@
 
 /obj/item/cult_shift/attack_self(mob/user)
 	if(!uses || !iscarbon(user))
-		to_chat(user, "<span class='warning'>\The [src] is dull and unmoving in your hands.</span>")
+		to_chat(user, "<span class='warning'>[src] is dull and unmoving in your hands.</span>")
 		return
 
 	var/mob/living/carbon/C = user
@@ -565,16 +565,16 @@
 		if(A in user.GetAllContents())
 			to_chat(user, "<span class='cult italic'>[A] must be on a surface in order to teleport it!</span>")
 			return
-		to_chat(user, "<span class='cult italic'>You ignite [A] with \the [src], turning it to ash, but through the torch's flames you see that [A] has reached [cultist_to_receive]!</span>")
+		to_chat(user, "<span class='cult italic'>You ignite [A] with [src], turning it to ash, but through the torch's flames you see that [A] has reached [cultist_to_receive]!</span>")
 		cultist_to_receive.put_in_hands(A)
 		charges--
-		to_chat(user, "\The [src] now has [charges] charge\s.")
+		to_chat(user, "[src] now has [charges] charge\s.")
 		if(charges == 0)
 			qdel(src)
 
 	else
 		..()
-		to_chat(user, "<span class='warning'>\The [src] can only transport items!</span>")
+		to_chat(user, "<span class='warning'>[src] can only transport items!</span>")
 
 
 /obj/item/cult_spear

@@ -3,7 +3,7 @@
 		return FALSE
 
 	if(H.w_class > max_hardware_size)
-		to_chat(user, "<span class='warning'>This component is too large for \the [src]!</span>")
+		to_chat(user, "<span class='warning'>This component is too large for [src]!</span>")
 		return FALSE
 
 	if(all_components[H.device_type])
@@ -22,7 +22,7 @@
 
 	all_components[H.device_type] = H
 
-	to_chat(user, "<span class='notice'>You install \the [H] into \the [src].</span>")
+	to_chat(user, "<span class='notice'>You install \the [H] into [src].</span>")
 	H.holder = src
 	H.forceMove(src)
 	H.on_install(src, user)
@@ -35,7 +35,7 @@
 
 	all_components.Remove(H.device_type)
 
-	to_chat(user, "<span class='notice'>You remove \the [H] from \the [src].</span>")
+	to_chat(user, "<span class='notice'>You remove \the [H] from [src].</span>")
 
 	H.forceMove(get_turf(src))
 	H.holder = null

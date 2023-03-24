@@ -294,7 +294,7 @@ GLOBAL_VAR_INIT(mouse_killed, 0)
 /obj/item/reagent_containers/food/snacks/deadmouse/examine(mob/user)
 	. = ..()
 	if (reagents?.has_reagent(/datum/reagent/yuck) || reagents?.has_reagent(/datum/reagent/fuel))
-		. += "<span class='warning'>It's dripping with fuel and smells terrible.</span>"
+		. += "<hr><span class='warning'>It's dripping with fuel and smells terrible.</span>"
 
 /obj/item/reagent_containers/food/snacks/deadmouse/attackby(obj/item/I, mob/user, params)
 	if(I.get_sharpness() && user.a_intent == INTENT_HARM)

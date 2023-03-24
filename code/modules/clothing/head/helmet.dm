@@ -38,7 +38,7 @@
 	if(attached_light)
 		. += "It has \a [attached_light] [can_flashlight ? "" : "permanently "]mounted on it."
 		if(can_flashlight)
-			. += "<span class='info'>[attached_light] looks like it can be <b>unscrewed</b> from [src].</span>"
+			. += "<hr><span class='info'>[attached_light] looks like it can be <b>unscrewed</b> from [src].</span>"
 	else if(can_flashlight)
 		. += "It has a mounting point for a <b>seclite</b>."
 
@@ -78,7 +78,7 @@
 			flags_inv ^= visor_flags_inv
 			flags_cover ^= visor_flags_cover
 			icon_state = "[initial(icon_state)][up ? "up" : ""]"
-			to_chat(user, "<span class='notice'>[up ? alt_toggle_message : toggle_message] \the [src].</span>")
+			to_chat(user, "<span class='notice'>[up ? alt_toggle_message : toggle_message] [src].</span>")
 
 			user.update_inv_head()
 			if(iscarbon(user))

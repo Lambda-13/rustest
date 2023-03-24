@@ -17,9 +17,9 @@
 
 /obj/item/reagent_containers/glass/maunamug/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>The status display reads: Current temperature: <b>[reagents.chem_temp]K</b> Current Charge:[cell ? "[cell.charge / cell.maxcharge * 100]%" : "No cell found"].</span>"
+	. += "<hr><span class='notice'>The status display reads: Current temperature: <b>[reagents.chem_temp]K</b> Current Charge:[cell ? "[cell.charge / cell.maxcharge * 100]%" : "No cell found"].</span>"
 	if(open)
-		. += "<span class='notice'>The battery case is open.</span>"
+		. += "<hr><span class='notice'>The battery case is open.</span>"
 
 /obj/item/reagent_containers/glass/maunamug/process()
 	..()

@@ -521,7 +521,7 @@
 
 /obj/item/nullrod/scythe/talking/necro/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>This weapon applies a growing blood curse on attack. Though it slowly fades, fully manifesting it causes your target's blood to violently explode, creating a lethal burst of damage.</span>"
+	. += "<hr><span class='notice'>This weapon applies a growing blood curse on attack. Though it slowly fades, fully manifesting it causes your target's blood to violently explode, creating a lethal burst of damage.</span>"
 
 /obj/item/nullrod/scythe/talking/necro/attack(mob/living/target)
 	..()

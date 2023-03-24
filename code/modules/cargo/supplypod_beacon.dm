@@ -47,9 +47,9 @@
 /obj/item/supplypod_beacon/examine(user)
 	. = ..()
 	if(!express_console)
-		. += "<span class='notice'>[src] не подключён к консоли.</span>"
+		. += "<hr><span class='notice'>[src] не подключён к консоли.</span>"
 	else
-		. += "<span class='notice'>Альт-клик для разрыва связи.</span>"
+		. += "<hr><span class='notice'>Альт-клик для разрыва связи.</span>"
 
 /obj/item/supplypod_beacon/Destroy()
 	if(express_console)

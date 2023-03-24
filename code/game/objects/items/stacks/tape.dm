@@ -151,11 +151,11 @@
 /obj/item/stack/tape/proc/try_heal(mob/living/carbon/C, mob/user)
 	if(C == user)
 		playsound(loc, usesound, 30, TRUE, -2)
-		user.visible_message("<span class='notice'>[user] starts to apply \the [src] on [user.p_them()]self...</span>", "<span class='notice'>You begin applying \the [src] on yourself...</span>")
+		user.visible_message("<span class='notice'>[user] starts to apply [src] on [user.p_them()]self...</span>", "<span class='notice'>You begin applying [src] on yourself...</span>")
 		if(!do_mob(user, C, self_delay, extra_checks=CALLBACK(C, /mob/living/proc/can_inject, user, TRUE)))
 			return
 	else if(other_delay)
-		user.visible_message("<span class='notice'>[user] starts to apply \the [src] on [C].</span>", "<span class='notice'>You begin applying \the [src] on [C]...</span>")
+		user.visible_message("<span class='notice'>[user] starts to apply [src] on [C].</span>", "<span class='notice'>You begin applying [src] on [C]...</span>")
 		if(!do_mob(user, C, other_delay, extra_checks=CALLBACK(C, /mob/living/proc/can_inject, user, TRUE)))
 			return
 
@@ -180,10 +180,10 @@
 				H.suppress_bloodloss(stop_bleed)
 				to_chat(user, "<span class='notice'>You tape up the bleeding of [C]!</span>")
 				return TRUE
-		to_chat(user, "<span class='warning'>[C] has a problem \the [src] won't fix!</span>")
+		to_chat(user, "<span class='warning'>[C] has a problem [src] won't fix!</span>")
 	else //Robotic patch-up
 		if(affecting.brute_dam)
-			user.visible_message("<span class='notice'>[user] applies \the [src] on [C]'s [affecting.name].</span>", "<span class='green'>You apply \the [src] on [C]'s [affecting.name].</span>")
+			user.visible_message("<span class='notice'>[user] applies [src] on [C]'s [affecting.name].</span>", "<span class='green'>You apply [src] on [C]'s [affecting.name].</span>")
 			if(affecting.heal_damage(nonorganic_heal))
 				C.update_damage_overlays()
 			return TRUE

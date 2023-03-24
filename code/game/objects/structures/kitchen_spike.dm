@@ -25,11 +25,11 @@
 	else if(I.tool_behaviour == TOOL_WELDER)
 		if(!I.tool_start_check(user, amount=0))
 			return
-		to_chat(user, "<span class='notice'>You begin cutting \the [src] apart...</span>")
+		to_chat(user, "<span class='notice'>You begin cutting [src] apart...</span>")
 		if(I.use_tool(src, user, 50, volume=50))
-			visible_message("<span class='notice'>[user] slices apart \the [src].</span>",
-				"<span class='notice'>You cut \the [src] apart with \the [I].</span>",
-				"<span class='hear'>You hear welding.</span>")
+			visible_message("<span class='notice'>[user] slices apart [src].</span>",
+				"<span class='notice'>You cut [src] apart with \the [I].</span>",
+				"<span class='hear'>Слышу сварку.</span>")
 			new /obj/item/stack/sheet/metal(src.loc, 4)
 			qdel(src)
 		return

@@ -281,7 +281,7 @@
 						return
 
 					if(!usr.temporarilyRemoveItemFromInventory(item_to_add))
-						to_chat(usr, "<span class='warning'>\The [item_to_add] is stuck to your hand, you cannot put it on [src]'s back!</span>")
+						to_chat(usr, "<span class='warning'>\The [item_to_add] прилип к рукеr hand, you cannot put it on [src]'s back!</span>")
 						return
 
 					if(istype(item_to_add, /obj/item/grenade/c4)) // last thing he ever wears, I guess
@@ -333,7 +333,7 @@
 		return
 
 	if(user && !user.temporarilyRemoveItemFromInventory(item_to_add))
-		to_chat(user, "<span class='warning'>\The [item_to_add] is stuck to your hand, you cannot put it on [src]'s head!</span>")
+		to_chat(user, "<span class='warning'>\The [item_to_add] прилип к рукеr hand, you cannot put it on [src]'s head!</span>")
 		return 0
 
 	var/valid = FALSE

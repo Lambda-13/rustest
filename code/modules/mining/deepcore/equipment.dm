@@ -9,7 +9,7 @@
 	var/to_deploy = /obj/machinery/deepcore/drill
 
 /obj/item/deepcorecapsule/attack_self()
-	loc.visible_message("<span class='warning'>\The [src] begins to shake. Stand back!</span>")
+	loc.visible_message("<span class='warning'>[src] begins to shake. Stand back!</span>")
 	addtimer(CALLBACK(src, .proc/Deploy), 50)
 
 /obj/item/deepcorecapsule/proc/Deploy()

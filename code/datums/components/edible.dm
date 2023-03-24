@@ -34,7 +34,7 @@ Behavior that's still missing from this component that original food items had t
 	///Last time we checked for food likes
 	var/last_check_time
 
-/datum/component/edible/Initialize(list/initial_reagents, food_flags = NONE, foodtypes = NONE, volume = 50, eat_time = 30, list/tastes, list/eatverbs = list("bite","chew","nibble","gnaw","gobble","chomp"), bite_consumption = 2, datum/callback/after_eat)
+/datum/component/edible/Initialize(list/initial_reagents, food_flags = NONE, foodtypes = NONE, volume = 50, eat_time = 30, list/tastes, list/eatverbs = list("ест","вкушает","поедает","пожирает","наяривает","кушает"), bite_consumption = 2, datum/callback/after_eat)
 	if(!isatom(parent))
 		return COMPONENT_INCOMPATIBLE
 
@@ -73,11 +73,11 @@ Behavior that's still missing from this component that original food items had t
 			if (0)
 				return
 			if(1)
-				examine_list += "[parent] was bitten by someone!"
+				examine_list += "\n[capitalize(parent)] был[parent.ru_a()] кем-то покусан[parent.ru_a()]!"
 			if(2,3)
-				examine_list += "[parent] was bitten [bitecount] times!"
+				examine_list += "\n[capitalize(parent)] был[parent.ru_a()] покусан[parent.ru_a()] [bitecount] раз!"
 			else
-				examine_list += "[parent] was bitten multiple times!"
+				examine_list += "\n[capitalize(parent)] был[parent.ru_a()] покусан[parent.ru_a()] множество раз!"
 
 /datum/component/edible/proc/UseFromHand(obj/item/source, mob/living/M, mob/living/user)
 	SIGNAL_HANDLER
@@ -99,7 +99,7 @@ Behavior that's still missing from this component that original food items had t
 	if(feeder.a_intent == INTENT_HARM)
 		return
 	if(!owner.reagents.total_volume)//Shouldn't be needed but it checks to see if it has anything left in it.
-		to_chat(feeder, "<span class='warning'>None of [owner] left, oh no!</span>")
+		to_chat(feeder, span_warning("Совсем не осталось [parent], о нет!"))
 		if(isturf(parent))
 			var/turf/T = parent
 			T.ScrapeAway(1, CHANGETURF_INHERIT_AIR)
@@ -119,36 +119,35 @@ Behavior that's still missing from this component that original food items had t
 			return
 		var/eatverb = pick(eatverbs)
 		if(junkiness && eater.satiety < -150 && eater.nutrition > NUTRITION_LEVEL_STARVING + 50 && !HAS_TRAIT(eater, TRAIT_VORACIOUS))
-			to_chat(eater, "<span class='warning'>You don't feel like eating any more junk food at the moment!</span>")
+			to_chat(eater, span_warning("Не хочу я жрать эти отбросы!"))
 			return
 		else if(fullness <= 50)
-			eater.visible_message("<span class='notice'>[eater] hungrily [eatverb]s \the [parent], gobbling it down!</span>", "<span class='notice'>You hungrily [eatverb] \the [parent], gobbling it down!</span>")
+			eater.visible_message(span_notice("[eater] жадно [eatverb] [parent], проглатывая кусками!") , span_notice("Жадно кусаю [parent], проглатывая кусками!"))
 		else if(fullness > 50 && fullness < 150)
-			eater.visible_message("<span class='notice'>[eater] hungrily [eatverb]s \the [parent].</span>", "<span class='notice'>You hungrily [eatverb] \the [parent].</span>")
+			eater.visible_message(span_notice("[eater] жадно [eatverb] [parent].") , span_notice("Жадно пожираю [parent]."))
 		else if(fullness > 150 && fullness < 500)
-			eater.visible_message("<span class='notice'>[eater] [eatverb]s \the [parent].</span>", "<span class='notice'>You [eatverb] \the [parent].</span>")
+			eater.visible_message(span_notice("[eater] [eatverb] [parent].") , span_notice("Кушаю [parent]."))
 		else if(fullness > 500 && fullness < 600)
-			eater.visible_message("<span class='notice'>[eater] unwillingly [eatverb]s a bit of \the [parent].</span>", "<span class='notice'>You unwillingly [eatverb] a bit of \the [parent].</span>")
-		else if(fullness > (600 * (1 + eater.overeatduration / 2000)))	// The more you eat - the more you can eat
-			eater.visible_message("<span class='warning'>[eater] cannot force any more of \the [parent] to go down [eater.p_their()] throat!</span>", "<span class='warning'>You cannot force any more of \the [parent] to go down your throat!</span>")
+			eater.visible_message(span_notice("[eater] нехотя [eatverb] кусочек [parent].") , span_notice("Нямкаю кусочек [parent]."))
+		else if(fullness > (600 * (1 + eater.overeatduration / (4000 SECONDS))))	// The more you eat - the more you can eat
+			eater.visible_message(span_warning("[eater] не может запихнуть [parent] в свою глотку!") , span_warning("В меня больше не лезет [parent]!"))
 			return
 	else //If you're feeding it to someone else.
 		if(isbrain(eater))
-			to_chat(feeder, "<span class='warning'>[eater] doesn't seem to have a mouth!</span>")
+			to_chat(feeder, span_warning("[eater] похоже не имеет рта!"))
 			return
-		if(fullness <= (600 * (1 + eater.overeatduration / 1000)))
-			eater.visible_message("<span class='danger'>[feeder] attempts to feed [eater] [parent].</span>", \
-									"<span class='userdanger'>[feeder] attempts to feed you [parent].</span>")
+		if(fullness <= (600 * (1 + eater.overeatduration / (2000 SECONDS))))
+			eater.visible_message(span_danger("[feeder] пытается дать [eater] попробовать [parent].") , \
+									span_userdanger("[feeder] пытается дать мне попробовать [parent]."))
 		else
-			eater.visible_message("<span class='warning'>[feeder] cannot force any more of [parent] down [eater]'s throat!</span>", \
-									"<span class='warning'>[feeder] cannot force any more of [parent] down your throat!</span>")
+			eater.visible_message(span_warning("[feeder] не может больше запихнуть [parent] внутрь [eater]!") , \
+									span_warning("[feeder] не может больше запихнуть [parent] в меня!"))
 			return
 		if(!do_mob(feeder, eater)) //Wait 3 seconds before you can feed
 			return
-
 		log_combat(feeder, eater, "fed", owner.reagents.log_list())
-		eater.visible_message("<span class='danger'>[feeder] forces [eater] to eat [parent]!</span>", \
-									"<span class='userdanger'>[feeder] forces you to eat [parent]!</span>")
+		eater.visible_message(span_danger("[feeder] принуждает [eater] скушать [parent]!") , \
+									span_userdanger("[feeder] принуждает меня скушать [parent]!"))
 
 	TakeBite(eater, feeder)
 
@@ -183,12 +182,12 @@ Behavior that's still missing from this component that original food items had t
 	var/mob/living/carbon/C = eater
 	var/covered = ""
 	if(C.is_mouth_covered(head_only = 1))
-		covered = "headgear"
+		covered = "шлем"
 	else if(C.is_mouth_covered(mask_only = 1))
-		covered = "mask"
+		covered = "намордник"
 	if(covered)
-		var/who = (isnull(feeder) || eater == feeder) ? "your" : "[eater.p_their()]"
-		to_chat(feeder, "<span class='warning'>You have to remove [who] [covered] first!</span>")
+		var/who = (isnull(feeder) || eater == feeder) ? "мой" : "[eater.ru_ego()]"
+		to_chat(feeder, span_warning("Надо бы снять [who] [covered] сначала!"))
 		return FALSE
 	return TRUE
 
@@ -200,19 +199,19 @@ Behavior that's still missing from this component that original food items had t
 		return FALSE
 	var/mob/living/carbon/human/H = M
 	if(HAS_TRAIT(H, TRAIT_AGEUSIA) && foodtypes & H.dna.species.toxic_food)
-		to_chat(H, "<span class='warning'>You don't feel so good...</span>")
+		to_chat(H, span_warning("Что я только что съел?!"))
 		H.adjust_disgust(25 + 30 * fraction)
 	else
 		if(foodtypes & H.dna.species.toxic_food)
-			to_chat(H,"<span class='warning'>What the hell was that thing?!</span>")
+			to_chat(H,span_warning("ГОСПОДИ, ЭТО ОТВРАТИТЕЛЬНО!"))
 			H.adjust_disgust(25 + 30 * fraction)
 			SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "toxic_food", /datum/mood_event/disgusting_food)
 		else if(foodtypes & H.dna.species.disliked_food)
-			to_chat(H,"<span class='notice'>That didn't taste very good...</span>")
+			to_chat(H,span_notice("Фу! Я не люблю это!"))
 			H.adjust_disgust(11 + 15 * fraction)
 			SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "gross_food", /datum/mood_event/gross_food)
 		else if(foodtypes & H.dna.species.liked_food)
-			to_chat(H,"<span class='notice'>I love this taste!</span>")
+			to_chat(H,span_notice("Вкусно!"))
 			H.adjust_disgust(-5 + -2.5 * fraction)
 			SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "fav_food", /datum/mood_event/favorite_food)
 	if((foodtypes & BREAKFAST) && world.time - SSticker.round_start_time < STOP_SERVING_BREAKFAST)
@@ -245,12 +244,12 @@ Behavior that's still missing from this component that original food items had t
 		return
 	var/mob/living/L = user
 	if(bitecount == 0 || prob(50))
-		L.manual_emote("nibbles away at \the [parent]")
+		L.manual_emote("откусывает кусочек [parent]")
 	bitecount++
 	. = COMPONENT_ITEM_NO_ATTACK
 	L.taste(owner.reagents) // why should carbons get all the fun?
 	if(bitecount >= 5)
-		var/sattisfaction_text = pick("burps from enjoyment", "yaps for more", "woofs twice", "looks at the area where \the [parent] was")
+		var/sattisfaction_text = pick("отрыгивает от удовольствия", "просит ещё", "гавкает дважды", "не может найти куда пропал [parent]")
 		if(sattisfaction_text)
 			L.manual_emote(sattisfaction_text)
 		qdel(parent)

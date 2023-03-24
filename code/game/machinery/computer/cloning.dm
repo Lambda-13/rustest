@@ -1,17 +1,17 @@
 #define AUTOCLONING_MINIMAL_LEVEL 3
 
 /obj/machinery/computer/cloning
-	name = "cloning console"
-	desc = "Used to clone people and manage DNA."
+	name = "консоль клонировального аппарата"
+	desc = "Используется для клонирования гуманойдов."
 	icon_screen = "dna"
 	icon_keyboard = "med_key"
 	circuit = /obj/item/circuitboard/computer/cloning
 	req_access = list(ACCESS_GENETICS) //for modifying records
 	var/obj/machinery/dna_scannernew/scanner //Linked scanner. For scanning.
 	var/list/pods //Linked cloning pods
-	var/temp = "Inactive"
+	var/temp = "НЕАКТИВНО"
 	var/scantemp_ckey
-	var/scantemp = "Ready to Scan"
+	var/scantemp = "ГОТОВ К СКАНУ"
 	var/menu = 1 //Which menu screen to display
 	var/list/records = list()
 	var/datum/data/record/active_record
@@ -83,7 +83,7 @@
 
 		var/result = grow_clone_from_record(pod, R)
 		if(result & CLONING_SUCCESS)
-			temp = "[R.fields["name"]] => <font class='good'>Cloning cycle in progress...</font>"
+			temp = "[R.fields["name"]] => <font class='good'>КЛОНИРОВАНИЕ...</font>"
 			log_cloning("Cloning of [key_name(R.fields["mindref"])] automatically started via autoprocess - [src] at [AREACOORD(src)]. Pod: [pod] at [AREACOORD(pod)].")
 		if(result & CLONING_DELETE_RECORD)
 			records -= R
@@ -138,7 +138,7 @@
 			if (!user.transferItemToLoc(W,src))
 				return
 			diskette = W
-			to_chat(user, "<span class='notice'>You insert [W].</span>")
+			to_chat(user, "<span class='notice'>Вставляю [W].</span>")
 			playsound(src, 'sound/machines/terminal_insert_disc.ogg', 50, FALSE)
 			updateUsrDialog()
 	else if(W.tool_behaviour == TOOL_MULTITOOL)
@@ -148,17 +148,17 @@
 
 		if(istype(P.buffer, /obj/machinery/clonepod))
 			if(get_area(P.buffer) != get_area(src))
-				to_chat(user, "<font color = #666633>-% Cannot link machines across power zones. Buffer cleared %-</font color>")
+				to_chat(user, "<font color = #666633>-% Невозможно связать машины между зонами питания. Буфер очищен %-</font color>")
 				P.buffer = null
 				return
-			to_chat(user, "<font color = #666633>-% Successfully linked [P.buffer] with [src] %-</font color>")
+			to_chat(user, "<font color = #666633>-% Связываю [P.buffer] с [src] %-</font color>")
 			var/obj/machinery/clonepod/pod = P.buffer
 			if(pod.connected)
 				pod.connected.DetachCloner(pod)
 			AttachCloner(pod)
 		else
 			P.buffer = src
-			to_chat(user, "<font color = #666633>-% Successfully stored [REF(P.buffer)] [P.buffer.name] in buffer %-</font color>")
+			to_chat(user, "<font color = #666633>-% Записываю данные [REF(P.buffer)] [P.buffer.name] в буфер %-</font color>")
 		return
 	else
 		return ..()
@@ -169,91 +169,92 @@
 	updatemodules(TRUE)
 
 	var/dat = ""
-	dat += "<a href='byond://?src=[REF(src)];refresh=1'>Refresh</a>"
+	dat += "<meta charset='utf-8'>"
+	dat += "<a href='byond://?src=[REF(src)];refresh=1'>🔁</a>"
 
 	if(scanner && HasEfficientPod() && scanner.scan_level >= AUTOCLONING_MINIMAL_LEVEL)
 		if(!autoprocess)
-			dat += "<a href='byond://?src=[REF(src)];task=autoprocess'>Autoprocess</a>"
+			dat += "<a href='byond://?src=[REF(src)];task=autoprocess'>АВТО</a>"
 		else
-			dat += "<a href='byond://?src=[REF(src)];task=stopautoprocess'>Stop autoprocess</a>"
+			dat += "<a href='byond://?src=[REF(src)];task=stopautoprocess'>ОСТАНОВИТЬ АВТО</a>"
 	else
-		dat += "<span class='linkOff'>Autoprocess</span>"
-	dat += "<h3>Cloning Pod Status</h3>"
+		dat += "<span class='linkOff'>АВТО</span>"
+	dat += "<h3>Статус</h3>"
 	dat += "<div class='statusDisplay'>[temp]&nbsp;</div>"
 	switch(menu)
 		if(1)
 			// Modules
 			if (isnull(scanner) || !LAZYLEN(pods))
-				dat += "<h3>Modules</h3>"
+				dat += "<h3>Модули</h3>"
 				//dat += "<a href='byond://?src=[REF(src)];relmodules=1'>Reload Modules</a>"
 				if (isnull(scanner))
-					dat += "<font class='bad'>ERROR: No Scanner detected!</font><br>"
+					dat += "<font class='bad'>ОШИБКА: СКАН НЕ ОБНАРУЖЕН!</font><br>"
 				if (!LAZYLEN(pods))
-					dat += "<font class='bad'>ERROR: No Pod detected</font><br>"
+					dat += "<font class='bad'>ОШИБКА: КАМЕРА КЛОНИРОВАНИЯ НЕ ОБНАРУЖЕНА</font><br>"
 
 			// Scanner
 			if (!isnull(scanner))
 				var/mob/living/scanner_occupant = get_mob_or_brainmob(scanner.occupant)
 
-				dat += "<h3>Scanner Functions</h3>"
+				dat += "<h3>Сканер</h3>"
 
 				dat += "<div class='statusDisplay'>"
 				if(!scanner_occupant)
-					dat += "Scanner Unoccupied"
+					dat += "Сканер не занят"
 				else if(loading)
-					dat += "[scanner_occupant] => Scanning..."
+					dat += "[scanner_occupant] => Сканирую..."
 				else
 					if(scanner_occupant.ckey != scantemp_ckey)
-						scantemp = "Ready to Scan"
+						scantemp = "ГОТОВ К СКАНУ"
 						scantemp_ckey = scanner_occupant.ckey
 					dat += "[scanner_occupant] => [scantemp]"
 				dat += "</div>"
 
 				if(scanner_occupant)
-					dat += "<a href='byond://?src=[REF(src)];scan=1'>Start Scan</a>"
-					dat += "<a href='byond://?src=[REF(src)];scan=1;body_only=1'>Body-Only Scan</a>"
-					dat += "<br><a href='byond://?src=[REF(src)];lock=1'>[scanner.locked ? "Unlock Scanner" : "Lock Scanner"]</a>"
+					dat += "<a href='byond://?src=[REF(src)];scan=1'>Начать</a>"
+					dat += "<a href='byond://?src=[REF(src)];scan=1;body_only=1'>Сканировать тело</a>"
+					dat += "<br><a href='byond://?src=[REF(src)];lock=1'>[scanner.locked ? "Раблокировать" : "Заблокировать"] сканер</a>"
 				else
-					dat += "<span class='linkOff'>Start Scan</span>"
+					dat += "<span class='linkOff'>Начать сканирование</span>"
 
 			// Database
 			dat += "<h3>Database Functions</h3>"
 			if (records.len && records.len > 0)
-				dat += "<a href='byond://?src=[REF(src)];menu=2'>View Records ([records.len])</a><br>"
+				dat += "<a href='byond://?src=[REF(src)];menu=2'>Записи ([records.len])</a><br>"
 			else
-				dat += "<span class='linkOff'>View Records (0)</span><br>"
+				dat += "<span class='linkOff'>Записи (0)</span><br>"
 			if (diskette)
-				dat += "<a href='byond://?src=[REF(src)];disk=eject'>Eject Disk</a><br>"
+				dat += "<a href='byond://?src=[REF(src)];disk=eject'>Вытащить диск</a><br>"
 
 
 
 		if(2)
 			dat += "<h3>Current records</h3>"
-			dat += "<a href='byond://?src=[REF(src)];menu=1'><< Back</a><br><br>"
+			dat += "<a href='byond://?src=[REF(src)];menu=1'><< Назад</a><br><br>"
 			for(var/datum/data/record/R in records)
-				dat += "<h4>[R.fields["name"]]</h4>Scan ID [R.fields["id"]] <a href='byond://?src=[REF(src)];view_rec=[R.fields["id"]]'>View Record</a>"
+				dat += "<h4>[R.fields["name"]]</h4>ID Сканирования [R.fields["id"]] <a href='byond://?src=[REF(src)];view_rec=[R.fields["id"]]'>Записи</a>"
 		if(3)
-			dat += "<h3>Selected Record</h3>"
-			dat += "<a href='byond://?src=[REF(src)];menu=2'><< Back</a><br>"
+			dat += "<h3>Выбранная запись</h3>"
+			dat += "<a href='byond://?src=[REF(src)];menu=2'><< Назад</a><br>"
 
 			if (!active_record)
-				dat += "<font class='bad'>Record not found.</font>"
+				dat += "<font class='bad'>Запись не обнаружена.</font>"
 			else
 				var/body_only = active_record.fields["body_only"]
-				dat += "<h4>[active_record.fields["name"]][body_only ? " - BODY-ONLY" : ""]</h4>"
-				dat += "Scan ID [active_record.fields["id"]] \
-					[!body_only ? "<a href='byond://?src=[REF(src)];clone=[active_record.fields["id"]]'>Clone</a>" : "" ]\
-					<a href='byond://?src=[REF(src)];clone=[active_record.fields["id"]];empty=TRUE'>Empty Clone</a><br>"
+				dat += "<h4>[active_record.fields["name"]][body_only ? " - ТОЛЬКО-ТЕЛО" : ""]</h4>"
+				dat += "ID Сканирования [active_record.fields["id"]] \
+					[!body_only ? "<a href='byond://?src=[REF(src)];clone=[active_record.fields["id"]]'>Клонировать</a>" : "" ]\
+					<a href='byond://?src=[REF(src)];clone=[active_record.fields["id"]];empty=TRUE'>Очистить</a><br>"
 
 				var/obj/item/implant/health/H = locate(active_record.fields["imp"])
 
 				if ((H) && (istype(H)))
-					dat += "<b>Health Implant Data:</b><br />[H.sensehealth()]<br><br />"
+					dat += "<b>Имплант жизнедеятельности:</b><br />[H.sensehealth()]<br><br />"
 				else
-					dat += "<font class='bad'>Unable to locate Health Implant.</font><br /><br />"
+					dat += "<font class='bad'>Имплант жизнедеятельности не обнаружен.</font><br /><br />"
 
 				dat += "<b>Unique Identifier:</b><br /><span class='highlight'>[active_record.fields["UI"]]</span><br>"
-				dat += "<b>Structural Enzymes:</b><br /><span class='highlight'>"
+				dat += "<b>Структурные энзимы:</b><br /><span class='highlight'>"
 				for(var/key in active_record.fields["SE"])
 					if(key != RACEMUT)
 						var/val = active_record.fields["SE"][key]
@@ -264,8 +265,8 @@
 
 				if(diskette && diskette.fields)
 					dat += "<div class='block'>"
-					dat += "<h4>Inserted Disk</h4>"
-					dat += "<b>Contents:</b> "
+					dat += "<h4>Диск</h4>"
+					dat += "<b>Содержание:</b> "
 					var/list/L = list()
 					if(diskette.fields["UI"])
 						L += "Unique Identifier"
@@ -280,9 +281,9 @@
 						if(check_access(C))
 							can_load = TRUE
 					if(can_load)
-						dat += "<br /><a href='byond://?src=[REF(src)];disk=load'>Load From Disk</a>"
+						dat += "<br /><a href='byond://?src=[REF(src)];disk=load'>Загрузить с диска</a>"
 					else
-						dat += "<span class='linkOff'>Cannot Load From Disk: Access Denied</span>"
+						dat += "<span class='linkOff'>Ошибка загрузки с диска: Доступ запрещён</span>"
 					if(diskette.fields["SE"])
 						if(!include_se)
 							dat += "<br /><a href='byond://?src=[REF(src)];task=include_se'>Currently Excluding SE</a>"
@@ -300,20 +301,20 @@
 							dat += "<br /><a href='byond://?src=[REF(src)];task=exclude_ue'>Currently Including UE</a>"
 
 
-					dat += "<br /><a href='byond://?src=[REF(src)];disk=save'>Save to Disk</a>"
+					dat += "<br /><a href='byond://?src=[REF(src)];disk=save'>Сохранить на диск</a>"
 					dat += "</div>"
 
-				dat += "<font size=1><a href='byond://?src=[REF(src)];del_rec=1'>Delete Record</a></font>"
+				dat += "<font size=1><a href='byond://?src=[REF(src)];del_rec=1'>Удалить</a></font>"
 
 		if(4)
 			if (!active_record)
 				menu = 2
 				ui_interact(user)
 				return
-			dat += "<b><a href='byond://?src=[REF(src)];del_rec=1'>Please confirm.</a></b><br>"
-			dat += "<b><a href='byond://?src=[REF(src)];menu=3'>Cancel</a></b>"
+			dat += "<b><a href='byond://?src=[REF(src)];del_rec=1'>Подтвердите.</a></b><br>"
+			dat += "<b><a href='byond://?src=[REF(src)];menu=3'>Отмена</a></b>"
 
-	var/datum/browser/popup = new(user, "cloning", "Cloning System Control")
+	var/datum/browser/popup = new(user, "cloning", "Система контроля клонирования")
 	popup.set_content(dat)
 	popup.open()
 
@@ -354,7 +355,7 @@
 		loading = TRUE
 		updateUsrDialog()
 		playsound(src, 'sound/machines/terminal_prompt.ogg', 50, FALSE)
-		say("Initiating scan...")
+		say("Начинаю сканирование...")
 
 		addtimer(CALLBACK(src, .proc/do_scan, usr, body_only), 2 SECONDS)
 
@@ -373,7 +374,7 @@
 		if(active_record)
 			menu = 3
 		else
-			temp = "Record missing."
+			temp = "ЗАПИСЬ НЕ НАЙДЕНА"
 
 	else if (href_list["del_rec"])
 		if ((!active_record) || (menu < 3))
@@ -389,11 +390,11 @@
 			if(active_record.fields["body_only"]) //Body-only scans are not as important and can be deleted freely
 				has_access = TRUE
 			if(has_access)
-				temp = "Delete record?"
+				temp = "УДАЛИТЬ?"
 				menu = 4
 				playsound(src, 'sound/machines/terminal_prompt.ogg', 50, FALSE)
 			else
-				temp = "Access Denied"
+				temp = "ДОСТУП ЗАПРЕЩЁН"
 				menu = 2
 				playsound(src, 'sound/machines/terminal_prompt_deny.ogg', 50, FALSE)
 
@@ -412,12 +413,12 @@
 
 
 				if (!diskette || !istype(diskette.fields))
-					temp = "<font class='bad'>Load error.</font>"
+					temp = "<font class='bad'>ОШИБКА ЗАГРУЗКИ</font>"
 					updateUsrDialog()
 					playsound(src, 'sound/machines/terminal_prompt_deny.ogg', 50, FALSE)
 					return
 				if (!active_record)
-					temp = "<font class='bad'>Record error.</font>"
+					temp = "<font class='bad'>ОШИБКА ЗАПИСИ</font>"
 					menu = 1
 					updateUsrDialog()
 					playsound(src, 'sound/machines/terminal_prompt_deny.ogg', 50, FALSE)
@@ -433,7 +434,7 @@
 					overwrite_field_if_available(active_record, diskette, "SE")
 
 				log_cloning("[key_name(usr)] uploaded [key_name(active_record.fields["mindref"])]'s cloning records to [src] at [AREACOORD(src)] via [diskette].")
-				temp = "Load successful."
+				temp = "ЗАГРУЗКА УСПЕШНА"
 				playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, FALSE)
 
 			if("eject")
@@ -464,27 +465,27 @@
 		//Look for that player! They better be dead!
 		if(C)
 			if(C.fields["body_only"] && !empty)
-				temp = "<font class='bad'>Cannot initiate regular cloning with body-only scans.</font>"
+				temp = "<font class='bad'>Невозможно инициировать обычное клонирование с помощью сканирования только тела.</font>"
 				playsound(src, 'sound/machines/terminal_prompt_deny.ogg', 50, FALSE)
 			var/obj/machinery/clonepod/pod = GetAvailablePod()
 			var/success = FALSE
 			//Can't clone without someone to clone.  Or a pod.  Or if the pod is busy. Or full of gibs.
 			if(!LAZYLEN(pods))
-				temp = "<font class='bad'>No Clonepods detected.</font>"
+				temp = "<font class='bad'>Капсула клонирования не найдена.</font>"
 				playsound(src, 'sound/machines/terminal_prompt_deny.ogg', 50, FALSE)
 			else if(!pod)
-				temp = "<font class='bad'>No Clonepods available.</font>"
+				temp = "<font class='bad'>Капсула клонирования недоступна.</font>"
 				playsound(src, 'sound/machines/terminal_prompt_deny.ogg', 50, FALSE)
 			else if(!CONFIG_GET(flag/revival_cloning) && !empty)
-				temp = "<font class='bad'>Unable to initiate cloning cycle.</font>"
+				temp = "<font class='bad'>Не удалось запустить цикл клонирования.</font>"
 				playsound(src, 'sound/machines/terminal_prompt_deny.ogg', 50, FALSE)
 			else if(pod.occupant)
-				temp = "<font class='bad'>Cloning cycle already in progress.</font>"
+				temp = "<font class='bad'>Цикл клонирования уже запущен.</font>"
 				playsound(src, 'sound/machines/terminal_prompt_deny.ogg', 50, FALSE)
 			else
 				var/result = grow_clone_from_record(pod, C, empty)
 				if(result & CLONING_SUCCESS)
-					temp = "[C.fields["name"]] => <font class='good'>Cloning cycle in progress...</font>"
+					temp = "[C.fields["name"]] => <font class='good'>Выполняется цикл клонирования...</font>"
 					playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, FALSE)
 					if(active_record == C)
 						active_record = null
@@ -501,11 +502,11 @@
 					records -= C
 
 			if(!success)
-				temp = "[C.fields["name"]] => <font class='bad'>Initialisation failure.</font>"
+				temp = "[C.fields["name"]] => <font class='bad'>Ошибка инициализации.</font>"
 				playsound(src, 'sound/machines/terminal_prompt_deny.ogg', 50, FALSE)
 
 		else
-			temp = "<font class='bad'>Data corruption.</font>"
+			temp = "<font class='bad'>Данные повреждены.</font>"
 			playsound(src, 'sound/machines/terminal_prompt_deny.ogg', 50, FALSE)
 
 	else if (href_list["menu"])
@@ -541,29 +542,29 @@
 		dna = B.stored_dna
 
 	if(!istype(dna))
-		scantemp = "<font class='bad'>Unable to locate valid genetic data.</font>"
+		scantemp = "<font class='bad'>Не удалось найти достоверные генетические данные.</font>"
 		playsound(src, 'sound/machines/terminal_prompt_deny.ogg', 50, FALSE)
 		return
 	if(!body_only && (mob_occupant.suiciding || mob_occupant.hellbound))
-		scantemp = "<font class='bad'>Subject's brain is not responding to scanning stimuli.</font>"
+		scantemp = "<font class='bad'>Мозг субъекта не реагирует на сканирующие стимулы.</font>"
 		playsound(src, 'sound/machines/terminal_prompt_deny.ogg', 50, FALSE)
 		return
 	if((HAS_TRAIT(mob_occupant, TRAIT_HUSK)) && (src.scanner.scan_level < 2))
-		scantemp = "<font class='bad'>Subject's body is too damaged to scan properly.</font>"
+		scantemp = "<font class='bad'>Тело субъекта слишком повреждено для нормального сканирования.</font>"
 		playsound(src, 'sound/machines/terminal_alert.ogg', 50, FALSE)
 		return
 	if(HAS_TRAIT(mob_occupant, TRAIT_BADDNA))
-		scantemp = "<font class='bad'>Subject's DNA is damaged beyond any hope of recovery.</font>"
+		scantemp = "<font class='bad'>ДНК субъекта повреждена без всякой надежды на восстановление.</font>"
 		playsound(src, 'sound/machines/terminal_alert.ogg', 50, FALSE)
 		return
 	if (!body_only && isnull(mob_occupant.mind))
-		scantemp = "<font class='bad'>Mental interface failure.</font>"
+		scantemp = "<font class='bad'>Сбой ментального интерфейса.</font>"
 		playsound(src, 'sound/machines/terminal_prompt_deny.ogg', 50, FALSE)
 		return
 	var/datum/data/record/R = new()
 	if(dna.species)
 		if(NO_DNA_COPY in dna.species.species_traits)
-			scantemp = "<font class='bad'>Unable to replicate genetic data.</font>"
+			scantemp = "<font class='bad'>Невозможно воспроизвести генетические данные.</font>"
 			playsound(src, 'sound/machines/terminal_prompt_deny.ogg', 50, FALSE)
 			return
 		// We store the instance rather than the path, because some
@@ -617,9 +618,9 @@
 			old_record = null
 	if(old_record)
 		records -= old_record
-		scantemp = "Record updated."
+		scantemp = "ЗАПИСЬ ОБНОВЛЕНА"
 	else
-		scantemp = "Subject successfully scanned."
+		scantemp = "СУБЬЕКТ УСПЕШНО ПРОСКАНИРОВАН"
 	records += R
 	log_cloning("[M ? key_name(M) : "Autoprocess"] added the [body_only ? "body-only " : ""]record of [key_name(mob_occupant)] to [src] at [AREACOORD(src)].")
 	playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50)

@@ -108,7 +108,7 @@
 				to_chat(user, "<span class='warning'>The cistern is full!</span>")
 				return
 			if(!user.transferItemToLoc(I, src))
-				to_chat(user, "<span class='warning'>\The [I] is stuck to your hand, you cannot put it in the cistern!</span>")
+				to_chat(user, "<span class='warning'>\The [I] прилип к рукеr hand, you cannot put it in the cistern!</span>")
 				return
 			w_items += I.w_class
 			to_chat(user, "<span class='notice'>You carefully place [I] into the cistern.</span>")
@@ -194,7 +194,7 @@
 			to_chat(user, "<span class='warning'>[I] is too large for the drain enclosure.</span>")
 			return
 		if(!user.transferItemToLoc(I, src))
-			to_chat(user, "<span class='warning'>\[I] is stuck to your hand, you cannot put it in the drain enclosure!</span>")
+			to_chat(user, "<span class='warning'>\[I] прилип к рукеr hand, you cannot put it in the drain enclosure!</span>")
 			return
 		hiddenitem = I
 		to_chat(user, "<span class='notice'>You place [I] into the drain enclosure.</span>")

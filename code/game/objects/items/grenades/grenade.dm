@@ -61,7 +61,7 @@
 		preprime(user, 5, FALSE)
 		return TRUE
 	else if(sticky && prob(50)) // to add risk to sticky tape grenade cheese, no return cause we still prime as normal after
-		to_chat(user, "<span class='warning'>What the... [src] is stuck to your hand!</span>")
+		to_chat(user, "<span class='warning'>What the... [src] прилип к рукеr hand!</span>")
 		ADD_TRAIT(src, TRAIT_NODROP, STICKY_NODROP)
 
 /obj/item/grenade/examine(mob/user)
@@ -70,7 +70,7 @@
 		if(det_time > 0)
 			. += "The timer is set to [DisplayTimeText(det_time)]."
 		else
-			. += "\The [src] is set for instant detonation."
+			. += "[src] is set for instant detonation."
 
 
 /obj/item/grenade/attack_self(mob/user)

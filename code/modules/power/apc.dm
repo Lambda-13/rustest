@@ -288,10 +288,10 @@
 		else
 			. += "The cover is closed."
 
-	. += "<span class='notice'>Alt-Click the APC to [ locked ? "unlock" : "lock"] the interface.</span>"
+	. += "<hr><span class='notice'>Alt-клик the APC to [ locked ? "unlock" : "lock"] the interface.</span>"
 
 	if(issilicon(user))
-		. += "<span class='notice'>Ctrl-Click the APC to switch the breaker [ operating ? "off" : "on"].</span>"
+		. += "<hr><span class='notice'>Ctrl-Click the APC to switch the breaker [ operating ? "off" : "on"].</span>"
 
 // update the APC icon to show the three base states
 // also add overlays for indicator lights
@@ -310,7 +310,7 @@
 			var/basestate = "apc[ cell ? "2" : "1" ]"
 			if(update_state & UPSTATE_OPENED1)
 				if(update_state & (UPSTATE_MAINT|UPSTATE_BROKE))
-					icon_state = "apcmaint" //disabled APC cannot hold cell
+					icon_state = "apcmaint" //disabled APC не может содержать cell
 				else
 					icon_state = basestate
 			else if(update_state & UPSTATE_OPENED2)
@@ -547,7 +547,7 @@
 			return
 		user.visible_message("<span class='notice'>[user.name] welds [src].</span>", \
 							"<span class='notice'>You start welding the APC frame...</span>", \
-							"<span class='hear'>You hear welding.</span>")
+							"<span class='hear'>Слышу сварку.</span>")
 		if(W.use_tool(src, user, 50, volume=50, amount=3))
 			if ((machine_stat & BROKEN) || opened==APC_COVER_REMOVED)
 				new /obj/item/stack/sheet/metal(loc)
@@ -760,11 +760,11 @@
 	else
 		if(allowed(usr) && !wires.is_cut(WIRE_IDSCAN) && !malfhack)
 			locked = !locked
-			to_chat(user, "<span class='notice'>You [ locked ? "lock" : "unlock"] the APC interface.</span>")
+			to_chat(user, "<span class='notice'>You [ locked ? "Блок" : "Разблок"]ирую the APC interface.</span>")
 			update_icon()
 			updateUsrDialog()
 		else
-			to_chat(user, "<span class='warning'>Access denied.</span>")
+			to_chat(user, "<span class='warning'>Доступ запрещён.</span>")
 
 /obj/machinery/power/apc/proc/toggle_nightshift_lights(mob/living/user)
 	if(last_nightshift_switch > world.time - 100) //~10 seconds between each toggle to prevent spamming
@@ -981,7 +981,7 @@
 			)																				\
 		)
 			if(!loud)
-				to_chat(user, "<span class='danger'>\The [src] has eee disabled!</span>")
+				to_chat(user, "<span class='danger'>[src] has eee disabled!</span>")
 			return FALSE
 	return TRUE
 

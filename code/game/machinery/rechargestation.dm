@@ -36,9 +36,9 @@
 /obj/machinery/recharge_station/examine(mob/user)
 	. = ..()
 	if(in_range(user, src) || isobserver(user))
-		. += "<span class='notice'>Дисплей показывает: Зарядка идёт на <b>[recharge_speed]J</b> каждый цикл.</span>"
+		. += "<hr><span class='notice'>Дисплей показывает: Зарядка идёт на <b>[recharge_speed]J</b> каждый цикл.</span>"
 		if(repairs)
-			. += "<span class='notice'>- Автопочинка киборгов включена.</span>"
+			. += "<hr><span class='notice'>- Автопочинка киборгов включена.</span>"
 
 
 /obj/machinery/recharge_station/on_set_is_operational(old_value)

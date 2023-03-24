@@ -62,11 +62,11 @@
 /obj/item/swapper/examine(mob/user)
 	. = ..()
 	if(world.time < next_use)
-		. += "<span class='warning'>Осталось до конца перезарядки: [DisplayTimeText(next_use - world.time)].</span>"
+		. += "<hr><span class='warning'>Осталось до конца перезарядки: [DisplayTimeText(next_use - world.time)].</span>"
 	if(linked_swapper)
-		. += "<span class='notice'><b>Подключён.</b> Alt-Click для разрыва связи.</span>"
+		. += "<hr><span class='notice'><b>Подключён.</b> Alt-клик для разрыва связи.</span>"
 	else
-		. += "<span class='notice'><b>Не подключён.</b> Подключи к другому инвентеру для работы.</span>"
+		. += "<hr><span class='notice'><b>Не подключён.</b> Подключи к другому инвентеру для работы.</span>"
 
 /obj/item/swapper/AltClick(mob/living/user)
 	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))

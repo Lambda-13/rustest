@@ -230,7 +230,7 @@
 /obj/item/pressure_plate/hologrid/examine(mob/user)
 	. = ..()
 	if(claimed)
-		. += "<span class='notice'>This one appears to be spent already.</span>"
+		. += "<hr><span class='notice'>This one appears to be spent already.</span>"
 
 /obj/item/pressure_plate/hologrid/trigger()
 	if(!claimed)

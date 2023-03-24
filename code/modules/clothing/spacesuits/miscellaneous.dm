@@ -437,7 +437,7 @@ Contains:
 
 /obj/item/clothing/head/helmet/space/hardsuit/berserker/examine()
 	. = ..()
-	. += "<span class='notice'>Berserk mode is [berserk_charge]% charged.</span>"
+	. += "<hr><span class='notice'>Berserk mode is [berserk_charge]% charged.</span>"
 
 /obj/item/clothing/head/helmet/space/hardsuit/berserker/process(delta_time)
 	. = ..()

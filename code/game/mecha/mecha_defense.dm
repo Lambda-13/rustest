@@ -199,7 +199,7 @@
 					id_card = pda.id
 				output_maintenance_dialog(id_card, user)
 				return
-			to_chat(user, "<span class='warning'>Invalid ID: Access denied.</span>")
+			to_chat(user, "<span class='warning'>Invalid ID: Доступ запрещён.</span>")
 			return
 		to_chat(user, "<span class='warning'>Maintenance protocols disabled by operator.</span>")
 		return

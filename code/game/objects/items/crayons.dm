@@ -91,7 +91,7 @@
 /obj/item/toy/crayon/examine(mob/user)
 	. = ..()
 	if(can_change_colour)
-		. += "<span class='notice'>Ctrl-click [src] while it's on your person to quickly recolour it.</span>"
+		. += "<hr><span class='notice'>Ctrl-click [src] while it's on your person to quickly recolour it.</span>"
 
 /obj/item/toy/crayon/proc/refill()
 	if(charges == -1)
@@ -689,7 +689,7 @@
 		. += "It has [charges_left] use\s left."
 	else
 		. += "It is empty."
-	. += "<span class='notice'>Alt-click [src] to [ is_capped ? "take the cap off" : "put the cap on"].</span>"
+	. += "<hr><span class='notice'>Alt-клик [src] to [ is_capped ? "take the cap off" : "put the cap on"].</span>"
 
 /obj/item/toy/crayon/spraycan/afterattack(atom/target, mob/user, proximity, params)
 	if(!proximity)

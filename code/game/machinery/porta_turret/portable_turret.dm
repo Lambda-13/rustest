@@ -329,7 +329,7 @@ DEFINE_BITFIELD(turret_flags, list(
 			locked = !locked
 			to_chat(user, "<span class='notice'>Controls are now [locked ? "locked" : "unlocked"].</span>")
 		else
-			to_chat(user, "<span class='alert'>Access denied.</span>")
+			to_chat(user, "<span class='alert'>Доступ запрещён.</span>")
 	else if(I.tool_behaviour == TOOL_MULTITOOL && !locked)
 		if(!multitool_check_buffer(user, I))
 			return
@@ -896,7 +896,7 @@ DEFINE_BITFIELD(turret_flags, list(
 	. += ..()
 	if(issilicon(user) && !(machine_stat & BROKEN))
 		. += {"<span class='notice'>Ctrl-click [src] to [ enabled ? "disable" : "enable"] turrets.</span>
-					<span class='notice'>Alt-click [src] to set turrets to [ lethal ? "stun" : "kill"].</span>"}
+					<span class='notice'>Alt-клик [src] to set turrets to [ lethal ? "stun" : "kill"].</span>"}
 
 /obj/machinery/turretid/attackby(obj/item/I, mob/user, params)
 	if(machine_stat & BROKEN)
@@ -908,7 +908,7 @@ DEFINE_BITFIELD(turret_flags, list(
 		var/obj/item/multitool/M = I
 		if(M.buffer && istype(M.buffer, /obj/machinery/porta_turret))
 			turrets |= M.buffer
-			to_chat(user, "<span class='notice'>You link \the [M.buffer] with \the [src].</span>")
+			to_chat(user, "<span class='notice'>You link \the [M.buffer] with [src].</span>")
 			return
 
 	if (issilicon(user))
@@ -921,9 +921,9 @@ DEFINE_BITFIELD(turret_flags, list(
 				return
 
 			locked = !locked
-			to_chat(user, "<span class='notice'>You [ locked ? "lock" : "unlock"] the panel.</span>")
+			to_chat(user, "<span class='notice'>You [ locked ? "Блок" : "Разблок"]ирую the panel.</span>")
 		else
-			to_chat(user, "<span class='alert'>Access denied.</span>")
+			to_chat(user, "<span class='alert'>Доступ запрещён.</span>")
 
 /obj/machinery/turretid/emag_act(mob/user)
 	if(obj_flags & EMAGGED)

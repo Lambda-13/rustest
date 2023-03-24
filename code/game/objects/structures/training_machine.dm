@@ -321,10 +321,10 @@
 /obj/structure/training_machine/examine(mob/user)
 	. = ..()
 	if (obj_flags & EMAGGED)
-		. += "<span class='warning'>It has a dangerous-looking toolbox attached to it, and the control panel is smoking sightly...</span>"
+		. += "<hr><span class='warning'>It has a dangerous-looking toolbox attached to it, and the control panel is smoking sightly...</span>"
 	else if (attached_item) //Can't removed the syndicate toolbox!
-		. += "<span class='notice'><b>Alt-Click to remove \the [attached_item]</b></span>"
-	. += "<span class='notice'><b>Click to open control interface.</b></span>"
+		. += "<hr><span class='notice'><b>Alt-клик to remove \the [attached_item]</b></span>"
+	. += "<hr><span class='notice'><b>Click to open control interface.</b></span>"
 
 /**
  * Device that simply counts the number of times you've hit a mob or target with. Looks like a toolbox but isn't.
@@ -346,7 +346,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	///Total number of hits made against a valid target
 	var/total_hits = 0
-	///Number of hits made since the Lap button (alt-click) was last pushed
+	///Number of hits made since the Lap button (Alt-клик) was last pushed
 	var/lap_hits = 0
 
 /obj/item/training_toolbox/afterattack(atom/target, mob/user, proximity)
@@ -392,13 +392,13 @@
 /obj/item/training_toolbox/examine(mob/user)
 	. = ..()
 	if(!in_range(src, user) && !isobserver(user))
-		. += "<span class='notice'>You can see a display on the back. You'll need to get closer to read it, though.</span>"
+		. += "<hr><span class='notice'>You can see a display on the back. You'll need to get closer to read it, though.</span>"
 		return
-	. += "<span class='notice'>A display on the back reads:</span>"
-	. += "<span class='notice'>Total Hits: <b>[total_hits]</b></span>"
+	. += "<hr><span class='notice'>A display on the back reads:</span>"
+	. += "<hr><span class='notice'>Total Hits: <b>[total_hits]</b></span>"
 	if (lap_hits != total_hits)
-		. += "<span class='notice'>Current Lap: <b>[lap_hits]</b></span>"
-	. += "<span class='notice'><b>Alt-Click to 'Lap' the hit counter.</b></span>"
+		. += "<hr><span class='notice'>Current Lap: <b>[lap_hits]</b></span>"
+	. += "<hr><span class='notice'><b>Alt-клик to 'Lap' the hit counter.</b></span>"
 
 #undef MIN_RANGE
 #undef MIN_SPEED

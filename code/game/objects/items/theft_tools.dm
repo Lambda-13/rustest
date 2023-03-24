@@ -75,7 +75,7 @@
 /obj/item/nuke_core_container/attackby(obj/item/nuke_core/core, mob/user)
 	if(istype(core))
 		if(!user.temporarilyRemoveItemFromInventory(core))
-			to_chat(user, "<span class='warning'>The [core] is stuck to your hand!</span>")
+			to_chat(user, "<span class='warning'>The [core] прилип к рукеr hand!</span>")
 			return
 		else
 			load(core, user)
@@ -143,7 +143,7 @@
 	else if(istype(W, /obj/item/scalpel/supermatter) || istype(W, /obj/item/nuke_core_container/supermatter/)) // we don't want it to dust
 		return
 	else
-		to_chat(user, "<span class='notice'>As it touches \the [src], both \the [src] and \the [W] burst into dust!</span>")
+		to_chat(user, "<span class='notice'>As it touches [src], both [src] and [W] burst into dust!</span>")
 		radiation_pulse(user, 100)
 		playsound(src, 'sound/effects/supermatter.ogg', 50, TRUE)
 		qdel(W)
@@ -240,7 +240,7 @@
 /obj/item/hemostat/supermatter/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum) // no instakill supermatter javelins
 	if(sliver)
 		sliver.forceMove(loc)
-		visible_message("<span class='notice'>\The [sliver] falls out of \the [src] as it hits the ground.</span>")
+		visible_message("<span class='notice'>\The [sliver] falls out of [src] as it hits the ground.</span>")
 		sliver = null
 		update_icon()
 	..()
@@ -255,7 +255,7 @@
 		investigate_log("has consumed [AM].", "supermatter")
 		qdel(AM)
 	if (user)
-		user.visible_message("<span class='danger'>As [user] touches [AM] with \the [src], both flash into dust and silence fills the room...</span>",\
+		user.visible_message("<span class='danger'>As [user] touches [AM] with [src], both flash into dust and silence fills the room...</span>",\
 			"<span class='userdanger'>You touch [AM] with [src], and everything suddenly goes silent.\n[AM] and [sliver] flash into dust, and soon as you can register this, you do as well.</span>",\
 			"<span class='hear'>Everything suddenly goes silent.</span>")
 		user.dust()

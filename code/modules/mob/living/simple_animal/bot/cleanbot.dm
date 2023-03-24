@@ -54,7 +54,7 @@
 
 /mob/living/simple_animal/bot/cleanbot/proc/deputize(obj/item/W, mob/user)
 	if(in_range(src, user))
-		to_chat(user, "<span class='notice'>You attach \the [W] to \the [src].</span>")
+		to_chat(user, "<span class='notice'>You attach [W] to [src].</span>")
 		user.transferItemToLoc(W, src)
 		weapon = W
 		weapon_orig_force = weapon.force
@@ -162,16 +162,16 @@
 	if(istype(W, /obj/item/card/id)||istype(W, /obj/item/pda))
 		if(bot_core.allowed(user) && !open && !emagged)
 			locked = !locked
-			to_chat(user, "<span class='notice'>You [ locked ? "lock" : "unlock"] \the [src] behaviour controls.</span>")
+			to_chat(user, "<span class='notice'>You [ locked ? "Блок" : "Разблок"]ирую [src] behaviour controls.</span>")
 		else
 			if(emagged)
 				to_chat(user, "<span class='warning'>ERROR</span>")
 			if(open)
 				to_chat(user, "<span class='warning'>Please close the access panel before locking it.</span>")
 			else
-				to_chat(user, "<span class='notice'>\The [src] doesn't seem to respect your authority.</span>")
+				to_chat(user, "<span class='notice'>[src] doesn't seem to respect your authority.</span>")
 	else if(istype(W, /obj/item/kitchen/knife) && user.a_intent != INTENT_HARM)
-		to_chat(user, "<span class='notice'>You start attaching \the [W] to \the [src]...</span>")
+		to_chat(user, "<span class='notice'>You start attaching [W] to [src]...</span>")
 		if(do_after(user, 25, target = src))
 			deputize(W, user)
 	else

@@ -55,11 +55,11 @@
 
 /obj/item/kinetic_crusher/examine(mob/living/user)
 	. = ..()
-	. += "<span class='notice'>Induce magnetism in an enemy by striking them with a magnetospheric wave, then hit them in melee to force a waveform collapse for <b>[force + detonation_damage]</b> damage.</span>"
-	. += "<span class='notice'>Does <b>[force + detonation_damage + backstab_bonus]</b> damage if the target is backstabbed, instead of <b>[force + detonation_damage]</b>.</span>"
+	. += "<hr><span class='notice'>Induce magnetism in an enemy by striking them with a magnetospheric wave, then hit them in melee to force a waveform collapse for <b>[force + detonation_damage]</b> damage.</span>"
+	. += "<hr><span class='notice'>Does <b>[force + detonation_damage + backstab_bonus]</b> damage if the target is backstabbed, instead of <b>[force + detonation_damage]</b>.</span>"
 	for(var/t in trophies)
 		var/obj/item/crusher_trophy/T = t
-		. += "<span class='notice'>It has \a [T] attached, which causes [T.effect_desc()].</span>"
+		. += "<hr><span class='notice'>It has \a [T] attached, which causes [T.effect_desc()].</span>"
 
 /obj/item/kinetic_crusher/attackby(obj/item/I, mob/living/user)
 	if(I.tool_behaviour == TOOL_CROWBAR)
@@ -204,7 +204,7 @@
 
 /obj/item/crusher_trophy/examine(mob/living/user)
 	. = ..()
-	. += "<span class='notice'>Causes [effect_desc()] when attached to a kinetic crusher.</span>"
+	. += "<hr><span class='notice'>Causes [effect_desc()] when attached to a kinetic crusher.</span>"
 
 /obj/item/crusher_trophy/proc/effect_desc()
 	return "errors"
@@ -270,7 +270,7 @@
 
 /obj/item/crusher_trophy/elder_tentacle/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>Suitable as a trophy for a proto-kinetic crusher.</span>"
+	. += "<hr><span class='notice'>Suitable as a trophy for a proto-kinetic crusher.</span>"
 
 /obj/item/crusher_trophy/elder_tentacle/effect_desc()
 	return "waveform collapse to do <b>[bonus_value]</b> more damage for every <b>[missing_health_desc]</b> health you are missing"
@@ -338,7 +338,7 @@
 
 /obj/item/crusher_trophy/magma_wing/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>Suitable as a trophy for a proto-kinetic crusher.</span>"
+	. += "<hr><span class='notice'>Suitable as a trophy for a proto-kinetic crusher.</span>"
 
 /obj/item/crusher_trophy/magma_wing/on_projectile_fire(obj/projectile/destabilizer/marker, mob/living/user)
 	if(deadly_shot)
@@ -391,7 +391,7 @@
 
 /obj/item/crusher_trophy/watcher_wing_forgotten/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>Suitable as a trophy for a proto-kinetic crusher.</span>"
+	. += "<hr><span class='notice'>Suitable as a trophy for a proto-kinetic crusher.</span>"
 
 /obj/item/crusher_trophy/watcher_wing_forgotten/on_projectile_fire(obj/projectile/destabilizer/marker, mob/living/user)
 	if(deadly_shot)
@@ -419,7 +419,7 @@
 
 /obj/item/crusher_trophy/legion_skull/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>Suitable as a trophy for a proto-kinetic crusher.</span>"
+	. += "<hr><span class='notice'>Suitable as a trophy for a proto-kinetic crusher.</span>"
 
 /obj/item/crusher_trophy/legion_skull/effect_desc()
 	return "a kinetic crusher to recharge <b>[bonus_value*0.1]</b> second\s faster"
@@ -467,7 +467,7 @@
 
 /obj/item/crusher_trophy/legion_skull_crystal/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>Suitable as a trophy for a proto-kinetic crusher.</span>"
+	. += "<hr><span class='notice'>Suitable as a trophy for a proto-kinetic crusher.</span>"
 
 /obj/item/crusher_trophy/legion_skull_crystal/effect_desc()
 	return "waveform collapse to shoot 3 projectiles that only hits hostile fauna"
@@ -508,7 +508,7 @@
 
 /obj/item/crusher_trophy/miner_eye/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>Suitable as a trophy for a proto-kinetic crusher.</span>"
+	. += "<hr><span class='notice'>Suitable as a trophy for a proto-kinetic crusher.</span>"
 
 /obj/item/crusher_trophy/miner_eye/effect_desc()
 	return "waveform collapse to grant stun immunity and <b>90%</b> damage reduction for <b>1</b> second"
@@ -563,7 +563,7 @@
 
 /obj/item/crusher_trophy/ash_spike/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>Suitable as a trophy for a proto-kinetic crusher.</span>"
+	. += "<hr><span class='notice'>Suitable as a trophy for a proto-kinetic crusher.</span>"
 
 /obj/item/crusher_trophy/ash_spike/on_mark_detonation(mob/living/target, mob/living/user)
 	for(var/mob/living/L in oview(2, user))
@@ -623,7 +623,7 @@
 
 /obj/item/crusher_trophy/blaster_tubes/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>Suitable as a trophy for a proto-kinetic crusher.</span>"
+	. += "<hr><span class='notice'>Suitable as a trophy for a proto-kinetic crusher.</span>"
 
 /obj/item/crusher_trophy/blaster_tubes/effect_desc()
 	return "waveform collapse to make the next magnetic pulse deal <b>[bonus_value]</b> damage but move slower"
@@ -681,7 +681,7 @@
 
 /obj/item/crusher_trophy/king_goat/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>Suitable as a trophy for a proto-kinetic crusher.</span>"
+	. += "<hr><span class='notice'>Suitable as a trophy for a proto-kinetic crusher.</span>"
 
 /obj/item/crusher_trophy/king_goat/effect_desc()
 	return "you also passively recharge pulses 5x as fast while this is equipped and do a decent amount of damage at the cost of dulling the blade"
@@ -735,7 +735,7 @@
 
 /obj/item/kinetic_crusher/old/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>This hunk of junk's so heavy that you can barely swing it! Though, that blade looks pretty sharp...</span>"
+	. += "<hr><span class='notice'>This hunk of junk's so heavy that you can barely swing it! Though, that blade looks pretty sharp...</span>"
 
 /obj/item/kinetic_crusher/old/ComponentInitialize()
 	. = ..()

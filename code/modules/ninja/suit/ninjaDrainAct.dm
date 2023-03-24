@@ -126,7 +126,7 @@ They *could* go in their appropriate files, but this is supposed to be modular
 
 	. = DRAIN_RD_HACK_FAILED
 
-	to_chat(H, "<span class='notice'>Hacking \the [src]...</span>")
+	to_chat(H, "<span class='notice'>Hacking [src]...</span>")
 	AI_notify_hack()
 
 	if(stored_research)
@@ -143,7 +143,7 @@ They *could* go in their appropriate files, but this is supposed to be modular
 
 	. = DRAIN_RD_HACK_FAILED
 
-	to_chat(H, "<span class='notice'>Hacking \the [src]...</span>")
+	to_chat(H, "<span class='notice'>Hacking [src]...</span>")
 	AI_notify_hack()
 
 	if(stored_research)

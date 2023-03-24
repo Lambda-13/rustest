@@ -9,29 +9,29 @@
 	. += status_effect_examines()
 	if (getBruteLoss())
 		if (getBruteLoss() < maxHealth*0.5)
-			. += "<span class='warning'>It looks slightly dented.</span>"
+			. += "<hr><span class='warning'>It looks slightly dented.</span>"
 		else
-			. += "<span class='warning'><B>It looks severely dented!</B></span>"
+			. += "<hr><span class='warning'><B>It looks severely dented!</B></span>"
 	if (getFireLoss() || getToxLoss())
 		var/overall_fireloss = getFireLoss() + getToxLoss()
 		if (overall_fireloss < maxHealth * 0.5)
-			. += "<span class='warning'>It looks slightly charred.</span>"
+			. += "<hr><span class='warning'>It looks slightly charred.</span>"
 		else
-			. += "<span class='warning'><B>It looks severely burnt and heat-warped!</B></span>"
+			. += "<hr><span class='warning'><B>It looks severely burnt and heat-warped!</B></span>"
 	if (health < -maxHealth*0.5)
-		. += "<span class='warning'>It looks barely operational.</span>"
+		. += "<hr><span class='warning'>It looks barely operational.</span>"
 	if (fire_stacks < 0)
-		. += "<span class='warning'>It's covered in water.</span>"
+		. += "<hr><span class='warning'>It's covered in water.</span>"
 	else if (fire_stacks > 0)
-		. += "<span class='warning'>It's coated in something flammable.</span>"
+		. += "<hr><span class='warning'>It's coated in something flammable.</span>"
 
 	if(opened)
-		. += "<span class='warning'>Its cover is open and the power cell is [cell ? "installed" : "missing"].</span>"
+		. += "<hr><span class='warning'>Its cover is open and the power cell is [cell ? "installed" : "missing"].</span>"
 	else
 		. += "Its cover is closed[locked ? "" : ", and looks unlocked"]."
 
 	if(cell && cell.charge <= 0)
-		. += "<span class='warning'>Its battery indicator is blinking red!</span>"
+		. += "<hr><span class='warning'>Its battery indicator is blinking red!</span>"
 
 	switch(stat)
 		if(CONSCIOUS)
@@ -40,9 +40,9 @@
 			else if(!client)
 				. += "It appears to be in stand-by mode." //afk
 		if(SOFT_CRIT, UNCONSCIOUS, HARD_CRIT)
-			. += "<span class='warning'>It doesn't seem to be responding.</span>"
+			. += "<hr><span class='warning'>It doesn't seem to be responding.</span>"
 		if(DEAD)
-			. += "<span class='deadsay'>It looks like its system is corrupted and requires a reset.</span>"
+			. += "<hr><span class='deadsay'>It looks like its system is corrupted and requires a reset.</span>"
 	. += "*---------*</span>"
 
 	. += ..()

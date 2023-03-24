@@ -92,7 +92,7 @@
 			to_chat(user, "<span class='warning'>There's already a scanner wand in [src]!</span>")
 			return
 		if(HAS_TRAIT(O, TRAIT_NODROP) || !user.transferItemToLoc(O, src))
-			to_chat(user, "<span class='warning'>[O] is stuck to your hand!</span>")
+			to_chat(user, "<span class='warning'>[O] прилип к рукеr hand!</span>")
 			return
 		user.visible_message("<span class='notice'>[user] snaps [O] onto [src]!</span>", \
 		"<span class='notice'>You press [O] into the side of [src], clicking into place.</span>")
@@ -142,9 +142,9 @@
 /obj/machinery/medical_kiosk/examine(mob/user)
 	. = ..()
 	if(scanner_wand == null)
-		. += "<span class='notice'>\The [src] is missing its scanner.</span>"
+		. += "<hr><span class='notice'>[src] is missing its scanner.</span>"
 	else
-		. += "<span class='notice'>\The [src] has its scanner clipped to the side. Alt-Click to remove.</span>"
+		. += "<hr><span class='notice'>[src] has its scanner clipped to the side. Alt-клик to remove.</span>"
 
 /obj/machinery/medical_kiosk/ui_interact(mob/user, datum/tgui/ui)
 	var/patient_distance = 0

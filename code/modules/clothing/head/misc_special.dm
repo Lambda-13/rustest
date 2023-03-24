@@ -101,12 +101,12 @@
 
 /obj/item/clothing/head/hardhat/cakehat/energycake/turn_on(mob/living/user)
 	playsound(user, 'sound/weapons/saberon.ogg', 5, TRUE)
-	to_chat(user, "<span class='warning'>You turn on \the [src].</span>")
+	to_chat(user, "<span class='warning'>You turn on [src].</span>")
 	..()
 
 /obj/item/clothing/head/hardhat/cakehat/energycake/turn_off(mob/living/user)
 	playsound(user, 'sound/weapons/saberoff.ogg', 5, TRUE)
-	to_chat(user, "<span class='warning'>You turn off \the [src].</span>")
+	to_chat(user, "<span class='warning'>You turn off [src].</span>")
 	..()
 
 /*
@@ -262,7 +262,7 @@
 		return
 	if(new_style && new_style != hairstyle)
 		hairstyle = new_style
-		user.visible_message("<span class='notice'>[user] changes \the [src]'s hairstyle to [new_style].</span>", "<span class='notice'>You change \the [src]'s hairstyle to [new_style].</span>")
+		user.visible_message("<span class='notice'>[user] changes [src]'s hairstyle to [new_style].</span>", "<span class='notice'>You change [src]'s hairstyle to [new_style].</span>")
 	if(newcolor && newcolor != color) // only update if necessary
 		add_atom_colour(newcolor, FIXED_COLOUR_PRIORITY)
 	update_icon()
@@ -301,16 +301,16 @@
 
 /obj/item/clothing/head/wig/suicide_act(mob/living/user)
 	if (ishumanbasic(user) ||  isvampire(user))		// (Semi)non degenerates
-		user.visible_message("<span class='suicide'>[user] strangles [user.p_their()] neck with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+		user.visible_message("<span class='suicide'>[user] strangles [user.p_their()] neck with [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 		return OXYLOSS
 	if (iszombie(user))		// No oxy damage
-		user.visible_message("<span class='suicide'>[user] strangles [user.p_their()] neck with \the [src], but nothing happens!</span>")
+		user.visible_message("<span class='suicide'>[user] strangles [user.p_their()] neck with [src], but nothing happens!</span>")
 		return SHAME
 	if (isdullahan(user))		// You tried
-		user.visible_message("<span class='suicide'>[user] tries to strangle [user.p_their()] neck with \the [src], but they don't have a neck! It looks like [user.p_theyre()] an idiot! </span>")
+		user.visible_message("<span class='suicide'>[user] tries to strangle [user.p_their()] neck with [src], but they don't have a neck! It looks like [user.p_theyre()] an idiot! </span>")
 		return SHAME
 	else				// Anyone left shouldn't have hair at all, and therefore vanishes in a blinding flash of light, leaving their items behind
-		user.visible_message("<span class='suicide'>[user] is stitching \the [src] to [user.p_their()] head! It looks like [user.p_theyre()] trying to have hair!</span>")
+		user.visible_message("<span class='suicide'>[user] is stitching [src] to [user.p_their()] head! It looks like [user.p_theyre()] trying to have hair!</span>")
 		for(var/obj/item/W in user)
 			user.dropItemToGround(W)
 		var/turf/T = get_turf(src)

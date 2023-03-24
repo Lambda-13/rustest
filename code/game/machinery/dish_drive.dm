@@ -34,7 +34,7 @@
 /obj/machinery/dish_drive/examine(mob/user)
 	. = ..()
 	if(user.Adjacent(src))
-		. += "<span class='notice'>Alt-click it to beam its contents to any nearby disposal bins.</span>"
+		. += "<hr><span class='notice'>Alt-клик it to beam its contents to any nearby disposal bins.</span>"
 
 /obj/machinery/dish_drive/attack_hand(mob/living/user)
 	if(!contents.len)

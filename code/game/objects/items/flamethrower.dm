@@ -149,7 +149,7 @@
 /obj/item/flamethrower/examine(mob/user)
 	. = ..()
 	if(beaker)
-		. += "<span class='notice'>\The [src] has \a [beaker] attached. Alt-click to remove it.</span>"
+		. += "<hr><span class='notice'>[src] has \a [beaker] attached. Alt-клик to remove it.</span>"
 
 /obj/item/flamethrower/proc/toggle_igniter(mob/user)
 	if(!beaker)

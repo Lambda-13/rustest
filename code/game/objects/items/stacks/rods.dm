@@ -28,7 +28,7 @@ GLOBAL_LIST_INIT(rod_recipes, list ( \
 	novariants = TRUE
 
 /obj/item/stack/rods/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins to stuff \the [src] down [user.p_their()] throat! It looks like [user.p_theyre()] trying to commit suicide!</span>")//it looks like theyre ur mum
+	user.visible_message("<span class='suicide'>[user] begins to stuff [src] down [user.p_their()] throat! It looks like [user.p_theyre()] trying to commit suicide!</span>")//it looks like theyre ur mum
 	return BRUTELOSS
 
 /obj/item/stack/rods/Initialize(mapload, new_amount, merge = TRUE)
@@ -57,7 +57,7 @@ GLOBAL_LIST_INIT(rod_recipes, list ( \
 			user.visible_message(
 				"<span class='notice'>[user.name] shaped [src] into metal with [W].</span>", \
 				"<span class='notice'>You shape [src] into metal with [W].</span>", \
-				"<span class='hear'>You hear welding.</span>")
+				"<span class='hear'>Слышу сварку.</span>")
 			var/obj/item/stack/rods/R = src
 			src = null
 			var/replace = (user.get_inactive_held_item()==R)
@@ -70,7 +70,7 @@ GLOBAL_LIST_INIT(rod_recipes, list ( \
 		if(amount != 1)
 			to_chat(user, "<span class='warning'>You must use a single rod!</span>")
 		else if(S.w_class > WEIGHT_CLASS_SMALL)
-			to_chat(user, "<span class='warning'>The ingredient is too big for [src]!</span>")
+			to_chat(user, "<span class='warning'>The ingredient слишком большой для [src]!</span>")
 		else
 			var/obj/item/reagent_containers/food/snacks/customizable/A = new/obj/item/reagent_containers/food/snacks/customizable/kebab(get_turf(src))
 			A.initialize_custom_food(src, S, user)

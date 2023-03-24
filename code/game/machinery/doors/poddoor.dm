@@ -51,9 +51,9 @@
 
 /obj/machinery/door/poddoor/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>The maintenance panel is [panel_open ? "opened" : "closed"].</span>"
+	. += "<hr><span class='notice'>The maintenance panel is [panel_open ? "opened" : "closed"].</span>"
 	if(panel_open)
-		. += "<span class='notice'>The <b>airlock electronics</b> are exposed and could be <i>pried out</i>."
+		. += "<hr><span class='notice'>The <b>airlock electronics</b> are exposed and could be <i>pried out</i>."
 
 /obj/machinery/door/poddoor/deconstruct(disassembled = TRUE, mob/user)
 	if(!(flags_1 & NODECONSTRUCT_1))

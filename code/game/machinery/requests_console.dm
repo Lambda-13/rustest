@@ -25,8 +25,8 @@ GLOBAL_LIST_EMPTY(req_console_ckey_departments)
 #define REQ_EMERGENCY_MEDICAL 3
 
 /obj/machinery/requests_console
-	name = "requests console"
-	desc = "A console intended to send requests between different vessels and settlements in a local region."
+	name = "консоль запросов"
+	desc = "Консоль, предназначенная для отправки запросов между различными судами и населенными пунктами в локальном регионе."
 	icon = 'icons/obj/terminals.dmi'
 	icon_state = "req_comp0"
 	var/department = "Unknown" //The list of all departments on the station (Determined from this variable on each unit) Set this to the same thing if you want several consoles in one department
@@ -65,6 +65,7 @@ GLOBAL_LIST_EMPTY(req_console_ckey_departments)
 	var/priority = REQ_NO_NEW_MESSAGE //Priority of the message being sent
 	var/obj/item/radio/Radio
 	var/emergency //If an emergency has been called by this device. Acts as both a cooldown and lets the responder know where it the emergency was triggered from
+	var/emergency_ru
 	var/receive_ore_updates = FALSE //If ore redemption machines will send an update when it receives new ores.
 	max_integrity = 300
 	armor = list("melee" = 70, "bullet" = 30, "laser" = 30, "energy" = 30, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 90, "acid" = 90)
@@ -134,49 +135,49 @@ GLOBAL_LIST_EMPTY(req_console_ckey_departments)
 			if(REQ_SCREEN_MAIN)
 				announceAuth = FALSE
 				if (newmessagepriority == REQ_NORMAL_MESSAGE_PRIORITY)
-					dat += "<div class='notice'>There are new messages</div><BR>"
+					dat += "<div class='notice'>У вас новое сообщение</div><BR>"
 				else if (newmessagepriority == REQ_HIGH_MESSAGE_PRIORITY)
-					dat += "<div class='notice'>There are new <b>PRIORITY</b> messages</div><BR>"
+					dat += "<div class='notice'>У вас новое <b>ВАЖНОЕ</b> сообщение</div><BR>"
 				else if (newmessagepriority == REQ_EXTREME_MESSAGE_PRIORITY)
-					dat += "<div class='notice'>There are new <b>EXTREME PRIORITY</b> messages</div><BR>"
-				dat += "<A href='?src=[REF(src)];setScreen=[REQ_SCREEN_VIEW_MSGS]'>View Messages</A><BR><BR>"
+					dat += "<div class='notice'>У вас новое <b>ОЧЕНЬ ВАЖНОЕ</b> сообщение</div><BR>"
+				dat += "<A href='?src=[REF(src)];setScreen=[REQ_SCREEN_VIEW_MSGS]'>Посмотреть сообщения</A><BR><BR>"
 
-				dat += "<A href='?src=[REF(src)];setScreen=[REQ_SCREEN_REQ_ASSISTANCE]'>Request Assistance</A><BR>"
-				dat += "<A href='?src=[REF(src)];setScreen=[REQ_SCREEN_REQ_SUPPLIES]'>Request Supplies</A><BR>"
-				dat += "<A href='?src=[REF(src)];setScreen=[REQ_SCREEN_RELAY]'>Relay Anonymous Information</A><BR><BR>"
+				dat += "<A href='?src=[REF(src)];setScreen=[REQ_SCREEN_REQ_ASSISTANCE]'>Запросить помощь</A><BR>"
+				dat += "<A href='?src=[REF(src)];setScreen=[REQ_SCREEN_REQ_SUPPLIES]'>Запросить посылки</A><BR>"
+				dat += "<A href='?src=[REF(src)];setScreen=[REQ_SCREEN_RELAY]'>Передать анонимную информацию</A><BR><BR>"
 
 				if(!emergency)
-					dat += "<A href='?src=[REF(src)];emergency=[REQ_EMERGENCY_SECURITY]'>Emergency: Security</A><BR>"
-					dat += "<A href='?src=[REF(src)];emergency=[REQ_EMERGENCY_ENGINEERING]'>Emergency: Engineering</A><BR>"
-					dat += "<A href='?src=[REF(src)];emergency=[REQ_EMERGENCY_MEDICAL]'>Emergency: Medical</A><BR><BR>"
+					dat += "<A href='?src=[REF(src)];emergency=[REQ_EMERGENCY_SECURITY]'>Вызвать: охрану</A><BR>"
+					dat += "<A href='?src=[REF(src)];emergency=[REQ_EMERGENCY_ENGINEERING]'>Вызвать: инженеров</A><BR>"
+					dat += "<A href='?src=[REF(src)];emergency=[REQ_EMERGENCY_MEDICAL]'>Вызвать: медиков</A><BR><BR>"
 				else
-					dat += "<B><font color='red'>[emergency] has been dispatched to this location.</font></B><BR><BR>"
+					dat += "<B><font color='red'>[emergency_ru] были вызваны к вам.</font></B><BR><BR>"
 
 				if(announcementConsole)
-					dat += "<A href='?src=[REF(src)];setScreen=[REQ_SCREEN_ANNOUNCE]'>Send Station-wide Announcement</A><BR><BR>"
+					dat += "<A href='?src=[REF(src)];setScreen=[REQ_SCREEN_ANNOUNCE]'>Отправить анонс на текущий обьект</A><BR><BR>"
 				if (silent)
-					dat += "Speaker <A href='?src=[REF(src)];setSilent=0'>OFF</A>"
+					dat += "Динамик <A href='?src=[REF(src)];setSilent=0'>ВЫКЛЮЧЕН</A>"
 				else
-					dat += "Speaker <A href='?src=[REF(src)];setSilent=1'>ON</A>"
+					dat += "Динамик <A href='?src=[REF(src)];setSilent=1'>ВКЛЮЧЁН</A>"
 			if(REQ_SCREEN_REQ_ASSISTANCE)
-				dat += "Which department do you need assistance from?<BR><BR>"
+				dat += "Кого запросить о помощи?<BR><BR>"
 				dat += departments_table(GLOB.req_console_assistance)
 
 			if(REQ_SCREEN_REQ_SUPPLIES)
-				dat += "Which department do you need supplies from?<BR><BR>"
+				dat += "Кого запросить для доставки посылки?<BR><BR>"
 				dat += departments_table(GLOB.req_console_supplies)
 
 			if(REQ_SCREEN_RELAY)
-				dat += "Which department would you like to send information to?<BR><BR>"
+				dat += "Куда отправить анонимную информацию?<BR><BR>"
 				dat += departments_table(GLOB.req_console_information)
 
 			if(REQ_SCREEN_SENT)
-				dat += "<span class='good'>Message sent.</span><BR><BR>"
-				dat += "<A href='?src=[REF(src)];setScreen=[REQ_SCREEN_MAIN]'><< Back</A><BR>"
+				dat += "<span class='good'>Сообщение отправлено.</span><BR><BR>"
+				dat += "<A href='?src=[REF(src)];setScreen=[REQ_SCREEN_MAIN]'><< Назад</A><BR>"
 
 			if(REQ_SCREEN_ERR)
-				dat += "<span class='bad'>An error occurred.</span><BR><BR>"
-				dat += "<A href='?src=[REF(src)];setScreen=[REQ_SCREEN_MAIN]'><< Back</A><BR>"
+				dat += "<span class='bad'>Возникла ошибка при отправке сообщения.</span><BR><BR>"
+				dat += "<A href='?src=[REF(src)];setScreen=[REQ_SCREEN_MAIN]'><< Назад</A><BR>"
 
 			if(REQ_SCREEN_VIEW_MSGS)
 				for (var/obj/machinery/requests_console/Console in GLOB.allConsoles)
@@ -190,34 +191,34 @@ GLOBAL_LIST_EMPTY(req_console_ckey_departments)
 				for(var/msg in messages) // This puts more recent messages at the *top*, where they belong.
 					messageComposite = "<div class='block'>[msg]</div>" + messageComposite
 				dat += messageComposite
-				dat += "<BR><A href='?src=[REF(src)];setScreen=[REQ_SCREEN_MAIN]'><< Back to Main Menu</A><BR>"
+				dat += "<BR><A href='?src=[REF(src)];setScreen=[REQ_SCREEN_MAIN]'><< Назад в меню</A><BR>"
 
 			if(REQ_SCREEN_AUTHENTICATE)
-				dat += "<B>Message Authentication</B><BR><BR>"
-				dat += "<b>Message for [to_department]: </b>[message]<BR><BR>"
-				dat += "<div class='notice'>You may authenticate your message now by scanning your ID or your stamp</div><BR>"
-				dat += "<b>Validated by:</b> [msgVerified ? msgVerified : "<i>Not Validated</i>"]<br>"
-				dat += "<b>Stamped by:</b> [msgStamped ? msgStamped : "<i>Not Stamped</i>"]<br><br>"
-				dat += "<A href='?src=[REF(src)];send=[TRUE]'>Send Message</A><BR>"
-				dat += "<BR><A href='?src=[REF(src)];setScreen=[REQ_SCREEN_MAIN]'><< Discard Message</A><BR>"
+				dat += "<B>Аутентификация сообщения</B><BR><BR>"
+				dat += "<b>Сообщение для [to_department]: </b>[message]<BR><BR>"
+				dat += "<div class='notice'>Вы можете подтвердить подлинность своего сообщения сейчас, отсканировав свою ID карту или печать.</div><BR>"
+				dat += "<b>Подтверждено:</b> [msgVerified ? msgVerified : "<i>Не подтверждено</i>"]<br>"
+				dat += "<b>Штамп:</b> [msgStamped ? msgStamped : "<i>Не поставлен</i>"]<br><br>"
+				dat += "<A href='?src=[REF(src)];send=[TRUE]'>Отправить сообщение</A><BR>"
+				dat += "<BR><A href='?src=[REF(src)];setScreen=[REQ_SCREEN_MAIN]'><< Отмена</A><BR>"
 
 			if(REQ_SCREEN_ANNOUNCE)
-				dat += "<h3>Station-wide Announcement</h3>"
+				dat += "<h3>Система локальных анонсов</h3>"
 				if(announceAuth)
-					dat += "<div class='notice'>Authentication accepted</div><BR>"
+					dat += "<div class='notice'>Аутентификация принята</div><BR>"
 				else
-					dat += "<div class='notice'>Swipe your card to authenticate yourself</div><BR>"
-				dat += "<b>Message: </b>[message ? message : "<i>No Message</i>"]<BR>"
-				dat += "<A href='?src=[REF(src)];writeAnnouncement=1'>[message ? "Edit" : "Write"] Message</A><BR><BR>"
+					dat += "<div class='notice'>Проведите картой, чтобы аутентифицировать себя</div><BR>"
+				dat += "<b>Сообщение: </b>[message ? message : "<i>Нет сообщения</i>"]<BR>"
+				dat += "<A href='?src=[REF(src)];writeAnnouncement=1'>[message ? "Редактировать" : "Написать"] сообщение</A><BR><BR>"
 				if ((announceAuth || isAdminGhostAI(user)) && message)
-					dat += "<A href='?src=[REF(src)];sendAnnouncement=1'>Announce Message</A><BR>"
+					dat += "<A href='?src=[REF(src)];sendAnnouncement=1'>Отправить</A><BR>"
 				else
-					dat += "<span class='linkOff'>Announce Message</span><BR>"
-				dat += "<BR><A href='?src=[REF(src)];setScreen=[REQ_SCREEN_MAIN]'><< Back</A><BR>"
+					dat += "<span class='linkOff'>Отправить</span><BR>"
+				dat += "<BR><A href='?src=[REF(src)];setScreen=[REQ_SCREEN_MAIN]'><< Назад</A><BR>"
 
 		if(!dat)
 			CRASH("No UI for src. Screen var is: [screen]")
-		var/datum/browser/popup = new(user, "req_console", "[department] Requests Console", 450, 440)
+		var/datum/browser/popup = new(user, "req_console", "Консоль запросов - [department]", 450, 440)
 		popup.set_content(dat)
 		popup.open()
 	return
@@ -235,7 +236,7 @@ GLOBAL_LIST_EMPTY(req_console_ckey_departments)
 			dat += "</td>"
 			dat += "</tr>"
 	dat += "</table>"
-	dat += "<BR><A href='?src=[REF(src)];setScreen=[REQ_SCREEN_MAIN]'><< Back</A><BR>"
+	dat += "<BR><A href='?src=[REF(src)];setScreen=[REQ_SCREEN_MAIN]'><< Назад</A><BR>"
 	return dat
 
 /obj/machinery/requests_console/Topic(href, href_list)
@@ -247,7 +248,7 @@ GLOBAL_LIST_EMPTY(req_console_ckey_departments)
 	if(href_list["write"])
 		to_department = ckey(reject_bad_text(href_list["write"])) //write contains the string of the receiving department's name
 
-		var/new_message = (to_department in GLOB.req_console_ckey_departments) && stripped_input(usr, "Write your message:", "Awaiting Input", "", MAX_MESSAGE_LEN)
+		var/new_message = (to_department in GLOB.req_console_ckey_departments) && stripped_input(usr, "Введите сообщение:", "Ожидание ввода", "", MAX_MESSAGE_LEN)
 		if(new_message)
 			to_department = GLOB.req_console_ckey_departments[to_department]
 			message = new_message
@@ -255,7 +256,7 @@ GLOBAL_LIST_EMPTY(req_console_ckey_departments)
 			priority = clamp(text2num(href_list["priority"]), REQ_NORMAL_MESSAGE_PRIORITY, REQ_EXTREME_MESSAGE_PRIORITY)
 
 	if(href_list["writeAnnouncement"])
-		var/new_message = reject_bad_text(stripped_input(usr, "Write your message:", "Awaiting Input", "", MAX_MESSAGE_LEN))
+		var/new_message = reject_bad_text(stripped_input(usr, "Введите сообщение:", "Ожидание ввода", "", MAX_MESSAGE_LEN))
 		if(new_message)
 			message = new_message
 			priority = clamp(text2num(href_list["priority"]) || REQ_NORMAL_MESSAGE_PRIORITY, REQ_NORMAL_MESSAGE_PRIORITY, REQ_EXTREME_MESSAGE_PRIORITY)
@@ -270,11 +271,11 @@ GLOBAL_LIST_EMPTY(req_console_ckey_departments)
 		if(isliving(usr))
 			var/mob/living/L = usr
 			message = L.treat_message(message)
-		minor_announce(message, "[department] Announcement:", from = usr, zlevel = usr.virtual_z())
-		GLOB.news_network.SubmitArticle(message, department, "Station Announcements", null)
-		usr.log_talk(message, LOG_SAY, tag="station announcement from [src]")
-		message_admins("[ADMIN_LOOKUPFLW(usr)] has made a station announcement from [src] at [AREACOORD(usr)].")
-		deadchat_broadcast(" made a station announcement from <span class='name'>[get_area_name(usr, TRUE)]</span>.", "<span class='name'>[usr.real_name]</span>", usr, message_type=DEADCHAT_ANNOUNCEMENT)
+		minor_announce(message, "[department] сообщает:", from = usr, zlevel = usr.virtual_z())
+		GLOB.news_network.SubmitArticle(message, department, "Локальное оповещение", null)
+		usr.log_talk(message, LOG_SAY, tag="local announcement from [src]")
+		message_admins("[ADMIN_LOOKUPFLW(usr)] has made a local announcement from [src] at [AREACOORD(usr)].")
+		deadchat_broadcast(" оповещает локально в <span class='name'>[get_area_name(usr, TRUE)]</span> следующее: \"[message]\".", "<span class='name'>[usr.real_name]</span>", usr, message_type=DEADCHAT_ANNOUNCEMENT)
 		announceAuth = FALSE
 		message = ""
 		screen = REQ_SCREEN_MAIN
@@ -285,13 +286,16 @@ GLOBAL_LIST_EMPTY(req_console_ckey_departments)
 			switch(text2num(href_list["emergency"]))
 				if(REQ_EMERGENCY_SECURITY) //Security
 					emergency = "Security"
+					emergency_ru = "Охранный патруль"
 				if(REQ_EMERGENCY_ENGINEERING) //Engineering
 					emergency = "Engineering"
+					emergency_ru = "Инженерный патруль"
 				if(REQ_EMERGENCY_MEDICAL) //Medical
 					emergency = "Medical"
+					emergency_ru = "Медицинский патруль"
 			if(radio_freq)
 				Radio.set_frequency(radio_freq)
-				Radio.talk_into(src,"[emergency] emergency in [department]!!",radio_freq)
+				Radio.talk_into(src,"[emergency] вызывается в [department]!!",radio_freq)
 				update_icon()
 				addtimer(CALLBACK(src, .proc/clear_emergency), 5 MINUTES)
 
@@ -356,10 +360,10 @@ GLOBAL_LIST_EMPTY(req_console_ckey_departments)
 
 	linkedsender = source_department ? "<a href='?src=[REF(src)];write=[ckey(source_department)]'>[source_department]</a>" : (source || "unknown")
 
-	var/authentic = (msgVerified || msgStamped) && " (Authenticated)"
-	var/alert = "Message from [source][authentic]"
+	var/authentic = (msgVerified || msgStamped) && " (Подтверждён)"
+	var/alert = "Сообщение от [source][authentic]"
 	var/silenced = silent
-	var/header = "<b>From:</b> [linkedsender] Received: [station_time_timestamp()]<BR>"
+	var/header = "<b>От:</b> [linkedsender] Дата: [station_time_timestamp()]<BR>"
 
 	switch(priority)
 		if(REQ_NORMAL_MESSAGE_PRIORITY)
@@ -368,15 +372,15 @@ GLOBAL_LIST_EMPTY(req_console_ckey_departments)
 				update_icon()
 
 		if(REQ_HIGH_MESSAGE_PRIORITY)
-			header = "<span class='bad'>High Priority</span><BR>[header]"
-			alert = "PRIORITY Alert from [source][authentic]"
+			header = "<span class='bad'>Высший приоритет</span><BR>[header]"
+			alert = "Сообщение ВЫСШЕГО приоритета от [source][authentic]"
 			if(newmessagepriority < REQ_HIGH_MESSAGE_PRIORITY)
 				newmessagepriority = REQ_HIGH_MESSAGE_PRIORITY
 				update_icon()
 
 		if(REQ_EXTREME_MESSAGE_PRIORITY)
-			header = "<span class='bad'>!!!Extreme Priority!!!</span><BR>[header]"
-			alert = "EXTREME PRIORITY Alert from [source][authentic]"
+			header = "<span class='bad'>!!!Важный приоритет!!!</span><BR>[header]"
+			alert = "Сообщение ОЧЕНЬ ВЫСШЕГО приоритета от [source][authentic]"
 			silenced = FALSE
 			if(newmessagepriority < REQ_EXTREME_MESSAGE_PRIORITY)
 				newmessagepriority = REQ_EXTREME_MESSAGE_PRIORITY
@@ -395,10 +399,10 @@ GLOBAL_LIST_EMPTY(req_console_ckey_departments)
 /obj/machinery/requests_console/attackby(obj/item/O, mob/user, params)
 	if(O.tool_behaviour == TOOL_CROWBAR)
 		if(open)
-			to_chat(user, "<span class='notice'>You close the maintenance panel.</span>")
+			to_chat(user, "<span class='notice'>Закрываю техническую панель.</span>")
 			open = FALSE
 		else
-			to_chat(user, "<span class='notice'>You open the maintenance panel.</span>")
+			to_chat(user, "<span class='notice'>Открываю техническую панель.</span>")
 			open = TRUE
 		update_icon()
 		return
@@ -406,31 +410,31 @@ GLOBAL_LIST_EMPTY(req_console_ckey_departments)
 		if(open)
 			hackState = !hackState
 			if(hackState)
-				to_chat(user, "<span class='notice'>You modify the wiring.</span>")
+				to_chat(user, "<span class='notice'>Модифицирую проводку.</span>")
 			else
-				to_chat(user, "<span class='notice'>You reset the wiring.</span>")
+				to_chat(user, "<span class='notice'>Возращаю всё на места.</span>")
 			update_icon()
 		else
-			to_chat(user, "<span class='warning'>You must open the maintenance panel first!</span>")
+			to_chat(user, "<span class='warning'>Техническая панель закрыта!</span>")
 		return
 
 	var/obj/item/card/id/ID = O.GetID()
 	if(ID)
 		if(screen == REQ_SCREEN_AUTHENTICATE)
-			msgVerified = "<font color='green'><b>Verified by [ID.registered_name] ([ID.assignment])</b></font>"
+			msgVerified = "<font color='green'><b>Подтверждён [ID.registered_name] ([ID.assignment])</b></font>"
 			updateUsrDialog()
 		if(screen == REQ_SCREEN_ANNOUNCE)
 			if (ACCESS_RC_ANNOUNCE in ID.access)
 				announceAuth = TRUE
 			else
 				announceAuth = FALSE
-				to_chat(user, "<span class='warning'>You are not authorized to send announcements!</span>")
+				to_chat(user, "<span class='warning'>Вы не авторизованы для рассылки объявлений!</span>")
 			updateUsrDialog()
 		return
 	if (istype(O, /obj/item/stamp))
 		if(screen == REQ_SCREEN_AUTHENTICATE)
 			var/obj/item/stamp/T = O
-			msgStamped = "<span class='boldnotice'>Stamped with the [T.name]</span>"
+			msgStamped = "<span class='boldnotice'>Проштамповано [T.name]</span>"
 			updateUsrDialog()
 		return
 	return ..()

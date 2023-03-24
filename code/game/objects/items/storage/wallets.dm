@@ -90,7 +90,7 @@
 /obj/item/storage/wallet/examine()
 	. = ..()
 	if(front_id)
-		. += "<span class='notice'>Alt-click to remove the id.</span>"
+		. += "<hr><span class='notice'>Alt-клик to remove the id.</span>"
 
 /obj/item/storage/wallet/GetID()
 	return front_id

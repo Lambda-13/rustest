@@ -145,9 +145,9 @@
 
 /obj/item/case_portable_recharger/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>Внутри [incell ? "есть [incell]" : "остутствует аккумулятор"]!</span>"
+	. += "<hr><span class='notice'>Внутри [incell ? "есть [incell]" : "остутствует аккумулятор"]!</span>"
 	if(incell)
-		. += "<span class='notice'>[incell] заряжен на [incell.percent()]!</span>"
+		. += "<hr><span class='notice'>[incell] заряжен на [incell.percent()]!</span>"
 
 //Типа линковка
 /obj/item/case_portable_recharger/Initialize()

@@ -114,7 +114,7 @@
 	SIGNAL_HANDLER
 
 	if(rotation_flags & ROTATION_ALTCLICK)
-		examine_list += "<span class='notice'>Alt-click to rotate it clockwise.</span>"
+		examine_list += "<span class='notice'>Alt-клик для поворота по часовой стрелке.</span>"
 
 /datum/component/simple_rotation/proc/HandRot(datum/source, mob/user, rotation = default_rotation_direction)
 	SIGNAL_HANDLER
@@ -158,10 +158,10 @@
 	return !AM.anchored
 
 /datum/component/simple_rotation/proc/default_after_rotation(mob/user, rotation_type)
-	to_chat(user,"<span class='notice'>You [rotation_type == ROTATION_FLIP ? "flip" : "rotate"] [parent].</span>")
+	to_chat(user,"<span class='notice'>[rotation_type == ROTATION_FLIP ? "Переворачиваю" : "Поворачиваю"] [parent].</span>")
 
 /atom/movable/proc/simple_rotate_clockwise()
-	set name = "Rotate Clockwise"
+	set name = "повернуть по часовой стрелке"
 	set category = "Object"
 	set src in oview(1)
 	var/datum/component/simple_rotation/rotcomp = GetComponent(/datum/component/simple_rotation)
@@ -169,7 +169,7 @@
 		rotcomp.HandRot(null,usr,ROTATION_CLOCKWISE)
 
 /atom/movable/proc/simple_rotate_clockwise_half()
-	set name = "Rotate Half-Clockwise"
+	set name = "повернуть наполовину по часовой стрелке"
 	set category = "Object"
 	set src in oview(1)
 	var/datum/component/simple_rotation/rotcomp = GetComponent(/datum/component/simple_rotation)
@@ -177,7 +177,7 @@
 		rotcomp.HandRot(null,usr,ROTATION_CLOCKWISE_HALF)
 
 /atom/movable/proc/simple_rotate_counterclockwise()
-	set name = "Rotate Counter-Clockwise"
+	set name = "повернуть против часовой стрелки"
 	set category = "Object"
 	set src in oview(1)
 	var/datum/component/simple_rotation/rotcomp = GetComponent(/datum/component/simple_rotation)
@@ -185,7 +185,7 @@
 		rotcomp.HandRot(null,usr,ROTATION_COUNTERCLOCKWISE)
 
 /atom/movable/proc/simple_rotate_counterclockwise_half()
-	set name = "Rotate Half-Counter-Clockwise"
+	set name = "повернуть наполовину против часовой стрелки"
 	set category = "Object"
 	set src in oview(1)
 	var/datum/component/simple_rotation/rotcomp = GetComponent(/datum/component/simple_rotation)
@@ -193,7 +193,7 @@
 		rotcomp.HandRot(null,usr,ROTATION_COUNTERCLOCKWISE_HALF)
 
 /atom/movable/proc/simple_rotate_flip()
-	set name = "Flip"
+	set name = "перевернуть"
 	set category = "Object"
 	set src in oview(1)
 	var/datum/component/simple_rotation/rotcomp = GetComponent(/datum/component/simple_rotation)

@@ -735,7 +735,7 @@ GLOBAL_LIST_EMPTY(allCasters)
 				return
 			user.visible_message("<span class='notice'>[user] is repairing [src].</span>", \
 							"<span class='notice'>You begin repairing [src]...</span>", \
-							"<span class='hear'>You hear welding.</span>")
+							"<span class='hear'>Слышу сварку.</span>")
 			if(I.use_tool(src, user, 40, volume=50))
 				if(!(machine_stat & BROKEN))
 					return

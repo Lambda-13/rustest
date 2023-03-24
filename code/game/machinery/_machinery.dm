@@ -81,9 +81,9 @@ Class Procs:
 */
 
 /obj/machinery
-	name = "machinery"
+	name = "машина"
 	icon = 'icons/obj/stationobjs.dmi'
-	desc = "Some kind of machine."
+	desc = ""
 	verb_say = "beeps"
 	verb_yell = "blares"
 	pressure_resistance = 15
@@ -358,7 +358,7 @@ Class Procs:
 	else
 		user.changeNext_move(CLICK_CD_MELEE)
 		user.do_attack_animation(src, ATTACK_EFFECT_PUNCH)
-		user.visible_message("<span class='danger'>[user.name] smashes against \the [src.name] with its paws.</span>", null, null, COMBAT_MESSAGE_RANGE)
+		user.visible_message("<span class='danger'>[user.name] ломает лапками [src.name].</span>", null, null, COMBAT_MESSAGE_RANGE)
 		take_damage(4, BRUTE, "melee", 1)
 
 /obj/machinery/attack_robot(mob/user)
@@ -398,7 +398,7 @@ Class Procs:
 	. = !(state_open || panel_open || is_operational || (flags_1 & NODECONSTRUCT_1)) && I.tool_behaviour == TOOL_CROWBAR
 	if(.)
 		I.play_tool_sound(src, 50)
-		visible_message("<span class='notice'>[usr] pries open \the [src].</span>", "<span class='notice'>You pry open \the [src].</span>")
+		visible_message("<span class='notice'>[usr] вскрывает [src].</span>", "<span class='notice'>Вскрываю [src].</span>")
 		open_machine()
 
 /obj/machinery/proc/default_deconstruction_crowbar(obj/item/I, ignore_panel = 0)
@@ -481,11 +481,11 @@ Class Procs:
 		if(!panel_open)
 			panel_open = TRUE
 			icon_state = icon_state_open
-			to_chat(user, span_notice("You open the maintenance hatch of [src]."))
+			to_chat(user, span_notice("Открываю техническую панель [src]."))
 		else
 			panel_open = FALSE
 			icon_state = icon_state_closed
-			to_chat(user, span_notice("You close the maintenance hatch of [src]."))
+			to_chat(user, span_notice("Закрываю техническую панель [src]."))
 		return TRUE
 	return FALSE
 
@@ -499,7 +499,7 @@ Class Procs:
 
 /obj/proc/can_be_unfasten_wrench(mob/user, silent) //if we can unwrench this object; returns SUCCESSFUL_UNFASTEN and FAILED_UNFASTEN, which are both TRUE, or CANT_UNFASTEN, which isn't.
 	if(!(isfloorturf(loc) || istype(loc, /turf/open/indestructible)) && !anchored)
-		to_chat(user, "<span class='warning'>[src] needs to be on the floor to be secured!</span>")
+		to_chat(user, "<span class='warning'>[src] должен быть на полу для прикручивания!</span>")
 		return FAILED_UNFASTEN
 	return SUCCESSFUL_UNFASTEN
 
@@ -602,7 +602,7 @@ Class Procs:
 			if(25 to 50)
 				. += "<hr>Выглядит серьёзно повреждённым."
 			if(0 to 25)
-				. += "<span class='warning'>Вот-вот развалится!</span>"
+				. += "<hr><span class='warning'>Вот-вот развалится!</span>"
 	if(user.research_scanner && component_parts)
 		. += display_parts(user, TRUE)
 

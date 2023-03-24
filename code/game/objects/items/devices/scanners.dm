@@ -413,7 +413,7 @@ GENE SCANNER
 	advanced = TRUE
 
 /obj/item/analyzer
-	desc = "A hand-held environmental scanner which reports current gas levels. Alt-Click to use the built in barometer function."
+	desc = "A hand-held environmental scanner which reports current gas levels. Alt-клик to use the built in barometer function."
 	name = "analyzer"
 	custom_price = 100
 	icon = 'icons/obj/tools.dmi'
@@ -439,7 +439,7 @@ GENE SCANNER
 
 /obj/item/analyzer/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>Alt-click [src] to activate the barometer function.</span>"
+	. += "<hr><span class='notice'>Alt-клик [src] to activate the barometer function.</span>"
 
 /obj/item/analyzer/suicide_act(mob/living/carbon/user)
 	user.visible_message("<span class='suicide'>[user] begins to analyze [user.p_them()]self with [src]! The display shows that [user.p_theyre()] dead!</span>")

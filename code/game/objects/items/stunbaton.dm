@@ -117,9 +117,9 @@
 /obj/item/melee/baton/examine(mob/user)
 	. = ..()
 	if(cell)
-		. += "<span class='notice'>\The [src] is [round(cell.percent())]% charged.</span>"
+		. += "<hr><span class='notice'>[src] is [round(cell.percent())]% charged.</span>"
 	else
-		. += "<span class='warning'>\The [src] does not have a power source installed.</span>"
+		. += "<hr><span class='warning'>[src] does not have a power source installed.</span>"
 
 /obj/item/melee/baton/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/stock_parts/cell))

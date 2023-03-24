@@ -49,7 +49,7 @@
 	if(is_type_in_list(src, GLOB.ventcrawl_machinery) && isliving(user))
 		var/mob/living/L = user
 		if(L.ventcrawler)
-			. += "<span class='notice'>Alt-click to crawl through it.</span>"
+			. += "<hr><span class='notice'>Alt-клик to crawl through it.</span>"
 
 /obj/machinery/atmospherics/New(loc, process = TRUE, setdir)
 	if(!isnull(setdir))
@@ -208,16 +208,16 @@
 	var/unsafe_wrenching = FALSE
 	var/internal_pressure = int_air.return_pressure()-env_air.return_pressure()
 
-	to_chat(user, "<span class='notice'>You begin to unfasten \the [src]...</span>")
+	to_chat(user, "<span class='notice'>You begin to unfasten [src]...</span>")
 
 	if (internal_pressure > 2*ONE_ATMOSPHERE)
-		to_chat(user, "<span class='warning'>As you begin unwrenching \the [src] a gush of air blows in your face... maybe you should reconsider?</span>")
+		to_chat(user, "<span class='warning'>As you begin unwrenching [src] a gush of air blows in your face... maybe you should reconsider?</span>")
 		unsafe_wrenching = TRUE //Oh dear oh dear
 
 	if(I.use_tool(src, user, 20, volume=50))
 		user.visible_message( \
-			"[user] unfastens \the [src].", \
-			"<span class='notice'>You unfasten \the [src].</span>", \
+			"[user] unfastens [src].", \
+			"<span class='notice'>You unfasten [src].</span>", \
 			"<span class='hear'>You hear ratchet.</span>")
 		investigate_log("was <span class='warning'>REMOVED</span> by [key_name(usr)]", INVESTIGATE_ATMOS)
 

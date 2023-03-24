@@ -219,7 +219,7 @@
 
 /obj/item/pinpointer/deepcore
 	name = "dual mining scanner"
-	desc = "A handheld dowsing utility for locating material deep beneath the surface and on the surface. Alt-Click to change modes."
+	desc = "A handheld dowsing utility for locating material deep beneath the surface and on the surface. Alt-клик to change modes."
 	icon = 'icons/obj/mining.dmi'
 	icon_state = "mining"
 	custom_price = 300
@@ -233,7 +233,7 @@
 
 /obj/item/pinpointer/deepcore/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>It is currently set to [scanmode ? "scan underground" : "scan the surface"].</span>"
+	. += "<hr><span class='notice'>It is currently set to [scanmode ? "scan underground" : "scan the surface"].</span>"
 
 /obj/item/pinpointer/deepcore/AltClick(mob/user) //switching modes
 	..()
@@ -323,7 +323,7 @@
 
 /obj/item/pinpointer/deepcore/advanced
 	name = "advanced dual mining scanner"
-	desc = "A sophisticated dowsing utility for locating specific materials at any depth and has extendended range for scanning surface materials. Alt-Click to change modes"
+	desc = "A sophisticated dowsing utility for locating specific materials at any depth and has extendended range for scanning surface materials. Alt-клик to change modes"
 	icon_state = "miningadv"
 	custom_price = 600
 	custom_premium_price = 600

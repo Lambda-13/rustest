@@ -163,8 +163,8 @@
 	else
 		playsound(src, 'sound/effects/bang.ogg', 50, TRUE)
 		add_dent(WALL_DENT_HIT)
-		user.visible_message("<span class='danger'>[user] smashes \the [src]!</span>", \
-					"<span class='danger'>You smash \the [src]!</span>", \
+		user.visible_message("<span class='danger'>[user] smashes [src]!</span>", \
+					"<span class='danger'>You smash [src]!</span>", \
 					"<span class='hear'>You hear a booming smash!</span>")
 	return TRUE
 

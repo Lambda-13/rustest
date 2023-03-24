@@ -196,7 +196,7 @@ Nothing else in the console has ID requirements.
 				to_chat(user, "<span class='warning'>A technology disk is already loaded!</span>")
 				return
 			if(!user.transferItemToLoc(D, src))
-				to_chat(user, "<span class='warning'>[D] is stuck to your hand!</span>")
+				to_chat(user, "<span class='warning'>[D] прилип к рукеr hand!</span>")
 				return
 			t_disk = D
 		else if (istype(D, /obj/item/disk/design_disk))
@@ -204,14 +204,14 @@ Nothing else in the console has ID requirements.
 				to_chat(user, "<span class='warning'>A design disk is already loaded!</span>")
 				return
 			if(!user.transferItemToLoc(D, src))
-				to_chat(user, "<span class='warning'>[D] is stuck to your hand!</span>")
+				to_chat(user, "<span class='warning'>[D] прилип к рукеr hand!</span>")
 				return
 			d_disk = D
 		else
 			to_chat(user, "<span class='warning'>Machine cannot accept disks in that format.</span>")
 			return
 		playsound(src, 'sound/machines/terminal_insert_disc.ogg', 50, FALSE)
-		to_chat(user, "<span class='notice'>You insert [D] into \the [src]!</span>")
+		to_chat(user, "<span class='notice'>You insert [D] into [src]!</span>")
 	else if(!(linked_destroy && linked_destroy.busy) && !(linked_lathe && linked_lathe.busy) && !(linked_imprinter && linked_imprinter.busy))
 		. = ..()
 
@@ -231,9 +231,9 @@ Nothing else in the console has ID requirements.
 	. += ..()
 	if(in_range(user, src) || isobserver(user))
 		if (t_disk)
-			. += "<span class='notice'>[t_disk.name] is loaded, Ctrl-Click to remove.</span>"
+			. += "<hr><span class='notice'>[t_disk.name] is loaded, Ctrl-Click to remove.</span>"
 		if (d_disk)
-			. += "<span class='notice'>[d_disk.name] is loaded, Alt-Click to remove.</span>"
+			. += "<hr><span class='notice'>[d_disk.name] is loaded, Alt-клик to remove.</span>"
 
 /obj/machinery/computer/rdconsole/proc/research_node(id, mob/user)
 	if(!stored_research.available_nodes[id] || stored_research.researched_nodes[id])

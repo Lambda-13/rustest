@@ -313,7 +313,7 @@
 				var/mob/living/carbon/human/H = user
 				for(var/O in H.held_items)
 					if(istype(O, /obj/item/gun))
-						. += "<span class='warning'>It looks like you can hit the pilot directly if you target the center or above.</span>"
+						. += "<hr><span class='warning'>It looks like you can hit the pilot directly if you target the center or above.</span>"
 						break //in case user is holding two guns
 
 //processing internal damage, temperature, air regulation, alert updates, lights power use.
@@ -784,7 +784,7 @@
 				to_chat(user, "<span class='warning'>[AI.name] is currently unresponsive, and cannot be uploaded.</span>")
 				return
 			if(occupant || dna_lock) //Normal AIs cannot steal mechs!
-				to_chat(user, "<span class='warning'>Access denied. [name] is [occupant ? "currently occupied" : "secured with a DNA lock"].</span>")
+				to_chat(user, "<span class='warning'>Доступ запрещён. [name] is [occupant ? "currently occupied" : "secured with a DNA lock"].</span>")
 				return
 			AI.control_disabled = FALSE
 			AI.radio_enabled = TRUE
@@ -890,11 +890,11 @@
 			if(C.dna.unique_enzymes==dna_lock)
 				passed = TRUE
 		if (!passed)
-			to_chat(user, "<span class='warning'>Access denied. [name] is secured with a DNA lock.</span>")
+			to_chat(user, "<span class='warning'>Доступ запрещён. [name] is secured with a DNA lock.</span>")
 			log_message("Permission denied (DNA LOCK).", LOG_MECHA)
 			return
 	if(!operation_allowed(user))
-		to_chat(user, "<span class='warning'>Access denied. Insufficient operation keycodes.</span>")
+		to_chat(user, "<span class='warning'>Доступ запрещён. Insufficient operation keycodes.</span>")
 		log_message("Permission denied (No keycode).", LOG_MECHA)
 		return
 	if(user.buckled)
@@ -958,7 +958,7 @@
 		to_chat(user, "<span class='warning'>Occupant detected!</span>")
 		return
 	if(dna_lock && (!B.stored_dna || (dna_lock != B.stored_dna.unique_enzymes)))
-		to_chat(user, "<span class='warning'>Access denied. [name] is secured with a DNA lock.</span>")
+		to_chat(user, "<span class='warning'>Доступ запрещён. [name] is secured with a DNA lock.</span>")
 		return
 
 	visible_message("<span class='notice'>[user] starts to insert an MMI into [name].</span>")
@@ -979,7 +979,7 @@
 
 	var/mob/living/brain/B = M.brainmob
 	if(!user.transferItemToLoc(M, src))
-		to_chat(user, "<span class='warning'>\the [M] is stuck to your hand, you cannot put it in \the [src]!</span>")
+		to_chat(user, "<span class='warning'>\the [M] прилип к рукеr hand, you cannot put it in [src]!</span>")
 		return FALSE
 
 	M.set_mecha(src)

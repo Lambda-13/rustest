@@ -38,7 +38,7 @@
 	if(W.tool_behaviour == TOOL_WELDER && user.a_intent != INTENT_HARM)
 		if(obj_integrity < max_integrity)
 			if(W.use_tool(src, user, 0, volume = 50, amount = 1))
-				user.visible_message("<span class='notice'>[user] repairs some damage to [name].</span>", "<span class='notice'>You repair some damage to \the [src].</span>")
+				user.visible_message("<span class='notice'>[user] repairs some damage to [name].</span>", "<span class='notice'>You repair some damage to [src].</span>")
 				obj_integrity += min(10, max_integrity-obj_integrity)
 				if(obj_integrity == max_integrity)
 					to_chat(user, "<span class='notice'>It looks to be fully repaired now.</span>")
@@ -77,7 +77,7 @@
 	. = ..()
 
 	if(eddie_murphy)
-		. += "<span class='warning'>Something appears to be stuck in its exhaust...</span>"
+		. += "<hr><span class='warning'>Something appears to be stuck in its exhaust...</span>"
 
 /obj/vehicle/ridden/secway/obj_destruction()
 	explosion(src, -1, 0, 2, 4, flame_range = 3)

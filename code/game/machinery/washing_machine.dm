@@ -146,7 +146,7 @@ GLOBAL_LIST_INIT(dye_registry, list(
 /obj/machinery/washing_machine/examine(mob/user)
 	. = ..()
 	if(!busy)
-		. += "<span class='notice'><b>Alt-click</b> it to start a wash cycle.</span>"
+		. += "<hr><span class='notice'><b>Alt-клик</b> it to start a wash cycle.</span>"
 
 /obj/machinery/washing_machine/AltClick(mob/user)
 	if(!user.canUseTopic(src, !issilicon(user)))
@@ -314,7 +314,7 @@ GLOBAL_LIST_INIT(dye_registry, list(
 			return TRUE
 
 		if(!user.transferItemToLoc(W, src))
-			to_chat(user, "<span class='warning'>\The [W] is stuck to your hand, you cannot put it in the washing machine!</span>")
+			to_chat(user, "<span class='warning'>[W] прилип к рукеr hand, you cannot put it in the washing machine!</span>")
 			return TRUE
 		if(W.dye_color)
 			color_source = W

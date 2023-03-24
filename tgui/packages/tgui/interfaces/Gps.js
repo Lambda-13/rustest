@@ -33,18 +33,18 @@ export const Gps = (props, context) => {
   ])(data.signals || []);
   return (
     <Window
-      title="Global Positioning System"
+      title="глобальная поисковая система"
       width={470}
       height={700}
       resizable
     >
       <Window.Content scrollable>
         <Section
-          title="Control"
+          title="Управление"
           buttons={
             <Button
               icon="power-off"
-              content={power ? 'On' : 'Off'}
+              content={power ? 'Включён' : 'Выключен'}
               selected={power}
               onClick={() => act('power')}
             />
@@ -58,18 +58,18 @@ export const Gps = (props, context) => {
                 onClick={() => act('rename')}
               />
             </LabeledList.Item>
-            <LabeledList.Item label="Scan Mode">
+            <LabeledList.Item label="Режим">
               <Button
                 icon={updating ? 'unlock' : 'lock'}
-                content={updating ? 'AUTO' : 'MANUAL'}
+                content={updating ? 'АВТО' : 'РУЧНОЙ'}
                 color={!updating && 'bad'}
                 onClick={() => act('updating')}
               />
             </LabeledList.Item>
-            <LabeledList.Item label="Range">
+            <LabeledList.Item label="Радиус">
               <Button
                 icon="sync"
-                content={globalmode ? 'MAXIMUM' : 'LOCAL'}
+                content={globalmode ? 'МАКСИМУМ' : 'ЛОКАЛЬНЫЙ'}
                 selected={!globalmode}
                 onClick={() => act('globalmode')}
               />
@@ -78,12 +78,12 @@ export const Gps = (props, context) => {
         </Section>
         {!!power && (
           <>
-            <Section title="Current Location">
+            <Section title="Текущая локация">
               <Box fontSize="18px">
                 {currentArea} ({currentCoords})
               </Box>
             </Section>
-            <Section title="Detected Signals">
+            <Section title="Обнаруженные сигналы">
               <Table>
                 <Table.Row bold>
                   <Table.Cell content="Name" />

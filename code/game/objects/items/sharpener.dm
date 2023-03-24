@@ -22,7 +22,7 @@
 		to_chat(user, "<span class='warning'>You can only sharpen items that are already sharp, such as knives!</span>")
 		return
 	if(istype(I, /obj/item/melee/transforming/energy))
-		to_chat(user, "<span class='warning'>You don't think \the [I] will be the thing getting modified if you use it on \the [src]!</span>")
+		to_chat(user, "<span class='warning'>You don't think \the [I] will be the thing getting modified if you use it on [src]!</span>")
 		return
 
 	var/signal_out = SEND_SIGNAL(I, COMSIG_ITEM_SHARPEN_ACT, increment, max)

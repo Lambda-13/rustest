@@ -97,13 +97,13 @@ GLOBAL_LIST_EMPTY(PDAs)
 		return
 
 	if(id)
-		. += "<span class='notice'>Alt-click to remove the ID.</span>" //won't name ID on examine in case it's stolen
+		. += "<hr><span class='notice'>Alt-клик to remove the ID.</span>" //won't name ID on examine in case it's stolen
 
 	if(inserted_item && (!isturf(loc)))
-		. += "<span class='notice'>Ctrl-click to remove [inserted_item].</span>" //traitor pens are disguised so we're fine naming them on examine
+		. += "<hr><span class='notice'>Ctrl-click to remove [inserted_item].</span>" //traitor pens are disguised so we're fine naming them on examine
 
 	if((!isnull(cartridge)))
-		. += "<span class='notice'>Ctrl+Shift-click to remove the cartridge.</span>" //won't name cart on examine in case it's Detomatix
+		. += "<hr><span class='notice'>Ctrl+Shift-click to remove the cartridge.</span>" //won't name cart on examine in case it's Detomatix
 
 /obj/item/pda/Initialize()
 	. = ..()
@@ -893,7 +893,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 	else if(istype(C, /obj/item/card/id))
 		var/obj/item/card/id/idcard = C
 		if(!idcard.registered_name)
-			to_chat(user, "<span class='warning'>\The [src] rejects the ID!</span>")
+			to_chat(user, "<span class='warning'>[src] rejects the ID!</span>")
 			return
 		if(!owner)
 			owner = idcard.registered_name
@@ -903,7 +903,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 		else
 			if(!id_check(user, idcard))
 				return
-			to_chat(user, "<span class='notice'>You put the ID into \the [src]'s slot.</span>")
+			to_chat(user, "<span class='notice'>You put the ID into [src]'s slot.</span>")
 			updateSelfDialog()//Update self dialog on success.
 
 			return	//Return in case of failed check or when successful.
@@ -917,11 +917,11 @@ GLOBAL_LIST_EMPTY(PDAs)
 		updateUsrDialog()
 	else if(is_type_in_list(C, contained_item)) //Checks if there is a pen
 		if(inserted_item)
-			to_chat(user, "<span class='warning'>There is already \a [inserted_item] in \the [src]!</span>")
+			to_chat(user, "<span class='warning'>There is already \a [inserted_item] in [src]!</span>")
 		else
 			if(!user.transferItemToLoc(C, src))
 				return
-			to_chat(user, "<span class='notice'>You slide \the [C] into \the [src].</span>")
+			to_chat(user, "<span class='notice'>You slide \the [C] into [src].</span>")
 			inserted_item = C
 			update_icon()
 	else if(istype(C, /obj/item/photo))

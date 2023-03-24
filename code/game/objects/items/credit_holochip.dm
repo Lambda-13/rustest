@@ -15,7 +15,7 @@
 
 /obj/item/holochip/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>По минидисплею можно понять что тут записано [credits] кредит[get_num_string(credits)]</span>\n"+\
+	. += "<hr><span class='notice'>По минидисплею можно понять что тут записано [credits] кредит[get_num_string(credits)]</span>\n"+\
 	"<span class='notice'>Альт-клик для разделения.</span>"
 
 /obj/item/holochip/get_item_credit_value()

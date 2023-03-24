@@ -754,7 +754,7 @@
 /obj/machinery/door/airlock/examine(mob/user)
 	. = ..()
 	if(obj_flags & EMAGGED)
-		. += "<span class='warning'>Its access panel is smoking slightly.</span>"
+		. += "<hr><span class='warning'>Its access panel is smoking slightly.</span>"
 	if(note)
 		if(!in_range(user, src))
 			. += "There's a [note.name] pinned to the front. You can't read it from here."
@@ -786,10 +786,10 @@
 			. += "It looks very robust."
 
 	if(issilicon(user) && !(machine_stat & BROKEN))
-		. += "<span class='notice'>Shift-click [src] to [ density ? "open" : "close"] it.</span>"
-		. += "<span class='notice'>Ctrl-click [src] to [ locked ? "raise" : "drop"] its bolts.</span>"
-		. += "<span class='notice'>Alt-click [src] to [ secondsElectrified ? "un-electrify" : "permanently electrify"] it.</span>"
-		. += "<span class='notice'>Ctrl-Shift-click [src] to [ emergency ? "disable" : "enable"] emergency access.</span>"
+		. += "<hr><span class='notice'>Shift-click [src] to [ density ? "open" : "close"] it.</span>"
+		. += "<hr><span class='notice'>Ctrl-click [src] to [ locked ? "raise" : "drop"] its bolts.</span>"
+		. += "<hr><span class='notice'>Alt-клик [src] to [ secondsElectrified ? "un-electrify" : "permanently electrify"] it.</span>"
+		. += "<hr><span class='notice'>Ctrl-Shift-click [src] to [ emergency ? "disable" : "enable"] emergency access.</span>"
 
 /obj/machinery/door/airlock/attack_ai(mob/user)
 	if(!canAIControl(user))
@@ -952,8 +952,8 @@
 					if(do_after(user, 20, TRUE, src))
 						if(!panel_open || !S.use(2))
 							return
-						user.visible_message("<span class='notice'>[user] reinforces \the [src] with metal.</span>",
-											"<span class='notice'>You reinforce \the [src] with metal.</span>")
+						user.visible_message("<span class='notice'>[user] reinforces [src] with metal.</span>",
+											"<span class='notice'>You reinforce [src] with metal.</span>")
 						security_level = AIRLOCK_SECURITY_METAL
 						update_icon()
 					return
@@ -966,8 +966,8 @@
 					if(do_after(user, 20, TRUE, src))
 						if(!panel_open || !S.use(2))
 							return
-						user.visible_message("<span class='notice'>[user] reinforces \the [src] with plasteel.</span>",
-											"<span class='notice'>You reinforce \the [src] with plasteel.</span>")
+						user.visible_message("<span class='notice'>[user] reinforces [src] with plasteel.</span>",
+											"<span class='notice'>You reinforce [src] with plasteel.</span>")
 						security_level = AIRLOCK_SECURITY_PLASTEEL
 						modify_max_integrity(max_integrity * AIRLOCK_INTEGRITY_MULTIPLIER)
 						damage_deflection = AIRLOCK_DAMAGE_DEFLECTION_R
@@ -981,9 +981,9 @@
 					if(C.use_tool(src, user, 40, volume=50, amount = 2))
 						if(!panel_open)
 							return
-						user.visible_message("<span class='notice'>[user] cuts through \the [src]'s shielding.</span>",
-										"<span class='notice'>You cut through \the [src]'s shielding.</span>",
-										"<span class='hear'>You hear welding.</span>")
+						user.visible_message("<span class='notice'>[user] cuts through [src]'s shielding.</span>",
+										"<span class='notice'>You cut through [src]'s shielding.</span>",
+										"<span class='hear'>Слышу сварку.</span>")
 						security_level = AIRLOCK_SECURITY_NONE
 						spawn_atom_to_turf(/obj/item/stack/sheet/metal, user.loc, 2)
 						update_icon()
@@ -997,8 +997,8 @@
 							return
 						if(security_level != AIRLOCK_SECURITY_PLASTEEL_I_S)
 							return
-						user.visible_message("<span class='notice'>[user] remove \the [src]'s shielding.</span>",
-											"<span class='notice'>You remove \the [src]'s inner shielding.</span>")
+						user.visible_message("<span class='notice'>[user] remove [src]'s shielding.</span>",
+											"<span class='notice'>You remove [src]'s inner shielding.</span>")
 						security_level = AIRLOCK_SECURITY_NONE
 						modify_max_integrity(max_integrity / AIRLOCK_INTEGRITY_MULTIPLIER)
 						damage_deflection = AIRLOCK_DAMAGE_DEFLECTION_N
@@ -1013,9 +1013,9 @@
 					if(C.use_tool(src, user, 40, volume=50, amount=2))
 						if(!panel_open)
 							return
-						user.visible_message("<span class='notice'>[user] cuts through \the [src]'s shielding.</span>",
-										"<span class='notice'>You cut through \the [src]'s shielding.</span>",
-										"<span class='hear'>You hear welding.</span>")
+						user.visible_message("<span class='notice'>[user] cuts through [src]'s shielding.</span>",
+										"<span class='notice'>You cut through [src]'s shielding.</span>",
+										"<span class='hear'>Слышу сварку.</span>")
 						security_level = AIRLOCK_SECURITY_PLASTEEL_I_S
 					return
 			if(AIRLOCK_SECURITY_PLASTEEL_O_S)
@@ -1026,8 +1026,8 @@
 							return
 						if(security_level != AIRLOCK_SECURITY_PLASTEEL_O_S)
 							return
-						user.visible_message("<span class='notice'>[user] remove \the [src]'s shielding.</span>",
-											"<span class='notice'>You remove \the [src]'s shielding.</span>")
+						user.visible_message("<span class='notice'>[user] remove [src]'s shielding.</span>",
+											"<span class='notice'>You remove [src]'s shielding.</span>")
 						security_level = AIRLOCK_SECURITY_PLASTEEL_I
 						spawn_atom_to_turf(/obj/item/stack/sheet/plasteel, user.loc, 1)
 					return
@@ -1039,9 +1039,9 @@
 					if(C.use_tool(src, user, 40, volume=50, amount=2))
 						if(!panel_open)
 							return
-						user.visible_message("<span class='notice'>[user] cuts through \the [src]'s shielding.</span>",
-										"<span class='notice'>You cut through \the [src]'s shielding.</span>",
-										"<span class='hear'>You hear welding.</span>")
+						user.visible_message("<span class='notice'>[user] cuts through [src]'s shielding.</span>",
+										"<span class='notice'>You cut through [src]'s shielding.</span>",
+										"<span class='hear'>Слышу сварку.</span>")
 						security_level = AIRLOCK_SECURITY_PLASTEEL_O_S
 					return
 			if(AIRLOCK_SECURITY_PLASTEEL)
@@ -1052,8 +1052,8 @@
 					if(C.use_tool(src, user, 10, volume=100))
 						if(!panel_open)
 							return
-						user.visible_message("<span class='notice'>[user] cut through \the [src]'s outer grille.</span>",
-											"<span class='notice'>You cut through \the [src]'s outer grille.</span>")
+						user.visible_message("<span class='notice'>[user] cut through [src]'s outer grille.</span>",
+											"<span class='notice'>You cut through [src]'s outer grille.</span>")
 						security_level = AIRLOCK_SECURITY_PLASTEEL_O
 					return
 	if(C.tool_behaviour == TOOL_SCREWDRIVER)
@@ -1129,7 +1129,7 @@
 				return
 			user.visible_message("<span class='notice'>[user] begins [welded ? "unwelding":"welding"] the airlock.</span>", \
 							"<span class='notice'>You begin [welded ? "unwelding":"welding"] the airlock...</span>", \
-							"<span class='hear'>You hear welding.</span>")
+							"<span class='hear'>Слышу сварку.</span>")
 			if(W.use_tool(src, user, 40, volume=50, extra_checks = CALLBACK(src, .proc/weld_checks, W, user)))
 				welded = !welded
 				user.visible_message("<span class='notice'>[user] [welded? "welds shut":"unwelds"] [src].</span>", \
@@ -1141,7 +1141,7 @@
 					return
 				user.visible_message("<span class='notice'>[user] begins welding the airlock.</span>", \
 								"<span class='notice'>You begin repairing the airlock...</span>", \
-								"<span class='hear'>You hear welding.</span>")
+								"<span class='hear'>Слышу сварку.</span>")
 				if(W.use_tool(src, user, 40, volume=50, extra_checks = CALLBACK(src, .proc/weld_checks, W, user)))
 					obj_integrity = max_integrity
 					set_machine_stat(machine_stat & ~BROKEN)
@@ -1581,7 +1581,7 @@
 		return
 
 	if(!user_allowed(usr))
-		to_chat(usr, "<span class='danger'>Access denied.</span>")
+		to_chat(usr, "<span class='danger'>Доступ запрещён.</span>")
 		return
 	switch(action)
 		if("disrupt-main")

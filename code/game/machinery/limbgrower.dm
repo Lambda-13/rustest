@@ -117,7 +117,7 @@
 		return
 
 	if(istype(user_item, /obj/item/disk/design_disk/limbs))
-		user.visible_message("<span class='notice'>[user] begins to load \the [user_item] in \the [src]...</span>",
+		user.visible_message("<span class='notice'>[user] begins to load \the [user_item] in [src]...</span>",
 			"<span class='notice'>You begin to load designs from \the [user_item]...</span>",
 			"<span class='hear'>You hear the clatter of a floppy drive.</span>")
 		busy = TRUE
@@ -281,7 +281,7 @@
 /obj/machinery/limbgrower/examine(mob/user)
 	. = ..()
 	if(in_range(user, src) || isobserver(user))
-		. += "<span class='notice'>The status display reads: Storing up to <b>[reagents.maximum_volume]u</b> of reagents.<br>Reagent consumption rate at <b>[production_coefficient * 100]%</b>.</span>"
+		. += "<hr><span class='notice'>The status display reads: Storing up to <b>[reagents.maximum_volume]u</b> of reagents.<br>Reagent consumption rate at <b>[production_coefficient * 100]%</b>.</span>"
 
 /*
  * Checks our reagent list to see if a design can be built.

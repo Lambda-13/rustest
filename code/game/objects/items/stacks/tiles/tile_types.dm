@@ -45,7 +45,7 @@
 				verb = "mediocre"
 		if(!verb)
 			return
-		. += "<span class='notice'>Those could work as a [verb] throwing weapon.</span>"
+		. += "<hr><span class='notice'>Those could work as a [verb] throwing weapon.</span>"
 
 
 /obj/item/stack/tile/attackby(obj/item/W, mob/user, params)
@@ -72,7 +72,7 @@
 				user.visible_message(
 					"<span class='notice'>[user.name] shaped [src] into metal with the welding tool.</span>",
 					"<span class='notice'>You shaped [src] into metal with the welding tool.</span>",
-					"<span class='hear'>You hear welding.</span>"
+					"<span class='hear'>Слышу сварку.</span>"
 				)
 				var/obj/item/stack/rods/R = src
 				src = null
@@ -87,7 +87,7 @@
 				user.visible_message(
 					"<span class='notice'>[user.name] shaped [src] into a sheet with the welding tool.</span>",
 					"<span class='notice'>You shaped [src] into a sheet with the welding tool.</span>",
-					"<span class='hear'>You hear welding.</span>"
+					"<span class='hear'>Слышу сварку.</span>"
 				)
 				var/obj/item/stack/rods/R = src
 				src = null

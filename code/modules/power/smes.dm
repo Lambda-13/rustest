@@ -48,7 +48,7 @@
 /obj/machinery/power/smes/examine(user)
 	. = ..()
 	if(!terminal)
-		. += "<span class='warning'>This SMES has no power terminal!</span>"
+		. += "<hr><span class='warning'>This SMES has no power terminal!</span>"
 
 /obj/machinery/power/smes/Initialize()
 	. = ..()

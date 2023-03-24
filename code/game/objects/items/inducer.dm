@@ -156,11 +156,11 @@
 /obj/item/inducer/examine(mob/living/M)
 	. = ..()
 	if(cell)
-		. += "<span class='notice'>Its display shows: [DisplayEnergy(cell.charge)].</span>"
+		. += "<hr><span class='notice'>Its display shows: [DisplayEnergy(cell.charge)].</span>"
 	else
-		. += "<span class='notice'>Its display is dark.</span>"
+		. += "<hr><span class='notice'>Its display is dark.</span>"
 	if(opened)
-		. += "<span class='notice'>Its battery compartment is open.</span>"
+		. += "<hr><span class='notice'>Its battery compartment is open.</span>"
 
 /obj/item/inducer/update_overlays()
 	. = ..()

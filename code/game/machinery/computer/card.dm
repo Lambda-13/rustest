@@ -14,8 +14,8 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 #define AUTHENTICATED_ALL 2
 
 /obj/machinery/computer/card
-	name = "identification console"
-	desc = "You can use this to manage jobs and ID access."
+	name = "консоль индефикации"
+	desc = "Используется для изменения допусков в отделы."
 	icon_screen = "id"
 	icon_keyboard = "id_key"
 	req_one_access = list(ACCESS_HEADS, ACCESS_CHANGE_IDS)
@@ -69,7 +69,7 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 /obj/machinery/computer/card/examine(mob/user)
 	. = ..()
 	if(inserted_scan_id || inserted_modify_id)
-		. += "<span class='notice'>Alt-click to eject the ID card.</span>"
+		. += "<hr><span class='notice'>Alt-клик для вытаскивания карты.</span>"
 
 /obj/machinery/computer/card/attackby(obj/I, mob/user, params)
 	if(isidcard(I))
@@ -155,8 +155,8 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 		else
 			id_eject(user, target)
 
-	user.visible_message("<span class='notice'>[user] inserts \the [card_to_insert] into \the [src].</span>",
-						"<span class='notice'>You insert \the [card_to_insert] into \the [src].</span>")
+	user.visible_message("<span class='notice'>[user] inserts \the [card_to_insert] into [src].</span>",
+						"<span class='notice'>You insert \the [card_to_insert] into [src].</span>")
 	playsound(src, 'sound/machines/terminal_insert_disc.ogg', 50, FALSE)
 	updateUsrDialog()
 	return TRUE
@@ -169,8 +169,8 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 		target.forceMove(drop_location())
 		if(!issilicon(user) && Adjacent(user))
 			user.put_in_hands(target)
-		user.visible_message("<span class='notice'>[user] gets \the [target] from \the [src].</span>", \
-							"<span class='notice'>You get \the [target] from \the [src].</span>")
+		user.visible_message("<span class='notice'>[user] gets \the [target] from [src].</span>", \
+							"<span class='notice'>You get \the [target] from [src].</span>")
 		playsound(src, 'sound/machines/terminal_insert_disc.ogg', 50, FALSE)
 		updateUsrDialog()
 		return TRUE

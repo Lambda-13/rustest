@@ -18,11 +18,11 @@
 /obj/machinery/power/deck_relay/examine(mob/user)
 	. += ..()
 	if(!anchored)
-		. += "<span class='notice'>The securing bolts are undone.</span>"
+		. += "<hr><span class='notice'>The securing bolts are undone.</span>"
 	if(broken_status == RELAY_ADD_CABLE)
-		. += "<span class='notice'>The cable insulation is torn apart and the wires are frayed beyond use.</span>"
+		. += "<hr><span class='notice'>The cable insulation is torn apart and the wires are frayed beyond use.</span>"
 	if(broken_status == RELAY_ADD_METAL)
-		. += "<span class='notice'>The cable insulation is torn apart and the wiring is exposed.</span>"
+		. += "<hr><span class='notice'>The cable insulation is torn apart and the wiring is exposed.</span>"
 
 /obj/machinery/power/deck_relay/attackby(obj/item/I, mob/user, params)
 	if(default_unfasten_wrench(user, I))

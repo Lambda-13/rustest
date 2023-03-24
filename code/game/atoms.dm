@@ -650,7 +650,7 @@
  * Produces a signal [COMSIG_PARENT_EXAMINE]
  */
 /atom/proc/examine(mob/user)
-	. = list("[get_examine_string(user, TRUE)].")
+	. = list("<hr>[get_examine_string(user, TRUE)].")
 
 	. += get_name_chaser(user)
 	if(desc)
@@ -663,7 +663,7 @@
 		for(var/i in custom_materials)
 			var/datum/material/M = i
 			materials_list += "<font color='[M.color]'>[M.skloname]</font>"
-		. += span_small("Этот предмет создан из <u>[english_list(materials_list)]</u>.")
+		. += span_small("\nЭтот предмет создан из <u>[english_list(materials_list)]</u>.")
 	if(reagents)
 		. += "<hr>"
 		if(reagents.flags & TRANSPARENT)

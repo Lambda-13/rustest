@@ -10,7 +10,7 @@
 
 /obj/machinery/fugitive_capture/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>Add a prisoner by dragging them into the machine.</span>"
+	. += "<hr><span class='notice'>Add a prisoner by dragging them into the machine.</span>"
 
 /obj/machinery/fugitive_capture/MouseDrop_T(mob/target, mob/user)
 	var/mob/living/fugitive_hunter = user

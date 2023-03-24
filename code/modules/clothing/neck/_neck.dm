@@ -22,7 +22,7 @@
 
 /obj/item/clothing/neck/tie
 	name = "tie"
-	desc = "A neosilk clip-on tie. Special material allows it to be reskinned by Alt-clicking it, but only once."
+	desc = "A neosilk clip-on tie. Special material allows it to be reskinned by Alt-кликing it, but only once."
 	icon = 'icons/obj/clothing/neck.dmi'
 	unique_reskin = list("red tie" = "redtie",
 						"orange tie" = "orangetie",
@@ -171,7 +171,7 @@
 	cuttable = FALSE
 
 /obj/item/clothing/neck/stethoscope/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] puts \the [src] to [user.p_their()] chest! It looks like [user.p_they()] wont hear much!</span>")
+	user.visible_message("<span class='suicide'>[user] puts [src] to [user.p_their()] chest! It looks like [user.p_they()] wont hear much!</span>")
 	return OXYLOSS
 
 /obj/item/clothing/neck/stethoscope/attack(mob/living/carbon/human/M, mob/living/user)
@@ -424,7 +424,7 @@
 		if(25 to 50)
 			. += "It appears heavily damaged."
 		if(0 to 25)
-			. += "<span class='warning'>It's falling apart!</span>"
+			. += "<hr><span class='warning'>It's falling apart!</span>"
 
 /obj/item/clothing/neck/crystal_amulet/worn_overlays(isinhands)
 	. = ..()

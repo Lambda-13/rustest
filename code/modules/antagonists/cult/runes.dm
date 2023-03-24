@@ -618,7 +618,7 @@ structure_check() searches for nearby cultist structures required for the invoca
 	. = ..()
 	if(density && iscultist(user))
 		if(density_timer)
-			. += "<span class='cultitalic'>The air above this rune has hardened into a barrier that will last [DisplayTimeText(density_timer.timeToRun - world.time)].</span>"
+			. += "<hr><span class='cultitalic'>The air above this rune has hardened into a barrier that will last [DisplayTimeText(density_timer.timeToRun - world.time)].</span>"
 
 /obj/effect/rune/wall/Destroy()
 	GLOB.wall_runes -= src

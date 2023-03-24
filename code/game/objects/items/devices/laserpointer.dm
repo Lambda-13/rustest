@@ -50,7 +50,7 @@
 
 	else if(W.tool_behaviour == TOOL_SCREWDRIVER)
 		if(diode)
-			to_chat(user, "<span class='notice'>You remove the [diode.name] from \the [src].</span>")
+			to_chat(user, "<span class='notice'>You remove the [diode.name] from [src].</span>")
 			diode.forceMove(drop_location())
 			diode = null
 	else
@@ -60,9 +60,9 @@
 	. = ..()
 	if(in_range(user, src) || isobserver(user))
 		if(!diode)
-			. += "<span class='notice'>The diode is missing.</span>"
+			. += "<hr><span class='notice'>The diode is missing.</span>"
 		else
-			. += "<span class='notice'>A class <b>[diode.rating]</b> laser diode is installed. It is <i>screwed</i> in place.</span>"
+			. += "<hr><span class='notice'>A class <b>[diode.rating]</b> laser diode is installed. It is <i>screwed</i> in place.</span>"
 
 /obj/item/laser_pointer/afterattack(atom/target, mob/living/user, flag, params)
 	. = ..()

@@ -69,29 +69,29 @@
 	. = ..()
 	if(IS_ORGANIC_LIMB(src))
 		if(!brain)
-			. += "<span class='info'>The brain has been removed from [src].</span>"
+			. += "<hr><span class='info'>The brain has been removed from [src].</span>"
 		else if(brain.suicided || brainmob?.suiciding)
-			. += "<span class='info'>There's a miserable expression on [real_name]'s face; they must have really hated life. There's no hope of recovery.</span>"
+			. += "<hr><span class='info'>There's a miserable expression on [real_name]'s face; they must have really hated life. There's no hope of recovery.</span>"
 		else if(brainmob?.health <= HEALTH_THRESHOLD_DEAD)
-			. += "<span class='info'>It's leaking some kind of... clear fluid? The brain inside must be in pretty bad shape.</span>"
+			. += "<hr><span class='info'>It's leaking some kind of... clear fluid? The brain inside must be in pretty bad shape.</span>"
 		else if(brainmob)
 			if(brainmob.get_ghost(FALSE, TRUE))
-				. += "<span class='info'>Its muscles are twitching slightly... It seems to have some life still in it.</span>"
+				. += "<hr><span class='info'>Its muscles are twitching slightly... It seems to have some life still in it.</span>"
 			else
-				. += "<span class='info'>It's completely lifeless. Perhaps there'll be a chance for them later.</span>"
+				. += "<hr><span class='info'>It's completely lifeless. Perhaps there'll be a chance for them later.</span>"
 		else if(brain?.decoy_override)
-			. += "<span class='info'>It's completely lifeless. Perhaps there'll be a chance for them later.</span>"
+			. += "<hr><span class='info'>It's completely lifeless. Perhaps there'll be a chance for them later.</span>"
 		else
-			. += "<span class='info'>It's completely lifeless.</span>"
+			. += "<hr><span class='info'>It's completely lifeless.</span>"
 
 		if(!eyes)
-			. += "<span class='info'>[real_name]'s eyes have been removed.</span>"
+			. += "<hr><span class='info'>[real_name]'s eyes have been removed.</span>"
 
 		if(!ears)
-			. += "<span class='info'>[real_name]'s ears have been removed.</span>"
+			. += "<hr><span class='info'>[real_name]'s ears have been removed.</span>"
 
 		if(!tongue)
-			. += "<span class='info'>[real_name]'s tongue has been removed.</span>"
+			. += "<hr><span class='info'>[real_name]'s tongue has been removed.</span>"
 
 
 /obj/item/bodypart/head/can_dismember()

@@ -21,7 +21,7 @@
 	var/list/files = list()
 
 /obj/item/card/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins to swipe [user.p_their()] neck with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] begins to swipe [user.p_their()] neck with [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	return BRUTELOSS
 
 /obj/item/card/data
@@ -86,9 +86,9 @@
 
 /obj/item/card/emag/borg/examine()
 	. = ..()
-	. += "<span class='notice'> Capable of interchanging between electromagnetic, electrical, & screw turning functionality.</span>" //Я не знаю как это перевести
+	. += "<hr><span class='notice'> Capable of interchanging between electromagnetic, electrical, & screw turning functionality.</span>" //Я не знаю как это перевести
 	if(uses_left > -1)
-		. += "<span class='notice'> У неё видно [uses_left] делений оставшихся использований.</span>"
+		. += "<hr><span class='notice'> У неё видно [uses_left] делений оставшихся использований.</span>"
 
 /obj/item/card/emag/limited
 	name = "ограниченный криптографический секвестор"
@@ -340,8 +340,8 @@
 	if(registered_account)
 		. += "The account linked to the ID belongs to '[registered_account.account_holder]' and reports a balance of [registered_account.account_balance] cr."
 		if(registered_account.frozen)
-			. += "<span class='warning'>The linked account is frozen, and cannot be withdrawn from or deposited into!</span>"
-	. += "<span class='notice'><i>There's more information below, you can look again to take a closer look...</i></span>"
+			. += "<hr><span class='warning'>The linked account is frozen, and cannot be withdrawn from or deposited into!</span>"
+	. += "<hr><span class='notice'><i>There's more information below, you can look again to take a closer look...</i></span>"
 
 /obj/item/card/id/examine_more(mob/user)
 	var/list/msg = list("<span class='notice'><i>You examine [src] closer, and note the following...</i></span>")
@@ -357,12 +357,12 @@
 		msg += "The card has access to the following ships: [ship_names.Join(", ")]"
 	if(registered_account)
 		msg += "The account linked to the ID belongs to '[registered_account.account_holder]' and reports a balance of [registered_account.account_balance] cr."
-		msg += "<span class='info'>Alt-Click the ID to pull money from the linked account in the form of holochips.</span>"
+		msg += "<span class='info'>Alt-клик the ID to pull money from the linked account in the form of holochips.</span>"
 		msg += "<span class='info'>You can insert credits into the linked account by pressing holochips, cash, or coins against the ID.</span>"
 		if(registered_account.account_holder == user.real_name)
-			msg += "<span class='boldnotice'>If you lose this ID card, you can reclaim your account by Alt-Clicking a blank ID card while holding it and entering your account ID number.</span>"
+			msg += "<span class='boldnotice'>If you lose this ID card, you can reclaim your account by Alt-кликing a blank ID card while holding it and entering your account ID number.</span>"
 	else
-		msg += "<span class='info'>There is no registered account linked to this card. Alt-Click to add one.</span>"
+		msg += "<span class='info'>There is no registered account linked to this card. Alt-клик to add one.</span>"
 
 	return msg
 

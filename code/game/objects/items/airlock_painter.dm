@@ -111,7 +111,7 @@
 /obj/item/airlock_painter/examine(mob/user)
 	. = ..()
 	if(!ink)
-		. += "<span class='notice'>It doesn't have a toner cartridge installed.</span>"
+		. += "<hr><span class='notice'>It doesn't have a toner cartridge installed.</span>"
 		return
 	var/ink_level = "high"
 	if(ink.charges < 1)
@@ -120,7 +120,7 @@
 		ink_level = "low"
 	else if((ink.charges/ink.max_charges) > 1) //Over 100% (admin var edit)
 		ink_level = "dangerously high"
-	. += "<span class='notice'>Its ink levels look [ink_level].</span>"
+	. += "<hr><span class='notice'>Its ink levels look [ink_level].</span>"
 
 
 /obj/item/airlock_painter/attackby(obj/item/W, mob/user, params)
@@ -148,7 +148,7 @@
 
 /obj/item/airlock_painter/decal
 	name = "decal painter"
-	desc = "An airlock painter, reprogramed to use a different style of paint in order to apply decals for floor tiles as well, in addition to repainting doors. Decals break when the floor tiles are removed. Alt-Click to change design." //WS Edit - Floor Painters
+	desc = "An airlock painter, reprogramed to use a different style of paint in order to apply decals for floor tiles as well, in addition to repainting doors. Decals break when the floor tiles are removed. Alt-клик to change design." //WS Edit - Floor Painters
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "decal_sprayer"
 	item_state = "decalsprayer"

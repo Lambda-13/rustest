@@ -171,7 +171,7 @@ GLOBAL_LIST_INIT(blacklisted_borg_hats, typecacheof(list( //Hats that don't real
 		else
 			if(allowed(usr))
 				locked = !locked
-				to_chat(user, "<span class='notice'>You [ locked ? "lock" : "unlock"] [src]'s cover.</span>")
+				to_chat(user, "<span class='notice'>You [ locked ? "Блок" : "Разблок"]ирую [src]'s cover.</span>")
 				update_icons()
 				if(emagged)
 					to_chat(user, "<span class='notice'>The cover interface glitches out for a split second.</span>")
@@ -179,7 +179,7 @@ GLOBAL_LIST_INIT(blacklisted_borg_hats, typecacheof(list( //Hats that don't real
 				else
 					logevent("Chassis cover lock has been [locked ? "engaged" : "released"]")
 			else
-				to_chat(user, "<span class='danger'>Access denied.</span>")
+				to_chat(user, "<span class='danger'>Доступ запрещён.</span>")
 		return
 
 	if(istype(W, /obj/item/borg/upgrade/))

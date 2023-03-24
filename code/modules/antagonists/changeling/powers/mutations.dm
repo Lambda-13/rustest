@@ -39,7 +39,7 @@
 /datum/action/changeling/weapon/sting_action(mob/living/user)
 	var/obj/item/held = user.get_active_held_item()
 	if(held && !user.dropItemToGround(held))
-		to_chat(user, "<span class='warning'>[held] is stuck to your hand, you cannot grow a [weapon_name_simple] over it!</span>")
+		to_chat(user, "<span class='warning'>[held] прилип к рукеr hand, you cannot grow a [weapon_name_simple] over it!</span>")
 		return
 	..()
 	var/limb_regen = 0
@@ -113,7 +113,7 @@
 
 /datum/action/changeling/suit/sting_action(mob/living/carbon/human/user)
 	if(!user.canUnEquip(user.wear_suit))
-		to_chat(user, "<span class='warning'>\the [user.wear_suit] is stuck to your body, you cannot grow a [suit_name_simple] over it!</span>")
+		to_chat(user, "<span class='warning'>\the [user.wear_suit] прилип к рукеr body, you cannot grow a [suit_name_simple] over it!</span>")
 		return
 	if(!user.canUnEquip(user.head))
 		to_chat(user, "<span class='warning'>\the [user.head] is stuck on your head, you cannot grow a [helmet_name_simple] over it!</span>")

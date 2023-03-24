@@ -6,7 +6,7 @@
 	. += "<div class='statusDisplay'>"
 	. += "<b><a href='?src=[REF(src)];switchinstrument=1'>Current instrument</a>:</b> "
 	if(!using_instrument)
-		. += "<span class='danger'>No instrument loaded!</span><br>"
+		. += "<hr><span class='danger'>No instrument loaded!</span><br>"
 	else
 		. += "[using_instrument.name]<br>"
 	. += "Playback Settings:<br>"

@@ -129,7 +129,7 @@
 
 /obj/item/clothing/suit/toggle/examine(mob/user)
 	. = ..()
-	. += "Alt-click on [src] to toggle the [togglename]."
+	. += "Alt-клик on [src] to toggle the [togglename]."
 
 //Hardsuit toggle code
 /obj/item/clothing/suit/space/hardsuit/Initialize()

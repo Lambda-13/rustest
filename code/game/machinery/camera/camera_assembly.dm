@@ -37,30 +37,30 @@
 		. += "It has electromagnetic interference shielding installed."
 		has_upgrades = TRUE
 	else if(state == STATE_WIRED)
-		. += "<span class='info'>It can be shielded against electromagnetic interference with some <b>plasma</b>.</span>"
+		. += "<hr><span class='info'>It can be shielded against electromagnetic interference with some <b>plasma</b>.</span>"
 	if(xray_module)
 		. += "It has an X-ray photodiode installed."
 		has_upgrades = TRUE
 	else if(state == STATE_WIRED)
-		. += "<span class='info'>It can be upgraded with an X-ray photodiode with an <b>analyzer</b>.</span>"
+		. += "<hr><span class='info'>It can be upgraded with an X-ray photodiode with an <b>analyzer</b>.</span>"
 	if(proxy_module)
 		. += "It has a proximity sensor installed."
 		has_upgrades = TRUE
 	else if(state == STATE_WIRED)
-		. += "<span class='info'>It can be upgraded with a <b>proximity sensor</b>.</span>"
+		. += "<hr><span class='info'>It can be upgraded with a <b>proximity sensor</b>.</span>"
 
 	//construction states
 	switch(state)
 		if(STATE_WRENCHED)
-			. += "<span class='info'>You can secure it in place with a <b>welder</b>, or removed with a <b>wrench</b>.</span>"
+			. += "<hr><span class='info'>You can secure it in place with a <b>welder</b>, or removed with a <b>wrench</b>.</span>"
 		if(STATE_WELDED)
-			. += "<span class='info'>You can add <b>wires</b> to it, or <b>unweld</b> it from the wall.</span>"
+			. += "<hr><span class='info'>You can add <b>wires</b> to it, or <b>unweld</b> it from the wall.</span>"
 		if(STATE_WIRED)
 			if(has_upgrades)
-				. += "<span class='info'>You can remove the contained upgrades with a <b>crowbar</b>.</span>"
-			. += "<span class='info'>You can complete it with a <b>screwdriver</b>, or <b>unwire</b> it to start removal.</span>"
+				. += "<hr><span class='info'>You can remove the contained upgrades with a <b>crowbar</b>.</span>"
+			. += "<hr><span class='info'>You can complete it with a <b>screwdriver</b>, or <b>unwire</b> it to start removal.</span>"
 		if(STATE_FINISHED)
-			. += "<span class='boldwarning'>You shouldn't be seeing this, tell a coder!</span>"
+			. += "<hr><span class='boldwarning'>You shouldn't be seeing this, tell a coder!</span>"
 
 /obj/structure/camera_assembly/Initialize(mapload, ndir, building)
 	. = ..()

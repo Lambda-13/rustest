@@ -200,7 +200,7 @@
 /obj/item/detective_scanner/examine(mob/user)
 	. = ..()
 	if(LAZYLEN(log) && !scanning)
-		. += "<span class='notice'>Alt-click to clear scanner logs.</span>"
+		. += "<hr><span class='notice'>Alt-клик to clear scanner logs.</span>"
 
 /obj/item/detective_scanner/proc/displayDetectiveScanResults(mob/living/user)
 	// No need for can-use checks since the action button should do proper checks

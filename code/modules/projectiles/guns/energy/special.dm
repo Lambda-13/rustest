@@ -150,7 +150,7 @@
 /obj/item/gun/energy/plasmacutter/examine(mob/user)
 	. = ..()
 	if(cell)
-		. += "<span class='notice'>[src] is [round(cell.percent())]% charged.</span>"
+		. += "<hr><span class='notice'>[src] is [round(cell.percent())]% charged.</span>"
 
 /obj/item/gun/energy/plasmacutter/attackby(obj/item/I, mob/user)
 	var/charge_multiplier = 0 //2 = Refined stack, 1 = Ore
@@ -297,7 +297,7 @@
 
 /obj/item/gun/energy/printer/commando/examine()
 	. = ..()
-	. += "<span class='notice'> Can be reconfigured inhand to print different projectile designs.</span>"
+	. += "<hr><span class='notice'> Can be reconfigured inhand to print different projectile designs.</span>"
 
 /obj/item/gun/energy/printer/commando/attack_self(mob/living/user as mob)
 	if(ammo_type.len > 1)

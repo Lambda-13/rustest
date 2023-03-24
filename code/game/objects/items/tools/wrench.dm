@@ -48,7 +48,7 @@
 /obj/item/wrench/medical/examine(mob/user)
 	. = ..()
 	if(suicider)
-		. += "<span class='notice'>For some reason, it reminds you of [suicider].</span>"
+		. += "<hr><span class='notice'>For some reason, it reminds you of [suicider].</span>"
 
 /obj/item/wrench/medical/suicide_act(mob/living/user)
 	user.visible_message("<span class='suicide'>[user] is praying to the medical wrench to take [user.p_their()] soul. It looks like [user.p_theyre()] trying to commit suicide!</span>")

@@ -95,20 +95,20 @@
 /obj/machinery/power/emitter/examine(mob/user)
 	. = ..()
 	if(welded)
-		. += "<span class='info'>It's moored firmly to the floor. You can unsecure its moorings with a <b>welder</b>.</span>"
+		. += "<hr><span class='info'>It's moored firmly to the floor. You can unsecure its moorings with a <b>welder</b>.</span>"
 	else if(anchored)
-		. += "<span class='info'>It's currently anchored to the floor. You can secure its moorings with a <b>welder</b>, or remove it with a <b>wrench</b>.</span>"
+		. += "<hr><span class='info'>It's currently anchored to the floor. You can secure its moorings with a <b>welder</b>, or remove it with a <b>wrench</b>.</span>"
 	else
-		. += "<span class='info'>It's not anchored to the floor. You can secure it in place with a <b>wrench</b>.</span>"
+		. += "<hr><span class='info'>It's not anchored to the floor. You can secure it in place with a <b>wrench</b>.</span>"
 
 	if(in_range(user, src) || isobserver(user))
 		if(!active)
-			. += "<span class='notice'>Its status display is currently turned off.</span>"
+			. += "<hr><span class='notice'>Its status display is currently turned off.</span>"
 		else if(!powered)
-			. += "<span class='notice'>Its status display is glowing faintly.</span>"
+			. += "<hr><span class='notice'>Its status display is glowing faintly.</span>"
 		else
-			. += "<span class='notice'>Its status display reads: Emitting one beam every <b>[DisplayTimeText(fire_delay)]</b>.</span>"
-			. += "<span class='notice'>Power consumption at <b>[DisplayPower(active_power_usage)]</b>.</span>"
+			. += "<hr><span class='notice'>Its status display reads: Emitting one beam every <b>[DisplayTimeText(fire_delay)]</b>.</span>"
+			. += "<hr><span class='notice'>Power consumption at <b>[DisplayPower(active_power_usage)]</b>.</span>"
 
 /obj/machinery/power/emitter/ComponentInitialize()
 	. = ..()
@@ -144,7 +144,7 @@
 	add_fingerprint(user)
 	if(welded)
 		if(!powernet)
-			to_chat(user, "<span class='warning'>\The [src] isn't connected to a wire!</span>")
+			to_chat(user, "<span class='warning'>[src] isn't connected to a wire!</span>")
 			return TRUE
 		if(!locked && allow_switch_interact)
 			if(active == TRUE)
@@ -163,7 +163,7 @@
 			update_icon()
 
 		else
-			to_chat(user, "<span class='warning'>The controls are locked!</span>")
+			to_chat(user, "<span class='warning'>Управление заблокировано!</span>")
 	else
 		to_chat(user, "<span class='warning'>[src] needs to be firmly secured to the floor first!</span>")
 		return TRUE
@@ -244,7 +244,7 @@
 /obj/machinery/power/emitter/can_be_unfasten_wrench(mob/user, silent)
 	if(active)
 		if(!silent)
-			to_chat(user, "<span class='warning'>Turn \the [src] off first!</span>")
+			to_chat(user, "<span class='warning'>Turn [src] off first!</span>")
 		return FAILED_UNFASTEN
 
 	else if(welded)
@@ -270,7 +270,7 @@
 			return TRUE
 		user.visible_message("<span class='notice'>[user.name] starts to cut the [name] free from the floor.</span>", \
 			"<span class='notice'>You start to cut [src] free from the floor...</span>", \
-			"<span class='hear'>You hear welding.</span>")
+			"<span class='hear'>Слышу сварку.</span>")
 		if(I.use_tool(src, user, 20, volume=50) && welded)
 			welded = FALSE
 			to_chat(user, "<span class='notice'>You cut [src] free from the floor.</span>")
@@ -282,10 +282,10 @@
 			return TRUE
 		user.visible_message("<span class='notice'>[user.name] starts to weld the [name] to the floor.</span>", \
 			"<span class='notice'>You start to weld [src] to the floor...</span>", \
-			"<span class='hear'>You hear welding.</span>")
+			"<span class='hear'>Слышу сварку.</span>")
 		if(I.use_tool(src, user, 20, volume=50) && anchored)
 			welded = TRUE
-			to_chat(user, "<span class='notice'>You weld [src] to the floor.</span>")
+			to_chat(user, "<span class='notice'>Привариваю [src] к полу.</span>")
 			connect_to_network()
 //			update_cable_icons_on_turf(get_turf(src)) - WS Edit - Smartwire Revert
 
@@ -315,11 +315,11 @@
 		if(allowed(user))
 			if(active)
 				locked = !locked
-				to_chat(user, "<span class='notice'>You [src.locked ? "lock" : "unlock"] the controls.</span>")
+				to_chat(user, "<span class='notice'>You [src.locked ? "Блок" : "Разблок"]ирую the controls.</span>")
 			else
-				to_chat(user, "<span class='warning'>The controls can only be locked when \the [src] is online!</span>")
+				to_chat(user, "<span class='warning'>The controls can only be locked when [src] is online!</span>")
 		else
-			to_chat(user, "<span class='danger'>Access denied.</span>")
+			to_chat(user, "<span class='danger'>Доступ запрещён.</span>")
 		return
 
 	else if(is_wire_tool(I) && panel_open)

@@ -50,7 +50,7 @@ RSF
 
 /obj/item/rsf/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>It currently holds [matter]/[max_matter] [discriptor].</span>"
+	. += "<hr><span class='notice'>It currently holds [matter]/[max_matter] [discriptor].</span>"
 
 /obj/item/rsf/cyborg
 	matter = 30
@@ -59,12 +59,12 @@ RSF
 	if(is_type_in_list(W,matter_by_item))//If the thing we got hit by is in our matter list
 		var/tempMatter = matter_by_item[W.type] + matter
 		if(tempMatter > max_matter)
-			to_chat(user, "<span class='warning'>\The [src] can't hold any more [discriptor]!</span>")
+			to_chat(user, "<span class='warning'>[src] can't hold any more [discriptor]!</span>")
 			return
 		qdel(W)
 		matter = tempMatter //We add its value
 		playsound(src.loc, 'sound/machines/click.ogg', 10, TRUE)
-		to_chat(user, "<span class='notice'>\The [src] now holds [matter]/[max_matter] [discriptor].</span>")
+		to_chat(user, "<span class='notice'>[src] now holds [matter]/[max_matter] [discriptor].</span>")
 		icon_state = initial(icon_state)//and set the icon state to the initial value it had
 	else
 		return ..()
@@ -128,11 +128,11 @@ RSF
 		return TRUE
 	else
 		if(matter - 1 < 0)
-			to_chat(user, "<span class='warning'>\The [src] doesn't have enough [discriptor] left.</span>")
+			to_chat(user, "<span class='warning'>[src] doesn't have enough [discriptor] left.</span>")
 			icon_state = spent_icon_state
 			return FALSE
 		matter--
-		to_chat(user, "<span class='notice'>\The [src] now holds [matter]/[max_matter] [discriptor].</span>")
+		to_chat(user, "<span class='notice'>[src] now holds [matter]/[max_matter] [discriptor].</span>")
 		return TRUE
 
 ///Helper proc that iterates through all the things we are allowed to spawn on, and sees if the passed atom is one of them

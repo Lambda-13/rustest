@@ -5,8 +5,8 @@ GLOBAL_LIST_EMPTY(request_list)
  * Enables crew to create requests, crew can sign up to perform the request, and the requester can chose who to pay-out.
  */
 /obj/machinery/bounty_board
-	name = "bounty board"
-	desc = "Alows you to place requests for goods and services across the sector, as well as pay those who actually did it."
+	name = "доска наград"
+	desc = "Позволяет размещать заявки на товары и услуги по всему сектору, а также платить тем, кто реально это сделал."
 	icon = 'icons/obj/terminals.dmi'
 	icon_state = "request_kiosk"
 	light_color = LIGHT_COLOR_GREEN
@@ -38,19 +38,19 @@ GLOBAL_LIST_EMPTY(request_list)
 		if(current_card.registered_account)
 			current_user = current_card.registered_account
 			return TRUE
-		to_chat(user, "There's no account assigned with this ID.")
+		to_chat(user, "На этой карте нет аккаунта.")
 		return TRUE
 	if(I.tool_behaviour == TOOL_WRENCH)
-		to_chat(user, "<span class='notice'>You start [anchored ? "un" : ""]securing [name]...</span>")
+		to_chat(user, "<span class='notice'>[anchored ? "От" : "При"]кручиваю [name]...</span>")
 		I.play_tool_sound(src)
 		if(I.use_tool(src, user, 30))
 			playsound(loc, 'sound/items/deconstruct.ogg', 50, TRUE)
 			if(machine_stat & BROKEN)
-				to_chat(user, "<span class='warning'>The broken remains of [src] fall on the ground.</span>")
+				to_chat(user, "<span class='warning'>Последние остатки [src] рассыпались на пол.</span>")
 				new /obj/item/stack/sheet/metal(loc, 3)
 				new /obj/item/shard(loc)
 			else
-				to_chat(user, "<span class='notice'>You [anchored ? "un" : ""]secure [name].</span>")
+				to_chat(user, "<span class='notice'>[anchored ? "От" : "При"]кручиваю [name].</span>")
 				new /obj/item/wallframe/bounty_board(loc)
 			qdel(src)
 
@@ -108,16 +108,16 @@ GLOBAL_LIST_EMPTY(request_list)
 				return TRUE
 			for(var/datum/station_request/i in GLOB.request_list)
 				if("[i.req_number]" == "[current_user.account_id]")
-					say("Account already has active bounty.")
+					say("На аккаунте уже есть активная награда.")
 					return
 			var/datum/station_request/curr_request = new /datum/station_request(current_user.account_holder, bounty_value,bounty_text,current_user.account_id, current_user)
 			GLOB.request_list += list(curr_request)
 			for(var/obj/i in GLOB.allbountyboards)
-				i.say("New bounty has been added!")
+				i.say("Добавлена новая награда!")
 				playsound(i.loc, 'sound/effects/cashregister.ogg', 30, TRUE)
 		if("apply")
 			if(!current_user)
-				say("Please swipe a valid ID first.")
+				say("Проведите своей картой для доступа.")
 				return TRUE
 			if(current_user.account_holder == active_request.owner)
 				playsound(src, 'sound/machines/buzz-sigh.ogg', 20, TRUE)
@@ -130,12 +130,12 @@ GLOBAL_LIST_EMPTY(request_list)
 				playsound(src, 'sound/machines/buzz-sigh.ogg', 30, TRUE)
 				return
 			request_target.transfer_money(current_user, active_request.value)
-			say("Paid out [active_request.value] credits.")
+			say("Выплачиваем [active_request.value] кредитов.")
 			return TRUE
 		if("clear")
 			if(current_user)
 				current_user = null
-				say("Account Reset.")
+				say("Аккаунт сброшен.")
 				return TRUE
 		if("deleteRequest")
 			if(!active_request || !current_user)
@@ -144,7 +144,7 @@ GLOBAL_LIST_EMPTY(request_list)
 			if(active_request?.owner != current_user?.account_holder)
 				playsound(src, 'sound/machines/buzz-sigh.ogg', 20, TRUE)
 				return TRUE
-			say("Deleted current request.")
+			say("Удален текущий запрос.")
 			GLOB.request_list.Remove(active_request)
 			return TRUE
 		if("bountyVal")
@@ -156,8 +156,8 @@ GLOBAL_LIST_EMPTY(request_list)
 	. = TRUE
 
 /obj/item/wallframe/bounty_board
-	name = "disassembled bounty board"
-	desc = "Used to build a new bounty board, just secure to the wall."
+	name = "разобранная доска наград"
+	desc = "Используется для создания новой доски наград, просто прикрепите ее к стене.."
 	icon_state = "request_kiosk"
 	custom_materials = list(/datum/material/iron=14000, /datum/material/glass=8000)
 	result_path = /obj/machinery/bounty_board

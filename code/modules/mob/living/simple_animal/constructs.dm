@@ -79,9 +79,9 @@
 	. = list("<span class='cult'>*---------*\nThis is [icon2html(src, user)] \a <b>[src]</b>!\n[desc]")
 	if(health < maxHealth)
 		if(health >= maxHealth/2)
-			. += "<span class='warning'>[t_He] look[t_s] slightly dented.</span>"
+			. += "<hr><span class='warning'>[t_He] look[t_s] slightly dented.</span>"
 		else
-			. += "<span class='warning'><b>[t_He] look[t_s] severely dented!</b></span>"
+			. += "<hr><span class='warning'><b>[t_He] look[t_s] severely dented!</b></span>"
 	. += "*---------*</span>"
 
 /mob/living/simple_animal/hostile/construct/attack_animal(mob/living/simple_animal/M)

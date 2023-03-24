@@ -64,4 +64,4 @@ micro-manipulator, console screen, beaker, Microlaser, matter bin, power cells.
 			if(!ispath(A))
 				continue
 			nice_list += list("[req_components[A]] [initial(A.name)]")
-		. += "<span class='notice'>Необходиммые компоненты для сборки: [english_list(nice_list)].</span>"
+		. += "<hr><span class='notice'>Необходиммые компоненты для сборки: [english_list(nice_list)].</span>"

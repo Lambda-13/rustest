@@ -104,15 +104,15 @@ All foods are distributed among various categories. Use common sense.
 				to_chat(M, "<span class='warning'>You don't feel like eating any more junk food at the moment!</span>")
 				return FALSE
 			else if(fullness <= 50)
-				user.visible_message("<span class='notice'>[user] hungrily [eatverb]s \the [src], gobbling it down!</span>", "<span class='notice'>You hungrily [eatverb] \the [src], gobbling it down!</span>")
+				user.visible_message("<span class='notice'>[user] hungrily [eatverb]s [src], gobbling it down!</span>", "<span class='notice'>You hungrily [eatverb] [src], gobbling it down!</span>")
 			else if(fullness > 50 && fullness < 150)
-				user.visible_message("<span class='notice'>[user] hungrily [eatverb]s \the [src].</span>", "<span class='notice'>You hungrily [eatverb] \the [src].</span>")
+				user.visible_message("<span class='notice'>[user] hungrily [eatverb]s [src].</span>", "<span class='notice'>You hungrily [eatverb] [src].</span>")
 			else if(fullness > 150 && fullness < 500)
-				user.visible_message("<span class='notice'>[user] [eatverb]s \the [src].</span>", "<span class='notice'>You [eatverb] \the [src].</span>")
+				user.visible_message("<span class='notice'>[user] [eatverb]s [src].</span>", "<span class='notice'>You [eatverb] [src].</span>")
 			else if(fullness > 500 && fullness < 600)
-				user.visible_message("<span class='notice'>[user] unwillingly [eatverb]s a bit of \the [src].</span>", "<span class='notice'>You unwillingly [eatverb] a bit of \the [src].</span>")
+				user.visible_message("<span class='notice'>[user] unwillingly [eatverb]s a bit of [src].</span>", "<span class='notice'>You unwillingly [eatverb] a bit of [src].</span>")
 			else if(fullness > (600 * (1 + M.overeatduration / 2000)))	// The more you eat - the more you can eat
-				user.visible_message("<span class='warning'>[user] cannot force any more of \the [src] to go down [user.p_their()] throat!</span>", "<span class='warning'>You cannot force any more of \the [src] to go down your throat!</span>")
+				user.visible_message("<span class='warning'>[user] cannot force any more of [src] to go down [user.p_their()] throat!</span>", "<span class='warning'>You cannot force any more of [src] to go down your throat!</span>")
 				return FALSE
 			if(HAS_TRAIT(M, TRAIT_VORACIOUS))
 				M.changeNext_move(CLICK_CD_MELEE * 0.5) //nom nom nom
@@ -172,7 +172,7 @@ All foods are distributed among various categories. Use common sense.
 		var/obj/item/reagent_containers/food/snacks/S = W
 		if(custom_food_type && ispath(custom_food_type))
 			if(S.w_class > WEIGHT_CLASS_SMALL)
-				to_chat(user, "<span class='warning'>[S] is too big for [src]!</span>")
+				to_chat(user, "<span class='warning'>[S] слишком большой для [src]!</span>")
 				return 0
 			if(!S.customfoodfilling || istype(W, /obj/item/reagent_containers/food/snacks/customizable) || istype(W, /obj/item/reagent_containers/food/snacks/pizzaslice/custom) || istype(W, /obj/item/reagent_containers/food/snacks/cakeslice/custom))
 				to_chat(user, "<span class='warning'>[src] can't be filled with [S]!</span>")
@@ -322,11 +322,11 @@ All foods are distributed among various categories. Use common sense.
 		if(isdog(M))
 			var/mob/living/L = M
 			if(bitecount == 0 || prob(50))
-				M.manual_emote("nibbles away at \the [src]")
+				M.manual_emote("nibbles away at [src]")
 			bitecount++
 			L.taste(reagents) // why should carbons get all the fun?
 			if(bitecount >= 5)
-				var/sattisfaction_text = pick("burps from enjoyment", "yaps for more", "woofs twice", "looks at the area where \the [src] was")
+				var/sattisfaction_text = pick("burps from enjoyment", "yaps for more", "woofs twice", "looks at the area where [src] was")
 				if(sattisfaction_text)
 					M.emote(sattisfaction_text)
 				qdel(src)

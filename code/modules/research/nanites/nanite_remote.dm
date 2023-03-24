@@ -23,7 +23,7 @@
 /obj/item/nanite_remote/examine(mob/user)
 	. = ..()
 	if(locked)
-		. += "<span class='notice'>Alt-click to unlock.</span>"
+		. += "<hr><span class='notice'>Alt-клик to unlock.</span>"
 
 /obj/item/nanite_remote/AltClick(mob/user)
 	. = ..()
@@ -35,7 +35,7 @@
 			locked = FALSE
 			update_icon()
 		else
-			to_chat(user, "<span class='warning'>Access denied.</span>")
+			to_chat(user, "<span class='warning'>Доступ запрещён.</span>")
 
 /obj/item/nanite_remote/emag_act(mob/user)
 	if(obj_flags & EMAGGED)

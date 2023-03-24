@@ -215,7 +215,7 @@
 	. = !(state_open || panel_open || (flags_1 & NODECONSTRUCT_1)) && I.tool_behaviour == TOOL_CROWBAR
 	if(.)
 		I.play_tool_sound(src, 50)
-		visible_message("<span class='notice'>[usr] pries open [src].</span>", "<span class='notice'>You pry open [src].</span>")
+		visible_message("<span class='notice'>[usr] вскрывает [src].</span>", "<span class='notice'>Вскрываю [src].</span>")
 		open_machine()
 
 /obj/machinery/sleeper/ui_interact(mob/user, datum/tgui/ui)
@@ -241,8 +241,8 @@
 
 /obj/machinery/sleeper/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>Alt-click [src] to [state_open ? "close" : "open"] it.</span>"
-	. += "<span class='notice'>[chembag ? "There is a chembag in the chemical storage slot. It can be removed by Ctrl-clicking." : "It looks like a chembag can be attached to the chemical storage slot."]</span>"
+	. += "<hr><span class='notice'>Alt-клик [src] to [state_open ? "close" : "open"] it.</span>"
+	. += "<hr><span class='notice'>[chembag ? "There is a chembag in the chemical storage slot. It can be removed by Ctrl-clicking." : "It looks like a chembag can be attached to the chemical storage slot."]</span>"
 
 /obj/machinery/sleeper/ui_data(mob/user)
 	if(src.contains(user) && !controls_inside)

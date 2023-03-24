@@ -15,6 +15,7 @@ export const ShipSelect = (props, context) => {
   const { act, data } = useBackend(context);
 
   const ships = data.ships || {};
+  const BuyNewShip = data.BuyNewShip || {};
   const templates = data.templates || [];
 
   const [tab, setTab] = useLocalState(context, 'tab', 1);

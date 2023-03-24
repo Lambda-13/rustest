@@ -253,11 +253,11 @@
 	. = ..()
 	switch(buildstage)
 		if(0)
-			. += "<span class='notice'>It is missing air alarm electronics.</span>"
+			. += "<hr><span class='notice'>It is missing air alarm electronics.</span>"
 		if(1)
-			. += "<span class='notice'>It is missing wiring.</span>"
+			. += "<hr><span class='notice'>It is missing wiring.</span>"
 		if(2)
-			. += "<span class='notice'>Alt-click to [locked ? "unlock" : "lock"] the interface.</span>"
+			. += "<hr><span class='notice'>Alt-клик to [locked ? "unlock" : "lock"] the interface.</span>"
 
 /obj/machinery/airalarm/ui_status(mob/user)
 	if(user.has_unlimited_silicon_privilege && aidisabled)
@@ -893,7 +893,7 @@
 				return
 
 			if(W.tool_behaviour == TOOL_WRENCH)
-				to_chat(user, "<span class='notice'>You detach \the [src] from the wall.</span>")
+				to_chat(user, "<span class='notice'>You detach [src] from the wall.</span>")
 				W.play_tool_sound(src)
 				new /obj/item/wallframe/airalarm(user.loc)
 				qdel(src)
@@ -929,10 +929,10 @@
 	else
 		if(src.allowed(usr) && !wires.is_cut(WIRE_IDSCAN))
 			locked = !locked
-			to_chat(user, "<span class='notice'>You [ locked ? "lock" : "unlock"] the air alarm interface.</span>")
+			to_chat(user, "<span class='notice'>You [ locked ? "Блок" : "Разблок"]ирую the air alarm interface.</span>")
 			updateUsrDialog()
 		else
-			to_chat(user, "<span class='danger'>Access denied.</span>")
+			to_chat(user, "<span class='danger'>Доступ запрещён.</span>")
 	return
 
 /obj/machinery/airalarm/emag_act(mob/user)
