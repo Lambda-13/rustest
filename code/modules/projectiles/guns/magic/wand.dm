@@ -255,3 +255,11 @@
 
 
 #undef WAND_WREST_CHANCE
+
+/obj/item/gun/magic/wand/funny
+	name = "wand"
+	desc = "You shouldn't have this."
+
+/obj/item/gun/magic/wand/funny/proc/zap_FUCK(obj/item/storage/store)
+	. = ..()
+	store.emptyStorage()
