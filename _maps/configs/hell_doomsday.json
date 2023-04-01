@@ -1,0 +1,22 @@
+{
+	"$schema": "https://raw.githubusercontent.com/Lambda-13/rustest/master/_maps/ship_config_schema.json",
+	"prefix": "DOOM",
+	"namelists": ["ENGINEERING"],
+	"map_name": "Supermatter heavy transport tanker",
+	"map_short_name": "Doomsday tanker-class",
+	"description": "Корабль перевозящий огромное колличество супер-материи, аж 17 кристаллов! Зачем он летит, куда летит, и кто тот конченый психопат который решил его купить и использовать именно для этого - неизвестно",
+	"map_path": "_maps/shuttles/shiptest/hell_doomsday.dmm",
+	"limit": 1,
+	"job_slots": {
+		"Matter priest": {
+			"outfit": "/datum/outfit/job/ce",
+			"officer": true,
+			"slots": 1
+		},
+		"Matter Acolyte": {
+			"outfit": "/datum/outfit/job/engineer",
+			"slots": 8
+		}
+	},
+	"enabled": false
+}
