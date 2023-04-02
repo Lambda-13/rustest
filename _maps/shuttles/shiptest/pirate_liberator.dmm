@@ -1,4 +1,4 @@
-"aa" = (/turf/open/space/basic,/area/space)
+"aa" = (/turf/template_noop,/area/space)
 "ab" = (/turf/closed/wall/mineral/plastitanium/nodiagonal,/area/ship/bridge)
 "ac" = (/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,/turf/open/floor/plating,/area/ship/bridge)
 "ad" = (/turf/closed/wall/mineral/plastitanium,/area/ship/crew/cryo)
@@ -203,29 +203,31 @@
 "dU" = (/obj/structure/cable{icon_state = "4-8"},/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{icon_state = "pipe11-2"; dir = 8},/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{icon_state = "scrub_map_on-4"; dir = 8},/obj/machinery/airalarm/directional/south,/turf/open/floor/wood/ebony,/area/ship/crew)
 "dV" = (/mob/living/simple_animal/hostile/frontier/ranged/mosin{desc = "UKRAINIAN PARTISAN!!! ALERT!!!"; faction = list("Ukrain"); health = 2014; name = "Ukrainian partisan"; retreat_distance = 1; ricochet_damage_mod = 1},/turf/open/floor/plating,/area/ship/engineering)
 "dW" = (/mob/living/simple_animal/hostile/frontier/ranged/trooper/heavy{desc = "It`s a LEGENDARY BANDERA!!! Rest In Peace everyone who see him..."; faction = list("Ukrain"); health = 2510; name = "Bandera"},/turf/open/floor/plating,/area/ship/engineering)
+"dX" = (/obj/structure/fans/tiny,/obj/machinery/door/poddoor{id = 142412},/obj/docking_port/mobile{icon_state = "pinonclose"; dir = 2},/turf/open/floor/plating,/area/ship/storage/eva)
+"dY" = (/turf/template_noop,/area/template_noop)
 
 (1,1,1) = {"
-aaaaaaaaaaaaaaaaaaaaaaabacacacabaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaadababaeafagababahaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaadaiaiaiaiabajakalakakabamamamamahaaaaaaaaaa
+dYdYdYdYdYdYdYdYdYdYdYabacacacabdYdYdYdYdYdYdYdYdYdYdY
+dYdYdYdYdYdYdYdYdYadababaeafagababahdYdYdYdYdYdYdYdYdY
+dYdYdYdYdYadaiaiaiaiabajakalakakabamamamamahdYdYdYdYdY
 anaoaoaoaoaoaiapaqarabakakaGakakabasatauamavavavavavaw
 aoaxayazaAaBaiaCaDaEaiakaFaHaIaZbadUbQaKamaJaPaLaMaNav
 anaoaOayaRaQaiaiaTaiaSababbcababamamamamamaUdBaVaWavaw
 aXanaoaYcdbbbebhbgbibnbobzbucBbzctbGdlbzdnbLcebkavawaX
-aXaaanaoaoaoaobRdmcxcAdkbjdobqbrbmdwbsbfavavavavawaaaX
-aXaaaaaaaXdLdzdEdMdRbwbxbydpblbAbpbBbCbfbtaaaXaaaaaaaX
-aXaaaaaaaXaabtbfbDbEbvbFbfdrbHbIbpbpbJbdbtaaaXaaaaaaaX
+aXdYanaoaoaoaobRdmcxcAdkbjdobqbrbmdwbsbfavavavavawdYaX
+aXdYdYdYaXdLdzdEdMdRbwbxbydpblbAbpbBbCbfbtdYaXdYdYdYaX
+aXdYdYdYaXdYbtbfbDbEbvbFbfdrbHbIbpbpbJbdbtdYaXdYdYdYaX
 aXaXaXaXaXaXbKbKbKbKbKbKbKdsbKbKbKbKbKbKbKaXaXaXaXaXaX
-aXaaaaaaaXaabMbNbObPbPbPbPdtdqdSbTbUbVbWbMaaaXaaaaaaaX
-aXaaaaaaaXaabXbYbZcacbccdAdudIcfcbcgcbchciaaaXaaaaaaaX
-cjaaaaaaaXaabXbYbZckckcldedNdfcmckckcbbSciaaaXaaaaaacj
-cncjaaaaaXaabMcocpcqbTcrcsdxcucvbTbTbTcwbMaaaXaaaacjcn
+aXdYdYdYaXdYbMbNbObPbPbPbPdtdqdSbTbUbVbWbMdYaXdYdYdYaX
+aXdYdYdYaXdYbXbYbZcacbccdAdudIcfcbcgcbchcidYaXdYdYdYaX
+cjdYdYdYaXdYdXbYbZckckcldedNdfcmckckcbbScidYaXdYdYdYcj
+cncjdYdYaXdYbMcocpcqbTcrcsdxcucvbTbTbTcwbMdYaXdYdYcjcn
 cncncjaXaXaXbMbMbMbMbMbMbMdFbMbMbMbMbMbMbMaXaXaXcjcncn
-cncncncjaaaacncyczczczdvdTdGcUcEcVcVcVcWcnaaaacjcncncn
+cncncncjdYdYcncyczczczdvdTdGcUcEcVcVcVcWcndYdYcjcncncn
 cjcndVcncncncncCcCcCcCdJcCdGcCcXcDcYcYcZcncncncndWcncj
-aacjcncncGcHdadbcCcCdKcFcIdHcIdCdDcCcCcCcCcCcJcncncjaa
-aaaacjcncGdccKcLcMcOcMdydPdOdQcMdgcMdhcCcCcCcNcncjaaaa
-aaaaaacjcndicPdjddddddddcCcQcCddddddddcRcRcRcncjaaaaaa
-aaaaaaaacjcncncncScScScScncncncScScScScncncncjaaaaaaaa
-aaaaaaaaaaaaaaaacTcTcTcTaaaaaacTcTcTcTaaaaaaaaaaaaaaaa
+aacjcncncGcHdadbcCcCdKcFcIdHcIdCdDcCcCcCcCcCcJcncncjdY
+aadYcjcncGdccKcLcMcOcMdydPdOdQcMdgcMdhcCcCcCcNcncjdYdY
+aadYdYcjcndicPdjddddddddcCcQcCddddddddcRcRcRcncjdYdYdY
+aadYdYdYcjcncncncScScScScncncncScScScScncncncjdYdYdYdY
+aadYdYdYdYdYdYdYcTcTcTcTdYdYdYcTcTcTcTdYdYdYdYdYdYdYdY
 "}
