@@ -332,7 +332,7 @@
 		if("Cancel")
 			return
 
-	print_command_report(input, "[announce_command_report ? "Classified " : ""][command_name()] Update", announce_command_report)
+	print_command_report(input, "Оповещение от [command_name()] [announce_command_report ? "(секретное)" : ""]", announce_command_report)
 
 	log_admin("[key_name(src)] has created a command report: [input]")
 	message_admins("[key_name_admin(src)] has created a command report")

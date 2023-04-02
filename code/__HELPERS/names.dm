@@ -24,7 +24,7 @@ GLOBAL_VAR(command_name)
 	if (GLOB.command_name)
 		return GLOB.command_name
 
-	var/name = "Central Command"
+	var/name = "Местное Коммандование"
 
 	GLOB.command_name = name
 	return name
@@ -106,7 +106,7 @@ GLOBAL_VAR(command_name)
 	var/name = ""
 
 	// Prefix
-	name += pick("Clandestine", "Prima", "Blue", "Zero-G", "Max", "Blasto", "Waffle", "North", "Omni", "Newton", "Cyber", "Bonk", "Gene", "Gib")
+	name += pick("Нелегальный", "Прима", "Синий", "Невесомый", "Максимальный", "Взрывной", "Опасный", "Северный", "Всенаправленный", "Ньютоновский", "Кибер", "Угрожающий", "Геномодифицированный", "Противостоящий")
 
 	// Suffix
 	if (prob(80))
@@ -114,16 +114,16 @@ GLOBAL_VAR(command_name)
 
 		// Full
 		if (prob(60))
-			name += pick("Syndicate", "Consortium", "Collective", "Corporation", "Group", "Holdings", "Biotech", "Industries", "Systems", "Products", "Chemicals", "Enterprises", "Family", "Creations", "International", "Intergalactic", "Interplanetary", "Foundation", "Positronics", "Hive")
+			name += pick("Синдикат", "Консорциум", "Коллектив", "Корпорация", "Социум", "Холдинг", "Биоразработчик", "Промышленник", "Системник", "Товарник", "Химпроизводственник", "Предприниматель", "Семьянин", "Произведенец", "Интернационалец", "Межгалактик", "Межпланетар", "Фонд", "Позитроник", "Муравейник")
 		// Broken
 		else
-			name += pick("Syndi", "Corp", "Bio", "System", "Prod", "Chem", "Inter", "Hive")
+			name += pick("Теко", "Солнцо", "Ко", "Техо", "Иксо", "Цехо", "Корпо")
 			name += pick("", "-")
-			name += pick("Tech", "Sun", "Co", "Tek", "X", "Inc", "Code")
+			name += pick("Синдикатов", "Корпораций", "Биотехнологов", "Системников", "Крафтовиков", "Химовиков", "Интерников", "Муравейников")
 	// Small
 	else
 		name += pick("-", "*", "")
-		name += pick("Tech", "Sun", "Co", "Tek", "X", "Inc", "Gen", "Star", "Dyne", "Code", "Hive")
+		name += pick("Тех", "Солнце", "Ко", "Тек", "Икс", "Цех", "Инфо", "Звезд", "Дин", "Код", "Муравейник")
 
 	return name
 
