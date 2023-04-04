@@ -62,7 +62,7 @@
 //THUNDERDOME
 
 /area/tdome
-	name = "Thunderdome"
+	name = "Колизей"
 	icon_state = "yellow"
 	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
 	requires_power = FALSE
@@ -70,29 +70,29 @@
 	flags_1 = NONE
 
 /area/tdome/arena
-	name = "Thunderdome Arena"
+	name = "Арена Колизея"
 	icon_state = "thunder"
 	dynamic_lighting = DYNAMIC_LIGHTING_DISABLED
 
 /area/tdome/arena_source
-	name = "Thunderdome Arena Template"
+	name = "Арена Колизея Template"
 	icon_state = "thunder"
 	dynamic_lighting = DYNAMIC_LIGHTING_DISABLED
 
 /area/tdome/tdome1
-	name = "Thunderdome (Team 1)"
+	name = "Колизей (Команда 1)"
 	icon_state = "green"
 
 /area/tdome/tdome2
-	name = "Thunderdome (Team 2)"
+	name = "Колизей (Команда 2)"
 	icon_state = "green"
 
 /area/tdome/tdomeadmin
-	name = "Thunderdome (Admin.)"
+	name = "Колизей (Админ)"
 	icon_state = "purple"
 
 /area/tdome/tdomeobserve
-	name = "Thunderdome (Observer.)"
+	name = "Колизей (Наблюдатель)"
 	icon_state = "purple"
 
 
