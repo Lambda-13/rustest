@@ -1153,7 +1153,9 @@
 	},
 /obj/docking_port/mobile{
 	icon_state = "pinonclose";
-	dir = 4
+	dir = 4;
+	launch_status = 0;
+	name = "Petrovich Ship"
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)
