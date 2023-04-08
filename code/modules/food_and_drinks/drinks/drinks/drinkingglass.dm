@@ -1,8 +1,8 @@
 
 
 /obj/item/reagent_containers/food/drinks/drinkingglass
-	name = "drinking glass"
-	desc = "Your standard drinking glass."
+	name = "стакан"
+	desc = "Обычный стакан для употребления напитков."
 	icon_state = "glass_empty"
 	amount_per_transfer_from_this = 10
 	volume = 50
@@ -41,8 +41,8 @@
 //  This is on a case-by-case basis, and you can even make a separate sprite for shot glasses if you want. //
 
 /obj/item/reagent_containers/food/drinks/drinkingglass/shotglass
-	name = "shot glass"
-	desc = "A shot glass - the universal symbol for bad decisions."
+	name = "рюмка"
+	desc = "рюмка - плохие решения начинаются с неё."
 	icon_state = "shotglass"
 	gulp_size = 15
 	amount_per_transfer_from_this = 15
@@ -93,7 +93,7 @@
 	on_reagent_change(ADD_REAGENT)
 
 /obj/item/reagent_containers/food/drinks/drinkingglass/filled/soda
-	name = "Soda Water"
+	name = "Содовая"
 	list_reagents = list(/datum/reagent/consumable/sodawater = 50)
 
 /obj/item/reagent_containers/food/drinks/drinkingglass/filled/cola
