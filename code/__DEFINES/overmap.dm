@@ -34,7 +34,15 @@
 #define DYNAMIC_WORLD_SPACERUIN "space"
 
 // Лямбда эдишон
-//#define DYNAMIC_WORLD_RUINPLANET "ruinplanet" // Руины планеты-города
+//заражённые планеты
+//#define DYNAMIC_WORLD_XENO "xenoplanet" // Планета с ксеносами
+//#define DYNAMIC_WORLD_XEN "xenplanet" // Планета с Зен структурами
+//#define DYNAMIC_WORLD_FLESH "fleshplanet" // Планета из плоти
+//
+////экстремальные планеты
+//#define DYNAMIC_WORLD_PLASMAPLANET "plasmaplanet" // Планета состоящая из перегретой плазмы
+//#define DYNAMIC_WORLD_NITRYLPLANET "nitrylplanet" // Планета состоящая из нитрила
+//#define DYNAMIC_WORLD_FALLOUTPLANET "falloutplanet" // Планета-город
 
 /// Make sure you are adding new planet types to this, in order as seen above preferrably
 #define DYNAMIC_WORLD_LIST_ALL list(\

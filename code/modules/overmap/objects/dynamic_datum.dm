@@ -123,7 +123,15 @@
 		DYNAMIC_WORLD_ROCKPLANET = min(length(SSmapping.rock_ruins_templates), 20),
 		DYNAMIC_WORLD_BEACHPLANET = min(length(SSmapping.beach_ruins_templates), 20),
 		//DYNAMIC_WORLD_REEBE = 0, //unspawnable because of major lack of skill. //you fucking probablitiy zero does not equal one you dumbass
-//		DYNAMIC_WORLD_RUINPLANET = min(length(SSmapping.planet_ruins_templates), 20),
+		// Лямбда эдишон
+		//заражённые планеты
+		//DYNAMIC_WORLD_XENO = min(length(SSmapping.beach_ruins_templates), 5),
+		//DYNAMIC_WORLD_XEN = min(length(SSmapping.beach_ruins_templates), 5),
+		//DYNAMIC_WORLD_FLESH = min(length(SSmapping.beach_ruins_templates), 5),
+		////экстремальные планеты
+		//DYNAMIC_WORLD_PLASMAPLANET = min(length(SSmapping.beach_ruins_templates), 10),
+		//DYNAMIC_WORLD_NITRYLPLANET = min(length(SSmapping.beach_ruins_templates), 10),
+		//DYNAMIC_WORLD_FALLOUTPLANET = min(length(SSmapping.beach_ruins_templates), 10),
 		DYNAMIC_WORLD_ASTEROID = 30)
 
 	if(force_encounter)

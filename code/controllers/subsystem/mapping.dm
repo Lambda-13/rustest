@@ -21,8 +21,11 @@ SUBSYSTEM_DEF(mapping)
 	var/list/rock_ruins_templates = list()
 	var/list/beach_ruins_templates = list()
 	var/list/waste_ruins_templates = list()
-//	var/list/planet_ruins_templates = list()
 	var/list/yellow_ruins_templates = list()
+
+// Лямбда эдишон
+	//var/list/sand_ruins_templates = list()
+	//И далее темплейт
 
 	var/list/maplist
 	var/list/ship_purchase_list
