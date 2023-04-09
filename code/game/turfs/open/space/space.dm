@@ -4,7 +4,7 @@
 /turf/open/space
 	icon = 'icons/turf/space.dmi'
 	icon_state = "0"
-	name = "\proper space"
+	name = "Космос"
 	intact = 0
 
 	initial_temperature = TCMB
