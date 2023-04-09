@@ -65,7 +65,7 @@
 
 /datum/overmap/dynamic/pre_docked(datum/overmap/ship/controlled/dock_requester)
 	if(!load_level())
-		return new /datum/docking_ticket(_docking_error = "[src] cannot be docked to.")
+		return new /datum/docking_ticket(_docking_error = "[src] не имеет места для посадки.")
 	else
 		var/dock_to_use = null
 		for(var/obj/docking_port/stationary/dock as anything in reserve_docks)
@@ -74,7 +74,7 @@
 				break
 
 		if(!dock_to_use)
-			return new /datum/docking_ticket(_docking_error = "[src] does not have any free docks. Aborting docking.")
+			return new /datum/docking_ticket(_docking_error = "[src] не имеет свободного места для посадки.")
 		adjust_dock_to_shuttle(dock_to_use, dock_requester.shuttle_port)
 		return new /datum/docking_ticket(dock_to_use, src, dock_requester)
 
@@ -128,10 +128,12 @@
 	mapgen = planet.mapgen
 	weather_controller_type = planet.weather_controller_type
 
+/*
 	if(vlevel_height >= 255 && vlevel_width >= 255) //little easter egg
 		planet_name = "LV-[pick(rand(11111,99999))]"
 		token.icon_state = "sector"
 		Rename(planet_name)
+*/
 
 // - SERVER ISSUE: LOADING ALL PLANETS AT ROUND START KILLS PERFORMANCE BEYOND WHAT IS REASONABLE. OPTIMIZE SSMOBS IF YOU WANT THIS BACK
 // #ifdef FULL_INIT //Initialising planets roundstart isn't NECESSARY, but is very nice in production. Takes a long time to load, though.
@@ -142,6 +144,21 @@
 
 	if(!preserve_level)
 		token.desc += " Если тут не будет удерживающих маяков или людей - он исчезнет."
+
+	token.desc += "<br>Уровень опасности - <b>[danger_level]</b>: "
+	switch(danger_level)
+		if(1)
+			token.desc += "Обьект не представляет угрозы и может быть вполне безопасен."
+		if(2)
+			token.desc += "Обьект представляет <i>незначительную</i> угрозу."
+		if(3)
+			token.desc += "Обьект представляет <i>значительную</i> угрозу и возможно потребует дополнительной защиты от вредной окружающей среды."
+		if(4)
+			token.desc += "Обьект представляет <i><span class='userdanger'>высокую</span></i> угрозу и требует дополнительной защиты от вредной окружающей среды а так-же подготовленый экипаж."
+		if(5)
+			token.desc += "Обьект представляет <i><span class='userdanger'>экстремальную</span></i> угрозу и требует дополнительной защиты от вредной окружающей среды а так-же хорошо подготовленый экипаж."
+		else
+			token.desc += "О угрозе обьекта ничего неизвестно."
 
 /datum/overmap/dynamic/proc/gen_planet_name()
 	. = ""
