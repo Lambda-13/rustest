@@ -41,6 +41,8 @@
 	///The X bounds of the virtual z level
 	var/vlevel_width = QUADRANT_MAP_SIZE
 
+	var/danger_level
+
 /datum/overmap/dynamic/Initialize(position, load_now=TRUE, ...)
 	. = ..()
 
@@ -127,6 +129,7 @@
 	default_baseturf = planet.default_baseturf
 	mapgen = planet.mapgen
 	weather_controller_type = planet.weather_controller_type
+	danger_level = planet.danger_level
 
 /*
 	if(vlevel_height >= 255 && vlevel_width >= 255) //little easter egg
