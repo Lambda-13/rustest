@@ -138,7 +138,7 @@ Class Procs:
 		armor = list("melee" = 25, "bullet" = 10, "laser" = 10, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 70)
 	. = ..()
 	GLOB.machines += src
-	RegisterSignal(src, COMSIG_MOVABLE_Z_CHANGED, .proc/power_change)
+	RegisterSignal(src, COMSIG_MOVABLE_Z_CHANGED, PROC_REF(power_change))
 	if(ispath(circuit, /obj/item/circuitboard) && (mapload || apply_default_parts))
 		circuit = new circuit
 		circuit.apply_default_parts(src)
@@ -164,7 +164,7 @@ Class Procs:
 /obj/machinery/LateInitialize()
 	. = ..()
 	power_change()
-	RegisterSignal(src, COMSIG_ENTER_AREA, .proc/power_change)
+	RegisterSignal(src, COMSIG_ENTER_AREA, PROC_REF(power_change))
 
 /obj/machinery/Destroy()
 	GLOB.machines.Remove(src)

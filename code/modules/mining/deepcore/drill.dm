@@ -45,7 +45,7 @@
 			anchored = TRUE
 			playsound(src, 'sound/machines/windowdoor.ogg', 50)
 			flick("deep_core_drill-deploy", src)
-			addtimer(CALLBACK(src, .proc/Deploy), 14)
+			addtimer(CALLBACK(src, PROC_REF(Deploy)), 14)
 			to_chat(user, "<span class='notice'>[src] detects a [O.name] and begins to deploy...</span>")
 			return TRUE
 		else
@@ -59,7 +59,7 @@
 	else
 		playsound(src, 'sound/machines/windowdoor.ogg', 50)
 		flick("deep_core_drill-undeploy", src)
-		addtimer(CALLBACK(src, .proc/Undeploy), 13)
+		addtimer(CALLBACK(src, PROC_REF(Undeploy)), 13)
 
 /obj/machinery/deepcore/drill/process()
 	if(machine_stat & BROKEN || (active && !active_vein))

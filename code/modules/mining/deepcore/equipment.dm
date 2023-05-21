@@ -10,7 +10,7 @@
 
 /obj/item/deepcorecapsule/attack_self()
 	loc.visible_message("<span class='warning'>[src] begins to shake. Stand back!</span>")
-	addtimer(CALLBACK(src, .proc/Deploy), 50)
+	addtimer(CALLBACK(src, PROC_REF(Deploy)), 50)
 
 /obj/item/deepcorecapsule/proc/Deploy()
 	if(QDELETED(src) || !to_deploy)

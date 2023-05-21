@@ -845,7 +845,7 @@
 	var/datum/component/ntnet_interface/net = LoadComponent(/datum/component/ntnet_interface)
 	address = net.hardware_id
 	desc += "<br>This circuit's NTNet hardware address is: [address]"
-//	RegisterSignal(src, COMSIG_COMPONENT_NTNET_RECEIVE, .proc/ntnet_receive) // Не подхватывает
+//	RegisterSignal(src, COMSIG_COMPONENT_NTNET_RECEIVE, PROC_REF(ntnet_receive)) // Не подхватывает
 
 /obj/item/integrated_circuit_old/input/ntnet_packet/do_work()
 	var/target_address = get_pin_data(IC_INPUT, 1)
@@ -895,7 +895,7 @@
 	var/datum/component/ntnet_interface/net = LoadComponent(/datum/component/ntnet_interface)
 	address = net.hardware_id
 	desc += "<br>This circuit's NTNet hardware address is: [address]"
-//	RegisterSignal(src, COMSIG_COMPONENT_NTNET_RECEIVE, .proc/ntnet_receive) // Не подхватывает
+//	RegisterSignal(src, COMSIG_COMPONENT_NTNET_RECEIVE, PROC_REF(ntnet_receive)) // Не подхватывает
 
 /obj/item/integrated_circuit_old/input/ntnet_advanced/do_work()
 	var/target_address = get_pin_data(IC_INPUT, 1)

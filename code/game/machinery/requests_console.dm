@@ -297,7 +297,7 @@ GLOBAL_LIST_EMPTY(req_console_ckey_departments)
 				Radio.set_frequency(radio_freq)
 				Radio.talk_into(src,"[emergency] вызывается в [department]!!",radio_freq)
 				update_icon()
-				addtimer(CALLBACK(src, .proc/clear_emergency), 5 MINUTES)
+				addtimer(CALLBACK(src, PROC_REF(clear_emergency)), 5 MINUTES)
 
 	if(href_list["send"] && message && to_department && priority)
 

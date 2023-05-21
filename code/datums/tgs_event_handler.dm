@@ -23,7 +23,7 @@
 			to_chat(world, "<span class='boldannounce'>SERVER: Обновление получено и будет установлено со следующего раунда. [pick("Заебало бля говорить постоянно об этом", "Как же я устал повторять", "Надеюсь вы готовы к изменениям", "Возможно это обновление менее сломанное", "Отлично", "Больше кода, меньше багов", "Меньше кода, больше багов", "С каждым раундом всё лучше", "Класс", "Круто")].</span>")
 		if(TGS_EVENT_WATCHDOG_DETACH)
 			message_admins("ТГС перезапускается...")
-			reattach_timer = addtimer(CALLBACK(src, .proc/LateOnReattach), 1 MINUTES)
+			reattach_timer = addtimer(CALLBACK(src, PROC_REF(LateOnReattach)), 1 MINUTES)
 		if(TGS_EVENT_WATCHDOG_REATTACH)
 			var/datum/tgs_version/old_version = world.TgsVersion()
 			var/datum/tgs_version/new_version = args[2]

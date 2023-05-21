@@ -26,7 +26,7 @@
 		var/list/key_emotes = GLOB.emote_list["blush"]
 		for(var/datum/emote/living/blush/living_emote in key_emotes)
 			// The existing timer restarts if it's already running
-			blush_timer = addtimer(CALLBACK(living_emote, .proc/end_blush, living_user), BLUSH_DURATION, TIMER_UNIQUE | TIMER_OVERRIDE)
+			blush_timer = addtimer(CALLBACK(living_emote, PROC_REF(end_blush), living_user), BLUSH_DURATION, TIMER_UNIQUE | TIMER_OVERRIDE)
 
 /datum/emote/living/blush/proc/end_blush(mob/living/living_user)
 	if(!QDELETED(living_user))
@@ -389,7 +389,7 @@
 		var/list/key_emotes = GLOB.emote_list["snore"]
 		for(var/datum/emote/living/snore/living_emote in key_emotes)
 			// The existing timer restarts if it's already running
-			snore_timer = addtimer(CALLBACK(living_emote, .proc/end_snore, living_user), SNORE_DURATION, TIMER_UNIQUE | TIMER_OVERRIDE)
+			snore_timer = addtimer(CALLBACK(living_emote, PROC_REF(end_snore), living_user), SNORE_DURATION, TIMER_UNIQUE | TIMER_OVERRIDE)
 
 /datum/emote/living/snore/proc/end_snore(mob/living/living_user)
 	if(!QDELETED(living_user))

@@ -22,7 +22,7 @@
 /datum/overmap/ship/Initialize(position, ...)
 	. = ..()
 	if(docked_to)
-		RegisterSignal(docked_to, COMSIG_OVERMAP_MOVED, .proc/on_docked_to_moved)
+		RegisterSignal(docked_to, COMSIG_OVERMAP_MOVED, PROC_REF(on_docked_to_moved))
 
 /datum/overmap/ship/Destroy()
 	. = ..()
@@ -31,7 +31,7 @@
 
 /datum/overmap/ship/complete_dock(datum/overmap/dock_target, datum/docking_ticket/ticket)
 	. = ..()
-	RegisterSignal(dock_target, COMSIG_OVERMAP_MOVED, .proc/on_docked_to_moved)
+	RegisterSignal(dock_target, COMSIG_OVERMAP_MOVED, PROC_REF(on_docked_to_moved))
 
 /datum/overmap/ship/complete_undock()
 	UnregisterSignal(docked_to, COMSIG_OVERMAP_MOVED)
@@ -69,7 +69,7 @@
 		return
 
 	var/timer = 1 / MAGNITUDE(speed[1], speed[2]) * offset
-	movement_callback_id = addtimer(CALLBACK(src, .proc/tick_move), timer, TIMER_STOPPABLE)
+	movement_callback_id = addtimer(CALLBACK(src, PROC_REF(tick_move)), timer, TIMER_STOPPABLE)
 
 /**
  * Called by [/datum/overmap/ship/proc/adjust_speed], this continually moves the ship according to its speed
@@ -92,7 +92,7 @@
 		return
 
 	var/timer = 1 / current_speed
-	movement_callback_id = addtimer(CALLBACK(src, .proc/tick_move), timer, TIMER_STOPPABLE)
+	movement_callback_id = addtimer(CALLBACK(src, PROC_REF(tick_move)), timer, TIMER_STOPPABLE)
 	token.update_screen()
 
 /**
