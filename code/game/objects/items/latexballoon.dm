@@ -1,6 +1,6 @@
 /obj/item/latexballon
-	name = "latex glove"
-	desc = "Sterile and airtight."
+	name = "латексная перчатка"
+	desc = "Стерильная и лёгкая."
 	icon_state = "latexballon"
 	item_state = "lgloves"
 	force = 0
@@ -17,7 +17,7 @@
 	icon_state = "latexballon_blow"
 	item_state = "latexballon"
 	user.update_inv_hands()
-	to_chat(user, "<span class='notice'>You blow up [src] with [tank].</span>")
+	to_chat(user, "<span class='notice'>Накачиваю [src] с помощью [tank].</span>")
 	air_contents = tank.remove_air_volume(3)
 
 /obj/item/latexballon/proc/burst()
