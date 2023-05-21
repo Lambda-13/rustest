@@ -257,7 +257,7 @@
 	actions_types = list()
 
 /obj/item/clothing/mask/gas/hunter
-	name = "маска педераста"
+	name = "маска охотника"
 	desc = "Тактическая маска с добавленными отличительными знаками."
 	icon_state = "hunter"
 	item_state = "hunter"
