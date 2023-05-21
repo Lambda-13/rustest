@@ -181,7 +181,7 @@
 				to_chat(user, "<span class='notice'>You begin repairing [src]...</span>")
 				if(W.use_tool(src, user, 40, volume=50))
 					obj_integrity = max_integrity
-					to_chat(user, "<span class='notice'>You repair [src].</span>")
+					to_chat(user, "<span class='notice'>Чиню [src].</span>")
 			else
 				to_chat(user, "<span class='warning'>[src] is already in good condition!</span>")
 			return

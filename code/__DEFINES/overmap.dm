@@ -33,16 +33,20 @@
 #define DYNAMIC_WORLD_ASTEROID "asteroid"
 #define DYNAMIC_WORLD_SPACERUIN "space"
 
-// Лямбда эдишон
-//заражённые планеты
-//#define DYNAMIC_WORLD_XENO "xenoplanet" // Планета с ксеносами
-//#define DYNAMIC_WORLD_XEN "xenplanet" // Планета с Зен структурами
-//#define DYNAMIC_WORLD_FLESH "fleshplanet" // Планета из плоти
-//
-////экстремальные планеты
-//#define DYNAMIC_WORLD_PLASMAPLANET "plasmaplanet" // Планета состоящая из перегретой плазмы
-//#define DYNAMIC_WORLD_NITRYLPLANET "nitrylplanet" // Планета состоящая из нитрила
-//#define DYNAMIC_WORLD_FALLOUTPLANET "falloutplanet" // Планета-город
+//Если бы я мог
+//Я бы вынес всё это отдельно
+//Но кодеры говнокодеры
+#define DYNAMIC_WORLD_RANDOM "random" // Не внесён в динамик лист
+#define DYNAMIC_WORLD_RUINED_CITY "ruined_city"
+#define DYNAMIC_WORLD_ROBOTIC_GUARDIANS "robotic_guardians"
+#define DYNAMIC_WORLD_BARREN "barren"
+#define DYNAMIC_WORLD_CHLORINE "chlorine"
+#define DYNAMIC_WORLD_BAYDESERT "baydesert" // BAYDESERT а не DESERT потому что в шиптесте уже есть пустыня
+#define DYNAMIC_WORLD_GRASS "grass"
+#define DYNAMIC_WORLD_GRASS_TERRAFORMED "grass_terraformed"
+#define DYNAMIC_WORLD_SHROUDED "shrouded"
+#define DYNAMIC_WORLD_SNOW "snow"
+#define DYNAMIC_WORLD_VOLCANIC "volcanic" // Не внесён в динамик лист
 
 /// Make sure you are adding new planet types to this, in order as seen above preferrably
 #define DYNAMIC_WORLD_LIST_ALL list(\
@@ -56,6 +60,18 @@
 	DYNAMIC_WORLD_REEBE,\
 	DYNAMIC_WORLD_ASTEROID,\
 	DYNAMIC_WORLD_SPACERUIN)
+/*
+// Потом это добавлю
+	DYNAMIC_WORLD_RUINED_CITY,\
+	DYNAMIC_WORLD_ROBOTIC_GUARDIANS,\
+	DYNAMIC_WORLD_BARREN,\
+	DYNAMIC_WORLD_CHLORINE,\
+	DYNAMIC_WORLD_BAYDESERT,\
+	DYNAMIC_WORLD_GRASS,\
+	DYNAMIC_WORLD_GRASS_TERRAFORMED,\
+	DYNAMIC_WORLD_SHROUDED,\
+	DYNAMIC_WORLD_SNOW,\
+*/
 
 //Possible ship states
 #define OVERMAP_SHIP_IDLE "idle"

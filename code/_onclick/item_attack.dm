@@ -128,7 +128,7 @@
 		return
 
 	if(force && HAS_TRAIT(user, TRAIT_PACIFISM))
-		to_chat(user, "<span class='warning'>You don't want to harm other living beings!</span>")
+		to_chat(user, "<span class='warning'>Я не могу бить других!</span>")
 		return
 
 	if(item_flags & EYE_STAB && user.zone_selected == BODY_ZONE_PRECISE_EYES)
@@ -170,8 +170,8 @@
 
 /obj/attacked_by(obj/item/I, mob/living/user)
 	if(I.force)
-		user.visible_message("<span class='danger'>[user] hits [src] with [I]!</span>", \
-					"<span class='danger'>You hit [src] with [I]!</span>", null, COMBAT_MESSAGE_RANGE)
+		user.visible_message("<span class='danger'>[user] бьёт [src] с помощью [I]!</span>", \
+					"<span class='danger'>Бью [src] с помощью [I]!</span>", null, COMBAT_MESSAGE_RANGE)
 		//only witnesses close by and the victim see a hit message.
 		log_combat(user, src, "attacked", I)
 	take_damage(I.force, I.damtype, "melee", 1)
