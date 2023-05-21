@@ -202,7 +202,7 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 		var/mob/living/mob_occupant = occupant
 		if(mob_occupant && mob_occupant.stat != DEAD)
 			to_chat(occupant, "<span class='boldnotice'>You feel cool air surround you. You go numb as your senses turn inward.</span>")
-			addtimer(CALLBACK(src, PROC_REF(try_despawn_occupant), mob_occupant), mob_occupant.client ? time_till_despawn * 0.1 : time_till_despawn) // If they're logged in, reduce the timer
+			addtimer(CALLBACK(src, .proc/try_despawn_occupant, mob_occupant), mob_occupant.client ? time_till_despawn * 0.1 : time_till_despawn) // If they're logged in, reduce the timer
 	icon_state = close_state
 	if(close_sound)
 		playsound(src, close_sound, 40)
@@ -243,7 +243,7 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 
 		despawn_occupant()
 	else
-		addtimer(CALLBACK(src, PROC_REF(try_despawn_occupant), mob_occupant), time_till_despawn) //try again with normal delay
+		addtimer(CALLBACK(src, .proc/try_despawn_occupant, mob_occupant), time_till_despawn) //try again with normal delay
 
 /obj/machinery/cryopod/proc/handle_objectives()
 	var/mob/living/mob_occupant = occupant

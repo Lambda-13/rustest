@@ -53,7 +53,7 @@ GLOBAL_LIST_INIT(huds, list(
 	var/list/atom/hud_atoms = list()
 	///used for signal tracking purposes, associative list of the form: list(hud atom = TRUE) that isnt separated by z level
 	var/list/atom/hud_atoms_all_z_levels = list()
-
+	
 
 /datum/atom_hud/New()
 	GLOB.all_huds += src
@@ -129,7 +129,7 @@ GLOBAL_LIST_INIT(huds, list(
 		hudusers[M] = 1
 		if(next_time_allowed[M] > world.time)
 			if(!queued_to_see[M])
-				addtimer(CALLBACK(src, PROC_REF(show_hud_images_after_cooldown), M), next_time_allowed[M] - world.time)
+				addtimer(CALLBACK(src, .proc/show_hud_images_after_cooldown, M), next_time_allowed[M] - world.time)
 				queued_to_see[M] = TRUE
 		else
 			next_time_allowed[M] = world.time + ADD_HUD_TO_COOLDOWN

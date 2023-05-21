@@ -56,7 +56,7 @@
 	if(jump_state != JUMP_STATE_OFF && !inline)
 		return // This exists to prefent Href exploits to call process_jump more than once by a client
 	message_admins("[ADMIN_LOOKUPFLW(usr)] has initiated a bluespace jump in [ADMIN_VERBOSEJMP(src)]")
-	jump_timer = addtimer(CALLBACK(src, PROC_REF(jump_sequence), TRUE), JUMP_CHARGEUP_TIME, TIMER_STOPPABLE)
+	jump_timer = addtimer(CALLBACK(src, .proc/jump_sequence, TRUE), JUMP_CHARGEUP_TIME, TIMER_STOPPABLE)
 	priority_announce("Система прыжка в синем пространстве завершила накопление энергии. Время до завершения калибровки [JUMP_CHARGEUP_TIME/600] минут.", sender_override="Автоматическая система [current_ship.name]", zlevel=virtual_z())
 	calibrating = TRUE
 	return TRUE
@@ -89,9 +89,9 @@
 		if(JUMP_STATE_FIRING)
 			jump_state = JUMP_STATE_FINALIZED
 			priority_announce("Пилон синего пространства запущен.", sender_override="Автоматическая система [current_ship.name]", sound='sound/magic/lightning_chargeup.ogg', zlevel=virtual_z())
-			addtimer(CALLBACK(src, PROC_REF(do_jump)), 10 SECONDS)
+			addtimer(CALLBACK(src, .proc/do_jump), 10 SECONDS)
 			return
-	addtimer(CALLBACK(src, PROC_REF(jump_sequence), TRUE), JUMP_CHARGE_DELAY)
+	addtimer(CALLBACK(src, .proc/jump_sequence, TRUE), JUMP_CHARGE_DELAY)
 
 /obj/machinery/computer/helm/proc/do_jump()
 	priority_announce("Прыжок в синее пространство инициализирован.", sender_override="Автоматическая система [current_ship.name]", sound='sound/magic/lightningbolt.ogg', zlevel=virtual_z())

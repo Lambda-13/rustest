@@ -26,7 +26,7 @@
 		var/list/key_emotes = GLOB.emote_list["blink"]
 		for(var/datum/emote/living/carbon/blink/living_emote in key_emotes)
 			// The existing timer restarts if it's already running
-			blink_timer = addtimer(CALLBACK(living_emote, PROC_REF(end_blink), living_user), BLINK_DURATION, TIMER_UNIQUE | TIMER_OVERRIDE)
+			blink_timer = addtimer(CALLBACK(living_emote, .proc/end_blink, living_user), BLINK_DURATION, TIMER_UNIQUE | TIMER_OVERRIDE)
 
 /datum/emote/living/carbon/blink/proc/end_blink(mob/living/living_user)
 	if(!QDELETED(living_user))
@@ -552,7 +552,7 @@
 	var/mob/living/owner = loc
 	if(!istype(owner))
 		return
-	RegisterSignal(owner, COMSIG_PARENT_EXAMINE, PROC_REF(ownerExamined))
+	RegisterSignal(owner, COMSIG_PARENT_EXAMINE, .proc/ownerExamined)
 
 /obj/item/circlegame/Destroy()
 	var/mob/owner = loc
@@ -567,7 +567,7 @@
 
 	if(!istype(sucker) || !in_range(owner, sucker))
 		return
-	addtimer(CALLBACK(src, PROC_REF(waitASecond), owner, sucker), 4)
+	addtimer(CALLBACK(src, .proc/waitASecond, owner, sucker), 4)
 
 /// Stage 2: Fear sets in
 /obj/item/circlegame/proc/waitASecond(mob/living/owner, mob/living/sucker)
@@ -576,10 +576,10 @@
 
 	if(owner == sucker) // big mood
 		to_chat(owner, "<span class='danger'>Wait a second... you just looked at your own [src.name]!</span>")
-		addtimer(CALLBACK(src, PROC_REF(selfGottem), owner), 10)
+		addtimer(CALLBACK(src, .proc/selfGottem, owner), 10)
 	else
 		to_chat(sucker, "<span class='danger'>Wait a second... was that a-</span>")
-		addtimer(CALLBACK(src, PROC_REF(GOTTEM), owner, sucker), 6)
+		addtimer(CALLBACK(src, .proc/GOTTEM, owner, sucker), 6)
 
 /// Stage 3A: We face our own failures
 /obj/item/circlegame/proc/selfGottem(mob/living/owner)

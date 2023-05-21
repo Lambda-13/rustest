@@ -90,7 +90,7 @@
 	usedx = assembly.loc.x
 	usedy = assembly.loc.y
 	playsound(src, 'sound/items/drill_use.ogg',50,1)
-	addtimer(CALLBACK(src, PROC_REF(drill)), 50)
+	addtimer(CALLBACK(src, .proc/drill), 50)
 
 
 /obj/item/integrated_circuit_old/mining/mining_drill/proc/drill()

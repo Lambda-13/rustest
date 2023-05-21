@@ -96,8 +96,8 @@
 
 /obj/item/dualsaber/Initialize()
 	. = ..()
-	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
-	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
+	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, .proc/on_wield)
+	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, .proc/on_unwield)
 	if(LAZYLEN(possible_colors))
 		saber_color = pick(possible_colors)
 		switch(saber_color)
@@ -128,7 +128,7 @@
 		impale(user)
 		return
 	if(wielded && prob(50))
-		INVOKE_ASYNC(src, PROC_REF(jedi_spin), user)
+		INVOKE_ASYNC(src, .proc/jedi_spin, user)
 
 /obj/item/dualsaber/proc/jedi_spin(mob/living/user)
 	dance_rotate(user, CALLBACK(user, /mob.proc/dance_flip))
@@ -170,7 +170,7 @@
 	playsound(loc, hitsound, get_clamped_volume(), TRUE, -1)
 	add_fingerprint(user)
 	// Light your candles while spinning around the room
-	INVOKE_ASYNC(src, PROC_REF(jedi_spin), user)
+	INVOKE_ASYNC(src, .proc/jedi_spin, user)
 
 /obj/item/dualsaber/green
 	possible_colors = list("green")

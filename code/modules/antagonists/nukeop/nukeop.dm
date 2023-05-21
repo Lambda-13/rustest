@@ -189,7 +189,7 @@
 		else
 			H.put_in_hands(dukinuki, TRUE)
 	owner.announce_objectives()
-	addtimer(CALLBACK(src, PROC_REF(nuketeam_name_assign)), 1)
+	addtimer(CALLBACK(src, .proc/nuketeam_name_assign), 1)
 
 
 /datum/antagonist/nukeop/leader/proc/nuketeam_name_assign()
