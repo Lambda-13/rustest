@@ -99,7 +99,7 @@
 			return TRUE
 	return FALSE
 
-/mob/living/carbon/human/proc/check_shields(atom/AM, damage, attack_text = "the attack", attack_type = MELEE_ATTACK, armour_penetration = 0)
+/mob/living/carbon/human/proc/check_shields(atom/AM, damage, attack_text = "атаку", attack_type = MELEE_ATTACK, armour_penetration = 0)
 	var/block_chance_modifier = round(damage / -3)
 
 	for(var/obj/item/I in held_items)
@@ -295,10 +295,10 @@
 				var/shovetarget = get_edge_target_turf(M, get_dir(M, get_step_away(src, M)))
 				Knockdown(0.3 SECONDS)
 				throw_at(shovetarget, 4, 2, M, force = MOVE_FORCE_OVERPOWERING)
-				log_combat(M, src, "shoved")
+				log_combat(M, src, "толкает")
 				visible_message("<span class='danger'>[M] tackles [src] down!</span>", \
 								"<span class='userdanger'>[M] shoves you with great force!</span>", "<span class='hear'>You hear aggressive shuffling followed by a loud thud!</span>", null, M)
-				to_chat(M, "<span class='danger'>You shove [src] with great force!</span>")
+				to_chat(M, "<span class='danger'>You shove [src] с помощью great force!</span>")
 			else
 				Paralyze(3 SECONDS)
 				adjustBruteLoss(5)

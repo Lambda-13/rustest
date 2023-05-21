@@ -359,7 +359,7 @@
 
 			if(W.use_tool(src, user, 0, volume=40))
 				adjustHealth(-10)
-				user.visible_message("<span class='notice'>[user] repairs [src]!</span>","<span class='notice'>You repair [src].</span>")
+				user.visible_message("<span class='notice'>[user] repairs [src]!</span>","<span class='notice'>Чиню [src].</span>")
 		else
 			if(W.force) //if force is non-zero
 				do_sparks(5, TRUE, src)

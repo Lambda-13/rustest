@@ -149,10 +149,10 @@ Chilling extracts:
 		return
 	if(target in allies)
 		allies -= target
-		to_chat(user, "<span class='notice'>You unlink [src] with [target].</span>")
+		to_chat(user, "<span class='notice'>You unlink [src] с помощью [target].</span>")
 	else
 		allies |= target
-		to_chat(user, "<span class='notice'>You link [src] with [target].</span>")
+		to_chat(user, "<span class='notice'>You link [src] с помощью [target].</span>")
 	return
 
 /obj/item/slimecross/chilling/bluespace/do_effect(mob/user)
@@ -188,10 +188,10 @@ Chilling extracts:
 		return
 	if(target in allies)
 		allies -= target
-		to_chat(user, "<span class='notice'>You unlink [src] with [target].</span>")
+		to_chat(user, "<span class='notice'>You unlink [src] с помощью [target].</span>")
 	else
 		allies |= target
-		to_chat(user, "<span class='notice'>You link [src] with [target].</span>")
+		to_chat(user, "<span class='notice'>You link [src] с помощью [target].</span>")
 	return
 
 /obj/item/slimecross/chilling/sepia/do_effect(mob/user)

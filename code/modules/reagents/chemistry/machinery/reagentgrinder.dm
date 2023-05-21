@@ -159,7 +159,7 @@
 			if(!I.contents.len)
 				to_chat(user, "<span class='notice'>You empty [I] into [src].</span>")
 			else
-				to_chat(user, "<span class='notice'>You fill [src] to the brim.</span>")
+				to_chat(user, "<span class='notice'>Наполняю [src] to the brim.</span>")
 		return TRUE
 
 	if(!I.grind_results && !I.juice_results)

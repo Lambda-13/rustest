@@ -59,7 +59,7 @@ Slimecrossing Weapons
 	force = 0
 	throw_range = 1 //How far do you think you're gonna throw a solid crystalline shield...?
 	throw_speed = 2
-	attack_verb = list("bashed","pounded","slammed")
+	attack_verb = list("бьёт","pounded","slammed")
 	item_flags = SLOWS_WHILE_IN_HAND
 
 /obj/item/shield/adamantineshield/ComponentInitialize()

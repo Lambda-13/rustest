@@ -138,7 +138,7 @@
 	if(user)
 		user.do_attack_animation(src)
 		if(user in viewers(src, null))
-			attack_message = "[user] has [message_verb] [src] with [I]!"
+			attack_message = "[user] has [message_verb] [src] с помощью [I]!"
 	if(message_verb)
 		visible_message("<span class='danger'>[attack_message]</span>",
 		"<span class='userdanger'>[attack_message]</span>", null, COMBAT_MESSAGE_RANGE)

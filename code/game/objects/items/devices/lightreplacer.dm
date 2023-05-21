@@ -140,7 +140,7 @@
 			to_chat(user, "<span class='warning'>[src] is full!</span>")
 			return
 
-		to_chat(user, "<span class='notice'>You fill [src] with lights from \the [S]. " + status_string() + "</span>")
+		to_chat(user, "<span class='notice'>Наполняю [src] с помощью lights from \the [S]. " + status_string() + "</span>")
 
 /obj/item/lightreplacer/emag_act()
 	if(obj_flags & EMAGGED)

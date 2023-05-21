@@ -95,7 +95,7 @@
 			return
 
 		var/trans = target.reagents.trans_to(src, amount_per_transfer_from_this, transfered_by = user)
-		to_chat(user, "<span class='notice'>You fill [src] with [trans] units of the contents of [target].</span>")
+		to_chat(user, "<span class='notice'>Наполняю [src] с помощью [trans] units of the contents of [target].</span>")
 
 	else if(reagents.total_volume && is_drainable())
 		switch(user.a_intent)
@@ -605,7 +605,7 @@
 		return
 
 /obj/item/reagent_containers/food/drinks/soda_cans/proc/open_soda(mob/user)
-	to_chat(user, "You pull back the tab of [src] with a satisfying pop.") //Ahhhhhhhh
+	to_chat(user, "You pull back the tab of [src] с помощью a satisfying pop.") //Ahhhhhhhh
 	reagents.flags |= OPENCONTAINER
 	playsound(src, "can_open", 50, TRUE)
 	spillable = TRUE
@@ -617,12 +617,12 @@
 
 /obj/item/reagent_containers/food/drinks/soda_cans/attacked_by(obj/item/I, mob/living/user)
 	if(I.sharpness && !pierced && user && user.a_intent != INTENT_HARM)
-		user.visible_message("<b>[user]</b> pierces [src] with [I].", "<span class='notice'>You pierce [src] with [I].</span>")
+		user.visible_message("<b>[user]</b> pierces [src] с помощью [I].", "<span class='notice'>You pierce [src] с помощью [I].</span>")
 		playsound(src, "can_open", 50, TRUE)
 		pierced = TRUE
 		return
 	else if(I.force)
-		user.visible_message("<b>[user]</b> crushes [src] with [I]! Party foul!", "<span class='warning'>You crush [src] with [I]! Party foul!</span>")
+		user.visible_message("<b>[user]</b> crushes [src] с помощью [I]! Party foul!", "<span class='warning'>You crush [src] с помощью [I]! Party foul!</span>")
 		playsound(src, "can_open", 50, TRUE)
 		var/obj/item/trash/can/crushed_can = new /obj/item/trash/can(src.loc)
 		crushed_can.icon_state = icon_state

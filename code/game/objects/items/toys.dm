@@ -238,7 +238,7 @@
 	slot_flags = ITEM_SLOT_BELT
 	w_class = WEIGHT_CLASS_NORMAL
 	custom_materials = list(/datum/material/iron=10, /datum/material/glass=10)
-	attack_verb = list("struck", "pistol whipped", "hit", "bashed")
+	attack_verb = list("struck", "pistol whipped", "hit", "бьёт")
 	var/bullets = 7
 
 /obj/item/toy/gun/examine(mob/user)
@@ -442,7 +442,7 @@
 	two_hand_force = 0
 	attack_verb = list("attacked", "struck", "hit")
 
-/obj/item/dualsaber/toy/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
+/obj/item/dualsaber/toy/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "атаку", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	return 0
 
 /obj/item/dualsaber/toy/IsReflect() //Stops Toy Dualsabers from reflecting energy projectiles

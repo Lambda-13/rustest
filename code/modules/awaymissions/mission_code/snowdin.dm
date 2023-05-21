@@ -161,7 +161,7 @@
 		to_chat(user, "<span class='danger'>[C] is full.</span>")
 		return
 	C.reagents.add_reagent(/datum/reagent/toxin/plasma, rand(5, 10))
-	user.visible_message("<span class='notice'>[user] scoops some plasma from the [src] with \the [C].</span>", "<span class='notice'>You scoop out some plasma from the [src] using \the [C].</span>")
+	user.visible_message("<span class='notice'>[user] scoops some plasma from the [src] с помощью \the [C].</span>", "<span class='notice'>You scoop out some plasma from the [src] using \the [C].</span>")
 	return TRUE
 
 /turf/open/lava/plasma/burn_stuff(AM)

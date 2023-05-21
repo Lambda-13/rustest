@@ -207,8 +207,8 @@
 		playsound(src, 'sound/weapons/tap.ogg', 50, TRUE)
 		return TRUE
 	log_combat(user, src, "attacked", W)
-	user.visible_message("<span class='danger'>[user] hits [src] with [W]!</span>", \
-				"<span class='danger'>You hit [src] with [W]!</span>", null, COMBAT_MESSAGE_RANGE)
+	user.visible_message("<span class='danger'>[user] hits [src] с помощью [W]!</span>", \
+				"<span class='danger'>You hit [src] с помощью [W]!</span>", null, COMBAT_MESSAGE_RANGE)
 	switch(W.damtype)
 		if(BRUTE)
 			playsound(src, 'sound/effects/hit_stone.ogg', 50, TRUE)

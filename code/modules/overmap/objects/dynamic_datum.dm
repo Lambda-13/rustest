@@ -195,7 +195,7 @@
 	return TRUE
 
 /datum/overmap/dynamic/empty
-	name = "Empty Space"
+	name = "Пустой космос"
 
 /datum/overmap/dynamic/empty/choose_level_type()
 	return
@@ -212,11 +212,11 @@
 */
 
 /area/overmap_encounter
-	name = "\improper Overmap Encounter"
+	name = "Карта сектора"
 	icon_state = "away"
 	// DO NOT PUT UNIQUE_AREA IN THESE FLAGS FOR ANY SUBTYPE. IT CAUSES WEATHER PROBLEMS
 	// THE ONLY REASON IT DIDN'T BEFORE IS BECAUSE THE CODE DIDN'T RESPECT THE FLAG
-	area_flags = HIDDEN_AREA | CAVES_ALLOWED | FLORA_ALLOWED | MOB_SPAWN_ALLOWED | NOTELEPORT
+	area_flags = HIDDEN_AREA | CAVES_ALLOWED | FLORA_ALLOWED | MOB_SPAWN_ALLOWED //Если всё пойдт по пизде вернуть NOTELEPORT!
 	flags_1 = CAN_BE_DIRTY_1
 	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
 	sound_environment = SOUND_ENVIRONMENT_STONEROOM
@@ -230,39 +230,39 @@
 	. = ..()
 
 /area/overmap_encounter/planetoid
-	name = "\improper Unknown Planetoid"
+	name = "Планета: Неизвестно"
 	sound_environment = SOUND_ENVIRONMENT_MOUNTAINS
 	has_gravity = STANDARD_GRAVITY
 	always_unpowered = TRUE
 
 // Used for caves on multi-biome planetoids.
 /area/overmap_encounter/planetoid/cave
-	name = "\improper Planetoid Cavern"
+	name = "Планета: Пещера"
 	sound_environment = SOUND_ENVIRONMENT_CAVE
 	ambientsounds = SPOOKY
 	allow_weather = FALSE
 
 /area/overmap_encounter/planetoid/lava
-	name = "\improper Volcanic Planetoid"
+	name = "Планета: Лаваленд"
 	ambientsounds = MINING
 
 /area/overmap_encounter/planetoid/ice
-	name = "\improper Frozen Planetoid"
+	name = "Планета: Айсленд"
 	sound_environment = SOUND_ENVIRONMENT_CAVE
 	ambientsounds = SPOOKY
 
 /area/overmap_encounter/planetoid/sand
-	name = "\improper Sandy Planetoid"
+	name = "Планета: Белые пески"
 	sound_environment = SOUND_ENVIRONMENT_QUARRY
 	ambientsounds = MINING
 
 /area/overmap_encounter/planetoid/jungle
-	name = "\improper Jungle Planetoid"
+	name = "Планета: Джунгли"
 	sound_environment = SOUND_ENVIRONMENT_FOREST
 	ambientsounds = AWAY_MISSION
 
 /area/overmap_encounter/planetoid/rockplanet
-	name = "\improper Rocky Planetoid"
+	name = "Планета: Каменистая поверхность"
 	sound_environment = SOUND_ENVIRONMENT_QUARRY
 	ambientsounds = AWAY_MISSION
 
@@ -270,17 +270,17 @@
 	area_flags = VALID_TERRITORY
 
 /area/overmap_encounter/planetoid/beachplanet
-	name = "\improper Beach Planetoid"
+	name = "Планета: Остров"
 	sound_environment = SOUND_ENVIRONMENT_FOREST
 	ambientsounds = BEACH
 
 /area/overmap_encounter/planetoid/wasteplanet
-	name = "\improper Waste Planetoid"
+	name = "Планета: Свалка"
 	sound_environment = SOUND_ENVIRONMENT_HANGAR
 	ambientsounds = MAINTENANCE
 
 /area/overmap_encounter/planetoid/reebe
-	name = "\improper Yellow Space"
+	name = "???"
 	sound_environment = SOUND_ENVIRONMENT_MOUNTAINS
 	area_flags = HIDDEN_AREA | CAVES_ALLOWED | FLORA_ALLOWED | MOB_SPAWN_ALLOWED //allows jaunters to work
 	ambientsounds = REEBE

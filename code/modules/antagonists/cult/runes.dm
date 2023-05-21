@@ -63,7 +63,7 @@ Runes can either be invoked by one's self or with many different cultists. Each 
 			qdel(src)
 	else if(istype(I, /obj/item/nullrod))
 		user.say("BEGONE FOUL MAGIKS!!", forced = "nullrod")
-		to_chat(user, "<span class='danger'>You disrupt the magic of [src] with [I].</span>")
+		to_chat(user, "<span class='danger'>You disrupt the magic of [src] с помощью [I].</span>")
 		qdel(src)
 
 /obj/effect/rune/attack_hand(mob/living/user)

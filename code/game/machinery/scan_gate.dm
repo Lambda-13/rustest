@@ -81,12 +81,12 @@
 				req_access = list()
 				to_chat(user, "<span class='notice'>You unlock [src].</span>")
 		else if(!(obj_flags & EMAGGED))
-			to_chat(user, "<span class='notice'>You lock [src] with [W].</span>")
+			to_chat(user, "<span class='notice'>You lock [src] с помощью [W].</span>")
 			var/list/access = W.GetAccess()
 			req_access = access
 			locked = TRUE
 		else
-			to_chat(user, "<span class='warning'>You try to lock [src] with [W], but nothing happens.</span>")
+			to_chat(user, "<span class='warning'>You try to lock [src] с помощью [W], but nothing happens.</span>")
 	else
 		return ..()
 

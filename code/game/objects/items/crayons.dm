@@ -655,11 +655,11 @@
 /obj/item/toy/crayon/spraycan/suicide_act(mob/user)
 	var/mob/living/carbon/human/H = user
 	if(is_capped || !actually_paints)
-		user.visible_message("<span class='suicide'>[user] shakes up [src] with a rattle and lifts it to [user.p_their()] mouth, but nothing happens!</span>")
+		user.visible_message("<span class='suicide'>[user] shakes up [src] с помощью a rattle and lifts it to [user.p_their()] mouth, but nothing happens!</span>")
 		user.say("MEDIOCRE!!", forced="spraycan suicide")
 		return SHAME
 	else
-		user.visible_message("<span class='suicide'>[user] shakes up [src] with a rattle and lifts it to [user.p_their()] mouth, spraying paint across [user.p_their()] teeth!</span>")
+		user.visible_message("<span class='suicide'>[user] shakes up [src] с помощью a rattle and lifts it to [user.p_their()] mouth, spraying paint across [user.p_their()] teeth!</span>")
 		user.say("WITNESS ME!!", forced="spraycan suicide")
 		if(pre_noise || post_noise)
 			playsound(src, 'sound/effects/spray.ogg', 5, TRUE, 5)

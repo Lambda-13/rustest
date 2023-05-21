@@ -370,7 +370,7 @@
 	item_state = "shotgun_qb"
 	w_class = WEIGHT_CLASS_BULKY
 	force = 15 //blunt edge and really heavy
-	attack_verb = list("bludgeoned", "smashed")
+	attack_verb = list("забивает", "smashed")
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/sex
 	burst_size = 6
 	pb_knockback = 12
@@ -444,7 +444,7 @@
 	icon_state = "twobore"
 	item_state = "twobore"
 	unique_reskin = null
-	attack_verb = list("bludgeoned", "smashed")
+	attack_verb = list("забивает", "smashed")
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/twobore
 	w_class = WEIGHT_CLASS_BULKY
 	force = 20 //heavy ass elephant gun, why wouldnt it be

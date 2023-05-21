@@ -34,7 +34,7 @@
 			if(I.use_tool(src, user, 40, volume=50, amount=2))
 				obj_integrity = max_integrity
 				update_icon()
-				to_chat(user, "<span class='notice'>You repair [src].</span>")
+				to_chat(user, "<span class='notice'>Чиню [src].</span>")
 		else
 			to_chat(user, "<span class='warning'>[src] is already in good condition!</span>")
 		return

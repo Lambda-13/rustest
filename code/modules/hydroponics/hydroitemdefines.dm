@@ -88,7 +88,7 @@
 	name = "rake"
 	icon_state = "rake"
 	w_class = WEIGHT_CLASS_NORMAL
-	attack_verb = list("slashed", "sliced", "bashed", "clawed")
+	attack_verb = list("slashed", "sliced", "бьёт", "clawed")
 	hitsound = null
 	custom_materials = list(/datum/material/wood = MINERAL_MATERIAL_AMOUNT * 1.5)
 	flags_1 = NONE

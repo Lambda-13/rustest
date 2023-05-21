@@ -41,7 +41,7 @@
 		var/obj/item/stack/cable_coil/C = I
 		C.use(1)
 		has_sensor = HAS_SENSORS
-		to_chat(user,"<span class='notice'>You repair the suit sensors on [src] with [C].</span>")
+		to_chat(user,"<span class='notice'>You repair the suit sensors on [src] с помощью [C].</span>")
 		return 1
 	if(!attach_accessory(I, user))
 		return ..()

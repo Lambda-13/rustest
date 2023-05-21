@@ -428,7 +428,7 @@
 		to_chat(user, "<span class='warning'>You're out of paper!'.</span>")
 		return
 	if(!payments_acc)
-		to_chat(user, "<span class='warning'>You need to swipe [src] with an ID card first.</span>")
+		to_chat(user, "<span class='warning'>You need to swipe [src] с помощью an ID card first.</span>")
 		return
 	paper_count -= 1
 	playsound(src, 'sound/machines/click.ogg', 40, TRUE)

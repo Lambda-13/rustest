@@ -173,7 +173,7 @@
 	else
 		..()
 
-/obj/item/cult_bastard/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
+/obj/item/cult_bastard/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "атаку", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	if(prob(final_block_chance))
 		if(attack_type == PROJECTILE_ATTACK)
 			owner.visible_message("<span class='danger'>[owner] deflects [attack_text] with [src]!</span>")
@@ -405,7 +405,7 @@
 		user.Dizzy(30)
 		user.Paralyze(100)
 
-/obj/item/clothing/suit/hooded/cultrobes/cult_shield/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
+/obj/item/clothing/suit/hooded/cultrobes/cult_shield/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "атаку", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	if(current_charges)
 		owner.visible_message("<span class='danger'>\The [attack_text] is deflected in a burst of blood-red sparks!</span>")
 		current_charges--
@@ -653,7 +653,7 @@
 			playsound(T, 'sound/effects/glassbr3.ogg', 100)
 	qdel(src)
 
-/obj/item/cult_spear/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
+/obj/item/cult_spear/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "атаку", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	if(wielded)
 		final_block_chance *= 2
 	if(prob(final_block_chance))
@@ -867,7 +867,7 @@
 	hitsound = 'sound/weapons/smash.ogg'
 	var/illusions = 2
 
-/obj/item/shield/mirror/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
+/obj/item/shield/mirror/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "атаку", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	if(iscultist(owner))
 		if(istype(hitby, /obj/projectile))
 			var/obj/projectile/P = hitby

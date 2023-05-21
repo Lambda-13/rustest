@@ -267,8 +267,8 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	var/mob/living/M = loc
 	if(isliving(loc))
 		M.IgniteMob()
-	smoketime -= delta_time
-	if(smoketime <= 0)
+	smoketime--
+	if(smoketime < 1)
 		new type_butt(location)
 		if(ismob(loc))
 			playsound(src, 'sound/items/cig_snuff.ogg', 25, 1)

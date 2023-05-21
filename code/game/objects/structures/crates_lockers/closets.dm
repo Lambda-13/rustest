@@ -286,7 +286,7 @@
 			welded = !welded
 			after_weld(welded)
 			user.visible_message("<span class='notice'>[user] [welded ? "welds shut" : "unwelded"] [src].</span>",
-							"<span class='notice'>You [welded ? "weld" : "unwelded"] [src] with [W].</span>",
+							"<span class='notice'>You [welded ? "weld" : "unwelded"] [src] с помощью [W].</span>",
 							"<span class='hear'>Слышу сварку.</span>")
 			update_icon()
 	else if(W.tool_behaviour == TOOL_WRENCH && anchorable)

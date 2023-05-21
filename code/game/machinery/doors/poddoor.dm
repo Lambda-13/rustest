@@ -149,7 +149,7 @@
 	if(density & !(resistance_flags & INDESTRUCTIBLE))
 		add_fingerprint(user)
 		user.visible_message("<span class='warning'>[user] begins prying open [src].</span>",\
-					"<span class='noticealien'>You begin digging your claws into [src] with all your might!</span>",\
+					"<span class='noticealien'>You begin digging your claws into [src] с помощью all your might!</span>",\
 					"<span class='warning'>You hear groaning metal...</span>")
 		playsound(src, 'sound/machines/airlock_alien_prying.ogg', 100, TRUE)
 

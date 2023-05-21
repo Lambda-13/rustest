@@ -157,7 +157,7 @@
 				monkeys++
 				qdel(G)
 		if(loaded)
-			to_chat(user, "<span class='notice'>You fill [src] with the monkey cubes stored in [O]. [src] now has [monkeys] monkey cubes stored.</span>")
+			to_chat(user, "<span class='notice'>Наполняю [src] с помощью the monkey cubes stored in [O]. [src] now has [monkeys] monkey cubes stored.</span>")
 		return
 	else if(istype(O, /obj/item/slimepotion/slime))
 		var/replaced = FALSE
@@ -174,7 +174,7 @@
 /obj/machinery/computer/camera_advanced/xenobio/multitool_act(mob/living/user, obj/item/multitool/I)
 	. = ..()
 	if (istype(I) && istype(I.buffer,/obj/machinery/monkey_recycler))
-		to_chat(user, "<span class='notice'>You link [src] with [I.buffer] in [I] buffer.</span>")
+		to_chat(user, "<span class='notice'>You link [src] с помощью [I.buffer] in [I] buffer.</span>")
 		connected_recycler = I.buffer
 		connected_recycler.connected += src
 		return TRUE

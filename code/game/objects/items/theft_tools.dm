@@ -139,7 +139,7 @@
 		forceMove(tongs)
 		tongs.sliver = src
 		tongs.update_icon()
-		to_chat(user, "<span class='notice'>You carefully pick up [src] with [tongs].</span>")
+		to_chat(user, "<span class='notice'>You carefully pick up [src] с помощью [tongs].</span>")
 	else if(istype(W, /obj/item/scalpel/supermatter) || istype(W, /obj/item/nuke_core_container/supermatter/)) // we don't want it to dust
 		return
 	else
@@ -155,7 +155,7 @@
 		return FALSE
 	var/mob/ded = user
 	user.visible_message("<span class='danger'>[ded] reaches out and tries to pick up [src]. [ded.p_their()] body starts to glow and bursts into flames before flashing into dust!</span>",\
-			"<span class='userdanger'>You reach for [src] with your hands. That was dumb.</span>",\
+			"<span class='userdanger'>You reach for [src] с помощью your hands. That was dumb.</span>",\
 			"<span class='hear'>Everything suddenly goes silent.</span>")
 	radiation_pulse(user, 500, 2)
 	playsound(get_turf(user), 'sound/effects/supermatter.ogg', 50, TRUE)

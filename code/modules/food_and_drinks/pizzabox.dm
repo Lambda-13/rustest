@@ -136,7 +136,7 @@
 				log_bomber(user, "has trapped a", src, "with [bomb] set to [bomb_timer * 2] seconds")
 				bomb.adminlog = "The [bomb.name] in [src.name] that [key_name(user)] activated has detonated!"
 
-				to_chat(user, "<span class='warning'>You trap [src] with [bomb].</span>")
+				to_chat(user, "<span class='warning'>You trap [src] с помощью [bomb].</span>")
 				update_icon()
 	else if(boxes.len)
 		var/obj/item/pizzabox/topbox = boxes[boxes.len]

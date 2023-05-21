@@ -38,7 +38,7 @@
 			return
 
 		var/trans = A.reagents.trans_to(src, 50, transfered_by = user) //transfer 50u , using the spray's transfer amount would take too long to refill
-		to_chat(user, "<span class='notice'>You fill [src] with [trans] units of the contents of \the [A].</span>")
+		to_chat(user, "<span class='notice'>Наполняю [src] с помощью [trans] units of the contents of \the [A].</span>")
 		return
 
 	if(reagents.total_volume < amount_per_transfer_from_this)

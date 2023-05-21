@@ -102,7 +102,7 @@
 			return TRUE
 		update_clothes_damaged_state(FALSE)
 		obj_integrity = max_integrity
-		to_chat(user, "<span class='notice'>You fix the damage on [src] with [cloth].</span>")
+		to_chat(user, "<span class='notice'>You fix the damage on [src] с помощью [cloth].</span>")
 		return TRUE
 	return ..()
 

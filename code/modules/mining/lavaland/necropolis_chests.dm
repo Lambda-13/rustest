@@ -1178,7 +1178,7 @@
 	. = ..()
 	. += "<hr><span class='notice'>The ascetic's magic woven into this robe increases the owner's speed and deflects harm from their person- however, once it's mirages have melted away, it causes significantly more damage to be taken. The magic can withstand three attacks before it must recover, but it begins regenerating quickly.</span>"
 
-/obj/item/clothing/suit/armor/ascetic/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
+/obj/item/clothing/suit/armor/ascetic/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "атаку", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	recharge_cooldown = world.time + recharge_delay
 	if(current_charges > 0)
 		var/datum/effect_system/spark_spread/s = new
@@ -1419,7 +1419,7 @@
 	user.visible_message("<span class='danger'>[user] strikes with the force of [ghost_counter] vengeful spirits!</span>")
 	..()
 
-/obj/item/melee/ghost_sword/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
+/obj/item/melee/ghost_sword/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "атаку", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	var/ghost_counter = ghost_check()
 	final_block_chance += clamp((ghost_counter * 5), 0, 75)
 	owner.visible_message("<span class='danger'>[owner] is protected by a ring of [ghost_counter] ghosts!</span>")

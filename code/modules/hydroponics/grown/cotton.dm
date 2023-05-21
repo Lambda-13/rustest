@@ -75,6 +75,6 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	throw_speed = 2
 	throw_range = 3
-	attack_verb = list("bashed", "battered", "bludgeoned", "whacked")
+	attack_verb = list("бьёт", "battered", "забивает", "ударяет")
 	cotton_type = /obj/item/stack/sheet/cotton/durathread
 	cotton_name = "raw durathread"

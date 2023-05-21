@@ -251,7 +251,7 @@
 			if(!iswallturf(src))
 				return TRUE
 			I.play_tool_sound(src)
-			visible_message("<span class='warning'>[user] smashes through [src] with [I]!</span>", "<span class='italics'>You hear the grinding of metal.</span>")
+			visible_message("<span class='warning'>[user] smashes through [src] с помощью [I]!</span>", "<span class='italics'>You hear the grinding of metal.</span>")
 			dismantle_wall()
 			return TRUE
 	return FALSE

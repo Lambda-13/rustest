@@ -318,7 +318,7 @@
 		if(shot.select_name == "sweet")
 			to_chat(user, "<span class='notice'>You set your [src] to fire CY-SWEET distruptor rounds, which travel slowly and do little damage, but irradiate and ignite targets.</span>")
 		if(shot.select_name == "sour")
-			to_chat(user, "<span class='notice'>You rearm your [src] with CY-SOUR nonlethal rounds, which cause stamina damage and distrupt the focus of enemies.</span>")
+			to_chat(user, "<span class='notice'>You rearm your [src] с помощью CY-SOUR nonlethal rounds, which cause stamina damage and distrupt the focus of enemies.</span>")
 	chambered = null
 	recharge_newshot(TRUE)
 	update_icon()

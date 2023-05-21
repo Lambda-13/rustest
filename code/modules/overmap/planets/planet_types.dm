@@ -24,8 +24,8 @@
 	danger_level = 3
 
 /datum/planet_type/ice
-	name = "ледяная планета"
-	desc = "Планетарный биом, характеризующийся холодной, замороженной равниной."
+	name = "антарктическая планета"
+	desc = "Планетарный биом, характеризующийся холодной, замороженной равниной и демоническими порталами."
 	planet = DYNAMIC_WORLD_ICE
 	icon_state = "globe"
 	color = COLOR_BLUE_LIGHT
@@ -36,7 +36,7 @@
 	danger_level = 3
 
 /datum/planet_type/jungle
-	name = "лесная планета"
+	name = "джунглиевая планета"
 	desc = "Планетарный биом, характеризующийся умеренной температурой, и очень плотно растущими деревьями."
 	planet = DYNAMIC_WORLD_JUNGLE
 	icon_state = "globe"
@@ -60,8 +60,8 @@
 	danger_level = 3
 
 /datum/planet_type/sand
-	name = "пустынная планета"
-	desc = "Планетарный биом, характеризующийся ясной погодой, обилием песка и кактусами."
+	name = "бело-пустынная планета"
+	desc = "Планетарный биом, характеризующийся ясной погодой, обилием солённого песка и кислотными озёрами."
 	planet = DYNAMIC_WORLD_SAND
 	icon_state = "globe"
 	color = COLOR_GRAY
@@ -69,7 +69,7 @@
 	default_baseturf = /turf/open/floor/plating/asteroid/whitesands
 	weather_controller_type = /datum/weather_controller/desert
 	ruin_type = RUINTYPE_SAND
-	danger_level = 2
+	danger_level = 3
 
 /datum/planet_type/beach
 	name = "океаническая планета"
@@ -85,7 +85,7 @@
 
 /datum/planet_type/reebe
 	name = "???"
-	desc = "Какой-то странный портал. Нет никакой информации что это такое."
+	desc = "Странный разрыв реальности. Нет никакой информации о обьекте."
 	planet = DYNAMIC_WORLD_REEBE
 	icon_state = "wormhole"
 	color = COLOR_YELLOW
@@ -94,7 +94,7 @@
 	weather_controller_type = null
 	weight = 0
 	ruin_type = RUINTYPE_YELLOW
-	danger_level = 4
+	danger_level = 0
 
 /datum/planet_type/asteroid
 	name = "большой астеройд"
@@ -108,7 +108,7 @@
 	default_baseturf = /turf/open/space
 	weather_controller_type = null
 	ruin_type = null // asteroid ruins when
-	danger_level = 1
+	danger_level = 2
 
 /datum/planet_type/spaceruin
 	name = "слабый энергетический сигнал"

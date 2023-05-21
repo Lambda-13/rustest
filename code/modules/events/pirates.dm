@@ -169,7 +169,7 @@
 /obj/machinery/computer/piratepad_control/multitool_act(mob/living/user, obj/item/multitool/I)
 	. = ..()
 	if (istype(I) && istype(I.buffer,/obj/machinery/piratepad))
-		to_chat(user, "<span class='notice'>You link [src] with [I.buffer] in [I] buffer.</span>")
+		to_chat(user, "<span class='notice'>You link [src] с помощью [I.buffer] in [I] buffer.</span>")
 		pad = I.buffer
 		return TRUE
 

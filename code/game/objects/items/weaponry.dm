@@ -1,6 +1,6 @@
 /obj/item/banhammer
-	desc = "A banhammer."
-	name = "banhammer"
+	desc = "банхаммер"
+	name = "Почувствуй себя педалью."
 	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "toyhammer"
 	slot_flags = ITEM_SLOT_BELT
@@ -9,7 +9,7 @@
 	w_class = WEIGHT_CLASS_TINY
 	throw_speed = 3
 	throw_range = 7
-	attack_verb = list("banned")
+	attack_verb = list("банит")
 	max_integrity = 200
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 70)
 	resistance_flags = FIRE_PROOF
@@ -32,8 +32,8 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 		return ..(M, user)
 
 /obj/item/sord
-	name = "\improper SORD"
-	desc = "This thing is so unspeakably shitty you are having a hard time even holding it."
+	name = "МЬЕТЧ"
+	desc = "Эта штука настолько непроизносимо дерьмова, что тебе даже трудно её держать." // https://www.mspaintadventures.ru/?s=6&p=003727
 	icon_state = "sord"
 	item_state = "sord"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
@@ -43,7 +43,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	throwforce = 1
 	w_class = WEIGHT_CLASS_NORMAL
 	hitsound = 'sound/weapons/bladeslice.ogg'
-	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
+	attack_verb = list("атакует", "бьёт", "режет", "колит")
 
 /obj/item/sord/suicide_act(mob/user)
 	user.visible_message("<span class='suicide'>[user] is trying to impale [user.p_them()]self with [src]! It might be a suicide attempt if it weren't so shitty.</span>", \
@@ -51,8 +51,8 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	return SHAME
 
 /obj/item/claymore
-	name = "claymore"
-	desc = "What are you standing around staring at this for? Get to killing!"
+	name = "клеймор"
+	desc = "Одноручный старинный палаш."
 	icon_state = "claymore"
 	item_state = "claymore"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
@@ -295,7 +295,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	throwforce = 10
 	w_class = WEIGHT_CLASS_NORMAL
 	custom_materials = list(/datum/material/iron=1150, /datum/material/glass=75)
-	attack_verb = list("hit", "bludgeoned", "whacked", "bonked")
+	attack_verb = list("hit", "забивает", "ударяет", "bonked")
 
 /obj/item/wirerod/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/shard))
@@ -442,7 +442,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	throwforce = 5
 	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron=50)
-	attack_verb = list("bludgeoned", "whacked", "disciplined", "thrashed")
+	attack_verb = list("забивает", "ударяет", "disciplined", "избивает")
 
 /obj/item/staff
 	name = "wizard staff"
@@ -457,7 +457,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	throw_range = 5
 	w_class = WEIGHT_CLASS_SMALL
 	armour_penetration = 100
-	attack_verb = list("bludgeoned", "whacked", "disciplined")
+	attack_verb = list("забивает", "ударяет", "disciplined")
 	resistance_flags = FLAMMABLE
 
 /obj/item/staff/broom
@@ -562,7 +562,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	throwforce = 1 // why are you throwing a club do you even weapon
 	throw_speed = 1
 	throw_range = 1
-	attack_verb = list("clubbed", "bludgeoned")
+	attack_verb = list("clubbed", "забивает")
 
 /obj/item/melee/chainofcommand/tailwhip
 	name = "liz o' nine tails"
@@ -585,7 +585,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	force = 12
 	throwforce = 4
 	w_class = WEIGHT_CLASS_NORMAL
-	attack_verb = list("smacked", "whacked", "slammed", "smashed")
+	attack_verb = list("smacked", "ударяет", "slammed", "smashed")
 	///The vehicle counterpart for the board
 	var/board_item_type = /obj/vehicle/ridden/scooter/skateboard
 
@@ -771,7 +771,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	force = 5
 	throwforce = 5
 	hitsound = "swing_hit"
-	attack_verb = list("whacked", "thwacked", "walloped", "socked")
+	attack_verb = list("ударяет", "thwacked", "walloped", "socked")
 	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "gohei"
 	item_state = "gohei"
@@ -822,7 +822,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 /obj/item/vibro_weapon/update_icon_state()
 	icon_state = "hfrequency0"
 
-/obj/item/vibro_weapon/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
+/obj/item/vibro_weapon/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "атаку", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	if(wielded)
 		final_block_chance *= 2
 	if(wielded || attack_type != PROJECTILE_ATTACK)

@@ -98,7 +98,7 @@
 	throwforce = 8
 	throw_speed = 2
 	throw_range = 3//it's heavier than a screw driver/wrench, so it does more damage, but can't be thrown as far
-	attack_verb = list("drilled", "screwed", "jabbed","whacked")
+	attack_verb = list("drilled", "screwed", "jabbed","ударяет")
 	hitsound = 'sound/items/drill_hit.ogg'
 	usesound = 'sound/items/drill_use.ogg'
 	toolspeed = 0.7

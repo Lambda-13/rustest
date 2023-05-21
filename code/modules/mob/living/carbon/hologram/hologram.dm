@@ -148,7 +148,7 @@
 			flavortext = str
 		else
 			flavortext = "Serve [user]."
-		to_chat(user, "<span class='notice'>You [density ? "poke [src] with your card" : "slide your card through the air where [src] is"], and set their laws to [str].</span>")
+		to_chat(user, "<span class='notice'>You [density ? "poke [src] с помощью your card" : "slide your card through the air where [src] is"], and set their laws to [str].</span>")
 	src.visible_message("<span class='danger'>[src] starts flickering!</span>",
 						"<span class='userdanger'>You start flickering, and detect an unauthorized law change!</span>",
 						"<span class='danger'>You hear a strange buzzing noise!</span>")

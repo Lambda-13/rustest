@@ -10,7 +10,7 @@
 	throw_speed = 3
 	throw_range = 7
 	w_class = WEIGHT_CLASS_NORMAL
-	attack_verb = list("mopped", "bashed", "bludgeoned", "whacked")
+	attack_verb = list("mopped", "бьёт", "забивает", "ударяет")
 	resistance_flags = FLAMMABLE
 	var/mopping = 0
 	var/mopcount = 0

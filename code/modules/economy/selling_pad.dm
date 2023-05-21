@@ -51,7 +51,7 @@
 /obj/machinery/computer/selling_pad_control/multitool_act(mob/living/user, obj/item/multitool/I)
 	. = ..()
 	if (istype(I.buffer, /obj/machinery/selling_pad))
-		to_chat(user, "<span class='notice'>You link [src] with [I.buffer] in [I] buffer.</span>")
+		to_chat(user, "<span class='notice'>You link [src] с помощью [I.buffer] in [I] buffer.</span>")
 		pad = WEAKREF(I.buffer)
 		return TRUE
 

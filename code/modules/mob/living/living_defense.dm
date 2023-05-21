@@ -318,9 +318,9 @@
 /mob/living/attack_alien(mob/living/carbon/alien/humanoid/M)
 	switch(M.a_intent)
 		if ("help")
-			visible_message("<span class='notice'>[M] caresses [src] with its scythe-like arm.</span>", \
+			visible_message("<span class='notice'>[M] caresses [src] с помощью its scythe-like arm.</span>", \
 							"<span class='notice'>[M] caresses you with its scythe-like arm.</span>", null, null, M)
-			to_chat(M, "<span class='notice'>You caress [src] with your scythe-like arm.</span>")
+			to_chat(M, "<span class='notice'>You caress [src] с помощью your scythe-like arm.</span>")
 			return FALSE
 		if ("grab")
 			grabbedby(M)

@@ -141,7 +141,7 @@
 
 				to_chat(user, "<span class='notice'>You begin repairing [src]'s inner metal plate...</span>")
 				if(I.use_tool(src, user, 100, amount=20))
-					to_chat(user, "<span class='notice'>You repair [src]'s inner metal plate. The radiation is contained.</span>")
+					to_chat(user, "<span class='notice'>Чиню [src]'s inner metal plate. The radiation is contained.</span>")
 					deconstruction_state = NUKESTATE_PANEL_REMOVED
 					STOP_PROCESSING(SSobj, core)
 					update_icon()

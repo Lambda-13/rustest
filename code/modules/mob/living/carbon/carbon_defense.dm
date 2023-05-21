@@ -269,28 +269,28 @@
 			target.visible_message("<span class='danger'>[name] shoves [target.name], knocking [target.p_them()] down!</span>",
 							"<span class='userdanger'>You're knocked down from a shove by [name]!</span>", "<span class='hear'>You hear aggressive shuffling followed by a loud thud!</span>", COMBAT_MESSAGE_RANGE, src)
 			to_chat(src, "<span class='danger'>You shove [target.name], knocking [target.p_them()] down!</span>")
-			log_combat(src, target, "shoved", "knocking them down")
+			log_combat(src, target, "толкает", "knocking them down")
 		else if(target_table)
 			target.Knockdown(SHOVE_KNOCKDOWN_TABLE)
 			target.visible_message("<span class='danger'>[name] shoves [target.name] onto \the [target_table]!</span>",
 							"<span class='userdanger'>You're shoved onto \the [target_table] by [name]!</span>", "<span class='hear'>You hear aggressive shuffling followed by a loud thud!</span>", COMBAT_MESSAGE_RANGE, src)
 			to_chat(src, "<span class='danger'>You shove [target.name] onto \the [target_table]!</span>")
 			target.throw_at(target_table, 1, 1, null, FALSE) //1 speed throws with no spin are basically just forcemoves with a hard collision check
-			log_combat(src, target, "shoved", "onto [target_table] (table)")
+			log_combat(src, target, "толкает", "onto [target_table] (table)")
 		else if(target_collateral_carbon)
 			target.Knockdown(SHOVE_KNOCKDOWN_HUMAN)
 			target_collateral_carbon.Knockdown(SHOVE_KNOCKDOWN_COLLATERAL)
 			target.visible_message("<span class='danger'>[name] shoves [target.name] into [target_collateral_carbon.name]!</span>",
 				"<span class='userdanger'>You're shoved into [target_collateral_carbon.name] by [name]!</span>", "<span class='hear'>You hear aggressive shuffling followed by a loud thud!</span>", COMBAT_MESSAGE_RANGE, src)
 			to_chat(src, "<span class='danger'>You shove [target.name] into [target_collateral_carbon.name]!</span>")
-			log_combat(src, target, "shoved", "into [target_collateral_carbon.name]")
+			log_combat(src, target, "толкает", "into [target_collateral_carbon.name]")
 		else if(target_disposal_bin)
 			target.Knockdown(SHOVE_KNOCKDOWN_SOLID)
 			target.forceMove(target_disposal_bin)
 			target.visible_message("<span class='danger'>[name] shoves [target.name] into \the [target_disposal_bin]!</span>",
 							"<span class='userdanger'>You're shoved into \the [target_disposal_bin] by [target.name]!</span>", "<span class='hear'>You hear aggressive shuffling followed by a loud thud!</span>", COMBAT_MESSAGE_RANGE, src)
 			to_chat(src, "<span class='danger'>You shove [target.name] into \the [target_disposal_bin]!</span>")
-			log_combat(src, target, "shoved", "into [target_disposal_bin] (disposal bin)")
+			log_combat(src, target, "толкает", "into [target_disposal_bin] (disposal bin)")
 	else
 		target.visible_message("<span class='danger'>[name] shoves [target.name]!</span>",
 						"<span class='userdanger'>You're shoved by [name]!</span>", "<span class='hear'>You hear aggressive shuffling!</span>", COMBAT_MESSAGE_RANGE, src)
@@ -316,7 +316,7 @@
 				append_message = "causing [target.p_them()] to drop [target_held_item]"
 			else
 				append_message = "loosening [target.p_their()] grip on [target_held_item]"
-		log_combat(src, target, "shoved", append_message)
+		log_combat(src, target, "толкает", append_message)
 
 /mob/living/carbon/proc/is_shove_knockdown_blocked() //If you want to add more things that block shove knockdown, extend this
 	for (var/obj/item/clothing/clothing in get_equipped_items())
@@ -374,7 +374,7 @@
 	jitteriness += 1000
 	do_jitter_animation(jitteriness)
 	stuttering += 2
-	addtimer(CALLBACK(src, .proc/secondary_shock, should_stun), 20)
+	addtimer(CALLBACK(src, PROC_REF(secondary_shock), should_stun), 20)
 	return shock_damage
 
 ///Called slightly after electrocute act to reduce jittering and apply a secondary stun.

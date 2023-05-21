@@ -423,7 +423,7 @@
 		to_chat(user, "<span class='notice'>You begin repairing damage to [src]...</span>")
 		if(W.use_tool(src, user, 20, volume=50, amount=1))
 			obj_integrity = max_integrity
-			to_chat(user, "<span class='notice'>You repair [src].</span>")
+			to_chat(user, "<span class='notice'>Чиню [src].</span>")
 		return
 
 	..()

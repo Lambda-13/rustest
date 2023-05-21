@@ -89,7 +89,7 @@
 		return
 	if(det_time)
 		det_time -= 10
-		to_chat(user, "<span class='notice'>You shorten the fuse of [src] with [I].</span>")
+		to_chat(user, "<span class='notice'>You shorten the fuse of [src] с помощью [I].</span>")
 		playsound(src, 'sound/items/wirecutter.ogg', 20, TRUE)
 		icon_state = initial(icon_state) + "_[det_time]"
 		update_icon()

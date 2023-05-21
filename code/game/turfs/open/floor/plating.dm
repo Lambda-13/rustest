@@ -144,7 +144,7 @@
 		user.do_attack_animation(src)
 		if(prob(I.force * 20 - 25))
 			user.visible_message("<span class='danger'>[user] smashes through [src]!</span>", \
-							"<span class='danger'>You smash through [src] with [I]!</span>")
+							"<span class='danger'>You smash through [src] с помощью [I]!</span>")
 			ScrapeAway(flags = CHANGETURF_INHERIT_AIR)
 		else
 			to_chat(user, "<span class='danger'>You hit [src], to no effect!</span>")

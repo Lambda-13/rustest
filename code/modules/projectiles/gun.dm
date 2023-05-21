@@ -17,7 +17,7 @@
 	throw_range = 5
 	force = 5
 	item_flags = NEEDS_PERMIT
-	attack_verb = list("struck", "hit", "bashed")
+	attack_verb = list("struck", "hit", "бьёт")
 	pickup_sound = 'sound/items/handling/gun_pickup.ogg'
 	drop_sound = 'sound/items/handling/gun_drop.ogg'
 
@@ -438,7 +438,7 @@
 
 	/*WS Edit - Fixes Pin Removal
 	else if(pin && user.is_holding(src))
-		user.visible_message("<span class='warning'>[user] attempts to remove [pin] from [src] with [I].</span>",
+		user.visible_message("<span class='warning'>[user] attempts to remove [pin] from [src] с помощью [I].</span>",
 		"<span class='notice'>You attempt to remove [pin] from [src]. (It will take [DisplayTimeText(FIRING_PIN_REMOVAL_DELAY)].)</span>", null, 3)
 		if(I.use_tool(src, user, FIRING_PIN_REMOVAL_DELAY, volume = 50))
 			if(!pin) //check to see if the pin is still there, or we can spam messages by clicking multiple times during the tool delay
@@ -457,13 +457,13 @@
 	if(!user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
 		return
 	if(pin && user.is_holding(src))
-		user.visible_message("<span class='warning'>[user] attempts to remove [pin] from [src] with [I].</span>",
+		user.visible_message("<span class='warning'>[user] attempts to remove [pin] from [src] с помощью [I].</span>",
 		"<span class='notice'>You attempt to remove [pin] from [src]. (It will take [DisplayTimeText(FIRING_PIN_REMOVAL_DELAY)].)</span>", null, 3)
 		if(I.use_tool(src, user, FIRING_PIN_REMOVAL_DELAY, 5, volume = 50))
 			if(!pin) //check to see if the pin is still there, or we can spam messages by clicking multiple times during the tool delay
 				return
 			user.visible_message("<span class='notice'>[pin] is spliced out of [src] by [user], melting part of the pin in the process.</span>",
-								"<span class='warning'>You splice [pin] out of [src] with [I], melting part of the pin in the process.</span>", null, 3)
+								"<span class='warning'>You splice [pin] out of [src] с помощью [I], melting part of the pin in the process.</span>", null, 3)
 			QDEL_NULL(pin)
 			return TRUE
 
@@ -474,13 +474,13 @@
 	if(!user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
 		return
 	if(pin && user.is_holding(src))
-		user.visible_message("<span class='warning'>[user] attempts to remove [pin] from [src] with [I].</span>",
+		user.visible_message("<span class='warning'>[user] attempts to remove [pin] from [src] с помощью [I].</span>",
 		"<span class='notice'>You attempt to remove [pin] from [src]. (It will take [DisplayTimeText(FIRING_PIN_REMOVAL_DELAY)].)</span>", null, 3)
 		if(I.use_tool(src, user, FIRING_PIN_REMOVAL_DELAY, volume = 50))
 			if(!pin) //check to see if the pin is still there, or we can spam messages by clicking multiple times during the tool delay
 				return
 			user.visible_message("<span class='notice'>[pin] is ripped out of [src] by [user], mangling the pin in the process.</span>",
-								"<span class='warning'>You rip [pin] out of [src] with [I], mangling the pin in the process.</span>", null, 3)
+								"<span class='warning'>You rip [pin] out of [src] с помощью [I], mangling the pin in the process.</span>", null, 3)
 			QDEL_NULL(pin)
 			return TRUE
 

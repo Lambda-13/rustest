@@ -78,7 +78,7 @@
 
 		var/trans = target.reagents.trans_to(src, amount_per_transfer_from_this, transfered_by = user)
 
-		to_chat(user, "<span class='notice'>You fill [src] with [trans] unit\s of the solution.</span>")
+		to_chat(user, "<span class='notice'>Наполняю [src] с помощью [trans] unit\s of the solution.</span>")
 
 		update_icon()
 

@@ -180,7 +180,7 @@
 			if(I.use_tool(src, user, 40, volume=50))
 				obj_integrity = max_integrity
 				update_nearby_icons()
-				to_chat(user, "<span class='notice'>You repair [src].</span>")
+				to_chat(user, "<span class='notice'>Чиню [src].</span>")
 		else
 			to_chat(user, "<span class='warning'>[src] is already in good condition!</span>")
 		return
@@ -214,7 +214,7 @@
 			if(!istype(src, /obj/structure/window))
 				return TRUE
 			I.play_tool_sound(src)
-			visible_message("<span class='warning'>[user] smashes through [src] with [I]!</span>", "<span class='italics'>You hear the shattering of glass.</span>")
+			visible_message("<span class='warning'>[user] smashes through [src] с помощью [I]!</span>", "<span class='italics'>You hear the shattering of glass.</span>")
 			playsound(src, 'sound/effects/glassbr1.ogg', 50, TRUE)
 			deconstruct(FALSE)
 			return TRUE

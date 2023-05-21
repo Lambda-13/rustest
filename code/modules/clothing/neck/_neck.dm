@@ -406,7 +406,7 @@
 
 //This is copied and pasted from the shield harsuit code, any issues here are also a issue there. Should I have done this? No, i shouldn't. Should this be a component? Yes, most likely. Do i want to touch DCS ever again? No.
 
-/obj/item/clothing/neck/crystal_amulet/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
+/obj/item/clothing/neck/crystal_amulet/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "атаку", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	var/datum/effect_system/spark_spread/quantum/spark_creator = new
 	spark_creator.set_up(2, 1, src)
 	spark_creator.start()

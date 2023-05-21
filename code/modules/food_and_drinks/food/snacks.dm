@@ -234,8 +234,8 @@ All foods are distributed among various categories. Use common sense.
 		)
 	else
 		user.visible_message( \
-			"[user] inaccurately slices [src] with [W]!", \
-			"<span class='notice'>You inaccurately slice [src] with your [W]!</span>" \
+			"[user] inaccurately slices [src] с помощью [W]!", \
+			"<span class='notice'>You inaccurately slice [src] с помощью your [W]!</span>" \
 		)
 		slices_lost = rand(1,min(1,round(slices_num/2)))
 

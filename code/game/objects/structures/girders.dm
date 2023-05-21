@@ -353,7 +353,7 @@
 /obj/structure/girder/cult/attackby(obj/item/W, mob/user, params)
 	add_fingerprint(user)
 	if(istype(W, /obj/item/melee/cultblade/dagger) && iscultist(user)) //Cultists can demolish cult girders instantly with their tomes
-		user.visible_message("<span class='warning'>[user] strikes [src] with [W]!</span>", "<span class='notice'>You demolish [src].</span>")
+		user.visible_message("<span class='warning'>[user] strikes [src] с помощью [W]!</span>", "<span class='notice'>You demolish [src].</span>")
 		new /obj/item/stack/sheet/runed_metal(drop_location(), 1)
 		qdel(src)
 
@@ -384,7 +384,7 @@
 		if(do_after(user, 50, target = src))
 			if(R.get_amount() < 1)
 				return
-			user.visible_message("<span class='notice'>[user] plates [src] with runed metal.</span>", "<span class='notice'>You construct a runed wall.</span>")
+			user.visible_message("<span class='notice'>[user] plates [src] с помощью runed metal.</span>", "<span class='notice'>You construct a runed wall.</span>")
 			R.use(1)
 			var/turf/T = get_turf(src)
 			T.PlaceOnTop(/turf/closed/wall/mineral/cult)
@@ -454,11 +454,11 @@
 		if(B.get_amount() < 2)
 			to_chat(user, "<span class='warning'>You need at least two bronze sheets to build a bronze wall!</span>")
 			return 0
-		user.visible_message("<span class='notice'>[user] begins plating [src] with bronze...</span>", "<span class='notice'>You begin constructing a bronze wall...</span>")
+		user.visible_message("<span class='notice'>[user] begins plating [src] с помощью bronze...</span>", "<span class='notice'>You begin constructing a bronze wall...</span>")
 		if(do_after(user, 50, target = src))
 			if(B.get_amount() < 2)
 				return
-			user.visible_message("<span class='notice'>[user] plates [src] with bronze!</span>", "<span class='notice'>You construct a bronze wall.</span>")
+			user.visible_message("<span class='notice'>[user] plates [src] с помощью bronze!</span>", "<span class='notice'>You construct a bronze wall.</span>")
 			B.use(2)
 			var/turf/T = get_turf(src)
 			T.PlaceOnTop(/turf/closed/wall/mineral/bronze)

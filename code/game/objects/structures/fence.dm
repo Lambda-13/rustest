@@ -70,8 +70,8 @@
 			to_chat(user, "<span class='warning'>This fence has too much cut out of it already!</span>")
 			return
 
-		user.visible_message("<span class='danger'>\The [user] starts cutting through [src] with [W].</span>",\
-		"<span class='danger'>You start cutting through [src] with [W].</span>")
+		user.visible_message("<span class='danger'>\The [user] starts cutting through [src] с помощью [W].</span>",\
+		"<span class='danger'>You start cutting through [src] с помощью [W].</span>")
 
 		if(do_after(user, CUT_TIME*W.toolspeed, target = src))
 			if(current_stage == hole_size)
