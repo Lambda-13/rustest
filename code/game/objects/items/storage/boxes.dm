@@ -132,18 +132,36 @@
 	var/mask_type = /obj/item/clothing/mask/breath
 	var/internal_type = /obj/item/tank/internals/emergency_oxygen
 	var/medipen_type = /obj/item/reagent_containers/hypospray/medipen
+	var/bruise_type = /obj/item/stack/medical/bruise_pack
+	var/flare_type = /obj/item/flashlight/glowstick
+	var/food_type = /obj/item/reagent_containers/food/snacks/proteinbar
+	var/oxycandle_type = /obj/item/device/oxycandle
 
 /obj/item/storage/box/survival/PopulateContents()
+//Маска
 	new mask_type(src)
-	if(!isnull(medipen_type))
-		new medipen_type(src)
 
+//Если плазмамен то выдаётся баллон с плазмой иначе стандартный баллон
 	if(!isplasmaman(loc))
 		new internal_type(src)
 	else
 		new /obj/item/tank/internals/plasmaman/belt(src)
 
-	new /obj/item/choice_beacon/support_beacon(src)
+//Медипен
+	if(!isnull(medipen_type))
+		new medipen_type(src)
+
+//Бинты
+	new bruise_type(src)
+
+//Флаер
+	new flare_type(src)
+
+//Еда
+	new food_type(src)
+
+//Кислородная свечка
+	new oxycandle_type(src)
 
 /obj/item/storage/box/survival/radio/PopulateContents()
 	..() // we want the survival stuff too.
@@ -152,6 +170,10 @@
 // Mining survival box
 /obj/item/storage/box/survival/mining
 	mask_type = /obj/item/clothing/mask/gas/explorer
+	medipen_type = /obj/item/reagent_containers/hypospray/medipen/stimpack
+	bruise_type = /obj/item/reagent_containers/food/snacks/grown/watermelon
+	flare_type = /obj/item/flashlight/lantern/heirloom_moth
+	food_type = /obj/item/reagent_containers/food/snacks/chocolatebar
 
 /obj/item/storage/box/survival/mining/PopulateContents()
 	..()
@@ -160,6 +182,8 @@
 // Engineer survival box
 /obj/item/storage/box/survival/engineer
 	internal_type = /obj/item/tank/internals/emergency_oxygen/engi
+	flare_type = /obj/item/flashlight/flare
+	food_type = /obj/item/reagent_containers/food/snacks/grown/watermelon
 
 /obj/item/storage/box/survival/engineer/radio/PopulateContents()
 	..() // we want the regular items too.
@@ -169,11 +193,13 @@
 /obj/item/storage/box/survival/syndie
 	mask_type = /obj/item/clothing/mask/gas/syndicate
 	internal_type = /obj/item/tank/internals/emergency_oxygen/engi
-	medipen_type = null
+	medipen_type = /obj/item/reagent_containers/hypospray/medipen/stimpack/traitor
 
 // Security survival box
 /obj/item/storage/box/survival/security
 	mask_type = /obj/item/clothing/mask/gas/sechailer
+	medipen_type = /obj/item/reagent_containers/hypospray/medipen/atropine
+	flare_type = /obj/item/flashlight/seclite
 
 /obj/item/storage/box/survival/security/radio/PopulateContents()
 	..() // we want the regular stuff too
@@ -182,6 +208,8 @@
 // Medical survival box
 /obj/item/storage/box/survival/medical
 	mask_type = /obj/item/clothing/mask/breath/medical
+	medipen_type = /obj/item/hypospray/mkii/tricord
+	food_type = /obj/item/reagent_containers/food/snacks/grown/watermelon
 
 /obj/item/storage/box/gloves
 	name = "box of latex gloves"
@@ -999,7 +1027,7 @@
 	if(user.incapacitated())
 		return FALSE
 	if(contents.len)
-		to_chat(user, "<span class='warning'>You can't modify [src] with items still inside!</span>")
+		to_chat(user, "<span class='warning'>You can't modify [src] с помощью items still inside!</span>")
 		return FALSE
 	if(!P || !user.is_holding(P))
 		to_chat(user, "<span class='warning'>You need a pen to modify [src]!</span>")
