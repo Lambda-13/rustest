@@ -41,20 +41,18 @@
 	var/safety_mode = FALSE ///Whether or not the airlock can be opened with bare hands while unpowered
 	var/can_crush = TRUE /// Whether or not the door can crush mobs.
 
-
 /obj/machinery/door/examine(mob/user)
 	. = ..()
+	. += "<hr>"
 	if(red_alert_access)
 		if(GLOB.security_level >= SEC_LEVEL_RED)
-		. += "<hr>"
 			. += "<span class='notice'>Учитывая угрозу, требования по доступу повышены!</span>\n"
 		else
-	if(!poddoor)
 			. += "<span class='notice'>Учитывая красный код, требования по доступу повышены.</span>\n"
-	. += "<hr><span class='notice'>Техническая панель <b>прикручена</b> на месте.</span>"
+	if(!poddoor)
+		. += "<hr><span class='notice'>Техническая панель <b>прикручена</b> на месте.</span>"
 	if(safety_mode)
 		. += "<hr><span class='notice'>Здесь есть надпись, что этот шлюз откроется <b>просто твоими руками</b>, если здесь не будет энергии.</span>"
-
 
 /obj/machinery/door/check_access_list(list/access_list)
 	if(red_alert_access && GLOB.security_level >= SEC_LEVEL_RED)
