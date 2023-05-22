@@ -29,8 +29,8 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	grind_results = list(/datum/reagent/phosphorus = 2)
 
 /obj/item/match/process()
-	smoketime -= delta_time
-	if(smoketime <= 0)
+	smoketime--
+	if(smoketime < 1)
 		matchburnout()
 	else
 		open_flame(heat)
