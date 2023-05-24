@@ -75,12 +75,6 @@
 	//doors only block while dense though so we have to use the proc
 	real_explosion_block = explosion_block
 	explosion_block = EXPLOSION_BLOCK_PROC
-	RegisterSignal(SSsecurity_level, COMSIG_SECURITY_LEVEL_CHANGED, PROC_REF(check_security_level))
-
-	var/static/list/loc_connections = list(
-		COMSIG_ATOM_MAGICALLY_UNLOCKED = PROC_REF(on_magic_unlock),
-	)
-	AddElement(/datum/element/connect_loc, loc_connections)
 
 /obj/machinery/door/proc/set_init_door_layer()
 	if(density)

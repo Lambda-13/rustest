@@ -1263,7 +1263,6 @@
 
 	if(!density)
 		return TRUE
-	SEND_SIGNAL(src, COMSIG_AIRLOCK_OPEN, forced)
 	operating = TRUE
 	update_icon(AIRLOCK_OPENING, 1)
 	sleep(1)
