@@ -40,6 +40,9 @@
 	var/unres_sides = 0 //Unrestricted sides. A bitflag for which direction (if any) can open the door with no access
 	var/safety_mode = FALSE ///Whether or not the airlock can be opened with bare hands while unpowered
 	var/can_crush = TRUE /// Whether or not the door can crush mobs.
+	var/prevent_clicks_under_when_closed = TRUE
+	var/can_open_with_hands = TRUE /// Whether or not the door can be opened by hand (used for blast doors and shutters)
+
 
 /obj/machinery/door/examine(mob/user)
 	. = ..()
@@ -198,7 +201,7 @@
 
 /obj/machinery/door/proc/try_to_activate_door(mob/user)
 	add_fingerprint(user)
-	if(operating || (obj_flags & EMAGGED))
+	if(operating || (obj_flags & EMAGGED) || !can_open_with_hands)
 		return
 	if(!requiresID())
 		user = null //so allowed(user) always succeeds

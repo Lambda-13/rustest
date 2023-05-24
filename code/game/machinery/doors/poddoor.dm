@@ -15,6 +15,7 @@
 	resistance_flags = FIRE_PROOF
 	damage_deflection = 70
 	poddoor = TRUE
+	can_open_with_hands = FALSE
 	assemblytype = /obj/structure/poddoor_assembly
 	var/open_sound = 'sound/machines/blastdoor.ogg'
 	var/close_sound = 'sound/machines/blastdoor.ogg'
@@ -146,6 +147,8 @@
 		open(TRUE)
 
 /obj/machinery/door/poddoor/attack_alien(mob/living/carbon/alien/humanoid/user)
+	if(!can_open_with_hands)
+		return
 	if(density & !(resistance_flags & INDESTRUCTIBLE))
 		add_fingerprint(user)
 		user.visible_message("<span class='warning'>[user] begins prying open [src].</span>",\
