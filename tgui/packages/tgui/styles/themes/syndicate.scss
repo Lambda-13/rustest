@@ -9,11 +9,11 @@
 @use '../colors.scss' with (
   $primary: #397439,
   $fg-map-keys: (),
-  $bg-map-keys: (),
+  $bg-map-keys: ()
 );
 @use '../base.scss' with (
   $color-bg: #550202,
-  $color-bg-grad-spread: 6%,
+  $color-bg-grad-spread: 6%
 );
 
 .theme-syndicate {
@@ -64,4 +64,113 @@
   .Layout__content {
     background-image: url('../../assets/bg-syndicate.svg');
   }
+}
+
+.theme-syndicate .button-disabled {
+  background-color: #3c3f41;
+  border: 1px solid #3c3f41;
+  color: #5d5d5d;
+}
+
+.theme-syndicate .button-disabled:hover {
+  background-color: #3c3f41;
+  border: 1px solid #3c3f41;
+  color: #5d5d5d;
+}
+
+.theme-syndicate .noticebox {
+  background-color: #26282a;
+  border-color: #444444;
+  color: #f5f5f5;
+}
+
+.theme-syndicate .noticebox .button {
+  color: #f5f5f5;
+}
+
+.theme-syndicate .noticebox .button:hover {
+  color: #f5f5f5;
+}
+
+.theme-syndicate .modal {
+  background-color: #2a150f;
+  color: #f5f5f5;
+}
+
+.theme-syndicate .modal .button {
+  background-color: #3c3f41;
+  border: 1px solid #3c3f41;
+  color: #f5f5f5;
+}
+
+.theme-syndicate .modal .button:hover {
+  background-color: #26282a;
+  border: 1px solid #3c3f41;
+  color: #f5f5f5;
+}
+
+.theme-syndicate .numberinput {
+  background-color: #26282a;
+  border-color: #444444;
+  color: #f5f5f5;
+}
+
+.theme-syndicate .numberinput .button {
+  color: #f5f5f5;
+}
+
+.theme-syndicate .numberinput .button:hover {
+  color: #f5f5f5;
+}
+
+.theme-syndicate .section .header {
+  background-color: #3c3f41;
+  border-color: #3c3f41;
+  color: #f5f5f5;
+}
+
+.theme-syndicate .section .header:hover {
+  background-color: #26282a;
+  color: #f5f5f5;
+}
+
+.theme-syndicate .section .header.active {
+  background-color: #2a150f;
+  color: #f5f5f5;
+}
+
+.theme-syndicate .table {
+  background-color: #26282a;
+  border-color: #444444;
+  color: #f5f5f5;
+}
+
+.theme-syndicate .table .header {
+  background-color: #3c3f41;
+  border-color: #3c3f41;
+  color: #f5f5f5;
+}
+
+.theme-syndicate .table .header:hover {
+  background-color: #26282a;
+  color: #f5f5f5;
+}
+
+.theme-syndicate .table .row:nth-of-type(odd) {
+  background-color: #3c3f41;
+}
+
+.theme-syndicate .table .row:hover {
+  background-color: #2a150f;
+}
+
+.theme-syndicate .tooltip {
+  background-color: #3c3f41;
+  border-color: #3c3f41;
+  color: #f5f5f5;
+}
+
+.theme-syndicate .tooltip:hover {
+  background-color: #26282a;
+  color: #f5f5f5;
 }
