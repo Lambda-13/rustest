@@ -247,7 +247,7 @@
 	throw_range = 7
 	custom_materials = list(/datum/material/wood = MINERAL_MATERIAL_AMOUNT * 1.5)
 	w_class = WEIGHT_CLASS_NORMAL
-	attack_verb = list("бьёт", "battered", "забивает", "избивает", "ударяет")
+	attack_verb = list("бьёт", "забивает", "избивает", "ударяет")
 	custom_price = 200
 
 /obj/item/kitchen/rollingpin/suicide_act(mob/living/carbon/user)

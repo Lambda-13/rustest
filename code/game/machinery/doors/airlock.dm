@@ -1342,13 +1342,12 @@
 	locked = TRUE
 	return
 
-// gets called when a player uses an airlock painter on this airlock
 /obj/machinery/door/airlock/proc/change_paintjob(obj/item/airlock_painter/painter, mob/user)
 	if((!in_range(src, user) && loc != user) || !painter.can_use(user)) // user should be adjacent to the airlock, and the painter should have a toner cartridge that isn't empty
 		return
 
 	// reads from the airlock painter's `available paintjob` list. lets the player choose a paint option, or cancel painting
-	var/current_paintjob = tgui_input_list(user, "Выбираем будущий образ шлюза.", null, sort_list(painter.available_paint_jobs))
+	var/current_paintjob = input(user, "Выбираем будущий образ шлюза.") as null|anything in sortList(painter.available_paint_jobs)
 	if(!current_paintjob) // if the user clicked cancel on the popup, return
 		return
 

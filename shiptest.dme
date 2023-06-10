@@ -3467,6 +3467,7 @@
 #include "lambda\sanecman\code\_DEFINE\shitcode\integrated_electronics.dm"
 #include "lambda\sanecman\code\antagship\traitor.dm"
 #include "lambda\sanecman\code\bay12\ambients\sound.dm"
+#include "lambda\sanecman\code\bay12\code\flashlight.dm"
 #include "lambda\sanecman\code\bay12\code\masks.dm"
 #include "lambda\sanecman\code\choice_beacon\items.dm"
 #include "lambda\sanecman\code\choice_beacon\outpost.dm"

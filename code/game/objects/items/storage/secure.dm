@@ -128,7 +128,7 @@
 	throw_speed = 2
 	throw_range = 4
 	w_class = WEIGHT_CLASS_BULKY
-	attack_verb = list("бьёт", "battered", "забивает", "избивает", "ударяет")
+	attack_verb = list("бьёт", "забивает", "избивает", "ударяет")
 
 /obj/item/storage/secure/briefcase/PopulateContents()
 	new /obj/item/paper(src)

@@ -359,7 +359,7 @@
 		for(var/atom/movable/M in get_turf(src))
 			if(M.density && M != src) //something is blocking the door
 				if(autoclose)
-					autoclose_in(DOOR_CLOSE_WAIT)
+					autoclose_in(60)
 				return
 
 	operating = TRUE
@@ -376,7 +376,7 @@
 	if(visible && !glass)
 		set_opacity(1)
 	operating = FALSE
-	air_update_turf(TRUE)
+	air_update_turf(1)
 	update_freelook_sight()
 
 	if(!can_crush)
@@ -384,7 +384,7 @@
 
 	if(safe)
 		CheckForMobs()
-	else
+	else if(!(flags_1 & ON_BORDER_1))
 		crush()
 	return TRUE
 
@@ -395,8 +395,7 @@
 
 /obj/machinery/door/proc/crush()
 	for(var/mob/living/L in get_turf(src))
-		L.visible_message(span_warning("[capitalize(src.name)] закрывается на [L], раздавливая [L.ru_ego()]!") , span_userdanger("[capitalize(src.name)] закрывается на мне с прикольным звуком!"))
-		SEND_SIGNAL(L, COMSIG_LIVING_DOORCRUSHED, src)
+		L.visible_message("<span class='warning'>[src] closes on [L], crushing [L.p_them()]!</span>", "<span class='userdanger'>[src] closes on you and crushes you!</span>")
 		if(isalien(L))  //For xenos
 			L.adjustBruteLoss(DOOR_CRUSH_DAMAGE * 1.5) //Xenos go into crit after aproximately the same amount of crushes as humans.
 			L.manual_emote("roar")

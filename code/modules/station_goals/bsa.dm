@@ -73,11 +73,11 @@
 		if(istype(M.buffer, /obj/machinery/bsa/back))
 			back = M.buffer
 			M.buffer = null
-			to_chat(user, "<span class='notice'>You link [src] with [back].</span>")
+			to_chat(user, "<span class='notice'>You link [src] с помощью [back].</span>")
 		else if(istype(M.buffer, /obj/machinery/bsa/front))
 			front = M.buffer
 			M.buffer = null
-			to_chat(user, "<span class='notice'>You link [src] with [front].</span>")
+			to_chat(user, "<span class='notice'>You link [src] с помощью [front].</span>")
 	else
 		to_chat(user, "<span class='warning'>[I]'s data buffer is empty!</span>")
 	return TRUE

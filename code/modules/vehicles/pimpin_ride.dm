@@ -49,7 +49,7 @@
 			return
 		floorbuffer = TRUE
 		qdel(I)
-		to_chat(user, "<span class='notice'>You upgrade [src] with the floor buffer.</span>")
+		to_chat(user, "<span class='notice'>You upgrade [src] с помощью the floor buffer.</span>")
 		AddElement(/datum/element/cleaning)
 		update_icon()
 	else if(istype(I, /obj/item/key/janitor))

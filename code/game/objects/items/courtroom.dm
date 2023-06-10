@@ -10,7 +10,7 @@
 	force = 5
 	throwforce = 6
 	w_class = WEIGHT_CLASS_SMALL
-	attack_verb = list("бьёт", "battered", "judged", "ударяет")
+	attack_verb = list("бьёт", "judged", "ударяет")
 	resistance_flags = FLAMMABLE
 
 /obj/item/gavelhammer/suicide_act(mob/user)

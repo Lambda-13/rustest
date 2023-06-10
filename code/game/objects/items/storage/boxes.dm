@@ -135,7 +135,7 @@
 	var/bruise_type = /obj/item/stack/medical/bruise_pack
 	var/flare_type = /obj/item/flashlight/glowstick
 	var/food_type = /obj/item/reagent_containers/food/snacks/proteinbar
-	var/oxycandle_type = /obj/item/device/oxycandle
+//	var/oxycandle_type = /obj/item/device/oxycandle
 
 /obj/item/storage/box/survival/PopulateContents()
 //Маска
@@ -161,7 +161,7 @@
 	new food_type(src)
 
 //Кислородная свечка
-	new oxycandle_type(src)
+//	new oxycandle_type(src)
 
 /obj/item/storage/box/survival/radio/PopulateContents()
 	..() // we want the survival stuff too.

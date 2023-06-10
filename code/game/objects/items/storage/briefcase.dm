@@ -11,7 +11,7 @@
 	throw_speed = 2
 	throw_range = 4
 	w_class = WEIGHT_CLASS_BULKY
-	attack_verb = list("бьёт", "battered", "забивает", "избивает", "ударяет")
+	attack_verb = list("бьёт", "забивает", "избивает", "ударяет")
 	resistance_flags = FLAMMABLE
 	max_integrity = 150
 	var/folder_path = /obj/item/folder //this is the path of the folder that gets spawned in New()
