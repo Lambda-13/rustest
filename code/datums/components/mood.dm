@@ -44,8 +44,8 @@
 		RegisterSignal(parent, COMSIG_ADD_MOOD_EVENT_RND, .proc/add_event) //Mood events that are only for RnD members
 
 /datum/component/mood/proc/print_mood(mob/user)
-	var/msg = "<span class='info'>Меня зовут <EM>[user.name]</EM>.</span>\n"
-	msg += "<hr><span class='notice'>Психика:</span>\n" //Long term
+	var/msg = "[span_info("Меня зовут <EM>[user.name]</EM>.")]\n"
+	msg += "<span class='notice'>Моя психика: </span>" //Long term
 	switch(sanity)
 		if(SANITY_GREAT to INFINITY)
 			msg += "<span class='nicegreen'>Мой разум словно храм!</span>\n"
@@ -88,7 +88,7 @@
 			msg += event.description
 	else
 		msg += "<span class='nicegreen'>Да как-то всё равно на всё в данный момент.</span>\n"
-	to_chat(user, "<div class='examine_block'>[msg]</div>")
+	to_chat(user, examine_block(msg))
 
 ///Called after moodevent/s have been added/removed.
 /datum/component/mood/proc/update_mood()

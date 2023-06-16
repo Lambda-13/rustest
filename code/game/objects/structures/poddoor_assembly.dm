@@ -22,7 +22,7 @@
 /obj/structure/poddoor_assembly/Initialize()
 	. = ..()
 	update_icon()
-	update_name()
+	update_door_name()
 
 /obj/structure/poddoor_assembly/examine(mob/user)
 	. = ..()
@@ -187,11 +187,11 @@
 				qdel(src)
 	else
 		return ..()
-	update_name()
+	update_door_name()
 	update_icon()
 
-/obj/structure/poddoor_assembly/update_name(updates)
-	. = ..()
+/obj/structure/poddoor_assembly/proc/update_door_name()
+
 	switch(state)
 		if(AIRLOCK_ASSEMBLY_NEEDS_ELECTRONICS)
 			name = "wired "

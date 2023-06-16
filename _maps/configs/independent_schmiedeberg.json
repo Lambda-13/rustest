@@ -3,8 +3,16 @@
 	"map_name": "Schmiedeberg-class Pharmacology Ship",
 	"prefix": "IMV",
 	"map_short_name": "Schmiedeberg-class",
+<<<<<<< HEAD
 	"map_path": "lambda/MrSamu99/shuttles/independent_schmiedeberg.dmm",
 	"namelists": ["MERCANTILE", "GENERAL"],
+=======
+	"map_path": "_maps/shuttles/shiptest/independent_schmiedeberg.dmm",
+	"namelists": [
+		"SUNS",
+		"GENERAL"
+	],
+>>>>>>> master
 	"limit": 2,
 	"job_slots": {
 		"Chief Pharmacist": {

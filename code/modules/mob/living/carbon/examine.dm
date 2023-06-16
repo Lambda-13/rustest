@@ -3,7 +3,7 @@
 	var/t_ego 	= ru_ego()
 	var/t_a 	= ru_a()
 
-	. = list("<span class='info'>Это же [icon2html(src, user)] <EM>[src]</EM>!<hr>")
+	. = list("<span class='info'>This is [icon2html(src, user)] \a <EM>[src]</EM>!>")
 	var/list/obscured = check_obscured_slots()
 
 	if (handcuffed)
@@ -141,6 +141,6 @@
 		if(151 to INFINITY)
 			. += "<b>[ru_who(TRUE)] покрыт блестящей пылью!</b>" //End WS edit
 
-	. += "*---------*</span>"
+	. += "</span>"
 
 	SEND_SIGNAL(src, COMSIG_PARENT_EXAMINE, user, .)

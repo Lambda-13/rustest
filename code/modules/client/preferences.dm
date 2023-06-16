@@ -149,6 +149,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/clientfps = 60 //WS Edit - Client FPS Tweak
 
 	var/parallax
+	///Do we show screentips, if so, how big?
+	var/screentip_pref = TRUE
+	///Color of screentips at top of screen
+	var/screentip_color = "#ffd391"
 
 	var/ambientocclusion = TRUE
 	///Should we automatically fit the viewport?
@@ -1007,8 +1011,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "Много"
 			dat += "</a><br>"
 
-			dat += "<b>Эмбиент:</b> <a href='?_src_=prefs;preference=ambientocclusion'>[ambientocclusion ? "Слышать" : "Не слышать"]</a><br>"
-			dat += "<b>Фиксация экрана:</b> <a href='?_src_=prefs;preference=auto_fit_viewport'>[auto_fit_viewport ? "Авто" : "Вручную"]</a><br>"
+			dat += "<b>Текст подсказок (screentip):</b> <a href='?_src_=prefs;preference=screentipmode'>[screentip_pref ? "Включено" : "Отключено"]</a><br>"
+			dat += "<b>Цвет подсказок (screentip):</b><span style='border: 1px solid #161616; background-color: [screentip_color];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=screentipcolor'>Изменить</a><BR>"
+
+
+			dat += "<b>Окклюзия эмбиента:</b> <a href='?_src_=prefs;preference=ambientocclusion'>[ambientocclusion ? "Enabled" : "Disabled"]</a><br>"
+			dat += "<b>Подогнать игровой экран:</b> <a href='?_src_=prefs;preference=auto_fit_viewport'>[auto_fit_viewport ? "Автоматически" : "Вручную"]</a><br>"
 			if (CONFIG_GET(string/default_view) != CONFIG_GET(string/default_view_square))
 				dat += "<b>Широкий экран:</b> <a href='?_src_=prefs;preference=widescreenpref'>[widescreenpref ? "Включён ([CONFIG_GET(string/default_view)])" : "Отключён ([CONFIG_GET(string/default_view_square)])"]</a><br>"
 
@@ -2251,6 +2259,14 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					parallax = WRAP(parallax - 1, PARALLAX_INSANE, PARALLAX_DISABLE + 1)
 					if (parent && parent.mob && parent.mob.hud_used)
 						parent.mob.hud_used.update_parallax_pref(parent.mob)
+
+				if("screentipmode")
+					screentip_pref = !screentip_pref
+
+				if("screentipcolor")
+					var/new_screentipcolor = input(user, "Choose your screentip color:", "Character Preference", screentip_color) as color|null
+					if(new_screentipcolor)
+						screentip_color = sanitize_ooccolor(new_screentipcolor)
 
 				if("ambientocclusion")
 					ambientocclusion = !ambientocclusion

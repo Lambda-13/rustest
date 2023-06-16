@@ -5,7 +5,12 @@
 	"map_path": "_maps/shuttles/shiptest/independent_caravan.dmm",
 	"description": "Ничем не примечательный корабль, имеющий в себе место для РнД, имеющий медбей, комнату отдыха и шахт-отсек. На нём имеется ТЭГ, что весьма быстро и надолго решает проблемы с питанием судна. Оружия для самозащиты от жестокого мира - нету",
 	"prefix": "ISV",
-	"namelists": ["GENERAL", "SPACE"],
+	"namelists": [
+		"GENERAL",
+		"SPACE",
+		"MYTHOLOGICAL",
+		"NATURAL"
+	],
 	"roundstart": true,
 	"job_slots": {
 		"Captain": {

@@ -473,6 +473,7 @@
 		return
 
 	face_atom(A)
+
 	var/list/result
 	if(client)
 		LAZYINITLIST(client.recent_examines)
@@ -487,8 +488,15 @@
 	else
 		result = A.examine(src) // if a tree is examined but no client is there to see it, did the tree ever really exist?
 
-	if(result)
-		to_chat(src, "<div class='examine_block'>[result.Join()]</div>")
+	if(result.len)
+		for(var/i in 1 to (length(result) - 1))
+			result[i] += "\n"
+
+	to_chat(src, examine_block("<span class='infoplain'>[result.Join()]</span>"))
+
+//Да хуй знает пусть повисит потом разберусь удалять это или нет #CHECKIT
+//	if(result)
+//		to_chat(src, "<div class='examine_block'>[result.Join()]</div>")
 	SEND_SIGNAL(src, COMSIG_MOB_EXAMINATE, A)
 
 

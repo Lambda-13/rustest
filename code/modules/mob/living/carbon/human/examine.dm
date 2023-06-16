@@ -17,8 +17,8 @@
 	if(user?.stat == CONSCIOUS && ishuman(user))
 		user.visible_message(span_small("<b>[user]</b> смотрит на <b>[!obscure_name ? name : "Неизвестного"]</b>.") , span_small("Смотрю на <b>[!obscure_name ? name : "Неизвестного"]</b>.") , null, COMBAT_MESSAGE_RANGE)
 	if(dna?.species && !skipface)
-		apparent_species = "[dna.species.name]"
-	. = list("<span class='info'>Это же <EM>[!obscure_name ? name : "Неизвестный"]</EM>, [apparent_species ? "<big class='interface'>[apparent_species]</big>" : "[get_age_text()]"]!<hr>")
+		apparent_species = ", [dna.species.name]"
+	. = list("<span class='info'>Это же <EM>[!obscure_name ? name : "Неизвестный"][apparent_species]</EM>!")
 
 	//uniform
 	if(w_uniform && !(ITEM_SLOT_ICLOTHING in obscured))

@@ -220,7 +220,7 @@
 		ready = PLAYER_NOT_READY
 		return FALSE
 
-	var/this_is_like_playing_right = alert(src,"Ты хочешь наблюдать? У тебя возможно не будет больше шанса вернуться в лобби.","Наблюдать","Да","Нет")
+	var/this_is_like_playing_right = alert(src,"Ты хочешь наблюдать? [CONFIG_GET(flag/norespawn) ? "У тебя возможно не будет больше шанса вернуться в лобби." : "Ты сможешь вернуться в лобби позже." ]","Наблюдать","Да","Нет")
 
 	if(QDELETED(src) || !src.client || this_is_like_playing_right != "Да")
 		ready = PLAYER_NOT_READY

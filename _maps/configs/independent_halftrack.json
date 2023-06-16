@@ -2,7 +2,10 @@
 	"$schema": "https://raw.githubusercontent.com/Lambda-13/rustest/master/_maps/ship_config_schema.json",
 	"map_name": "Halftrack-Class Merchant Vessel",
 	"prefix": "ISV",
-	"namelists": ["MERCANTILE", "WEAPONS"],
+	"namelists": [
+		"MERCANTILE",
+		"WEAPONS"
+	],
 	"map_short_name": "Halftrack-Class",
 	"map_path": "_maps/shuttles/shiptest/independent_halftrack.dmm",
 	"description": "Судно торговца с максимальным уклоном на то что он продаст весь свой товар. Имеется куча, огромная куча оружия, и по факту это всё. Мало ресурсов и никаких возможностей для добычи полезных ископаемых или ещё чего-то. Не рекомендуется летать на нём на шахтёрские или исследовательские миссии, зато в секторе полном пиратов вы станете королём",

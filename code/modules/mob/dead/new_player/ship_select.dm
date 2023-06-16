@@ -66,6 +66,12 @@
 
 
 		if("buy")
+			if(is_banned_from(spawnee.ckey, "Ship Purchasing"))
+				to_chat(spawnee, "<span class='danger'>You are banned from purchasing ships!</span>")
+				spawnee.new_player_panel()
+				ui.close()
+				return
+
 			ui.close()
 			if(spawnee.client.holder == null && spawnee.client.player_age < BUY_MINIMUM_AGE)
 				to_chat(spawnee, "<span class='danger'>Тебе ещё рано иметь лицензию на владение кораблём, возращайся к покупке через [BUY_MINIMUM_AGE - spawnee.client.player_age] дней.</span>")
@@ -94,6 +100,7 @@
 /datum/ship_select/ui_static_data(mob/user)
 	. = list()
 	.["ships"] = list()
+	.["purchaseBanned"] = is_banned_from(user.ckey, "Ship Purchasing")
 	for(var/datum/overmap/ship/controlled/S as anything in SSovermap.controlled_ships)
 		if(!S.is_join_option())
 			continue

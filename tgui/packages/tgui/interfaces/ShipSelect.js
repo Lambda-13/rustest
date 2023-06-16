@@ -50,7 +50,10 @@ export const ShipSelect = (props, context) => {
             buttons={
               <Button
                 content="Купить судно"
-                disabled={!BuyNewShip}
+                tooltip={
+                  data.purchaseBanned && 'Вам нельзя приобретать судно.'
+                }
+                disabled={data.purchaseBanned}
                 onClick={() => {
                   setTab(3);
                 }}
