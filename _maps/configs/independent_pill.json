@@ -1,11 +1,8 @@
 {
-<<<<<<< HEAD
 	"$schema": "https://raw.githubusercontent.com/Lambda-13/rustest/master/_maps/ship_config_schema.json",
 	"map_name": "Pill-class Torture Device",
-=======
 	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
 	"map_name": "Pillbottle-class Locust Transport",
->>>>>>> master
 	"prefix": null,
 	"namelists": [
 		"PILLS",
@@ -15,13 +12,10 @@
 	"map_path": "_maps/shuttles/shiptest/independent_pillbottle.dmm",
 	"limit":1,
 	"job_slots": {
-<<<<<<< HEAD
 		"Prisoner": 3
 	},
 	"enabled": true
-=======
 		"Prisoner": 10
 	},
 	"enabled": false
->>>>>>> master
 }

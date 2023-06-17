@@ -3,15 +3,12 @@
 	"map_name": "Li Tieguai-class Rescue Ship",
 	"map_short_name": "Li Tieguai-class",
 	"map_path": "_maps/shuttles/shiptest/independent_litieguai.dmm",
-<<<<<<< HEAD
 	"description": "Модификация судна Халфтрак под медецинский корабль эдакой траума-тим. На борту имеется всё для оказания мед-помощи всем нуждающимся и для того что-бы забрать их из горячей точки, ибо от халфтрака остался неплохой арсенал, который поможет врачам дать бой тем кто создаёт нуждающихся в мед-помощи",
-=======
 	"namelists": [
 		"SPACE",
 		"BEASTS",
 		"NATURAL_AGGRESSIVE"
 	],
->>>>>>> master
 	"job_slots": {
 		"Captain": 1,
 		"Chief Medical Officer": {
