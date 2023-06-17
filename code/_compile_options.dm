@@ -91,6 +91,8 @@
 	if(!auxmos_path)
 		if (fexists("./libauxmos.so"))
 			auxmos_path = "./libauxmos.so"
+		else if (fexists("./auxtools/libauxmos.so"))
+			auxmos_path = "./auxtools/libauxmos.so"
 		else if (fexists("[world.GetConfig("env", "HOME")]/.byond/bin/libauxmos.so"))
 			auxmos_path = "[world.GetConfig("env", "HOME")]/.byond/bin/libauxmos.so"
 		else
