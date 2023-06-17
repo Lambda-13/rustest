@@ -142,26 +142,6 @@ const ShipContent = (_props, context) => {
   } = data;
   return (
     <>
-      {!!dock_request && (
-        <Section title="Docking Request">
-          <LabeledList>
-            <LabeledList.Item label={dock_req_name}>
-              <Button
-                content="Accept"
-                color="good"
-                disabled={isViewer}
-                onClick={() => act('dock_req_success')}
-              />
-              <Button
-                content="Decline"
-                color="bad"
-                disabled={isViewer}
-                onClick={() => act('dock_req_failure')}
-              />
-            </LabeledList.Item>
-          </LabeledList>
-        </Section>
-      )}
       <Section title="Статус">
         <LabeledList>
           <LabeledList.Item label="Скорость">

@@ -170,7 +170,7 @@
 *	obj/structure/overmap/ship/simulated/target_ship - The ship that will dock
 */
 /obj/machinery/subverter/proc/force_dock(datum/overmap/ship/controlled/target_ship)
-	target_ship.decelerate(target_ship.max_speed)
+//	target_ship.decelerate(target_ship.max_speed) //Я не знаю чё такое decelerate и почему прок удалён но похоже этот прок отвечает за остановку скорости кораблей (с)sanecman
 	target_ship.dock_in_empty_space(usr)
 	COOLDOWN_START(target_ship, engine_cooldown, sub_engine)
 	target_ship.most_recent_helm.say("ОШИБКА: ОБНАРУЖЕН ПЕРЕХВАТ. ТРЕВОГА.")

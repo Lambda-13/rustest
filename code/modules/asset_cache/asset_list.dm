@@ -165,12 +165,6 @@ GLOBAL_LIST_EMPTY(asset_datums)
 
 	return out.Join("\n")
 
-/// Override this in order to start the creation of the spritehseet.
-/// This is where all your Insert, InsertAll, etc calls should be inside.
-/datum/asset/spritesheet/proc/create_spritesheets()
-	SHOULD_CALL_PARENT(FALSE)
-	CRASH("create_spritesheets() not implemented for [type]!")
-
 /datum/asset/spritesheet/proc/Insert(sprite_name, icon/I, icon_state="", dir=SOUTH, frame=1, moving=FALSE)
 	I = icon(I, icon_state=icon_state, dir=dir, frame=frame, moving=moving)
 	if (!I || !length(icon_states(I)))  // that direction or state doesn't exist
