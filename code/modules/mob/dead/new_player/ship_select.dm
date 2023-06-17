@@ -73,10 +73,11 @@
 				return
 
 			ui.close()
-			if(spawnee.client.holder == null && spawnee.client.player_age < BUY_MINIMUM_AGE)
-				to_chat(spawnee, "<span class='danger'>Тебе ещё рано иметь лицензию на владение кораблём, возращайся к покупке через [BUY_MINIMUM_AGE - spawnee.client.player_age] дней.</span>")
-				spawnee.new_player_panel()
-				return
+//Аееееееееэээээээээээыыыыыыыыыыыыыы
+//			if(spawnee.client.holder == null && spawnee.client.player_age < BUY_MINIMUM_AGE)
+//				to_chat(spawnee, "<span class='danger'>Тебе ещё рано иметь лицензию на владение кораблём, возращайся к покупке через [BUY_MINIMUM_AGE - spawnee.client.player_age] дней.</span>")
+//				spawnee.new_player_panel()
+//				return
 			if(!GLOB.buy_ship_allowed)
 				to_chat(spawnee, "<span class='danger'>Новые суда запрещено покупать.</span>")
 				spawnee.new_player_panel()
