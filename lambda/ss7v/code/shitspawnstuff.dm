@@ -1,7 +1,7 @@
 //Зачем?
 /mob/living/simple_animal/hostile/megafauna/colossus/reimu
-	name = "Reimu Hakurei"
-	desc = "Wow, cute anime girl."
+	name = "Рейму Хакурей"
+	desc = "Вау что за милая аниме девушка."
 	health = 1250
 	maxHealth = 1250
 	attack_verb_continuous = "бьёт"
