@@ -192,7 +192,7 @@
 /obj/machinery/computer/secure_data{
 	dir = 4
 	},
-/obj/machinery/power/apc/auto_name/south,
+/obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -247,7 +247,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/security/prison)
 "eD" = (
-/obj/machinery/power/apc/auto_name/west,
+/obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -457,7 +457,7 @@
 /turf/open/floor/plating,
 /area/ship/construction)
 "if" = (
-/obj/machinery/power/apc/auto_name/east,
+/obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -981,7 +981,7 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew)
 "nU" = (
-/obj/machinery/power/apc/auto_name/east,
+/obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -1102,7 +1102,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "pr" = (
-/obj/machinery/power/apc/auto_name/west,
+/obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -1422,7 +1422,7 @@
 /turf/open/floor/carpet/nanoweave/purple,
 /area/ship/crew/canteen)
 "sH" = (
-/obj/machinery/power/apc/auto_name/east,
+/obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -1852,7 +1852,7 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "xJ" = (
-/obj/machinery/power/apc/auto_name/east,
+/obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -2691,7 +2691,7 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/central)
 "GO" = (
-/obj/machinery/power/apc/auto_name/east,
+/obj/machinery/power/apc/auto_name/directional/east,
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/cable{
 	icon_state = "0-8"
@@ -3114,7 +3114,7 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/machinery/power/apc/auto_name/west,
+/obj/machinery/power/apc/auto_name/directional/west,
 /obj/machinery/airalarm/all_access{
 	dir = 1;
 	pixel_y = -25
@@ -3142,7 +3142,7 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "MQ" = (
-/obj/machinery/power/apc/auto_name/east,
+/obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -3776,7 +3776,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "TP" = (
-/obj/machinery/power/apc/auto_name/east,
+/obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -4067,7 +4067,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/security/prison)
 "Xa" = (
-/obj/machinery/power/apc/auto_name/west,
+/obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -4288,7 +4288,7 @@
 	dir = 8;
 	pixel_x = 32
 	},
-/obj/machinery/power/apc/auto_name/north,
+/obj/machinery/power/apc/auto_name/directional/north,
 /obj/item/clothing/head/helmet/solgov,
 /obj/structure/cable{
 	icon_state = "0-2"

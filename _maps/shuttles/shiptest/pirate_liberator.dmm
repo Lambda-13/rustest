@@ -62,7 +62,7 @@
 /turf/open/floor/wood/ebony,
 /area/ship/crew/cryo)
 "aq" = (
-/obj/machinery/power/apc/auto_name/north,
+/obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -178,7 +178,7 @@
 /turf/open/floor/plating,
 /area/ship/security/armory)
 "aA" = (
-/obj/machinery/power/apc/auto_name/north,
+/obj/machinery/power/apc/auto_name/directional/north,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable{
 	icon_state = "0-2"
@@ -215,7 +215,7 @@
 /turf/open/floor/carpet/cyan,
 /area/ship/crew/cryo)
 "aF" = (
-/obj/machinery/power/apc/auto_name/south,
+/obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -264,7 +264,7 @@
 /turf/open/floor/plasteel,
 /area/ship/security)
 "aK" = (
-/obj/machinery/power/apc/auto_name/south,
+/obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -308,7 +308,7 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/security/armory)
 "aP" = (
-/obj/machinery/power/apc/auto_name/north,
+/obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -573,7 +573,7 @@
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "bo" = (
-/obj/machinery/power/apc/auto_name/north,
+/obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -1384,7 +1384,7 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/canteen)
 "dq" = (
-/obj/machinery/power/apc/auto_name/north,
+/obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -1442,7 +1442,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/storage/eva)
 "dv" = (
-/obj/machinery/power/apc/auto_name/north,
+/obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/rack,
 /obj/item/storage/toolbox/mechanical,
 /obj/item/storage/toolbox/mechanical,

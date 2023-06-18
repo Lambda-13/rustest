@@ -117,7 +117,7 @@
 /turf/open/floor/carpet/executive,
 /area/ship/bridge)
 "C" = (
-/obj/machinery/power/apc/auto_name/east,
+/obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},

@@ -241,7 +241,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "aH" = (
-/obj/machinery/power/apc/auto_name/south,
+/obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -314,7 +314,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "aR" = (
-/obj/machinery/power/apc/auto_name/north,
+/obj/machinery/power/apc/auto_name/directional/north,
 /obj/machinery/portable_atmospherics/canister/nitrogen,
 /obj/structure/cable{
 	icon_state = "0-8"
@@ -381,7 +381,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/aft)
 "bb" = (
-/obj/machinery/power/apc/auto_name/north,
+/obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/closet/secure_closet/engineering_personal,
 /obj/structure/window/reinforced{
 	dir = 4
@@ -436,7 +436,7 @@
 /turf/open/floor/plating,
 /area/ship/crew/canteen)
 "bk" = (
-/obj/machinery/power/apc/auto_name/north,
+/obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -477,7 +477,7 @@
 /turf/open/floor/pod,
 /area/ship/bridge)
 "bp" = (
-/obj/machinery/power/apc/auto_name/south,
+/obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -667,7 +667,7 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/canteen)
 "bJ" = (
-/obj/machinery/power/apc/auto_name/north,
+/obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -700,7 +700,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/canteen)
 "bO" = (
-/obj/machinery/power/apc/auto_name/north,
+/obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -755,7 +755,7 @@
 /turf/open/floor/pod,
 /area/ship/crew/cryo)
 "bU" = (
-/obj/machinery/power/apc/auto_name/north,
+/obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -1243,7 +1243,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "cR" = (
-/obj/machinery/power/apc/auto_name/north,
+/obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -1721,7 +1721,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/starboard)
 "dV" = (
-/obj/machinery/power/apc/auto_name/south,
+/obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable,
 /obj/structure/closet/radiation,
 /obj/item/storage/firstaid/toxin,
@@ -1729,7 +1729,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
 "dW" = (
-/obj/machinery/power/apc/auto_name/south,
+/obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable,
 /obj/item/storage/firstaid/toxin,
 /obj/item/storage/firstaid/toxin,
@@ -1866,7 +1866,7 @@
 /area/ship/engineering/electrical)
 "ew" = (
 /obj/structure/table,
-/obj/machinery/power/apc/auto_name/north,
+/obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},

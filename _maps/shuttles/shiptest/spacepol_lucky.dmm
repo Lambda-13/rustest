@@ -62,7 +62,7 @@
 /turf/open/floor/plating,
 /area/ship/cargo)
 "al" = (
-/obj/machinery/power/apc/auto_name/west,
+/obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -121,7 +121,7 @@
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "ap" = (
-/obj/machinery/power/apc/auto_name/east,
+/obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
@@ -334,7 +334,7 @@
 /turf/open/floor/plasteel/grimy,
 /area/ship/security/armory)
 "aK" = (
-/obj/machinery/power/apc/auto_name/west,
+/obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -486,7 +486,7 @@
 /turf/open/floor/plating,
 /area/ship/cargo)
 "aZ" = (
-/obj/machinery/power/apc/auto_name/east,
+/obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -1019,7 +1019,7 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
 "bV" = (
-/obj/machinery/power/apc/auto_name/west,
+/obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
