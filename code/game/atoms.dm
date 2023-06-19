@@ -1786,7 +1786,7 @@
 			active_hud.screentip_text.maptext = ""
 		else
 			//We inline a MAPTEXT() here, because there's no good way to statically add to a string like this
-			active_hud.screentip_text.maptext = "<span class='maptext' style='text-align: center; font-size: 32px; color: [user.client.prefs.screentip_color]'>[name]</span>"
+			active_hud.screentip_text.maptext = "<span class='maptext' style='text-align: center; font-size: 32px; color: [user.client.prefs.screentip_color]; text-shadow: 0 0 5px [user.client.prefs.screentip_color], 0 0 10px [user.client.prefs.screentip_color], 0 0 20px [user.client.prefs.screentip_color], 0 0 30px [user.client.prefs.screentip_color], 0 0 40px [user.client.prefs.screentip_color], 0 0 50px [user.client.prefs.screentip_color], 0 0 60px [user.client.prefs.screentip_color]; -webkit-text-stroke: 1px [user.client.prefs.screentip_color];'>[name]</span>"
 
 /**
  * Gets the total amount of materials in this atom.
