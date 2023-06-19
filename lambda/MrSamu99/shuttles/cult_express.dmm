@@ -289,14 +289,6 @@
 /obj/structure/closet/cabinet,
 /obj/item/clothing/suit/space/hardsuit/cult,
 /obj/item/clothing/suit/space/hardsuit/cult,
-/obj/item/clothing/suit/space/hardsuit/cult,
-/obj/item/clothing/suit/space/hardsuit/cult,
-/obj/item/clothing/suit/space/hardsuit/cult,
-/obj/item/melee/cultblade,
-/obj/item/melee/cultblade,
-/obj/item/melee/cultblade,
-/obj/item/melee/cultblade,
-/obj/item/melee/cultblade,
 /turf/open/floor/plasteel/cult,
 /area/ship/security)
 "iz" = (
@@ -2015,18 +2007,6 @@
 /obj/structure/closet/cabinet,
 /obj/item/restraints/legcuffs/bola/cult,
 /obj/item/restraints/legcuffs/bola/cult,
-/obj/item/restraints/legcuffs/bola/cult,
-/obj/item/restraints/legcuffs/bola/cult,
-/obj/item/restraints/legcuffs/bola/cult,
-/obj/item/cult_shift,
-/obj/item/cult_shift,
-/obj/item/cult_shift,
-/obj/item/flashlight/flare/culttorch,
-/obj/item/flashlight/flare/culttorch,
-/obj/item/flashlight/flare/culttorch,
-/obj/item/clothing/glasses/hud/health/night/cultblind,
-/obj/item/clothing/glasses/hud/health/night/cultblind,
-/obj/item/clothing/glasses/hud/health/night/cultblind,
 /turf/open/floor/plasteel/cult,
 /area/ship/security)
 "ZR" = (
