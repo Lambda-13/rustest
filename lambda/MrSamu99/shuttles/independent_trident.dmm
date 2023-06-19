@@ -181,6 +181,14 @@
 "cW" = (
 /turf/closed/wall,
 /area/ship/engineering/engine)
+"do" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/shutters{
+	id = "body_shutters";
+	name = "Body Shutters"
+	},
+/turf/open/floor/plating,
+/area/ship/roumain)
 "dq" = (
 /turf/closed/wall/r_wall,
 /area/ship/crew/toilet)
@@ -316,8 +324,13 @@
 	icon_state = "2-4"
 	},
 /obj/machinery/door/poddoor/shutters{
-	name = "Body Shutters";
-	id = "body_shutters"
+	id = "body_shutters";
+	name = "Body Shutters"
+	},
+/obj/machinery/door/poddoor/shutters{
+	dir = 4;
+	id = "body_shutters";
+	name = "Body Shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/roumain)
@@ -327,8 +340,13 @@
 	icon_state = "2-8"
 	},
 /obj/machinery/door/poddoor/shutters{
-	name = "Body Shutters";
-	id = "body_shutters"
+	id = "body_shutters";
+	name = "Body Shutters"
+	},
+/obj/machinery/door/poddoor/shutters{
+	dir = 4;
+	id = "body_shutters";
+	name = "Body Shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/roumain)
@@ -368,8 +386,8 @@
 "iq" = (
 /obj/structure/table/wood,
 /obj/item/spear/bonespear{
-	pixel_y = 8;
-	pixel_x = -4
+	pixel_x = -4;
+	pixel_y = 8
 	},
 /obj/item/spear/bonespear{
 	pixel_y = 7
@@ -428,8 +446,8 @@
 	icon_state = "2-4"
 	},
 /obj/machinery/door/poddoor/shutters{
-	name = "Body Shutters";
-	id = "body_shutters"
+	id = "body_shutters";
+	name = "Body Shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/roumain)
@@ -481,6 +499,19 @@
 "jG" = (
 /obj/structure/barricade/wooden,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/ship/roumain)
+"jM" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/shutters{
+	id = "body_shutters";
+	name = "Body Shutters"
+	},
+/obj/machinery/door/poddoor/shutters{
+	dir = 4;
+	id = "body_shutters";
+	name = "Body Shutters"
+	},
+/turf/open/floor/plating,
 /area/ship/roumain)
 "ko" = (
 /obj/structure/destructible/tribal_torch,
@@ -549,8 +580,8 @@
 	},
 /obj/structure/table/wood,
 /obj/machinery/button/shieldwallgen{
-	pixel_x = 4;
-	id = "glaive_shields"
+	id = "glaive_shields";
+	pixel_x = 4
 	},
 /obj/structure/railing/wood{
 	dir = 4
@@ -560,12 +591,12 @@
 "lA" = (
 /obj/structure/sink/puddle,
 /obj/item/reagent_containers/glass/bucket/wooden{
-	pixel_y = -3;
-	pixel_x = 6
+	pixel_x = 6;
+	pixel_y = -3
 	},
 /obj/item/reagent_containers/glass/bucket/wooden{
-	pixel_y = 9;
-	pixel_x = -4
+	pixel_x = -4;
+	pixel_y = 9
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ship/roumain)
@@ -834,8 +865,9 @@
 	icon_state = "1-4"
 	},
 /obj/machinery/door/poddoor/shutters{
-	name = "Body Shutters";
-	id = "body_shutters"
+	dir = 4;
+	id = "body_shutters";
+	name = "Body Shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/roumain)
@@ -1071,8 +1103,9 @@
 	icon_state = "1-8"
 	},
 /obj/machinery/door/poddoor/shutters{
-	name = "Body Shutters";
-	id = "body_shutters"
+	dir = 4;
+	id = "body_shutters";
+	name = "Body Shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/roumain)
@@ -1143,8 +1176,9 @@
 "AN" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/shutters{
-	name = "Body Shutters";
-	id = "body_shutters"
+	dir = 4;
+	id = "body_shutters";
+	name = "Body Shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/roumain)
@@ -1286,8 +1320,8 @@
 "Ex" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/food/snacks/grown/ash_flora/mushroom_leaf{
-	pixel_y = -2;
-	pixel_x = -3
+	pixel_x = -3;
+	pixel_y = -2
 	},
 /obj/structure/cable/orange{
 	icon_state = "1-2"
@@ -1301,8 +1335,8 @@
 	pixel_y = -6
 	},
 /obj/item/reagent_containers/food/snacks/grown/ash_flora/mushroom_cap{
-	pixel_y = -1;
-	pixel_x = -6
+	pixel_x = -6;
+	pixel_y = -1
 	},
 /obj/item/reagent_containers/food/snacks/grown/ash_flora/cactus_fruit{
 	pixel_x = -9;
@@ -1313,8 +1347,8 @@
 	pixel_y = 8
 	},
 /obj/item/reagent_containers/glass/mortar{
-	pixel_y = 9;
-	pixel_x = 6
+	pixel_x = 6;
+	pixel_y = 9
 	},
 /obj/item/pestle{
 	pixel_y = 6
@@ -1376,8 +1410,8 @@
 	pixel_y = -5
 	},
 /obj/item/reagent_containers/syringe/antiviral{
-	pixel_y = -6;
-	pixel_x = 8
+	pixel_x = 8;
+	pixel_y = -6
 	},
 /obj/item/reagent_containers/hypospray/medipen/stimpack{
 	pixel_x = -4
@@ -1387,8 +1421,8 @@
 	pixel_y = -5
 	},
 /obj/item/reagent_containers/glass/bottle/potass_iodide{
-	pixel_y = 10;
-	pixel_x = -7
+	pixel_x = -7;
+	pixel_y = 10
 	},
 /obj/item/reagent_containers/glass/primitive_centrifuge{
 	pixel_x = 9;
@@ -1846,8 +1880,8 @@
 	},
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
 	dir = 8;
-	locked = 1;
-	id = "glaive_shields"
+	id = "glaive_shields";
+	locked = 1
 	},
 /turf/open/floor/wood,
 /area/ship/storage)
@@ -2150,8 +2184,8 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/poddoor/shutters{
-	name = "Body Shutters";
-	id = "body_shutters"
+	id = "body_shutters";
+	name = "Body Shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/roumain)
@@ -2817,7 +2851,7 @@ sH
 cR
 Io
 Cr
-AN
+do
 ZV
 ko
 DS
@@ -2855,7 +2889,7 @@ FA
 Cx
 AN
 AN
-AN
+jM
 ZV
 XB
 bN
@@ -3083,7 +3117,7 @@ FA
 Cx
 AN
 AN
-AN
+jM
 ZV
 CC
 RJ
@@ -3121,7 +3155,7 @@ sH
 qQ
 Io
 Qm
-AN
+do
 ZV
 ko
 DS
