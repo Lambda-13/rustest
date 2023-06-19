@@ -2,6 +2,15 @@
 "a" = (
 /turf/template_noop,
 /area/template_noop)
+"d" = (
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/carpet/executive,
+/area/ship/bridge)
 "f" = (
 /obj/effect/spawner/structure/window/shuttle,
 /turf/open/floor/plating,
@@ -29,9 +38,6 @@
 	dir = 8;
 	pixel_x = -32
 	},
-/obj/machinery/light{
-	dir = 1
-	},
 /obj/item/tank/internals/emergency_oxygen/double/empty,
 /obj/item/tank/internals/emergency_oxygen/double/empty,
 /obj/item/tank/internals/emergency_oxygen/double/empty,
@@ -44,13 +50,11 @@
 /obj/item/storage/bag/ore,
 /obj/item/storage/bag/ore,
 /obj/item/storage/bag/ore,
+/obj/machinery/light/directional/north,
 /turf/open/floor/carpet/executive,
 /area/ship/bridge)
 "r" = (
 /obj/item/areaeditor/shuttle,
-/obj/item/radio/intercom/wideband{
-	pixel_y = 20
-	},
 /turf/open/floor/carpet/executive,
 /area/ship/bridge)
 "s" = (
@@ -58,13 +62,11 @@
 /turf/open/floor/carpet/executive,
 /area/ship/bridge)
 "u" = (
-/obj/machinery/vending/security/marine/solgov,
-/obj/machinery/light{
-	dir = 1
-	},
 /obj/structure/sign/poster/official/random{
 	pixel_x = 32
 	},
+/obj/machinery/vending/security/marine/nanotrasen,
+/obj/machinery/light/directional/north,
 /turf/open/floor/carpet/executive,
 /area/ship/bridge)
 "v" = (
@@ -107,33 +109,17 @@
 /area/ship/bridge)
 "B" = (
 /obj/effect/turf_decal/box/white,
-/obj/machinery/light{
-	dir = 8
-	},
-/obj/structure/sign/poster/official/random{
-	pixel_x = -32
-	},
 /obj/machinery/suit_storage_unit/security,
+/obj/item/radio/intercom/directional/west,
+/obj/machinery/light/directional/west,
 /turf/open/floor/carpet/executive,
 /area/ship/bridge)
 "C" = (
-/obj/machinery/power/apc/auto_name/directional/east,
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/obj/machinery/power/terminal{
-	dir = 4
-	},
-/obj/machinery/light{
-	dir = 4
-	},
 /obj/item/reagent_containers/glass/bucket,
 /obj/item/mop,
 /obj/structure/reagent_dispensers/watertank,
-/obj/item/radio/intercom{
-	dir = 8;
-	pixel_x = 37
-	},
+/obj/item/radio/intercom/wideband/directional/east,
+/obj/machinery/light/directional/east,
 /turf/open/floor/carpet/executive,
 /area/ship/bridge)
 "D" = (
@@ -158,9 +144,6 @@
 	icon_state = "2-8"
 	},
 /obj/machinery/autolathe,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /turf/open/floor/carpet/executive,
 /area/ship/bridge)
 "K" = (
@@ -192,11 +175,14 @@
 /obj/item/stack/sheet/mineral/plasma/fifty,
 /obj/item/stack/sheet/mineral/plasma/fifty,
 /obj/item/storage/toolbox/mechanical,
-/obj/machinery/light,
 /obj/structure/sign/poster/official/random{
 	pixel_x = -32
 	},
 /obj/item/pipe_dispenser,
+/obj/machinery/power/apc/auto_name/directional/south,
+/obj/machinery/power/terminal,
+/obj/structure/cable,
+/obj/machinery/light/directional/south,
 /turf/open/floor/carpet/executive,
 /area/ship/bridge)
 "S" = (
@@ -207,7 +193,7 @@
 "W" = (
 /obj/machinery/power/port_gen/pacman,
 /obj/structure/cable/yellow,
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /turf/open/floor/carpet/executive,
 /area/ship/bridge)
 "X" = (
@@ -264,8 +250,8 @@ j
 j
 j
 j
-j
-j
+F
+M
 P
 l
 l
@@ -278,7 +264,7 @@ s
 j
 j
 j
-F
+d
 M
 S
 X
