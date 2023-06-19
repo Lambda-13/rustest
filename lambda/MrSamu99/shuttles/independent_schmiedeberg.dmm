@@ -578,11 +578,11 @@
 	dir = 8
 	},
 /obj/machinery/button/door{
+	dir = 4;
 	id = "pharmbridge";
 	name = "Bridge Lockdown";
 	pixel_x = -25;
-	pixel_y = -7;
-	dir = 4
+	pixel_y = -7
 	},
 /turf/open/floor/carpet/blue,
 /area/ship/bridge)
@@ -740,29 +740,29 @@
 /area/ship/crew/hydroponics)
 "iL" = (
 /obj/machinery/button/door{
+	dir = 4;
 	id = "pharmboothlock";
 	name = "Lockdown: Booth";
 	pixel_x = -24;
-	pixel_y = 11;
-	dir = 4
+	pixel_y = 11
 	},
 /obj/structure/chair/comfy/beige{
 	dir = 4
 	},
 /obj/machinery/button/door{
+	dir = 4;
 	id = "pharmdoorlock";
 	name = "Anti-Tresspassing Bolts";
 	normaldoorcontrol = 1;
 	pixel_x = -24;
-	specialfunctions = 4;
-	dir = 4
+	specialfunctions = 4
 	},
 /obj/machinery/button/door{
+	dir = 4;
 	id = "pharmlobby";
 	name = "Lockdown: Lobby";
 	pixel_x = -24;
-	pixel_y = -11;
-	dir = 4
+	pixel_y = -11
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/carpet/black,
@@ -1158,6 +1158,15 @@
 /obj/effect/spawner/lootdrop/maintenance/four,
 /turf/open/floor/mineral/titanium,
 /area/ship/cargo)
+"qA" = (
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/structure/grille,
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
+	id = "pharmwindows"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
 "qB" = (
 /obj/effect/turf_decal/dept/medical{
 	dir = 1
@@ -1205,14 +1214,14 @@
 	},
 /obj/structure/catwalk/over,
 /obj/machinery/firealarm{
-	pixel_y = 28;
-	pixel_x = 5
+	pixel_x = 5;
+	pixel_y = 28
 	},
 /obj/machinery/button/door{
-	pixel_y = 26;
-	pixel_x = -10;
 	id = "schmeidengine";
-	name = "Engine Shutters"
+	name = "Engine Shutters";
+	pixel_x = -10;
+	pixel_y = 26
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -1892,6 +1901,18 @@
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/medical)
+"Dc" = (
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/structure/grille,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "pharmwindows"
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
+	id = "pharmwindows"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
 "Dp" = (
 /turf/closed/wall/mineral/titanium,
 /area/ship/crew/toilet)
@@ -2079,8 +2100,8 @@
 "Iw" = (
 /obj/item/storage/backpack/duffelbag/med/surgery,
 /obj/structure/closet/wall/white/med{
-	pixel_y = -28;
-	dir = 1
+	dir = 1;
+	pixel_y = -28
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2197,7 +2218,7 @@
 /turf/open/floor/wood/walnut,
 /area/ship/crew/toilet)
 "Jo" = (
-/obj/effect/decal/cleanable/blood/xtracks,
+/obj/effect/decal/cleanable/blood,
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
@@ -4258,9 +4279,9 @@ xJ
 xJ
 xJ
 xJ
-bq
-bq
-bq
+Dc
+qA
+Dc
 xJ
 xJ
 xJ
