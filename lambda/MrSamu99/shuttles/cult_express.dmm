@@ -250,6 +250,15 @@
 	},
 /turf/open/floor/wood,
 /area/ship/crew/dorm)
+"fz" = (
+/obj/docking_port/stationary{
+	dir = 4;
+	dwidth = 15;
+	height = 20;
+	width = 20
+	},
+/turf/template_noop,
+/area/template_noop)
 "fY" = (
 /turf/closed/wall/mineral/cult,
 /area/ship/engineering/electrical)
@@ -1163,6 +1172,15 @@
 "FZ" = (
 /turf/template_noop,
 /area/ship/engineering/electrical)
+"Gm" = (
+/obj/docking_port/stationary{
+	dir = 8;
+	dwidth = 15;
+	height = 20;
+	width = 20
+	},
+/turf/template_noop,
+/area/template_noop)
 "Gr" = (
 /obj/structure/ore_box,
 /turf/open/floor/plasteel/cult,
@@ -2038,7 +2056,7 @@ RC
 RC
 RC
 RC
-RC
+Gm
 RC
 RC
 RC
@@ -2578,7 +2596,7 @@ RC
 RC
 RC
 RC
-RC
+fz
 RC
 RC
 RC

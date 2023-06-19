@@ -86,22 +86,17 @@
 /area/ship/security)
 "A" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/docking_port/mobile{
-	callTime = 50;
-	dir = 4;
-	dwidth = 4;
-	height = 5;
-	ignitionTime = 25;
-	launch_status = 0;
-	name = "Syndicate Fighter";
-	port_direction = 2;
-	preferred_direction = 4;
-	width = 9
-	},
 /obj/machinery/door/airlock/hatch{
+	dir = 4;
 	id_tag = "syndicatefighter"
 	},
 /obj/structure/fans/tiny,
+/obj/docking_port/mobile{
+	dir = 4;
+	name = "Syndicate battle shuttle";
+	port_direction = 2;
+	preferred_direction = 4
+	},
 /turf/open/floor/plating,
 /area/ship/security)
 "C" = (

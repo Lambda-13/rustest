@@ -11,15 +11,15 @@
 /area/ship/medical)
 "ad" = (
 /obj/docking_port/mobile{
-	icon_state = "pinonclose";
-	dir = 2
+	dir = 2;
+	icon_state = "pinonclose"
 	},
 /turf/open/floor/plating/catwalk_floor,
 /area/ship/external)
 "ae" = (
 /obj/machinery/power/shuttle/engine/electric/premium{
-	icon_state = "burst";
-	dir = 4
+	dir = 4;
+	icon_state = "burst"
 	},
 /obj/structure/cable{
 	icon_state = "0-4"
@@ -29,19 +29,19 @@
 "af" = (
 /obj/structure/window/reinforced,
 /obj/structure/window/reinforced{
-	icon_state = "rwindow";
-	dir = 1
+	dir = 1;
+	icon_state = "rwindow"
 	},
 /obj/machinery/door/window{
-	icon_state = "left";
-	dir = 4
+	dir = 4;
+	icon_state = "left"
 	},
 /obj/structure/window/reinforced{
 	dir = 8
 	},
 /obj/machinery/power/smes/shuttle/precharged{
-	icon_state = "smes";
-	dir = 4
+	dir = 4;
+	icon_state = "smes"
 	},
 /obj/structure/cable{
 	icon_state = "0-8"
@@ -59,8 +59,8 @@
 /area/ship/medical)
 "ah" = (
 /obj/machinery/light{
-	icon_state = "tube";
-	dir = 1
+	dir = 1;
+	icon_state = "tube"
 	},
 /obj/structure/cable{
 	icon_state = "2-8"
@@ -69,12 +69,12 @@
 /area/ship/medical)
 "ai" = (
 /obj/machinery/cryopod{
-	icon_state = "cryopod-open";
-	dir = 8
+	dir = 8;
+	icon_state = "cryopod-open"
 	},
 /obj/machinery/computer/cryopod{
-	icon_state = "wallconsole";
 	dir = 8;
+	icon_state = "wallconsole";
 	pixel_x = 24
 	},
 /turf/open/floor/plasteel/telecomms_floor,
@@ -90,8 +90,8 @@
 /area/ship/external)
 "al" = (
 /obj/structure/railing{
-	icon_state = "railing";
-	dir = 9
+	dir = 9;
+	icon_state = "railing"
 	},
 /turf/open/floor/plating/catwalk_floor,
 /area/ship/external)
@@ -107,8 +107,8 @@
 /area/ship/external)
 "ao" = (
 /obj/machinery/atmospherics/pipe/simple/supply{
-	icon_state = "pipe11-3";
-	dir = 6
+	dir = 6;
+	icon_state = "pipe11-3"
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -134,8 +134,8 @@
 "ar" = (
 /obj/machinery/light,
 /obj/structure/railing/corner{
-	icon_state = "railing_corner";
-	dir = 4
+	dir = 4;
+	icon_state = "railing_corner"
 	},
 /turf/open/floor/plating/catwalk_floor,
 /area/ship/external)
@@ -167,8 +167,8 @@
 /area/ship/medical)
 "aw" = (
 /obj/effect/turf_decal/industrial/defective{
-	icon_state = "stripe";
-	dir = 9
+	dir = 9;
+	icon_state = "stripe"
 	},
 /obj/machinery/door/poddoor{
 	id = "box_engine5"
@@ -178,8 +178,8 @@
 /area/ship/bridge)
 "ax" = (
 /obj/effect/turf_decal/industrial/defective{
-	icon_state = "stripe";
-	dir = 5
+	dir = 5;
+	icon_state = "stripe"
 	},
 /obj/machinery/door/poddoor{
 	id = "box_engine5"
@@ -199,8 +199,8 @@
 /area/ship/bridge)
 "aB" = (
 /obj/structure/railing/corner{
-	icon_state = "railing_corner";
-	dir = 1
+	dir = 1;
+	icon_state = "railing_corner"
 	},
 /turf/open/floor/plating/catwalk_floor,
 /area/ship/external)
@@ -219,8 +219,8 @@
 /area/ship/cargo)
 "aE" = (
 /obj/machinery/atmospherics/components/binary/pump/layer2{
-	icon_state = "pump_map-2";
-	dir = 1
+	dir = 1;
+	icon_state = "pump_map-2"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
@@ -238,8 +238,8 @@
 "aG" = (
 /obj/machinery/chem_dispenser/fullupgrade,
 /obj/machinery/light{
-	icon_state = "tube";
-	dir = 1
+	dir = 1;
+	icon_state = "tube"
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical)
@@ -255,16 +255,16 @@
 "aI" = (
 /obj/machinery/chem_master,
 /obj/structure/window/reinforced{
-	icon_state = "rwindow";
-	dir = 4
+	dir = 4;
+	icon_state = "rwindow"
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical)
 "aJ" = (
 /obj/machinery/sleeper,
 /obj/effect/turf_decal/road/line{
-	icon_state = "road_line";
-	dir = 8
+	dir = 8;
+	icon_state = "road_line"
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
@@ -293,19 +293,19 @@
 "aO" = (
 /obj/machinery/computer/operating,
 /obj/structure/window/reinforced{
-	icon_state = "rwindow";
-	dir = 4
+	dir = 4;
+	icon_state = "rwindow"
 	},
 /obj/machinery/light{
-	icon_state = "tube";
-	dir = 1
+	dir = 1;
+	icon_state = "tube"
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "aP" = (
 /obj/effect/turf_decal/road/line{
-	icon_state = "road_line";
-	dir = 8
+	dir = 8;
+	icon_state = "road_line"
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
@@ -347,8 +347,8 @@
 /obj/item/roller,
 /obj/structure/rack,
 /obj/machinery/light{
-	icon_state = "tube";
-	dir = 1
+	dir = 1;
+	icon_state = "tube"
 	},
 /obj/machinery/smartfridge/chemistry/preloaded{
 	pixel_y = 32
@@ -438,8 +438,8 @@
 /obj/effect/landmark/start/chemist,
 /obj/item/storage/bag/chemistry,
 /obj/structure/closet/wall/white/chem{
-	icon_state = "freezer_wall";
 	dir = 4;
+	icon_state = "freezer_wall";
 	pixel_x = -31
 	},
 /obj/item/clothing/glasses/sunglasses/chemical,
@@ -459,16 +459,16 @@
 "bc" = (
 /obj/structure/window/reinforced,
 /obj/structure/window/reinforced{
-	icon_state = "rwindow";
-	dir = 4
+	dir = 4;
+	icon_state = "rwindow"
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "bd" = (
 /obj/effect/landmark/start/medical_doctor,
 /obj/effect/turf_decal/road/line{
-	icon_state = "road_line";
-	dir = 8
+	dir = 8;
+	icon_state = "road_line"
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
@@ -487,8 +487,8 @@
 /area/ship/medical)
 "bh" = (
 /obj/structure/window/reinforced{
-	icon_state = "rwindow";
-	dir = 4
+	dir = 4;
+	icon_state = "rwindow"
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
@@ -507,8 +507,8 @@
 /area/ship/bridge)
 "bk" = (
 /obj/machinery/atmospherics/pipe/simple/supply{
-	icon_state = "pipe11-3";
-	dir = 6
+	dir = 6;
+	icon_state = "pipe11-3"
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -518,8 +518,8 @@
 "bl" = (
 /obj/machinery/door/airlock/shuttle,
 /obj/machinery/atmospherics/pipe/simple/supply{
-	icon_state = "pipe11-3";
-	dir = 8
+	dir = 8;
+	icon_state = "pipe11-3"
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -529,8 +529,8 @@
 "bm" = (
 /obj/machinery/holopad/emergency,
 /obj/machinery/atmospherics/pipe/simple/supply{
-	icon_state = "pipe11-3";
-	dir = 9
+	dir = 9;
+	icon_state = "pipe11-3"
 	},
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -539,8 +539,8 @@
 /area/ship/bridge)
 "bn" = (
 /obj/machinery/computer/communications{
-	icon_state = "computer";
-	dir = 8
+	dir = 8;
+	icon_state = "computer"
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/bridge)
@@ -567,8 +567,8 @@
 "bq" = (
 /obj/machinery/holopad,
 /obj/machinery/atmospherics/pipe/simple/supply{
-	icon_state = "pipe11-3";
-	dir = 5
+	dir = 5;
+	icon_state = "pipe11-3"
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -577,12 +577,12 @@
 /area/ship/cargo)
 "br" = (
 /obj/machinery/atmospherics/pipe/simple/supply{
-	icon_state = "pipe11-3";
-	dir = 4
+	dir = 4;
+	icon_state = "pipe11-3"
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/visible/layer2{
-	icon_state = "manifold-2";
-	dir = 8
+	dir = 8;
+	icon_state = "manifold-2"
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -591,30 +591,30 @@
 /area/ship/cargo)
 "bs" = (
 /obj/machinery/atmospherics/pipe/simple/supply{
-	icon_state = "pipe11-3";
-	dir = 4
+	dir = 4;
+	icon_state = "pipe11-3"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer2{
-	icon_state = "pipe11-2";
-	dir = 8
+	dir = 8;
+	icon_state = "pipe11-2"
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/stairs{
-	icon_state = "stairs";
-	dir = 8
+	dir = 8;
+	icon_state = "stairs"
 	},
 /area/ship/cargo)
 "bt" = (
 /obj/machinery/door/airlock/shuttle,
 /obj/machinery/atmospherics/pipe/simple/supply{
-	icon_state = "pipe11-3";
-	dir = 4
+	dir = 4;
+	icon_state = "pipe11-3"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer2{
-	icon_state = "pipe11-2";
-	dir = 8
+	dir = 8;
+	icon_state = "pipe11-2"
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -624,12 +624,12 @@
 "bu" = (
 /obj/effect/landmark/start/paramedic,
 /obj/effect/turf_decal/road/line{
-	icon_state = "road_line";
-	dir = 1
+	dir = 1;
+	icon_state = "road_line"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply{
-	icon_state = "pipe11-3";
-	dir = 4
+	dir = 4;
+	icon_state = "pipe11-3"
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -638,78 +638,78 @@
 	icon_state = "2-4"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	icon_state = "pipe11-2";
-	dir = 8
+	dir = 8;
+	icon_state = "pipe11-2"
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "bv" = (
 /obj/effect/turf_decal/road/line{
-	icon_state = "road_line";
-	dir = 1
+	dir = 1;
+	icon_state = "road_line"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply{
-	icon_state = "pipe11-3";
-	dir = 4
+	dir = 4;
+	icon_state = "pipe11-3"
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	icon_state = "pipe11-2";
-	dir = 8
+	dir = 8;
+	icon_state = "pipe11-2"
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "bw" = (
 /obj/effect/landmark/start/paramedic,
 /obj/effect/turf_decal/road/line{
-	icon_state = "road_line";
-	dir = 1
+	dir = 1;
+	icon_state = "road_line"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply{
-	icon_state = "pipe11-3";
-	dir = 4
+	dir = 4;
+	icon_state = "pipe11-3"
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	icon_state = "pipe11-2";
-	dir = 8
+	dir = 8;
+	icon_state = "pipe11-2"
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "bx" = (
 /obj/effect/turf_decal/road/line/edge{
-	icon_state = "road_line_edge";
-	dir = 1
+	dir = 1;
+	icon_state = "road_line_edge"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply{
-	icon_state = "pipe11-3";
-	dir = 4
+	dir = 4;
+	icon_state = "pipe11-3"
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	icon_state = "pipe11-2";
-	dir = 8
+	dir = 8;
+	icon_state = "pipe11-2"
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "by" = (
 /obj/machinery/holopad,
 /obj/machinery/atmospherics/pipe/simple/supply{
-	icon_state = "pipe11-3";
-	dir = 4
+	dir = 4;
+	icon_state = "pipe11-3"
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	icon_state = "pipe11-2";
-	dir = 8
+	dir = 8;
+	icon_state = "pipe11-2"
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
@@ -719,8 +719,8 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	icon_state = "pipe11-2";
-	dir = 8
+	dir = 8;
+	icon_state = "pipe11-2"
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
@@ -736,44 +736,44 @@
 	icon_state = "1-4"
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2{
-	icon_state = "manifold-2";
-	dir = 1
+	dir = 1;
+	icon_state = "manifold-2"
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "bB" = (
 /obj/machinery/door/window{
-	icon_state = "left";
-	dir = 4
+	dir = 4;
+	icon_state = "left"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply{
-	icon_state = "pipe11-3";
-	dir = 4
+	dir = 4;
+	icon_state = "pipe11-3"
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	icon_state = "pipe11-2";
-	dir = 8
+	dir = 8;
+	icon_state = "pipe11-2"
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "bC" = (
 /obj/effect/turf_decal/road/line{
-	icon_state = "road_line";
-	dir = 8
+	dir = 8;
+	icon_state = "road_line"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply{
-	icon_state = "pipe11-3";
-	dir = 4
+	dir = 4;
+	icon_state = "pipe11-3"
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	icon_state = "pipe11-2";
-	dir = 8
+	dir = 8;
+	icon_state = "pipe11-2"
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
@@ -783,8 +783,8 @@
 	icon_state = "1-8"
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2{
-	icon_state = "manifold-2";
-	dir = 1
+	dir = 1;
+	icon_state = "manifold-2"
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
@@ -797,12 +797,12 @@
 /obj/item/retractor/advanced,
 /obj/item/surgicaldrill/advanced,
 /obj/machinery/atmospherics/pipe/simple/supply{
-	icon_state = "pipe11-3";
-	dir = 8
+	dir = 8;
+	icon_state = "pipe11-3"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	icon_state = "pipe11-2";
-	dir = 8
+	dir = 8;
+	icon_state = "pipe11-2"
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/bridge)
@@ -812,15 +812,15 @@
 /obj/item/retractor/advanced,
 /obj/item/surgicaldrill/advanced,
 /obj/machinery/atmospherics/pipe/simple/supply{
-	icon_state = "pipe11-3";
-	dir = 9
+	dir = 9;
+	icon_state = "pipe11-3"
 	},
 /obj/machinery/smartfridge/bloodbank/preloaded{
 	pixel_x = 32
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	icon_state = "pipe11-2";
-	dir = 10
+	dir = 10;
+	icon_state = "pipe11-2"
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/bridge)
@@ -835,8 +835,8 @@
 /obj/item/healthanalyzer/advanced,
 /obj/item/gun/ballistic/revolver/mateba,
 /obj/structure/closet/wall/blue{
-	icon_state = "solgov_wall";
 	dir = 4;
+	icon_state = "solgov_wall";
 	pixel_x = -30
 	},
 /obj/item/tank/internals/oxygen,
@@ -877,15 +877,15 @@
 /area/ship/cargo)
 "bL" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
-	icon_state = "scrub_map_on-2";
-	dir = 1
+	dir = 1;
+	icon_state = "scrub_map_on-2"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "bM" = (
 /obj/machinery/stasis{
-	icon_state = "stasis";
-	dir = 4
+	dir = 4;
+	icon_state = "stasis"
 	},
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable,
@@ -893,8 +893,8 @@
 /area/ship/medical)
 "bN" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
-	icon_state = "scrub_map_on-2";
-	dir = 1
+	dir = 1;
+	icon_state = "scrub_map_on-2"
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical)
@@ -904,8 +904,8 @@
 /area/ship/medical)
 "bP" = (
 /obj/machinery/atmospherics/pipe/simple/cyan{
-	icon_state = "pipe11-3";
-	dir = 6
+	dir = 6;
+	icon_state = "pipe11-3"
 	},
 /obj/item/reagent_containers/glass/beaker/cryoxadone,
 /obj/item/reagent_containers/glass/beaker/cryoxadone,
@@ -913,22 +913,22 @@
 /area/ship/medical)
 "bQ" = (
 /obj/machinery/atmospherics/pipe/manifold/cyan{
-	icon_state = "manifold-3";
-	dir = 1
+	dir = 1;
+	icon_state = "manifold-3"
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "bR" = (
 /obj/machinery/atmospherics/pipe/simple/cyan{
-	icon_state = "pipe11-3";
-	dir = 10
+	dir = 10;
+	icon_state = "pipe11-3"
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "bS" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
-	icon_state = "scrub_map_on-2";
-	dir = 1
+	dir = 1;
+	icon_state = "scrub_map_on-2"
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -940,46 +940,46 @@
 /area/ship/medical)
 "bU" = (
 /obj/structure/window/reinforced{
-	icon_state = "rwindow";
-	dir = 4
+	dir = 4;
+	icon_state = "rwindow"
 	},
 /mob/living/simple_animal/bot/medbot,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "bV" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
-	icon_state = "scrub_map_on-2";
-	dir = 1
+	dir = 1;
+	icon_state = "scrub_map_on-2"
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
 "bW" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	icon_state = "pipe11-2";
-	dir = 5
+	dir = 5;
+	icon_state = "pipe11-2"
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
 "bX" = (
 /obj/machinery/door/airlock/shuttle,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	icon_state = "pipe11-2";
-	dir = 8
+	dir = 8;
+	icon_state = "pipe11-2"
 	},
 /turf/open/floor/plasteel,
 /area/ship/bridge)
 "bY" = (
 /obj/machinery/holopad,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	icon_state = "pipe11-2";
-	dir = 10
+	dir = 10;
+	icon_state = "pipe11-2"
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
 "bZ" = (
 /obj/machinery/computer/camera_advanced{
-	icon_state = "computer";
-	dir = 8
+	dir = 8;
+	icon_state = "computer"
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/bridge)
@@ -999,8 +999,8 @@
 /area/ship/cargo)
 "cc" = (
 /obj/machinery/stasis{
-	icon_state = "stasis";
-	dir = 4
+	dir = 4;
+	icon_state = "stasis"
 	},
 /obj/machinery/light,
 /turf/open/floor/plasteel/mono/white,
@@ -1018,8 +1018,8 @@
 /obj/item/healthanalyzer/advanced,
 /obj/item/healthanalyzer/advanced,
 /obj/structure/closet/wall/white/med{
-	icon_state = "freezer_wall";
 	dir = 1;
+	icon_state = "freezer_wall";
 	pixel_y = -31
 	},
 /obj/item/clothing/gloves/color/latex/nitrile,
@@ -1028,23 +1028,23 @@
 /area/ship/medical)
 "ce" = (
 /obj/machinery/atmospherics/components/unary/thermomachine/freezer{
-	icon_state = "pipe";
-	dir = 1
+	dir = 1;
+	icon_state = "pipe"
 	},
 /obj/machinery/atmospherics/components/unary/thermomachine/freezer,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "cf" = (
 /obj/machinery/atmospherics/components/unary/cryo_cell{
-	icon_state = "pod-off";
-	dir = 1
+	dir = 1;
+	icon_state = "pod-off"
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "cg" = (
 /obj/machinery/atmospherics/components/unary/portables_connector{
-	icon_state = "connector_map-3";
-	dir = 1
+	dir = 1;
+	icon_state = "connector_map-3"
 	},
 /obj/machinery/portable_atmospherics/canister/oxygen,
 /turf/open/floor/plasteel/white,
@@ -1064,12 +1064,12 @@
 /area/ship/medical)
 "cj" = (
 /obj/machinery/computer/operating{
-	icon_state = "computer";
-	dir = 1
+	dir = 1;
+	icon_state = "computer"
 	},
 /obj/structure/window/reinforced{
-	icon_state = "rwindow";
-	dir = 4
+	dir = 4;
+	icon_state = "rwindow"
 	},
 /obj/machinery/light,
 /turf/open/floor/plasteel/white,
@@ -1094,8 +1094,8 @@
 "cm" = (
 /obj/machinery/rnd/server,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
-	icon_state = "scrub_map_on-2";
-	dir = 1
+	dir = 1;
+	icon_state = "scrub_map_on-2"
 	},
 /obj/item/radio/intercom/wideband{
 	dir = 4;
@@ -1117,8 +1117,8 @@
 /area/ship/external)
 "co" = (
 /obj/structure/railing{
-	icon_state = "railing";
-	dir = 10
+	dir = 10;
+	icon_state = "railing"
 	},
 /turf/open/floor/plating/catwalk_floor,
 /area/ship/external)
@@ -1138,8 +1138,8 @@
 /area/ship/cargo)
 "cr" = (
 /obj/effect/turf_decal/industrial/defective{
-	icon_state = "stripe";
-	dir = 10
+	dir = 10;
+	icon_state = "stripe"
 	},
 /obj/machinery/door/poddoor{
 	id = "box_engine4"
@@ -1149,8 +1149,8 @@
 /area/ship/bridge)
 "cs" = (
 /obj/structure/railing/corner{
-	icon_state = "railing_corner";
-	dir = 8
+	dir = 8;
+	icon_state = "railing_corner"
 	},
 /turf/open/floor/plating/catwalk_floor,
 /area/ship/external)
@@ -1160,8 +1160,8 @@
 /area/ship/external)
 "cu" = (
 /obj/machinery/light{
-	icon_state = "tube";
-	dir = 1
+	dir = 1;
+	icon_state = "tube"
 	},
 /obj/structure/railing,
 /turf/open/floor/plating/catwalk_floor,
@@ -1187,15 +1187,15 @@
 /area/ship/medical)
 "cx" = (
 /obj/structure/railing{
-	icon_state = "railing";
-	dir = 6
+	dir = 6;
+	icon_state = "railing"
 	},
 /turf/open/floor/plating/catwalk_floor,
 /area/ship/external)
 "cy" = (
 /obj/effect/turf_decal/industrial/defective{
-	icon_state = "stripe";
-	dir = 6
+	dir = 6;
+	icon_state = "stripe"
 	},
 /obj/machinery/door/poddoor{
 	id = "box_engine4"
@@ -1207,8 +1207,8 @@
 /obj/machinery/power/port_gen/pacman/super,
 /obj/structure/cable,
 /obj/machinery/power/terminal{
-	icon_state = "term";
-	dir = 1
+	dir = 1;
+	icon_state = "term"
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/medical)
@@ -1226,8 +1226,8 @@
 /area/ship/medical)
 "cB" = (
 /obj/machinery/light{
-	icon_state = "tube";
-	dir = 1
+	dir = 1;
+	icon_state = "tube"
 	},
 /obj/structure/railing/corner,
 /turf/open/floor/plating/catwalk_floor,
@@ -1236,6 +1236,23 @@
 /obj/structure/sign/departments/medbay,
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/bridge)
+"qu" = (
+/obj/docking_port/stationary{
+	dwidth = 15;
+	height = 20;
+	width = 20
+	},
+/turf/template_noop,
+/area/template_noop)
+"ut" = (
+/obj/docking_port/stationary{
+	dir = 2;
+	dwidth = 15;
+	height = 20;
+	width = 20
+	},
+/turf/template_noop,
+/area/template_noop)
 
 (1,1,1) = {"
 aa
@@ -1314,7 +1331,7 @@ aa
 "}
 (6,1,1) = {"
 aa
-aa
+qu
 an
 au
 aE
@@ -1324,7 +1341,7 @@ bL
 ca
 cq
 aj
-aa
+ut
 aa
 "}
 (7,1,1) = {"

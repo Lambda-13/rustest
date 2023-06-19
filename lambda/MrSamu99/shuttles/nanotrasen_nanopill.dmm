@@ -2,6 +2,10 @@
 "a" = (
 /turf/template_noop,
 /area/template_noop)
+"c" = (
+/obj/effect/spawner/structure/window/shuttle,
+/turf/open/floor/plating,
+/area/template_noop)
 "d" = (
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -242,7 +246,7 @@ a
 a
 "}
 (2,1,1) = {"
-a
+c
 f
 t
 n
@@ -298,7 +302,7 @@ l
 t
 "}
 (6,1,1) = {"
-a
+c
 f
 t
 u

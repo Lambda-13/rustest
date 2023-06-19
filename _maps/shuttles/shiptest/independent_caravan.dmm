@@ -580,9 +580,9 @@
 /area/ship/hallway/fore)
 "kC" = (
 /obj/docking_port/stationary{
-	width = 27;
+	dwidth = 8;
 	height = 15;
-	dwidth = 8
+	width = 27
 	},
 /turf/template_noop,
 /area/template_noop)
@@ -1529,6 +1529,10 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
+"Ck" = (
+/obj/structure/lattice/catwalk,
+/turf/template_noop,
+/area/ship/external)
 "Cr" = (
 /obj/effect/turf_decal/corner/transparent/neutral/border{
 	dir = 6
@@ -3183,7 +3187,7 @@ bZ
 "}
 (13,1,1) = {"
 bZ
-bZ
+Ck
 Be
 dI
 FK
@@ -3203,7 +3207,7 @@ bZ
 "}
 (14,1,1) = {"
 kC
-bZ
+Ck
 Zs
 OO
 eI
@@ -3219,11 +3223,11 @@ FL
 FL
 kv
 FV
-bZ
+Ck
 "}
 (15,1,1) = {"
 bZ
-bZ
+Ck
 od
 ZV
 Jn
@@ -3239,7 +3243,7 @@ Sv
 mN
 Jr
 Mi
-bZ
+Ck
 "}
 (16,1,1) = {"
 bZ
@@ -3259,11 +3263,11 @@ ka
 FL
 cT
 Mi
-bZ
+Ck
 "}
 (17,1,1) = {"
 bZ
-bZ
+Ck
 Ba
 Ca
 mQ
@@ -3279,11 +3283,11 @@ HH
 XZ
 Bs
 Mi
-bZ
+Ck
 "}
 (18,1,1) = {"
 bZ
-bZ
+Ck
 Ba
 BV
 Vq
@@ -3299,11 +3303,11 @@ FL
 FL
 Di
 FV
-bZ
+Ck
 "}
 (19,1,1) = {"
 bZ
-bZ
+Ck
 Ba
 kY
 Ko

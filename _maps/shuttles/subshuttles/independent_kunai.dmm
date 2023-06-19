@@ -36,9 +36,9 @@
 	icon_state = "2-4"
 	},
 /obj/machinery/door/poddoor/shutters{
+	dir = 4;
 	id = "Interpolship";
-	name = "Bay Shutters";
-	dir = 4
+	name = "Bay Shutters"
 	},
 /turf/open/floor/plasteel/rockvault,
 /area/ship/storage)
@@ -51,9 +51,9 @@
 	dir = 8
 	},
 /obj/machinery/button/shieldwallgen{
-	pixel_y = 25;
+	id = "polshield";
 	pixel_x = 10;
-	id = "polshield"
+	pixel_y = 25
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
@@ -129,17 +129,17 @@
 	},
 /obj/machinery/button/door{
 	dir = 4;
-	pixel_y = -8;
-	pixel_x = -25;
+	id = "polwindow";
 	name = "window shutters";
-	id = "polwindow"
+	pixel_x = -25;
+	pixel_y = -8
 	},
 /obj/machinery/button/door{
 	dir = 4;
-	pixel_y = 7;
-	pixel_x = -25;
+	id = "polengine";
 	name = "engine shutters";
-	id = "polengine"
+	pixel_x = -25;
+	pixel_y = 7
 	},
 /obj/effect/turf_decal/techfloor{
 	dir = 9
@@ -149,13 +149,13 @@
 "bA" = (
 /obj/structure/cable,
 /obj/machinery/door/poddoor/shutters{
+	dir = 4;
 	id = "Interpolship";
-	name = "Bay Shutters";
-	dir = 4
+	name = "Bay Shutters"
 	},
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
-	id = "polshield";
-	dir = 1
+	dir = 1;
+	id = "polshield"
 	},
 /turf/open/floor/plasteel/rockvault,
 /area/ship/storage)
@@ -171,9 +171,9 @@
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/structure/grille,
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "polwindow";
-	name = "Blast Shield";
-	dir = 4
+	name = "Blast Shield"
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -197,14 +197,14 @@
 /obj/structure/table,
 /obj/machinery/light/floor,
 /obj/item/radio/intercom/directional{
-	pixel_y = 2;
 	dir = 4;
-	pixel_x = 16
+	pixel_x = 16;
+	pixel_y = 2
 	},
 /obj/item/radio/intercom/directional{
-	pixel_y = 2;
 	dir = 4;
-	pixel_x = 4
+	pixel_x = 4;
+	pixel_y = 2
 	},
 /obj/effect/turf_decal/techfloor{
 	dir = 4
@@ -356,8 +356,8 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/command{
-	name = "Bridge";
-	dir = 4
+	dir = 4;
+	name = "Bridge"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -366,9 +366,9 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/door/poddoor/shutters{
+	dir = 4;
 	id = "Interpolship";
-	name = "Bay Shutters";
-	dir = 4
+	name = "Bay Shutters"
 	},
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
 	id = "polshield"

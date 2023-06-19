@@ -217,6 +217,12 @@
 /obj/item/tank/internals/oxygen,
 /obj/item/pickaxe/mini,
 /obj/machinery/light/directional/south,
+/obj/machinery/button/door{
+	dir = 1;
+	id = 5434;
+	name = "Poddoors";
+	pixel_y = -24
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "w" = (
@@ -252,17 +258,6 @@
 "y" = (
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/bridge)
-"z" = (
-/obj/structure/fans/tiny,
-/obj/machinery/door/poddoor{
-	id = 5434
-	},
-/obj/docking_port/mobile{
-	dir = 2;
-	icon_state = "pinonclose"
-	},
-/turf/open/floor/plasteel/mono/dark,
-/area/ship/bridge)
 "H" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/preopen{
@@ -274,12 +269,12 @@
 /area/ship/bridge)
 "J" = (
 /obj/structure/fans/tiny,
-/obj/machinery/door/poddoor{
-	id = 5434
-	},
 /obj/docking_port/mobile{
 	dir = 2;
 	launch_status = 0
+	},
+/obj/machinery/door/poddoor{
+	id = 5434
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
@@ -330,7 +325,7 @@ v
 b
 "}
 (5,1,1) = {"
-z
+d
 g
 n
 g

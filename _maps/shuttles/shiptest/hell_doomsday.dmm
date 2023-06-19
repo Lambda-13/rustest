@@ -1937,6 +1937,15 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
+"jl" = (
+/obj/docking_port/stationary{
+	dir = 2;
+	dwidth = 15;
+	height = 15;
+	width = 30
+	},
+/turf/template_noop,
+/area/template_noop)
 "Md" = (
 /obj/structure/catwalk/over,
 /obj/structure/cable{
@@ -2991,7 +3000,7 @@ el
 bj
 aP
 dB
-dX
+jl
 dX
 dX
 dX

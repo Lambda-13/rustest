@@ -851,6 +851,14 @@
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/canteen)
+"jT" = (
+/obj/docking_port/stationary{
+	dwidth = 15;
+	height = 20;
+	width = 20
+	},
+/turf/template_noop,
+/area/template_noop)
 "kf" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
@@ -3610,6 +3618,7 @@
 xJ
 xJ
 xJ
+xJ
 Fz
 su
 YV
@@ -3626,6 +3635,7 @@ xJ
 xJ
 "}
 (2,1,1) = {"
+xJ
 xJ
 xJ
 Fz
@@ -3647,6 +3657,7 @@ xJ
 (3,1,1) = {"
 xJ
 xJ
+xJ
 OO
 VO
 OO
@@ -3664,6 +3675,7 @@ KW
 xJ
 "}
 (4,1,1) = {"
+xJ
 xJ
 Fz
 OO
@@ -3684,6 +3696,7 @@ xJ
 "}
 (5,1,1) = {"
 xJ
+xJ
 gT
 iL
 Cb
@@ -3702,6 +3715,7 @@ tR
 xJ
 "}
 (6,1,1) = {"
+xJ
 rU
 Vd
 MS
@@ -3721,6 +3735,7 @@ Wv
 fz
 "}
 (7,1,1) = {"
+xJ
 LC
 Yp
 Ln
@@ -3740,6 +3755,7 @@ YU
 YU
 "}
 (8,1,1) = {"
+xJ
 Yc
 fu
 MR
@@ -3759,6 +3775,7 @@ EV
 YU
 "}
 (9,1,1) = {"
+jT
 ZU
 wG
 Hx
@@ -3778,6 +3795,7 @@ KO
 oK
 "}
 (10,1,1) = {"
+xJ
 Pj
 Mf
 fP
@@ -3797,6 +3815,7 @@ gB
 oK
 "}
 (11,1,1) = {"
+xJ
 pl
 ly
 Sz
@@ -3816,6 +3835,7 @@ Og
 YU
 "}
 (12,1,1) = {"
+xJ
 Vd
 Vd
 Vd
@@ -3835,6 +3855,7 @@ YU
 YU
 "}
 (13,1,1) = {"
+xJ
 FA
 Vd
 yB
@@ -3854,6 +3875,7 @@ YU
 bP
 "}
 (14,1,1) = {"
+xJ
 qB
 Wy
 JB
@@ -3873,6 +3895,7 @@ oK
 fa
 "}
 (15,1,1) = {"
+xJ
 NC
 Vd
 Vd
@@ -3893,6 +3916,7 @@ Pi
 "}
 (16,1,1) = {"
 xJ
+xJ
 KU
 XR
 XR
@@ -3911,6 +3935,7 @@ nB
 xJ
 "}
 (17,1,1) = {"
+xJ
 xJ
 kp
 XR
@@ -3932,6 +3957,7 @@ xJ
 (18,1,1) = {"
 xJ
 xJ
+xJ
 Yx
 ca
 Vc
@@ -3949,6 +3975,7 @@ xJ
 xJ
 "}
 (19,1,1) = {"
+xJ
 xJ
 xJ
 Yx
@@ -3970,6 +3997,7 @@ xJ
 (20,1,1) = {"
 xJ
 xJ
+xJ
 XR
 At
 Yr
@@ -3987,6 +4015,7 @@ xJ
 xJ
 "}
 (21,1,1) = {"
+xJ
 xJ
 xJ
 pB
@@ -4009,6 +4038,7 @@ xJ
 xJ
 xJ
 xJ
+xJ
 XR
 ls
 oa
@@ -4025,6 +4055,7 @@ xJ
 xJ
 "}
 (23,1,1) = {"
+xJ
 xJ
 xJ
 xJ
@@ -4047,6 +4078,7 @@ xJ
 xJ
 xJ
 xJ
+xJ
 Yw
 hg
 nl
@@ -4066,6 +4098,7 @@ xJ
 xJ
 xJ
 xJ
+xJ
 XR
 SC
 Wx
@@ -4082,6 +4115,7 @@ xJ
 xJ
 "}
 (26,1,1) = {"
+xJ
 xJ
 xJ
 xJ
@@ -4105,6 +4139,7 @@ xJ
 xJ
 xJ
 xJ
+xJ
 LJ
 Jm
 zz
@@ -4120,6 +4155,7 @@ xJ
 xJ
 "}
 (28,1,1) = {"
+xJ
 xJ
 xJ
 xJ
@@ -4143,6 +4179,7 @@ xJ
 xJ
 xJ
 xJ
+xJ
 LJ
 FB
 LJ
@@ -4158,6 +4195,7 @@ xJ
 xJ
 "}
 (30,1,1) = {"
+xJ
 xJ
 xJ
 xJ
@@ -4182,6 +4220,7 @@ xJ
 xJ
 xJ
 xJ
+xJ
 bq
 Sl
 AR
@@ -4201,6 +4240,7 @@ xJ
 xJ
 xJ
 xJ
+xJ
 bq
 Ra
 xp
@@ -4215,6 +4255,7 @@ xJ
 xJ
 "}
 (33,1,1) = {"
+xJ
 xJ
 xJ
 xJ
@@ -4240,6 +4281,7 @@ xJ
 xJ
 xJ
 xJ
+xJ
 IT
 Ig
 Vf
@@ -4259,6 +4301,7 @@ xJ
 xJ
 xJ
 xJ
+xJ
 IT
 bq
 nw
@@ -4272,6 +4315,7 @@ xJ
 xJ
 "}
 (36,1,1) = {"
+xJ
 xJ
 xJ
 xJ

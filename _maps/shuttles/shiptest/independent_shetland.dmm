@@ -3027,10 +3027,10 @@
 /area/ship/hallway/port)
 "Fs" = (
 /obj/docking_port/stationary{
-	width = 30;
-	height = 15;
+	dir = 2;
 	dwidth = 15;
-	dir = 2
+	height = 15;
+	width = 30
 	},
 /turf/template_noop,
 /area/template_noop)
@@ -3521,8 +3521,8 @@
 /obj/structure/window/reinforced/fulltile,
 /obj/structure/grille,
 /obj/machinery/door/poddoor{
-	id = "amoguswindows";
-	dir = 8
+	dir = 8;
+	id = "amoguswindows"
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/fore)

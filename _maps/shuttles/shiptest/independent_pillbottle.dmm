@@ -31,12 +31,12 @@
 /obj/structure/table,
 /obj/item/reagent_containers/food/drinks/drinkingglass/shotglass,
 /obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
-	pixel_y = 10;
-	pixel_x = 7
+	pixel_x = 7;
+	pixel_y = 10
 	},
 /obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
-	pixel_y = 10;
-	pixel_x = -6
+	pixel_x = -6;
+	pixel_y = 10
 	},
 /turf/open/floor/carpet,
 /area/ship/hallway/central)
@@ -267,8 +267,8 @@
 	dir = 1
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "pillbob";
-	dir = 4
+	dir = 4;
+	id = "pillbob"
 	},
 /turf/open/floor/plating,
 /area/ship/crew/crewtwo)
@@ -287,8 +287,8 @@
 /area/ship/crew)
 "fs" = (
 /obj/machinery/door/airlock/maintenance{
-	name = "Dorms";
-	dir = 4
+	dir = 4;
+	name = "Dorms"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
@@ -458,8 +458,8 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "pillbob";
-	dir = 4
+	dir = 4;
+	id = "pillbob"
 	},
 /turf/open/floor/plating,
 /area/ship/crew/crewtwo)
@@ -543,8 +543,8 @@
 	icon_state = "2-8"
 	},
 /obj/machinery/door/poddoor{
-	id = "pillbottle";
-	dir = 8
+	dir = 8;
+	id = "pillbottle"
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/fore)
@@ -782,8 +782,8 @@
 /area/ship/cargo)
 "mR" = (
 /obj/machinery/door/airlock/mining{
-	name = "Hangar";
-	dir = 4
+	dir = 4;
+	name = "Hangar"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
@@ -887,8 +887,8 @@
 "oM" = (
 /obj/structure/toilet{
 	dir = 8;
-	pixel_y = 1;
-	pixel_x = 7
+	pixel_x = 7;
+	pixel_y = 1
 	},
 /obj/structure/mirror{
 	pixel_y = -32
@@ -1213,10 +1213,10 @@
 	},
 /obj/machinery/button/door{
 	dir = 8;
-	pixel_x = 23;
-	pixel_y = 8;
+	id = "pillbob";
 	name = "Shutter Control";
-	id = "pillbob"
+	pixel_x = 23;
+	pixel_y = 8
 	},
 /obj/machinery/airalarm/directional/south,
 /turf/open/floor/carpet/nanoweave/red,
@@ -1264,15 +1264,15 @@
 /area/ship/hallway/fore)
 "vp" = (
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
-	id = "pilltest";
-	dir = 1
+	dir = 1;
+	id = "pilltest"
 	},
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
 /obj/machinery/door/poddoor{
-	id = "pillbottle";
-	dir = 8
+	dir = 8;
+	id = "pillbottle"
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/fore)
@@ -1394,8 +1394,8 @@
 	dir = 8
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "pillbob";
-	dir = 4
+	dir = 4;
+	id = "pillbob"
 	},
 /turf/open/floor/plating,
 /area/ship/crew/crewtwo)
@@ -1404,8 +1404,8 @@
 	dir = 4
 	},
 /obj/structure/sink{
-	pixel_y = 18;
-	pixel_x = 9
+	pixel_x = 9;
+	pixel_y = 18
 	},
 /obj/item/bikehorn/rubberducky,
 /obj/machinery/light/small/directional/south,
@@ -1425,8 +1425,8 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/poddoor{
-	id = "pillbottle";
-	dir = 8
+	dir = 8;
+	id = "pillbottle"
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/fore)
@@ -1699,8 +1699,8 @@
 	icon_state = "1-8"
 	},
 /obj/machinery/door/poddoor{
-	id = "pillbottle";
-	dir = 8
+	dir = 8;
+	id = "pillbottle"
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/fore)
@@ -1733,8 +1733,8 @@
 /area/ship/hallway/fore)
 "Dk" = (
 /obj/machinery/door/airlock/mining{
-	name = "Cargo Bay";
-	dir = 4
+	dir = 4;
+	name = "Cargo Bay"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
@@ -1866,8 +1866,8 @@
 /area/ship/hallway/fore)
 "Hc" = (
 /obj/machinery/door/poddoor{
-	id = "pillbottle";
-	dir = 8
+	dir = 8;
+	id = "pillbottle"
 	},
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
 	id = "pilltest"
@@ -2076,8 +2076,8 @@
 /area/ship/hallway/fore)
 "Ld" = (
 /obj/machinery/door/airlock/engineering{
-	name = "Engineering";
-	dir = 4
+	dir = 4;
+	name = "Engineering"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
@@ -2215,15 +2215,15 @@
 /obj/machinery/button/door{
 	dir = 4;
 	id = "pillbottle";
-	pixel_y = -3;
+	name = "Hangar Control";
 	pixel_x = -7;
-	name = "Hangar Control"
+	pixel_y = -3
 	},
 /obj/machinery/button/shieldwallgen{
 	dir = 4;
 	id = "pilltest";
-	pixel_y = -3;
-	pixel_x = 7
+	pixel_x = 7;
+	pixel_y = -3
 	},
 /obj/effect/decal/cleanable/cobweb,
 /obj/item/radio/intercom/directional/north,
@@ -2289,8 +2289,8 @@
 	dir = 1
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "pillbob";
-	dir = 4
+	dir = 4;
+	id = "pillbob"
 	},
 /turf/open/floor/plating,
 /area/ship/crew/crewtwo)
@@ -2334,8 +2334,8 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/door/poddoor{
-	id = "pillbottle";
-	dir = 8
+	dir = 8;
+	id = "pillbottle"
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/fore)
@@ -2635,13 +2635,13 @@
 /area/ship/hallway/central)
 "Th" = (
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
-	id = "pilltest";
-	dir = 1
+	dir = 1;
+	id = "pilltest"
 	},
 /obj/structure/cable,
 /obj/machinery/door/poddoor{
-	id = "pillbottle";
-	dir = 8
+	dir = 8;
+	id = "pillbottle"
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/fore)
@@ -2766,8 +2766,8 @@
 /area/ship/hallway/fore)
 "Vv" = (
 /obj/machinery/door/airlock/maintenance{
-	name = "Hangar";
-	dir = 4
+	dir = 4;
+	name = "Hangar"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
@@ -2949,15 +2949,15 @@
 /obj/docking_port/mobile{
 	can_move_docking_ports = 1;
 	launch_status = 0;
+	name = "pillbottle";
 	port_direction = 4;
-	preferred_direction = 4;
-	name = "pillbottle"
+	preferred_direction = 4
 	},
 /obj/structure/toilet{
+	desc = "The great head of the Pillbottle.";
 	dir = 4;
-	pixel_y = 6;
 	pixel_x = -4;
-	desc = "The great head of the Pillbottle."
+	pixel_y = 6
 	},
 /turf/open/floor/plating/airless,
 /area/ship/external)
@@ -3039,8 +3039,8 @@
 "YX" = (
 /obj/docking_port/stationary{
 	dwidth = 7;
-	width = 30;
-	height = 15
+	height = 15;
+	width = 30
 	},
 /turf/template_noop,
 /area/template_noop)

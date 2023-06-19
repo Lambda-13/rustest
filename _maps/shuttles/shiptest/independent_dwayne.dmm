@@ -212,16 +212,16 @@
 /area/ship/engineering)
 "fp" = (
 /obj/docking_port/stationary{
-	width = 30;
+	dwidth = 15;
 	height = 15;
-	dwidth = 15
+	width = 30
 	},
 /turf/template_noop,
 /area/template_noop)
 "fy" = (
 /obj/machinery/door/poddoor/preopen{
-	id = "mining_ship_blast";
-	dir = 4
+	dir = 4;
+	id = "mining_ship_blast"
 	},
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -229,8 +229,8 @@
 "fV" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/preopen{
-	id = "mining_ship_blast";
-	dir = 8
+	dir = 8;
+	id = "mining_ship_blast"
 	},
 /turf/open/floor/plating,
 /area/ship/medical)
@@ -1093,8 +1093,8 @@
 "xr" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/preopen{
-	id = "mining_ship_blast";
-	dir = 8
+	dir = 8;
+	id = "mining_ship_blast"
 	},
 /turf/open/floor/plating,
 /area/ship/crew)
@@ -1372,8 +1372,8 @@
 "Gr" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/preopen{
-	id = "mining_ship_blast";
-	dir = 8
+	dir = 8;
+	id = "mining_ship_blast"
 	},
 /turf/open/floor/plating/airless,
 /area/ship/bridge)
@@ -1448,8 +1448,8 @@
 	},
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/preopen{
-	id = "mining_ship_blast";
-	dir = 8
+	dir = 8;
+	id = "mining_ship_blast"
 	},
 /turf/open/floor/plating,
 /area/ship/crew)
@@ -2076,8 +2076,8 @@
 	},
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/preopen{
-	id = "mining_ship_blast";
-	dir = 8
+	dir = 8;
+	id = "mining_ship_blast"
 	},
 /turf/open/floor/plating,
 /area/ship/medical)
@@ -2118,9 +2118,9 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/light_switch{
+	dir = 4;
 	pixel_x = -25;
-	pixel_y = -25;
-	dir = 4
+	pixel_y = -25
 	},
 /obj/effect/turf_decal/techfloor{
 	dir = 10

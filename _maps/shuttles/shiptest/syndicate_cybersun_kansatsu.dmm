@@ -414,8 +414,8 @@
 	dir = 6
 	},
 /obj/item/storage/secure/safe/intel/stechkin{
-	pixel_x = -30;
-	dir = 8
+	dir = 8;
+	pixel_x = -30
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/office)
@@ -738,10 +738,10 @@
 /area/ship/hallway/central)
 "re" = (
 /obj/docking_port/stationary{
-	dwidth = 3;
-	width = 7;
+	dir = 2;
+	dwidth = 7;
 	height = 15;
-	dir = 2
+	width = 7
 	},
 /turf/template_noop,
 /area/template_noop)

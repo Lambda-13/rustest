@@ -1531,6 +1531,15 @@
 	},
 /turf/open/floor/wood,
 /area/ship/hallway/aft)
+"xN" = (
+/obj/docking_port/stationary{
+	dir = 8;
+	dwidth = 15;
+	height = 20;
+	width = 20
+	},
+/turf/template_noop,
+/area/space)
 "yQ" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile{
@@ -2167,12 +2176,12 @@
 /obj/item/antag_spawner/contract,
 /obj/item/antag_spawner/contract,
 /obj/item/gun/energy/e_gun/smg{
-	name = "staff of bombardment";
-	pixel_x = -5;
 	desc = "A powerful staff that required almost 100 assistant souls to create.";
 	icon = 'icons/obj/items_and_weapons.dmi';
 	icon_state = "godstaff-red";
 	lefthand_file = 'icons/mob/inhands/items_lefthand.dmi';
+	name = "staff of bombardment";
+	pixel_x = -5;
 	righthand_file = 'icons/mob/inhands/items_righthand.dmi'
 	},
 /turf/open/floor/carpet/stellar,
@@ -2680,7 +2689,7 @@ No
 No
 No
 No
-No
+xN
 No
 No
 No

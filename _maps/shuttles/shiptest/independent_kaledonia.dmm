@@ -33,6 +33,7 @@
 	port_direction = 8;
 	preferred_direction = 4
 	},
+/obj/structure/fans/tiny,
 /turf/open/floor/plating,
 /area/ship/crew/toilet)
 "af" = (
@@ -73,7 +74,9 @@
 /turf/open/floor/plastic,
 /area/ship/crew/toilet)
 "ak" = (
-/obj/machinery/door/airlock/maintenance_hatch,
+/obj/machinery/door/airlock/maintenance_hatch{
+	dir = 4
+	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -158,7 +161,9 @@
 /turf/open/floor/plating,
 /area/ship/crew/toilet)
 "as" = (
-/obj/machinery/door/airlock/maintenance_hatch,
+/obj/machinery/door/airlock/maintenance_hatch{
+	dir = 4
+	},
 /obj/effect/turf_decal/siding/brown{
 	dir = 4;
 	icon_state = "siding_line"
@@ -507,7 +512,9 @@
 /turf/open/floor/engine/n2,
 /area/ship/engineering/engine)
 "bg" = (
-/obj/machinery/door/airlock/mining/glass,
+/obj/machinery/door/airlock/mining/glass{
+	dir = 4
+	},
 /obj/effect/turf_decal/siding/brown{
 	dir = 8;
 	icon_state = "siding_line"
@@ -1006,7 +1013,9 @@
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/hallway/central)
 "ce" = (
-/obj/machinery/door/airlock/external/glass,
+/obj/machinery/door/airlock/external/glass{
+	dir = 4
+	},
 /obj/structure/fans/tiny,
 /obj/machinery/atmospherics/pipe/simple/cyan/visible/layer2{
 	dir = 4;
@@ -1761,7 +1770,9 @@
 /turf/open/floor/plating/catwalk_floor,
 /area/ship/hallway/central)
 "dM" = (
-/obj/machinery/door/airlock/mining,
+/obj/machinery/door/airlock/mining{
+	dir = 4
+	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -2306,7 +2317,9 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "eI" = (
-/obj/machinery/door/airlock/mining,
+/obj/machinery/door/airlock/mining{
+	dir = 4
+	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -2958,7 +2971,9 @@
 /turf/open/floor/pod/light,
 /area/ship/bridge)
 "gj" = (
-/obj/machinery/door/airlock/mining,
+/obj/machinery/door/airlock/mining{
+	dir = 4
+	},
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer4{
 	dir = 8;
 	icon_state = "pipe11-4"
@@ -3003,6 +3018,7 @@
 /area/ship/security/armory)
 "go" = (
 /obj/machinery/door/airlock/external/glass,
+/obj/structure/fans/tiny,
 /turf/open/floor/plating,
 /area/ship/science/robotics)
 "gp" = (
@@ -3031,7 +3047,6 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "gs" = (
-/obj/machinery/door/airlock/maintenance_hatch,
 /obj/machinery/door/firedoor/border_only{
 	dir = 8;
 	icon_state = "door_open"
@@ -3050,6 +3065,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 4;
 	icon_state = "pipe11-2"
+	},
+/obj/machinery/door/airlock/maintenance_hatch{
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/science/robotics)
@@ -3195,6 +3213,7 @@
 "gL" = (
 /obj/structure/fans/tiny,
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = 773
 	},
 /turf/open/floor/plasteel/tech,
@@ -3264,7 +3283,9 @@
 /turf/open/floor/plating,
 /area/ship/science/robotics)
 "gW" = (
-/obj/machinery/door/airlock/maintenance_hatch,
+/obj/machinery/door/airlock/maintenance_hatch{
+	dir = 4
+	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8;
 	icon_state = "door_open"
@@ -3344,6 +3365,15 @@
 /obj/machinery/computer/helm/viewscreen/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
+"Qi" = (
+/obj/docking_port/stationary{
+	dir = 2;
+	dwidth = 15;
+	height = 20;
+	width = 20
+	},
+/turf/template_noop,
+/area/template_noop)
 
 (1,1,1) = {"
 aa
@@ -3558,7 +3588,7 @@ gH
 gz
 go
 gh
-aa
+Qi
 aa
 "}
 (9,1,1) = {"
