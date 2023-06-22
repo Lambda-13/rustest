@@ -77,6 +77,7 @@
 	else
 		output += "<p><a href='byond://?src=[REF(src)];manifest=1'>Активный экипаж</a></p>"
 		output += "<p><a href='byond://?src=[REF(src)];late_join=1'>Войти в игру</a></p>"
+		output += "<p><a href='byond://?src=[REF(src)];ghostrole_join=1'>Играть со спавнера</a></p>"
 		output += "<p>[LINKIFY_READY("Наблюдать", PLAYER_READY_TO_OBSERVE)]</p>"
 
 	if(!IsGuestKey(src.key))
@@ -190,6 +191,32 @@
 			return
 		LateChoices()
 
+	if(href_list["ghostrole_join"])
+		if(!SSticker?.IsRoundInProgress())
+			to_chat(usr, "<span class='boldwarning'>Раунд уже завершён или еще не начался...</span>")
+			return
+		GhostspawnChoices()
+
+	if(href_list["JoinAsGhostRole"])
+		if(!GLOB.enter_allowed)
+			to_chat(usr, "<span class='notice'>Вход временно закрыт.</span>")
+
+		if(hpc && epc)
+			relevant_cap = min(hpc, epc)
+		else
+			relevant_cap = max(hpc, epc)
+
+		if(SSticker.queued_players.len && !(ckey(key) in GLOB.admin_datums))
+			if((living_player_count() >= relevant_cap) || (src != SSticker.queued_players[1]))
+				to_chat(usr, "<span class='warning'>Сервер полон.</span>")
+				return
+
+		var/obj/effect/mob_spawn/MS = pick(GLOB.mob_spawners[href_list["JoinAsGhostRole"]])
+		if(MS.attack_ghost(src, latejoinercalling = TRUE))
+			SSticker.queued_players -= src
+			SSticker.queue_delay = 4
+			qdel(src)
+
 	if(href_list["manifest"])
 		ViewManifest()
 
@@ -198,7 +225,6 @@
 			client.prefs.process_link(src, href_list)
 	else if(!href_list["late_join"])
 		new_player_panel()
-
 	if(href_list["showpoll"])
 		handle_player_polling()
 		return
@@ -256,7 +282,7 @@
 		if(JOB_AVAILABLE)
 			return "[jobtitle] доступен для игры."
 		if(JOB_UNAVAILABLE_GENERIC)
-			return "[jobtitle] недоступен для игры.."
+			return "[jobtitle] недоступен для игры."
 		if(JOB_UNAVAILABLE_BANNED)
 			return "[jobtitle] недоступен для игры по причине блокировки."
 		if(JOB_UNAVAILABLE_PLAYTIME)
@@ -385,6 +411,47 @@
 			return FALSE
 	return TRUE
 
+/mob/dead/new_player/proc/GhostspawnChoices()
+
+	var/dat = "<div class='notice'>Длительность раунда: [DisplayTimeText(world.time - SSticker.round_start_time)]<br></div>"
+	dat += "<center><table><tr><td valign='top'>"
+	var/available_ghosts = 0
+	for(var/spawner in GLOB.mob_spawners)
+		if(!LAZYLEN(spawner))
+			continue
+		var/obj/effect/mob_spawn/S = pick(GLOB.mob_spawners[spawner])
+		if(!istype(S) || !S.can_latejoin())
+			continue
+		available_ghosts++
+		break
+	if(!available_ghosts)
+		dat += "<div class='notice red'>Сейчас нету доступных спавнеров.</div>"
+	else
+		var/list/categorizedJobs = list("Играть не на кораблях" = list(jobs = list(), titles = GLOB.mob_spawners, color = "#ffffff"))
+		for(var/spawner in GLOB.mob_spawners)
+			if(!LAZYLEN(spawner))
+				continue
+			var/obj/effect/mob_spawn/S = pick(GLOB.mob_spawners[spawner])
+			if(!istype(S) || !S.can_latejoin())
+				continue
+			categorizedJobs["Играть не на кораблях"]["jobs"] += spawner
+		dat += "<center><table><tr><td valign='top'>"
+		for(var/jobcat in categorizedJobs)
+			if(!length(categorizedJobs[jobcat]["jobs"]))
+				continue
+			var/color = categorizedJobs[jobcat]["color"]
+			dat += "<fieldset style='border: 2px solid [color]; display: inline'>"
+			dat += "<legend align='center' style='color: [color]'>[jobcat]</legend>"
+			for(var/spawner in categorizedJobs[jobcat]["jobs"])
+				dat += "<a class='otherPosition' style='display:block;width:170px' href='byond://?src=[REF(src)];JoinAsGhostRole=[spawner]'>[spawner]</a>"
+			dat += "</fieldset><br>"
+		dat += "</td></tr></table></center>"
+		dat += "</div></div>"
+	var/datum/browser/popup = new(src, "ghostrolechoices", "Выберите спавнер", 720, 600)
+	popup.add_stylesheet("playeroptions", 'html/browser/playeroptions.css')
+	popup.set_content(jointext(dat, ""))
+	popup.open(FALSE) // FALSE is passed to open so that it doesn't use the onclose() proc
+
 /mob/dead/new_player/proc/create_character(transfer_after)
 	if(auth_check)
 		return
@@ -460,6 +527,7 @@
 	src << browse(null, "window=preferences") //closes job selection
 	src << browse(null, "window=mob_occupation")
 	src << browse(null, "window=latechoices") //closes late job selection
+	src << browse(null, "window=ghostrolechoices") //закрываем окошко гостролек
 
 // Used to make sure that a player has a valid job preference setup, used to knock players out of eligibility for anything if their prefs don't make sense.
 // A "valid job preference setup" in this situation means at least having one job set to low, or not having "return to lobby" enabled

@@ -34,23 +34,27 @@
 	var/ghost_usable = TRUE
 
 //ATTACK GHOST IGNORING PARENT RETURN VALUE
-/obj/effect/mob_spawn/attack_ghost(mob/user)
+/obj/effect/mob_spawn/attack_ghost(mob/user, latejoinercalling)
 	if(!SSticker.HasRoundStarted() || !loc || !ghost_usable)
 		return
 	if(!uses)
-		to_chat(user, "<span class='warning'>This spawner is out of charges!</span>")
+		to_chat(user, "<span class='warning'>Места закончились.</span>")
 		return
 	if(is_banned_from(user.key, banType))
-		to_chat(user, "<span class='warning'>You are jobanned!</span>")
+		to_chat(user, "<span class='warning'>Тебе нельзя.</span>")
 		return
 	if(!allow_spawn(user))
 		return
 	if(QDELETED(src) || QDELETED(user))
 		return
-	var/ghost_role = alert("Become [mob_name]? (Warning, You can no longer be revived!)",,"Yes","No")
-
-	if(ghost_role == "No" || !loc)
+	var/ghost_role = alert(latejoinercalling ? "Играть за [mob_name]? (эта роль НЕ является частью экипажа какого либо корабля, так что будьте аккуратны)" : "Играть за [mob_name]? (оживить тебя после такого не получится)",,"Да","Нет")
+	if(ghost_role == "Нет" || !loc)
 		return
+	if(latejoinercalling)
+		var/mob/dead/new_player/NP = user
+		if(istype(NP))
+			NP.close_spawn_windows()
+			NP.stop_sound_channel(CHANNEL_LOBBYMUSIC)
 	log_game("[key_name(user)] became [mob_name]")
 	create(ckey = user.ckey)
 
@@ -69,6 +73,9 @@
 	if(!LAZYLEN(spawners))
 		GLOB.mob_spawners -= name
 	return ..()
+
+/obj/effect/mob_spawn/proc/can_latejoin() //If it can be taken from the lobby.
+	return ghost_usable
 
 /obj/effect/mob_spawn/proc/allow_spawn(mob/user) //Override this to add spawn limits to a ghost role
 	return TRUE
