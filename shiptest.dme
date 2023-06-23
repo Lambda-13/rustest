@@ -3520,6 +3520,7 @@
 #include "lambda\sanecman\code\exoplanets\turf.dm"
 #include "lambda\sanecman\code\exoplanets\VolcanicGenerator.dm"
 #include "lambda\sanecman\code\exoplanets\wall.dm"
+#include "lambda\sanecman\code\gamemodes\lfwb.dm"
 #include "lambda\sanecman\code\gamemodes\war.dm"
 #include "lambda\sanecman\code\integrated_circuits_snitch\all_nodes.dm"
 #include "lambda\sanecman\code\integrated_circuits_snitch\electronics_designs.dm"
