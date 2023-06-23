@@ -872,6 +872,20 @@
 		/obj/structure/radioactive/waste = 12
 	)
 
+/obj/effect/spawner/lootdrop/shrouded/radiation
+	loot = list(
+		/obj/structure/radioactive = 6,
+		/obj/structure/radioactive/stack = 6,
+		/obj/structure/radioactive/waste = 6
+	)
+
+/obj/effect/spawner/lootdrop/shrouded/radiation/more_rads
+	loot = list(
+		/obj/structure/radioactive = 3,
+		/obj/structure/radioactive/stack = 12,
+		/obj/structure/radioactive/waste = 12
+	)
+
 /obj/effect/spawner/lootdrop/waste/atmos_can
 	loot = list(
 		/obj/machinery/portable_atmospherics/canister/toxins = 3,

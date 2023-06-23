@@ -110,6 +110,14 @@
 	singular_name = "volcanic ash pile"
 	grind_results = list(/datum/reagent/toxin/lava_microbe = 1, /datum/reagent/ash = 8.5, /datum/reagent/silicon = 8.5)
 
+/obj/item/stack/ore/glass/shroudedplanet
+	name = "shrouded sands"
+	icon_state = "whitesands"
+	item_state = "whitesands"
+	singular_name = "shrouded pile"
+	color = "#580d6d" //Мне лень делать отдельный спрайт
+	grind_results = list(/datum/reagent/consumable/sodiumchloride = 10, /datum/reagent/silicon = 10)
+
 /obj/item/stack/ore/glass/whitesands
 	name = "white sand pile"
 	icon_state = "whitesands"

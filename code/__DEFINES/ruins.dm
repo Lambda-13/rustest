@@ -6,6 +6,7 @@
 #define RUINTYPE_ROCK "Rock"
 #define RUINTYPE_BEACH "Beach"
 #define RUINTYPE_WASTE "Waste"
+#define RUINTYPE_SHROUDED "Shrouded"
 #define RUINTYPE_YELLOW "Yellow"
 
 
@@ -26,6 +27,7 @@
 	RUINTYPE_BEACH,\
 	RUINTYPE_WASTE,\
 	RUINTYPE_YELLOW,\
+	RUINTYPE_SHROUDED,\
 	RUINTYPE_EVERYTHING)
 
 /proc/ruintype_to_list(ruintype)

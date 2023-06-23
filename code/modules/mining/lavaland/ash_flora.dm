@@ -513,6 +513,26 @@
 	light_range = 3
 	light_color = "#11fa25"
 
+/obj/structure/flora/ash/glowshroom/shadowshroom
+	name = "shadowshroom colony"
+	desc = "A small, hardy patch of radiovoric shadowshroom, busying themselves in their attempts to decontaminate the soil."
+	icon_state = "glowshroom"
+	color = "#580d6d"
+	harvested_name = "shadowshroom colony"
+	harvested_desc = "A small, hardy patch of radiovoric shadowshroom. Someone seems to have come by and picked all the larger ones."
+	harvest = /obj/item/reagent_containers/food/snacks/grown/mushroom/glowshroom/shadowshroom
+	harvest_amount_high = 6
+	harvest_amount_low = 1
+	harvest_message_low = "You only find a single intact stalk, discarding a number of stunted or rotted shrooms."
+	harvest_message_med = "You collect a bundle of shadow fungi."
+	harvest_message_high = "You manage to find several proudly-shadowing shrooms of impressive size."
+	regrowth_time_low = 10 MINUTES
+	regrowth_time_high = 20 MINUTES
+	num_sprites = 1
+	light_power = -6
+	light_range = 2.5
+	light_color = "#1a3b77"
+
 //Gardens//
 //these guys spawn a variety of seeds at random, slightly weighted. Intended as a stopgap until we can add more custom flora.
 /obj/structure/flora/ash/garden

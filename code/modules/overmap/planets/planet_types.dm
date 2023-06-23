@@ -132,3 +132,16 @@
 	default_baseturf = /turf/open/floor/plating/asteroid/wasteplanet
 	weather_controller_type = /datum/weather_controller/chlorine
 	ruin_type = RUINTYPE_WASTE
+//Планеты с бэя 12 инфинити эдишон
+/datum/planet_type/shrouded
+	name = "теневая планета"
+	desc = "Планетарный биом, окутанный вечным штормом причудливых, поглощающих свет частиц."
+	planet = DYNAMIC_WORLD_SHROUDED
+	icon_state = "globe"
+	color = "#3e3960"
+	weight = 5
+	mapgen = /datum/map_generator/planet_generator/shrouded
+	default_baseturf = /turf/open/floor/plating/asteroid/shroudedplanet
+	weather_controller_type = /datum/weather_controller/shrouded
+	ruin_type = RUINTYPE_SHROUDED
+	danger_level = 4

@@ -32,3 +32,14 @@
 	rad_power = 120
 	rad_delay = 80
 	rad_prob = 10
+
+/obj/effect/radiation/shrouded
+	rad_power = 11
+	rad_delay = 10
+	rad_prob = 50
+	rad_spread = 3
+
+/obj/effect/radiation/shrouded/intense
+	rad_power = 240
+	rad_delay = 40
+	rad_prob = 20

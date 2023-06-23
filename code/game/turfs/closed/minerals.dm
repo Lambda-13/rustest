@@ -86,7 +86,7 @@
 					for(var/turf/closed/mineral/M in range(user,E.digrange))
 						if(get_dir(user,M)&user.dir)
 							M.gets_drilled(user, TRUE)
-				else 
+				else
 					gets_drilled(user, TRUE)
 				SSblackbox.record_feedback("tally", "pick_used_mining", 1, I.type)
 	else
@@ -830,3 +830,12 @@
 	baseturfs = /turf/open/floor/plating
 	environment_type = "snow_cavern"
 	turf_type = /turf/open/floor/plating
+
+/turf/closed/mineral/random/asteroid/wasteplanet/shroudedplanet
+	icon = 'icons/turf/walls/ws_walls.dmi'
+	smooth_icon = 'icons/turf/walls/ws_walls.dmi'
+	base_icon_state = "smoothrocks"
+	color = "#52457c" //Я ленивый
+	baseturfs = /turf/open/floor/plating/asteroid/shroudedplanet
+	initial_gas_mix = SHROUDEDPLANET_DEFAULT_ATMOS
+	mineralChance = 10
