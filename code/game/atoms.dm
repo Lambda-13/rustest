@@ -673,8 +673,6 @@
 		. = list("[examine_string].")
 	else
 		. = list()
-//#CHECKIT
-//	. = list("<hr>[get_examine_string(user, TRUE)].")
 
 	. += get_name_chaser(user)
 	if(desc)
