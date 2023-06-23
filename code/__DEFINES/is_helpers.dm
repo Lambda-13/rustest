@@ -6,6 +6,9 @@
 
 #define isweakref(D) (istype(D, /datum/weakref))
 
+#define Clamp(value, low, high) (value <= low ? low : (value >= high ? high : value))
+#define CLAMP01(x) 		(Clamp(x, 0, 1))
+
 //Turfs
 //#define isturf(A) (istype(A, /turf)) This is actually a byond built-in. Added here for completeness sake.
 
