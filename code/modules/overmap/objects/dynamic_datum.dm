@@ -41,6 +41,7 @@
 	///The X bounds of the virtual z level
 	var/vlevel_width = QUADRANT_MAP_SIZE
 
+	//Уровень опасности при осмотре планеты на оверкарте который даёт понять насколько безопасно сюда высаживаться
 	var/danger_level
 
 /datum/overmap/dynamic/Initialize(position, load_now=TRUE, ...)

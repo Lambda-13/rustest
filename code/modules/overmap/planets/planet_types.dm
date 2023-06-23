@@ -123,8 +123,8 @@
 	danger_level = 0
 
 /datum/planet_type/waste
-	name = "waste disposal planet"
-	desc = "A very weak energy signal originating from a planet marked as waste disposal."
+	name = "мусорная планета"
+	desc = "Планетарный биом, характеризующийся огромным пространством мусора и сломанной машинерии."
 	planet = DYNAMIC_WORLD_WASTEPLANET
 	icon_state = "globe"
 	color = "#a9883e"
@@ -132,6 +132,8 @@
 	default_baseturf = /turf/open/floor/plating/asteroid/wasteplanet
 	weather_controller_type = /datum/weather_controller/chlorine
 	ruin_type = RUINTYPE_WASTE
+	danger_level = 3
+
 //Планеты с бэя 12 инфинити эдишон
 /datum/planet_type/shrouded
 	name = "теневая планета"
