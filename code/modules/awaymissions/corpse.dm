@@ -47,7 +47,7 @@
 		return
 	if(QDELETED(src) || QDELETED(user))
 		return
-	var/ghost_role = alert(latejoinercalling ? "Играть за [mob_name]? (эта роль НЕ является частью экипажа какого либо корабля, так что будьте аккуратны)" : "Играть за [mob_name]? (оживить тебя после такого не получится)",,"Да","Нет")
+	var/ghost_role = alert(latejoinercalling ? "Играть за [mob_name ? "[name]" : "[mob_name] ([name])"]?\nОписание: [short_desc]\n(эта роль НЕ является частью экипажа какого либо корабля, так что будьте аккуратны)" : "Играть за [mob_name ? "[name]" : "[mob_name] ([name])"]?\nОписание: [short_desc]\n(оживить тебя после такого не получится)",,"Да","Нет")
 	if(ghost_role == "Нет" || !loc)
 		return
 	if(latejoinercalling)

@@ -300,22 +300,22 @@ GLOBAL_VAR(restart_counter)
 		var/server_name = CONFIG_GET(string/servername)
 		if (server_name)
 			s += "<b>[server_name]</b> &#8212; "
-		features += "[CONFIG_GET(flag/norespawn) ? "no " : ""]respawn"
-		if(CONFIG_GET(flag/allow_vote_mode))
-			features += "vote"
-		if(CONFIG_GET(flag/allow_ai))
-			features += "AI allowed"
+		features += "[CONFIG_GET(flag/norespawn) ? "&ocy;&tcy;&kcy;&lcy;. " : "&vcy;&kcy;&lcy;. "]&rcy;&iecy;&scy;&pcy;&acy;&vcy;&ncy;" //откл./вкл. респавн
+//		if(CONFIG_GET(flag/allow_vote_mode))
+//			features += "vote"
+//		if(CONFIG_GET(flag/allow_ai))
+//			features += "AI allowed"
 		hostedby = CONFIG_GET(string/hostedby)
 
 	s += "<b>[station_name()]</b>";
 	s += " ("
-	s += "<a href=\"https://shiptest.net/discord\">" //Change this to wherever you want the hub to link to.
-	s += "Discord"  //Replace this with something else. Or ever better, delete it and uncomment the game version.
+	s += "<a href=\"https://vk.cc/cpakPw\">" //редирект в конфу дискорда
+	s += "&Dcy;&icy;c&kcy;op&dcy;"//дискорд
 	s += "</a>"
 	s += ")"
 	s += " ("
 	s += "<a href=\"https://github.com/Lambda-13/rustest\">"
-	s += "Github"
+	s += "&Gcy;&icy;&tcy;xa&bcy;"//гитхаб
 	s += "</a>"
 	s += ")"
 
