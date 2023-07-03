@@ -44,6 +44,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "ak" = (
@@ -148,6 +149,7 @@
 	dir = 5
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/medical/morgue)
 "aI" = (
@@ -419,6 +421,7 @@
 /obj/item/storage/firstaid/o2,
 /obj/item/storage/firstaid/fire,
 /obj/item/storage/firstaid/brute,
+/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
 "bJ" = (
@@ -687,6 +690,7 @@
 	name = "Egnine shutter";
 	pixel_y = 28
 	},
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "cJ" = (
@@ -715,7 +719,6 @@
 	dir = 1
 	},
 /obj/structure/table/chem,
-/obj/machinery/light/broken/directional/south,
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
@@ -729,6 +732,7 @@
 /obj/item/reagent_containers/glass/filter{
 	pixel_x = -8
 	},
+/obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew)
 "cO" = (
@@ -926,6 +930,7 @@
 /area/ship/medical)
 "ds" = (
 /obj/machinery/suit_storage_unit/cmo,
+/obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "dt" = (
@@ -1085,7 +1090,6 @@
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "gB" = (
-/obj/machinery/light/small/built/directional/east,
 /obj/structure/rack,
 /obj/item/roller{
 	pixel_y = 4
@@ -1103,6 +1107,7 @@
 	dir = 5
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/plasteel/tech,
 /area/ship/medical)
 "gC" = (
@@ -1123,6 +1128,7 @@
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 4
 	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "gE" = (
@@ -1283,8 +1289,8 @@
 /area/ship/cargo)
 "jG" = (
 /obj/machinery/vending/medical,
-/obj/machinery/light/directional/east,
 /obj/effect/turf_decal/box,
+/obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "jI" = (
@@ -1441,6 +1447,7 @@
 "og" = (
 /obj/machinery/stasis,
 /obj/item/radio/intercom/directional/east,
+/obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
 "ot" = (
@@ -1523,13 +1530,13 @@
 	dir = 4;
 	id = "emergencybay_blastdoors";
 	name = "Emergency Bay Blastdoors";
-	pixel_x = -25;
+	pixel_x = -32;
 	pixel_y = 37
 	},
 /obj/machinery/button/shieldwallgen{
 	dir = 4;
 	id = "box_cargo";
-	pixel_x = -25;
+	pixel_x = -30;
 	pixel_y = 24
 	},
 /obj/structure/closet/emcloset/wall{
@@ -1628,7 +1635,6 @@
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "uj" = (
-/obj/machinery/light/small/built/directional/west,
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/machinery/light_switch{
 	pixel_x = -25;
@@ -1639,10 +1645,10 @@
 	icon_state = "0-2"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/bridge)
 "ux" = (
-/obj/machinery/light/small/built/directional/west,
 /obj/machinery/button/door{
 	dir = 1;
 	id = "whiteship_windows";
@@ -1674,6 +1680,7 @@
 	pixel_y = -38
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/bridge)
 "uD" = (
@@ -1758,7 +1765,6 @@
 "vs" = (
 /obj/machinery/airalarm/directional/south,
 /obj/effect/turf_decal/industrial/warning/fulltile,
-/obj/machinery/light/small/built/directional/south,
 /obj/structure/sign/warning/biohazard{
 	pixel_x = -32;
 	pixel_y = 4
@@ -1782,6 +1788,7 @@
 	dir = 1
 	},
 /obj/machinery/firealarm/directional/west,
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "vE" = (
@@ -1912,6 +1919,7 @@
 	pixel_y = 30
 	},
 /obj/machinery/airalarm/directional/west,
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "xk" = (
@@ -1960,7 +1968,6 @@
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "yA" = (
-/obj/machinery/light/small/directional/south,
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
 	dir = 4
 	},
@@ -1994,6 +2001,7 @@
 	name = "Egnine shutter";
 	pixel_y = -28
 	},
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "yN" = (
@@ -2059,7 +2067,6 @@
 /obj/machinery/advanced_airlock_controller{
 	pixel_y = 28
 	},
-/obj/machinery/light/small/broken/directional/north,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "AL" = (
@@ -2106,7 +2113,6 @@
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "By" = (
-/obj/machinery/light/built/directional/south,
 /turf/open/floor/plasteel/white,
 /area/ship/cargo)
 "BR" = (
@@ -2230,7 +2236,6 @@
 	density = 0;
 	pixel_y = -32
 	},
-/obj/item/light/tube/broken,
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
 "ER" = (
@@ -2409,7 +2414,6 @@
 /obj/structure/chair/office/light{
 	dir = 1
 	},
-/obj/machinery/light/small/directional/south,
 /obj/effect/turf_decal/corner/opaque/blue{
 	dir = 8
 	},
@@ -2607,7 +2611,7 @@
 /obj/machinery/atmospherics/components/unary/thermomachine/freezer{
 	dir = 4
 	},
-/obj/machinery/light/small/built/directional/west,
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/medical)
 "Rx" = (
@@ -2620,6 +2624,13 @@
 	},
 /turf/open/floor/plating,
 /area/ship/crew)
+"RK" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/machinery/light/directional/east,
+/turf/open/floor/plasteel/dark,
+/area/ship/cargo)
 "RR" = (
 /obj/structure/filingcabinet/medical,
 /obj/item/radio/intercom/directional/west,
@@ -2853,7 +2864,6 @@
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "Yg" = (
-/obj/machinery/light/small/built/directional/east,
 /obj/structure/rack,
 /obj/item/storage/toolbox/emergency,
 /obj/item/gps{
@@ -2872,6 +2882,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 6
 	},
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/plasteel/tech,
 /area/ship/medical)
 "Yj" = (
@@ -3362,7 +3373,7 @@ Rx
 (23,1,1) = {"
 aa
 ae
-aj
+RK
 yU
 FH
 By

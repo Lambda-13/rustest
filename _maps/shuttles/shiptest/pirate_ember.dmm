@@ -1586,7 +1586,6 @@
 /obj/item/hypospray/mkii/CMO/combat{
 	pixel_x = -10
 	},
-/obj/structure/extinguisher_cabinet/directional/north,
 /obj/item/radio/intercom/directional/west,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/medical)
@@ -2692,6 +2691,9 @@
 "nJ" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/machinery/light/directional/south,
+/obj/structure/plaque/static_plaque/golden{
+	pixel_y = -32
+	},
 /turf/open/floor/carpet/green,
 /area/ship/crew/office)
 "nL" = (
@@ -2808,10 +2810,6 @@
 /area/ship/bridge)
 "oj" = (
 /obj/machinery/door/airlock/atmos/glass,
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "cutter_sm_lockdown";
-	name = "Lockdown Shutters"
-	},
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
 "ok" = (
@@ -3760,6 +3758,7 @@
 /obj/structure/sign/poster/contraband/kudzu{
 	pixel_x = -32
 	},
+/obj/structure/extinguisher_cabinet/directional/south,
 /turf/open/floor/wood,
 /area/ship/crew/office)
 "tl" = (
@@ -4354,10 +4353,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "vy" = (
-/obj/structure/plaque/static_plaque/golden{
-	pixel_x = 32;
-	pixel_y = 32
-	},
 /obj/machinery/holopad/emergency/command,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
@@ -5068,6 +5063,7 @@
 /obj/machinery/vending/wallmed{
 	pixel_x = -32
 	},
+/obj/structure/extinguisher_cabinet/directional/west,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/medical)
 "zn" = (
@@ -6582,7 +6578,6 @@
 /obj/effect/turf_decal/siding/wood/end{
 	dir = 1
 	},
-/obj/structure/extinguisher_cabinet/directional/north,
 /obj/machinery/light/small/directional/west,
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
@@ -6971,16 +6966,13 @@
 	dir = 10
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/extinguisher_cabinet/directional/north,
 /obj/machinery/firealarm/directional/south,
+/obj/structure/extinguisher_cabinet/directional/west,
 /turf/open/floor/concrete/tiles,
 /area/ship/crew)
 "HG" = (
 /obj/effect/turf_decal/techfloor/corner{
 	dir = 8
-	},
-/obj/effect/turf_decal/corner_techfloor_gray{
-	dir = 6
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -6988,9 +6980,7 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 8
 	},
-/turf/open/floor/plating{
-	icon_state = "panelscorched"
-	},
+/turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "HI" = (
 /obj/machinery/atmospherics/components/unary/outlet_injector/on{
@@ -7196,7 +7186,7 @@
 /obj/structure/sign/poster/contraband/space_cola{
 	pixel_x = -32
 	},
-/obj/structure/extinguisher_cabinet/directional/north,
+/obj/structure/extinguisher_cabinet/directional/south,
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
 "IF" = (
@@ -7901,7 +7891,7 @@
 /obj/structure/railing{
 	dir = 1
 	},
-/obj/structure/extinguisher_cabinet/directional/north,
+/obj/structure/extinguisher_cabinet/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "KW" = (
@@ -8132,13 +8122,13 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/techfloor/corner,
-/obj/structure/extinguisher_cabinet/directional/north,
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
 	},
+/obj/structure/extinguisher_cabinet/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
 "LQ" = (
@@ -10029,12 +10019,12 @@
 /obj/effect/decal/fakelattice{
 	icon_state = "lattice-29"
 	},
-/obj/structure/extinguisher_cabinet/directional/north,
 /obj/item/grenade/chem_grenade/smart_metal_foam{
 	pixel_x = 3;
 	pixel_y = -5
 	},
 /obj/item/stack/ore/salvage/scrapgold/five,
+/obj/structure/extinguisher_cabinet/directional/west,
 /turf/open/floor/plating/airless{
 	icon_state = "platingdmg3"
 	},

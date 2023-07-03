@@ -6284,7 +6284,7 @@
 	sortTypes = list(7,8,15,29,30);
 	tag = "Command"
 	},
-/obj/structure/extinguisher_cabinet/directional/north,
+/obj/structure/extinguisher_cabinet/directional/west,
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "Pa" = (

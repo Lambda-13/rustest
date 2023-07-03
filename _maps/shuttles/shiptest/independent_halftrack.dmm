@@ -276,6 +276,7 @@
 /area/ship/bridge)
 "hH" = (
 /obj/machinery/computer/helm,
+/obj/machinery/light/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "hT" = (
@@ -353,6 +354,12 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
+"kd" = (
+/obj/structure/sign/poster/contraband/c20r{
+	pixel_y = 32
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/security/range)
 "kB" = (
 /obj/structure/sign/poster/contraband/peacemaker,
 /turf/closed/wall/r_wall,
@@ -511,6 +518,7 @@
 /area/ship/security/range)
 "mO" = (
 /obj/machinery/computer/med_data,
+/obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "mP" = (
@@ -2120,9 +2128,6 @@
 /obj/structure/table/reinforced,
 /obj/machinery/recharger,
 /obj/machinery/firealarm/directional/east,
-/obj/structure/sign/poster/contraband/c20r{
-	pixel_y = 32
-	},
 /turf/open/floor/carpet/nanoweave,
 /area/ship/bridge)
 "YK" = (
@@ -2288,7 +2293,7 @@ nu
 nu
 Xh
 Xh
-zo
+kd
 SR
 Yb
 hT
