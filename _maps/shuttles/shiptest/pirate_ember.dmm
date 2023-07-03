@@ -8908,7 +8908,6 @@
 /turf/open/floor/plating/airless,
 /area/ship/maintenance/port)
 "Pl" = (
-/obj/structure/extinguisher_cabinet/directional/north,
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
@@ -9954,6 +9953,7 @@
 /obj/item/stack/rods{
 	pixel_x = 7
 	},
+/obj/structure/extinguisher_cabinet/directional/south,
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "Va" = (
