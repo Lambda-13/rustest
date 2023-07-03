@@ -4061,6 +4061,7 @@
 /obj/machinery/suit_storage_unit/inherit/industrial,
 /obj/machinery/airalarm/directional/north,
 /obj/item/clothing/suit/space/scar,
+/obj/item/clothing/head/helmet/space/scar,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/office)
 "uB" = (
