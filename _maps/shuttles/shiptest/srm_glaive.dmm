@@ -59,6 +59,7 @@
 /obj/item/clothing/shoes/cowboy/black,
 /obj/item/clothing/shoes/jackboots,
 /obj/item/book/manual/srmlore,
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/wood/ebony,
 /area/ship/crew/dorm)
 "aM" = (
@@ -88,6 +89,7 @@
 /obj/item/ammo_box/c38_box/hunting,
 /obj/item/storage/firstaid/roumain,
 /obj/effect/turf_decal/corner/opaque/blue/diagonal,
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "aY" = (
@@ -96,6 +98,7 @@
 /area/ship/crew/toilet)
 "bi" = (
 /obj/machinery/mineral/ore_redemption,
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/storage)
 "bm" = (
@@ -139,6 +142,7 @@
 /obj/item/seeds/tower,
 /obj/item/seeds/tower,
 /obj/item/hatchet,
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/ship/dirt/dark,
 /area/ship/roumain)
 "bY" = (
@@ -168,6 +172,7 @@
 /mob/living/simple_animal/crab{
 	name = "Jannet"
 	},
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/plating/ship/water,
 /area/ship/roumain)
 "cj" = (
@@ -518,6 +523,7 @@
 /obj/item/reagent_containers/food/snacks/egg,
 /obj/item/seeds/lavaland/puce,
 /obj/item/seeds/lavaland/puce,
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/ship/dirt/dark,
 /area/ship/roumain)
 "hT" = (
@@ -866,6 +872,7 @@
 /obj/item/seeds/cotton,
 /obj/item/storage/bag/plants/portaseeder,
 /obj/item/storage/bag/plants,
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/ship/dirt/dark,
 /area/ship/roumain)
 "lO" = (
@@ -968,6 +975,11 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/toilet)
+"ni" = (
+/obj/structure/flora/ausbushes/reedbush,
+/obj/machinery/light/small/directional/south,
+/turf/open/floor/plating/ship/water,
+/area/ship/roumain)
 "nj" = (
 /obj/structure/chair/pew/right{
 	dir = 1
@@ -1031,6 +1043,7 @@
 	},
 /obj/machinery/door/firedoor/border_only,
 /obj/structure/railing,
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/wood/maple,
 /area/ship/construction)
 "oC" = (
@@ -1402,6 +1415,7 @@
 /area/ship/roumain)
 "ww" = (
 /obj/structure/sink/puddle,
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/ship/dirt/dark,
 /area/ship/crew/toilet)
 "wA" = (
@@ -1479,6 +1493,7 @@
 /obj/structure/railing{
 	dir = 8
 	},
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/plating/ship/water,
 /area/ship/roumain)
 "xC" = (
@@ -1486,10 +1501,12 @@
 	dir = 1
 	},
 /obj/structure/flora/ausbushes/brflowers,
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/grass/ship/jungle,
 /area/ship/roumain)
 "xD" = (
 /obj/structure/sink/puddle,
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/ship/dirt/dark,
 /area/ship/medical)
 "yn" = (
@@ -1506,6 +1523,7 @@
 	icon_state = "4-6"
 	},
 /obj/structure/tank_dispenser/oxygen,
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/storage)
 "yq" = (
@@ -1634,6 +1652,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/toilet)
 "zZ" = (
@@ -1817,6 +1836,10 @@
 /mob/living/simple_animal/cow,
 /turf/open/floor/ship/dirt/dark,
 /area/ship/roumain)
+"Cc" = (
+/obj/machinery/light/small/directional/south,
+/turf/open/floor/plating/ship/water,
+/area/ship/roumain)
 "Cr" = (
 /obj/structure/cable/orange{
 	icon_state = "1-8"
@@ -1937,6 +1960,7 @@
 "DX" = (
 /obj/structure/flora/ausbushes/brflowers,
 /obj/structure/flora/ausbushes/sunnybush,
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/grass/ship/jungle,
 /area/ship/roumain)
 "Et" = (
@@ -2185,6 +2209,7 @@
 	},
 /obj/machinery/door/firedoor/border_only,
 /obj/structure/railing,
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/wood/maple,
 /area/ship/construction)
 "HB" = (
@@ -2647,6 +2672,7 @@
 	pixel_y = -2
 	},
 /obj/item/seeds/sunflower/moonflower,
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/ship/dirt/dark,
 /area/ship/roumain)
 "NE" = (
@@ -2662,6 +2688,30 @@
 "NL" = (
 /turf/open/floor/ship/dirt/dark,
 /area/ship/roumain)
+"NM" = (
+/obj/structure/cable/orange{
+	icon_state = "1-4"
+	},
+/obj/item/clothing/under/suit/roumain,
+/obj/item/clothing/suit/armor/roumain,
+/obj/item/clothing/head/cowboy/sec/roumain,
+/obj/item/clothing/suit/armor/riot/chaplain/witchhunter,
+/obj/item/clothing/head/helmet/chaplain/witchunter_hat,
+/obj/item/storage/backpack/cultpack,
+/obj/item/flashlight/lantern,
+/obj/item/kitchen/knife/combat/survival,
+/obj/item/gun/ballistic/shotgun/winchester/lethal,
+/obj/structure/closet/secure_closet/hunter,
+/obj/item/lighter,
+/obj/item/ammo_box/c38_box/hunting,
+/obj/item/disk/holodisk/roumain,
+/obj/item/clothing/shoes/cowboy/black,
+/obj/item/clothing/shoes/cowboy,
+/obj/item/clothing/shoes/jackboots,
+/obj/item/book/manual/srmlore,
+/obj/machinery/light/small/directional/south,
+/turf/open/floor/wood/ebony,
+/area/ship/crew/dorm)
 "NT" = (
 /obj/structure/railing/corner{
 	dir = 8
@@ -2913,6 +2963,10 @@
 /obj/structure/loom,
 /turf/open/floor/grass/ship/jungle,
 /area/ship/roumain)
+"SI" = (
+/obj/machinery/light/small/directional/north,
+/turf/open/floor/plating/ship/water,
+/area/ship/roumain)
 "SK" = (
 /obj/structure/railing/corner{
 	dir = 1
@@ -2995,6 +3049,7 @@
 /obj/structure/railing{
 	dir = 4
 	},
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/plating/ship/water,
 /area/ship/roumain)
 "Ul" = (
@@ -3238,6 +3293,14 @@
 	},
 /obj/effect/turf_decal/siding/wood/corner,
 /turf/open/floor/wood/mahogany,
+/area/ship/roumain)
+"YJ" = (
+/obj/structure/chair/pew/left{
+	dir = 1
+	},
+/obj/structure/flora/ausbushes/brflowers,
+/obj/machinery/light/small/directional/west,
+/turf/open/floor/grass/ship/jungle,
 /area/ship/roumain)
 "YM" = (
 /obj/effect/turf_decal/industrial/warning,
@@ -3889,7 +3952,7 @@ fm
 aH
 ZK
 mr
-ZK
+NM
 fm
 ge
 ge
@@ -3994,7 +4057,7 @@ VQ
 aM
 Xg
 ZV
-Xt
+Cc
 wp
 wp
 wC
@@ -4039,7 +4102,7 @@ DX
 rj
 YT
 vX
-gi
+YJ
 bN
 IZ
 PU
@@ -4212,7 +4275,7 @@ Cx
 wp
 wC
 wp
-Xt
+SI
 XB
 RJ
 LG
@@ -4222,7 +4285,7 @@ VQ
 Lk
 wA
 Xt
-ZV
+ni
 wp
 wp
 mw

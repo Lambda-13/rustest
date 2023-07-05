@@ -520,7 +520,7 @@
 /obj/machinery/door/airlock/external{
 	name = "Core";
 	req_access_txt = "20";
-	dir = 8
+	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/layer_manifold{
 	dir = 4
@@ -1159,6 +1159,9 @@
 	dir = 8
 	},
 /obj/item/radio/intercom/directional/south,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/central)
 "sn" = (
@@ -1201,6 +1204,7 @@
 /obj/item/storage/toolbox/mechanical,
 /obj/item/healthanalyzer,
 /obj/item/healthanalyzer,
+/obj/item/storage/firstaid,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "sz" = (
@@ -1395,6 +1399,9 @@
 /obj/structure/railing/corner{
 	dir = 8
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "vE" = (
@@ -1551,6 +1558,9 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "yd" = (
@@ -1621,12 +1631,10 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "yJ" = (
-/obj/machinery/computer/selling_pad_control{
-	dir = 1
-	},
 /obj/machinery/camera/emp_proof{
 	dir = 1
 	},
+/obj/machinery/selling_pad,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/cargo)
 "yK" = (
@@ -2419,9 +2427,11 @@
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/maintenance/central)
 "Ko" = (
-/obj/machinery/selling_pad,
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 8
+	},
+/obj/machinery/computer/selling_pad_control{
+	dir = 1
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
@@ -2434,8 +2444,8 @@
 	},
 /obj/structure/closet/crate,
 /obj/effect/turf_decal/box,
-/obj/item/pizzabox,
-/obj/item/pizzabox,
+/obj/item/pizzabox/vegetable,
+/obj/item/pizzabox/pineapple,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "KF" = (
@@ -2840,6 +2850,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/central)
 "Rz" = (
@@ -3023,8 +3036,10 @@
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 4
 	},
-/obj/structure/table,
 /obj/machinery/light/small/directional/south,
+/obj/machinery/computer/cargo{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "Xw" = (
@@ -3116,6 +3131,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/central)
