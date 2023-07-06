@@ -297,7 +297,7 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 	implants = list(/obj/item/implant/radio)
 
 
-/datum/outfit/job/security/Frontiersmen
+/datum/outfit/job/security/frontiersmen
 	name = "Buccaneer (Frontiersmen)"
 
 	head = /obj/item/clothing/head/beret/sec/frontier

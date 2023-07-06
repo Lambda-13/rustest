@@ -2885,6 +2885,7 @@
 /obj/item/gun/ballistic/derringer,
 /obj/item/ammo_box/c38,
 /obj/item/ammo_box/c38,
+/obj/item/clothing/under/rank/command/captain/suit,
 /turf/open/floor/carpet/red_gold,
 /area/ship/bridge)
 "ZM" = (
