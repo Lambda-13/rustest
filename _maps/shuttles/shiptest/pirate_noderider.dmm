@@ -1204,7 +1204,7 @@
 /obj/item/storage/toolbox/mechanical,
 /obj/item/healthanalyzer,
 /obj/item/healthanalyzer,
-/obj/item/storage/firstaid,
+/obj/item/storage/firstaid/advanced,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "sz" = (
