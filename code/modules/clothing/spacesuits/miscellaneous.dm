@@ -594,3 +594,13 @@ Contains:
 	slowdown = 0.5
 	armor = list("melee" = 40, "bullet" = 35, "laser" = 30, "energy" = 25, "bomb" = 70, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
 	allowed = list(/obj/item/gun, /obj/item/ammo_box, /obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/melee/transforming/energy, /obj/item/tank/internals)
+
+/obj/item/clothing/head/helmet/space/scar
+	name = "Scar Helmet"
+	desc = "A modified eva helmet with a scar on it. “Ember“ written on it's back"
+	icon_state = "hostile_env"
+	item_state = "hostile_env"
+	w_class = WEIGHT_CLASS_NORMAL
+	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
+	armor = list("melee" = 40, "bullet" = 35, "laser" = 35, "energy" = 25, "bomb" = 70, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
+	resistance_flags = FIRE_PROOF

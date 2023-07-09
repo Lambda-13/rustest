@@ -516,6 +516,7 @@
 	pixel_x = -7;
 	pixel_y = -25
 	},
+/obj/structure/extinguisher_cabinet/directional/south,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/crew)
 "ne" = (
@@ -1961,7 +1962,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "PO" = (
-/obj/structure/extinguisher_cabinet/directional/north,
 /obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 1
 	},

@@ -1459,6 +1459,7 @@
 	icon_state = "0-8"
 	},
 /obj/effect/landmark/start/shaft_miner,
+/obj/effect/turf_decal/trimline/transparent/brown/line,
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "dg" = (
@@ -1510,6 +1511,7 @@
 	icon_state = "freezer_wall";
 	pixel_x = -32
 	},
+/obj/effect/decal/cleanable/blood,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "dm" = (
@@ -1581,6 +1583,7 @@
 	icon_state = "4-8"
 	},
 /obj/effect/landmark/start/shaft_miner,
+/obj/effect/turf_decal/trimline/transparent/brown/line,
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "dv" = (
@@ -1588,6 +1591,7 @@
 	icon_state = "4-8"
 	},
 /obj/effect/landmark/start/shaft_miner,
+/obj/effect/turf_decal/trimline/transparent/brown/line,
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "dw" = (
@@ -1877,6 +1881,7 @@
 	icon_state = "rwindow"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/trimline/transparent/brown/line,
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "dV" = (
@@ -2043,7 +2048,9 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "em" = (
-/obj/machinery/door/airlock/mining/glass,
+/obj/machinery/door/airlock/mining/glass{
+	dir = 4
+	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -2137,23 +2144,29 @@
 /turf/open/floor/glass/reinforced,
 /area/ship/hallway/starboard)
 "er" = (
-/obj/machinery/vending/mining_equipment,
-/turf/open/floor/plasteel/dark,
+/obj/item/clothing/suit/space/hardsuit/mining/independent,
+/obj/item/tank/internals/oxygen,
+/obj/machinery/suit_storage_unit,
+/obj/effect/turf_decal/box,
+/obj/machinery/light/directional/north,
+/turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "es" = (
-/obj/structure/rack,
+/obj/item/clothing/suit/space/hardsuit/mining/independent,
+/obj/item/tank/internals/oxygen,
+/obj/machinery/suit_storage_unit,
+/obj/effect/turf_decal/box,
 /obj/machinery/light/directional/north{
 	icon_state = "tube"
 	},
-/obj/item/storage/bag/ore,
-/obj/item/storage/bag/ore,
-/obj/item/storage/bag/ore,
-/obj/item/storage/bag/ore,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "et" = (
-/obj/machinery/autolathe,
-/turf/open/floor/plasteel/dark,
+/obj/item/clothing/suit/space/hardsuit/mining/independent,
+/obj/item/tank/internals/oxygen,
+/obj/machinery/suit_storage_unit,
+/obj/effect/turf_decal/box,
+/turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "eu" = (
 /obj/machinery/computer/helm{
@@ -2306,6 +2319,10 @@
 	icon_state = "rwindow"
 	},
 /obj/structure/window/reinforced,
+/obj/effect/turf_decal/trimline/transparent/brown/line,
+/obj/effect/turf_decal/trimline/transparent/brown/line{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "eH" = (
@@ -2314,6 +2331,9 @@
 	icon_state = "corner_techfloor_grid"
 	},
 /obj/effect/landmark/start/shaft_miner,
+/obj/effect/turf_decal/trimline/transparent/brown/line{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "eI" = (
@@ -2366,23 +2386,17 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "eM" = (
-/obj/structure/ore_box,
-/obj/effect/turf_decal/box,
-/turf/open/floor/plasteel/mono/dark,
+/obj/item/trash/candy,
+/turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "eN" = (
-/obj/structure/closet/crate,
-/obj/item/implant/radio,
-/obj/item/implant/radio,
-/obj/item/implant/radio,
-/obj/item/implant/radio,
-/obj/item/implant/radio,
-/obj/item/implant/radio,
-/obj/item/implant/radio,
-/obj/item/implant/radio,
-/obj/item/implant/radio,
-/obj/item/implant/radio,
-/obj/effect/turf_decal/box,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/box/corners{
+	dir = 8
+	},
+/obj/effect/turf_decal/box/corners{
+	dir = 1
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "eO" = (
@@ -2409,17 +2423,13 @@
 /turf/open/floor/pod/light,
 /area/ship/bridge)
 "eQ" = (
-/obj/structure/window/reinforced{
-	dir = 4;
-	icon_state = "rwindow"
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/ore_box,
+/obj/effect/turf_decal/box/corners{
+	dir = 4
 	},
-/obj/structure/window/reinforced{
-	dir = 8;
-	icon_state = "rwindow"
-	},
-/obj/machinery/door/window,
-/mob/living/simple_animal/hostile/mining_drone,
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/box/corners,
+/turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "eR" = (
 /obj/machinery/holopad/emergency/command,
@@ -2536,7 +2546,8 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "fc" = (
-/obj/item/banner/cargo,
+/obj/effect/turf_decal/box,
+/obj/machinery/holopad,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "fd" = (
@@ -2629,24 +2640,16 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "fm" = (
-/obj/structure/closet/crate/trashcart,
-/obj/item/trash/boritos,
-/obj/item/trash/candy,
-/obj/item/trash/pistachios,
-/obj/effect/turf_decal/box,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/obj/structure/rack,
+/obj/item/storage/bag/ore,
+/obj/item/storage/bag/ore,
+/obj/item/storage/bag/ore,
+/obj/item/storage/bag/ore,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "fn" = (
-/obj/structure/closet/crate/large,
-/obj/item/stack/sheet/metal/fifty,
-/obj/item/stack/sheet/glass/fifty,
-/obj/effect/turf_decal/box,
-/turf/open/floor/plasteel/mono/dark,
+/obj/effect/decal/cleanable/wrapping,
+/turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "fo" = (
 /obj/structure/cable{
@@ -2671,6 +2674,9 @@
 "fq" = (
 /obj/effect/landmark/start/shaft_miner,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/trimline/transparent/brown/line{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "fr" = (
@@ -2729,17 +2735,25 @@
 /turf/open/floor/grass,
 /area/ship/hallway/starboard)
 "fD" = (
-/obj/effect/turf_decal/box/corners,
-/turf/open/floor/plasteel/dark,
-/area/ship/cargo)
+/obj/structure/railing,
+/obj/effect/decal/fakelattice{
+	color = "#808080"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/wrapping{
+	color = "#808080"
+	},
+/obj/effect/decal/cleanable/greenglow{
+	color = "#808080"
+	},
+/turf/open/floor/plasteel/elevatorshaft{
+	color = "#808080"
+	},
+/area/ship/external)
 "fE" = (
-/obj/structure/closet/crate,
-/obj/effect/turf_decal/box,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/item/vending_refill/mining_equipment,
-/obj/item/vending_refill/mining_equipment,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4{
 	dir = 8;
 	icon_state = "manifold-4"
@@ -2748,7 +2762,7 @@
 	dir = 8;
 	icon_state = "manifold-2"
 	},
-/turf/open/floor/plasteel/mono/dark,
+/turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "fF" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4,
@@ -2759,53 +2773,57 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "fG" = (
-/obj/structure/closet/crate/wooden,
-/obj/effect/turf_decal/box,
-/obj/item/gun/energy/plasmacutter,
-/obj/item/gun/energy/plasmacutter,
-/obj/item/pickaxe/drill,
-/obj/item/pickaxe/drill,
-/obj/item/pickaxe/silver,
-/obj/item/pickaxe/silver,
-/obj/item/storage/pill_bottle/mining,
-/obj/item/storage/pill_bottle/mining,
-/obj/item/t_scanner/adv_mining_scanner,
-/obj/item/t_scanner/adv_mining_scanner,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 8;
 	icon_state = "pipe11-4"
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2,
-/turf/open/floor/plasteel/mono/dark,
+/obj/item/stack/sheet/glass/fifty,
+/obj/item/stack/sheet/metal/fifty,
+/obj/structure/closet/crate/eva,
+/obj/item/stack/sheet/plastic/fifty,
+/obj/item/stack/sheet/metal/fifty,
+/turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "fH" = (
 /obj/structure/tank_dispenser,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "fI" = (
-/obj/machinery/light/directional/south,
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
-	dir = 1;
-	icon_state = "scrub_map_on-2"
-	},
-/turf/open/floor/plasteel/dark,
+/obj/machinery/vending/mining_equipment,
+/obj/machinery/light/directional/north,
+/turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "fJ" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
-	dir = 1;
-	icon_state = "vent_map_on-4"
-	},
-/turf/open/floor/plasteel/dark,
+/obj/item/clothing/suit/space/hardsuit/mining/independent,
+/obj/item/tank/internals/oxygen,
+/obj/machinery/suit_storage_unit,
+/obj/effect/turf_decal/box,
+/obj/machinery/light/directional/south,
+/turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "fK" = (
-/obj/machinery/mineral/ore_redemption,
-/turf/open/floor/plasteel/dark,
-/area/ship/cargo)
+/obj/structure/railing{
+	dir = 9;
+	icon_state = "railing"
+	},
+/obj/effect/decal/fakelattice{
+	color = "#808080"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/insectguts{
+	color = "#808080"
+	},
+/turf/open/floor/plasteel/elevatorshaft{
+	color = "#808080"
+	},
+/area/ship/external)
 "fL" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 10;
+	dir = 9;
 	icon_state = "pipe11-4"
 	},
+/obj/effect/decal/cleanable/wrapping,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "fM" = (
@@ -2928,19 +2946,8 @@
 /turf/open/floor/pod/dark,
 /area/ship/science/robotics)
 "gg" = (
-/obj/structure/closet/crate/eva,
-/obj/item/stack/sheet/metal/fifty,
-/obj/item/stack/sheet/plastic/fifty,
-/obj/effect/turf_decal/box,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 8;
-	icon_state = "pipe11-4"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 4;
-	icon_state = "pipe11-2"
-	},
-/turf/open/floor/plasteel/mono/dark,
+/obj/item/trash/boritos,
+/turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "gh" = (
 /turf/open/floor/plating/catwalk_floor,
@@ -2990,6 +2997,9 @@
 	dir = 4;
 	icon_state = "door_open"
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engine)
 "gk" = (
@@ -3008,10 +3018,20 @@
 /turf/open/floor/wood/ebony,
 /area/ship/crew/office)
 "gm" = (
-/obj/structure/closet/crate/wooden,
-/obj/effect/turf_decal/box,
-/turf/open/floor/plasteel/mono/dark,
-/area/ship/cargo)
+/obj/structure/railing{
+	dir = 1
+	},
+/obj/effect/decal/fakelattice{
+	color = "#808080"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/wrapping{
+	color = "#808080"
+	},
+/turf/open/floor/plasteel/elevatorshaft{
+	color = "#808080"
+	},
+/area/ship/external)
 "gn" = (
 /obj/structure/sign/poster/contraband/fun_police,
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
@@ -3030,21 +3050,15 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/hallway/central)
 "gr" = (
-/obj/structure/closet/crate,
-/obj/effect/turf_decal/box,
-/obj/item/clothing/glasses/material/mining/gar,
-/obj/item/toy/figure/miner,
-/obj/item/toy/gun,
-/obj/item/toy/sword,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 8;
 	icon_state = "pipe11-4"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 10;
+	dir = 9;
 	icon_state = "pipe11-2"
 	},
-/turf/open/floor/plasteel/mono/dark,
+/turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "gs" = (
 /obj/machinery/door/firedoor/border_only{
@@ -3078,10 +3092,34 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/central)
 "gu" = (
-/obj/item/clothing/suit/space/hardsuit/mining/independent,
-/obj/item/tank/internals/oxygen,
-/obj/machinery/suit_storage_unit,
-/turf/open/floor/plasteel/dark,
+/obj/structure/closet/crate/eva,
+/obj/item/reagent_containers/food/drinks/waterbottle/large{
+	pixel_x = 4;
+	pixel_y = -2
+	},
+/obj/item/reagent_containers/food/drinks/waterbottle/large{
+	pixel_x = -7;
+	pixel_y = -2
+	},
+/obj/item/reagent_containers/food/drinks/waterbottle/large{
+	pixel_x = 4;
+	pixel_y = -2
+	},
+/obj/item/reagent_containers/food/drinks/waterbottle/large{
+	pixel_x = -7;
+	pixel_y = -2
+	},
+/obj/item/reagent_containers/food/drinks/waterbottle/large{
+	pixel_x = -3;
+	pixel_y = 3
+	},
+/obj/effect/turf_decal/box/corners{
+	dir = 1
+	},
+/obj/effect/turf_decal/box/corners{
+	dir = 8
+	},
+/turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "gv" = (
 /obj/structure/window/plasma/reinforced/spawner{
@@ -3181,13 +3219,28 @@
 /turf/open/floor/engine/o2,
 /area/ship/engineering/engine)
 "gF" = (
-/obj/machinery/status_display,
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/hallway/central)
-"gG" = (
-/obj/machinery/holopad,
+/obj/effect/decal/fakelattice{
+	color = "#808080"
+	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark,
+/obj/effect/decal/cleanable/glass{
+	color = "#808080";
+	dir = 8;
+	pixel_y = 1
+	},
+/turf/open/floor/plasteel/elevatorshaft{
+	color = "#808080"
+	},
+/area/ship/external)
+"gG" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/box/corners{
+	dir = 1
+	},
+/obj/effect/turf_decal/box/corners{
+	dir = 8
+	},
+/turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "gH" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
@@ -3224,7 +3277,19 @@
 /area/ship/science/robotics)
 "gN" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark,
+/obj/structure/closet/crate,
+/obj/item/implant/radio,
+/obj/item/implant/radio,
+/obj/item/implant/radio,
+/obj/item/implant/radio,
+/obj/item/implant/radio,
+/obj/item/implant/radio,
+/obj/item/implant/radio,
+/obj/item/implant/radio,
+/obj/item/implant/radio,
+/obj/item/implant/radio,
+/obj/effect/decal/cleanable/greenglow,
+/turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "gO" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -3326,7 +3391,14 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "ha" = (
-/obj/structure/frame/machine,
+/mob/living/simple_animal/hostile/mining_drone,
+/obj/structure/window/reinforced{
+	dir = 8;
+	icon_state = "rwindow"
+	},
+/obj/machinery/door/window{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "hb" = (
@@ -3348,7 +3420,6 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/obj/machinery/firealarm/directional/north,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 9;
 	icon_state = "pipe11-4"
@@ -3357,14 +3428,178 @@
 	dir = 9;
 	icon_state = "pipe11-2"
 	},
+/obj/machinery/firealarm/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
+"hN" = (
+/obj/structure/closet/crate/eva,
+/obj/item/reagent_containers/food/snacks/rationpack,
+/obj/item/reagent_containers/food/snacks/rationpack,
+/obj/item/reagent_containers/food/snacks/rationpack,
+/obj/item/reagent_containers/food/snacks/rationpack,
+/obj/item/reagent_containers/food/snacks/rationpack,
+/obj/effect/turf_decal/box/corners{
+	dir = 4
+	},
+/obj/effect/turf_decal/box/corners,
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/cargo)
+"ix" = (
+/obj/structure/closet/crate/large,
+/obj/item/t_scanner/adv_mining_scanner,
+/obj/item/t_scanner/adv_mining_scanner,
+/obj/item/storage/pill_bottle/mining,
+/obj/item/storage/pill_bottle/mining,
+/obj/item/pickaxe/silver,
+/obj/item/pickaxe/silver,
+/obj/item/gun/energy/plasmacutter,
+/obj/item/gun/energy/plasmacutter,
+/obj/item/pickaxe/drill,
+/obj/item/pickaxe/drill,
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/cargo)
+"iJ" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/obj/effect/turf_decal/box/corners,
+/obj/effect/turf_decal/box/corners{
+	dir = 4
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/cargo)
+"jA" = (
+/obj/item/vending_refill/mining_equipment,
+/obj/item/vending_refill/mining_equipment,
+/obj/structure/closet/crate,
+/turf/open/floor/plasteel/dark,
+/area/ship/cargo)
+"kZ" = (
+/obj/structure/railing{
+	dir = 1
+	},
+/obj/effect/decal/fakelattice{
+	color = "#808080"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/elevatorshaft{
+	color = "#808080"
+	},
+/area/ship/external)
+"qE" = (
+/obj/structure/ore_box,
+/turf/open/floor/plasteel/dark,
+/area/ship/cargo)
+"sz" = (
+/obj/structure/closet/crate/trashcart,
+/obj/machinery/light/directional/west,
+/obj/effect/turf_decal/box/corners{
+	dir = 8
+	},
+/obj/effect/turf_decal/box/corners{
+	dir = 1
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/cargo)
+"sJ" = (
+/obj/machinery/mineral/ore_redemption,
+/turf/open/floor/plasteel/dark,
+/area/template_noop)
+"vm" = (
+/obj/structure/railing,
+/obj/effect/decal/fakelattice{
+	color = "#808080"
+	},
+/obj/effect/decal/cleanable/insectguts{
+	color = "#808080"
+	},
+/turf/open/floor/plasteel/elevatorshaft{
+	color = "#808080"
+	},
+/area/ship/external)
 "vR" = (
 /obj/effect/landmark/start/shaft_miner,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/computer/helm/viewscreen/directional/east,
+/obj/effect/turf_decal/trimline/transparent/brown/line{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
+"wc" = (
+/obj/structure/railing{
+	dir = 10;
+	icon_state = "railing"
+	},
+/obj/effect/decal/fakelattice{
+	color = "#808080"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/glass{
+	color = "#808080";
+	dir = 8;
+	pixel_y = 1
+	},
+/turf/open/floor/plasteel/elevatorshaft{
+	color = "#808080"
+	},
+/area/ship/external)
+"DO" = (
+/obj/structure/railing,
+/obj/effect/decal/fakelattice{
+	color = "#808080"
+	},
+/turf/open/floor/plasteel/elevatorshaft{
+	color = "#808080"
+	},
+/area/ship/external)
+"DY" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 8;
+	icon_state = "pipe11-4"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 4;
+	icon_state = "pipe11-2"
+	},
+/obj/item/trash/pistachios,
+/obj/item/toy/gun,
+/turf/open/floor/plasteel/dark,
+/area/ship/cargo)
+"HQ" = (
+/obj/structure/railing,
+/obj/effect/decal/fakelattice{
+	color = "#808080"
+	},
+/obj/effect/decal/cleanable/greenglow{
+	color = "#808080"
+	},
+/turf/open/floor/plasteel/elevatorshaft{
+	color = "#808080"
+	},
+/area/ship/external)
+"Mq" = (
+/obj/machinery/autolathe,
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/cargo)
+"MP" = (
+/obj/structure/railing{
+	dir = 1
+	},
+/obj/effect/decal/fakelattice{
+	color = "#808080"
+	},
+/obj/effect/decal/cleanable/glass{
+	color = "#808080";
+	dir = 8;
+	pixel_y = 1
+	},
+/turf/open/floor/plasteel/elevatorshaft{
+	color = "#808080"
+	},
+/area/ship/external)
 "Qi" = (
 /obj/docking_port/stationary{
 	dir = 2;
@@ -3374,6 +3609,82 @@
 	},
 /turf/template_noop,
 /area/template_noop)
+"Qx" = (
+/obj/machinery/light/directional/south,
+/obj/structure/closet/crate/eva,
+/obj/item/reagent_containers/food/snacks/canned/beans,
+/obj/item/reagent_containers/food/snacks/canned/beans,
+/obj/item/reagent_containers/food/snacks/canned/beans,
+/obj/item/reagent_containers/food/snacks/canned/beans,
+/obj/item/reagent_containers/food/snacks/canned/beans,
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/cargo)
+"Rz" = (
+/obj/effect/turf_decal/box/corners{
+	dir = 4
+	},
+/obj/effect/turf_decal/box/corners,
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/cargo)
+"TH" = (
+/obj/structure/railing,
+/obj/effect/decal/fakelattice{
+	color = "#808080"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/glass{
+	color = "#808080";
+	dir = 8;
+	pixel_y = 1
+	},
+/obj/effect/decal/cleanable/greenglow{
+	color = "#808080"
+	},
+/turf/open/floor/plasteel/elevatorshaft{
+	color = "#808080"
+	},
+/area/ship/external)
+"TT" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
+/obj/structure/closet/crate/eva,
+/obj/item/toy/figure/miner,
+/obj/item/toy/sword,
+/turf/open/floor/plasteel/dark,
+/area/ship/cargo)
+"Wm" = (
+/obj/effect/decal/fakelattice{
+	color = "#808080"
+	},
+/obj/effect/decal/cleanable/greenglow{
+	color = "#808080"
+	},
+/turf/open/floor/plasteel/elevatorshaft{
+	color = "#808080"
+	},
+/area/ship/external)
+"Wq" = (
+/obj/structure/railing{
+	dir = 1
+	},
+/obj/effect/decal/fakelattice{
+	color = "#808080"
+	},
+/turf/open/floor/plasteel/elevatorshaft{
+	color = "#808080"
+	},
+/area/ship/external)
+"XW" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 8;
+	icon_state = "pipe11-4"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 4;
+	icon_state = "pipe11-2"
+	},
+/obj/item/clothing/glasses/material/mining/gar,
+/turf/open/floor/plasteel/dark,
+/area/ship/cargo)
 
 (1,1,1) = {"
 aa
@@ -3691,8 +4002,8 @@ fk
 fs
 el
 dl
-eL
-eL
+sz
+gg
 hb
 gI
 gS
@@ -3717,8 +4028,8 @@ de
 de
 fj
 fl
-fm
 fo
+iJ
 fE
 hc
 gI
@@ -3744,14 +4055,14 @@ eC
 cE
 gp
 fQ
-eL
+jA
 eY
 fF
 eL
 gI
 gS
 aa
-aa
+sJ
 "}
 (15,1,1) = {"
 aa
@@ -3770,7 +4081,7 @@ dL
 eD
 fd
 gq
-gu
+fm
 eM
 fa
 fG
@@ -3796,12 +4107,12 @@ fs
 dM
 fs
 fs
-gF
-gu
+fs
+fI
 eL
 gG
-gc
-gu
+DY
+Qx
 gI
 gS
 aa
@@ -3823,12 +4134,12 @@ dm
 dP
 dm
 di
-fB
-gu
-eN
+fP
+Mq
+eL
 gN
-gg
-gu
+gc
+hN
 gI
 gS
 aa
@@ -3851,10 +4162,10 @@ dV
 eG
 fz
 fB
+ix
 eL
-eL
-gN
-gc
+Rz
+XW
 fH
 gI
 gS
@@ -3880,9 +4191,9 @@ eF
 fB
 es
 fn
-eL
+TT
 gr
-fI
+et
 gI
 gS
 aa
@@ -3906,8 +4217,8 @@ fq
 eT
 fB
 er
-eL
-eL
+qE
+eY
 fL
 fJ
 gI
@@ -3933,10 +4244,10 @@ vR
 fh
 fB
 et
-gm
-gO
-eM
-fK
+eL
+eN
+eL
+et
 gI
 gS
 aa
@@ -3961,7 +4272,7 @@ gn
 fB
 gI
 eL
-gO
+eQ
 gO
 eL
 gY
@@ -3987,7 +4298,7 @@ cn
 ft
 fC
 fR
-eQ
+eL
 fc
 fQ
 ha
@@ -4016,7 +4327,7 @@ fM
 gI
 gw
 eL
-fD
+eL
 gR
 gI
 dZ
@@ -4054,8 +4365,8 @@ aa
 aa
 aa
 ac
-gh
-gh
+gF
+TH
 gh
 gh
 gh
@@ -4071,8 +4382,8 @@ fS
 gh
 gh
 gh
-gh
-gh
+kZ
+Wm
 ac
 aa
 aa
@@ -4082,7 +4393,7 @@ aa
 aa
 dZ
 ac
-gh
+DO
 gh
 gh
 gh
@@ -4098,7 +4409,7 @@ fT
 gh
 gk
 gh
-gh
+gm
 ac
 dZ
 aa
@@ -4109,10 +4420,10 @@ aa
 aa
 aa
 dZ
-ac
+HQ
 gh
 gh
-gh
+fK
 cJ
 cm
 do
@@ -4122,10 +4433,10 @@ ec
 fw
 ft
 fU
+wc
 gh
 gh
-gh
-ac
+MP
 dZ
 aa
 aa
@@ -4135,11 +4446,11 @@ aa
 aa
 aa
 aa
-aa
+ac
 dZ
 gh
 gh
-gh
+gm
 cJ
 cn
 cH
@@ -4149,11 +4460,11 @@ fg
 fx
 fO
 fV
-gh
+fD
 gh
 gP
 dZ
-aa
+ac
 aa
 aa
 aa
@@ -4163,10 +4474,10 @@ aa
 aa
 aa
 aa
-aa
-aa
+ac
 gh
 gh
+Wq
 eK
 eK
 eK
@@ -4176,10 +4487,10 @@ cs
 eK
 eK
 gK
+vm
 gh
 gh
-aa
-aa
+ac
 aa
 aa
 aa
@@ -4190,9 +4501,9 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
+ac
+gh
+gh
 dZ
 eK
 dg
@@ -4204,9 +4515,9 @@ eK
 eK
 eK
 dZ
-aa
-aa
-aa
+gh
+gh
+ac
 aa
 aa
 aa
@@ -4218,8 +4529,8 @@ aa
 aa
 aa
 aa
-aa
-aa
+gh
+gh
 dZ
 aa
 eK
@@ -4231,8 +4542,8 @@ eK
 eK
 aa
 ac
-aa
-aa
+gh
+gh
 aa
 aa
 aa

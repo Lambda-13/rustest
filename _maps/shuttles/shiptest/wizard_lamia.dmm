@@ -21,9 +21,6 @@
 /turf/open/floor/carpet/stellar,
 /area/ship/bridge)
 "ag" = (
-/obj/machinery/light{
-	dir = 4
-	},
 /obj/machinery/button/door{
 	id = "wizardship_bridge";
 	name = "bridge shutters";
@@ -43,6 +40,7 @@
 	dir = 1;
 	pixel_y = -25
 	},
+/obj/machinery/light/directional/east,
 /turf/open/floor/carpet/stellar,
 /area/ship/bridge)
 "aj" = (
@@ -103,9 +101,6 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/obj/machinery/light{
-	dir = 4
-	},
 /turf/open/floor/carpet/royalblack,
 /area/ship/hallway/starboard)
 "at" = (
@@ -162,11 +157,8 @@
 	},
 /area/ship/hallway/central)
 "az" = (
-/obj/machinery/light/small{
-	brightness = 3;
-	dir = 8
-	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/wood,
 /area/ship/hallway/central)
 "aA" = (
@@ -201,7 +193,7 @@
 /turf/open/floor/wood,
 /area/ship/hallway/central)
 "aI" = (
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /turf/open/floor/carpet/royalblack,
 /area/ship/hallway/starboard)
 "aJ" = (
@@ -256,9 +248,6 @@
 /turf/open/floor/engine/cult,
 /area/ship/science)
 "aO" = (
-/obj/machinery/light{
-	dir = 1
-	},
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
 	icon_state = "0-4"
@@ -271,6 +260,7 @@
 "aR" = (
 /obj/machinery/vending/coffee,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/directional/north,
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
 "aS" = (
@@ -380,9 +370,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 9
 	},
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /turf/open/floor/wood,
 /area/ship/crew/canteen/kitchen)
 "bl" = (
@@ -414,15 +402,16 @@
 /turf/open/floor/carpet/purple,
 /area/ship/crew/canteen)
 "bp" = (
-/obj/machinery/light,
 /obj/item/radio/intercom{
 	dir = 1;
 	pixel_y = -26
 	},
+/obj/machinery/light/directional/south,
 /turf/open/floor/carpet/purple,
 /area/ship/crew/canteen)
 "bq" = (
 /obj/machinery/vending/cigarette,
+/obj/machinery/light/directional/south,
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
 "bs" = (
@@ -569,9 +558,6 @@
 /area/ship/crew/toilet)
 "bJ" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
-/obj/machinery/light{
-	dir = 8
-	},
 /obj/structure/closet/crate/miningcar{
 	name = "mining car"
 	},
@@ -595,6 +581,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 4
 	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/plasteel,
 /area/ship/storage)
 "bK" = (
@@ -615,41 +602,31 @@
 /turf/open/floor/plasteel,
 /area/ship/storage)
 "bL" = (
-/obj/machinery/light/small{
-	brightness = 3;
-	dir = 8
-	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 4
 	},
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/carpet/royalblue,
 /area/ship/crew/dorm)
 "bM" = (
-/obj/machinery/light/small{
-	dir = 4
-	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 8
 	},
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/carpet/royalblue,
 /area/ship/crew/dorm)
 "bN" = (
-/obj/machinery/light/small{
-	brightness = 3;
-	dir = 8
-	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 4
 	},
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/plasteel/white,
 /area/ship/crew/toilet)
 "bO" = (
-/obj/machinery/light/small{
-	dir = 4
-	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 8
 	},
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/plasteel/white,
 /area/ship/crew/toilet)
 "bQ" = (
@@ -830,9 +807,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 1
 	},
-/obj/machinery/light/small{
-	dir = 4
-	},
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
 "ck" = (
@@ -934,6 +909,7 @@
 /obj/item/radio/intercom{
 	pixel_y = 26
 	},
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/carpet/royalblack,
 /area/ship/hallway/starboard)
 "fx" = (
@@ -1135,19 +1111,15 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 8
 	},
-/obj/machinery/light{
-	dir = 4
-	},
 /obj/item/radio/intercom{
 	dir = 8;
 	pixel_x = 26
 	},
+/obj/machinery/light/directional/east,
 /turf/open/floor/bronze,
 /area/ship/cargo)
 "kN" = (
-/obj/machinery/light/broken{
-	dir = 1
-	},
+/obj/machinery/light/directional/south,
 /turf/open/floor/wood,
 /area/ship/hallway/aft)
 "kO" = (
@@ -1195,6 +1167,11 @@
 	desc = "A wall plated with emerald.";
 	name = "emerald wall"
 	},
+/area/ship/hallway/starboard)
+"mF" = (
+/obj/structure/chair/wood/wings,
+/obj/machinery/light/directional/north,
+/turf/open/floor/carpet/royalblack,
 /area/ship/hallway/starboard)
 "mH" = (
 /obj/structure/grille,
@@ -1318,9 +1295,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 8
 	},
-/obj/machinery/light/small{
-	dir = 4
-	},
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/wood,
 /area/ship/hallway/central)
 "qN" = (
@@ -1369,7 +1344,6 @@
 /area/ship/crew/canteen/kitchen)
 "rh" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small,
 /obj/structure/table/wood/fancy/royalblack,
 /obj/item/paper_bin/bundlenatural{
 	pixel_y = 5
@@ -1380,6 +1354,7 @@
 	icon_state = "book";
 	name = "The Grimoire of Rock Revelation"
 	},
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/wood,
 /area/ship/crew/library)
 "rp" = (
@@ -1433,6 +1408,10 @@
 	name = "emerald wall"
 	},
 /area/ship/crew/dorm)
+"tB" = (
+/obj/machinery/light/directional/north,
+/turf/open/floor/wood,
+/area/ship/hallway/aft)
 "ud" = (
 /obj/structure/sign/poster/contraband/backdoor_xeno_babes_6,
 /turf/closed/wall/mineral/uranium/safe{
@@ -1450,9 +1429,6 @@
 /turf/open/floor/engine/cult,
 /area/ship/science)
 "ui" = (
-/obj/machinery/light{
-	dir = 1
-	},
 /obj/machinery/jukebox{
 	name = "altar of rhythm"
 	},
@@ -1561,7 +1537,6 @@
 	},
 /area/ship/hallway/central)
 "zN" = (
-/obj/machinery/light,
 /obj/machinery/computer/arcade,
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
@@ -1699,11 +1674,9 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/airalarm/directional/north,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
-/obj/machinery/light/small{
-	dir = 8
-	},
 /obj/item/kirbyplants/random,
 /obj/item/book/granter/spell/smoke/lesser,
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/wood,
 /area/ship/crew/library)
 "Es" = (
@@ -1811,9 +1784,6 @@
 /turf/open/floor/wood,
 /area/ship/hallway/aft)
 "GL" = (
-/obj/machinery/light{
-	dir = 1
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/item/trash/candy,
 /turf/open/floor/wood,
@@ -1873,9 +1843,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
 /obj/machinery/power/terminal,
-/obj/machinery/light/small{
-	dir = 8
-	},
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
 "Ix" = (
@@ -2065,6 +2033,7 @@
 	dir = 1;
 	pixel_y = -26
 	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/carpet/stellar,
 /area/ship/bridge)
 "Mq" = (
@@ -2159,9 +2128,6 @@
 /turf/open/floor/engine/cult,
 /area/ship/science)
 "OC" = (
-/obj/machinery/light{
-	dir = 8
-	},
 /obj/structure/table/wood/fancy/royalblue,
 /obj/item/book/granter/spell/charge{
 	pixel_y = 4
@@ -2352,6 +2318,7 @@
 "Tn" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/trash/semki,
+/obj/machinery/light/directional/south,
 /turf/open/floor/wood,
 /area/ship/hallway/aft)
 "Tt" = (
@@ -2424,6 +2391,7 @@
 	pixel_x = -25
 	},
 /obj/item/book/granter/spell/charge,
+/obj/machinery/light/directional/north,
 /turf/open/floor/carpet/purple,
 /area/ship/crew/canteen)
 "VP" = (
@@ -2746,7 +2714,7 @@ Ot
 hq
 bn
 IN
-Vy
+tB
 Ge
 Vy
 IN
@@ -2779,7 +2747,7 @@ So
 So
 So
 We
-kN
+Vy
 fx
 cD
 bA
@@ -2979,7 +2947,7 @@ zN
 IN
 KW
 XS
-Vy
+kN
 CF
 CF
 qT
@@ -3031,7 +2999,7 @@ No
 No
 No
 ni
-ao
+mF
 ar
 lq
 wX
@@ -3076,7 +3044,7 @@ jA
 oz
 zn
 IN
-Vy
+tB
 Vy
 KS
 IN
