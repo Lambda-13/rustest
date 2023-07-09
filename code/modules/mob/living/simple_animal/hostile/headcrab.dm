@@ -1,4 +1,4 @@
-#define EGG_INCUBATION_TIME 120
+#define EGG_INCUBATION_TIME 30
 
 /mob/living/simple_animal/hostile/headcrab
 	name = "headslug"
