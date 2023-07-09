@@ -33,8 +33,8 @@ export const ShipSelect = (props, context) => {
   };
 
   const [shownTabs, setShownTabs] = useLocalState(context, 'tabs', [
-    { name: 'Ship Select', tab: 1 },
-    { name: 'Ship Purchase', tab: 3 },
+    { name: 'Доступные суда', tab: 1 },
+    { name: 'Приобрести судно', tab: 3 },
   ]);
   const searchFor = (searchText) =>
     createSearch(searchText, (thing) => thing.name);
@@ -64,8 +64,7 @@ export const ShipSelect = (props, context) => {
                 tooltip={
                   /* worth noting that disabled ship spawn doesn't cause the
                   button to be disabled, as we want to let people look around */
-                  (data.purchaseBanned &&
-                    'Тебе нельзя приобретать суда.') ||
+                  (data.purchaseBanned && 'Тебе нельзя приобретать суда.') ||
                   (!data.shipSpawnAllowed &&
                     'В настоящий момент отправка кораблей ограничена.')
                 }
@@ -100,7 +99,7 @@ export const ShipSelect = (props, context) => {
                           setSelectedShip(ship);
                           setCurrentTab(2);
                           const newTab = {
-                            name: 'Job Select',
+                            name: 'Выбрать профессию',
                             tab: 2,
                           };
                           // check if the tab already exists
@@ -131,7 +130,9 @@ export const ShipSelect = (props, context) => {
         {currentTab === 2 && (
           <>
             <Section
-              title={`Подробности о судне - ${decodeHtmlEntities(selectedShip.name)}`}
+              title={`Подробности о судне - ${decodeHtmlEntities(
+                selectedShip.name
+              )}`}
             >
               <LabeledList>
                 <LabeledList.Item label="Класс">
@@ -145,14 +146,13 @@ export const ShipSelect = (props, context) => {
                 </LabeledList.Item>
               </LabeledList>
             </Section>
-            <Collapsible title={'Описание'}>
+            <Collapsible title={'Подробнее...'}>
               <LabeledList>
                 <LabeledList.Item label="Описание корабля">
                   {selectedShip.desc || '-'}
                 </LabeledList.Item>
                 <LabeledList.Item label="Теги">
-                  {(selectedShip.tags && selectedShip.tags.join(', ')) ||
-                    '-'}
+                  {(selectedShip.tags && selectedShip.tags.join(', ')) || '-'}
                 </LabeledList.Item>
               </LabeledList>
             </Collapsible>
@@ -171,7 +171,7 @@ export const ShipSelect = (props, context) => {
                 <Table.Row header>
                   <Table.Cell collapsing>Войти</Table.Cell>
                   <Table.Cell>Название</Table.Cell>
-                  <Table.Cell>Слоты</Table.Cell>
+                  <Table.Cell>Доступно слотов</Table.Cell>
                   <Table.Cell>Мин. наигранное время</Table.Cell>
                 </Table.Row>
                 {selectedShip.jobs.map((job) => (
@@ -268,13 +268,12 @@ export const ShipSelect = (props, context) => {
                     {template.desc || 'Нет описания'}
                   </LabeledList.Item>
                   <LabeledList.Item label="Тег">
-                    {(template.tags && template.tags.join(', ')) ||
-                      '-'}
+                    {(template.tags && template.tags.join(', ')) || '-'}
                   </LabeledList.Item>
-                  <LabeledList.Item label="Std. Crew">
+                  <LabeledList.Item label="Среднее кол-во экипажа">
                     {template.crewCount}
                   </LabeledList.Item>
-                  <LabeledList.Item label="Макс #">
+                  <LabeledList.Item label="Макс. кол-во экипажа">
                     {template.limit}
                   </LabeledList.Item>
                   <LabeledList.Item label="Мин. наигранного времени">
@@ -289,7 +288,7 @@ export const ShipSelect = (props, context) => {
                       target="_blank"
                       rel="noreferrer"
                     >
-                      Here
+                      Тык
                     </a>
                   </LabeledList.Item>
                 </LabeledList>

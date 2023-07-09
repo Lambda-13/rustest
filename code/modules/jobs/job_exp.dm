@@ -50,11 +50,11 @@ GLOBAL_PROTECT(exp_to_update)
 
 /proc/get_exp_format(expnum)
 	if(expnum > 60)
-		return num2text(round(expnum / 60)) + "h"
+		return num2text(round(expnum / 60)) + " ч."
 	else if(expnum > 0)
-		return num2text(expnum) + "m"
+		return num2text(expnum) + " мин."
 	else
-		return "0h"
+		return "0 ч."
 
 /datum/controller/subsystem/blackbox/proc/update_exp(mins, ann = FALSE)
 	if(!SSdbcore.Connect())
@@ -137,41 +137,41 @@ GLOBAL_PROTECT(exp_to_update)
 			play_records[EXP_TYPE_LIVING] += minutes
 
 			if(announce_changes)
-				to_chat(src,"<span class='notice'>You got: [minutes] Living EXP!</span>")
+				to_chat(src,"<span class='notice'>Получено [minutes] Живого ОП!</span>")
 			if(mob.mind.assigned_role)
 				for(var/job in SSjob.name_occupations)
 					if(mob.mind.assigned_role == job)
 						rolefound = TRUE
 						play_records[job] += minutes
 						if(announce_changes)
-							to_chat(src,"<span class='notice'>You got: [minutes] [job] EXP!</span>")
+							to_chat(src,"<span class='notice'>Получено [minutes] ОП на [job]!</span>")
 				if(!rolefound)
 					for(var/role in GLOB.exp_specialmap[EXP_TYPE_SPECIAL])
 						if(mob.mind.assigned_role == role)
 							rolefound = TRUE
 							play_records[role] += minutes
 							if(announce_changes)
-								to_chat(mob,"<span class='notice'>You got: [minutes] [role] EXP!</span>")
+								to_chat(mob,"<span class='notice'>Получено [minutes] ОП на [role]!</span>")
 				if(mob.mind.special_role && !(mob.mind.datum_flags & DF_VAR_EDITED))
 					var/trackedrole = mob.mind.special_role
 					play_records[trackedrole] += minutes
 					if(announce_changes)
-						to_chat(src,"<span class='notice'>You got: [minutes] [trackedrole] EXP!</span>")
+						to_chat(src,"<span class='notice'>Получено [minutes] ОП на [trackedrole]!</span>")
 			if(!rolefound)
 				play_records["Unknown"] += minutes
 		else
 			if(holder && !holder.deadmined)
 				play_records[EXP_TYPE_ADMIN] += minutes
 				if(announce_changes)
-					to_chat(src,"<span class='notice'>You got: [minutes] Admin EXP!</span>")
+					to_chat(src,"<span class='notice'>Получено [minutes] Админ ОП!</span>")
 			else
 				play_records[EXP_TYPE_GHOST] += minutes
 				if(announce_changes)
-					to_chat(src,"<span class='notice'>You got: [minutes] Ghost EXP!</span>")
+					to_chat(src,"<span class='notice'>Получено [minutes] Призрачного ОП!</span>")
 	else if(isobserver(mob))
 		play_records[EXP_TYPE_GHOST] += minutes
 		if(announce_changes)
-			to_chat(src,"<span class='notice'>You got: [minutes] Ghost EXP!</span>")
+			to_chat(src,"<span class='notice'>Получено [minutes] Призрачного ОП!</span>")
 	else if(minutes)	//Let "refresh" checks go through
 		return
 

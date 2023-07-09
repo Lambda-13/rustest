@@ -153,7 +153,7 @@ SUBSYSTEM_DEF(ticker)
 				timeLeft = (CONFIG_GET(number/lobby_countdown) * 10)		WS Edit - Countdown after init */
 			for(var/client/C in GLOB.clients)
 				window_flash(C, ignorepref = TRUE) //let them know lobby has opened up.
-			to_chat(world, "<span class='boldnotice'>Welcome to [station_name()]!</span>")
+			to_chat(world, "<span class='boldnotice'>Текущий сектор: [station_name()]</span>")
 			send2chat("New round starting!", CONFIG_GET(string/chat_announce_new_game))
 			SSredbot.send_discord_message("ooc", "**A new round is beginning.**")
 			current_state = GAME_STATE_PREGAME
@@ -210,7 +210,7 @@ SUBSYSTEM_DEF(ticker)
 
 
 /datum/controller/subsystem/ticker/proc/setup()
-	to_chat(world, "<span class='boldannounce'>Starting game...</span>")
+	to_chat(world, "<span class='boldannounce'>Начинаем...</span>")
 	var/init_start = world.timeofday
 		//Create and announce mode
 	var/list/datum/game_mode/runnable_modes
@@ -287,7 +287,7 @@ SUBSYSTEM_DEF(ticker)
 	round_start_timeofday = world.timeofday
 	SSdbcore.SetRoundStart()
 
-	to_chat(world, "<span class='notice'><B>Welcome to [station_name()], enjoy your stay!</B></span>")
+	to_chat(world, "<span class='notice'><B>Добро пожаловать в сектор [station_name()], приятного вам исследования!</B></span>")
 	SSredbot.send_discord_message("ooc", "**A new round has begun.**")
 	SEND_SOUND(world, sound('sound/ai/welcome.ogg'))
 
@@ -295,7 +295,7 @@ SUBSYSTEM_DEF(ticker)
 	Master.SetRunLevel(RUNLEVEL_GAME)
 
 	if(SSevents.holidays)
-		to_chat(world, "<span class='notice'>and...</span>")
+		to_chat(world, "<span class='notice'>и...</span>")
 		for(var/holidayname in SSevents.holidays)
 			var/datum/holiday/holiday = SSevents.holidays[holidayname]
 			to_chat(world, "<h4>[holiday.greet()]</h4>")
@@ -312,7 +312,7 @@ SUBSYSTEM_DEF(ticker)
 
 	var/list/adm = get_admin_counts()
 	var/list/allmins = adm["present"]
-	send2tgs("Server", "Round [GLOB.round_id ? "#[GLOB.round_id]:" : "of"] [hide_mode ? "secret":"[mode.name]"] has started[allmins.len ? ".":" with no active admins online!"]")
+	send2tgs("Server", "Раунд [GLOB.round_id ? "#[GLOB.round_id]:" : "of"] [hide_mode ? "secret":"[mode.name]"] has started[allmins.len ? ".":" начался без админов на сервере!"]")
 	setup_done = TRUE
 
 	for(var/i in GLOB.start_landmarks_list)
