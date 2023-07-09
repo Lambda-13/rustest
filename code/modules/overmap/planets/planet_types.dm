@@ -15,7 +15,7 @@
 	name = "лавовая планета"
 	desc = "Планетарный биом, характеризующийся очень горячей температурой с магмакамнями, пеплом и с небольшими озерами лавы."
 	planet = DYNAMIC_WORLD_LAVA
-	icon_state = "globe"
+	icon_state = "globe_2"
 	color = COLOR_ORANGE
 	mapgen = /datum/map_generator/planet_generator/lava
 	default_baseturf = /turf/open/floor/plating/asteroid/basalt/lava
@@ -27,7 +27,7 @@
 	name = "антарктическая планета"
 	desc = "Планетарный биом, характеризующийся холодной, замороженной равниной и демоническими порталами."
 	planet = DYNAMIC_WORLD_ICE
-	icon_state = "globe"
+	icon_state = "globe_2"
 	color = COLOR_BLUE_LIGHT
 	mapgen = /datum/map_generator/planet_generator/snow
 	default_baseturf = /turf/open/floor/plating/asteroid/snow/icemoon
@@ -39,7 +39,7 @@
 	name = "джунглиевая планета"
 	desc = "Планетарный биом, характеризующийся умеренной температурой, и очень плотно растущими деревьями."
 	planet = DYNAMIC_WORLD_JUNGLE
-	icon_state = "globe"
+	icon_state = "globe_2"
 	color = COLOR_LIME
 	mapgen = /datum/map_generator/planet_generator/jungle
 	default_baseturf = /turf/open/floor/plating/dirt/jungle
@@ -51,7 +51,7 @@
 	name = "каменистая планета"
 	desc = "Планетарный биом, характеризующийся большими обьёмами железа и камня."
 	planet = DYNAMIC_WORLD_ROCKPLANET
-	icon_state = "globe"
+	icon_state = "globe_2"
 	color = "#bd1313"
 	mapgen = /datum/map_generator/planet_generator/rock
 	default_baseturf = /turf/open/floor/plating/asteroid
@@ -63,7 +63,7 @@
 	name = "бело-пустынная планета"
 	desc = "Планетарный биом, характеризующийся ясной погодой, обилием солённого песка и кислотными озёрами."
 	planet = DYNAMIC_WORLD_SAND
-	icon_state = "globe"
+	icon_state = "globe_2"
 	color = COLOR_GRAY
 	mapgen = /datum/map_generator/planet_generator/sand
 	default_baseturf = /turf/open/floor/plating/asteroid/whitesands
@@ -126,7 +126,7 @@
 	name = "мусорная планета"
 	desc = "Планетарный биом, характеризующийся огромным пространством мусора и сломанной машинерии."
 	planet = DYNAMIC_WORLD_WASTEPLANET
-	icon_state = "globe"
+	icon_state = "globe_2"
 	color = "#a9883e"
 	mapgen = /datum/map_generator/planet_generator/waste
 	default_baseturf = /turf/open/floor/plating/asteroid/wasteplanet

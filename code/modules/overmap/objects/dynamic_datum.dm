@@ -148,6 +148,7 @@
 
 	if(!preserve_level)
 		token.desc += " Если тут не будет удерживающих маяков или людей - он исчезнет."
+		token.update_icon()
 
 	token.desc += "<br>Уровень опасности - <b>[danger_level]</b>: "
 	switch(danger_level)

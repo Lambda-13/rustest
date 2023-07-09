@@ -201,9 +201,8 @@ Temporary Items
 # JavaScript tools
 **/node_modules
 
-# Screenshot tests
-/artifacts
-
 # tool-generated files
 check_regex_output.txt
 
+# Autowiki
+/tools/autowiki/node_modules

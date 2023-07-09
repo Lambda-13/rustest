@@ -68,3 +68,7 @@
 	range = 20
 	color = "#ff7e7e"//Tint it slightly
 
+/obj/projectile/curse_hand/phantom
+	name = "phantom hand"
+	damage = 15
+	paralyze = 5
