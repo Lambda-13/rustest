@@ -2670,12 +2670,8 @@
 	dir = 1
 	},
 /obj/machinery/light/directional/south,
-/obj/machinery/mineral/ore_redemption{
-	dir = 8;
-	input_dir = 8;
-	output_dir = 8
-	},
 /obj/structure/grille/broken,
+/obj/machinery/selling_pad,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "nD" = (
@@ -8406,12 +8402,6 @@
 /area/ship/maintenance/port)
 "MW" = (
 /obj/effect/turf_decal/industrial/hatch/yellow,
-/obj/structure/rack,
-/obj/item/storage/bag/ore,
-/obj/item/storage/bag/ore,
-/obj/item/pickaxe/rusted,
-/obj/item/pickaxe/drill,
-/obj/item/pickaxe/drill,
 /obj/machinery/button/door{
 	dir = 1;
 	id = "cutter_cargo_shutters";
@@ -8423,6 +8413,11 @@
 	id = "cutter_cargo";
 	pixel_x = -8;
 	pixel_y = -22
+	},
+/obj/machinery/mineral/ore_redemption{
+	dir = 4;
+	input_dir = 8;
+	output_dir = 8
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
@@ -9127,12 +9122,6 @@
 	pixel_x = 3;
 	pixel_y = -4
 	},
-/obj/item/gun/ballistic/shotgun/automatic/dual_tube{
-	pixel_y = 2
-	},
-/obj/item/gun/ballistic/shotgun/doublebarrel{
-	pixel_y = -4
-	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
@@ -9502,13 +9491,12 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 4
 	},
-/obj/structure/frame/computer{
-	anchored = 1;
-	dir = 8
-	},
 /obj/structure/railing{
 	dir = 2;
 	layer = 4.1
+	},
+/obj/machinery/computer/selling_pad_control{
+	dir = 8
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
@@ -10189,9 +10177,14 @@
 "VP" = (
 /obj/structure/guncase,
 /obj/effect/turf_decal/techfloor,
-/obj/item/gun/energy/taser,
 /obj/structure/sign/poster/official/ion_carbine{
 	pixel_y = 32
+	},
+/obj/item/gun/ballistic/shotgun/automatic/dual_tube{
+	pixel_y = 2
+	},
+/obj/item/gun/ballistic/shotgun/doublebarrel{
+	pixel_y = -4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
@@ -10967,6 +10960,11 @@
 /area/ship/hallway/fore)
 "ZV" = (
 /obj/effect/turf_decal/industrial/hatch/yellow,
+/obj/structure/closet/crate,
+/obj/item/pickaxe/drill,
+/obj/item/pickaxe/drill,
+/obj/item/storage/bag/ore,
+/obj/item/storage/bag/ore,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "ZW" = (
