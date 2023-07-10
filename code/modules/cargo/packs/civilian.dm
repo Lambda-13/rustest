@@ -2,6 +2,21 @@
 	group = "Обслуживание"
 
 /*
+		Civilian
+*/
+
+/datum/supply_pack/civilian/civilians
+	name = "Civilians Crate"
+	desc = "Literally civilians crate"
+	cost = COST_MIN * 100000
+	contains = list(/mob/living/carbon/human,
+					/mob/living/carbon/human,
+					/mob/living/carbon/human,
+					/mob/living/carbon/human,
+					/mob/living/carbon/human)
+	crate_name = "civilians crate"
+
+/*
 		Janitorial
 */
 
