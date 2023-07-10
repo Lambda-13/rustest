@@ -92,10 +92,10 @@
 
 /datum/supply_pack/tools/jetpack
 	name = "Магнитные ботинки"
-	desc = "Магнитные ботинки, для хождения по поверхностям в условиях невесомости."
+	desc = "Магнитные ботинки, для хождения по поверхностям в условиях нулевой гравитации."
 	cost = COST_MIN * 1200
 	contains = list(/obj/item/clothing/shoes/magboots)
-	crate_name = "ящик с магбутами"
+	crate_name = "ящик с магнитными ботинками"
 
 /datum/supply_pack/tools/transfer_valves
 	name = "Набор учёного-подрывника"
