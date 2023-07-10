@@ -48,8 +48,14 @@ GLOBAL_LIST_INIT(sandstone_recipes, list ( \
 	. = ..()
 	. += GLOB.sandstone_recipes
 
-/obj/item/stack/sheet/mineral/sandstone/thirty
+/obj/item/stack/sheet/mineral/sandstone/fifty
 	amount = 30
+
+/obj/item/stack/sheet/mineral/sandstone/twenty
+	amount = 20
+
+/obj/item/stack/sheet/mineral/sandstone/five
+	amount = 5
 
 /*
  * Sandbags

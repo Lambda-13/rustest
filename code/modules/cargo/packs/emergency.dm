@@ -1,5 +1,5 @@
 /datum/supply_pack/emergency
-	group = "Необходимое"
+	group = "Жизнеобеспечение"
 	crate_type = /obj/structure/closet/crate/internals
 
 /*

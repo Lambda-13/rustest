@@ -35,8 +35,8 @@
 	crate_name = "ящик с канистрой плазмы"
 
 /datum/supply_pack/canister/carbon_dio
-	name = "Канистра углерода"
-	desc = "Содержит углерод. Зачем он тебе?"
+	name = "Канистра углекислого газа"
+	desc = "Содержит углекислый газ. Зачем он тебе?"
 	cost = COST_MED * 2500
 	contains = list(/obj/machinery/portable_atmospherics/canister/carbon_dioxide)
 	crate_name = "ящик с канистрой углерода"
@@ -82,4 +82,3 @@
 	cost = COST_HIGH * 25000
 	contains = list(/obj/machinery/portable_atmospherics/canister/nitryl)
 	crate_name = "ящик с канистрой нитрила"
-
