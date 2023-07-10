@@ -13,6 +13,13 @@
 	small_item = TRUE
 	contains = list(/obj/item/storage/firstaid/regular)
 
+/datum/supply_pack/medical/firstaidadvanced_single
+	name = "Advanced First Aid Kit Single-Pack"
+	desc = "Contains one advanced first aid kit for healing advanced types of wounds."
+	cost = COST_MIN * 1250
+	small_item = TRUE
+	contains = list(/obj/item/storage/firstaid/advanced)
+
 /datum/supply_pack/medical/firstaidbruises_single
 	name = "Bruise Treatment Kit Single-Pack"
 	desc = "Contains one first aid kit focused on healing bruises and broken bones."
@@ -66,6 +73,7 @@
 	cost = COST_MIN * 3000
 	contains = list(/obj/item/storage/backpack/duffelbag/med/surgery,
 					/obj/item/reagent_containers/medigel/sterilizine,
+					/obj/item/clothing/gloves/color/latex/nitrile,
 					/obj/item/roller)
 	crate_name = "surgical supplies crate"
 
@@ -127,6 +135,7 @@
 					/obj/item/storage/box/syringes,
 					/obj/item/storage/box/bodybags,
 					/obj/item/storage/firstaid/regular,
+					/obj/item/storage/firstaid/advanced,
 					/obj/item/storage/firstaid/o2,
 					/obj/item/storage/firstaid/toxin,
 					/obj/item/storage/firstaid/brute,

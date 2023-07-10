@@ -82,11 +82,11 @@
 		Misc. materials
 */
 
-/datum/supply_pack/material/sandstone30
-	name = "30 блоков песчаника"
+/datum/supply_pack/material/sandstone50
+	name = "50 блоков песчаника"
 	desc = "Если необходимо построить песчаный домик. Или корабль."
 	cost = COST_MIN * 1000
-	contains = list(/obj/item/stack/sheet/mineral/sandstone/thirty)
+	contains = list(/obj/item/stack/sheet/mineral/sandstone/fifty)
 	crate_name = "sandstone blocks crate"
 
 /datum/supply_pack/material/plastic50

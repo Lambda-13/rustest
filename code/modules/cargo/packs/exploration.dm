@@ -1,5 +1,5 @@
 /datum/supply_pack/exploration
-	group = "Наборы"
+	group = "Исследование"
 	crate_type = /obj/structure/closet/crate/wooden
 
 /*
