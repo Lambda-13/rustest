@@ -41,7 +41,7 @@
 /datum/supply_pack/material/uranium20
 	name = "20 урановых листов"
 	desc = "Радиоактивно."
-	cost = COST_MIN * 2000
+	cost = COST_MIN * 6000
 	contains = list(/obj/item/stack/sheet/mineral/uranium/twenty)
 	crate_name = "uranium sheets crate"
 	crate_type = /obj/structure/closet/crate/radiation
@@ -53,28 +53,28 @@
 /datum/supply_pack/material/titanium20
 	name = "20 титановых листов"
 	desc = "Обычно титан использует НаноТрайзен. Может отражать лазеры."
-	cost = COST_MIN * 3000
+	cost = COST_MIN * 2000
 	contains = list(/obj/item/stack/sheet/mineral/titanium/twenty)
 	crate_name = "titanium sheets crate"
 
 /datum/supply_pack/material/gold20
 	name = "20 золотых слитков"
 	desc = "Если в 21 веке золото было очень дорогим, то сейчас вы можете купить золото дешевле чем двигатель."
-	cost = COST_MIN * 4000
+	cost = COST_MIN * 5000
 	contains = list(/obj/item/stack/sheet/mineral/gold/twenty)
 	crate_name = "gold sheets crate"
 
 /datum/supply_pack/material/silver20
 	name = "20 серебрянных слитков"
 	desc = "Монеты делать не получится."
-	cost = COST_MIN * 3000
+	cost = COST_MIN * 2500
 	contains = list(/obj/item/stack/sheet/mineral/silver/twenty)
 	crate_name = "silver sheets crate"
 
 /datum/supply_pack/material/diamond
 	name = "1 алмаз"
 	desc = "Блестит."
-	cost = COST_MIN * 3500
+	cost = COST_MIN * 1000
 	contains = list(/obj/item/stack/sheet/mineral/diamond)
 	crate_name = "diamond sheet crate"
 
