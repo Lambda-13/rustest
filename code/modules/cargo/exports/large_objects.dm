@@ -109,15 +109,6 @@
 	unit_name = "power generator"
 	export_types = list(/obj/machinery/power/port_gen/pacman, /obj/machinery/power/port_gen/pacman/super, /obj/machinery/power/port_gen/pacman/mrs, /obj/machinery/power/port_gen/pacman/wood)
 
-/datum/export/large/crate
-	cost = 10
-	unit_name = "metal crate"
-	export_types = list(/obj/structure/closet/crate)
-
-/datum/export/large/closet
-	cost = 10
-	unit_name = "metal closet"
-	export_types = list(/obj/structure/closet)
 
 
 
