@@ -103,3 +103,12 @@
 	worth += C.air_contents.get_moles(GAS_TRITIUM)*4
 	worth += C.air_contents.get_moles(GAS_PLUOXIUM)*5
 	return worth
+
+/datum/export/large/pacman
+	cost = 250
+	unit_name = "power generator"
+	export_types = list(/obj/machinery/power/port_gen/pacman, /obj/machinery/power/port_gen/pacman/super, /obj/machinery/power/port_gen/pacman/mrs, /obj/machinery/power/port_gen/pacman/wood)
+
+
+
+

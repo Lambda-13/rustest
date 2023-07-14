@@ -27,53 +27,53 @@
 // Materials. Prices have been heavily nerfed from the original values; mining is boring, so it shouldn't be a good way to make money.
 
 /datum/export/material/bananium
-	cost = 250
+	cost = 350
 	material_id = /datum/material/bananium
 	message = "cm3 of bananium"
 
 /datum/export/material/diamond
-	cost = 125
+	cost = 200
 	material_id = /datum/material/diamond
 	message = "cm3 of diamonds"
 
 /datum/export/material/plasma
-	cost = 25
+	cost = 20
 	k_elasticity = 0
 	material_id = /datum/material/plasma
 	message = "cm3 of plasma"
 
 /datum/export/material/uranium
-	cost = 25
+	cost = 60
 	material_id = /datum/material/uranium
 	message = "cm3 of uranium"
 
 /datum/export/material/gold
-	cost = 30
+	cost = 50
 	material_id = /datum/material/gold
 	message = "cm3 of gold"
 
 /datum/export/material/silver
-	cost = 10
+	cost = 25
 	material_id = /datum/material/silver
 	message = "cm3 of silver"
 
 /datum/export/material/titanium
-	cost = 30
+	cost = 20
 	material_id = /datum/material/titanium
 	message = "cm3 of titanium"
 
 /datum/export/material/adamantine
-	cost = 125
+	cost = 350
 	material_id = /datum/material/adamantine
 	message = "cm3 of adamantine"
 
 /datum/export/material/mythril
-	cost = 375
+	cost = 350
 	material_id = /datum/material/mythril
 	message = "cm3 of mythril"
 
 /datum/export/material/bscrystal
-	cost = 75
+	cost = 250
 	message = "of bluespace crystals"
 	material_id = /datum/material/bluespace
 
@@ -83,7 +83,7 @@
 	material_id = /datum/material/plastic
 
 /datum/export/material/runite
-	cost = 150
+	cost = 350
 	message = "cm3 of runite"
 	material_id = /datum/material/runite
 
@@ -103,7 +103,7 @@
 		/obj/item/shard)
 
 /datum/export/material/hot_ice
-	cost = 100
+	cost = 300
 	message = "cm3 of Hot Ice"
 	material_id = /datum/material/hot_ice
 	export_types = /obj/item/stack/sheet/hot_ice
