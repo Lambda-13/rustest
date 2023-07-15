@@ -1,5 +1,3 @@
-/*
-// Отключаем ерп ввиду кринжовости (sanecman)
 /mob/living/carbon/human/MouseDrop_T(mob/M, mob/user)
 	. = ..()
 
@@ -15,7 +13,6 @@
 	var/mob/living/carbon/human/H = user
 
 	H.try_interaction(src)
-*/
 
 /mob/living/carbon/human/proc/try_interaction(mob/partner)
 
