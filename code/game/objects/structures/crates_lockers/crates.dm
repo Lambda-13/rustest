@@ -261,3 +261,66 @@
 	icon_state = "chemcrate"
 	material_drop = /obj/item/stack/sheet/mineral/gold
 	material_drop_amount = 1
+
+//SPECIAL SUPPORT BEACON CRATES//
+//ЯЩИКИ ДЛЯ СПЕЦИАЛЬНОГО МАЯКА ПОДДЕРЖКИ//
+
+/obj/structure/closet/crate/special_support
+	name = "support crate"
+	desc = "A crate containing a variety of items for a selected ship specialization"
+
+/obj/structure/closet/crate/special_support/trade
+	name = "merchant support crate"
+	desc = "A crate containing a variety of items for trading"
+
+/obj/structure/closet/crate/special_support/trade/PopulateContents()
+	. = ..()
+	new /obj/item/storage/box/rnd/sup(src)
+
+/obj/structure/closet/crate/special_support/build
+	name = "builder support crate"
+	desc = "A crate containing a variety of items for building"
+
+/obj/structure/closet/crate/special_support/build/PopulateContents()
+	. = ..()
+	new /obj/item/storage/box/rnd/eng(src)
+
+/obj/structure/closet/crate/special_support/rescue
+	name = "rescue support crate"
+	desc = "A crate containing a variety of items for rescuing"
+
+/obj/structure/closet/crate/special_support/rescue/PopulateContents()
+	. = ..()
+	new /obj/item/storage/box/rnd/med(src)
+
+/obj/structure/closet/crate/special_support/combat
+	name = "combat support crate"
+	desc = "A crate containing a variety of items for combat"
+
+/obj/structure/closet/crate/special_support/combat/PopulateContents()
+	. = ..()
+	new /obj/item/storage/box/rnd/sec(src)
+
+/obj/structure/closet/crate/special_support/research
+	name = "research support crate"
+	desc = "A crate containing a variety of items for researching"
+
+/obj/structure/closet/crate/special_support/research/PopulateContents()
+	. = ..()
+	new /obj/item/storage/box/rnd/sci(src)
+
+/obj/structure/closet/crate/special_support/civil
+	name = "civil support crate"
+	desc = "A crate containing a variety of items for living"
+
+/obj/structure/closet/crate/special_support/civil/PopulateContents()
+	. = ..()
+	new /obj/item/storage/box/rnd/civ(src)
+
+/obj/structure/closet/crate/special_support/illegal
+	name = "illegal support crate"
+	desc = "A crate containing a variety of prohibited items"
+
+/obj/structure/closet/crate/special_support/illegal/PopulateContents()
+	. = ..()
+	new /obj/item/uplink/emengercy(src)

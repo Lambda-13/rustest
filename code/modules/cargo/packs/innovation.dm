@@ -5,7 +5,7 @@
 /datum/supply_pack/innovations/farmbox
 	name = "Ударогенератор"
 	desc = "Эта штука служит для выращивания денег в прогрессии."
-	cost = COST_MIN * 25500
+	cost = COST_MIN * 80000
 	contains = list(/obj/structure/punching_bag/trade)
 	crate_name = "коробка с ударогенератором"
 	crate_type = /obj/structure/closet/crate/large

@@ -311,12 +311,12 @@
 	var/static/list/rndboxes
 	if(!rndboxes)
 		rndboxes = list()
-		var/list/templist = list(/obj/item/storage/box/rndengi,
-							/obj/item/storage/box/rndsec,
-							/obj/item/storage/box/rndmining,
-							/obj/item/storage/box/rndmed,
-							/obj/item/storage/box/rndsci,
-							/obj/item/storage/box/rndciv
+		var/list/templist = list(/obj/item/storage/box/rnd/eng,
+							/obj/item/storage/box/rnd/sec,
+							/obj/item/storage/box/rnd/sup,
+							/obj/item/storage/box/rnd/med,
+							/obj/item/storage/box/rnd/sci,
+							/obj/item/storage/box/rnd/civ
 							)
 		for(var/V in templist)
 			var/atom/A = V

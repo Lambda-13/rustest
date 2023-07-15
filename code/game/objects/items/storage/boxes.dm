@@ -1207,63 +1207,63 @@
 	desc = "Содержит платы РнД, которые НаноТрайзен выпускала до войны."
 
 //departmental RND kits, for shiptests.
-/obj/item/storage/box/rndmining
-	name = "набор плат РнД Ш.А.Х.Т.А."
-	desc = "Содержит платы РнД для шахтёров."
+/obj/item/storage/box/rnd/sup
+	name = "набор снабженческих плат РнД"
+	desc = "Содержит платы РнД для снабженческого пользования."
 	illustration = "scicircuit"
 
-/obj/item/storage/box/rndmining/PopulateContents()
+/obj/item/storage/box/rnd/sup/PopulateContents()
 	new /obj/item/circuitboard/machine/techfab/department/cargo(src)
 	new /obj/item/circuitboard/machine/destructive_analyzer(src)
 	new /obj/item/circuitboard/computer/rdconsole(src)
 	new /obj/item/circuitboard/machine/rdserver(src)
 
-/obj/item/storage/box/rndengi
-	name = "набор плат РнД С.И.Н.Г.А."
-	desc = "Содержит платы РнД для инженеров."
+/obj/item/storage/box/rnd/eng
+	name = "набор инженерных плат РнД"
+	desc = "Содержит платы РнД для инженерного пользования."
 	illustration = "scicircuit"
 
-/obj/item/storage/box/rndengi/PopulateContents()
+/obj/item/storage/box/rnd/eng/PopulateContents()
 	new /obj/item/circuitboard/machine/techfab/department/engineering(src)
 	new /obj/item/circuitboard/machine/destructive_analyzer(src)
 	new /obj/item/circuitboard/computer/rdconsole(src)
 	new /obj/item/circuitboard/machine/rdserver(src)
 
-/obj/item/storage/box/rndmed
-	name = "набор плат рнд Л.Е.К.А.Р.Ь."
-	desc = "Содержит платы РнД для медиков."
+/obj/item/storage/box/rnd/med
+	name = "набор медицинских плат РнД"
+	desc = "Содержит платы РнД для медицинского пользования."
 	illustration = "scicircuit"
 
-/obj/item/storage/box/rndmed/PopulateContents()
+/obj/item/storage/box/rnd/med/PopulateContents()
 	new /obj/item/circuitboard/machine/techfab/department/medical(src)
 	new /obj/item/circuitboard/machine/destructive_analyzer(src)
 	new /obj/item/circuitboard/computer/rdconsole(src)
 	new /obj/item/circuitboard/machine/rdserver(src)
 
-/obj/item/storage/box/rndsec
-	name = "набор плат рнд О.Х.Р.А.Н.А."
-	desc = "Содержит платы РнД для охранных учереждений."
+/obj/item/storage/box/rnd/sec
+	name = "набор охранных плат РнД"
+	desc = "Содержит платы РнД для охранного пользования."
 	illustration = "scicircuit"
 
-/obj/item/storage/box/rndsec/PopulateContents()
+/obj/item/storage/box/rnd/sec/PopulateContents()
 	new /obj/item/circuitboard/machine/techfab/department/security(src)
 	new /obj/item/circuitboard/machine/destructive_analyzer(src)
 	new /obj/item/circuitboard/computer/rdconsole(src)
 	new /obj/item/circuitboard/machine/rdserver(src)
 
-/obj/item/storage/box/rndciv
-	name = "набор плат рнд Д.О.М."
-	desc = "Содержит платы РнД для домашнего использования."
+/obj/item/storage/box/rnd/civ
+	name = "набор гражданских плат РнД"
+	desc = "Содержит платы РнД для гражданского пользования."
 	illustration = "scicircuit"
 
-/obj/item/storage/box/rndciv/PopulateContents()
+/obj/item/storage/box/rnd/civ/PopulateContents()
 	new /obj/item/circuitboard/machine/techfab/department/service(src)
 	new /obj/item/circuitboard/machine/destructive_analyzer(src)
 	new /obj/item/circuitboard/computer/rdconsole(src)
 	new /obj/item/circuitboard/machine/rdserver(src)
 
-/obj/item/storage/box/rndbasic
-	name = "набор плат рнд Б.А.З.А."
+/obj/item/storage/box/rnd/basic
+	name = "набор базовых плат РнД"
 	desc = "Содержит платы РнД."
 	illustration = "scicircuit"
 
@@ -1273,12 +1273,12 @@
 	new /obj/item/circuitboard/computer/rdconsole(src)
 	new /obj/item/circuitboard/machine/rdserver(src)
 
-/obj/item/storage/box/rndsci
-	name = "набор плат рнд Н.А.У.К.А."
-	desc = "Содержит платы РнД для научных исследований."
+/obj/item/storage/box/rnd/sci
+	name = "набор научных плат РнД"
+	desc = "Содержит платы РнД для научного пользования."
 	illustration = "scicircuit"
 
-/obj/item/storage/box/rndsci/PopulateContents()
+/obj/item/storage/box/rnd/sci/PopulateContents()
 	new /obj/item/circuitboard/machine/techfab/department/science(src)
 	new /obj/item/circuitboard/machine/destructive_analyzer(src)
 	new /obj/item/circuitboard/computer/rdconsole(src)
