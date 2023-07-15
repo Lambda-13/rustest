@@ -232,6 +232,7 @@
 /obj/effect/turf_decal/trimline/opaque/bottlegreen/filled/line{
 	dir = 6
 	},
+/obj/structure/extinguisher_cabinet/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
 "cd" = (
@@ -262,6 +263,8 @@
 	},
 /obj/machinery/camera/autoname,
 /obj/item/toy/plush/lizardplushie,
+/obj/machinery/firealarm/directional/north,
+/obj/structure/extinguisher_cabinet/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "cv" = (
@@ -277,6 +280,7 @@
 /obj/effect/turf_decal/trimline/opaque/bottlegreen/filled/line{
 	dir = 10
 	},
+/obj/structure/extinguisher_cabinet/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
 "cx" = (
@@ -599,6 +603,8 @@
 /obj/effect/turf_decal/siding/thinplating/light/end{
 	dir = 4
 	},
+/obj/structure/extinguisher_cabinet/directional/east,
+/obj/machinery/firealarm/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "eT" = (
@@ -1271,6 +1277,7 @@
 /obj/item/reagent_containers/blood/random,
 /obj/item/reagent_containers/blood/random,
 /obj/effect/turf_decal/corner/opaque/blue/diagonal,
+/obj/structure/extinguisher_cabinet/directional/east,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "kc" = (
@@ -1572,6 +1579,10 @@
 	pixel_y = 8
 	},
 /obj/machinery/holopad/emergency/medical,
+/obj/machinery/firealarm/directional/west{
+	pixel_x = -38;
+	pixel_y = -4
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "nh" = (
@@ -1836,6 +1847,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
 	},
+/obj/machinery/firealarm/directional/east{
+	pixel_y = 2
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "pA" = (
@@ -1934,6 +1948,7 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "qZ" = (
+/obj/structure/extinguisher_cabinet/directional/east,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "rc" = (
@@ -1947,6 +1962,7 @@
 "rd" = (
 /obj/structure/tank_dispenser/oxygen,
 /obj/effect/turf_decal/corner/opaque/orange/mono,
+/obj/structure/extinguisher_cabinet/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ship/storage)
 "rq" = (
@@ -2386,6 +2402,7 @@
 /obj/structure/cable/cyan{
 	icon_state = "2-6"
 	},
+/obj/structure/extinguisher_cabinet/directional/west,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "vU" = (
@@ -2774,6 +2791,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/firealarm/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/port)
 "zn" = (
@@ -3148,6 +3166,7 @@
 /obj/machinery/camera/autoname{
 	dir = 8
 	},
+/obj/machinery/firealarm/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
 "CN" = (
@@ -3327,6 +3346,7 @@
 /obj/effect/turf_decal/trimline/opaque/grey/filled/line{
 	dir = 5
 	},
+/obj/machinery/firealarm/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "Ew" = (
@@ -3420,6 +3440,7 @@
 /obj/effect/turf_decal/corner/opaque/purple{
 	dir = 5
 	},
+/obj/machinery/firealarm/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/science)
 "Fw" = (
@@ -3708,6 +3729,7 @@
 /obj/machinery/cryopod{
 	dir = 8
 	},
+/obj/structure/extinguisher_cabinet/directional/east,
 /turf/open/floor/carpet/executive,
 /area/ship/crew/dorm)
 "HZ" = (
@@ -3874,6 +3896,7 @@
 /obj/machinery/camera/autoname{
 	dir = 4
 	},
+/obj/structure/extinguisher_cabinet/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ship/science)
 "Jw" = (
@@ -3951,6 +3974,10 @@
 	dir = 4;
 	pixel_x = -27;
 	pixel_y = -8
+	},
+/obj/machinery/firealarm/directional/west{
+	pixel_x = -36;
+	pixel_y = 4
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -4249,6 +4276,7 @@
 /obj/machinery/camera/autoname{
 	dir = 4
 	},
+/obj/structure/extinguisher_cabinet/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "Mz" = (
@@ -4818,6 +4846,10 @@
 	pixel_x = -27;
 	pixel_y = 8
 	},
+/obj/machinery/firealarm/directional/west{
+	pixel_x = -38;
+	pixel_y = -4
+	},
 /turf/open/floor/carpet/executive,
 /area/ship/crew/dorm)
 "Tz" = (
@@ -4842,6 +4874,7 @@
 	dir = 5
 	},
 /obj/machinery/camera/autoname,
+/obj/machinery/firealarm/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/storage)
 "TK" = (
@@ -4916,6 +4949,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/extinguisher_cabinet/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/port)
 "Ut" = (

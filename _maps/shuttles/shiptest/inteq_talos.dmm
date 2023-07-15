@@ -550,6 +550,12 @@
 /obj/item/ammo_box/magazine/co9mm{
 	pixel_x = -5
 	},
+/obj/item/ammo_box/magazine/co9mm{
+	pixel_x = 5
+	},
+/obj/item/ammo_box/magazine/co9mm{
+	pixel_x = -5
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "dY" = (
@@ -5563,8 +5569,9 @@
 /obj/effect/turf_decal/siding/thinplating/dark,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/gun/ballistic/automatic/pistol/commander/inteq{
-	pixel_y = 5
+	pixel_y = 10
 	},
+/obj/item/gun/ballistic/automatic/pistol/commander/inteq,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "JI" = (
