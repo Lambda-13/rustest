@@ -21,7 +21,7 @@
 /datum/export/foods/crabmeat
 	cost = 30
 	unit_name = "crab meat"
-	export_types = list(obj/item/reagent_containers/food/snacks/meat/rawcrab)
+	export_types = list(/obj/item/reagent_containers/food/snacks/meat/rawcrab)
 
 /datum/export/foods/spiderleg
 	cost = 120
