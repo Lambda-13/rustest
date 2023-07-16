@@ -255,11 +255,11 @@
 /obj/effect/spawner/lootdrop/rnd
 	name = "random RND spawner"
 	loot = list(
-		/obj/item/storage/box/rndmining,
-		/obj/item/storage/box/rndengi,
-		/obj/item/storage/box/rndsec,
-		/obj/item/storage/box/rndciv,
-		/obj/item/storage/box/rndmed)
+		/obj/item/storage/box/rnd/sup,
+		/obj/item/storage/box/rnd/eng,
+		/obj/item/storage/box/rnd/sec,
+		/obj/item/storage/box/rnd/civ,
+		/obj/item/storage/box/rnd/med)
 	lootcount = 1
 
 /obj/effect/spawner/lootdrop/two_percent_xeno_egg_spawner

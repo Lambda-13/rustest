@@ -110,5 +110,3 @@
 	export_types = list(/obj/machinery/power/port_gen/pacman, /obj/machinery/power/port_gen/pacman/super, /obj/machinery/power/port_gen/pacman/mrs, /obj/machinery/power/port_gen/pacman/wood)
 
 
-
-

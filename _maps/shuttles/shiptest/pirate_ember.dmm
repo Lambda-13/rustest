@@ -3378,6 +3378,20 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 10
 	},
+/obj/structure/table/reinforced{
+	color = "#c1b6a5"
+	},
+/obj/item/reagent_containers/glass/maunamug{
+	pixel_x = -5;
+	pixel_y = 9
+	},
+/obj/item/pipe_dispenser{
+	pixel_y = -6
+	},
+/obj/item/extinguisher/advanced{
+	pixel_x = 8;
+	pixel_y = 3
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/incinerator)
 "rg" = (
@@ -8443,7 +8457,7 @@
 /obj/machinery/mineral/ore_redemption{
 	dir = 4;
 	input_dir = 4;
-	output_dir = 8
+	output_dir = 4
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
@@ -8799,9 +8813,11 @@
 /obj/machinery/jukebox/boombox{
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/components/binary/pump,
 /obj/machinery/atmospherics/pipe/simple/yellow/hidden/layer4{
 	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/purple/hidden{
+	dir = 1
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/incinerator)
@@ -9803,24 +9819,8 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
-/obj/structure/table/reinforced{
-	color = "#c1b6a5"
-	},
-/obj/item/extinguisher/advanced{
-	pixel_x = 8;
-	pixel_y = 3
-	},
-/obj/item/pipe_dispenser{
-	pixel_y = -6
-	},
-/obj/item/reagent_containers/glass/maunamug{
-	pixel_x = -5;
-	pixel_y = 9
-	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/purple/hidden{
-	dir = 1
-	},
+/obj/machinery/atmospherics/components/binary/pump,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/incinerator)
 "Um" = (

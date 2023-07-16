@@ -21,7 +21,7 @@
 /datum/supply_pack/science/choice_beacon_rnd
 	name = "Ящик с маяком выбора рнд плат"
 	desc = "Идёт вместе с маяком выбора рнд плат."
-	cost = COST_MED * 20000
+	cost = COST_MED * 50000
 	contains = list(/obj/item/choice_beacon/rnd)
 	crate_name = "ящик с маяком рнд плат"
 

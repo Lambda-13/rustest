@@ -85,28 +85,28 @@
 /datum/supply_pack/material/sandstone50
 	name = "50 блоков песчаника"
 	desc = "Если необходимо построить песчаный домик. Или корабль."
-	cost = COST_MIN * 1000
+	cost = COST_MIN * 1250
 	contains = list(/obj/item/stack/sheet/mineral/sandstone/fifty)
 	crate_name = "sandstone blocks crate"
 
 /datum/supply_pack/material/plastic50
 	name = "50 пластиковых листов"
 	desc = "Переработанная нефть и уничтожанная атмосфера планеты в одном ящике по цене 100 листов металла!"
-	cost = COST_MIN * 1000
+	cost = COST_MIN * 1250
 	contains = list(/obj/item/stack/sheet/plastic/fifty)
 	crate_name = "plastic sheets crate"
 
 /datum/supply_pack/material/cardboard50
 	name = "50 картонок"
 	desc = "Для сбора своей картонной армии."
-	cost = COST_MIN * 1000
+	cost = COST_MIN * 1250
 	contains = list(/obj/item/stack/sheet/cardboard/fifty)
 	crate_name = "cardboard sheets crate"
 
 /datum/supply_pack/material/wood50
 	name = "50 деревянных досок"
 	desc = "Верните ретро-футуризм - положите в своей каюте пол из дерева!"
-	cost = COST_MIN * 1500
+	cost = COST_MIN * 1250
 	contains = list(/obj/item/stack/sheet/mineral/wood/fifty)
 	crate_name = "wood planks crate"
 
