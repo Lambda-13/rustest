@@ -69,7 +69,7 @@
 	move_force = MOVE_FORCE_DEFAULT
 	move_resist = MOVE_RESIST_DEFAULT
 	pull_force = PULL_FORCE_DEFAULT
-	new /obj/item/stack/ore/bluespace_crystal(loc, 5)
+	new /obj/item/stack/ore/bluespace_crystal(loc, 2)
 	if(prob(5))
 		new /obj/item/assembly/signaler/anomaly/bluespace(loc)
 	if(prob(5))

@@ -63,12 +63,12 @@
 	message = "cm3 of titanium"
 
 /datum/export/material/adamantine
-	cost = 350
+	cost = 300
 	material_id = /datum/material/adamantine
 	message = "cm3 of adamantine"
 
 /datum/export/material/mythril
-	cost = 350
+	cost = 375
 	material_id = /datum/material/mythril
 	message = "cm3 of mythril"
 
@@ -82,10 +82,30 @@
 	message = "cm3 of plastic"
 	material_id = /datum/material/plastic
 
+/datum/export/material/cardboard
+	cost = 5
+	message = "cm3 of cardboard"
+	material_id = /datum/material/cardboard
+
+/datum/export/material/wood
+	cost = 5
+	message = "cm3 of wood"
+	material_id = /datum/material/wood
+
+/datum/export/material/sandstone
+	cost = 5
+	message = "cm3 of sandstone"
+	material_id = /datum/material/sandstone
+
 /datum/export/material/runite
 	cost = 350
 	message = "cm3 of runite"
 	material_id = /datum/material/runite
+
+/datum/export/material/runedmetal
+	cost = 100
+	message = "cm3 of runed metal"
+	material_id = /datum/material/runedmetal
 
 /datum/export/material/metal
 	cost = 2

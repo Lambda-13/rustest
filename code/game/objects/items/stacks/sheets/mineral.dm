@@ -49,7 +49,7 @@ GLOBAL_LIST_INIT(sandstone_recipes, list ( \
 	. += GLOB.sandstone_recipes
 
 /obj/item/stack/sheet/mineral/sandstone/fifty
-	amount = 30
+	amount = 50
 
 /obj/item/stack/sheet/mineral/sandstone/twenty
 	amount = 20
