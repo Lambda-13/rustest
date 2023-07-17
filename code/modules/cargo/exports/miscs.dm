@@ -3,22 +3,22 @@
 /datum/export/miscs
 	include_subtypes = FALSE
 
-/datum/export/gear/seashell
+/datum/export/miscs/seashell
 	cost = 80
 	unit_name = "seashell"
 	export_types = list(/obj/item/toy/seashell)
 
-/datum/export/gear/ebonydie
+/datum/export/miscs/ebonydie
 	cost = 500
 	unit_name = "ebony die"
 	export_types = list(/obj/item/dice/d6/ebony)
 
-/datum/export/gear/fudgedie
+/datum/export/miscs/fudgedie
 	cost = 123
 	unit_name = "fudge die"
 	export_types = list(/obj/item/dice/fudge)
 
-/datum/export/gear/spacedie
+/datum/export/miscs/spacedie
 	cost = 2112
 	unit_name = "space die"
 	export_types = list(/obj/item/dice/d6/space)
