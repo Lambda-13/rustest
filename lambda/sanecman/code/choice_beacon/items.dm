@@ -62,7 +62,7 @@
 
 /obj/item/choice_beacon/support_beacon
 	name = "маяк поддержки"
-	desc = "Позволяет вызвать дроппод снабжения. Может быть взломан."
+	desc = "Позволяет вызвать дроппод с комплектом. Может быть взломан."
 	icon = 'lambda/sanecman/icons/items/emergency_signaler.dmi'
 	icon_state = "em_signal"
 	var/emagged = FALSE
@@ -92,27 +92,20 @@
 	if(!spawnshit_emag)
 		spawnshit_emag = list()
 
-	templist = list(/obj/item/choice_beacon/rnd,
-				/obj/item/storage/box/oreredemtionandsilo,
-				/obj/item/choice_beacon/augments,
-				/obj/item/storage/belt/utility/chief/full,
-				/obj/item/storage/firstaid/advanced,
-				/obj/structure/reagent_dispensers/beerkeg,
-				/obj/item/storage/part_replacer/bluespace/tier2,
-				/obj/structure/punching_bag/trade,
-				/obj/item/pickaxe/drill/jackhammer,
+	templist = list(/obj/structure/closet/crate/special_support/trade,
+				/obj/structure/closet/crate/special_support/build,
+				/obj/structure/closet/crate/special_support/rescue,
+				/obj/structure/closet/crate/special_support/combat,
+				/obj/structure/closet/crate/special_support/research,
+				/obj/structure/closet/crate/special_support/civil
 					)
-	templist_emag = list(/obj/item/storage/box/rndboards/old,
-					/obj/item/storage/box/oreredemtionandsilo,
-					/obj/item/choice_beacon/augments,
-					/obj/item/storage/belt/utility/chief/full,
-					/obj/item/storage/firstaid/tactical,
-					/obj/structure/reagent_dispensers/beerkeg,
-					/obj/item/storage/part_replacer/bluespace/tier4,
-					/obj/structure/punching_bag/trade,
-					/obj/item/pickaxe/drill/jackhammer/brigador,
-					/obj/item/storage/toolbox/syndicate,
-					/obj/item/storage/box/copytech,
+	templist_emag = list(/obj/structure/closet/crate/special_support/trade,
+				/obj/structure/closet/crate/special_support/build,
+				/obj/structure/closet/crate/special_support/rescue,
+				/obj/structure/closet/crate/special_support/combat,
+				/obj/structure/closet/crate/special_support/research,
+				/obj/structure/closet/crate/special_support/civil,
+				/obj/structure/closet/crate/special_support/illegal
 						)
 	if(src.emagged == FALSE)
 		for(var/V in templist)
