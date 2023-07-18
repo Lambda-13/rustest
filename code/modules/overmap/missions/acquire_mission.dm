@@ -71,7 +71,7 @@
 /datum/mission/acquire/true_love
 	name = "Нужен алмаз (срочно!!)"
 	weight = 3
-	value = 700
+	value = 1000
 	duration = 20 MINUTES
 	dur_mod_range = 0.2
 	container_type = /obj/item/storage/box/true_love
@@ -115,7 +115,7 @@
 	name = "Capture a goliath"
 	desc = "I require a live goliath for research purposes. Trap one within the given \
 			Lifeform Containment Unit and return it to me and you will be paid handsomely."
-	value = 1500
+	value = 3000
 	duration = 30 MINUTES
 	weight = 6
 	container_type = /obj/structure/closet/mob_capture
@@ -135,14 +135,28 @@
 	name = "Capture a legion"
 	desc = "I require a live legion for research purposes. Trap one within the given \
 			Lifeform Containment Unit and return it to me and you will be paid handsomely."
-	value = 1300
+	value = 2500
 	objective_type = /mob/living/simple_animal/hostile/asteroid/hivelord/legion
+
+/datum/mission/acquire/creature/watcher
+	name = "Capture a watcher"
+	desc = "I require a live watcher for research purposes. Trap one within the given \
+			Lifeform Containment Unit and return it to me and you will be paid handsomely."
+	value = 3000
+	objective_type = /mob/living/simple_animal/hostile/asteroid/basilisk/watcher
+
+/datum/mission/acquire/creature/brimdemon
+	name = "Capture a brimdemon"
+	desc = "I require a live brimdemon for research purposes. Trap one within the given \
+			Lifeform Containment Unit and return it to me and you will be paid handsomely."
+	value = 3000
+	objective_type = /mob/living/simple_animal/hostile/asteroid/brimdemon
 
 /datum/mission/acquire/creature/ice_whelp
 	name = "Capture an ice whelp"
 	desc = "I require a live ice whelp for research purposes. Trap one within the given \
 			Lifeform Containment Unit and return it to me and you will be paid handsomely."
-	value = 1700
+	value = 5000
 	weight = 2
 	objective_type = /mob/living/simple_animal/hostile/asteroid/ice_whelp
 
@@ -150,23 +164,63 @@
 	name = "Capture an ice demon"
 	desc = "I require a live ice demon for research purposes. Trap one within the given \
 			Lifeform Containment Unit and return it to me and you will be paid handsomely."
-	value = 1500
+	value = 5000
 	weight = 2
 	objective_type = /mob/living/simple_animal/hostile/asteroid/ice_demon
+
+/datum/mission/acquire/creature/lobstrosity_arctic
+	name = "Capture a live arctic lobstrosity"
+	desc = "I require a live arctic lobstrosity for research purposes. Trap one within the given \
+			Lifeform Containment Unit and return it to me and you will be paid handsomely."
+	value = 3000
+	weight = 2
+	objective_type = /mob/living/simple_animal/hostile/asteroid/lobstrosity
+
+/datum/mission/acquire/creature/bear_polar
+	name = "Capture a live polar bear"
+	desc = "I require a live polar bear for research purposes. Trap one within the given \
+			Lifeform Containment Unit and return it to me and you will be paid handsomely."
+	value = 3000
+	weight = 2
+	objective_type = /mob/living/simple_animal/hostile/asteroid/polarbear
+
+/datum/mission/acquire/creature/wolf
+	name = "Capture a live white wolf"
+	desc = "I require a live white wolf for research purposes. Trap one within the given \
+			Lifeform Containment Unit and return it to me and you will be paid handsomely."
+	value = 3000
+	weight = 2
+	objective_type = /mob/living/simple_animal/hostile/asteroid/wolf
 
 /datum/mission/acquire/creature/migo
 	name = "Capture a live mi-go"
 	desc = "I require a live mi-go for research purposes. Trap one within the given \
 			Lifeform Containment Unit and return it to me and you will be paid handsomely."
-	value = 1050
+	value = 5000
 	weight = 2
 	objective_type = /mob/living/simple_animal/hostile/netherworld/migo/asteroid
+
+/datum/mission/acquire/creature/lobstrosity_tropical
+	name = "Capture a live tropical lobstrosity"
+	desc = "I require a live tropical lobstrosity for research purposes. Trap one within the given \
+			Lifeform Containment Unit and return it to me and you will be paid handsomely."
+	value = 3000
+	weight = 2
+	objective_type = /mob/living/simple_animal/hostile/asteroid/lobstrosity/beach
+
+/datum/mission/acquire/creature/bear_brown
+	name = "Capture a live brown bear"
+	desc = "I require a live brown bear for research purposes. Trap one within the given \
+			Lifeform Containment Unit and return it to me and you will be paid handsomely."
+	value = 3000
+	weight = 2
+	objective_type = /mob/living/simple_animal/hostile/bear/cave
 
 /datum/mission/acquire/creature/floorbot
 	name = "Detain a malfunctioning floorbot"
 	desc = "I require a functional abandoned floorbot for \"research\" purposes. Trap one within \
 			the given Lifeform Containment Unit and return it to me and you will be paid handsomely."
-	value = 1450
+	value = 3500
 	weight = 1
 	objective_type = /mob/living/simple_animal/bot/floorbot/rockplanet
 
@@ -174,9 +228,90 @@
 	name = "Detain a malfunctioning firebot"
 	desc = "I require a functional abandoned firebot for \"research\" purposes. Trap one within \
 			the given Lifeform Containment Unit and return it to me and you will be paid handsomely."
-	value = 1450
+	value = 3500
 	weight = 1
 	objective_type = /mob/living/simple_animal/bot/firebot/rockplanet
+
+/datum/mission/acquire/creature/minebot
+	name = "Detain a malfunctioning minebot"
+	desc = "I require a functional abandoned minebot for \"research\" purposes. Trap one within \
+			the given Lifeform Containment Unit and return it to me and you will be paid handsomely."
+	value = 3500
+	weight = 1
+	objective_type = /mob/living/simple_animal/hostile/abandoned_minebot
+
+/*
+		Acquire: The Rare Creature
+*/
+
+/datum/mission/acquire/creature/rare
+	name = "Capture a goldrub"
+	desc = "I require a live goldrub for research purposes. Trap one within the given \
+			Lifeform Containment Unit and return it to me and you will be paid richly."
+	value = 10000
+	duration = 60 MINUTES
+	weight = 7
+	container_type = /obj/structure/closet/mob_capture
+	objective_type = /mob/living/simple_animal/hostile/asteroid/goldgrub
+	num_wanted = 1
+	count_stacks = FALSE
+
+/datum/mission/acquire/creature/atom_effective_count(atom/movable/target)
+	. = ..()
+	if(!.)
+		return
+	var/mob/creature = target
+	if(creature.stat == DEAD)
+		return 0
+
+/datum/mission/acquire/creature/rare/magmawing_watcher
+	name = "Capture a magmawing watcher"
+	desc = "I require a live magmawing watcher for research purposes. Trap one within the given \
+			Lifeform Containment Unit and return it to me and you will be paid richly."
+	value = 15000
+	objective_type = /mob/living/simple_animal/hostile/asteroid/basilisk/watcher/magmawing
+
+/datum/mission/acquire/creature/rare/icewing_watcher
+	name = "Capture a icewing watcher"
+	desc = "I require a live icewing watcher for research purposes. Trap one within the given \
+			Lifeform Containment Unit and return it to me and you will be paid richly."
+	value = 15000
+	objective_type = /mob/living/simple_animal/hostile/asteroid/basilisk/watcher/icewing
+
+/datum/mission/acquire/creature/rare/dwarf_legion
+	name = "Capture a dwarf legion"
+	desc = "I require a live dwarf legion for research purposes. Trap one within the given \
+			Lifeform Containment Unit and return it to me and you will be paid richly."
+	value = 17500
+	objective_type = /mob/living/simple_animal/hostile/asteroid/hivelord/legion/dwarf
+
+/datum/mission/acquire/creature/rare/legate
+	name = "Capture a legate"
+	desc = "I require a live legate for research purposes. Trap one within the given \
+			Lifeform Containment Unit and return it to me and you will be paid richly."
+	value = 25000
+	objective_type = /mob/living/simple_animal/hostile/big_legion
+
+/datum/mission/acquire/creature/rare/wolf_alpha
+	name = "Capture a alpha wolf"
+	desc = "I require a live alpha wolf for research purposes. Trap one within the given \
+			Lifeform Containment Unit and return it to me and you will be paid richly."
+	value = 30000
+	objective_type = /mob/living/simple_animal/hostile/asteroid/wolf/alpha
+
+/datum/mission/acquire/creature/rare/warbear
+	name = "Capture a polar warbear"
+	desc = "I require a live polar warbear for research purposes. Trap one within the given \
+			Lifeform Containment Unit and return it to me and you will be paid richly."
+	value = 30000
+	objective_type = /mob/living/simple_animal/hostile/asteroid/polarbear/warrior
+
+/datum/mission/acquire/creature/rare/ed209
+	name = "Capture a ED-209 robot"
+	desc = "I require a live ED-209 robot for research purposes. Trap one within the given \
+			Lifeform Containment Unit and return it to me and you will be paid richly."
+	value = 40000
+	objective_type = /mob/living/simple_animal/bot/secbot/ed209/rockplanet
 
 /*
 		Acquire: Fishing
@@ -185,7 +320,7 @@
 /datum/mission/acquire/aquarium
 	name = "Fish needed for my aquarium"
 	weight = 14
-	value = 750
+	value = 7500
 	duration = 60 MINUTES
 	val_mod_range = 0.2
 	container_type = /obj/item/storage/fish_case/mission
@@ -211,7 +346,7 @@
 /datum/mission/acquire/aquarium/rare
 	name = "Rare fish needed for my aquarium!"
 	weight = 8
-	value = 1500
+	value = 15000
 	val_mod_range = 0.3
 
 /datum/mission/acquire/aquarium/rare/New(...)
