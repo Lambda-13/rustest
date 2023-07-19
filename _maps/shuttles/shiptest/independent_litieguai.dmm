@@ -222,13 +222,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
-"fn" = (
-/obj/machinery/firealarm/directional/west,
-/obj/machinery/airalarm/directional/south,
-/obj/effect/turf_decal/industrial/hatch/red,
-/obj/structure/closet/crate/freezer/surplus_limbs/organs,
-/turf/open/floor/plasteel/tech/techmaint,
-/area/ship/medical)
 "fp" = (
 /turf/closed/wall/mineral/titanium,
 /area/ship/maintenance/port)
@@ -328,24 +321,6 @@
 /obj/effect/turf_decal/corner/opaque/white/mono,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
-"ir" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 1
-	},
-/obj/machinery/firealarm/directional/west,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/effect/turf_decal/industrial/warning,
-/obj/machinery/button/door{
-	dir = 4;
-	id = "traumaenginer";
-	name = "Engine Shutter Control";
-	pixel_x = -25;
-	pixel_y = -6
-	},
-/turf/open/floor/plating,
-/area/ship/maintenance/starboard)
 "iA" = (
 /turf/closed/wall/mineral/titanium,
 /area/ship/crew)
@@ -1391,24 +1366,6 @@
 /obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
-"Gm" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
-	dir = 1
-	},
-/obj/machinery/firealarm/directional/east,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/effect/turf_decal/industrial/warning,
-/obj/machinery/button/door{
-	dir = 8;
-	id = "traumaenginel";
-	name = "Engine Shutter Control";
-	pixel_x = 25;
-	pixel_y = -6
-	},
-/turf/open/floor/plating,
-/area/ship/maintenance/port)
 "Go" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
@@ -1693,6 +1650,26 @@
 	},
 /turf/template_noop,
 /area/template_noop)
+"Mx" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 1
+	},
+/obj/machinery/firealarm/directional/west{
+	pixel_y = 6
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/industrial/warning,
+/obj/machinery/button/door{
+	dir = 4;
+	id = "traumaenginer";
+	name = "Engine Shutter Control";
+	pixel_x = -22;
+	pixel_y = -8
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/starboard)
 "MK" = (
 /obj/effect/turf_decal/industrial/outline/red,
 /obj/structure/rack,
@@ -1797,6 +1774,13 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
+"OA" = (
+/obj/machinery/firealarm/directional/west,
+/obj/machinery/airalarm/directional/south,
+/obj/effect/turf_decal/industrial/hatch/red,
+/obj/structure/closet/crate/freezer/surplus_limbs/organs,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/medical)
 "OB" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
@@ -2446,6 +2430,26 @@
 /obj/item/bedsheet/blue,
 /turf/open/floor/carpet/cyan,
 /area/ship/crew)
+"XX" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 1
+	},
+/obj/machinery/firealarm/directional/east{
+	pixel_y = 6
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/industrial/warning,
+/obj/machinery/button/door{
+	dir = 8;
+	id = "traumaenginel";
+	name = "Engine Shutter Control";
+	pixel_x = 22;
+	pixel_y = -7
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/port)
 "Yb" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2639,7 +2643,7 @@ Lh
 vT
 IE
 CX
-Gm
+XX
 KD
 dR
 Jn
@@ -2752,7 +2756,7 @@ Vu
 Po
 DU
 lj
-fn
+OA
 YM
 YM
 JA
@@ -3059,7 +3063,7 @@ Ps
 yi
 nl
 Xb
-ir
+Mx
 Hq
 VM
 Dj

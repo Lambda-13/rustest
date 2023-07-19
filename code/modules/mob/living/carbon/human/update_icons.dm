@@ -305,8 +305,8 @@ There are several things that need to be remembered:
 
 		if((dna.species.bodytype & BODYTYPE_DIGITIGRADE) && (I.supports_variations & DIGITIGRADE_VARIATION))
 			var/obj/item/bodypart/leg = src.get_bodypart(BODY_ZONE_L_LEG)
-			if(leg.limb_id == "digitigrade")//Snowflakey and bad. But it makes it look consistent.
-				icon_file = I.worn_icon_digi? I.worn_icon_digi : DIGITIGRADE_SHOES_PATH
+			if(leg.bodytype & BODYTYPE_DIGITIGRADE && !leg.plantigrade_forced)
+				icon_file = DIGITIGRADE_SHOES_PATH
 
 		if((I.supports_variations & VOX_VARIATION) && (dna.species.bodytype & BODYTYPE_VOX))
 			icon_file = VOX_SHOES_PATH

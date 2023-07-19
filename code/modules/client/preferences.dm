@@ -85,6 +85,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/species_looking_at = "human" //used as a helper to keep track of in the species select thingy
 	var/list/features = list(
 							"mcolor" = "FFF",
+							"mcolor2" = "FFF",
 							"grad_style" = "None",
 							"grad_color" = "FFF",
 							"ethcolor" = "9c3030",
@@ -121,6 +122,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						)
 	var/list/randomise = list(RANDOM_UNDERWEAR = TRUE, RANDOM_UNDERWEAR_COLOR = TRUE, RANDOM_UNDERSHIRT = TRUE, RANDOM_SOCKS = TRUE, RANDOM_BACKPACK = TRUE, RANDOM_JUMPSUIT_STYLE = TRUE, RANDOM_EXOWEAR_STYLE = TRUE, RANDOM_HAIRSTYLE = TRUE, RANDOM_HAIR_COLOR = TRUE, RANDOM_FACIAL_HAIRSTYLE = TRUE, RANDOM_FACIAL_HAIR_COLOR = TRUE, RANDOM_SKIN_TONE = TRUE, RANDOM_EYE_COLOR = TRUE)
 	var/list/friendlyGenders = list("Male" = "male", "Female" = "female", "Other" = "plural")
+	var/fbp = FALSE
 	var/list/prosthetic_limbs = list(BODY_ZONE_L_ARM = PROSTHETIC_NORMAL, BODY_ZONE_R_ARM = PROSTHETIC_NORMAL, BODY_ZONE_L_LEG = PROSTHETIC_NORMAL, BODY_ZONE_R_LEG = PROSTHETIC_NORMAL)
 	var/phobia = "spiders"
 	var/list/alt_titles_preferences = list()
@@ -381,10 +383,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_SOCKS]'>[(randomise[RANDOM_SOCKS]) ? "Блок" : "Разблок"]ирую</A><BR></td>"
 
 
-			var/use_skintones = pref_species.use_skintones
-			if(use_skintones)
+			dat += APPEARANCE_CATEGORY_COLUMN
 
-				dat += APPEARANCE_CATEGORY_COLUMN
+			if(pref_species.use_skintones)
 
 				dat += "<h3>Цвет кожи</h3>"
 
@@ -392,40 +393,28 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_SKIN_TONE]'>[(randomise[RANDOM_SKIN_TONE]) ? "Блок" : "Разблок"]ирую</A>"
 				dat += "<br>"
 
-			var/mutant_colors
-			if((MUTCOLORS in pref_species.species_traits) || (MUTCOLORS_PARTSONLY in pref_species.species_traits))
+			// Everyone gets mutant colors now.
+			dat += "<h3>Mutant Colors</h3>"
 
-				if(!use_skintones)
-					dat += APPEARANCE_CATEGORY_COLUMN
-
-				dat += "<h3>Цвет тела</h3>"
-
-				dat += "<span style='border: 1px solid #161616; background-color: #[features["mcolor"]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=mutant_color;task=input'>Сменить</a><BR>"
-
-				mutant_colors = TRUE
+			dat += "<span style='border: 1px solid #161616; background-color: #[features["mcolor"]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=mutant_color;task=input'>Change</a><BR>"
+			dat += "<span style='border: 1px solid #161616; background-color: #[features["mcolor2"]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=mutant_color_2;task=input'>Change</a><BR>"
 
 			if(istype(pref_species, /datum/species/ethereal)) //not the best thing to do tbf but I dont know whats better.
 
-				if(!use_skintones)
-					dat += APPEARANCE_CATEGORY_COLUMN
-
-				dat += "<h3>Цвет эфира</h3>"
+				dat += "<h3>Цвет Этёрнала</h3>"
 
 				dat += "<span style='border: 1px solid #161616; background-color: #[features["ethcolor"]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=color_ethereal;task=input'>Сменить</a><BR>"
 
 
 			if((EYECOLOR in pref_species.species_traits) && !(NOEYESPRITES in pref_species.species_traits))
 
-				if(!use_skintones && !mutant_colors)
-					dat += APPEARANCE_CATEGORY_COLUMN
-
-				dat += "<h3>Цвет глаз</h3>"
+				dat += "<h3>Цвет Глаз</h3>"
 				dat += "<span style='border: 1px solid #161616; background-color: #[eye_color];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=eyes;task=input'>Сменить</a>"
-				dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_EYE_COLOR]'>[(randomise[RANDOM_EYE_COLOR]) ? "Блок" : "Разблок"]ирую</A>"
+				dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_EYE_COLOR]'>[(randomise[RANDOM_EYE_COLOR]) ? "Lock" : "Unlock"]</A>"
 
 				dat += "<br></td>"
-			else if(use_skintones || mutant_colors)
-				dat += "</td>"
+
+			dat += "</td>"
 
 			if(HAIR in pref_species.species_traits)
 
@@ -494,6 +483,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				dat += "<h3>Рога</h3>"
 
 				dat += "<a href='?_src_=prefs;preference=horns;task=input'>[features["horns"]]</a><BR>"
+				dat += "<span style='border:1px solid #161616; background-color: #[hair_color];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=hair;task=input'>Change</a><BR>"
+				dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_HAIR_COLOR]'>[(randomise[RANDOM_HAIR_COLOR]) ? "Lock" : "Unlock"]</A><BR>"
 
 				mutant_category++
 				if(mutant_category >= MAX_MUTANT_ROWS)
@@ -715,8 +706,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 				dat += "<h3>Нательные перья</h3>"
 				dat += "<a href='?_src_=prefs;preference=kepori_body_feathers;task=input'>[features["kepori_body_feathers"]]</a><BR>"
-				dat += "<span style='border:1px solid #161616; background-color: #[facial_hair_color];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=facial;task=input'>Сменить</a><BR>"
-				dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_FACIAL_HAIR_COLOR]'>[(randomise[RANDOM_FACIAL_HAIR_COLOR]) ? "Блок" : "Разблок"]ирую</A><BR>"
+				dat += "<span style='border:1px solid #161616; background-color: #[features["mcolor2"]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=mutant_color_2;task=input'>Сменить</a><BR>"
 
 				mutant_category++
 				if(mutant_category >= MAX_MUTANT_ROWS)
@@ -729,8 +719,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 				dat += "<h3>Хвостовое оперенье</h3>"
 				dat += "<a href='?_src_=prefs;preference=kepori_tail_feathers;task=input'>[features["kepori_tail_feathers"]]</a><BR>"
-				dat += "<span style='border:1px solid #161616; background-color: #[facial_hair_color];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=facial;task=input'>Сменить</a><BR>"
-				dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_FACIAL_HAIR_COLOR]'>[(randomise[RANDOM_FACIAL_HAIR_COLOR]) ? "Блок" : "Разблок"]ирую</A><BR>"
+				dat += "<span style='border:1px solid #161616; background-color: #[features["mcolor2"]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=mutant_color_2;task=input'>Сменить</a><BR>"
 
 				mutant_category++
 				if(mutant_category >= MAX_MUTANT_ROWS)
@@ -855,14 +844,17 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "</tr></table>"
 
 			dat += "<h3>Протезы</h3>"
-			dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_PROSTHETIC]'>Рандомные протезированные конечности: [(randomise[RANDOM_PROSTHETIC]) ? "Да" : "Нет"]</A><br>"
+			dat += "<a href='?_src_=prefs;preference=fbp'>Полное протезированное тело?: [fbp ? "Да" : "Нет"]</a><br>"
 
-			dat += "<table>"
-			for(var/index in prosthetic_limbs)
-				var/bodypart_name = parse_zone(index)
-				dat += "<tr><td><b>[bodypart_name]:</b></td>"
-				dat += "<td><a href='?_src_=prefs;preference=limbs;customize_limb=[index]'>[prosthetic_limbs[index]]</a></td></tr>"
-			dat += "</table><br>"
+			if(!fbp)
+				dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_PROSTHETIC]'>Random Prosthetic: [(randomise[RANDOM_PROSTHETIC]) ? "Yes" : "No"]</a><br>"
+
+				dat += "<table>"
+				for(var/index in prosthetic_limbs)
+					var/bodypart_name = parse_zone(index)
+					dat += "<tr><td><b>[bodypart_name]:</b></td>"
+					dat += "<td><a href='?_src_=prefs;preference=limbs;customize_limb=[index]'>[prosthetic_limbs[index]]</a></td></tr>"
+				dat += "</table><br>"
 
 		if(2) //Loadout
 			if(path)
@@ -1459,6 +1451,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 	if(href_list["preference"] == "species")
 		switch(href_list["task"])
+			if("random")
+				random_species()
+				ShowChoices(user)
+				return TRUE
 			if("close")
 				user << browse(null, "window=mob_species")
 				ShowChoices(user)
@@ -1480,7 +1476,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				species_looking_at = href_list["newspecies"]
 
 		ShowSpeciesChoices(user)
-		return 1
+		return TRUE
 
 	if(href_list["preference"] == "trait")
 		switch(href_list["task"])
@@ -1575,8 +1571,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					eye_color = random_eye_color()
 				if("s_tone")
 					skin_tone = random_skin_tone()
-				if("species")
-					random_species()
 				if("bag")
 					backpack = pick(GLOB.backpacklist)
 				if("suit")
@@ -1767,13 +1761,24 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						features["body_size"] = new_size
 
 				if("mutant_color")
-					var/new_mutantcolor = input(user, "Choose your character's alien/mutant color:", "Character Preference","#"+features["mcolor"]) as color|null
+					var/new_mutantcolor = input(user, "Choose your character's primary alien/mutant color:", "Character Preference","#" + features["mcolor"]) as color|null
 					if(new_mutantcolor)
 						var/temp_hsv = RGBtoHSV(new_mutantcolor)
 						if(new_mutantcolor == "#000000")
 							features["mcolor"] = pref_species.default_color
 						else if((MUTCOLORS_PARTSONLY in pref_species.species_traits) || ReadHSV(temp_hsv)[3] >= ReadHSV("#191919")[3]) // mutantcolors must be bright, but only if they affect the skin
 							features["mcolor"] = sanitize_hexcolor(new_mutantcolor)
+						else
+							to_chat(user, "<span class='danger'>Invalid color. Your color is not bright enough.</span>")
+
+				if("mutant_color_2")
+					var/new_mutantcolor = input(user, "Choose your character's secondary alien/mutant color:", "Character Preference","#" + features["mcolor2"]) as color|null
+					if(new_mutantcolor)
+						var/temp_hsv = RGBtoHSV(new_mutantcolor)
+						if(new_mutantcolor == "#000000")
+							features["mcolor2"] = pref_species.default_color
+						else if((MUTCOLORS_PARTSONLY in pref_species.species_traits) || ReadHSV(temp_hsv)[3] >= ReadHSV("#191919")[3]) // mutantcolors must be bright, but only if they affect the skin
+							features["mcolor2"] = sanitize_hexcolor(new_mutantcolor)
 						else
 							to_chat(user, "<span class='danger'>Invalid color. Your color is not bright enough.</span>")
 
@@ -2052,6 +2057,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						socks = random_socks()
 						facial_hairstyle = random_facial_hairstyle(gender)
 						hairstyle = random_hairstyle(gender)
+
+				if("fbp")
+					fbp = !fbp
 
 				if("limbs")
 					if(href_list["customize_limb"])
@@ -2378,6 +2386,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 	character.exowear = exowear
 
+	character.fbp = fbp
+
 	character.flavor_text = features["flavor_text"] //Let's update their flavor_text at least initially
 
 	if(loadout) //I have been told not to do this because it's too taxing on performance, but hey, I did it anyways! //I hate you old me //don't be mean
@@ -2396,36 +2406,28 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 	//prosthetics work for vox and kepori and update just fine for everyone
 	character.dna.features = features.Copy()
-	character.set_species(chosen_species, icon_update = FALSE, pref_load = TRUE)
+	character.set_species(chosen_species, icon_update = FALSE, pref_load = TRUE, robotic = fbp)
 
-	for(var/pros_limbs in prosthetic_limbs)
-		var/obj/item/bodypart/old_part = character.get_bodypart(pros_limbs)
-		if(old_part)
-			icon_updates = TRUE
-		switch(prosthetic_limbs[pros_limbs])
-			if(PROSTHETIC_NORMAL)
-				if(old_part)
-					old_part.drop_limb(TRUE)
-					qdel(old_part)
-				character.regenerate_limb(pros_limbs)
-			if(PROSTHETIC_AMPUTATED)
-				if(old_part)
-					old_part.drop_limb(TRUE)
-					qdel(old_part)
-			if(PROSTHETIC_ROBOTIC)
-				var/obj/item/bodypart/prosthetic
-				var/typepath
-				if(character.dna.species.unique_prosthesis) // Checks for if the species has a unique limb type, otherwise defaults to human
-					typepath = text2path("/obj/item/bodypart/[pros_limbs]/robot/surplus/[character.dna.species.id]")
-				else
-					typepath = text2path("/obj/item/bodypart/[pros_limbs]/robot/surplus")
-				if(!ispath(typepath))
-					to_chat(character, "<span class='warning'>Problem initializing [pros_limbs] prosthetic for species [character.dna.species], it will be a normal limb. Make a bug report on github!</span>")
-					continue
-				prosthetic = new typepath(character)
-				prosthetic.replace_limb(character, special = TRUE)
-				if(old_part)
-					qdel(old_part)
+	if(!fbp)
+		for(var/pros_limb in prosthetic_limbs)
+			var/obj/item/bodypart/old_part = character.get_bodypart(pros_limb)
+			if(old_part)
+				icon_updates = TRUE
+			switch(prosthetic_limbs[pros_limb])
+				if(PROSTHETIC_NORMAL)
+					if(old_part)
+						old_part.drop_limb(TRUE)
+						qdel(old_part)
+					character.regenerate_limb(pros_limb)
+				if(PROSTHETIC_AMPUTATED)
+					if(old_part)
+						old_part.drop_limb(TRUE)
+						qdel(old_part)
+				if(PROSTHETIC_ROBOTIC)
+					if(old_part)
+						old_part.drop_limb(TRUE)
+						qdel(old_part)
+					character.regenerate_limb(pros_limb, robotic = TRUE)
 
 	if(pref_species.id == "ipc") // If triggered, vox and kepori arms do not spawn in but ipcs sprites break without it as the code for setting the right prosthetics for them is in set_species().
 		character.set_species(chosen_species, icon_update = FALSE, pref_load = TRUE)
