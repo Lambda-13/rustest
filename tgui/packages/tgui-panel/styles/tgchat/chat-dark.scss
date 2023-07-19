@@ -699,19 +699,23 @@ em {
 }
 
 .small {
-  font-size: 60%;
+  font-size: 90%;
 }
 
 .big {
-  font-size: 185%;
+  font-size: 135%;
 }
 
 .reallybig {
-  font-size: 245%;
+  font-size: 155%;
 }
 
 .extremelybig {
-  font-size: 310%;
+  font-size: 195%;
+}
+
+.fuckingbig {
+  font-size: 300%;
 }
 
 .greentext {
@@ -895,10 +899,17 @@ em {
 }
 
 .examine_block {
-  background: #1b1c1e;
-  border: 1px solid #a4bad6;
-  margin: 0.5em;
-  padding: 0.5em 0.75em;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(55, 55, 55, 0.33);
+  margin: 7px 4px;
+  padding: 8px 12px;
+  max-width: 550px;
+}
+.examine_block hr {
+  border: none;
+  background: #222;
+  height: 1px;
+  margin: 8px 16px 8px 16px;
 }
 
 .tooltip {

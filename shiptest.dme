@@ -3688,4 +3688,6 @@
 #include "lambda\ss7v\code\exrp\interaction_whitelist.dm"
 #include "lambda\ss7v\code\exrp\smetanka.dm"
 #include "lambda\ss7v\code\mainer\miners.dm"
+#include "lambda\ss7v\code\metacoin\metacoin.dm"
+#include "lambda\ss7v\code\manual_cell_recharger.dm"
 // END_INCLUDE
