@@ -87,7 +87,7 @@
 /obj/machinery/pinpointer_dispenser/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/pinpointer/wayfinding))
 		var/obj/item/pinpointer/wayfinding/WP = I
-		to_chat(user, "<span class='notice'>You put \the [WP] in the return slot.</span>")
+		to_chat(user, "<span class='notice'>You put [WP] in the return slot.</span>")
 		var/rfnd_amt
 		if((!WP.roundstart || WP.owner != user.real_name) && synth_acc.has_money(TRUE)) //can't recycle own pinpointer for money if not bought; given by a neutral quirk
 			if(synth_acc.has_money(refund_amt))

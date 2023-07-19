@@ -62,7 +62,7 @@
 	medium_burn_msg = ROBOTIC_MEDIUM_BURN_MSG
 	heavy_burn_msg = ROBOTIC_HEAVY_BURN_MSG
 
-/obj/item/bodypart/l_leg/robot
+/obj/item/bodypart/leg/left/robot
 	name = "cyborg left leg"
 	desc = "A skeletal limb wrapped in pseudomuscles, with a low-conductivity case."
 	attack_verb = list("kicked", "stomped")
@@ -88,7 +88,7 @@
 	medium_burn_msg = ROBOTIC_MEDIUM_BURN_MSG
 	heavy_burn_msg = ROBOTIC_HEAVY_BURN_MSG
 
-/obj/item/bodypart/r_leg/robot
+/obj/item/bodypart/leg/right/robot
 	name = "cyborg right leg"
 	desc = "A skeletal limb wrapped in pseudomuscles, with a low-conductivity case."
 	attack_verb = list("kicked", "stomped")
@@ -118,7 +118,7 @@
 	name = "cyborg torso"
 	desc = "A heavily reinforced case containing cyborg logic boards, with space for a standard power cell."
 	item_state = "buildpipe"
-	static_icon =  'icons/mob/augmentation/augments.dmi'
+	static_icon = 'icons/mob/augmentation/augments.dmi'
 	icon = null
 	limb_id = "robotic"
 	flags_1 = CONDUCT_1
@@ -203,12 +203,12 @@
 		. += {"It has a [cell] inserted.\n
 		<span class='info'>You can use a <b>screwdriver</b> to remove [cell].</span>"}
 	else
-		. += "<span class='info'>It has an empty port for a <b>power cell</b>.</span>"
+		. += "<hr><span class='info'>It has an empty port for a <b>power cell</b>.</span>"
 	if(wired)
 		. += "Its all wired up[cell ? " and ready for usage" : ""].\n"+\
 		"<span class='info'>You can use <b>wirecutters</b> to remove the wiring.</span>"
 	else
-		. += "<span class='info'>It has a couple spots that still need to be <b>wired</b>.</span>"
+		. += "<hr><span class='info'>It has a couple spots that still need to be <b>wired</b>.</span>"
 
 /obj/item/bodypart/chest/robot/drop_organs(mob/user, violent_removal)
 	if(wired)
@@ -264,7 +264,7 @@
 /obj/item/bodypart/head/robot/examine(mob/user)
 	. = ..()
 	if(!flash1 && !flash2)
-		. += "<span class='info'>It has two empty eye sockets for <b>flashes</b>.</span>"
+		. += "<hr><span class='info'>It has two empty eye sockets for <b>flashes</b>.</span>"
 	else
 		var/single_flash = FALSE
 		if(!flash1 || !flash2)
@@ -273,7 +273,7 @@
 			<span class='info'>It has an empty eye socket for another <b>flash</b>.</span>"}
 		else
 			. += "It has two eye sockets occupied by flashes."
-		. += "<span class='notice'>You can remove the seated flash[single_flash ? "":"es"] with a <b>crowbar</b>.</span>"
+		. += "<hr><span class='notice'>You can remove the seated flash[single_flash ? "":"es"] with a <b>crowbar</b>.</span>"
 
 /obj/item/bodypart/head/robot/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/assembly/flash/handheld))
@@ -339,7 +339,7 @@
 	burn_reduction = 0
 	max_damage = 20
 
-/obj/item/bodypart/l_leg/robot/surplus
+/obj/item/bodypart/leg/left/robot/surplus
 	name = "surplus prosthetic left leg"
 	desc = "A skeletal, robotic limb. Outdated and fragile, but it's still better than nothing."
 	static_icon = 'icons/mob/augmentation/surplus_augments.dmi'
@@ -347,7 +347,7 @@
 	burn_reduction = 0
 	max_damage = 20
 
-/obj/item/bodypart/r_leg/robot/surplus
+/obj/item/bodypart/leg/right/robot/surplus
 	name = "surplus prosthetic right leg"
 	desc = "A skeletal, robotic limb. Outdated and fragile, but it's still better than nothing."
 	static_icon = 'icons/mob/augmentation/surplus_augments.dmi'
@@ -376,12 +376,12 @@
 	static_icon = 'icons/mob/augmentation/augments_kepori.dmi'
 	bodytype = BODYTYPE_KEPORI | BODYTYPE_ROBOTIC
 
-/obj/item/bodypart/l_leg/robot/kepori
+/obj/item/bodypart/leg/left/robot/kepori
 	name = "prosthetic kepori left leg"
 	static_icon = 'icons/mob/augmentation/augments_kepori.dmi'
 	bodytype = BODYTYPE_KEPORI | BODYTYPE_ROBOTIC
 
-/obj/item/bodypart/r_leg/robot/kepori
+/obj/item/bodypart/leg/right/robot/kepori
 	name = "prosthetic kepori right leg"
 	static_icon = 'icons/mob/augmentation/augments_kepori.dmi'
 	bodytype = BODYTYPE_KEPORI | BODYTYPE_ROBOTIC
@@ -396,12 +396,12 @@
 	static_icon = 'icons/mob/augmentation/augments_kepori.dmi'
 	bodytype = BODYTYPE_KEPORI | BODYTYPE_ROBOTIC
 
-/obj/item/bodypart/l_leg/robot/surplus/kepori
+/obj/item/bodypart/leg/left/robot/surplus/kepori
 	name = "surplus prosthetic kepori left leg"
 	static_icon = 'icons/mob/augmentation/augments_kepori.dmi'
 	bodytype = BODYTYPE_KEPORI | BODYTYPE_ROBOTIC
 
-/obj/item/bodypart/r_leg/robot/surplus/kepori
+/obj/item/bodypart/leg/right/robot/surplus/kepori
 	name = "surplus prosthetic kepori right leg"
 	static_icon = 'icons/mob/augmentation/augments_kepori.dmi'
 	bodytype = BODYTYPE_KEPORI | BODYTYPE_ROBOTIC
@@ -416,12 +416,12 @@
 	static_icon = 'icons/mob/augmentation/augments_vox.dmi'
 	bodytype = BODYTYPE_VOX | BODYTYPE_ROBOTIC
 
-/obj/item/bodypart/l_leg/robot/surplus/vox
+/obj/item/bodypart/leg/left/robot/surplus/vox
 	name = "surplus prosthetic vox left leg"
 	static_icon = 'icons/mob/augmentation/augments_vox.dmi'
 	bodytype = BODYTYPE_VOX | BODYTYPE_ROBOTIC
 
-/obj/item/bodypart/r_leg/robot/surplus/vox
+/obj/item/bodypart/leg/right/robot/surplus/vox
 	name = "surplus prosthetic vox right leg"
 	static_icon = 'icons/mob/augmentation/augments_vox.dmi'
 	bodytype = BODYTYPE_VOX | BODYTYPE_ROBOTIC

@@ -36,7 +36,7 @@
 /obj/machinery/blackbox_recorder/attackby(obj/item/I, mob/living/user, params)
 	if(istype(I, /obj/item/blackbox))
 		if(HAS_TRAIT(I, TRAIT_NODROP) || !user.transferItemToLoc(I, src))
-			to_chat(user, "<span class='warning'>[I] is stuck to your hand!</span>")
+			to_chat(user, "<span class='warning'>[I] прилип к рукеr hand!</span>")
 			return
 		user.visible_message("<span class='notice'>[user] clicks [I] into [src]!</span>", \
 		"<span class='notice'>You press the device into [src], and it clicks into place. The tapes begin spinning again.</span>")
@@ -108,7 +108,7 @@
 /obj/machinery/telecomms/message_server/examine(mob/user)
 	. = ..()
 	if(calibrating)
-		. += "<span class='warning'>It's still calibrating.</span>"
+		. += "<hr><span class='warning'>It's still calibrating.</span>"
 
 /obj/machinery/telecomms/message_server/proc/GenerateKey()
 	var/newKey

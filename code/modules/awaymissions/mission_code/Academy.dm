@@ -290,7 +290,7 @@
 			for(var/direction in GLOB.alldirs)
 				var/turf/dirturf = get_step(Start,direction)
 				if(rand(0,1))
-					new /obj/item/stack/spacecash/c1000(dirturf)
+					new /obj/item/spacecash/bundle/c1000(dirturf)
 				else
 					var/obj/item/storage/bag/money/M = new(dirturf)
 					for(var/i in 1 to rand(5,50))
@@ -400,7 +400,7 @@
 	AddElement(/datum/element/update_icon_blocker)
 
 /obj/structure/ladder/unbreakable/rune/show_fluff_message(up,mob/user)
-	user.visible_message("<span class='notice'>[user] activates \the [src].</span>", "<span class='notice'>You activate \the [src].</span>")
+	user.visible_message("<span class='notice'>[user] activates [src].</span>", "<span class='notice'>You activate [src].</span>")
 
 /obj/structure/ladder/unbreakable/rune/use(mob/user, is_ghost=FALSE)
 	if(is_ghost || !(user.mind in SSticker.mode.wizards))

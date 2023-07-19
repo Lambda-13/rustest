@@ -44,6 +44,8 @@
 	icon = 'icons/obj/monitors.dmi'
 	icon_state = "alarm_bitem"
 	result_path = /obj/machinery/airalarm
+	pixel_shift = 28
+	inverse_pixel_shift = TRUE
 
 #define AALARM_MODE_SCRUBBING 1
 #define AALARM_MODE_VENTING 2 //makes draught
@@ -190,21 +192,7 @@
 /obj/machinery/airalarm/away //general away mission access
 	req_access = list(ACCESS_AWAY_GENERAL)
 
-/obj/machinery/airalarm/directional/north //Pixel offsets get overwritten on New()
-	dir = SOUTH
-	pixel_y = 24
-
-/obj/machinery/airalarm/directional/south
-	dir = NORTH
-	pixel_y = -24
-
-/obj/machinery/airalarm/directional/east
-	dir = WEST
-	pixel_x = 24
-
-/obj/machinery/airalarm/directional/west
-	dir = EAST
-	pixel_x = -24
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/airalarm, 27)
 
 //all air alarms in area are connected via magic
 /area
@@ -229,8 +217,6 @@
 	if(nbuild)
 		buildstage = 0
 		panel_open = TRUE
-		pixel_x = (dir & 3)? 0 : (dir == 4 ? -24 : 24)
-		pixel_y = (dir & 3)? (dir == 1 ? -24 : 24) : 0
 
 	if(name == initial(name))
 		name = "[get_area_name(src)] Air Alarm"
@@ -253,11 +239,11 @@
 	. = ..()
 	switch(buildstage)
 		if(0)
-			. += "<span class='notice'>It is missing air alarm electronics.</span>"
+			. += "<hr><span class='notice'>It is missing air alarm electronics.</span>"
 		if(1)
-			. += "<span class='notice'>It is missing wiring.</span>"
+			. += "<hr><span class='notice'>It is missing wiring.</span>"
 		if(2)
-			. += "<span class='notice'>Alt-click to [locked ? "unlock" : "lock"] the interface.</span>"
+			. += "<hr><span class='notice'>Alt-клик to [locked ? "unlock" : "lock"] the interface.</span>"
 
 /obj/machinery/airalarm/ui_status(mob/user)
 	if(user.has_unlimited_silicon_privilege && aidisabled)
@@ -893,7 +879,7 @@
 				return
 
 			if(W.tool_behaviour == TOOL_WRENCH)
-				to_chat(user, "<span class='notice'>You detach \the [src] from the wall.</span>")
+				to_chat(user, "<span class='notice'>You detach [src] from the wall.</span>")
 				W.play_tool_sound(src)
 				new /obj/item/wallframe/airalarm(user.loc)
 				qdel(src)
@@ -929,10 +915,10 @@
 	else
 		if(src.allowed(usr) && !wires.is_cut(WIRE_IDSCAN))
 			locked = !locked
-			to_chat(user, "<span class='notice'>You [ locked ? "lock" : "unlock"] the air alarm interface.</span>")
+			to_chat(user, "<span class='notice'>You [ locked ? "Блок" : "Разблок"]ирую the air alarm interface.</span>")
 			updateUsrDialog()
 		else
-			to_chat(user, "<span class='danger'>Access denied.</span>")
+			to_chat(user, "<span class='danger'>Доступ запрещён.</span>")
 	return
 
 /obj/machinery/airalarm/emag_act(mob/user)
@@ -954,7 +940,7 @@
 /obj/machinery/airalarm/proc/handle_decomp_alarm()
 	if(!COOLDOWN_FINISHED(src, decomp_alarm))
 		return
-	playsound(loc, 'goon/sound/machinery/FireAlarm.ogg', 75)
+	playsound(loc, 'sound/machines/FireAlarm.ogg', 75)
 	COOLDOWN_START(src, decomp_alarm, 1 SECONDS)
 
 #undef AALARM_MODE_SCRUBBING

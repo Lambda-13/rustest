@@ -80,9 +80,9 @@
 
 /obj/item/clothing/accessory/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>\The [src] can be attached to a uniform. Alt-click to remove it once attached.</span>"
+	. += "<hr><span class='notice'>[src] can be attached to a uniform. Alt-клик to remove it once attached.</span>"
 	if(initial(above_suit))
-		. += "<span class='notice'>\The [src] can be worn above or below your suit. Alt-click to toggle.</span>"
+		. += "<hr><span class='notice'>[src] can be worn above or below your suit. Alt-клик to toggle.</span>"
 
 /obj/item/clothing/accessory/waistcoat
 	name = "waistcoat"
@@ -152,8 +152,8 @@
 						to_chat(user, "<span class='notice'>You attach [src] to [U].</span>")
 					else
 						user.visible_message(
-							"<span class='notice'>[user] pins \the [src] on [M]'s chest.</span>", \
-							"<span class='notice'>You pin \the [src] on [M]'s chest.</span>")
+							"<span class='notice'>[user] pins [src] on [M]'s chest.</span>", \
+							"<span class='notice'>You pin [src] on [M]'s chest.</span>")
 						if(input)
 							SSblackbox.record_feedback("associative", "commendation", 1, list("commender" = "[user.real_name]", "commendee" = "[M.real_name]", "medal" = "[src]", "reason" = input))
 							GLOB.commendations += "[user.real_name] awarded <b>[M.real_name]</b> the <span class='medaltext'>[name]</span>! \n- [input]"
@@ -264,7 +264,7 @@
 /obj/item/clothing/accessory/medal/plasma/temperature_expose(datum/gas_mixture/air, exposed_temperature, exposed_volume)
 	if(exposed_temperature > 300)
 		atmos_spawn_air("plasma=20;TEMP=[exposed_temperature]")
-		visible_message("<span class='danger'>\The [src] bursts into flame!</span>", "<span class='userdanger'>Your [src] bursts into flame!</span>")
+		visible_message("<span class='danger'>[src] bursts into flame!</span>", "<span class='userdanger'>Your [src] bursts into flame!</span>")
 		qdel(src)
 
 /obj/item/clothing/accessory/medal/plasma/nobel_science
@@ -279,7 +279,7 @@
 
 /obj/item/clothing/accessory/armband
 	name = "red armband"
-	desc = "An fancy red armband!"
+	desc = "A fancy red armband!"
 	icon_state = "redband"
 	attachment_slot = null
 
@@ -288,33 +288,33 @@
 	desc = "An armband, worn by personnel authorized to act as a deputy of corporate security."
 
 /obj/item/clothing/accessory/armband/cargo
-	name = "cargo bay guard armband"
-	desc = "An armband, worn by the private security forces to display which department they're assigned to. This one is brown."
+	name = "brown armband"
+	desc = "A fancy brown armband!"
 	icon_state = "cargoband"
 
 /obj/item/clothing/accessory/armband/engine
-	name = "engineering guard armband"
-	desc = "An armband, worn by the private security forces to display which department they're assigned to. This one is orange with a reflective strip!"
+	name = "orange armband"
+	desc = "A fancy orange and yellow armband!"
 	icon_state = "engieband"
 
 /obj/item/clothing/accessory/armband/science
-	name = "science guard armband"
-	desc = "An armband, worn by the private security forces to display which department they're assigned to. This one is purple."
+	name = "purple armband"
+	desc = "A fancy purple armband!"
 	icon_state = "rndband"
 
 /obj/item/clothing/accessory/armband/hydro
-	name = "hydroponics guard armband"
-	desc = "An armband, worn by the private security forces to display which department they're assigned to. This one is green and blue."
+	name = "green and blue armband"
+	desc = "A fancy green and blue armband!"
 	icon_state = "hydroband"
 
 /obj/item/clothing/accessory/armband/med
-	name = "medical guard armband"
-	desc = "An armband, worn by the private security forces to display which department they're assigned to. This one is white."
+	name = "white armband"
+	desc = "A fancy white armband!"
 	icon_state = "medband"
 
 /obj/item/clothing/accessory/armband/medblue
-	name = "medical guard armband"
-	desc = "An armband, worn by the private security forces to display which department they're assigned to. This one is white and blue."
+	name = "white and blue armband"
+	desc = "A fancy white and blue armband!"
 	icon_state = "medblueband"
 
 //////////////

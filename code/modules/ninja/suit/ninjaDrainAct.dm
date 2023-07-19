@@ -126,7 +126,7 @@ They *could* go in their appropriate files, but this is supposed to be modular
 
 	. = DRAIN_RD_HACK_FAILED
 
-	to_chat(H, "<span class='notice'>Hacking \the [src]...</span>")
+	to_chat(H, "<span class='notice'>Hacking [src]...</span>")
 	AI_notify_hack()
 
 	if(stored_research)
@@ -143,7 +143,7 @@ They *could* go in their appropriate files, but this is supposed to be modular
 
 	. = DRAIN_RD_HACK_FAILED
 
-	to_chat(H, "<span class='notice'>Hacking \the [src]...</span>")
+	to_chat(H, "<span class='notice'>Hacking [src]...</span>")
 	AI_notify_hack()
 
 	if(stored_research)
@@ -259,5 +259,5 @@ They *could* go in their appropriate files, but this is supposed to be modular
 		var/datum/effect_system/spark_spread/spark_system = new /datum/effect_system/spark_spread()
 		spark_system.set_up(5, 0, loc)
 		playsound(src, "sparks", 50, TRUE, SHORT_RANGE_SOUND_EXTRARANGE)
-		visible_message("<span class='danger'>[H] electrocutes [src] with [H.p_their()] touch!</span>", "<span class='userdanger'>[H] electrocutes you with [H.p_their()] touch!</span>")
+		visible_message("<span class='danger'>[H] electrocutes [src] с помощью [H.p_their()] touch!</span>", "<span class='userdanger'>[H] electrocutes you with [H.p_their()] touch!</span>")
 		electrocute_act(25, H)

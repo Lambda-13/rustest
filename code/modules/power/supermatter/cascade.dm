@@ -12,7 +12,7 @@
 
 /turf/open/indestructible/supermatter_cascade/examine(mob/user)
 	. = ..()
-	. += "<span class='warning'>Run away! Touching this will result in dusting!</span>"
+	. += "<hr><span class='warning'>Run away! Touching this will result in dusting!</span>"
 
 /turf/open/indestructible/supermatter_cascade/Initialize(mapload, inherited_virtual_z)
 	. = ..()
@@ -73,7 +73,7 @@
 	if(!blob || isspaceturf(loc)) //does nothing in space
 		return
 	playsound(src, 'sound/effects/supermatter.ogg', 50, TRUE)
-	blob.visible_message("<span class='danger'>\The [blob] strikes at \the [src] and rapidly flashes to ash.</span>",
+	blob.visible_message("<span class='danger'>\The [blob] strikes at [src] and rapidly flashes to ash.</span>",
 		"<span class='danger'>You hear a loud crack as you are washed with a wave of heat.</span>")
 	Consume(blob)
 

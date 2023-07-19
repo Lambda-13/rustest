@@ -28,7 +28,7 @@
 				force_fee = force_fee_input
 				return
 			locked = !locked
-			to_chat(user, "<span class='notice'>You [src.locked ? "lock" : "unlock"] the paystand, protecting the bolts from [anchored ? "loosening" : "tightening"].</span>")
+			to_chat(user, "<span class='notice'>You [src.locked ? "Блок" : "Разблок"]ирую the paystand, protecting the bolts from [anchored ? "loosening" : "tightening"].</span>")
 			return
 		if(!my_card)
 			var/obj/item/card/id/assistant_mains_need_to_die = W
@@ -74,7 +74,7 @@
 		else
 			to_chat(user, "<span class='warning'>ERROR: Insufficient funds to make transaction.</span>")
 			return
-	if(istype(W, /obj/item/stack/spacecash))
+	if(istype(W, /obj/item/spacecash/bundle))
 		to_chat(user, "What is this, the 2000s? We only take card here.")
 		return
 	if(istype(W, /obj/item/coin))
@@ -133,6 +133,6 @@
 /obj/machinery/paystand/examine(mob/user)
 	. = ..()
 	if(force_fee)
-		. += "<span class='warning'>This paystand forces a payment of <b>[force_fee]</b> credit\s per swipe instead of a variable amount.</span>"
+		. += "<hr><span class='warning'>This paystand forces a payment of <b>[force_fee]</b> credit\s per swipe instead of a variable amount.</span>"
 	if(user.get_active_held_item() == my_card)
-		. += "<span class='notice'>Paystands can be edited through swiping your card with different intents. <b>Disarm</b> allows editing the name while <b>Grab</b> changes payment functionality.</span>"
+		. += "<hr><span class='notice'>Paystands can be edited through swiping your card with different intents. <b>Disarm</b> allows editing the name while <b>Grab</b> changes payment functionality.</span>"

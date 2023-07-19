@@ -110,7 +110,7 @@
 	if(!.)
 		return
 	var/turf/open/target_turf = get_turf(target)
-	if(!istype(target_turf) || target_turf.is_blocked_turf() || !(target_turf in view(mod.wearer)))
+	if(!istype(target_turf) || target_turf.is_blocked_turf_ignore_climbable() || !(target_turf in view(mod.wearer)))
 		balloon_alert(mod.wearer, "Неправильная цель!")
 		return
 	balloon_alert(mod.wearer, "Телепортация...")

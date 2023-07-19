@@ -437,7 +437,7 @@ Contains:
 
 /obj/item/clothing/head/helmet/space/hardsuit/berserker/examine()
 	. = ..()
-	. += "<span class='notice'>Berserk mode is [berserk_charge]% charged.</span>"
+	. += "<hr><span class='notice'>Berserk mode is [berserk_charge]% charged.</span>"
 
 /obj/item/clothing/head/helmet/space/hardsuit/berserker/process(delta_time)
 	. = ..()
@@ -451,7 +451,7 @@ Contains:
 	. = ..()
 	end_berserk(user)
 
-/obj/item/clothing/head/helmet/space/hardsuit/berserker/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
+/obj/item/clothing/head/helmet/space/hardsuit/berserker/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "атаку", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	if(berserk_active)
 		return
 	var/berserk_value = damage * DAMAGE_TO_CHARGE_SCALE
@@ -512,7 +512,7 @@ Contains:
 	armor = list("melee" = 5, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 10, "fire" = 0, "acid" = 0)
 	strip_delay = 65
 
-/obj/item/clothing/suit/space/fragile/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
+/obj/item/clothing/suit/space/fragile/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "атаку", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	if(!torn && prob(50))
 		to_chat(owner, "<span class='warning'>[src] tears from the damage, breaking the air-tight seal!</span>")
 		clothing_flags &= ~STOPSPRESSUREDAMAGE
@@ -556,14 +556,51 @@ Contains:
 	icon_state = "vachelmet_solgov"
 	desc = "This space-proof helmet is meant to be worn with a matching T-MA suit."
 	item_state = "vachelmet_solgov"
-	armor = list("melee" = 40, "bullet" = 20, "laser" = 20,"energy" = 30, "bomb" = 60, "bio" = 100, "rad" = 90, "fire" = 85, "acid" = 75)
+	armor = list("bio" = 100, "rad" = 50, "fire" = 60, "acid" = 75)
 
 /obj/item/clothing/suit/space/solgov
 	name = "\improper SolGov Vacuum Suit"
 	icon_state = "vacsuit_solgov"
-	desc = "Originally designed by independent contractors on Luna for the security team of a major hotel chain, the armored and lightweight Tortoise Microlite Armored Suit now sees widespread use by SolGov's peacekeeper forces."
+	desc = "Originally designed by independent contractors on Luna for the purposes of survival in hazardous environments, the lightweight Tortoise Microlite Armored Suit now sees widespread use by SolGov's exploration teams."
 	item_state = "vacsuit_solgov"
 	allowed = list(/obj/item/gun, /obj/item/ammo_box, /obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/melee/transforming/energy, /obj/item/tank/internals)
-	armor = list("melee" = 40, "bullet" = 20, "laser" = 20,"energy" = 30, "bomb" = 60, "bio" = 100, "rad" = 90, "fire" = 85, "acid" = 75)
+	armor = list("bio" = 100, "rad" = 50, "fire" = 60, "acid" = 75)
 	slowdown = 0.5
 	w_class = WEIGHT_CLASS_NORMAL
+
+/obj/item/clothing/suit/space/inteq
+	name = "inteq space suit"
+	desc = "A lightly armored space suit for IRMG personnel for EVA operations, it seems more flexible than most space suits."
+	item_state = "space-inteq"
+	icon_state = "space-inteq"
+	armor = list("melee" = 15, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 15, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
+	w_class = WEIGHT_CLASS_NORMAL
+
+/obj/item/clothing/head/helmet/space/inteq
+	name = "inteq space helmet"
+	desc = "A black space helmet with an opaque yellow visor, there is a small 'IRMG' written on the earpad."
+	item_state = "space-inteq"
+	icon_state = "space-inteq"
+	armor = list("melee" = 15, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 15, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
+	w_class = WEIGHT_CLASS_NORMAL
+
+/obj/item/clothing/suit/space/scar
+	name = "Scar Suit"
+	desc = "A heavily modified eva suit, custom made for the captain of the ember."
+	icon_state = "hostile_env"
+	item_state = "hostile_env"
+	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
+	resistance_flags = FIRE_PROOF
+	slowdown = 0.5
+	armor = list("melee" = 40, "bullet" = 35, "laser" = 30, "energy" = 25, "bomb" = 70, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
+	allowed = list(/obj/item/gun, /obj/item/ammo_box, /obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/melee/transforming/energy, /obj/item/tank/internals)
+
+/obj/item/clothing/head/helmet/space/scar
+	name = "Scar Helmet"
+	desc = "A modified eva helmet with a scar on it. “Ember“ written on it's back"
+	icon_state = "hostile_env"
+	item_state = "hostile_env"
+	w_class = WEIGHT_CLASS_NORMAL
+	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
+	armor = list("melee" = 40, "bullet" = 35, "laser" = 35, "energy" = 25, "bomb" = 70, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
+	resistance_flags = FIRE_PROOF

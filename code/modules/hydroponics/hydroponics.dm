@@ -3,7 +3,7 @@
 	icon = 'icons/obj/hydroponics/equipment.dmi'
 	icon_state = "hydrotray"
 	density = TRUE
-	pixel_z = 8
+	pixel_z = 1
 	obj_flags = CAN_BE_HIT | UNIQUE_RENAME
 	circuit = /obj/item/circuitboard/machine/hydroponics
 	idle_power_usage = 0
@@ -64,9 +64,9 @@
 
 /obj/machinery/hydroponics/constructable/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>Use <b>Ctrl-Click</b> to activate autogrow. <b>Alt-Click</b> to empty the tray's nutrients.</span>"
+	. += "<hr><span class='notice'>Use <b>Ctrl-Click</b> to activate autogrow. <b>Alt-клик</b> to empty the tray's nutrients.</span>"
 	if(in_range(user, src) || isobserver(user))
-		. += "<span class='notice'>The status display reads: Tray efficiency at <b>[rating*100]%</b>.</span>"
+		. += "<hr><span class='notice'>The status display reads: Tray efficiency at <b>[rating*100]%</b>.</span>"
 
 
 /obj/machinery/hydroponics/Destroy()
@@ -241,11 +241,11 @@
 				adjustWeeds(1 / rating) // Weeds flourish
 
 			// If the plant is too old, lose health fast
-			if(age > myseed.lifespan)
-				adjustHealth(-rand(1,5) / rating)
+			if((age / 20) > myseed.lifespan)
+				adjustHealth(-rand(1,3) / rating)
 
 			// Harvest code
-			if(age > myseed.production && (age - lastproduce) > myseed.production && (!harvest && !dead))
+			if(age > (myseed.production * 1.5) && (age - lastproduce) > (myseed.production * 1.5) && (!harvest && !dead))
 				if(myseed && myseed.yield != -1) // Unharvestable shouldn't be harvested
 					harvest = TRUE
 				else
@@ -310,38 +310,39 @@
 	else
 		var/t_growthstate = clamp(round((age / myseed.maturation) * myseed.growthstages), 1, myseed.growthstages)
 		plant_overlay.icon_state = "[myseed.icon_grow][t_growthstate]"
+	plant_overlay.pixel_y += 3 //to adjust the plant sprites to the new one without touching every single file
 	add_overlay(plant_overlay)
 
 /obj/machinery/hydroponics/proc/update_icon_lights()
-	if(waterlevel <= 10)
-		add_overlay(mutable_appearance('icons/obj/hydroponics/equipment.dmi', "over_lowwater3"))
-	if(reagents.total_volume <= 2)
-		add_overlay(mutable_appearance('icons/obj/hydroponics/equipment.dmi', "over_lownutri3"))
+	if(harvest)
+		add_overlay(mutable_appearance('icons/obj/hydroponics/equipment.dmi', "over_harvest3"))
 	if(plant_health <= (myseed.endurance / 2))
 		add_overlay(mutable_appearance('icons/obj/hydroponics/equipment.dmi', "over_lowhealth3"))
 	if(weedlevel >= 5 || pestlevel >= 5 || toxic >= 40)
 		add_overlay(mutable_appearance('icons/obj/hydroponics/equipment.dmi', "over_alert3"))
-	if(harvest)
-		add_overlay(mutable_appearance('icons/obj/hydroponics/equipment.dmi', "over_harvest3"))
+	if(reagents.total_volume <= 2)
+		add_overlay(mutable_appearance('icons/obj/hydroponics/equipment.dmi', "over_lownutri3"))
+	if(waterlevel <= 10)
+		add_overlay(mutable_appearance('icons/obj/hydroponics/equipment.dmi', "over_lowwater3"))
 
 
 /obj/machinery/hydroponics/examine(user)
 	. = ..()
 	if(myseed)
-		. += "<span class='info'>It has <span class='name'>[myseed.plantname]</span> planted.</span>"
+		. += "<hr><span class='info'>It has <span class='name'>[myseed.plantname]</span> planted.</span>"
 		if (dead)
-			. += "<span class='warning'>It's dead!</span>"
+			. += "<hr><span class='warning'>It's dead!</span>"
 		else if (harvest)
-			. += "<span class='info'>It's ready to harvest.</span>"
+			. += "<hr><span class='info'>It's ready to harvest.</span>"
 		else if (plant_health <= (myseed.endurance / 2))
-			. += "<span class='warning'>It looks unhealthy.</span>"
+			. += "<hr><span class='warning'>It looks unhealthy.</span>"
 	else
-		. += "<span class='info'>It's empty.</span>"
+		. += "<hr><span class='info'>It's empty.</span>"
 
-	. += "<span class='info'>Water: [waterlevel]/[maxwater].</span>\n"+\
+	. += "<hr><span class='info'>Water: [waterlevel]/[maxwater].</span>\n"+\
 	"<span class='info'>Nutrient: [reagents.total_volume]/[maxnutri].</span>"
 	if(self_sustaining)
-		. += "<span class='info'>The tray's autogrow is active, halving active reagent drain, and actively maintaning the plant.</span>"
+		. += "<hr><span class='info'>The tray's autogrow is active, halving active reagent drain, and actively maintaning the plant.</span>"
 
 	if(weedlevel >= 5)
 		to_chat(user, "<span class='warning'>It's filled with weeds!</span>")
@@ -558,26 +559,23 @@
 		var/obj/item/plant_analyzer/P_analyzer = O
 		if(myseed)
 			if(P_analyzer.scan_mode == PLANT_SCANMODE_STATS)
-				to_chat(user, "*** <B>[myseed.plantname]</B> ***" )
-				to_chat(user, "- Plant Age: <span class='notice'>[age]</span>")
+				to_chat(user, examine_block("<B>[myseed.plantname]</B>"))
+				to_chat(user, examine_block("Plant Age: <span class='notice'>[age]</span>"))
 				var/list/text_string = myseed.get_analyzer_text()
 				if(text_string)
-					to_chat(user, text_string)
-					to_chat(user, "*---------*")
+					to_chat(user, examine_block(text_string))
 			if(myseed.reagents_add && P_analyzer.scan_mode == PLANT_SCANMODE_CHEMICALS)
-				to_chat(user, "- <B>Plant Reagents</B> -")
-				to_chat(user, "*---------*")
+				to_chat(user, examine_block("<B>Plant Reagents</B>"))
 				for(var/datum/plant_gene/reagent/Gene in myseed.genes)
-					to_chat(user, "<span class='notice'>- [Gene.get_name()] -</span>")
-				to_chat(user, "*---------*")
+					to_chat(user, examine_block("<span class='notice'>- [Gene.get_name()] -</span>"))
 		else
-			to_chat(user, "<B>No plant found.</B>")
-		to_chat(user, "- Weed level: <span class='notice'>[weedlevel] / 10</span>")
-		to_chat(user, "- Pest level: <span class='notice'>[pestlevel] / 10</span>")
-		to_chat(user, "- Toxicity level: <span class='notice'>[toxic] / 100</span>")
-		to_chat(user, "- Water level: <span class='notice'>[waterlevel] / [maxwater]</span>")
-		to_chat(user, "- Nutrition level: <span class='notice'>[reagents.total_volume] / [maxnutri]</span>")
-		to_chat(user, "<br/>")
+			to_chat(user, examine_block( "<B>No plant found.</B>"))
+		to_chat(user, examine_block("\nWeed level: <span class='notice'>[weedlevel] / 10</span>"))
+		to_chat(user, examine_block("\nPest level: <span class='notice'>[pestlevel] / 10</span>"))
+		to_chat(user, examine_block("\nToxicity level: <span class='notice'>[toxic] / 100</span>"))
+		to_chat(user, examine_block("\nWater level: <span class='notice'>[waterlevel] / [maxwater]</span>"))
+		to_chat(user, examine_block("\nNutrition level: <span class='notice'>[reagents.total_volume] / [maxnutri]</span>"))
+		to_chat(user, examine_block("<br/>"))
 		return
 
 	else if(istype(O, /obj/item/cultivator))
@@ -683,7 +681,7 @@
 	if(!anchored)
 		return
 	self_sustaining = !self_sustaining
-	idle_power_usage = self_sustaining ? 2500 : 0
+	idle_power_usage = self_sustaining ? 1250 : 0
 	to_chat(user, "<span class='notice'>You [self_sustaining ? "activate" : "deactivated"] [src]'s autogrow function[self_sustaining ? ", maintaining the tray's health while using high amounts of power" : ""].")
 	update_icon()
 

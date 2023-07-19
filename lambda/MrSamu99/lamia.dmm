@@ -83,7 +83,7 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
 "as" = (
-/obj/machinery/power/apc/auto_name/north,
+/obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -238,7 +238,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/machinery/power/apc/auto_name/north,
+/obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -384,7 +384,7 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/machinery/power/apc/auto_name/north,
+/obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/table/wood/fancy/royalblack,
 /obj/item/book/manual/random,
 /obj/item/book/random,
@@ -852,7 +852,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/power/apc/auto_name/west,
+/obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable,
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -1254,7 +1254,7 @@
 	},
 /area/ship/security)
 "qU" = (
-/obj/machinery/power/apc/auto_name/west,
+/obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -1316,7 +1316,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 8
 	},
-/obj/machinery/power/apc/auto_name/east,
+/obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -1495,7 +1495,7 @@
 /obj/item/clothing/suit/wizrobe/marisa,
 /obj/item/clothing/suit/wizrobe/black,
 /obj/item/clothing/suit/wizrobe,
-/obj/machinery/power/apc/auto_name/north,
+/obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -1704,7 +1704,7 @@
 /turf/open/floor/bronze,
 /area/ship/maintenance/aft)
 "Ix" = (
-/obj/machinery/power/apc/auto_name/north,
+/obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -1990,7 +1990,7 @@
 	dir = 8
 	},
 /obj/structure/table/wood/fancy/royalblue,
-/obj/machinery/power/apc/auto_name/west,
+/obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -1999,14 +1999,14 @@
 /obj/item/coin/uranium,
 /obj/item/coin/uranium,
 /obj/item/coin/uranium,
-/obj/item/stack/spacecash/c100,
-/obj/item/stack/spacecash/c100,
-/obj/item/stack/spacecash/c100,
-/obj/item/stack/spacecash/c100,
-/obj/item/stack/spacecash/c100,
-/obj/item/stack/spacecash/c100,
-/obj/item/stack/spacecash/c100,
-/obj/item/stack/spacecash/c100,
+/obj/item/spacecash/bundle/c100,
+/obj/item/spacecash/bundle/c100,
+/obj/item/spacecash/bundle/c100,
+/obj/item/spacecash/bundle/c100,
+/obj/item/spacecash/bundle/c100,
+/obj/item/spacecash/bundle/c100,
+/obj/item/spacecash/bundle/c100,
+/obj/item/spacecash/bundle/c100,
 /turf/open/floor/carpet/stellar,
 /area/ship/bridge)
 "OQ" = (
@@ -2216,7 +2216,7 @@
 /obj/structure/closet/cabinet,
 /obj/item/tank/internals/emergency_oxygen/engi,
 /obj/item/clothing/suit/space/hardsuit/wizard,
-/obj/machinery/power/apc/auto_name/south,
+/obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable,
 /obj/item/clothing/gloves/combat/wizard,
 /turf/open/floor/bronze,

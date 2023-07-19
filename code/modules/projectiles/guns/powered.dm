@@ -27,9 +27,9 @@
 /obj/item/gun/ballistic/automatic/powered/examine(mob/user)
 	. = ..()
 	if(cell)
-		. += "<span class='notice'>[src]'s cell is [round(cell.charge / cell.maxcharge, 0.1) * 100]% full.</span>"
+		. += "<hr><span class='notice'>[src]'s cell is [round(cell.charge / cell.maxcharge, 0.1) * 100]% full.</span>"
 	else
-		. += "<span class='notice'>[src] doesn't seem to have a cell!</span>"
+		. += "<hr><span class='notice'>[src] doesn't seem to have a cell!</span>"
 
 /obj/item/gun/ballistic/automatic/powered/can_shoot()
 	if(QDELETED(cell))
@@ -86,7 +86,7 @@
 	cell = null
 	user.put_in_hands(old_cell)
 	old_cell.update_icon()
-	to_chat(user, "<span class='notice'>You pull the cell out of \the [src].</span>")
+	to_chat(user, "<span class='notice'>You pull the cell out of [src].</span>")
 	update_icon()
 
 /obj/item/gun/ballistic/automatic/powered/screwdriver_act(mob/living/user, obj/item/I)

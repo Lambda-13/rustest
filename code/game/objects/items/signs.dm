@@ -4,7 +4,7 @@
 	desc = "It's blank."
 	force = 5
 	w_class = WEIGHT_CLASS_BULKY
-	attack_verb = list("bashed","smacked")
+	attack_verb = list("бьёт","smacked")
 	resistance_flags = FLAMMABLE
 
 	var/label = ""

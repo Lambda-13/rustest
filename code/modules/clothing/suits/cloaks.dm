@@ -52,6 +52,16 @@
 	desc = "Worn by the Head of Personnel. It smells faintly of bureaucracy."
 	icon_state = "hopcloak"
 
+/obj/item/clothing/neck/cloak/overseer
+	name = "SolGov overseer's cloak"
+	desc = "Worn by the Overseer. It smells faintly of bureaucracy."
+	icon_state = "solgov_cloak"
+
+/obj/item/clothing/neck/cloak/solgov
+	name = "SolGov weibel"
+	desc = "Worn by SolGov officials. It smells faintly of bureaucracy."
+	icon_state = "solgov_weibel"
+
 /obj/item/clothing/neck/cloak/trans
 	name = "vampire cloak"
 	desc = "Worn by high ranking vampires of the transylvanian society of vampires."
@@ -79,7 +89,7 @@
 	name = "drake armour"
 	icon_state = "dragon"
 	desc = "A suit of armour fashioned from the remains of an ash drake."
-	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/resonator, /obj/item/mining_scanner, /obj/item/t_scanner/adv_mining_scanner, /obj/item/gun/energy/kinetic_accelerator, /obj/item/pickaxe, /obj/item/spear, /obj/item/pinpointer/deepcore)
+	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/resonator, /obj/item/mining_scanner, /obj/item/t_scanner/adv_mining_scanner, /obj/item/gun/energy/kinetic_accelerator, /obj/item/pickaxe, /obj/item/spear)
 	armor = list("melee" = 50, "bullet" = 10, "laser" = 40, "energy" = 50, "bomb" = 50, "bio" = 60, "rad" = 50, "fire" = 100, "acid" = 100)
 	hoodtype = /obj/item/clothing/head/hooded/cloakhood/drake
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
@@ -104,18 +114,18 @@
 
 /obj/item/clothing/neck/cloak/skill_reward/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>You notice a powerful aura about this cloak, suggesting that only the truly experienced may wield it.</span>"
+	. += "<hr><span class='notice'>You notice a powerful aura about this cloak, suggesting that only the truly experienced may wield it.</span>"
 
 /obj/item/clothing/neck/cloak/skill_reward/equipped(mob/user, slot)
 	if (user.mind?.get_skill_level(associated_skill_path) < SKILL_LEVEL_LEGENDARY)
-		to_chat(user, "<span class = 'notice'>You feel completely and utterly unworthy to even touch \the [src].</span>")
+		to_chat(user, "<span class = 'notice'>You feel completely and utterly unworthy to even touch [src].</span>")
 		user.dropItemToGround(src, TRUE)
 		return FALSE
 	return ..()
 
 /obj/item/clothing/neck/cloak/skill_reward/attack_hand(mob/user)
 	if (user.mind?.get_skill_level(associated_skill_path) < SKILL_LEVEL_LEGENDARY)
-		to_chat(user, "<span class = 'notice'>You feel completely and utterly unworthy to even touch \the [src]!</span>")
+		to_chat(user, "<span class = 'notice'>You feel completely and utterly unworthy to even touch [src]!</span>")
 		return FALSE
 	return ..()
 

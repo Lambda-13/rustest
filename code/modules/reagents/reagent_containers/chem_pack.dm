@@ -28,9 +28,9 @@
 /obj/item/reagent_containers/chem_pack/examine()
 	. = ..()
 	if(sealed)
-		. += "<span class='notice'>The bag is sealed shut.</span>"
+		. += "<hr><span class='notice'>The bag is sealed shut.</span>"
 	else
-		. += "<span class='notice'>Alt-click to seal it.</span>"
+		. += "<hr><span class='notice'>Alt-клик to seal it.</span>"
 
 
 /obj/item/reagent_containers/chem_pack/attack_self(mob/user)

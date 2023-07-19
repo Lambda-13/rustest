@@ -83,7 +83,7 @@
 /obj/machinery/seed_extractor/examine(mob/user)
 	. = ..()
 	if(in_range(user, src) || isobserver(user))
-		. += "<span class='notice'>The status display reads: Seed extraction running at <b>[seed_multiplier]</b>x efficiency.<br>Machine can store up to <b>[max_seeds]%</b> seeds.</span>"
+		. += "<hr><span class='notice'>The status display reads: Seed extraction running at <b>[seed_multiplier]</b>x efficiency.<br>Machine can store up to <b>[max_seeds]%</b> seeds.</span>"
 
 /obj/machinery/seed_extractor/attackby(obj/item/O, mob/user, params)
 
@@ -148,7 +148,7 @@
  **/
 /obj/machinery/seed_extractor/proc/add_seed(obj/item/seeds/O)
 	if(contents.len >= 999)
-		to_chat(usr, "<span class='notice'>\The [src] is full.</span>")
+		to_chat(usr, "<span class='notice'>[src] is full.</span>")
 		return FALSE
 
 	var/datum/component/storage/STR = O.loc.GetComponent(/datum/component/storage)

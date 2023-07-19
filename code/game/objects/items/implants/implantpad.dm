@@ -19,10 +19,10 @@
 	if(Adjacent(user))
 		. += "It [case ? "contains \a [case]" : "is currently empty"]."
 		if(case)
-			. += "<span class='info'>Alt-click to remove [case].</span>"
+			. += "<hr><span class='info'>Alt-клик to remove [case].</span>"
 	else
 		if(case)
-			. += "<span class='warning'>There seems to be something inside it, but you can't quite tell what from here...</span>"
+			. += "<hr><span class='warning'>There seems to be something inside it, but you can't quite tell what from here...</span>"
 
 /obj/item/implantpad/handle_atom_del(atom/A)
 	if(A == case)

@@ -42,7 +42,7 @@
 
 /obj/machinery/fat_sucker/examine(mob/user)
 	. = ..()
-	. += {"<span class='notice'>Alt-Click to toggle the safety hatch.</span>
+	. += {"<span class='notice'>Alt-клик to toggle the safety hatch.</span>
 				<span class='notice'>Removing [bite_size] nutritional units per operation.</span>
 				<span class='notice'>Requires [nutrient_to_meat] nutritional units per meat slab.</span>"}
 

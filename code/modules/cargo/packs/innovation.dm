@@ -5,7 +5,7 @@
 /datum/supply_pack/innovations/farmbox
 	name = "Ударогенератор"
 	desc = "Эта штука служит для выращивания денег в прогрессии."
-	cost = COST_MIN * 25500
+	cost = COST_MIN * 80000
 	contains = list(/obj/structure/punching_bag/trade)
 	crate_name = "коробка с ударогенератором"
 	crate_type = /obj/structure/closet/crate/large
@@ -25,4 +25,12 @@
 	cost = COST_HIGH * 300000
 	contains = list(/obj/item/sbeacondrop/exploration)
 	crate_name = "ящик с маяком"
+	crate_type = /obj/structure/closet/crate/science
+
+/datum/supply_pack/innovations/exploration
+	name = "Коробка копировальных плат"
+	desc = "Содержит внутри коробку с копировальным платами. Из-за некоторых нюансов с законом цены данных плат необычайно возросли."
+	cost = COST_HIGH * 1000000
+	contains = list(/obj/item/storage/box/copytech)
+	crate_name = "ящик с копировальными платами"
 	crate_type = /obj/structure/closet/crate/science

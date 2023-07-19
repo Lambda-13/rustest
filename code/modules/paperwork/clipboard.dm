@@ -13,7 +13,7 @@
 	resistance_flags = FLAMMABLE
 
 /obj/item/clipboard/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins putting [user.p_their()] head into the clip of \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] begins putting [user.p_their()] head into the clip of [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	return BRUTELOSS//the clipboard's clip is very strong. industrial duty. can kill a man easily.
 
 /obj/item/clipboard/Initialize()
@@ -39,7 +39,7 @@
 		if(!user.transferItemToLoc(W, src))
 			return
 		toppaper = W
-		to_chat(user, "<span class='notice'>You clip the paper onto \the [src].</span>")
+		to_chat(user, "<span class='notice'>You clip the paper onto [src].</span>")
 		update_icon()
 	else if(toppaper)
 		toppaper.attackby(user.get_active_held_item(), user)

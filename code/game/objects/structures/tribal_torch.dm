@@ -34,7 +34,7 @@
 	if(W.get_temperature())
 		StartBurning()
 		update_icon()
-		user.visible_message("<span class='notice'>[user] lights [src] with [W].</span>", "<span class='notice'>You light [src] with [W].</span>")
+		user.visible_message("<span class='notice'>[user] lights [src] с помощью [W].</span>", "<span class='notice'>You light [src] с помощью [W].</span>")
 		return
 
 /obj/structure/destructible/tribal_torch/proc/StartBurning()

@@ -34,23 +34,27 @@
 	var/ghost_usable = TRUE
 
 //ATTACK GHOST IGNORING PARENT RETURN VALUE
-/obj/effect/mob_spawn/attack_ghost(mob/user)
+/obj/effect/mob_spawn/attack_ghost(mob/user, latejoinercalling)
 	if(!SSticker.HasRoundStarted() || !loc || !ghost_usable)
 		return
 	if(!uses)
-		to_chat(user, "<span class='warning'>This spawner is out of charges!</span>")
+		to_chat(user, "<span class='warning'>Места закончились.</span>")
 		return
 	if(is_banned_from(user.key, banType))
-		to_chat(user, "<span class='warning'>You are jobanned!</span>")
+		to_chat(user, "<span class='warning'>Тебе нельзя.</span>")
 		return
 	if(!allow_spawn(user))
 		return
 	if(QDELETED(src) || QDELETED(user))
 		return
-	var/ghost_role = alert("Become [mob_name]? (Warning, You can no longer be revived!)",,"Yes","No")
-
-	if(ghost_role == "No" || !loc)
+	var/ghost_role = alert(latejoinercalling ? "Играть за [mob_name ? "[name]" : "[mob_name] ([name])"]?\nОписание: [short_desc]\n(эта роль НЕ является частью экипажа какого либо корабля, так что будьте аккуратны)" : "Играть за [mob_name ? "[name]" : "[mob_name] ([name])"]?\nОписание: [short_desc]\n(оживить тебя после такого не получится)",,"Да","Нет")
+	if(ghost_role == "Нет" || !loc)
 		return
+	if(latejoinercalling)
+		var/mob/dead/new_player/NP = user
+		if(istype(NP))
+			NP.close_spawn_windows()
+			NP.stop_sound_channel(CHANNEL_LOBBYMUSIC)
 	log_game("[key_name(user)] became [mob_name]")
 	create(ckey = user.ckey)
 
@@ -69,6 +73,9 @@
 	if(!LAZYLEN(spawners))
 		GLOB.mob_spawners -= name
 	return ..()
+
+/obj/effect/mob_spawn/proc/can_latejoin() //If it can be taken from the lobby.
+	return ghost_usable
 
 /obj/effect/mob_spawn/proc/allow_spawn(mob/user) //Override this to add spawn limits to a ghost role
 	return TRUE
@@ -620,42 +627,3 @@
 	shoes = /obj/item/clothing/shoes/sneakers/black
 	suit = /obj/item/clothing/suit/armor/vest
 	glasses = /obj/item/clothing/glasses/sunglasses/reagent
-
-/datum/outfit/whitesands
-	name = "Whitesands Inhabitant Default Outfit"
-
-/datum/outfit/whitesands/survivor
-	name = "Whitesands Survivor"
-	uniform = /obj/item/clothing/under/color/random
-	back = /obj/item/storage/backpack
-	shoes = /obj/item/clothing/shoes/workboots/mining
-	suit = /obj/item/clothing/suit/hooded/survivor
-	r_pocket = /obj/item/tank/internals/emergency_oxygen/engi
-	gloves = /obj/item/clothing/gloves/color/black
-
-/datum/outfit/whitesands/survivor/hunter
-	name = "Whitesands Hunter"
-	l_pocket = /obj/item/reagent_containers/food/snacks/meat/steak/goliath
-
-/datum/outfit/whitesands/survivor/gunslinger
-	name = "Whitesands Gunslinger"
-	l_pocket = /obj/item/ammo_box/magazine/aks74u
-
-/obj/effect/mob_spawn/human/corpse/whitesands
-	death = TRUE
-	roundstart = FALSE
-
-/obj/effect/mob_spawn/human/corpse/whitesands/survivor
-	name = "Whitesands Survivor Corpse"
-	outfit = /datum/outfit/whitesands/survivor
-	hairstyle = "Bald"
-	skin_tone = "caucasian1"
-	facial_hairstyle= "Shaved"
-
-/obj/effect/mob_spawn/human/corpse/whitesands/survivor/hunter
-	name = "Whitesands Hunter Corpse"
-	outfit = /datum/outfit/whitesands/survivor/hunter
-
-/obj/effect/mob_spawn/human/corpse/whitesands/survivor/gunslinger
-	name = "Whitesands Gunslinger Corpse"
-	outfit = /datum/outfit/whitesands/survivor/gunslinger

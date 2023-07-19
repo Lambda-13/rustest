@@ -128,7 +128,7 @@
 	throw_speed = 2
 	throw_range = 4
 	w_class = WEIGHT_CLASS_BULKY
-	attack_verb = list("bashed", "battered", "bludgeoned", "thrashed", "whacked")
+	attack_verb = list("бьёт", "забивает", "избивает", "ударяет")
 
 /obj/item/storage/secure/briefcase/PopulateContents()
 	new /obj/item/paper(src)
@@ -149,7 +149,7 @@
 	..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	for(var/i = 0, i < STR.max_items - 2, i++)
-		new /obj/item/stack/spacecash/c1000(src)
+		new /obj/item/spacecash/bundle/mediumrand(src)
 
 
 // -----------------------------

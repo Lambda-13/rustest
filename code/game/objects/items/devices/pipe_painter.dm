@@ -27,4 +27,4 @@
 
 /obj/item/pipe_painter/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>It is set to [paint_color].</span>"
+	. += "<hr><span class='notice'>It is set to [paint_color].</span>"

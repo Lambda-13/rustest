@@ -3,6 +3,7 @@
 	"map_name": "One-Way transport pod",
 	"map_short_name": "One-Way-class",
 	"map_path": "_maps/shuttles/shiptest/independent_oneway.dmm",
+	"description": "Челнок использующийся наёмниками для их последней миссии, соло-миссии. На нём снаряжения и места РОВНО на одного человека. Очень подготовленного боевого и вооружённого до зубов. В добрый путь!",
 	"job_slots": {
 		"Operative": {
 			"outfit": "/datum/outfit/syndicate_empty/sbc/assault/operative",

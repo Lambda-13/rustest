@@ -98,7 +98,7 @@
 /obj/item/stock_parts/cell/examine(mob/user)
 	. = ..()
 	if(rigged)
-		. += "<span class='danger'>This power cell seems to be faulty!</span>"
+		. += "<hr><span class='danger'>This power cell seems to be faulty!</span>"
 	else
 		. += "The charge meter reads [round(src.percent())]%."
 

@@ -1,6 +1,6 @@
 /obj/machinery/door
-	name = "door"
-	desc = "It opens and closes."
+	name = "дверь"
+	desc = "Открывается и закрывается. Удивительно."
 	icon = 'icons/obj/doors/Doorint.dmi'
 	icon_state = "door1"
 	opacity = TRUE
@@ -40,34 +40,37 @@
 	var/unres_sides = 0 //Unrestricted sides. A bitflag for which direction (if any) can open the door with no access
 	var/safety_mode = FALSE ///Whether or not the airlock can be opened with bare hands while unpowered
 	var/can_crush = TRUE /// Whether or not the door can crush mobs.
+	var/prevent_clicks_under_when_closed = TRUE
+	var/can_open_with_hands = TRUE /// Whether or not the door can be opened by hand (used for blast doors and shutters)
 
 
 /obj/machinery/door/examine(mob/user)
 	. = ..()
+	. += "<hr>"
 	if(red_alert_access)
 		if(GLOB.security_level >= SEC_LEVEL_RED)
-			. += "<span class='notice'>Due to a security threat, its access requirements have been lifted!</span>"
+			. += "<span class='notice'>Учитывая угрозу, требования по доступу повышены!</span>\n"
 		else
-			. += "<span class='notice'>In the event of a red alert, its access requirements will automatically lift.</span>"
+			. += "<span class='notice'>Учитывая красный код, требования по доступу повышены.</span>\n"
 	if(!poddoor)
-		. += "<span class='notice'>Its maintenance panel is <b>screwed</b> in place.</span>"
+		. += "<hr><span class='notice'>Техническая панель <b>прикручена</b> на месте.</span>"
 	if(safety_mode)
-		. += "<span class='notice'>It has labels indicating that it has an emergency mechanism to open it with <b>just your hands</b> if there's no power.</span>"
+		. += "<hr><span class='notice'>Здесь есть надпись, что этот шлюз откроется <b>просто твоими руками</b>, если здесь не будет энергии.</span>"
 
 /obj/machinery/door/check_access_list(list/access_list)
 	if(red_alert_access && GLOB.security_level >= SEC_LEVEL_RED)
 		return TRUE
 	return ..()
 
-/obj/machinery/door/Initialize()
+/obj/machinery/door/Initialize(mapload)
 	. = ..()
 	set_init_door_layer()
 	update_freelook_sight()
-	air_update_turf(1)
+	air_update_turf(TRUE)
 	GLOB.airlocks += src
 	spark_system = new /datum/effect_system/spark_spread
 	spark_system.set_up(2, 1, src)
-	if(density)
+	if(density && prevent_clicks_under_when_closed)
 		flags_1 |= PREVENT_CLICK_UNDER_1
 	else
 		flags_1 &= ~PREVENT_CLICK_UNDER_1
@@ -115,7 +118,7 @@
 
 /obj/machinery/door/Bumped(atom/movable/AM)
 	. = ..()
-	if(operating || (obj_flags & EMAGGED))
+	if(operating || (obj_flags & EMAGGED) || (!can_open_with_hands && density))
 		return
 	if(ismob(AM))
 		var/mob/B = AM
@@ -167,7 +170,7 @@
 		return !opacity
 
 /obj/machinery/door/proc/bumpopen(mob/user)
-	if(operating)
+	if(operating || !can_open_with_hands)
 		return
 	add_fingerprint(user)
 	if(!requiresID())
@@ -193,11 +196,12 @@
 /obj/machinery/door/attack_tk(mob/user)
 	if(requiresID() && !allowed(null))
 		return
-	..()
+	return ..()
+
 
 /obj/machinery/door/proc/try_to_activate_door(mob/user)
 	add_fingerprint(user)
-	if(operating || (obj_flags & EMAGGED))
+	if(operating || (obj_flags & EMAGGED) || !can_open_with_hands)
 		return
 	if(!requiresID())
 		user = null //so allowed(user) always succeeds
@@ -289,18 +293,19 @@
 	. = ..()
 	if (. & EMP_PROTECT_SELF)
 		return
-	if(prob(20/severity) && (istype(src, /obj/machinery/door/airlock) || istype(src, /obj/machinery/door/window)))
-		INVOKE_ASYNC(src, .proc/open)
+	if(prob(20/severity) && (istype(src, /obj/machinery/door/airlock) || istype(src, /obj/machinery/door/window)) )
+		INVOKE_ASYNC(src, PROC_REF(open))
 	if(prob(severity*10 - 20))
 		if(secondsElectrified == MACHINE_NOT_ELECTRIFIED)
 			secondsElectrified = MACHINE_ELECTRIFIED_PERMANENT
 			LAZYADD(shockedby, "\[[time_stamp()]\]EM Pulse")
-			addtimer(CALLBACK(src, .proc/unelectrify), 300)
+			addtimer(CALLBACK(src, PROC_REF(unelectrify)), 300)
 
 /obj/machinery/door/proc/unelectrify()
 	secondsElectrified = MACHINE_NOT_ELECTRIFIED
 
 /obj/machinery/door/update_icon_state()
+	. = ..()
 	if(density)
 		icon_state = "door1"
 	else
@@ -339,7 +344,7 @@
 	update_icon()
 	set_opacity(0)
 	operating = FALSE
-	air_update_turf(1)
+	air_update_turf(TRUE)
 	update_freelook_sight()
 	if(autoclose)
 		addtimer(CALLBACK(src, .proc/close), autoclose)
@@ -416,7 +421,7 @@
 		close()
 
 /obj/machinery/door/proc/autoclose_in(wait)
-	addtimer(CALLBACK(src, .proc/autoclose), wait, TIMER_UNIQUE | TIMER_NO_HASH_WAIT | TIMER_OVERRIDE)
+	addtimer(CALLBACK(src, PROC_REF(autoclose)), wait, TIMER_UNIQUE | TIMER_NO_HASH_WAIT | TIMER_OVERRIDE)
 
 /obj/machinery/door/proc/requiresID()
 	return 1
@@ -430,8 +435,8 @@
 
 /obj/machinery/door/BlockThermalConductivity() // All non-glass airlocks block heat, this is intended.
 	if(opacity || heat_proof)
-		return 1
-	return 0
+		return TRUE
+	return FALSE
 
 /obj/machinery/door/morgue
 	icon = 'icons/obj/doors/doormorgue.dmi'

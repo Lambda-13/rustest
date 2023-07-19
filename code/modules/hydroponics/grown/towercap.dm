@@ -42,7 +42,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	throw_speed = 2
 	throw_range = 3
-	attack_verb = list("bashed", "battered", "bludgeoned", "whacked")
+	attack_verb = list("бьёт", "забивает", "ударяет")
 	var/plank_type = /obj/item/stack/sheet/mineral/wood
 	var/plank_name = "wooden planks"
 	var/static/list/accepted = typecacheof(list(/obj/item/reagent_containers/food/snacks/grown/tobacco,
@@ -53,7 +53,7 @@
 
 /obj/item/grown/log/attackby(obj/item/W, mob/user, params)
 	if(W.get_sharpness())
-		user.show_message("<span class='notice'>You make [plank_name] out of \the [src]!</span>", MSG_VISUAL)
+		user.show_message("<span class='notice'>You make [plank_name] out of [src]!</span>", MSG_VISUAL)
 		var/seed_modifier = 0
 		if(seed)
 			seed_modifier = round(seed.potency / 25)
@@ -69,7 +69,7 @@
 	if(CheckAccepted(W))
 		var/obj/item/reagent_containers/food/snacks/grown/leaf = W
 		if(leaf.dry)
-			user.show_message("<span class='notice'>You wrap \the [W] around the log, turning it into a torch!</span>")
+			user.show_message("<span class='notice'>You wrap [W] around the log, turning it into a torch!</span>")
 			var/obj/item/flashlight/flare/torch/T = new /obj/item/flashlight/flare/torch(user.loc)
 			usr.dropItemToGround(W)
 			usr.put_in_active_hand(T)
@@ -191,14 +191,14 @@
 				R.use(1)
 				can_buckle = TRUE
 				buckle_requires_restraints = TRUE
-				to_chat(user, "<span class='notice'>You add a rod to \the [src].</span>")
+				to_chat(user, "<span class='notice'>You add a rod to [src].</span>")
 				var/mutable_appearance/rod_underlay = mutable_appearance('icons/obj/hydroponics/equipment.dmi', "bonfire_rod")
 				rod_underlay.pixel_y = 16
 				underlays += rod_underlay
 			if("Grill")
 				R.use(1)
 				grill = TRUE
-				to_chat(user, "<span class='notice'>You add a grill to \the [src].</span>")
+				to_chat(user, "<span class='notice'>You add a grill to [src].</span>")
 				add_overlay("bonfire_grill")
 			else
 				return ..()

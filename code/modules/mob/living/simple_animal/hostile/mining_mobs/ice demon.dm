@@ -18,8 +18,9 @@
 	ranged_cooldown_time = 30
 	minimum_distance = 4
 	retreat_distance = 3
-	maxHealth = 150
-	health = 150
+	maxHealth = 80
+	health = 80
+	armor = list("melee" = 20, "bullet" = 20, "laser" = 10, "energy" = 10, "bomb" = 30, "bio" = 10, "rad" = 10, "fire" = 10, "acid" = 10)
 	obj_damage = 40
 	melee_damage_lower = 15
 	melee_damage_upper = 15
@@ -68,7 +69,7 @@
 	move_force = MOVE_FORCE_DEFAULT
 	move_resist = MOVE_RESIST_DEFAULT
 	pull_force = PULL_FORCE_DEFAULT
-	new /obj/item/stack/ore/bluespace_crystal(loc, 5)
+	new /obj/item/stack/ore/bluespace_crystal(loc, 2)
 	if(prob(5))
 		new /obj/item/assembly/signaler/anomaly/bluespace(loc)
 	if(prob(5))

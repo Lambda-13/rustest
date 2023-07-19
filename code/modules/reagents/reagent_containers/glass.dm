@@ -83,7 +83,7 @@
 			return
 
 		var/trans = target.reagents.trans_to(src, amount_per_transfer_from_this, transfered_by = user)
-		to_chat(user, "<span class='notice'>You fill [src] with [trans] unit\s of the contents of [target].</span>")
+		to_chat(user, "<span class='notice'>Наполняю [src] с помощью [trans] unit\s of the contents of [target].</span>")
 
 	else if(reagents.total_volume && is_drainable())
 		switch(user.a_intent)
@@ -334,7 +334,7 @@
 			return
 
 		var/trans = target.reagents.trans_to(src, amount_per_transfer_from_this, transfered_by = user)
-		to_chat(user, "<span class='notice'>You fill [src] with [trans] unit\s of the contents of [target].</span>")
+		to_chat(user, "<span class='notice'>Наполняю [src] с помощью [trans] unit\s of the contents of [target].</span>")
 
 	else if(reagents.total_volume)
 		switch(user.a_intent)

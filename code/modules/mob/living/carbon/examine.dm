@@ -3,11 +3,11 @@
 	var/t_ego 	= ru_ego()
 	var/t_a 	= ru_a()
 
-	. = list("<span class='info'>Это же [icon2html(src, user)] <EM>[src]</EM>!<hr>")
+	. = list("<span class='info'>This is [icon2html(src, user)] \a <EM>[src]</EM>!>")
 	var/list/obscured = check_obscured_slots()
 
 	if (handcuffed)
-		. += "<span class='warning'>[t_on] [icon2html(handcuffed, user)] в наручниках!</span>\n"
+		. += "<hr><span class='warning'>[t_on] [icon2html(handcuffed, user)] в наручниках!</span>\n"
 	if (head)
 		. += "На голове у н[t_ego] [head.get_examine_string(user)].\n"
 	if(wear_mask && !(ITEM_SLOT_MASK in obscured))
@@ -25,9 +25,9 @@
 	if (stat == DEAD)
 		appears_dead = 1
 		if(getorgan(/obj/item/organ/brain))
-			. += "<span class='deadsay'>[t_on] не реагирует на происходящее вокруг; нет признаков жизни...</span>\n"
+			. += "<hr><span class='deadsay'>[t_on] не реагирует на происходящее вокруг; нет признаков жизни...</span>\n"
 		else if(get_bodypart(BODY_ZONE_HEAD))
-			. += "<span class='deadsay'>Похоже, что у н[t_ego] нет мозга...</span>\n"
+			. += "<hr><span class='deadsay'>Похоже, что у н[t_ego] нет мозга...</span>\n"
 
 	var/list/msg = list("<span class='warning'>")
 	var/list/missing = list(BODY_ZONE_HEAD, BODY_ZONE_CHEST, BODY_ZONE_R_ARM, BODY_ZONE_L_ARM, BODY_ZONE_R_LEG, BODY_ZONE_L_LEG)
@@ -141,6 +141,6 @@
 		if(151 to INFINITY)
 			. += "<b>[ru_who(TRUE)] покрыт блестящей пылью!</b>" //End WS edit
 
-	. += "*---------*</span>"
+	. += "</span>"
 
 	SEND_SIGNAL(src, COMSIG_PARENT_EXAMINE, user, .)

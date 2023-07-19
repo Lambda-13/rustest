@@ -30,9 +30,9 @@
 
 /obj/structure/destructible/cult/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>\The [src] is [anchored ? "":"not "]secured to the floor.</span>"
+	. += "<hr><span class='notice'>[src] is [anchored ? "":"not "]secured to the floor.</span>"
 	if((iscultist(user) || isobserver(user)) && cooldowntime > world.time)
-		. += "<span class='cult italic'>The magic in [src] is too weak, [p_they()] will be ready to use again in [DisplayTimeText(cooldowntime - world.time)].</span>"
+		. += "<hr><span class='cult italic'>The magic in [src] is too weak, [p_they()] will be ready to use again in [DisplayTimeText(cooldowntime - world.time)].</span>"
 
 /obj/structure/destructible/cult/examine_status(mob/user)
 	if(iscultist(user) || isobserver(user))
@@ -66,7 +66,7 @@
 /obj/structure/destructible/cult/attackby(obj/I, mob/user, params)
 	if(istype(I, /obj/item/melee/cultblade/dagger) && iscultist(user))
 		set_anchored(!anchored)
-		to_chat(user, "<span class='notice'>You [anchored ? "":"un"]secure \the [src] [anchored ? "to":"from"] the floor.</span>")
+		to_chat(user, "<span class='notice'>You [anchored ? "":"un"]secure [src] [anchored ? "to":"from"] the floor.</span>")
 	else
 		return ..()
 

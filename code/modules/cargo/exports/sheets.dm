@@ -26,6 +26,16 @@
 	unit_name = "goliath hide"
 	export_types = list(/obj/item/stack/sheet/animalhide/goliath_hide)
 
+/datum/export/stack/skin/polar_bear_hide
+	cost = 200
+	unit_name = "polar bear hide"
+	export_types = list(/obj/item/stack/sheet/animalhide/goliath_hide/polar_bear_hide)
+
+/datum/export/stack/skin/ashdrake_hide
+	unit_name = "ashdrake hide"
+	cost = 300
+	export_types = list(/obj/item/stack/sheet/animalhide/ashdrake)
+
 /datum/export/stack/skin/cat
 	cost = 150
 	export_category = EXPORT_CONTRABAND
@@ -72,3 +82,15 @@
 	cost = 1000
 	message = "of alien alloy"
 	export_types = list(/obj/item/stack/sheet/mineral/abductor)
+
+//Bones and Sinews
+
+/datum/export/stack/bone
+	unit_name = "bones"
+	cost = 50
+	export_types = list(/obj/item/stack/sheet/bone)
+
+/datum/export/stack/sinew
+	unit_name = "sinews"
+	cost = 50
+	export_types = list(/obj/item/stack/sheet/sinew)

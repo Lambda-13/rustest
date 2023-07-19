@@ -11,8 +11,8 @@
 #define SPEAK(message) radio.talk_into(src, message, radio_channel)
 
 /obj/machinery/clonepod
-	name = "cloning pod"
-	desc = "An electronically-lockable pod for growing organic tissue."
+	name = "капсула клонирования"
+	desc = "Электронно-запираемая капсула для выращивания органических форм жизни."
 	density = TRUE
 	icon = 'icons/obj/machines/cloning.dmi'
 	icon_state = "pod_0"
@@ -136,13 +136,13 @@
 
 /obj/machinery/clonepod/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>The <i>linking</i> device can be <i>scanned<i> with a multitool. It can be emptied by Alt-Clicking it.</span>"
+	. += "<hr><span class='notice'><i>Связанное</i> устройство можно <i>просканировать<i> с помощью многофункционального инструмента. Его можно очистить, щелкнув по нему Alt-кликом.</span>"
 	if(in_range(user, src) || isobserver(user))
-		. += "<span class='notice'>The status display reads: Cloning speed at <b>[speed_coeff*50]%</b>.<br>Predicted amount of cellular damage: <b>[100-heal_level]%</b><br>"
-		. += "Synthflesh consumption at <b>[round(fleshamnt*90, 1)]cm<sup>3</sup></b> per clone.</span><br>"
+		. += "<hr><span class='notice'>Дисплей показывает: скорость клонирования <b>[speed_coeff*50]%</b>.<br>Прогнозируемый объем клеточного повреждения: <b>[100-heal_level]%</b><br>"
+		. += "<hr>Потребление синтетической плоти в <b>[round(fleshamnt*90, 1)]см<sup>3</sup></b> обьёме при клонировании.</span><br>"
 
 		if(efficiency > 5)
-			. += "<span class='notice'>Pod has been upgraded to support autoprocessing and apply beneficial mutations.</span>"
+			. += "<hr><span class='notice'>Модуль был модернизирован для поддержки автообработки и применения полезных мутаций.</span>"
 
 //The return of data disks?? Just for transferring between genetics machine/cloning machine.
 //TO-DO: Make the genetics machine accept them.
@@ -155,10 +155,10 @@
 	. = ..()
 	var/mob/living/mob_occupant = occupant
 	if(mess)
-		. += "It's filled with blood and viscera. You swear you can see it moving..."
+		. += "<hr>Внутри всё в крови и внутренностях. Оно двигается..."
 	if(is_operational && istype(mob_occupant))
 		if(mob_occupant.stat != DEAD)
-			. += "Current clone cycle is [round(get_completion())]% complete."
+			. += "<hr>Текущий цикл клонирования завершён на [round(get_completion())]%."
 
 /obj/machinery/clonepod/return_air()
 	// We want to simulate the clone not being in contact with
@@ -181,10 +181,10 @@
 //Start growing a human clone in the pod!
 /obj/machinery/clonepod/proc/growclone(clonename, ui, mutation_index, mindref, last_death, blood_type, datum/species/mrace, list/features, factions, list/quirks, datum/bank_account/insurance, list/traumas, empty)
 	if(!beaker)
-		connected_message("Cannot start cloning: No beaker found.")
+		connected_message("Невозможно начать клонирование: стакан не найден.")
 		return NONE
 	if(!beaker.reagents.has_reagent(/datum/reagent/medicine/synthflesh, fleshamnt))
-		connected_message("Cannot start cloning: Not enough synthflesh.")
+		connected_message("Невозможно начать клонирование: недостаточно синтетической плоти.")
 		return NONE
 	if(panel_open)
 		return NONE
@@ -221,7 +221,7 @@
 	var/mob/living/carbon/human/H = new /mob/living/carbon/human(src)
 
 	if(!clonename)	//to prevent null names
-		clonename = "clone ([rand(1,999)])"
+		clonename = "Клон ([rand(1,999)])"
 	H.real_name = clonename
 
 	H.hardset_dna(ui, mutation_index, null, H.real_name, blood_type, mrace, features)
@@ -256,11 +256,11 @@
 
 		if(grab_ghost_when == CLONER_FRESH_CLONE)
 			H.grab_ghost()
-			to_chat(H, "<span class='notice'><b>Consciousness slowly creeps over you as your body regenerates.</b><br><i>So this is what cloning feels like?</i></span>")
+			to_chat(H, "<span class='notice'><b>Сознание медленно проникает в меня, пока тело регенерирует.</b><br><i>Так вот на что похоже клонирование?</i></span>")
 
 		if(grab_ghost_when == CLONER_MATURE_CLONE)
 			H.ghostize(TRUE)	//Only does anything if they were still in their old body and not already a ghost
-			to_chat(H.get_ghost(TRUE), "<span class='notice'>Your body is beginning to regenerate in a cloning pod. You will become conscious when it is complete.</span>")
+			to_chat(H.get_ghost(TRUE), "<span class='notice'>Твое тело начинает восстанавливаться в капсуле для клонирования. Вы встанете в сознании, когда клонирование будет завершено.</span>")
 
 	if(H)
 		H.faction |= factions
@@ -289,14 +289,13 @@
 		if(!beaker.reagents.has_reagent(/datum/reagent/medicine/synthflesh, fleshamnt))
 			go_out()
 			log_cloning("[key_name(mob_occupant)] ejected from [src] at [AREACOORD(src)] due to insufficient material.")
-			connected_message("Clone Ejected: Not enough material.")
+			connected_message("Клон извлечён: недостаточно материала.")
 			if(internal_radio)
-				SPEAK("The cloning of [mob_occupant.real_name] has been ended prematurely due to insufficient material.")
+				SPEAK("Клонирование [mob_occupant.real_name] было завершено досрочно по причине нехватки материала.")
 		if(mob_occupant && (mob_occupant.stat == DEAD) || (mob_occupant.suiciding) || mob_occupant.hellbound)  //Autoeject corpses and suiciding dudes.
-			connected_message("Clone Rejected: Deceased.")
+			connected_message("Клон извлечён: смерть.")
 			if(internal_radio)
-				SPEAK("The cloning of [mob_occupant.real_name] has been \
-					aborted due to unrecoverable tissue failure.")
+				SPEAK("Клонирование [mob_occupant.real_name] было прервано по причине смерти клона.")
 			go_out()
 			log_cloning("[key_name(mob_occupant)] ejected from [src] at [AREACOORD(src)] after suiciding.")
 
@@ -329,9 +328,9 @@
 			use_power(7500) //This might need tweaking.
 
 		else if(mob_occupant && (mob_occupant.cloneloss <= (100 - heal_level)))
-			connected_message("Cloning Process Complete.")
+			connected_message("Процесс клонирования завершён.")
 			if(internal_radio)
-				SPEAK("The cloning cycle of [mob_occupant.real_name] is complete.")
+				SPEAK("Цикл клонирования [mob_occupant.real_name] завершён.")
 
 			// If the cloner is upgraded to debugging high levels, sometimes
 			// organs and limbs can be missing.
@@ -360,7 +359,7 @@
 			go_out()
 			log_cloning("[key_name(occupant)] ejected from [src] at [AREACOORD(src)] due to power loss.")
 
-			connected_message("Clone Ejected: Loss of power.")
+			connected_message("Клон извлечён: недостаточно энергии.")
 		end_processing()
 	else //Turned on
 		begin_processing()
@@ -374,7 +373,7 @@
 			return
 		var/reagentlist = pretty_string_from_reagent_list(W.reagents.reagent_list)
 		replace_beaker(user, B)
-		to_chat(user, "<span class='notice'>You add [B] to [src].</span>")
+		to_chat(user, "<span class='notice'>Вставляю [B] в [src].</span>")
 		log_game("[key_name(user)] added an [W] to the [src] at [src.loc] containing [reagentlist]")
 	if(!(occupant || mess))
 		if(default_deconstruction_screwdriver(user, "[icon_state]_maintenance", "[initial(icon_state)]",W))
@@ -390,32 +389,32 @@
 
 		if(istype(P.buffer, /obj/machinery/computer/cloning))
 			if(get_area(P.buffer) != get_area(src))
-				to_chat(user, "<font color = #666633>-% Cannot link machines across power zones. Buffer cleared %-</font color>")
+				to_chat(user, "<font color = #666633>-% Невозможно связать машины через зоны электропитания. Буфер очищен %-</font color>")
 				P.buffer = null
 				return
-			to_chat(user, "<font color = #666633>-% Successfully linked [P.buffer] with [src] %-</font color>")
+			to_chat(user, "<font color = #666633>-% Подключено [P.buffer] к [src] %-</font color>")
 			var/obj/machinery/computer/cloning/comp = P.buffer
 			if(connected)
 				connected.DetachCloner(src)
 			comp.AttachCloner(src)
 		else
 			P.buffer = src
-			to_chat(user, "<font color = #666633>-% Successfully stored [REF(P.buffer)] [P.buffer.name] in buffer %-</font color>")
+			to_chat(user, "<font color = #666633>-% Данные [REF(P.buffer)] [P.buffer.name] сохранены в буфер %-</font color>")
 		return
 
 	var/mob/living/mob_occupant = occupant
 	if(W.GetID())
 		if(!check_access(W))
-			to_chat(user, "<span class='danger'>Access Denied.</span>")
+			to_chat(user, "<span class='danger'>Доступ запрещён.</span>")
 			return
 		if(!(mob_occupant || mess))
-			to_chat(user, "<span class='danger'>Error: Pod has no occupant.</span>")
+			to_chat(user, "<span class='danger'>В капсуле никого нет.</span>")
 			return
 		else
 			add_fingerprint(user)
-			connected_message("Emergency Ejection")
-			SPEAK("An emergency ejection of [clonemind.name] has occurred. Survival not guaranteed.")
-			to_chat(user, "<span class='notice'>You force an emergency ejection. </span>")
+			connected_message("Аварийное извлечение")
+			SPEAK("Клон [clonemind.name] был досрочно извлечён из капсулы. Выживаемость не гарантируется.")
+			to_chat(user, "<span class='notice'>Экстренно вытаскиваю клона из капсулы.</span>")
 			go_out()
 			log_cloning("[key_name(user)] manually ejected [key_name(mob_occupant)] from [src] at [AREACOORD(src)].")
 			log_combat(user, mob_occupant, "ejected", W, "from [src]")
@@ -425,7 +424,7 @@
 /obj/machinery/clonepod/emag_act(mob/user)
 	if(!occupant)
 		return
-	to_chat(user, "<span class='warning'>You corrupt the genetic compiler.</span>")
+	to_chat(user, "<span class='warning'>Повреждаю генетический компилятор.</span>")
 	malfunction()
 	add_fingerprint(user)
 	log_cloning("[key_name(user)] emagged [src] at [AREACOORD(src)], causing it to malfunction.")
@@ -457,7 +456,7 @@
 		unattached_flesh.Cut()
 		mess = FALSE
 		new /obj/effect/gibspawner/generic(get_turf(src), mob_occupant)
-		audible_message("<span class='hear'>You hear a splat.</span>")
+		audible_message("<span class='hear'>Слышу как что-то плюхается.</span>")
 		icon_state = "pod_0"
 		return
 
@@ -472,7 +471,7 @@
 
 	if(grab_ghost_when == CLONER_MATURE_CLONE)
 		mob_occupant.grab_ghost()
-		to_chat(occupant, "<span class='notice'><b>There is a bright flash!</b><br><i>You feel like a new being.</i></span>")
+		to_chat(occupant, "<span class='notice'><b>ЯРКО!</b><br><i>Похоже теперь я в новом теле.</i></span>")
 		mob_occupant.flash_act()
 
 	occupant.forceMove(T)
@@ -488,9 +487,8 @@
 /obj/machinery/clonepod/proc/malfunction()
 	var/mob/living/mob_occupant = occupant
 	if(mob_occupant)
-		connected_message("Critical Error!")
-		SPEAK("Critical error! Please contact a Thinktronic Systems \
-			technician, as your warranty may be affected.")
+		connected_message("Критический сбой!")
+		SPEAK("Критический сбой системы клонирования.")
 		mess = TRUE
 		maim_clone(mob_occupant)	//Remove every bit that's grown back so far to drop later, also destroys bits that haven't grown yet
 		icon_state = "pod_g"
@@ -498,7 +496,7 @@
 			clonemind.transfer_to(mob_occupant)
 		mob_occupant.grab_ghost() // We really just want to make you suffer.
 		flash_color(mob_occupant, flash_color="#960000", flash_time=100)
-		to_chat(mob_occupant, "<span class='warning'><b>Agony blazes across your consciousness as your body is torn apart.</b><br><i>Is this what dying is like? Yes it is.</i></span>")
+		to_chat(mob_occupant, "<span class='warning'><b>Агония пронзает ваше сознание, когда ваше тело разрывается на части.</b><br><i>Так ли это, как умереть? Да это так.</i></span>")
 		playsound(src, 'sound/machines/warning-buzzer.ogg', 50)
 		SEND_SOUND(mob_occupant, sound('sound/hallucinations/veryfar_noise.ogg',0,1,50))
 		log_cloning("[key_name(mob_occupant)] destroyed within [src] at [AREACOORD(src)] due to malfunction.")
@@ -516,8 +514,8 @@
 	if (!(. & EMP_PROTECT_SELF))
 		var/mob/living/mob_occupant = occupant
 		if(mob_occupant && prob(100/(severity*efficiency)))
-			connected_message(Gibberish("EMP-caused Accidental Ejection"))
-			SPEAK(Gibberish("Exposure to electromagnetic fields has caused the ejection of [mob_occupant.real_name] prematurely."))
+			connected_message(Gibberish("Извлечение клона из-за ЭМИ излучения"))
+			SPEAK(Gibberish("Воздействие электромагнитных полей вызвало выброс [mob_occupant.real_name] из капсулы."))
 			go_out()
 			log_cloning("[key_name(mob_occupant)] ejected from [src] at [AREACOORD(src)] due to EMP pulse.")
 
@@ -596,27 +594,27 @@
 
 /obj/item/paper/guides/jobs/medical/cloning
 	name = "paper - 'H-87 Cloning Apparatus Manual"
-	info = {"<h4>Getting Started</h4>
-	Congratulations, you have has purchased the H-87 industrial cloning device!<br>
-	Using the H-87 is almost as simple as brain surgery! Simply insert the target humanoid into the scanning chamber and select the scan option to create a new profile!<br>
-	<b>That's all there is to it!</b><br>
-	<i>Notice, cloning system cannot scan inorganic life or small primates.  Scan may fail if subject has suffered extreme brain damage.</i><br>
-	<p>Clone profiles may be viewed through the profiles menu. Scanning implants a complementary HEALTH MONITOR IMPLANT into the subject, which may be viewed from each profile.
-	Profile Deletion has been automatically restricted to \[Station Head\] level access.</p>
-	<h4>Cloning from a profile</h4>
-	Cloning is as simple as pressing the CLONE option at the bottom of the desired profile.<br>
-	Per the results of the Privacy and Identity hearings of 2102, the H-87 has been blocked from cloning individuals while they are still alive.<br>
+	info = {"<meta charset='utf-8'><h4>Начало работы</h4>
+	Поздравляем, вы приобрели промышленное клонирующее устройство H-87!<br>
+	Использование H-87 почти так же просто, как операция на головном мозге! Просто поместите целевого гуманоида в камеру сканирования и выберите опцию сканирования, чтобы создать новый профиль!<br>
+	<b>Это все!</b><br>
+	<i>Обратите внимание, система клонирования не может сканировать неорганическую жизнь или мелких приматов. Сканирование может завершиться ошибкой, если у субъекта серьезно поврежден мозг.</i><br>
+	<p>Профили клонов можно просмотреть в меню профилей. Сканирование имплантирует дополнительный ИМПЛАНТАТ МОНИТОРА ЗДОРОВЬЯ в субъект, который можно просматривать из каждого профиля.
+	Удаление профиля было автоматически ограничено доступом на уровне \[Капитан\].</p>
+	<h4>Клонирование из профиля</h4>
+	Для клонирования достаточно нажать кнопку CLONE в нижней части нужного профиля.<br>
+	По результатам слушаний по делу о конфиденциальности и идентификации в 2102 году H-87 было запрещено клонировать людей, пока они еще живы.<br>
 	<br>
-	<p>The provided CLONEPOD SYSTEM will produce the desired clone.  Standard clone maturation times (With SPEEDCLONE technology) are roughly 90 seconds.
-	The cloning pod may be unlocked early with any \[Medical Researcher\] ID after initial maturation is complete.</p><br>
-	<i>Please note that resulting clones may have a small DEVELOPMENTAL DEFECT as a result of genetic drift.</i><br>
-	<h4>Profile Management</h4>
-	<p>The H-87 (as well as any other TTEK standard genetics machine) can accept STANDARD DATA DISKETTES.
-	These diskettes are used to transfer genetic information between machines and profiles.
-	A load/save dialog will become available in each profile if a disk is inserted.</p><br>
-	<i>A good diskette is a great way to counter aforementioned genetic drift!</i><br>
+	<p>Предоставленная СИСТЕМА CLONEPOD создаст желаемый клон. Стандартное время созревания клона (с технологией SPEEDCLONE) составляет примерно 90 секунд.
+	Клонирующая капсула может быть разблокирована раньше с любым идентификатором \[Медицинский исследователь\] после завершения первоначального созревания.</p><br>
+	<i>Обратите внимание, что полученные клоны могут иметь небольшой ДЕФЕКТ РАЗВИТИЯ в результате генетического дрейфа.</i><br>
+	<h4>Управление профилями</h4>
+	<p>H-87 (как и любой другой стандартный генетический аппарат TTEK) может принимать СТАНДАРТНЫЕ ДИСКЕТЫ С ДАННЫМИ.
+	Эти дискеты используются для передачи генетической информации между машинами и профилями.
+	Диалоговое окно загрузки/сохранения станет доступным в каждом профиле, если вставлен диск.</p><br>
+	<i>Хорошая дискета — отличный способ противостоять вышеупомянутому генетическому дрейфу!</i><br>
 	<br>
-	<font size=1>This technology produced under license from Thinktronic Systems, LTD.</font>"}
+	<font size=1>Эта технология произведена по лицензии Thinktronic Systems, LTD.</font>"}
 
 #undef CLONE_INITIAL_DAMAGE
 #undef SPEAK

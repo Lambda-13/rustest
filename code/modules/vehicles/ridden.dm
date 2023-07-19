@@ -18,9 +18,9 @@
 	. = ..()
 	if(key_type)
 		if(!inserted_key)
-			. += "<span class='notice'>Put a key inside it by clicking it with the key.</span>"
+			. += "<hr><span class='notice'>Put a key inside it by clicking it with the key.</span>"
 		else
-			. += "<span class='notice'>Alt-click [src] to remove the key.</span>"
+			. += "<hr><span class='notice'>Alt-клик [src] to remove the key.</span>"
 
 /obj/vehicle/ridden/generate_action_type(actiontype)
 	var/datum/action/vehicle/ridden/A = ..()
@@ -39,7 +39,7 @@
 /obj/vehicle/ridden/attackby(obj/item/I, mob/user, params)
 	if(key_type && !is_key(inserted_key) && is_key(I))
 		if(user.transferItemToLoc(I, src))
-			to_chat(user, "<span class='notice'>You insert \the [I] into \the [src].</span>")
+			to_chat(user, "<span class='notice'>You insert \the [I] into [src].</span>")
 			if(inserted_key)	//just in case there's an invalid key
 				inserted_key.forceMove(drop_location())
 			inserted_key = I
@@ -53,7 +53,7 @@
 		if(!is_occupant(user))
 			to_chat(user, "<span class='warning'>You must be riding the [src] to remove [src]'s key!</span>")
 			return
-		to_chat(user, "<span class='notice'>You remove \the [inserted_key] from \the [src].</span>")
+		to_chat(user, "<span class='notice'>You remove \the [inserted_key] from [src].</span>")
 		inserted_key.forceMove(drop_location())
 		user.put_in_hands(inserted_key)
 		inserted_key = null
@@ -75,8 +75,8 @@
 		if(user.usable_hands < arms_required)
 			if(fall_off_if_missing_arms)
 				unbuckle_mob(user, TRUE)
-				user.visible_message("<span class='danger'>[user] falls off \the [src].</span>",\
-				"<span class='danger'>You fall off \the [src] while trying to operate it without [arms_required ? "both arms":"an arm"]!</span>")
+				user.visible_message("<span class='danger'>[user] falls off [src].</span>",\
+				"<span class='danger'>You fall off [src] while trying to operate it without [arms_required ? "both arms":"an arm"]!</span>")
 				if(isliving(user))
 					var/mob/living/L = user
 					L.Stun(30)

@@ -14,7 +14,7 @@
 
 	else
 		if(!sender_override)
-			announcement += "<h1 class='alert'>[command_name()] Update</h1>"
+			announcement += "<h1 class='alert'>Оповещение от [command_name()]</h1>"
 		else
 			announcement += "<h1 class='alert'>[sender_override]</h1>"
 		if (title && length(title) > 0)
@@ -49,7 +49,7 @@
 		title = "Classified [command_name()] Update"
 
 	if(announce)
-		priority_announce("A report has been downloaded and printed out at all communications consoles.", "Incoming Classified Message", 'sound/ai/commandreport.ogg')
+		priority_announce("Отчёт загружен и распечатан на всех консолях связи.", "Входящее секретное сообщение", 'sound/ai/commandreport.ogg')
 
 	var/datum/comm_message/M  = new
 	M.title = title

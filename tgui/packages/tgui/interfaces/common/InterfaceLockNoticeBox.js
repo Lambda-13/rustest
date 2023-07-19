@@ -21,7 +21,7 @@ export const InterfaceLockNoticeBox = (props, context) => {
     siliconUser = data.siliconUser,
     locked = data.locked,
     onLockStatusChange = () => act('lock'),
-    accessText = 'an ID card',
+    accessText = 'ID картой',
   } = props;
   // For silicon users
   if (siliconUser) {
@@ -50,7 +50,7 @@ export const InterfaceLockNoticeBox = (props, context) => {
   // For everyone else
   return (
     <NoticeBox>
-      Swipe {accessText} to {locked ? 'unlock' : 'lock'} this interface.
+      Проведите {accessText} для {locked ? 'раз' : ''}блокировки интерфейса.
     </NoticeBox>
   );
 };

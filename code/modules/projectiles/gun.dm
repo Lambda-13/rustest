@@ -17,7 +17,7 @@
 	throw_range = 5
 	force = 5
 	item_flags = NEEDS_PERMIT
-	attack_verb = list("struck", "hit", "bashed")
+	attack_verb = list("struck", "hit", "бьёт")
 	pickup_sound = 'sound/items/handling/gun_pickup.ogg'
 	drop_sound = 'sound/items/handling/gun_drop.ogg'
 
@@ -119,21 +119,21 @@
 	. = ..()
 	if(pin)
 		. += "It has \a [pin] installed."
-		. += "<span class='info'>[pin] looks like it could be removed with some <b>tools</b>.</span>"
+		. += "<hr><span class='info'>[pin] looks like it could be removed with some <b>tools</b>.</span>"
 	else
 		. += "It doesn't have a <b>firing pin</b> installed, and won't fire."
 
 	if(gun_light)
 		. += "It has \a [gun_light] [can_flashlight ? "" : "permanently "]mounted on it."
 		if(can_flashlight) //if it has a light and this is false, the light is permanent.
-			. += "<span class='info'>[gun_light] looks like it can be <b>unscrewed</b> from [src].</span>"
+			. += "<hr><span class='info'>[gun_light] looks like it can be <b>unscrewed</b> from [src].</span>"
 	else if(can_flashlight)
 		. += "It has a mounting point for a <b>seclite</b>."
 
 	if(bayonet)
 		. += "It has \a [bayonet] [can_bayonet ? "" : "permanently "]affixed to it."
 		if(can_bayonet) //if it has a bayonet and this is false, the bayonet is permanent.
-			. += "<span class='info'>[bayonet] looks like it can be <b>unscrewed</b> from [src].</span>"
+			. += "<hr><span class='info'>[bayonet] looks like it can be <b>unscrewed</b> from [src].</span>"
 	else if(can_bayonet)
 		. += "It has a <b>bayonet</b> lug on it."
 
@@ -438,7 +438,7 @@
 
 	/*WS Edit - Fixes Pin Removal
 	else if(pin && user.is_holding(src))
-		user.visible_message("<span class='warning'>[user] attempts to remove [pin] from [src] with [I].</span>",
+		user.visible_message("<span class='warning'>[user] attempts to remove [pin] from [src] с помощью [I].</span>",
 		"<span class='notice'>You attempt to remove [pin] from [src]. (It will take [DisplayTimeText(FIRING_PIN_REMOVAL_DELAY)].)</span>", null, 3)
 		if(I.use_tool(src, user, FIRING_PIN_REMOVAL_DELAY, volume = 50))
 			if(!pin) //check to see if the pin is still there, or we can spam messages by clicking multiple times during the tool delay
@@ -457,13 +457,13 @@
 	if(!user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
 		return
 	if(pin && user.is_holding(src))
-		user.visible_message("<span class='warning'>[user] attempts to remove [pin] from [src] with [I].</span>",
+		user.visible_message("<span class='warning'>[user] attempts to remove [pin] from [src] с помощью [I].</span>",
 		"<span class='notice'>You attempt to remove [pin] from [src]. (It will take [DisplayTimeText(FIRING_PIN_REMOVAL_DELAY)].)</span>", null, 3)
 		if(I.use_tool(src, user, FIRING_PIN_REMOVAL_DELAY, 5, volume = 50))
 			if(!pin) //check to see if the pin is still there, or we can spam messages by clicking multiple times during the tool delay
 				return
 			user.visible_message("<span class='notice'>[pin] is spliced out of [src] by [user], melting part of the pin in the process.</span>",
-								"<span class='warning'>You splice [pin] out of [src] with [I], melting part of the pin in the process.</span>", null, 3)
+								"<span class='warning'>You splice [pin] out of [src] с помощью [I], melting part of the pin in the process.</span>", null, 3)
 			QDEL_NULL(pin)
 			return TRUE
 
@@ -474,13 +474,13 @@
 	if(!user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
 		return
 	if(pin && user.is_holding(src))
-		user.visible_message("<span class='warning'>[user] attempts to remove [pin] from [src] with [I].</span>",
+		user.visible_message("<span class='warning'>[user] attempts to remove [pin] from [src] с помощью [I].</span>",
 		"<span class='notice'>You attempt to remove [pin] from [src]. (It will take [DisplayTimeText(FIRING_PIN_REMOVAL_DELAY)].)</span>", null, 3)
 		if(I.use_tool(src, user, FIRING_PIN_REMOVAL_DELAY, volume = 50))
 			if(!pin) //check to see if the pin is still there, or we can spam messages by clicking multiple times during the tool delay
 				return
 			user.visible_message("<span class='notice'>[pin] is ripped out of [src] by [user], mangling the pin in the process.</span>",
-								"<span class='warning'>You rip [pin] out of [src] with [I], mangling the pin in the process.</span>", null, 3)
+								"<span class='warning'>You rip [pin] out of [src] с помощью [I], mangling the pin in the process.</span>", null, 3)
 			QDEL_NULL(pin)
 			return TRUE
 

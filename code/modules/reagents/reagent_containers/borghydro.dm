@@ -137,11 +137,11 @@ Borg Hypospray
 	for(var/datum/reagents/RS in reagent_list)
 		var/datum/reagent/R = locate() in RS.reagent_list
 		if(R)
-			. += "<span class='notice'>It currently has [R.volume] unit\s of [R.name] stored.</span>"
+			. += "<hr><span class='notice'>It currently has [R.volume] unit\s of [R.name] stored.</span>"
 			empty = FALSE
 
 	if(empty)
-		. += "<span class='warning'>It is currently empty! Allow some time for the internal synthesizer to produce more.</span>"
+		. += "<hr><span class='warning'>It is currently empty! Allow some time for the internal synthesizer to produce more.</span>"
 
 /obj/item/reagent_containers/borghypo/hacked
 	icon_state = "borghypo_s"

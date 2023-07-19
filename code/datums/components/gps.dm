@@ -2,11 +2,11 @@
 GLOBAL_LIST_EMPTY(GPS_list)
 ///GPS component. Atoms that have this show up on gps. Pretty simple stuff.
 /datum/component/gps
-	var/gpstag = "COM0"
+	var/gpstag = "КОМ0"
 	var/tracking = TRUE
 	var/emped = FALSE
 
-/datum/component/gps/Initialize(_gpstag = "COM0")
+/datum/component/gps/Initialize(_gpstag = "КОМ0")
 	if(!isatom(parent))
 		return COMPONENT_INCOMPATIBLE
 	gpstag = _gpstag
@@ -21,7 +21,7 @@ GLOBAL_LIST_EMPTY(GPS_list)
 	var/updating = TRUE //Automatic updating of GPS list. Can be set to manual by user.
 	var/global_mode = TRUE //If disabled, only GPS signals of the same Z level are shown
 
-/datum/component/gps/item/Initialize(_gpstag = "COM0", emp_proof = FALSE)
+/datum/component/gps/item/Initialize(_gpstag = "КОМ0", emp_proof = FALSE)
 	. = ..()
 	if(. == COMPONENT_INCOMPATIBLE || !isitem(parent))
 		return COMPONENT_INCOMPATIBLE
@@ -45,7 +45,7 @@ GLOBAL_LIST_EMPTY(GPS_list)
 /datum/component/gps/item/proc/on_examine(datum/source, mob/user, list/examine_list)
 	SIGNAL_HANDLER
 
-	examine_list += "<span class='notice'>Alt-click to switch it [tracking ? "off":"on"].</span>"
+	examine_list += "<span class='notice'>Alt-клик [tracking ? "выключит":"включит"] его.</span>"
 
 ///Called on COMSIG_ATOM_EMP_ACT
 /datum/component/gps/item/proc/on_emp_act(datum/source, severity)
@@ -76,21 +76,21 @@ GLOBAL_LIST_EMPTY(GPS_list)
 	if(!user.canUseTopic(parent, BE_CLOSE))
 		return //user not valid to use gps
 	if(emped)
-		to_chat(user, "<span class='warning'>It's busted!</span>")
+		to_chat(user, "<span class='warning'>Сломано!</span>")
 		return
 	var/atom/A = parent
 	if(tracking)
 		A.cut_overlay("working")
-		to_chat(user, "<span class='notice'>[parent] is no longer tracking, or visible to other GPS devices.</span>")
+		to_chat(user, "<span class='notice'>[parent] больше не отслеживается и не виден другим устройствам GPS.</span>")
 		tracking = FALSE
 	else
 		A.add_overlay("working")
-		to_chat(user, "<span class='notice'>[parent] is now tracking, and visible to other GPS devices.</span>")
+		to_chat(user, "<span class='notice'>[parent] теперь отслеживает и виден другим устройствам GPS.</span>")
 		tracking = TRUE
 
 /datum/component/gps/item/ui_interact(mob/user, datum/tgui/ui)
 	if(emped)
-		to_chat(user, "<span class='hear'>[parent] fizzles weakly.</span>")
+		to_chat(user, "<span class='hear'>[parent] слабо шипит.</span>")
 		return
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
@@ -148,14 +148,14 @@ GLOBAL_LIST_EMPTY(GPS_list)
 	switch(action)
 		if("rename")
 			var/atom/parentasatom = parent
-			var/a = stripped_input(usr, "Please enter desired tag.", parentasatom.name, gpstag, 20)
+			var/a = stripped_input(usr, "Введите тэг.", parentasatom.name, gpstag, 20)
 
 			if (!a)
 				return
 
 			gpstag = a
 			. = TRUE
-			parentasatom.name = "global positioning system ([gpstag])"
+			parentasatom.name = "глобальная поисковая система ([gpstag])"
 
 		if("power")
 			toggletracking(usr)

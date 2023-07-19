@@ -593,7 +593,7 @@ GLOBAL_LIST_INIT(spacepod_verb_list,  list(
 		locked = FALSE //Should never be false without a lock, but if it somehow happens, that will force an unlock.
 	else
 		locked = !locked
-		to_chat(usr, "<span class='warning'>You [locked ? "lock" : "unlock"] the doors.</span>")
+		to_chat(usr, "<span class='warning'>You [locked ? "Блок" : "Разблок"]ирую the doors.</span>")
 
 /obj/spacepod/verb/toggle_brakes()
 	set name = "Toggle Brakes"
@@ -645,7 +645,7 @@ GLOBAL_LIST_INIT(spacepod_verb_list,  list(
 				else
 					P.close()
 					return TRUE
-		to_chat(usr, "<span class='warning'>Access denied.</span>")
+		to_chat(usr, "<span class='warning'>Доступ запрещён.</span>")
 		return
 
 	to_chat(usr, "<span class='warning'>You are not close to any pod doors.</span>")

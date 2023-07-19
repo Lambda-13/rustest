@@ -37,7 +37,7 @@
 /obj/machinery/smartfridge/examine(mob/user)
 	. = ..()
 	if(in_range(user, src) || isobserver(user))
-		. += "<span class='notice'>The status display reads: This unit can hold a maximum of <b>[max_n_of_items]</b> items.</span>"
+		. += "<hr><span class='notice'>The status display reads: This unit can hold a maximum of <b>[max_n_of_items]</b> items.</span>"
 
 /obj/machinery/smartfridge/update_icon_state()
 	SSvis_overlays.remove_vis_overlay(src, managed_vis_overlays)
@@ -86,12 +86,12 @@
 	if(!machine_stat)
 
 		if(contents.len >= max_n_of_items)
-			to_chat(user, "<span class='warning'>\The [src] is full!</span>")
+			to_chat(user, "<span class='warning'>[src] is full!</span>")
 			return FALSE
 
 		if(accept_check(O))
 			load(O)
-			user.visible_message("<span class='notice'>[user] adds \the [O] to \the [src].</span>", "<span class='notice'>You add \the [O] to \the [src].</span>")
+			user.visible_message("<span class='notice'>[user] adds \the [O] to [src].</span>", "<span class='notice'>You add \the [O] to [src].</span>")
 			updateUsrDialog()
 			if (visible_contents)
 				update_icon()
@@ -111,12 +111,12 @@
 			if(loaded)
 				if(contents.len >= max_n_of_items)
 					user.visible_message(
-						"<span class='notice'>[user] loads \the [src] with \the [O].</span>", \
-						"<span class='notice'>You fill \the [src] with \the [O].</span>")
+						"<span class='notice'>[user] loads [src] с помощью \the [O].</span>", \
+						"<span class='notice'>Наполняю [src] с помощью \the [O].</span>")
 				else
 					user.visible_message(
-						"<span class='notice'>[user] loads \the [src] with \the [O].</span>", \
-						"<span class='notice'>You load \the [src] with \the [O].</span>")
+						"<span class='notice'>[user] loads [src] с помощью \the [O].</span>", \
+						"<span class='notice'>You load [src] с помощью \the [O].</span>")
 				if(O.contents.len > 0)
 					to_chat(user, "<span class='warning'>Some items are refused.</span>")
 				if (visible_contents)
@@ -127,7 +127,7 @@
 				return FALSE
 
 	if(user.a_intent != INTENT_HARM)
-		to_chat(user, "<span class='warning'>\The [src] smartly refuses [O].</span>")
+		to_chat(user, "<span class='warning'>[src] smartly refuses [O].</span>")
 		updateUsrDialog()
 		return FALSE
 	else
@@ -144,7 +144,7 @@
 	if(ismob(O.loc))
 		var/mob/M = O.loc
 		if(!M.transferItemToLoc(O, src))
-			to_chat(usr, "<span class='warning'>\the [O] is stuck to your hand, you cannot put it in \the [src]!</span>")
+			to_chat(usr, "<span class='warning'>\the [O] прилип к рукеr hand, you cannot put it in [src]!</span>")
 			return FALSE
 		else
 			return TRUE
@@ -534,5 +534,6 @@
 		/obj/item/reagent_containers/blood/OMinus = 1,
 		/obj/item/reagent_containers/blood/OPlus = 1,
 		/obj/item/reagent_containers/blood/lizard = 1,
-		/obj/item/reagent_containers/blood/squid = 1,
+		/obj/item/reagent_containers/blood/elzuose = 1,
+		/obj/item/reagent_containers/blood/synthetic = 1,
 		/obj/item/reagent_containers/blood/random = 5)

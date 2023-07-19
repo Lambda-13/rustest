@@ -297,7 +297,7 @@ Difficulty: Extremely Hard
 
 /obj/item/clothing/shoes/winterboots/ice_boots/ice_trail/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>The shoes are [on ? "enabled" : "disabled"].</span>"
+	. += "<hr><span class='notice'>The shoes are [on ? "enabled" : "disabled"].</span>"
 
 /obj/item/clothing/shoes/winterboots/ice_boots/ice_trail/step_action()
 	. = ..()

@@ -45,5 +45,10 @@ TGS DMAPI API лицензирован как подпроект под MIT ли
 
 Весь код, расположенный в каталогах `goon` и `whitesands/goon`, находится под лицензией [Creative Commons 3.0 BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/3.0/). Ассеты созданны Goonstation.
 
-
 Весь код, расположенный в каталоге `lambda`, находится под лицензией [Creative Commons 4.0 BY-NC-SA license](https://creativecommons.org/licenses/by-nc-sa/4.0/), если не указано иное.
+
+API TGS DMAPI лицензируется как подпроект по лицензии MIT.
+
+Смотрите нижний колонтитул [code/\_\_DEFINES/tgs.dm](./code/__DEFINES/tgs.dm) и [code/modules/tgs/LICENSE](./code/modules/tgs/LICENSE) для лицензии MIT.
+
+Все активы, включая значки и звук, находятся под лицензией [Creative Commons 3.0 BY-SA license](https://creativecommons.org/licenses/by-sa/3.0/) если не указано другое.

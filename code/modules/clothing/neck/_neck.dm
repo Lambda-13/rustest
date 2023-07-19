@@ -22,7 +22,7 @@
 
 /obj/item/clothing/neck/tie
 	name = "tie"
-	desc = "A neosilk clip-on tie. Special material allows it to be reskinned by Alt-clicking it, but only once."
+	desc = "A neosilk clip-on tie. Special material allows it to be reskinned by Alt-кликing it, but only once."
 	icon = 'icons/obj/clothing/neck.dmi'
 	unique_reskin = list("red tie" = "redtie",
 						"orange tie" = "orangetie",
@@ -171,7 +171,7 @@
 	cuttable = FALSE
 
 /obj/item/clothing/neck/stethoscope/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] puts \the [src] to [user.p_their()] chest! It looks like [user.p_they()] wont hear much!</span>")
+	user.visible_message("<span class='suicide'>[user] puts [src] to [user.p_their()] chest! It looks like [user.p_they()] wont hear much!</span>")
 	return OXYLOSS
 
 /obj/item/clothing/neck/stethoscope/attack(mob/living/carbon/human/M, mob/living/user)
@@ -276,7 +276,7 @@
 
 //The three following scarves don't have the scarf subtype
 //This is because Ian can equip anything from that subtype
-//However, these 3 don't have corgi versions of their sprites
+//However, these 4 don't have corgi versions of their sprites
 /obj/item/clothing/neck/stripedredscarf
 	name = "striped red scarf"
 	icon_state = "stripedredscarf"
@@ -290,6 +290,11 @@
 /obj/item/clothing/neck/stripedbluescarf
 	name = "striped blue scarf"
 	icon_state = "stripedbluescarf"
+	custom_price = 10
+
+/obj/item/clothing/neck/stripedsolgovscarf
+	name = "striped solgov scarf"
+	icon_state = "stripedsolgovscarf"
 	custom_price = 10
 
 /obj/item/clothing/neck/petcollar
@@ -406,7 +411,7 @@
 
 //This is copied and pasted from the shield harsuit code, any issues here are also a issue there. Should I have done this? No, i shouldn't. Should this be a component? Yes, most likely. Do i want to touch DCS ever again? No.
 
-/obj/item/clothing/neck/crystal_amulet/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
+/obj/item/clothing/neck/crystal_amulet/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "атаку", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	var/datum/effect_system/spark_spread/quantum/spark_creator = new
 	spark_creator.set_up(2, 1, src)
 	spark_creator.start()
@@ -424,7 +429,7 @@
 		if(25 to 50)
 			. += "It appears heavily damaged."
 		if(0 to 25)
-			. += "<span class='warning'>It's falling apart!</span>"
+			. += "<hr><span class='warning'>It's falling apart!</span>"
 
 /obj/item/clothing/neck/crystal_amulet/worn_overlays(isinhands)
 	. = ..()

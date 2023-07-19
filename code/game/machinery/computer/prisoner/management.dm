@@ -10,7 +10,7 @@
 	var/status = 0
 	var/timeleft = 60
 	var/stop = 0
-	var/screen = 0 // 0 - No Access Denied, 1 - Access allowed
+	var/screen = 0 // 0 - No Доступ запрещён, 1 - Access allowed
 	circuit = /obj/item/circuitboard/computer/prisoner
 
 

@@ -32,7 +32,9 @@
 		if(damaged_clothes)
 			. += mutable_appearance('icons/effects/item_damage.dmi', "damageduniform")
 		if(HAS_BLOOD_DNA(src))
-			. += mutable_appearance('icons/effects/blood.dmi', "uniformblood")
+			var/mutable_appearance/bloody_uniform = mutable_appearance('icons/effects/blood.dmi', "uniformblood")
+			bloody_uniform.color = get_blood_dna_color(return_blood_DNA())
+			. += bloody_uniform
 		if(accessory_overlay)
 			. += accessory_overlay
 
@@ -41,7 +43,7 @@
 		var/obj/item/stack/cable_coil/C = I
 		C.use(1)
 		has_sensor = HAS_SENSORS
-		to_chat(user,"<span class='notice'>You repair the suit sensors on [src] with [C].</span>")
+		to_chat(user,"<span class='notice'>You repair the suit sensors on [src] с помощью [C].</span>")
 		return 1
 	if(!attach_accessory(I, user))
 		return ..()
@@ -165,9 +167,9 @@
 		. += "It looks fresh and clean."
 	if(can_adjust)
 		if(adjusted == ALT_STYLE)
-			. += "Alt-click on [src] to wear it normally."
+			. += "Alt-клик on [src] to wear it normally."
 		else
-			. += "Alt-click on [src] to wear it casually."
+			. += "Alt-клик on [src] to wear it casually."
 	if (has_sensor == BROKEN_SENSORS)
 		. += "Its sensors appear to be shorted out."
 	else if(has_sensor > NO_SENSORS)

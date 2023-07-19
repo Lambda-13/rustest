@@ -37,7 +37,7 @@ Note: Must be placed within 3 tiles of the R&D Console
 		if(!is_insertion_ready(user))
 			return
 		if(!user.transferItemToLoc(O, src))
-			to_chat(user, "<span class='warning'>\The [O] is stuck to your hand, you cannot put it in the [src.name]!</span>")
+			to_chat(user, "<span class='warning'>\The [O] прилип к рукеr hand, you cannot put it in the [src.name]!</span>")
 			return
 		busy = TRUE
 		loaded_item = O

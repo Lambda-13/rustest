@@ -136,7 +136,7 @@
 				log_bomber(user, "has trapped a", src, "with [bomb] set to [bomb_timer * 2] seconds")
 				bomb.adminlog = "The [bomb.name] in [src.name] that [key_name(user)] activated has detonated!"
 
-				to_chat(user, "<span class='warning'>You trap [src] with [bomb].</span>")
+				to_chat(user, "<span class='warning'>You trap [src] с помощью [bomb].</span>")
 				update_icon()
 	else if(boxes.len)
 		var/obj/item/pizzabox/topbox = boxes[boxes.len]
@@ -323,7 +323,7 @@
 /obj/item/pizzabox/infinite/examine(mob/user)
 	. = ..()
 	if(isobserver(user))
-		. += "<span class='deadsay'>This pizza box is anomalous, and will produce infinite pizza.</span>"
+		. += "<hr><span class='deadsay'>This pizza box is anomalous, and will produce infinite pizza.</span>"
 
 /obj/item/pizzabox/infinite/attack_self(mob/living/user)
 	QDEL_NULL(pizza)

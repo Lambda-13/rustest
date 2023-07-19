@@ -80,7 +80,7 @@ SUBSYSTEM_DEF(overmap)
 					return
 
 /datum/controller/subsystem/overmap/proc/overmap_container_view(user = usr)
-	. += "<a href='?src=[REF(src)];refresh=1'>\[Refresh\]</a><br><code>"
+	. += "<meta charset='utf-8'><a href='?src=[REF(src)];refresh=1'>\[Перезагрузить\]</a><br><code>"
 	for(var/y in size to 1 step -1)
 		for(var/x in 1 to size)
 			var/tile
@@ -95,11 +95,11 @@ SUBSYSTEM_DEF(overmap)
 			else
 				tile = "."
 				thing_to_link = overmap_container[x][y]
-			. += "<a href='?src=[REF(src)];view_object=[REF(thing_to_link)]' title='[x]x, [y]y'>[add_leading(add_trailing(tile, 2), 3)]</a>" //"centers" the character
+			. += "<meta charset='utf-8'><a href='?src=[REF(src)];view_object=[REF(thing_to_link)]' title='[x]x, [y]y'>[add_leading(add_trailing(tile, 2), 3)]</a>" //"centers" the character
 		. += "<br>"
 		CHECK_TICK
 	. += "</code>"
-	var/datum/browser/popup = new(usr, "overmap_viewer", "Overmap Viewer", 850, 700)
+	var/datum/browser/popup = new(usr, "overmap_viewer", "обзор овермапы", 850, 700)
 	popup.set_content(.)
 	popup.open()
 
@@ -283,7 +283,7 @@ SUBSYSTEM_DEF(overmap)
 
 	var/obj/docking_port/stationary/primary_dock = new(primary_docking_turf)
 	primary_dock.dir = NORTH
-	primary_dock.name = "\improper Uncharted Space"
+	primary_dock.name = "неизведанный космос"
 	primary_dock.height = RESERVE_DOCK_MAX_SIZE_SHORT
 	primary_dock.width = RESERVE_DOCK_MAX_SIZE_LONG
 	primary_dock.dheight = 0
@@ -292,7 +292,7 @@ SUBSYSTEM_DEF(overmap)
 
 	var/obj/docking_port/stationary/secondary_dock = new(secondary_docking_turf)
 	secondary_dock.dir = NORTH
-	secondary_dock.name = "\improper Uncharted Space"
+	secondary_dock.name = "неизведанный космос"
 	secondary_dock.height = RESERVE_DOCK_MAX_SIZE_SHORT
 	secondary_dock.width = RESERVE_DOCK_MAX_SIZE_LONG
 	secondary_dock.dheight = 0
@@ -315,7 +315,7 @@ SUBSYSTEM_DEF(overmap)
 
 		var/obj/docking_port/stationary/tertiary_dock = new(tertiary_docking_turf)
 		tertiary_dock.dir = NORTH
-		tertiary_dock.name = "\improper Uncharted Space"
+		tertiary_dock.name = "неизведанный космос"
 		tertiary_dock.height = RESERVE_DOCK_MAX_SIZE_SHORT
 		tertiary_dock.width = RESERVE_DOCK_MAX_SIZE_LONG
 		tertiary_dock.dheight = 0
@@ -324,7 +324,7 @@ SUBSYSTEM_DEF(overmap)
 
 		var/obj/docking_port/stationary/quaternary_dock = new(quaternary_docking_turf)
 		quaternary_dock.dir = NORTH
-		quaternary_dock.name = "\improper Uncharted Space"
+		quaternary_dock.name = "неизведанный космос"
 		quaternary_dock.height = RESERVE_DOCK_MAX_SIZE_SHORT
 		quaternary_dock.width = RESERVE_DOCK_MAX_SIZE_LONG
 		quaternary_dock.dheight = 0
@@ -374,11 +374,31 @@ SUBSYSTEM_DEF(overmap)
  * * source - The object you want to get the corresponding parent overmap object for.
  */
 /datum/controller/subsystem/overmap/proc/get_overmap_object_by_location(atom/source)
+	var/turf/T = get_turf(source)
+	var/area/ship/A = get_area(source)
+	while(istype(A) && A.mobile_port)
+		if(A.mobile_port.current_ship)
+			return A.mobile_port.current_ship
+		A = A.mobile_port.underlying_turf_area[T]
 	for(var/O in overmap_objects)
 		if(istype(O, /datum/overmap/dynamic))
 			var/datum/overmap/dynamic/D = O
 			if(D.mapzone?.is_in_bounds(source))
 				return D
+
+/// Returns TRUE if players should be allowed to create a ship by "standard" means, and FALSE otherwise.
+/datum/controller/subsystem/overmap/proc/player_ship_spawn_allowed()
+	if(!(GLOB.ship_spawn_enabled) || (get_num_cap_ships() >= CONFIG_GET(number/max_shuttle_count)))
+		return FALSE
+	return TRUE
+
+/// Returns the number of ships on the overmap that count against the spawn cap.
+/datum/controller/subsystem/overmap/proc/get_num_cap_ships()
+	var/ship_count = 0
+	for(var/datum/overmap/ship/controlled/Ship as anything in controlled_ships)
+		if(!Ship.source_template || Ship.source_template.category != "subshuttles")
+			ship_count++
+	return ship_count
 
 /datum/controller/subsystem/overmap/Recover()
 	if(istype(SSovermap.overmap_objects))

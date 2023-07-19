@@ -13,7 +13,7 @@
 
 /obj/item/assembly/mousetrap/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>The pressure plate is [armed?"primed":"safe"].</span>"
+	. += "<hr><span class='notice'>The pressure plate is [armed?"primed":"safe"].</span>"
 
 /obj/item/assembly/mousetrap/activate()
 	if(..())

@@ -48,8 +48,8 @@
 		if(prob(20))
 			var/mob/living/carbon/D = target
 			D.Paralyze(25)
-			D.visible_message("<span class='danger'>\The [src] knocks down \the [D]!</span>", \
-					"<span class='userdanger'>\The [src] knocks you down!</span>")
+			D.visible_message("<span class='danger'>[src] knocks down \the [D]!</span>", \
+					"<span class='userdanger'>[src] knocks you down!</span>")
 
 /mob/living/simple_animal/hostile/guardian/slime/ToggleMode()
 	if(src.loc == summoner)

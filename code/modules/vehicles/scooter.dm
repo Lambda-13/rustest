@@ -38,7 +38,7 @@
 	if(!istype(M))
 		return FALSE
 	if(M.usable_legs < legs_required && M.usable_hands < arms_required)
-		to_chat(M, "<span class='warning'>You don't think it'd be a good idea trying to ride \the [src]...</span>")
+		to_chat(M, "<span class='warning'>You don't think it'd be a good idea trying to ride [src]...</span>")
 		return FALSE
 	return ..()
 

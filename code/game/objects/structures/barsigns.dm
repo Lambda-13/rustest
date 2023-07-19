@@ -67,7 +67,7 @@
 	if(.)
 		return
 	if(!allowed(user))
-		to_chat(user, "<span class='info'>Access denied.</span>")
+		to_chat(user, "<span class='info'>Доступ запрещён.</span>")
 		return
 	if(broken)
 		to_chat(user, "<span class='danger'>The controls seem unresponsive.</span>")
@@ -77,11 +77,11 @@
 /obj/structure/sign/barsign/attackby(obj/item/I, mob/user)
 	if(I.tool_behaviour == TOOL_SCREWDRIVER)
 		if(!panel_open)
-			to_chat(user, "<span class='notice'>You open the maintenance panel.</span>")
+			to_chat(user, "<span class='notice'>Открываю техническую панель panel.</span>")
 			set_sign(new /datum/barsign/hiddensigns/signoff)
 			panel_open = TRUE
 		else
-			to_chat(user, "<span class='notice'>You close the maintenance panel.</span>")
+			to_chat(user, "<span class='notice'>Закрываю техническую панель panel.</span>")
 			if(!broken)
 				if(!chosen_sign)
 					set_sign(new /datum/barsign/hiddensigns/signoff)

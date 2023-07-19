@@ -40,7 +40,7 @@
 		icon = I
 
 /obj/item/photo/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] is taking one last look at \the [src]! It looks like [user.p_theyre()] giving in to death!</span>")//when you wanna look at photo of waifu one last time before you die...
+	user.visible_message("<span class='suicide'>[user] is taking one last look at [src]! It looks like [user.p_theyre()] giving in to death!</span>")//when you wanna look at photo of waifu one last time before you die...
 	if (user.gender == MALE)
 		playsound(user, 'sound/voice/human/manlaugh1.ogg', 50, TRUE)//EVERY TIME I DO IT MAKES ME LAUGH
 	else if (user.gender == FEMALE)
@@ -69,7 +69,7 @@
 	if(in_range(src, user) || isobserver(user))
 		show(user)
 	else
-		. += "<span class='warning'>You need to get closer to get a good look at this photo!</span>"
+		. += "<hr><span class='warning'>You need to get closer to get a good look at this photo!</span>"
 
 /obj/item/photo/proc/show(mob/user)
 	if(!istype(picture) || !picture.picture_image)

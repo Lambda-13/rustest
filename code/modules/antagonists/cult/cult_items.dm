@@ -137,7 +137,7 @@
 
 /obj/item/cult_bastard/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>This weapon will absorb the souls of unconscious human foes.</span>"
+	. += "<hr><span class='notice'>This weapon will absorb the souls of unconscious human foes.</span>"
 	if(contents.len)
 		. += "<b>There are [contents.len] souls trapped within the sword's core.</b>"
 	else
@@ -173,7 +173,7 @@
 	else
 		..()
 
-/obj/item/cult_bastard/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
+/obj/item/cult_bastard/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "атаку", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	if(prob(final_block_chance))
 		if(attack_type == PROJECTILE_ATTACK)
 			owner.visible_message("<span class='danger'>[owner] deflects [attack_text] with [src]!</span>")
@@ -405,7 +405,7 @@
 		user.Dizzy(30)
 		user.Paralyze(100)
 
-/obj/item/clothing/suit/hooded/cultrobes/cult_shield/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
+/obj/item/clothing/suit/hooded/cultrobes/cult_shield/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "атаку", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	if(current_charges)
 		owner.visible_message("<span class='danger'>\The [attack_text] is deflected in a burst of blood-red sparks!</span>")
 		current_charges--
@@ -483,9 +483,9 @@
 /obj/item/cult_shift/examine(mob/user)
 	. = ..()
 	if(uses)
-		. += "<span class='cult'>It has [uses] use\s remaining.</span>"
+		. += "<hr><span class='cult'>It has [uses] use\s remaining.</span>"
 	else
-		. += "<span class='cult'>It seems drained.</span>"
+		. += "<hr><span class='cult'>It seems drained.</span>"
 
 /obj/item/cult_shift/proc/handle_teleport_grab(turf/T, mob/user)
 	var/mob/living/carbon/C = user
@@ -496,7 +496,7 @@
 
 /obj/item/cult_shift/attack_self(mob/user)
 	if(!uses || !iscarbon(user))
-		to_chat(user, "<span class='warning'>\The [src] is dull and unmoving in your hands.</span>")
+		to_chat(user, "<span class='warning'>[src] is dull and unmoving in your hands.</span>")
 		return
 
 	var/mob/living/carbon/C = user
@@ -565,16 +565,16 @@
 		if(A in user.GetAllContents())
 			to_chat(user, "<span class='cult italic'>[A] must be on a surface in order to teleport it!</span>")
 			return
-		to_chat(user, "<span class='cult italic'>You ignite [A] with \the [src], turning it to ash, but through the torch's flames you see that [A] has reached [cultist_to_receive]!</span>")
+		to_chat(user, "<span class='cult italic'>You ignite [A] with [src], turning it to ash, but through the torch's flames you see that [A] has reached [cultist_to_receive]!</span>")
 		cultist_to_receive.put_in_hands(A)
 		charges--
-		to_chat(user, "\The [src] now has [charges] charge\s.")
+		to_chat(user, "[src] now has [charges] charge\s.")
 		if(charges == 0)
 			qdel(src)
 
 	else
 		..()
-		to_chat(user, "<span class='warning'>\The [src] can only transport items!</span>")
+		to_chat(user, "<span class='warning'>[src] can only transport items!</span>")
 
 
 /obj/item/cult_spear
@@ -653,7 +653,7 @@
 			playsound(T, 'sound/effects/glassbr3.ogg', 100)
 	qdel(src)
 
-/obj/item/cult_spear/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
+/obj/item/cult_spear/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "атаку", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	if(wielded)
 		final_block_chance *= 2
 	if(prob(final_block_chance))
@@ -845,8 +845,7 @@
 						L.adjustBruteLoss(45)
 						playsound(L, 'sound/hallucinations/wail.ogg', 50, TRUE)
 						L.emote("scream")
-		var/datum/beam/current_beam = new(user,temp_target,time=7,beam_icon_state="blood_beam",btype=/obj/effect/ebeam/blood)
-		INVOKE_ASYNC(current_beam, /datum/beam.proc/Start)
+		user.Beam(temp_target, icon_state="blood_beam", time = 7, beam_type = /obj/effect/ebeam/blood)
 
 
 /obj/effect/ebeam/blood
@@ -867,7 +866,7 @@
 	hitsound = 'sound/weapons/smash.ogg'
 	var/illusions = 2
 
-/obj/item/shield/mirror/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
+/obj/item/shield/mirror/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "атаку", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	if(iscultist(owner))
 		if(istype(hitby, /obj/projectile))
 			var/obj/projectile/P = hitby

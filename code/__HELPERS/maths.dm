@@ -18,18 +18,6 @@
 	var/ind = (round(angle, 45) / 45 % 8) + 1
 	return dirs[ind]
 
-/// Angle between two arbitrary points and horizontal line same as [/proc/get_angle]
-/proc/get_angle_raw(start_x, start_y, start_pixel_x, start_pixel_y, end_x, end_y, end_pixel_x, end_pixel_y)
-	var/dy = (32 * end_y + end_pixel_y) - (32 * start_y + start_pixel_y)
-	var/dx = (32 * end_x + end_pixel_x) - (32 * start_x + start_pixel_x)
-	if(!dy)
-		return (dx >= 0) ? 90 : 270
-	. = arctan(dx/dy)
-	if(dy < 0)
-		. += 180
-	else if(dx < 0)
-		. += 360
-
 ///for getting the angle when animating something's pixel_x and pixel_y
 /proc/get_pixel_angle(y, x)
 	if(!y)
@@ -89,22 +77,22 @@
 ///Format a power value in W, kW, MW, or GW.
 /proc/display_power(powerused)
 	if(powerused < 1000) //Less than a kW
-		return "[powerused] W"
+		return "[powerused] В"
 	else if(powerused < 1000000) //Less than a MW
-		return "[round((powerused * 0.001),0.01)] kW"
+		return "[round((powerused * 0.001),0.01)] кВ"
 	else if(powerused < 1000000000) //Less than a GW
-		return "[round((powerused * 0.000001),0.001)] MW"
-	return "[round((powerused * 0.000000001),0.0001)] GW"
+		return "[round((powerused * 0.000001),0.001)] мВ"
+	return "[round((powerused * 0.000000001),0.0001)] гВ"
 
 ///Format an energy value in J, kJ, MJ, or GJ. 1W = 1J/s.
 /proc/display_joules(units)
 	if (units < 1000) // Less than a kJ
-		return "[round(units, 0.1)] J"
+		return "[round(units, 0.1)] Дж"
 	else if (units < 1000000) // Less than a MJ
-		return "[round(units * 0.001, 0.01)] kJ"
+		return "[round(units * 0.001, 0.01)] кДж"
 	else if (units < 1000000000) // Less than a GJ
-		return "[round(units * 0.000001, 0.001)] MJ"
-	return "[round(units * 0.000000001, 0.0001)] GJ"
+		return "[round(units * 0.000001, 0.001)] мДж"
+	return "[round(units * 0.000000001, 0.0001)] гДж"
 
 /proc/joules_to_energy(joules)
 	return joules * (1 SECONDS) / SSmachines.wait

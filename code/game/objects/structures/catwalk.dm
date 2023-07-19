@@ -27,15 +27,14 @@
 
 /obj/structure/catwalk/over/plated_catwalk
 	name = "plated catwalk"
-	icon_state = "catwalk_plated"
 	plated_tile = /obj/item/stack/tile/plasteel
+	icon_state = "catwalk_plated"
 
 /obj/structure/catwalk/over/plated_catwalk/dark
 	plated_tile = /obj/item/stack/tile/plasteel/dark
 	icon_state = "catwalk_plateddark"
 
 /obj/structure/catwalk/over/plated_catwalk/white
-	name = "plated catwalk"
 	plated_tile = /obj/item/stack/tile/plasteel/white
 	icon_state = "catwalk_platedwhite"
 
@@ -44,11 +43,10 @@
 	cut_overlays()
 	icon_state = hatch_open ? "open" : "catwalk"
 	if(plated_tile)
-		var/turf/open/floor/turf_type = initial(plated_tile.turf_type)
 		smoothing_flags &= ~SMOOTH_BITMASK
 		SSicon_smooth.remove_from_queues(src)
 		var/image/I = image('icons/obj/smooth_structures/more_catwalk.dmi', "plated")
-		I.color = initial(turf_type.color)
+		I.color = initial(plated_tile.color)
 		overlays += I
 	else
 		smoothing_flags |= SMOOTH_BITMASK
@@ -56,7 +54,7 @@
 /obj/structure/catwalk/examine(mob/user)
 	. = ..()
 	if(!(resistance_flags & INDESTRUCTIBLE))
-		. += "<span class='notice'>The supporting rods look like they could be <b>sliced</b>.</span>"
+		. += "<hr><span class='notice'>The supporting rods look like they could be <b>sliced</b>.</span>"
 
 /obj/structure/catwalk/attackby(obj/item/C, mob/user, params)
 	if(C.tool_behaviour == TOOL_WELDER && !(resistance_flags & INDESTRUCTIBLE))
@@ -67,17 +65,17 @@
 		hatch_open = !hatch_open
 		if(hatch_open)
 			C.play_tool_sound(src, 100)
-			to_chat(user, "<span class='notice'>You pry open \the [src]'s maintenance hatch.</span>")
+			to_chat(user, "<span class='notice'>Вскрываю [src]'s maintenance hatch.</span>")
 		else
 			playsound(src, 'sound/items/Deconstruct.ogg', 100, 2)
-			to_chat(user, "<span class='notice'>You shut \the [src]'s maintenance hatch.</span>")
+			to_chat(user, "<span class='notice'>You shut [src]'s maintenance hatch.</span>")
 		update_icon()
 		return
 	if(istype(C, /obj/item/stack/tile) && !plated_tile)
 		var/obj/item/stack/tile/plasteel/ST = C
 		to_chat(user, "<span class='notice'>Placing tile...</span>")
 		if(do_after(user, 30, target = src))
-			to_chat(user, "<span class='notice'>You plate \the [src]</span>")
+			to_chat(user, "<span class='notice'>You plate [src]</span>")
 			name = "plated catwalk"
 			src.add_fingerprint(user)
 			if(ST.use(1))

@@ -138,16 +138,16 @@
 	throw_speed = 2
 	throw_range = 4
 	w_class = WEIGHT_CLASS_BULKY
-	attack_verb = list("bashed", "battered", "bludgeoned", "thrashed", "whacked")
+	attack_verb = list("бьёт", "забивает", "избивает", "ударяет")
 	resistance_flags = FLAMMABLE
 	var/obj/machinery/recharger/portable_recharger/link
 	var/obj/item/stock_parts/cell/incell = null
 
 /obj/item/case_portable_recharger/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>Внутри [incell ? "есть [incell]" : "остутствует аккумулятор"]!</span>"
+	. += "<hr><span class='notice'>Внутри [incell ? "есть [incell]" : "остутствует аккумулятор"]!</span>"
 	if(incell)
-		. += "<span class='notice'>[incell] заряжен на [incell.percent()]!</span>"
+		. += "<hr><span class='notice'>[incell] заряжен на [incell.percent()]!</span>"
 
 //Типа линковка
 /obj/item/case_portable_recharger/Initialize()

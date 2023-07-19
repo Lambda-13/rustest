@@ -73,7 +73,7 @@
 	. = ..()
 	AddComponent(/datum/component/butchering, 30, 95, 5) //fast and effective, but as a sword, it might damage the results.
 
-/obj/item/melee/sabre/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
+/obj/item/melee/sabre/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "атаку", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	if(attack_type == PROJECTILE_ATTACK)
 		final_block_chance = 0 //Don't bring a sword to a gunfight
 	return ..()
@@ -125,6 +125,12 @@
 		user.adjustBruteLoss(200)
 		user.death(FALSE)
 	REMOVE_TRAIT(src, TRAIT_NODROP, SABRE_SUICIDE_TRAIT)
+
+/obj/item/melee/sabre/solgov
+	name = "solarian sabre"
+	desc = "A refined ceremonial blade often given to soldiers and high ranking officials of SolGov."
+	icon_state = "sabresolgov"
+	item_state = "sabresolgov"
 
 /obj/item/melee/beesword
 	name = "The Stinger"
@@ -757,7 +763,7 @@
 	. = ..()
 	AddComponent(/datum/component/butchering, 25, 90, 5) //Not made for scalping victims, but will work nonetheless
 
-/obj/item/melee/weebstick/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
+/obj/item/melee/weebstick/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "атаку", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	if(attack_type == PROJECTILE_ATTACK)
 		final_block_chance = block_chance / 2 //Pretty good...
 	return ..()
@@ -808,8 +814,8 @@
 /obj/item/storage/belt/weebstick/examine(mob/user)
 	. = ..()
 	if(length(contents))
-		. += "<span class='notice'>Use [src] in-hand to prime for an opening strike."
-		. += "<span class='info'>Alt-click it to quickly draw the blade.</span>"
+		. += "<hr><span class='notice'>Use [src] in-hand to prime for an opening strike."
+		. += "<hr><span class='info'>Alt-клик it to quickly draw the blade.</span>"
 
 /obj/item/storage/belt/weebstick/AltClick(mob/user)
 	if(!iscarbon(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)) || primed)

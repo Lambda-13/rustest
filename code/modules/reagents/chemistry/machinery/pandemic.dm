@@ -11,6 +11,7 @@
 	idle_power_usage = 20
 	resistance_flags = ACID_PROOF
 	circuit = /obj/item/circuitboard/computer/pandemic
+	unique_icon = TRUE
 
 	var/wait
 	var/datum/symptom/selected_symptom
@@ -33,7 +34,7 @@
 			is_close = TRUE
 		else
 			. += "It has a beaker inside it."
-		. += "<span class='info'>Alt-click to eject [is_close ? beaker : "the beaker"].</span>"
+		. += "<hr><span class='info'>Alt-клик to eject [is_close ? beaker : "the beaker"].</span>"
 
 /obj/machinery/computer/pandemic/AltClick(mob/user)
 	. = ..()

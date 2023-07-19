@@ -27,11 +27,6 @@
 	//If you have the use_age_restriction_for_jobs config option enabled and the database set up, this option will add a requirement for players to be at least minimal_player_age days old. (meaning they first signed in at least that many days before.)
 	var/minimal_player_age = 0
 
-	var/exp_requirements = 0
-
-	var/exp_type = ""
-	var/exp_type_department = ""
-
 	/// A link to the relevant wiki related to the job. Ex: "Space_law" would link to wiki.blah/Space_law
 	var/wiki_page = ""
 
@@ -73,7 +68,11 @@
 		if(back_storage)
 			back_storage.handle_item_insertion(loadout_dumper, TRUE)
 		else if(!spawnee.put_in_hands(loadout_dumper, TRUE))
-			to_chat("Unable to place loadout box.")
+			to_chat("Коробка с вашими личными вещами не была вам выдана.")
+		if(officer)
+			if(back_storage)
+				back_storage.handle_item_insertion(new /obj/item/choice_beacon/support_beacon, TRUE)
+				to_chat("У меня в сумке есть маяк поддержки - с помощью него я смогу заказать нужные вещи. <br>Но нужно выбирать с умом - маяк <b>одноразовый</b>.")
 
 /datum/job/proc/override_latejoin_spawn(mob/living/carbon/human/H)		//Return TRUE to force latejoining to not automatically place the person in latejoin shuttle/whatever.
 	return FALSE
@@ -91,7 +90,7 @@
 	if(living_mob.mind)
 		living_mob.mind.assigned_role = name
 
-	to_chat(living_mob, "<b>You are the [name].</b>")
+	to_chat(living_mob, "<b>Теперь я [name]. [pick("Круто", "Классно", "Прикольно", "Эх", "Хм", "Вау")].</b>")
 
 	var/new_mob = equip(living_mob, null, null, null, living_mob.client)//silicons override this proc to return a mob
 	if(ismob(new_mob))
@@ -114,7 +113,7 @@
 		to_chat(living_mob,related_policy)
 	if(ishuman(living_mob))
 		var/mob/living/carbon/human/wageslave = living_mob
-		living_mob.add_memory("Your account ID is [wageslave.account_id].")
+		living_mob.add_memory("Твой ID аккаунта [wageslave.account_id].")
 	if(living_mob)
 		after_spawn(living_mob, living_mob) // note: this happens before the mob has a key! living_mob will always have a client, H might not.
 
@@ -132,7 +131,7 @@
 		return FALSE
 	if(!visualsOnly)
 		var/datum/bank_account/bank_account = new(H.real_name, src)
-		bank_account.adjust_money(officer ? 250 : 100) //just a little bit of money for you
+		bank_account.adjust_money(officer ? 2000 : 500) // Больше денег если ты офицер
 		H.account_id = bank_account.account_id
 
 	//Equip the rest of the gear
@@ -180,7 +179,7 @@
 	return max(0, minimal_player_age - C.player_age)
 
 /datum/job/proc/radio_help_message(mob/M)
-	to_chat(M, "<b>Prefix your message with :h to speak on your department's radio. To see other prefixes, look closely at your headset.</b>")
+	to_chat(M, "<b>Добавьте к своему сообщению префикс :h, чтобы говорить по радио вашего отдела. Чтобы увидеть другие префиксы, внимательно осмотрите свою гарнитуру.</b>")
 
 /datum/outfit/job
 	name = "Standard Gear"

@@ -24,7 +24,6 @@
 /obj/machinery/portable_atmospherics/Destroy()
 	SSair.stop_processing_machine(src)
 	disconnect()
-	qdel(air_contents)
 	air_contents = null
 
 	return ..()
@@ -99,8 +98,8 @@
 /obj/machinery/portable_atmospherics/examine(mob/user)
 	. = ..()
 	if(holding)
-		. += "<span class='notice'>\The [src] contains [holding]. Alt-click [src] to remove it.</span>"+\
-			"<span class='notice'>Click [src] with another gas tank to hot swap [holding].</span>"
+		. += "<hr><span class='notice'>[src] contains [holding]. Alt-клик [src] to remove it.</span>"+\
+			"<span class='notice'>Click [src] с помощью another gas tank to hot swap [holding].</span>"
 
 /obj/machinery/portable_atmospherics/proc/replace_tank(mob/living/user, close_valve, obj/item/tank/new_tank)
 	if(!user)

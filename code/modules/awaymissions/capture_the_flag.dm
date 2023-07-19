@@ -52,7 +52,7 @@
 		for(var/mob/M in GLOB.player_list)
 			var/area/mob_area = get_area(M)
 			if(istype(mob_area, /area/ctf))
-				to_chat(M, "<span class='userdanger'>\The [src] has been returned to base!</span>")
+				to_chat(M, "<span class='userdanger'>[src] has been returned to base!</span>")
 		STOP_PROCESSING(SSobj, src)
 
 //ATTACK HAND IGNORING PARENT RETURN VALUE
@@ -76,7 +76,7 @@
 	for(var/mob/M in GLOB.player_list)
 		var/area/mob_area = get_area(M)
 		if(istype(mob_area, /area/ctf))
-			to_chat(M, "<span class='userdanger'>\The [src] has been taken!</span>")
+			to_chat(M, "<span class='userdanger'>[src] has been taken!</span>")
 	STOP_PROCESSING(SSobj, src)
 	..()
 
@@ -89,7 +89,7 @@
 	for(var/mob/M in GLOB.player_list)
 		var/area/mob_area = get_area(M)
 		if(istype(mob_area, /area/ctf))
-			to_chat(M, "<span class='userdanger'>\The [src] has been dropped!</span>")
+			to_chat(M, "<span class='userdanger'>[src] has been dropped!</span>")
 	anchored = TRUE
 
 
@@ -695,7 +695,7 @@
 				for(var/mob/M in GLOB.player_list)
 					var/area/mob_area = get_area(M)
 					if(istype(mob_area, /area/ctf))
-						to_chat(M, "<span class='userdanger'>[user.real_name] has captured \the [src], claiming it for [CTF.team]! Go take it back!</span>")
+						to_chat(M, "<span class='userdanger'>[user.real_name] has captured [src], claiming it for [CTF.team]! Go take it back!</span>")
 				break
 
 #undef WHITE_TEAM

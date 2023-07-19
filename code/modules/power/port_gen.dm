@@ -124,11 +124,11 @@
 
 /obj/machinery/power/port_gen/pacman/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>Внутри видно [sheets] единиц [sheet_name], которые вырабатывают [DisplayPower(power_gen)] каждый цикл.</span>"
+	. += "<hr><span class='notice'>Внутри видно [sheets] единиц [sheet_name], которые вырабатывают [DisplayPower(power_gen)] каждый цикл.</span>"
 	if(anchored)
-		. += "<span class='notice'>Прикручен к полу.</span>"
+		. += "<hr><span class='notice'>Прикручен к полу.</span>"
 	if(in_range(user, src) || isobserver(user))
-		. += "<span class='notice'>Дисплей показывает: Топливная эффективность увеличена на <b>[(consumption*100)-100]%</b>.</span>"
+		. += "<hr><span class='notice'>Дисплей показывает: Топливная эффективность увеличена на <b>[(consumption*100)-100]%</b>.</span>"
 
 /obj/machinery/power/port_gen/pacman/HasFuel()
 	if(sheets >= 1 / (time_per_sheet / power_output) - sheet_left)

@@ -15,7 +15,7 @@
 	drop_sound = 'sound/items/handling/wrench_drop.ogg'
 	pickup_sound =  'sound/items/handling/wrench_pickup.ogg'
 
-	attack_verb = list("bashed", "battered", "bludgeoned", "whacked")
+	attack_verb = list("бьёт", "забивает", "ударяет")
 	tool_behaviour = TOOL_WRENCH
 	toolspeed = 1
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 30)
@@ -48,7 +48,7 @@
 /obj/item/wrench/medical/examine(mob/user)
 	. = ..()
 	if(suicider)
-		. += "<span class='notice'>For some reason, it reminds you of [suicider].</span>"
+		. += "<hr><span class='notice'>For some reason, it reminds you of [suicider].</span>"
 
 /obj/item/wrench/medical/suicide_act(mob/living/user)
 	user.visible_message("<span class='suicide'>[user] is praying to the medical wrench to take [user.p_their()] soul. It looks like [user.p_theyre()] trying to commit suicide!</span>")

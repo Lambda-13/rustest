@@ -236,12 +236,12 @@
 	if(!length(shown_skills))
 		to_chat(user, span_notice("Да у меня и нет каких-то особых навыков."))
 		return
-	var/msg = "<span class='info'><EM>Мои навыки</EM></span>\n<span class='notice'>"
+	var/msg = "[span_info("<EM>Мои навыки</EM>")]\n<span class='notice'>"
 	for(var/i in shown_skills)
 		var/datum/skill/the_skill = i
 		msg += "[initial(the_skill.name)] - [get_skill_level_name(the_skill)]\n"
 	msg += "</span>"
-	to_chat(user, "<div class='examine_block'>[msg]</div>")
+	to_chat(user, examine_block(msg))
 
 /datum/mind/proc/set_death_time()
 	SIGNAL_HANDLER

@@ -41,13 +41,13 @@
 /obj/machinery/door/firedoor/examine(mob/user)
 	. = ..()
 	if(!density)
-		. += "<span class='notice'>It is open, but could be <b>pried</b> closed.</span>"
+		. += "<hr><span class='notice'>It is open, but could be <b>pried</b> closed.</span>"
 	else if(!welded)
-		. += "<span class='notice'>It is closed, but could be <i>pried</i> open. Deconstruction would require it to be <b>welded</b> shut.</span>"
+		. += "<hr><span class='notice'>It is closed, but could be <i>pried</i> open. Deconstruction would require it to be <b>welded</b> shut.</span>"
 	else if(boltslocked)
-		. += "<span class='notice'>It is <i>welded</i> shut. The floor bolts have been locked by <b>screws</b>.</span>"
+		. += "<hr><span class='notice'>It is <i>welded</i> shut. The floor bolts have been locked by <b>screws</b>.</span>"
 	else
-		. += "<span class='notice'>The bolt locks have been <i>unscrewed</i>, but the bolts themselves are still <b>wrenched</b> to the floor.</span>"
+		. += "<hr><span class='notice'>The bolt locks have been <i>unscrewed</i>, but the bolts themselves are still <b>wrenched</b> to the floor.</span>"
 
 /obj/machinery/door/firedoor/proc/CalculateAffectingAreas()
 	remove_from_areas()
@@ -101,8 +101,8 @@
 	if(.)
 		return
 	if(!welded && !operating && !(machine_stat & NOPOWER) && (!density || allow_hand_open(user)))
-		user.visible_message("[user] tries to open \the [src] manually.",
-								"You operate the manual lever on \the [src].")
+		user.visible_message("[user] tries to open [src] manually.",
+								"You operate the manual lever on [src].")
 		if (!do_after(user, 30, TRUE, src))
 			return FALSE
 		add_fingerprint(user)
@@ -117,8 +117,8 @@
 	user.changeNext_move(CLICK_CD_MELEE)
 
 	user.visible_message(
-		"<span class='notice'>[user] bangs on \the [src].</span>", \
-		"<span class='notice'>You bang on \the [src].</span>")
+		"<span class='notice'>[user] bangs on [src].</span>", \
+		"<span class='notice'>You bang on [src].</span>")
 	playsound(loc, 'sound/effects/glassknock.ogg', 10, FALSE, frequency = 32000)
 
 /obj/machinery/door/firedoor/attackby(obj/item/C, mob/user, params)
@@ -172,7 +172,7 @@
 	if(density)
 		if(is_holding_pressure())
 			// tell the user that this is a bad idea, and have a do_after as well
-			to_chat(user, "<span class='warning'>As you begin crowbarring \the [src] a gush of air blows in your face... maybe you should reconsider?</span>")
+			to_chat(user, "<span class='warning'>As you begin crowbarring [src] a gush of air blows in your face... maybe you should reconsider?</span>")
 			if(!do_after(user, 20, TRUE, src)) // give them a few seconds to reconsider their decision.
 				return
 			log_game("[key_name(user)] has opened a firelock with a pressure difference at [AREACOORD(loc)]")
@@ -381,7 +381,7 @@
 	var/status1 = check_door_side(T)
 	var/status2 = check_door_side(T2)
 	if((status1 == 1 && status2 == -1) || (status1 == -1 && status2 == 1))
-		to_chat(user, "<span class='warning'>Access denied. Try closing another firedoor to minimize decompression, or using a crowbar.</span>")
+		to_chat(user, "<span class='warning'>Доступ запрещён. Try closing another firedoor to minimize decompression, or using a crowbar.</span>")
 		return FALSE
 	return TRUE
 
@@ -499,15 +499,15 @@
 	. = ..()
 	switch(constructionStep)
 		if(CONSTRUCTION_PANEL_OPEN)
-			. += "<span class='notice'>It is <i>unbolted</i> from the floor. A small <b>loosely connected</b> metal plate is covering the wires.</span>"
+			. += "<hr><span class='notice'>It is <i>unbolted</i> from the floor. A small <b>loosely connected</b> metal plate is covering the wires.</span>"
 			if(!reinforced)
-				. += "<span class='notice'>It could be reinforced with plasteel.</span>"
+				. += "<hr><span class='notice'>It could be reinforced with plasteel.</span>"
 		if(CONSTRUCTION_WIRES_EXPOSED)
-			. += "<span class='notice'>The maintenance plate has been <i>pried away</i>, and <b>wires</b> are trailing.</span>"
+			. += "<hr><span class='notice'>The maintenance plate has been <i>pried away</i>, and <b>wires</b> are trailing.</span>"
 		if(CONSTRUCTION_GUTTED)
-			. += "<span class='notice'>The maintenance panel is missing <i>wires</i> and the circuit board is <b>loosely connected</b>.</span>"
+			. += "<hr><span class='notice'>The maintenance panel is missing <i>wires</i> and the circuit board is <b>loosely connected</b>.</span>"
 		if(CONSTRUCTION_NOCIRCUIT)
-			. += "<span class='notice'>There are no <i>firelock electronics</i> in the frame. The frame could be <b>cut</b> apart.</span>"
+			. += "<hr><span class='notice'>There are no <i>firelock electronics</i> in the frame. The frame could be <b>cut</b> apart.</span>"
 
 /obj/structure/firelock_frame/update_icon_state()
 	icon_state = "frame[constructionStep]"

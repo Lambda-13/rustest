@@ -14,8 +14,9 @@
 	move_to_delay = 20
 	ranged = TRUE
 	ranged_cooldown_time = 200
-	maxHealth = 300
-	health = 300
+	maxHealth = 80
+	health = 80
+	armor = list("melee" = 40, "bullet" = 40, "laser" = 25, "energy" = 10, "bomb" = 50, "bio" = 10, "rad" = 10, "fire" = 10, "acid" = 10)
 	obj_damage = 15
 	melee_damage_lower = 20
 	melee_damage_upper = 20
@@ -25,7 +26,7 @@
 	vision_range = 5
 	aggro_vision_range = 5
 	move_resist = MOVE_FORCE_VERY_STRONG
-	butcher_results = list(/obj/item/stack/ore/diamond = 3, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/sheet/bone = 10, /obj/item/stack/sheet/animalhide/ashdrake = 1)
+	butcher_results = list(/obj/item/stack/ore/diamond = 2, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/sheet/bone = 4, /obj/item/stack/sheet/animalhide/ashdrake = 1)
 	loot = list()
 	crusher_loot = /obj/item/crusher_trophy/tail_spike
 	deathmessage = "collapses on its side."

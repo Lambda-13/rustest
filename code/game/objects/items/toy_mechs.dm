@@ -251,15 +251,15 @@
 
 /obj/item/toy/prize/examine()
 	. = ..()
-	. += "<span class='notice'>This toy's special attack is [special_attack_cry], [special_attack_type_message] </span>"
+	. += "<hr><span class='notice'>This toy's special attack is [special_attack_cry], [special_attack_type_message] </span>"
 	if(in_combat)
-		. += "<span class='notice'>This toy has a maximum health of [max_combat_health]. Currently, it's [combat_health].</span>"
-		. += "<span class='notice'>Its special move light is [special_attack_cooldown? "flashing red." : "green and is ready!"]</span>"
+		. += "<hr><span class='notice'>This toy has a maximum health of [max_combat_health]. Currently, it's [combat_health].</span>"
+		. += "<hr><span class='notice'>Its special move light is [special_attack_cooldown? "flashing red." : "green and is ready!"]</span>"
 	else
-		. += "<span class='notice'>This toy has a maximum health of [max_combat_health].</span>"
+		. += "<hr><span class='notice'>This toy has a maximum health of [max_combat_health].</span>"
 
 	if(wins || losses)
-		. += "<span class='notice'>This toy has [wins] wins, and [losses] losses.</span>"
+		. += "<hr><span class='notice'>This toy has [wins] wins, and [losses] losses.</span>"
 
 /**
  * Override the say proc if they're mute

@@ -71,11 +71,11 @@
 	if(istype(user,/mob/living/simple_animal/hostile/rat))
 		var/mob/living/simple_animal/hostile/rat/ratself = user
 		if(ratself.faction_check_mob(src, TRUE))
-			. += "<span class='notice'>This is your king. Long live his majesty!</span>"
+			. += "<hr><span class='notice'>This is your king. Long live his majesty!</span>"
 		else
-			. += "<span class='warning'>This is a false king! Strike him down!</span>"
+			. += "<hr><span class='warning'>This is a false king! Strike him down!</span>"
 	else if(istype(user,/mob/living/simple_animal/hostile/regalrat))
-		. += "<span class='warning'>Who is this foolish false king? This will not stand!</span>"
+		. += "<hr><span class='warning'>Who is this foolish false king? This will not stand!</span>"
 
 /**
  *This action creates trash, money, dirt, and cheese.
@@ -197,15 +197,15 @@
 	if(istype(user,/mob/living/simple_animal/hostile/rat))
 		var/mob/living/simple_animal/hostile/rat/ratself = user
 		if(ratself.faction_check_mob(src, TRUE))
-			. += "<span class='notice'>You both serve the same king.</span>"
+			. += "<hr><span class='notice'>You both serve the same king.</span>"
 		else
-			. += "<span class='warning'>This fool serves a different king!</span>"
+			. += "<hr><span class='warning'>This fool serves a different king!</span>"
 	else if(istype(user,/mob/living/simple_animal/hostile/regalrat))
 		var/mob/living/simple_animal/hostile/regalrat/ratking = user
 		if(ratking.faction_check_mob(src, TRUE))
-			. += "<span class='notice'>This rat serves under you.</span>"
+			. += "<hr><span class='notice'>This rat serves under you.</span>"
 		else
-			. += "<span class='warning'>This peasant serves a different king! Strike him down!</span>"
+			. += "<hr><span class='warning'>This peasant serves a different king! Strike him down!</span>"
 
 /mob/living/simple_animal/hostile/rat/CanAttack(atom/the_target)
 	if(istype(the_target,/mob/living/simple_animal))

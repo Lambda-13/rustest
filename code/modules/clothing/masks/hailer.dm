@@ -123,7 +123,7 @@ GLOBAL_LIST_INIT(hailer_phrases, list(
 	if(!isliving(usr) || !can_use(usr) || cooldown)
 		return
 	if(broken_hailer)
-		to_chat(usr, "<span class='warning'>\The [src]'s hailing system is broken.</span>")
+		to_chat(usr, "<span class='warning'>[src]'s hailing system is broken.</span>")
 		return
 
 	// handle recent uses for overuse
@@ -135,12 +135,12 @@ GLOBAL_LIST_INIT(hailer_phrases, list(
 
 	switch(recent_uses)
 		if(3)
-			to_chat(usr, "<span class='warning'>\The [src] is starting to heat up.</span>")
+			to_chat(usr, "<span class='warning'>[src] is starting to heat up.</span>")
 		if(4)
-			to_chat(usr, "<span class='userdanger'>\The [src] is heating up dangerously from overuse!</span>")
+			to_chat(usr, "<span class='userdanger'>[src] is heating up dangerously from overuse!</span>")
 		if(5) // overload
 			broken_hailer = TRUE
-			to_chat(usr, "<span class='userdanger'>\The [src]'s power modulator overloads and breaks.</span>")
+			to_chat(usr, "<span class='userdanger'>[src]'s power modulator overloads and breaks.</span>")
 			return
 
 	// select phrase to play
@@ -198,6 +198,7 @@ GLOBAL_LIST_INIT(hailer_phrases, list(
 	icon_state = "inteq_balaclava"
 	item_state = "inteq_balaclava"
 	strip_delay = 60
+	alternate_worn_layer = BODY_LAYER
 	flags_inv = HIDEFACIALHAIR|HIDEFACE|HIDEEARS|HIDEHAIR
 
 /obj/item/clothing/mask/gas/sechailer/minutemen

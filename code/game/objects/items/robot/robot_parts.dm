@@ -12,9 +12,9 @@
 	/// Right arm part of the endoskeleton
 	var/obj/item/bodypart/r_arm/robot/r_arm = null
 	/// Left leg part of this endoskeleton
-	var/obj/item/bodypart/l_leg/robot/l_leg = null
+	var/obj/item/bodypart/leg/left/robot/l_leg = null
 	/// Right leg part of this endoskeleton
-	var/obj/item/bodypart/r_leg/robot/r_leg = null
+	var/obj/item/bodypart/leg/right/robot/r_leg = null
 	/// Chest part of this endoskeleton
 	var/obj/item/bodypart/chest/robot/chest = null
 	/// Head part of this endoskeleton
@@ -131,7 +131,7 @@
 		swap_failed = TRUE
 	else if(!user.transferItemToLoc(temp_cell, chest))
 		swap_failed = TRUE
-		to_chat(user, "<span class='warning'>[temp_cell] is stuck to your hand, you can't put it in [src]!</span>")
+		to_chat(user, "<span class='warning'>[temp_cell] прилип к рукеr hand, you can't put it in [src]!</span>")
 
 	if(chest.cell) //drop the chest's current cell no matter what.
 		put_in_hand_or_drop(user, chest.cell)
@@ -164,7 +164,7 @@
 			else
 				to_chat(user, "<span class='warning'>You need one sheet of metal to start building ED-209!</span>")
 				return
-	else if(istype(W, /obj/item/bodypart/l_leg/robot))
+	else if(istype(W, /obj/item/bodypart/leg/left/robot))
 		if(l_leg)
 			return
 		if(!user.transferItemToLoc(W, src))
@@ -174,7 +174,7 @@
 		l_leg = W
 		update_icon()
 
-	else if(istype(W, /obj/item/bodypart/r_leg/robot))
+	else if(istype(W, /obj/item/bodypart/leg/right/robot))
 		if(src.r_leg)
 			return
 		if(!user.transferItemToLoc(W, src))
@@ -329,7 +329,7 @@
 				to_chat(user, "<span class='warning'>You cannot install[M], the frame has to be standing on the ground to be perfectly precise!</span>")
 				return
 			if(!user.temporarilyRemoveItemFromInventory(M))
-				to_chat(user, "<span class='warning'>[M] is stuck to your hand!</span>")
+				to_chat(user, "<span class='warning'>[M] прилип к рукеr hand!</span>")
 				return
 			qdel(M)
 			var/mob/living/silicon/robot/O = new /mob/living/silicon/robot/shell(get_turf(src))

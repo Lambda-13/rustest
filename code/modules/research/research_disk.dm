@@ -58,7 +58,7 @@
 
 /obj/item/research_notes/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>Тут [value] очков изучений.</span>"
+	. += "<hr><span class='notice'>Тут [value] очков изучений.</span>"
 
 /// proc that changes name and icon depending on value
 /obj/item/research_notes/proc/change_vol()

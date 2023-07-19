@@ -17,9 +17,9 @@
 
 /obj/structure/chair/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>It's held together by a couple of <b>bolts</b>.</span>"
+	. += "<hr><span class='notice'>It's held together by a couple of <b>bolts</b>.</span>"
 	if(!has_buckled_mobs() && can_buckle)
-		. += "<span class='notice'>While standing on [src], drag and drop your sprite onto [src] to buckle to it.</span>"
+		. += "<hr><span class='notice'>While standing on [src], drag and drop your sprite onto [src] to buckle to it.</span>"
 
 /obj/structure/chair/ComponentInitialize()
 	. = ..()
@@ -199,8 +199,7 @@
 	anchored = FALSE
 	buildstackamount = 5
 	item_chair = null
-	icon_state = "officechair_dark"
-
+	icon_state = "officechair_gray"
 
 /obj/structure/chair/office/Moved()
 	. = ..()
@@ -210,6 +209,11 @@
 /obj/structure/chair/office/light
 	icon_state = "officechair_white"
 
+/obj/structure/chair/office/dark
+	icon_state = "officechair_dark"
+
+/obj/structure/chair/office/purple
+	icon_state = "officechair_purple"
 //Stool
 
 /obj/structure/chair/stool
@@ -262,7 +266,7 @@
 	var/obj/structure/chair/origin_type = /obj/structure/chair
 
 /obj/item/chair/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins hitting [user.p_them()]self with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] begins hitting [user.p_them()]self with [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	playsound(src,hitsound,50,TRUE)
 	return BRUTELOSS
 
@@ -310,7 +314,7 @@
 
 
 
-/obj/item/chair/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
+/obj/item/chair/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "атаку", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	if(attack_type == UNARMED_ATTACK && prob(hit_reaction_chance))
 		owner.visible_message("<span class='danger'>[owner] fends off [attack_text] with [src]!</span>")
 		return 1
@@ -321,7 +325,7 @@
 	if(!proximity)
 		return
 	if(prob(break_chance))
-		user.visible_message("<span class='danger'>[user] smashes \the [src] to pieces against \the [target]</span>")
+		user.visible_message("<span class='danger'>[user] smashes [src] to pieces against \the [target]</span>")
 		if(iscarbon(target))
 			var/mob/living/carbon/C = target
 			if(C.health < C.maxHealth*0.5)

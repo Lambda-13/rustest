@@ -9,15 +9,17 @@ import {
   Collapsible,
 } from '../components';
 import { Window } from '../layouts';
-import { createSearch } from 'common/string';
+import { createSearch, decodeHtmlEntities } from 'common/string';
+import { logger } from '../logging';
 
 export const ShipSelect = (props, context) => {
   const { act, data } = useBackend(context);
 
   const ships = data.ships || {};
+  const BuyNewShip = data.BuyNewShip || {};
   const templates = data.templates || [];
 
-  const [tab, setTab] = useLocalState(context, 'tab', 1);
+  const [currentTab, setCurrentTab] = useLocalState(context, 'tab', 1);
   const [selectedShip, setSelectedShip] = useLocalState(
     context,
     'selectedShip',
@@ -30,6 +32,10 @@ export const ShipSelect = (props, context) => {
     closed: 'Locked',
   };
 
+  const [shownTabs, setShownTabs] = useLocalState(context, 'tabs', [
+    { name: 'Доступные суда', tab: 1 },
+    { name: 'Приобрести судно', tab: 3 },
+  ]);
   const searchFor = (searchText) =>
     createSearch(searchText, (thing) => thing.name);
 
@@ -39,18 +45,32 @@ export const ShipSelect = (props, context) => {
     <Window title="Войти в игру" width={800} height={600} resizable>
       <Window.Content scrollable>
         <Tabs>
-          <Tabs.Tab selected={tab === 1}>СУДНО</Tabs.Tab>
-          <Tabs.Tab selected={tab === 2}>ПРОФЕССИЯ</Tabs.Tab>
-          <Tabs.Tab selected={tab === 3}>ПОКУПКА</Tabs.Tab>
+          {shownTabs.map((tabbing, index) => (
+            <Tabs.Tab
+              key={`${index}-${tabbing.name}`}
+              selected={currentTab === tabbing.tab}
+              onClick={() => setCurrentTab(tabbing.tab)}
+            >
+              {tabbing.name}
+            </Tabs.Tab>
+          ))}
         </Tabs>
-        {tab === 1 && (
+        {currentTab === 1 && (
           <Section
             title="Активные суда в данном секторе"
             buttons={
               <Button
                 content="Купить судно"
+                tooltip={
+                  /* worth noting that disabled ship spawn doesn't cause the
+                  button to be disabled, as we want to let people look around */
+                  (data.purchaseBanned && 'Тебе нельзя приобретать суда.') ||
+                  (!data.shipSpawnAllowed &&
+                    'В настоящий момент отправка кораблей ограничена.')
+                }
+                disabled={data.purchaseBanned}
                 onClick={() => {
-                  setTab(3);
+                  setCurrentTab(3);
                 }}
               />
             }
@@ -61,32 +81,59 @@ export const ShipSelect = (props, context) => {
                 <Table.Cell>Название</Table.Cell>
                 <Table.Cell>Класс</Table.Cell>
               </Table.Row>
-              {Object.values(ships).map((ship) => (
-                <Table.Row key={ship.name}>
-                  <Table.Cell>
-                    <Button
-                      content={
-                        ship.joinMode === applyStates.apply ? 'Apply' : 'Join'
-                      }
-                      color={
-                        ship.joinMode === applyStates.apply ? 'average' : 'good'
-                      }
-                      onClick={() => {
-                        setSelectedShip(ship);
-                        setTab(2);
-                      }}
-                    />
-                  </Table.Cell>
-                  <Table.Cell>{ship.name}</Table.Cell>
-                  <Table.Cell>{ship.class}</Table.Cell>
-                </Table.Row>
-              ))}
+              {Object.values(ships).map((ship) => {
+                const shipName = decodeHtmlEntities(ship.name);
+                return (
+                  <Table.Row key={shipName}>
+                    <Table.Cell>
+                      <Button
+                        content={
+                          ship.joinMode === applyStates.apply ? 'Apply' : 'Join'
+                        }
+                        color={
+                          ship.joinMode === applyStates.apply
+                            ? 'average'
+                            : 'good'
+                        }
+                        onClick={() => {
+                          setSelectedShip(ship);
+                          setCurrentTab(2);
+                          const newTab = {
+                            name: 'Выбрать профессию',
+                            tab: 2,
+                          };
+                          // check if the tab already exists
+                          const tabExists = shownTabs.some(
+                            (tab) =>
+                              tab.name === newTab.name && tab.tab === newTab.tab
+                          );
+                          if (tabExists) {
+                            return;
+                          }
+                          setShownTabs((tabs) => {
+                            logger.log(tabs);
+                            const newTabs = [...tabs];
+                            newTabs.splice(1, 0, newTab);
+                            return newTabs;
+                          });
+                        }}
+                      />
+                    </Table.Cell>
+                    <Table.Cell>{shipName}</Table.Cell>
+                    <Table.Cell>{ship.class}</Table.Cell>
+                  </Table.Row>
+                );
+              })}
             </Table>
           </Section>
         )}
-        {tab === 2 && (
+        {currentTab === 2 && (
           <>
-            <Section title={`Информация о судне "${selectedShip.name}"`}>
+            <Section
+              title={`Подробности о судне - ${decodeHtmlEntities(
+                selectedShip.name
+              )}`}
+            >
               <LabeledList>
                 <LabeledList.Item label="Класс">
                   {selectedShip.class}
@@ -94,21 +141,28 @@ export const ShipSelect = (props, context) => {
                 <LabeledList.Item label="Статус">
                   {selectedShip.joinMode}
                 </LabeledList.Item>
-                <LabeledList.Item label="Описание">
-                  {selectedShip.desc || 'Нет описания'}
-                </LabeledList.Item>
                 <LabeledList.Item label="От капитана">
                   {selectedShip.memo || '-'}
                 </LabeledList.Item>
               </LabeledList>
             </Section>
+            <Collapsible title={'Подробнее...'}>
+              <LabeledList>
+                <LabeledList.Item label="Описание корабля">
+                  {selectedShip.desc || '-'}
+                </LabeledList.Item>
+                <LabeledList.Item label="Теги">
+                  {(selectedShip.tags && selectedShip.tags.join(', ')) || '-'}
+                </LabeledList.Item>
+              </LabeledList>
+            </Collapsible>
             <Section
               title="Выбери профессию"
               buttons={
                 <Button
                   content="Назад"
                   onClick={() => {
-                    setTab(1);
+                    setCurrentTab(1);
                   }}
                 />
               }
@@ -116,14 +170,20 @@ export const ShipSelect = (props, context) => {
               <Table>
                 <Table.Row header>
                   <Table.Cell collapsing>Войти</Table.Cell>
-                  <Table.Cell>Профессия</Table.Cell>
-                  <Table.Cell>Осталось мест</Table.Cell>
+                  <Table.Cell>Название</Table.Cell>
+                  <Table.Cell>Доступно слотов</Table.Cell>
+                  <Table.Cell>Мин. наигранное время</Table.Cell>
                 </Table.Row>
                 {selectedShip.jobs.map((job) => (
                   <Table.Row key={job.name}>
                     <Table.Cell>
                       <Button
                         content="Select"
+                        tooltip={
+                          data.playMin < job.minTime &&
+                          'You do not have enough playtime to play this job.'
+                        }
+                        disabled={data.playMin < job.minTime}
                         onClick={() => {
                           act('join', {
                             ship: selectedShip.ref,
@@ -134,13 +194,21 @@ export const ShipSelect = (props, context) => {
                     </Table.Cell>
                     <Table.Cell>{job.name}</Table.Cell>
                     <Table.Cell>{job.slots}</Table.Cell>
+                    <Table.Cell>
+                      {(job.minTime > 0 &&
+                        (job.minTime.toString() +
+                          'm ' +
+                          (data.playMin < job.minTime && '(Unmet)') ||
+                          '(Met)')) ||
+                        '-'}
+                    </Table.Cell>
                   </Table.Row>
                 ))}
               </Table>
             </Section>
           </>
         )}
-        {tab === 3 && (
+        {currentTab === 3 && (
           <Section
             title="Купить судно"
             buttons={
@@ -151,11 +219,10 @@ export const ShipSelect = (props, context) => {
                   value={searchText}
                   onInput={(_, value) => setSearchText(value)}
                 />
-
                 <Button
                   content="Назад"
                   onClick={() => {
-                    setTab(1);
+                    setCurrentTab(1);
                   }}
                 />
               </>
@@ -165,9 +232,29 @@ export const ShipSelect = (props, context) => {
               <Collapsible
                 title={template.name}
                 key={template.name}
+                color={
+                  (!data.shipSpawnAllowed && 'average') ||
+                  ((template.curNum >= template.limit ||
+                    data.playMin < template.minTime) &&
+                    'grey') ||
+                  'default'
+                }
                 buttons={
                   <Button
                     content="Купить"
+                    tooltip={
+                      (!data.shipSpawnAllowed &&
+                        'В настоящее время отправка судов ограничена.') ||
+                      (template.curNum >= template.limit &&
+                        'Слишком много судов данного типа в секторе.') ||
+                      (data.playMin < template.minTime &&
+                        'У тебя мало наигранного времени.')
+                    }
+                    disabled={
+                      !data.shipSpawnAllowed ||
+                      template.curNum >= template.limit ||
+                      data.playMin < template.minTime
+                    }
                     onClick={() => {
                       act('buy', {
                         name: template.name,
@@ -180,8 +267,20 @@ export const ShipSelect = (props, context) => {
                   <LabeledList.Item label="Описание">
                     {template.desc || 'Нет описания'}
                   </LabeledList.Item>
-                  <LabeledList.Item label="Кол-во экипажа">
+                  <LabeledList.Item label="Тег">
+                    {(template.tags && template.tags.join(', ')) || '-'}
+                  </LabeledList.Item>
+                  <LabeledList.Item label="Среднее кол-во экипажа">
                     {template.crewCount}
+                  </LabeledList.Item>
+                  <LabeledList.Item label="Макс. кол-во экипажа">
+                    {template.limit}
+                  </LabeledList.Item>
+                  <LabeledList.Item label="Мин. наигранного времени">
+                    {template.minTime +
+                      'm ' +
+                      ((data.playMin < template.minTime && '(Unmet)') ||
+                        '(Met)')}
                   </LabeledList.Item>
                   <LabeledList.Item label="Вики (англ)">
                     <a
@@ -189,7 +288,7 @@ export const ShipSelect = (props, context) => {
                       target="_blank"
                       rel="noreferrer"
                     >
-                      Here
+                      Тык
                     </a>
                   </LabeledList.Item>
                 </LabeledList>

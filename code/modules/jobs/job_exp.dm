@@ -1,60 +1,46 @@
 GLOBAL_LIST_EMPTY(exp_to_update)
 GLOBAL_PROTECT(exp_to_update)
 
-// Procs
-/datum/job/proc/required_playtime_remaining(client/C)
-	if(!C)
-		return 0
-	if(!CONFIG_GET(flag/use_exp_tracking))
-		return 0
-	if(!SSdbcore.Connect())
-		return 0
-	if(!exp_requirements || !exp_type)
-		return 0
-	if(!job_is_xp_locked(src.name))
-		return 0
-	if(CONFIG_GET(flag/use_exp_restrictions_admin_bypass) && check_rights_for(C,R_ADMIN))
-		return 0
-	var/isexempt = C.prefs.db_flags & DB_FLAG_EXEMPT
-	if(isexempt)
-		return 0
-	var/my_exp = C.calc_exp_type(get_exp_req_type())
-	var/job_requirement = get_exp_req_amount()
-	if(my_exp >= job_requirement)
-		return 0
-	else
-		return (job_requirement - my_exp)
-
-/datum/job/proc/get_exp_req_amount()
-	if(name in (GLOB.command_positions | list("AI")))
-		var/uerhh = CONFIG_GET(number/use_exp_restrictions_heads_hours)
-		if(uerhh)
-			return uerhh * 60
-	return exp_requirements
-
-/datum/job/proc/get_exp_req_type()
-	if(name in (GLOB.command_positions | list("AI")))
-		if(CONFIG_GET(flag/use_exp_restrictions_heads_department) && exp_type_department)
-			return exp_type_department
-	return exp_type
-
-/proc/job_is_xp_locked(jobtitle)
-	if(!CONFIG_GET(flag/use_exp_restrictions_heads) && (jobtitle in (GLOB.command_positions | list("AI"))))
+/datum/map_template/shuttle/proc/has_ship_spawn_playtime(client/Client)
+	if(!Client) // lol. client deletion
 		return FALSE
-	if(!CONFIG_GET(flag/use_exp_restrictions_other) && !(jobtitle in (GLOB.command_positions | list("AI"))))
-		return FALSE
+	// checks config values, DB status, and client-specific exemptions.
+	if(Client.is_playtime_restriction_eligible())
+		var/player_living_time = Client.get_exp_living(TRUE) // returns value in minutes
+		var/req_spawn_time = get_req_spawn_minutes()
+		if(player_living_time < req_spawn_time)
+			return FALSE
 	return TRUE
 
-/client/proc/calc_exp_type(exptype)
-	var/list/explist = prefs.exp.Copy()
-	var/amount = 0
-	var/list/typelist = GLOB.exp_jobsmap[exptype]
-	if(!typelist)
-		return -1
-	for(var/job in typelist["titles"])
-		if(job in explist)
-			amount += explist[job]
-	return amount
+/datum/map_template/shuttle/proc/has_job_playtime(client/Client, datum/job/Job)
+	if(!Client) // lol. client deletion
+		return FALSE
+	// job must be an officer to enforce playtime requirements, AND we need to check
+	// config values, DB status, and client-specific exceptions.
+	if(Job.officer && Client.is_playtime_restriction_eligible())
+		var/player_living_time = Client.get_exp_living(TRUE) // returns value in minutes
+		var/req_join_time = get_req_officer_minutes()
+		if(player_living_time < req_join_time)
+			return FALSE
+	return TRUE
+
+/datum/map_template/shuttle/proc/get_req_spawn_minutes()
+	return spawn_time_coeff * CONFIG_GET(number/ship_spawn_base_exp_min)
+
+/datum/map_template/shuttle/proc/get_req_officer_minutes()
+	return officer_time_coeff * CONFIG_GET(number/officer_join_base_exp_min)
+
+/client/proc/is_playtime_restriction_eligible()
+	if(!CONFIG_GET(flag/use_exp_tracking))
+		return FALSE // playtime tracking must be enabled
+	if(!SSdbcore.Connect())
+		return FALSE // must have an active DB
+
+	// not actually entirely sure what this is. believe it's a flag for exemption from exp restrictions? sure, whatever
+	if(prefs.db_flags & DB_FLAG_EXEMPT)
+		return FALSE
+	if(CONFIG_GET(flag/use_exp_restrictions_admin_bypass) && check_rights_for(src, R_ADMIN))
+		return FALSE // if admin exemption is enabled, and client is an admin, let them through
 
 /client/proc/get_exp_living(pure_numeric = FALSE)
 	if(!prefs.exp)
@@ -64,11 +50,11 @@ GLOBAL_PROTECT(exp_to_update)
 
 /proc/get_exp_format(expnum)
 	if(expnum > 60)
-		return num2text(round(expnum / 60)) + "h"
+		return num2text(round(expnum / 60)) + " ч."
 	else if(expnum > 0)
-		return num2text(expnum) + "m"
+		return num2text(expnum) + " мин."
 	else
-		return "0h"
+		return "0 ч."
 
 /datum/controller/subsystem/blackbox/proc/update_exp(mins, ann = FALSE)
 	if(!SSdbcore.Connect())
@@ -151,41 +137,41 @@ GLOBAL_PROTECT(exp_to_update)
 			play_records[EXP_TYPE_LIVING] += minutes
 
 			if(announce_changes)
-				to_chat(src,"<span class='notice'>You got: [minutes] Living EXP!</span>")
+				to_chat(src,"<span class='notice'>Получено [minutes] Живого ОП!</span>")
 			if(mob.mind.assigned_role)
 				for(var/job in SSjob.name_occupations)
 					if(mob.mind.assigned_role == job)
 						rolefound = TRUE
 						play_records[job] += minutes
 						if(announce_changes)
-							to_chat(src,"<span class='notice'>You got: [minutes] [job] EXP!</span>")
+							to_chat(src,"<span class='notice'>Получено [minutes] ОП на [job]!</span>")
 				if(!rolefound)
 					for(var/role in GLOB.exp_specialmap[EXP_TYPE_SPECIAL])
 						if(mob.mind.assigned_role == role)
 							rolefound = TRUE
 							play_records[role] += minutes
 							if(announce_changes)
-								to_chat(mob,"<span class='notice'>You got: [minutes] [role] EXP!</span>")
+								to_chat(mob,"<span class='notice'>Получено [minutes] ОП на [role]!</span>")
 				if(mob.mind.special_role && !(mob.mind.datum_flags & DF_VAR_EDITED))
 					var/trackedrole = mob.mind.special_role
 					play_records[trackedrole] += minutes
 					if(announce_changes)
-						to_chat(src,"<span class='notice'>You got: [minutes] [trackedrole] EXP!</span>")
+						to_chat(src,"<span class='notice'>Получено [minutes] ОП на [trackedrole]!</span>")
 			if(!rolefound)
 				play_records["Unknown"] += minutes
 		else
 			if(holder && !holder.deadmined)
 				play_records[EXP_TYPE_ADMIN] += minutes
 				if(announce_changes)
-					to_chat(src,"<span class='notice'>You got: [minutes] Admin EXP!</span>")
+					to_chat(src,"<span class='notice'>Получено [minutes] Админ ОП!</span>")
 			else
 				play_records[EXP_TYPE_GHOST] += minutes
 				if(announce_changes)
-					to_chat(src,"<span class='notice'>You got: [minutes] Ghost EXP!</span>")
+					to_chat(src,"<span class='notice'>Получено [minutes] Призрачного ОП!</span>")
 	else if(isobserver(mob))
 		play_records[EXP_TYPE_GHOST] += minutes
 		if(announce_changes)
-			to_chat(src,"<span class='notice'>You got: [minutes] Ghost EXP!</span>")
+			to_chat(src,"<span class='notice'>Получено [minutes] Призрачного ОП!</span>")
 	else if(minutes)	//Let "refresh" checks go through
 		return
 

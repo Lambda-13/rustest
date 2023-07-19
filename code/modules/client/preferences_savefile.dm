@@ -125,12 +125,12 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		addtimer(CALLBACK(src, .proc/announce_conflict, notadded), 5 SECONDS)
 
 /datum/preferences/proc/announce_conflict(list/notadded)
-	to_chat(parent, "<span class='userdanger'>KEYBINDING CONFLICT!!!\n\
-	There are new keybindings that have defaults bound to keys you already set, They will default to Unbound. You can bind them in Setup Character or Game Preferences\n\
-	<a href='?_src_=prefs;preference=tab;tab=3'>Or you can click here to go straight to the keybindings page</a></span>")
+	to_chat(parent, "<span class='userdanger'>КОНФЛИКТ ХОТКЕЕВ!!!\n\
+	Появились новые сочетания клавиш, значения по умолчанию которых привязаны к уже установленным вами клавишам. По умолчанию они будут помечены как Unbound. Вы можете переназначить их нажав на Setup Character и зайдя в Game Preferences\n\
+	<a href='?_src_=prefs;preference=tab;tab=3'>Или вы можете нажать здесь, чтобы перейти прямо на страницу макросов.</a></span>")
 	for(var/item in notadded)
 		var/datum/keybinding/conflicted = item
-		to_chat(parent, "<span class='userdanger'>[conflicted.category]: [conflicted.full_name] needs updating")
+		to_chat(parent, "<span class='userdanger'>[conflicted.category]: [conflicted.full_name] необходимо обновить")
 		LAZYADD(key_bindings["Unbound"], conflicted.name) // set it to unbound to prevent this from opening up again in the future
 
 
@@ -162,6 +162,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	//general preferences
 	READ_FILE(S["asaycolor"], asaycolor)
 	READ_FILE(S["ooccolor"], ooccolor)
+	READ_FILE(S["screentip_color"], screentip_color)
 	READ_FILE(S["lastchangelog"], lastchangelog)
 	READ_FILE(S["UI_style"], UI_style)
 	READ_FILE(S["outline_color"], outline_color)
@@ -194,6 +195,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	READ_FILE(S["clientfps"], clientfps)
 	READ_FILE(S["parallax"], parallax)
 	READ_FILE(S["ambientocclusion"], ambientocclusion)
+	READ_FILE(S["screentip_pref"], screentip_pref)
 	READ_FILE(S["auto_fit_viewport"], auto_fit_viewport)
 	READ_FILE(S["widescreenpref"], widescreenpref)
 	READ_FILE(S["pixel_size"], pixel_size)
@@ -232,8 +234,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 
 	//Sanitize
-	asaycolor		= sanitize_ooccolor(sanitize_hexcolor(asaycolor, 6, 1, initial(asaycolor)))
-	ooccolor		= sanitize_ooccolor(sanitize_hexcolor(ooccolor, 6, 1, initial(ooccolor)))
+	asaycolor		= sanitize_ooccolor(sanitize_hexcolor(asaycolor, 6, TRUE, initial(asaycolor)))
+	ooccolor		= sanitize_ooccolor(sanitize_hexcolor(ooccolor, 6, TRUE, initial(ooccolor)))
+	screentip_color = sanitize_ooccolor(sanitize_hexcolor(screentip_color, 6, TRUE, initial(screentip_color)))
 	lastchangelog	= sanitize_text(lastchangelog, initial(lastchangelog))
 	UI_style		= sanitize_inlist(UI_style, GLOB.available_ui_styles, GLOB.available_ui_styles[1])
 	hotkeys			= sanitize_integer(hotkeys, FALSE, TRUE, initial(hotkeys))
@@ -251,6 +254,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	clientfps		= sanitize_integer(clientfps, 0, 1000, 0)
 	parallax		= sanitize_integer(parallax, PARALLAX_INSANE, PARALLAX_DISABLE, null)
 	ambientocclusion	= sanitize_integer(ambientocclusion, FALSE, TRUE, initial(ambientocclusion))
+	screentip_pref = sanitize_integer(screentip_pref, FALSE, TRUE, initial(screentip_pref))
 	auto_fit_viewport	= sanitize_integer(auto_fit_viewport, FALSE, TRUE, initial(auto_fit_viewport))
 	widescreenpref  = sanitize_integer(widescreenpref, FALSE, TRUE, initial(widescreenpref))
 	pixel_size		= sanitize_integer(pixel_size, PIXEL_SCALING_AUTO, PIXEL_SCALING_3X, initial(pixel_size))
@@ -263,7 +267,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	be_special		= SANITIZE_LIST(be_special)
 	show_credits		= sanitize_integer(show_credits, 0, 1, initial(show_credits))
 	pda_style		= sanitize_inlist(pda_style, GLOB.pda_styles, initial(pda_style))
-	pda_color		= sanitize_hexcolor(pda_color, 6, 1, initial(pda_color))
+	pda_color		= sanitize_hexcolor(pda_color, 6, TRUE, initial(pda_color))
 	key_bindings 	= sanitize_keybindings(key_bindings)
 	favorite_outfits = SANITIZE_LIST(favorite_outfits)
 	equipped_gear	= sanitize_each_inlist(equipped_gear, GLOB.gear_datums)
@@ -301,6 +305,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	//general preferences
 	WRITE_FILE(S["asaycolor"], asaycolor)
 	WRITE_FILE(S["ooccolor"], ooccolor)
+	WRITE_FILE(S["screentip_color"], screentip_color)
 	WRITE_FILE(S["lastchangelog"], lastchangelog)
 	WRITE_FILE(S["UI_style"], UI_style)
 	WRITE_FILE(S["outline_enabled"], outline_enabled)
@@ -330,6 +335,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["clientfps"], clientfps)
 	WRITE_FILE(S["parallax"], parallax)
 	WRITE_FILE(S["ambientocclusion"], ambientocclusion)
+	WRITE_FILE(S["screentip_pref"], screentip_pref)
 	WRITE_FILE(S["auto_fit_viewport"], auto_fit_viewport)
 	WRITE_FILE(S["widescreenpref"], widescreenpref)
 	WRITE_FILE(S["pixel_size"], pixel_size)
@@ -498,19 +504,19 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	socks			= sanitize_inlist(socks, GLOB.socks_list)
 	age				= sanitize_integer(age, pref_species.species_age_min, pref_species.species_age_max, initial(age))
-	hair_color			= sanitize_hexcolor(hair_color, 3, 0)
-	facial_hair_color			= sanitize_hexcolor(facial_hair_color, 3, 0)
-	underwear_color			= sanitize_hexcolor(underwear_color, 3, 0)
-	eye_color		= sanitize_hexcolor(eye_color, 3, 0)
+	hair_color			= sanitize_hexcolor(hair_color)
+	facial_hair_color			= sanitize_hexcolor(facial_hair_color)
+	underwear_color			= sanitize_hexcolor(underwear_color)
+	eye_color		= sanitize_hexcolor(eye_color)
 	skin_tone		= sanitize_inlist(skin_tone, GLOB.skin_tones)
 	backpack			= sanitize_inlist(backpack, GLOB.backpacklist, initial(backpack))
 	jumpsuit_style	= sanitize_inlist(jumpsuit_style, GLOB.jumpsuitlist, initial(jumpsuit_style))
 	exowear		= sanitize_inlist(exowear, GLOB.exowearlist, initial(exowear))
 	uplink_spawn_loc = sanitize_inlist(uplink_spawn_loc, GLOB.uplink_spawn_loc_list, initial(uplink_spawn_loc))
 	features["grad_style"]			= sanitize_inlist(features["grad_style"], GLOB.hair_gradients_list)
-	features["grad_color"]		= sanitize_hexcolor(features["grad_color"], 3, 0)
+	features["grad_color"]		= sanitize_hexcolor(features["grad_color"])
 	features["body_size"] = sanitize_inlist(features["body_size"], GLOB.body_sizes, "Normal")
-	features["mcolor"]	= sanitize_hexcolor(features["mcolor"], 3, 0)
+	features["mcolor"]	= sanitize_hexcolor(features["mcolor"])
 	features["ethcolor"]	= copytext_char(features["ethcolor"], 1, 7)
 	features["tail_lizard"]	= sanitize_inlist(features["tail_lizard"], GLOB.tails_list_lizard)
 	features["tail_human"] 	= sanitize_inlist(features["tail_human"], GLOB.tails_list_human, "None")

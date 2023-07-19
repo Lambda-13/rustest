@@ -83,16 +83,16 @@
 	var/t_s = p_s()
 	if(health < maxHealth)
 		if(health >= maxHealth * 0.5)
-			. += "<span class='warning'>[t_He] look[t_s] slightly dented.</span>"
+			. += "<hr><span class='warning'>[t_He] look[t_s] slightly dented.</span>"
 		else
-			. += "<span class='boldwarning'>[t_He] look[t_s] severely dented!</span>"
+			. += "<hr><span class='boldwarning'>[t_He] look[t_s] severely dented!</span>"
 	. += {"<span class='notice'>Using a mining scanner on [t_him] will instruct [t_him] to drop stored ore. <b>[max(0, LAZYLEN(contents) - 1)] Stored Ore</b>\n
 	Field repairs can be done with a welder."}
 	if(stored_gun && stored_gun.max_mod_capacity)
 		. += "<b>[stored_gun.get_remaining_mod_capacity()]%</b> mod capacity remaining."
 		for(var/A in stored_gun.get_modkits())
 			var/obj/item/borg/upgrade/modkit/M = A
-			. += "<span class='notice'>There is \a [M] installed, using <b>[M.cost]%</b> capacity.</span>"
+			. += "<hr><span class='notice'>There is \a [M] installed, using <b>[M.cost]%</b> capacity.</span>"
 
 /mob/living/simple_animal/hostile/mining_drone/welder_act(mob/living/user, obj/item/I)
 	..()

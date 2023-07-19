@@ -322,7 +322,7 @@
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 
-/obj/item/nullrod/claymore/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
+/obj/item/nullrod/claymore/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "атаку", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	if(attack_type == PROJECTILE_ATTACK)
 		final_block_chance = 0 //Don't bring a sword to a gunfight
 	return ..()
@@ -363,6 +363,7 @@
 	icon_state = "katana"
 	item_state = "katana"
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
+	supports_variations = VOX_VARIATION
 
 /obj/item/nullrod/claymore/multiverse
 	name = "extradimensional blade"
@@ -521,7 +522,7 @@
 
 /obj/item/nullrod/scythe/talking/necro/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>This weapon applies a growing blood curse on attack. Though it slowly fades, fully manifesting it causes your target's blood to violently explode, creating a lethal burst of damage.</span>"
+	. += "<hr><span class='notice'>This weapon applies a growing blood curse on attack. Though it slowly fades, fully manifesting it causes your target's blood to violently explode, creating a lethal burst of damage.</span>"
 
 /obj/item/nullrod/scythe/talking/necro/attack(mob/living/target)
 	..()
@@ -540,7 +541,7 @@
 	desc = "This war hammer cost the chaplain forty thousand space dollars."
 	slot_flags = ITEM_SLOT_BELT
 	w_class = WEIGHT_CLASS_HUGE
-	attack_verb = list("smashed", "bashed", "hammered", "crunched")
+	attack_verb = list("smashed", "бьёт", "hammered", "crunched")
 
 /obj/item/nullrod/chainsaw
 	name = "chainsaw hand"
@@ -669,7 +670,7 @@
 	slot_flags = ITEM_SLOT_BACK
 	sharpness = IS_BLUNT
 	hitsound = "swing_hit"
-	attack_verb = list("smashed", "slammed", "whacked", "thwacked")
+	attack_verb = list("smashed", "slammed", "ударяет", "thwacked")
 	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "bostaff0"
 	item_state = "bostaff0"

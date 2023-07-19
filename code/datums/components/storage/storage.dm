@@ -17,6 +17,7 @@
 	var/list/can_hold								//if this is set, only items, and their children, will fit
 	var/list/cant_hold								//if this is set, items, and their children, won't fit
 	var/list/exception_hold           //if set, these items will be the exception to the max size of object that can fit.
+	var/list/can_hold_trait							/// If set can only contain stuff with this single trait present.
 
 	var/can_hold_description
 
@@ -193,7 +194,7 @@
 	SIGNAL_HANDLER
 
 	if(locked)
-		to_chat(M, "<span class='warning'>[parent] seems to be locked!</span>")
+		to_chat(M, "<span class='warning'>[parent] выглядит закрытым!</span>")
 		return FALSE
 	if((M.get_active_held_item() == parent) && allow_quick_empty)
 		INVOKE_ASYNC(src, .proc/quick_empty, M)
@@ -205,7 +206,7 @@
 		return FALSE
 	. = COMPONENT_NO_ATTACK
 	if(locked)
-		to_chat(M, "<span class='warning'>[parent] seems to be locked!</span>")
+		to_chat(M, "<span class='warning'>[parent] выглядит закрытым!</span>")
 		return FALSE
 	var/obj/item/I = O
 	if(collection_mode == COLLECT_ONE)
@@ -223,7 +224,7 @@
 		things = typecache_filter_list(things, typecacheof(I.type))
 	var/len = length(things)
 	if(!len)
-		to_chat(M, "<span class='warning'>You failed to pick up anything with [parent]!</span>")
+		to_chat(M, "<span class='warning'>Не смог собрать всё в [parent]!</span>")
 		return
 	var/datum/progressbar/progress = new(M, len, I.loc)
 	var/list/rejections = list()
@@ -278,10 +279,10 @@
 	if(!M.canUseStorage() || !A.Adjacent(M) || M.incapacitated())
 		return
 	if(locked)
-		to_chat(M, "<span class='warning'>[parent] seems to be locked!</span>")
+		to_chat(M, "<span class='warning'>[parent] выглядит закрытым!</span>")
 		return FALSE
 	A.add_fingerprint(M)
-	to_chat(M, "<span class='notice'>You start dumping out [parent].</span>")
+	to_chat(M, "<span class='notice'>Начинаю вытряхивать вещи из [parent].</span>")
 	var/turf/T = get_turf(A)
 	var/list/things = contents()
 	var/datum/progressbar/progress = new(M, length(things), T)
@@ -505,7 +506,7 @@
 	var/atom/dump_destination = dest_object.get_dumping_location()
 	if(A.Adjacent(M) && dump_destination && M.Adjacent(dump_destination))
 		if(locked)
-			to_chat(M, "<span class='warning'>[parent] seems to be locked!</span>")
+			to_chat(M, "<span class='warning'>[parent] выглядит закрытым!</span>")
 			return FALSE
 		if(dump_destination.storage_contents_dump_act(src, M))
 			playsound(A, "rustle", 50, TRUE, -5)
@@ -559,7 +560,7 @@
 		handle_show_valid_items(source, user)
 
 /datum/component/storage/proc/handle_show_valid_items(datum/source, user)
-	to_chat(user, "<span class='notice'>[source] can hold: [can_hold_description]</span>")
+	to_chat(user, "<span class='notice'>[source] может содержать: [can_hold_description]</span>")
 
 /datum/component/storage/proc/mousedrop_onto(datum/source, atom/over_object, mob/M)
 	SIGNAL_HANDLER
@@ -602,7 +603,7 @@
 		return FALSE
 	A.add_fingerprint(M)
 	if(locked && !force)
-		to_chat(M, "<span class='warning'>[parent] seems to be locked!</span>")
+		to_chat(M, "<span class='warning'>[parent] выглядит закрытым!</span>")
 		return FALSE
 	if(force || M.CanReach(parent, view_only = TRUE))
 		show_to(M)
@@ -632,47 +633,47 @@
 	if(locked)
 		if(M && !stop_messages)
 			host.add_fingerprint(M)
-			to_chat(M, "<span class='warning'>[host] seems to be locked!</span>")
+			to_chat(M, "<span class='warning'>[host] выглядит закрытым!</span>")
 		return FALSE
 	if(real_location.contents.len >= max_items)
 		if(!stop_messages)
-			to_chat(M, "<span class='warning'>[host] is full, make some space!</span>")
+			to_chat(M, "<span class='warning'>В [host] нет места!</span>")
 		return FALSE //Storage item is full
 	if(length(can_hold))
 		if(!is_type_in_typecache(I, can_hold))
 			if(!stop_messages)
-				to_chat(M, "<span class='warning'>[host] cannot hold [I]!</span>")
+				to_chat(M, "<span class='warning'>[host] не может содержать [I]!</span>")
 			return FALSE
-	if(is_type_in_typecache(I, cant_hold) || HAS_TRAIT(I, TRAIT_NO_STORAGE_INSERT)) //Items which this container can't hold.
+	if(is_type_in_typecache(I, cant_hold) || HAS_TRAIT(I, TRAIT_NO_STORAGE_INSERT) || (can_hold_trait && !HAS_TRAIT(I, can_hold_trait))) //Items which this container can't hold.
 		if(!stop_messages)
-			to_chat(M, "<span class='warning'>[host] cannot hold [I]!</span>")
+			to_chat(M, "<span class='warning'>[host] не может содержать [I]!</span>")
 		return FALSE
 	if(I.w_class > max_w_class && !is_type_in_typecache(I, exception_hold))
 		if(!stop_messages)
-			to_chat(M, "<span class='warning'>[I] is too big for [host]!</span>")
+			to_chat(M, "<span class='warning'>[I] слишком большой для [host]!</span>")
 		return FALSE
 	var/datum/component/storage/biggerfish = real_location.loc.GetComponent(/datum/component/storage)
 	if(biggerfish && biggerfish.max_w_class < max_w_class)//return false if we are inside of another container, and that container has a smaller max_w_class than us (like if we're a bag in a box)
 		if(!stop_messages)
-			to_chat(M, "<span class='warning'>[I] can't fit in [host] while [real_location.loc] is in the way!</span>")
+			to_chat(M, "<span class='warning'>[real_location.loc] мешает положить [I] в [host]!</span>")
 		return FALSE
 	var/sum_w_class = I.w_class
 	for(var/obj/item/_I in real_location)
 		sum_w_class += _I.w_class //Adds up the combined w_classes which will be in the storage item if the item is added to it.
 	if(sum_w_class > max_combined_w_class)
 		if(!stop_messages)
-			to_chat(M, "<span class='warning'>[I] won't fit in [host], make some space!</span>")
+			to_chat(M, "<span class='warning'>[host] полон и не может вместить в себя [I]!</span>")
 		return FALSE
 	if(isitem(host))
 		var/obj/item/IP = host
 		var/datum/component/storage/STR_I = I.GetComponent(/datum/component/storage)
 		if((I.w_class >= IP.w_class) && STR_I && !allow_big_nesting)
 			if(!stop_messages)
-				to_chat(M, "<span class='warning'>[IP] cannot hold [I] as it's a storage item of the same size!</span>")
+				to_chat(M, "<span class='warning'>[IP] одинакого размера как и [I]!</span>")
 			return FALSE //To prevent the stacking of same sized storage items.
 	if(HAS_TRAIT(I, TRAIT_NODROP)) //SHOULD be handled in unEquip, but better safe than sorry.
 		if(!stop_messages)
-			to_chat(M, "<span class='warning'>\the [I] is stuck to your hand, you can't put it in \the [host]!</span>")
+			to_chat(M, "<span class='warning'>[I] прилип к руке и не может быть положен в [host]!</span>")
 		return FALSE
 	var/datum/component/storage/concrete/master = master()
 	if(!istype(master))
@@ -810,7 +811,7 @@
 	if(A.loc == user)
 		. = COMPONENT_NO_ATTACK_HAND
 		if(locked)
-			to_chat(user, "<span class='warning'>[parent] seems to be locked!</span>")
+			to_chat(user, "<span class='warning'>[parent] выглядит закрытым!</span>")
 		else
 			show_to(user)
 			if(use_sound)
@@ -849,7 +850,7 @@
 	if(!isliving(user) || !user.CanReach(parent) || user.incapacitated())
 		return
 	if(locked)
-		to_chat(user, "<span class='warning'>[parent] seems to be locked!</span>")
+		to_chat(user, "<span class='warning'>[parent] выглядит закрытым!</span>")
 		return
 
 	var/atom/A = parent
@@ -880,8 +881,8 @@
 	collection_mode = (collection_mode+1)%3
 	switch(collection_mode)
 		if(COLLECT_SAME)
-			to_chat(user, "<span class='notice'>[parent] now picks up all items of a single type at once.</span>")
+			to_chat(user, "<span class='notice'>[parent] теперь подбирает сразу все предметы одного типа.</span>")
 		if(COLLECT_EVERYTHING)
-			to_chat(user, "<span class='notice'>[parent] now picks up all items in a tile at once.</span>")
+			to_chat(user, "<span class='notice'>[parent] теперь подбирает все предметы одновременно.</span>")
 		if(COLLECT_ONE)
-			to_chat(user, "<span class='notice'>[parent] now picks up one item at a time.</span>")
+			to_chat(user, "<span class='notice'>[parent] теперь берет по одному предмету.</span>")

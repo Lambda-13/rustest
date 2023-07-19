@@ -191,7 +191,7 @@
 	dust()
 
 /mob/living/simple_animal/drone/examine(mob/user)
-	. = list("<span class='info'>*---------*\nThis is [icon2html(src, user)] \a <b>[src]</b>!")
+	. = list("<span class='info'>This is [icon2html(src, user)] \a <b>[src]</b>!")
 
 	//Hands
 	for(var/obj/item/I in held_items)
@@ -212,22 +212,22 @@
 
 	//Hacked
 	if(hacked)
-		. += "<span class='warning'>Его индикаторы мигают красным светом!</span>"
+		. += "<hr><span class='warning'>Его индикаторы мигают красным светом!</span>"
 
 	//Damaged
 	if(health != maxHealth)
 		if(health > maxHealth * 0.33) //Between maxHealth and about a third of maxHealth, between 30 and 10 for normal drones
-			. += "<span class='warning'>Он выглядит побитым.</span>"
+			. += "<hr><span class='warning'>Он выглядит побитым.</span>"
 		else //otherwise, below about 33%
-			. += "<span class='boldwarning'>Он сейчас развалится!</span>"
+			. += "<hr><span class='boldwarning'>Он сейчас развалится!</span>"
 
 	//Dead
 	if(stat == DEAD)
 		if(client)
-			. += "<span class='deadsay'>На его маленьком экранчике показывается сообщение: \"НЕОБХОДИМА ПЕРЕЗАГРУЗКА\".</span>"
+			. += "<hr><span class='deadsay'>На его маленьком экранчике показывается сообщение: \"НЕОБХОДИМА ПЕРЕЗАГРУЗКА\".</span>"
 		else
-			. += "<span class='deadsay'>На его маленьком экранчике показывается сообщение: \"ОШИБКА ДИСК ОЧИЩЕН\".</span>"
-	. += "*---------*</span>"
+			. += "<hr><span class='deadsay'>На его маленьком экранчике показывается сообщение: \"ОШИБКА ДИСК ОЧИЩЕН\".</span>"
+	. += "</span>"
 
 
 /mob/living/simple_animal/drone/assess_threat(judgement_criteria, lasercolor = "", datum/callback/weaponcheck=null) //Secbots won't hunt maintenance drones.

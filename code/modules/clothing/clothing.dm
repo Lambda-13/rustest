@@ -27,6 +27,8 @@
 
 	var/clothing_flags = NONE
 
+	var/can_be_bloody = TRUE
+
 	//Var modification - PLEASE be careful with this I know who you are and where you live
 	var/list/user_vars_to_edit //VARNAME = VARVALUE eg: "name" = "butts"
 	var/list/user_vars_remembered //Auto built by the above + dropped() + equipped()
@@ -53,6 +55,8 @@
 	. = ..()
 	if(ispath(pocket_storage_component_path))
 		LoadComponent(pocket_storage_component_path)
+	if(can_be_bloody && ((body_parts_covered & FEET) || (flags_inv & HIDESHOES)))
+		LoadComponent(/datum/component/bloodysoles)
 
 /obj/item/clothing/MouseDrop(atom/over_object)
 	. = ..()
@@ -85,7 +89,7 @@
 
 /obj/item/clothing/attackby(obj/item/tool, mob/user, params)
 	if(tool.get_sharpness() && cuttable)
-		if(tgui_alert(user, "Are you sure you want to cut \the [src] into strips?", "Cut clothing:", list("Yes", "No")) != "Yes")
+		if(tgui_alert(user, "Are you sure you want to cut [src] into strips?", "Cut clothing:", list("Yes", "No")) != "Yes")
 			return
 		if(QDELETED(src))
 			return
@@ -102,7 +106,7 @@
 			return TRUE
 		update_clothes_damaged_state(FALSE)
 		obj_integrity = max_integrity
-		to_chat(user, "<span class='notice'>You fix the damage on [src] with [cloth].</span>")
+		to_chat(user, "<span class='notice'>You fix the damage on [src] с помощью [cloth].</span>")
 		return TRUE
 	return ..()
 
@@ -142,7 +146,7 @@
 		if (1601 to 35000)
 			. += "[src] offers the wearer robust protection from fire."
 	if(damaged_clothes)
-		. += "<span class='warning'>It looks damaged!</span>"
+		. += "<hr><span class='warning'>It looks damaged!</span>"
 	var/datum/component/storage/pockets = GetComponent(/datum/component/storage)
 	if(pockets)
 		var/list/how_cool_are_your_threads = list("<span class='notice'>")
@@ -155,7 +159,7 @@
 		else
 			how_cool_are_your_threads += "[src] can store [pockets.max_items] item\s that are [weightclass2text(pockets.max_w_class)] or smaller.\n"
 		if(pockets.quickdraw)
-			how_cool_are_your_threads += "You can quickly remove an item from [src] using Alt-Click.\n"
+			how_cool_are_your_threads += "You can quickly remove an item from [src] using Alt-клик.\n"
 		if(pockets.silent)
 			how_cool_are_your_threads += "Adding or removing items from [src] makes no noise.\n"
 		how_cool_are_your_threads += "</span>"
@@ -188,7 +192,7 @@
 		durability_list += list("ACID" = armor.acid)
 
 	if(LAZYLEN(armor_list) || LAZYLEN(durability_list))
-		. += "<span class='notice'>It has a <a href='?src=[REF(src)];list_armor=1'>tag</a> listing its protection classes.</span>"
+		. += "<hr><span class='notice'>It has a <a href='?src=[REF(src)];list_armor=1'>tag</a> listing its protection classes.</span>"
 
 /obj/item/clothing/Topic(href, href_list)
 	. = ..()
@@ -434,7 +438,7 @@
 
 	visor_toggling()
 
-	to_chat(user, "<span class='notice'>You adjust \the [src] [up ? "up" : "down"].</span>")
+	to_chat(user, "<span class='notice'>You adjust [src] [up ? "up" : "down"].</span>")
 
 	if(iscarbon(user))
 		var/mob/living/carbon/C = user

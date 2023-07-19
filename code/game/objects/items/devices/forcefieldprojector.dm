@@ -53,7 +53,7 @@
 
 /obj/item/forcefield_projector/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>It is currently sustaining [LAZYLEN(current_fields)]/[max_fields] fields, and it's [round((shield_integrity/max_shield_integrity)*100)]% charged.</span>"
+	. += "<hr><span class='notice'>It is currently sustaining [LAZYLEN(current_fields)]/[max_fields] fields, and it's [round((shield_integrity/max_shield_integrity)*100)]% charged.</span>"
 
 /obj/item/forcefield_projector/Initialize(mapload)
 	. = ..()

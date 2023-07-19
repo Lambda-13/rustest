@@ -11,6 +11,7 @@
 	lefthand_file = 'icons/mob/inhands/equipment/mining_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/mining_righthand.dmi'
 	w_class = WEIGHT_CLASS_BULKY
+	supports_variations = VOX_VARIATION
 	custom_materials = list(/datum/material/iron=2000) //one sheet, but where can you make them?
 	tool_behaviour = TOOL_MINING
 	toolspeed = 0.5
@@ -163,7 +164,7 @@
 	item_state = "shovel"
 	w_class = WEIGHT_CLASS_NORMAL
 	custom_materials = list(/datum/material/iron=50)
-	attack_verb = list("bashed", "bludgeoned", "thrashed", "whacked")
+	attack_verb = list("бьёт", "забивает", "избивает", "ударяет")
 	sharpness = IS_SHARP
 
 /obj/item/shovel/Initialize()
@@ -213,5 +214,5 @@
 	force = 6
 	throwforce = 2
 	toolspeed = 0.8
-	attack_verb = list("bashed", "bludgeoned", "spooned", "scooped")
+	attack_verb = list("бьёт", "забивает", "spooned", "scooped")
 	sharpness = IS_BLUNT

@@ -47,12 +47,12 @@
 	. = ..()
 	if(usability || iscultist(user) || iswizard(user) || isobserver(user))
 		if (old_shard)
-			. += "<span class='cult'>A soulstone, used to capture a soul, either from dead humans or from freed shades.</span>"
+			. += "<hr><span class='cult'>A soulstone, used to capture a soul, either from dead humans or from freed shades.</span>"
 		else
-			. += "<span class='cult'>A soulstone, used to capture souls, either from unconscious or sleeping humans or from freed shades.</span>"
-		. += "<span class='cult'>The captured soul can be placed into a construct shell to produce a construct, or released from the stone as a shade.</span>"
+			. += "<hr><span class='cult'>A soulstone, used to capture souls, either from unconscious or sleeping humans or from freed shades.</span>"
+		. += "<hr><span class='cult'>The captured soul can be placed into a construct shell to produce a construct, or released from the stone as a shade.</span>"
 		if(spent)
-			. += "<span class='cult'>This shard is spent; it is now just a creepy rock.</span>"
+			. += "<hr><span class='cult'>This shard is spent; it is now just a creepy rock.</span>"
 
 /obj/item/soulstone/Destroy() //Stops the shade from being qdel'd immediately and their ghost being sent back to the arrival shuttle.
 	for(var/mob/living/simple_animal/shade/A in src)
@@ -60,7 +60,7 @@
 	return ..()
 
 /obj/item/soulstone/proc/hot_potato(mob/living/user)
-	to_chat(user, "<span class='userdanger'>Holy magics residing in \the [src] burn your hand!</span>")
+	to_chat(user, "<span class='userdanger'>Holy magics residing in [src] burn your hand!</span>")
 	var/obj/item/bodypart/affecting = user.get_bodypart("[(user.active_hand_index % 2 == 0) ? "r" : "l" ]_arm")
 	affecting.receive_damage(0, 10)	// 10 burn damage
 	user.emote("scream")

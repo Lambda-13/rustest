@@ -4,13 +4,13 @@
 @use '../colors.scss' with (
   $primary: #00ff00,
   $fg-map-keys: (),
-  $bg-map-keys: (),
+  $bg-map-keys: ()
 );
 @use '../base.scss' with (
   $color-bg: #000000,
   $color-bg-grad-spread: 1%,
   $border-radius: 0,
-  $color-fg: #00ff00,
+  $color-fg: #00ff00
 );
 
 .theme-scarlet {

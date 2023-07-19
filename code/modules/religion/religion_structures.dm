@@ -26,7 +26,7 @@
 	if(!can_i_see || !sect_to_altar)
 		return
 
-	. += "<span class='notice'>The sect currently has [round(sect_to_altar.favor)] favor with [GLOB.deity].</span>"
+	. += "<hr><span class='notice'>The sect currently has [round(sect_to_altar.favor)] favor with [GLOB.deity].</span>"
 	if(!sect_to_altar.rites_list)
 		return
 	. += "List of available Rites:"

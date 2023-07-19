@@ -70,7 +70,7 @@
 		return FALSE
 
 	if(stored_card && stored_card2)
-		to_chat(user, "<span class='warning'>You try to insert \the [I] into \the [src], but its slots are occupied.</span>")
+		to_chat(user, "<span class='warning'>You try to insert \the [I] into [src], but its slots are occupied.</span>")
 		return FALSE
 	if(user)
 		if(!user.transferItemToLoc(I, src))
@@ -82,7 +82,7 @@
 		stored_card = I
 	else
 		stored_card2 = I
-	to_chat(user, "<span class='notice'>You insert \the [I] into \the [src].</span>")
+	to_chat(user, "<span class='notice'>You insert \the [I] into [src].</span>")
 	playsound(src, 'sound/machines/terminal_insert_disc.ogg', 50, FALSE)
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
@@ -93,7 +93,7 @@
 
 /obj/item/computer_hardware/card_slot/try_eject(slot=0, mob/living/user = null, forced = 0)
 	if(!stored_card && !stored_card2)
-		to_chat(user, "<span class='warning'>There are no cards in \the [src].</span>")
+		to_chat(user, "<span class='warning'>There are no cards in [src].</span>")
 		return FALSE
 
 	var/ejected = 0
@@ -124,7 +124,7 @@
 		if(ishuman(user))
 			var/mob/living/carbon/human/H = user
 			H.sec_hud_set_ID()
-		to_chat(user, "<span class='notice'>You remove the card[ejected>1 ? "s" : ""] from \the [src].</span>")
+		to_chat(user, "<span class='notice'>You remove the card[ejected>1 ? "s" : ""] from [src].</span>")
 		playsound(src, 'sound/machines/terminal_insert_disc.ogg', 50, FALSE)
 		return TRUE
 	return FALSE

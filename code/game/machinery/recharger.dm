@@ -27,7 +27,7 @@
 /obj/machinery/recharger/examine(mob/user)
 	. = ..()
 	if(!in_range(user, src) && !issilicon(user) && !isobserver(user))
-		. += "<span class='warning'>Слишком далеко что-бы увидеть дисплей [src]!</span>"
+		. += "<hr><span class='warning'>Слишком далеко что-бы увидеть дисплей [src]!</span>"
 		return
 
 	if(charging)
@@ -35,11 +35,11 @@
 		<span class='notice'>- [charging].</span>"}
 
 	if(!(machine_stat & (NOPOWER|BROKEN)))
-		. += "<span class='notice'>Дисплей показывает:</span>"
-		. += "<span class='notice'>- Оружие заряждается <b>[recharge_coeff*10]%</b> каждый цикл.</span>"
+		. += "<hr><span class='notice'>Дисплей показывает:</span>"
+		. += "<hr><span class='notice'>- Оружие заряждается <b>[recharge_coeff*10]%</b> каждый цикл.</span>"
 		if(charging)
 			var/obj/item/stock_parts/cell/C = charging.get_cell()
-			. += "<span class='notice'>- Заряд батареи [charging] составляет <b>[C.percent()]%</b>.</span>"
+			. += "<hr><span class='notice'>- Заряд батареи [charging] составляет <b>[C.percent()]%</b>.</span>"
 
 
 /obj/machinery/recharger/proc/setCharging(new_charging)

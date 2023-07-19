@@ -8,5 +8,5 @@
 	"job_slots": {
 		"Prisoner": 3
 	},
-	"enabled": true
+	"enabled": false
 }

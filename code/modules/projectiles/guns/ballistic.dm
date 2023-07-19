@@ -190,11 +190,11 @@
 	if (bolt_type == BOLT_TYPE_OPEN)
 		if(!bolt_locked)	//If it's an open bolt, racking again would do nothing
 			if (user)
-				to_chat(user, "<span class='notice'>\The [src]'s [bolt_wording] is already cocked!</span>")
+				to_chat(user, "<span class='notice'>[src]'s [bolt_wording] is already cocked!</span>")
 			return
 		bolt_locked = FALSE
 	if (user)
-		to_chat(user, "<span class='notice'>You rack the [bolt_wording] of \the [src].</span>")
+		to_chat(user, "<span class='notice'>You rack the [bolt_wording] of [src].</span>")
 	process_chamber(!chambered, FALSE)
 	if (bolt_type == BOLT_TYPE_LOCKING && !chambered)
 		bolt_locked = TRUE
@@ -207,7 +207,7 @@
 /obj/item/gun/ballistic/proc/drop_bolt(mob/user = null)
 	playsound(src, bolt_drop_sound, bolt_drop_sound_volume, FALSE)
 	if (user)
-		to_chat(user, "<span class='notice'>You drop the [bolt_wording] of \the [src].</span>")
+		to_chat(user, "<span class='notice'>You drop the [bolt_wording] of [src].</span>")
 	chamber_round()
 	bolt_locked = FALSE
 	update_icon()
@@ -215,12 +215,12 @@
 ///Handles all the logic needed for magazine insertion
 /obj/item/gun/ballistic/proc/insert_magazine(mob/user, obj/item/ammo_box/magazine/AM, display_message = TRUE)
 	if(!istype(AM, mag_type))
-		to_chat(user, "<span class='warning'>\The [AM] doesn't seem to fit into \the [src]...</span>")
+		to_chat(user, "<span class='warning'>\The [AM] doesn't seem to fit into [src]...</span>")
 		return FALSE
 	if(user.transferItemToLoc(AM, src))
 		magazine = AM
 		if (display_message)
-			to_chat(user, "<span class='notice'>You load a new [magazine_wording] into \the [src].</span>")
+			to_chat(user, "<span class='notice'>You load a new [magazine_wording] into [src].</span>")
 		if (magazine.ammo_count())
 			playsound(src, load_sound, load_sound_volume, load_sound_vary)
 		else
@@ -230,7 +230,7 @@
 		update_icon()
 		return TRUE
 	else
-		to_chat(user, "<span class='warning'>You cannot seem to get \the [src] out of your hands!</span>")
+		to_chat(user, "<span class='warning'>You cannot seem to get [src] out of your hands!</span>")
 		return FALSE
 
 ///Handles all the logic of magazine ejection, if tac_load is set that magazine will be tacloaded in the place of the old eject
@@ -245,7 +245,7 @@
 	var/obj/item/ammo_box/magazine/old_mag = magazine
 	if (tac_load)
 		if (insert_magazine(user, tac_load, FALSE))
-			to_chat(user, "<span class='notice'>You perform a tactical reload on \the [src].</span>")
+			to_chat(user, "<span class='notice'>You perform a tactical reload on [src].</span>")
 		else
 			to_chat(user, "<span class='warning'>You dropped the old [magazine_wording], but the new one doesn't fit. How embarassing.</span>")
 			magazine = null
@@ -254,7 +254,7 @@
 	user.put_in_hands(old_mag)
 	old_mag.update_icon()
 	if (display_message)
-		to_chat(user, "<span class='notice'>You pull the [magazine_wording] out of \the [src].</span>")
+		to_chat(user, "<span class='notice'>You pull the [magazine_wording] out of [src].</span>")
 	update_icon()
 
 /obj/item/gun/ballistic/can_shoot()
@@ -272,7 +272,7 @@
 			if (tac_reloads)
 				eject_magazine(user, FALSE, AM)
 			else
-				to_chat(user, "<span class='notice'>There's already a [magazine_wording] in \the [src].</span>")
+				to_chat(user, "<span class='notice'>There's already a [magazine_wording] in [src].</span>")
 		return
 	if (istype(A, /obj/item/ammo_casing) || istype(A, /obj/item/ammo_box))
 		if (bolt_type == BOLT_TYPE_NO_BOLT || internal_magazine)
@@ -281,7 +281,7 @@
 				chambered = null
 			var/num_loaded = magazine.attackby(A, user, params, TRUE)
 			if (num_loaded)
-				to_chat(user, "<span class='notice'>You load [num_loaded] [cartridge_wording]\s into \the [src].</span>")
+				to_chat(user, "<span class='notice'>You load [num_loaded] [cartridge_wording]\s into [src].</span>")
 				playsound(src, load_sound, load_sound_volume, load_sound_vary)
 				if (chambered == null && bolt_type == BOLT_TYPE_NO_BOLT)
 					chamber_round()
@@ -300,7 +300,7 @@
 			to_chat(user, "<span class='warning'>[src] already has a suppressor!</span>")
 			return
 		if(user.transferItemToLoc(A, src))
-			to_chat(user, "<span class='notice'>You screw \the [S] onto \the [src].</span>")
+			to_chat(user, "<span class='notice'>You screw \the [S] onto [src].</span>")
 			install_suppressor(A)
 			return
 	if (can_be_sawn_off)
@@ -328,7 +328,7 @@
 			var/obj/item/suppressor/S = suppressed
 			if(!user.is_holding(src))
 				return ..()
-			to_chat(user, "<span class='notice'>You unscrew \the [suppressed] from \the [src].</span>")
+			to_chat(user, "<span class='notice'>You unscrew \the [suppressed] from [src].</span>")
 			user.put_in_hands(suppressed)
 			w_class -= S.w_class
 			suppressed = null
@@ -474,23 +474,23 @@ GLOBAL_LIST_INIT(gun_saw_types, typecacheof(list(
 	if(!saw.get_sharpness() || !is_type_in_typecache(saw, GLOB.gun_saw_types) && !saw.tool_behaviour == TOOL_SAW) //needs to be sharp. Otherwise turned off eswords can cut this.
 		return
 	if(sawn_off)
-		to_chat(user, "<span class='warning'>\The [src] is already shortened!</span>")
+		to_chat(user, "<span class='warning'>[src] is already shortened!</span>")
 		return
 	if(bayonet)
-		to_chat(user, "<span class='warning'>You cannot saw-off \the [src] with \the [bayonet] attached!</span>")
+		to_chat(user, "<span class='warning'>You cannot saw-off [src] с помощью \the [bayonet] attached!</span>")
 		return
 	user.changeNext_move(CLICK_CD_MELEE)
-	user.visible_message("<span class='notice'>[user] begins to shorten \the [src].</span>", "<span class='notice'>You begin to shorten \the [src]...</span>")
+	user.visible_message("<span class='notice'>[user] begins to shorten [src].</span>", "<span class='notice'>You begin to shorten [src]...</span>")
 
 	//if there's any live ammo inside the gun, makes it go off
 	if(blow_up(user))
-		user.visible_message("<span class='danger'>\The [src] goes off!</span>", "<span class='danger'>\The [src] goes off in your face!</span>")
+		user.visible_message("<span class='danger'>[src] goes off!</span>", "<span class='danger'>[src] goes off in your face!</span>")
 		return
 
 	if(do_after(user, 30, target = src))
 		if(sawn_off)
 			return
-		user.visible_message("<span class='notice'>[user] shortens \the [src]!</span>", "<span class='notice'>You shorten \the [src].</span>")
+		user.visible_message("<span class='notice'>[user] shortens [src]!</span>", "<span class='notice'>You shorten [src].</span>")
 		name = "sawn-off [src.name]"
 		desc = sawn_desc
 		w_class = WEIGHT_CLASS_NORMAL

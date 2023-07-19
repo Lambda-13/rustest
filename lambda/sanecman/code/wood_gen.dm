@@ -7,7 +7,7 @@
 /obj/machinery/power/port_gen/pacman/wood
 	icon = 'lambda/sanecman/icons/obj/wood_engine.dmi'
 	name = "портативный генератор внутреннего сгорания"
-	desc = "Поративный генератор сжигающий дерево и превращающий его в энергию."
+	desc = "Поративный генератор сжигающий древесину и превращающий его в энергию."
 	icon_state = "icg1"
 	base_icon = "icg"
 	circuit = /obj/item/circuitboard/machine/pacman/wood

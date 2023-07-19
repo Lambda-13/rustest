@@ -35,7 +35,7 @@
 	. = ..()
 	saber_color = "red"
 
-/obj/item/holo/esword/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
+/obj/item/holo/esword/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "атаку", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	if(active)
 		return ..()
 	return 0
@@ -106,7 +106,7 @@
 /obj/structure/holohoop/attackby(obj/item/W as obj, mob/user as mob, params)
 	if(get_dist(src,user)<2)
 		if(user.transferItemToLoc(W, drop_location()))
-			visible_message("<span class='warning'>[user] dunks [W] into \the [src]!</span>")
+			visible_message("<span class='warning'>[user] dunks [W] into [src]!</span>")
 
 /obj/structure/holohoop/attack_hand(mob/user)
 	. = ..()
@@ -119,7 +119,7 @@
 			return
 		L.forceMove(loc)
 		L.Paralyze(100)
-		visible_message("<span class='danger'>[user] dunks [L] into \the [src]!</span>")
+		visible_message("<span class='danger'>[user] dunks [L] into [src]!</span>")
 		user.stop_pulling()
 	else
 		..()

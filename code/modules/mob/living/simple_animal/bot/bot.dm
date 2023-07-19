@@ -214,7 +214,7 @@
 	if(!locked && open) //Bot panel is unlocked by ID or emag, and the panel is screwed open. Ready for emagging.
 		emagged = 2
 		remote_disabled = 1 //Manually emagging the bot locks out the AI built in panel.
-		locked = TRUE //Access denied forever!
+		locked = TRUE //Доступ запрещён forever!
 		bot_reset()
 		turn_on() //The bot automatically turns on when emagged, unless recently hit with EMP.
 		to_chat(src, "<span class='userdanger'>(#$*#$^^( OVERRIDE DETECTED</span>")
@@ -233,17 +233,17 @@
 			. += "[src]'s parts look very loose!"
 	else
 		. += "[src] is in pristine condition."
-	. += "<span class='notice'>Its maintenance panel is [open ? "open" : "closed"].</span>"
-	. += "<span class='info'>You can use a <b>screwdriver</b> to [open ? "close" : "open"] it.</span>"
+	. += "<hr><span class='notice'>Its maintenance panel is [open ? "open" : "closed"].</span>"
+	. += "<hr><span class='info'>You can use a <b>screwdriver</b> to [open ? "close" : "open"] it.</span>"
 	if(open)
-		. += "<span class='notice'>Its control panel is [locked ? "locked" : "unlocked"].</span>"
+		. += "<hr><span class='notice'>Its control panel is [locked ? "locked" : "unlocked"].</span>"
 		var/is_sillycone = issilicon(user)
 		if(!emagged && (is_sillycone || user.Adjacent(src)))
-			. += "<span class='info'>Alt-click [is_sillycone ? "" : "or use your ID on "]it to [locked ? "un" : ""]lock its control panel.</span>"
+			. += "<hr><span class='info'>Alt-клик [is_sillycone ? "" : "or use your ID on "]it to [locked ? "un" : ""]lock its control panel.</span>"
 	if(paicard)
-		. += "<span class='notice'>It has a pAI device installed.</span>"
+		. += "<hr><span class='notice'>It has a pAI device installed.</span>"
 		if(!open)
-			. += "<span class='info'>You can use a <b>hemostat</b> to remove it.</span>"
+			. += "<hr><span class='info'>You can use a <b>hemostat</b> to remove it.</span>"
 
 /mob/living/simple_animal/bot/adjustHealth(amount, updating_health = TRUE, forced = FALSE)
 	if(amount>0 && prob(10))
@@ -321,7 +321,7 @@
 		to_chat(user, "<span class='warning'>Please close the access panel before [locked ? "un" : ""]locking it.</span>")
 		return
 	if(!bot_core.allowed(user))
-		to_chat(user, "<span class='warning'>Access denied.</span>")
+		to_chat(user, "<span class='warning'>Доступ запрещён.</span>")
 		return
 	locked = !locked
 	to_chat(user, "<span class='notice'>Controls are now [locked ? "locked" : "unlocked"].</span>")
@@ -359,7 +359,7 @@
 
 			if(W.use_tool(src, user, 0, volume=40))
 				adjustHealth(-10)
-				user.visible_message("<span class='notice'>[user] repairs [src]!</span>","<span class='notice'>You repair [src].</span>")
+				user.visible_message("<span class='notice'>[user] repairs [src]!</span>","<span class='notice'>Чиню [src].</span>")
 		else
 			if(W.force) //if force is non-zero
 				do_sparks(5, TRUE, src)
@@ -506,7 +506,7 @@ Pass the desired type path itself, declaring a temporary var beforehand is not r
 /mob/living/simple_animal/bot/proc/add_to_ignore(subject)
 	if(ignore_list.len < 50) //This will help keep track of them, so the bot is always trying to reach a blocked spot.
 		ignore_list += REF(subject)
-	else  //If the list is full, insert newest, delete oldest.
+	else  //If the list полон insert newest, delete oldest.
 		ignore_list.Cut(1,2)
 		ignore_list += REF(subject)
 
@@ -728,7 +728,7 @@ Pass a positive integer as an argument to override a bot's default speed.
 //PDA control. Some bots, especially MULEs, may have more parameters.
 /mob/living/simple_animal/bot/proc/bot_control(command, mob/user, list/user_access = list())
 	if(!on || emagged == 2 || remote_disabled) //Emagged bots do not respect anyone's authority! Bots with their remote controls off cannot get commands.
-		return TRUE //ACCESS DENIED
+		return TRUE //Доступ запрещён
 	if(client)
 		bot_control_message(command, user)
 	// process control input
@@ -909,7 +909,7 @@ Pass a positive integer as an argument to override a bot's default speed.
 		return TRUE
 	// 0 for access, 1 for denied.
 	if(emagged == 2) //An emagged bot cannot be controlled by humans, silicons can if one hacked it.
-		if(!hacked) //Manually emagged by a human - access denied to all.
+		if(!hacked) //Manually emagged by a human - Доступ запрещён to all.
 			return TRUE
 		else if(!issilicon(user) && !isAdminGhostAI(user)) //Bot is hacked, so only silicons and admins are allowed access.
 			return TRUE

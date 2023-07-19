@@ -91,7 +91,7 @@ const MessageModal = (props, context) => {
             content={props.buttonText}
             color="good"
             disabled={!longEnough}
-            tooltip={!longEnough ? 'You need a longer reason.' : ''}
+            tooltip={!longEnough ? 'Слишком мало текста.' : ''}
             tooltipPosition="right"
             onClick={() => {
               if (longEnough) {
@@ -155,7 +155,7 @@ const PageBuyingShuttle = (props, context) => {
       <Section>
         <Button
           icon="chevron-left"
-          content="Back"
+          content="Назад"
           onClick={() => act('setState', { state: STATE_MAIN })}
         />
       </Section>
@@ -217,7 +217,7 @@ const PageChangingStatus = (props, context) => {
       <Section>
         <Button
           icon="chevron-left"
-          content="Back"
+          content="Назад"
           onClick={() => act('setState', { state: STATE_MAIN })}
         />
       </Section>
@@ -571,7 +571,7 @@ const PageMessages = (props, context) => {
     <Section>
       <Button
         icon="chevron-left"
-        content="Back"
+        content="Назад"
         onClick={() => act('setState', { state: STATE_MAIN })}
       />
     </Section>
@@ -660,13 +660,13 @@ export const CommunicationsConsole = (props, context) => {
         {!hasConnection && <NoConnectionModal />}
 
         {canLogOut || !authenticated ? (
-          <Section title="Authentication">
+          <Section title="Вход">
             <Button
               icon={authenticated ? 'sign-out-alt' : 'sign-in-alt'}
               content={
                 authenticated
-                  ? `Log Out${authorizeName ? ` (${authorizeName})` : ''}`
-                  : 'Log In'
+                  ? `Отключиться${authorizeName ? ` (${authorizeName})` : ''}`
+                  : 'Подключиться'
               }
               color={authenticated ? 'bad' : 'good'}
               onClick={() => act('toggleAuthentication')}

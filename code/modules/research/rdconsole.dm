@@ -136,7 +136,7 @@ Nothing else in the console has ID requirements.
 				return
 			else
 				playsound(src, 'sound/machines/ping.ogg', 50, 3, -1)
-				visible_message("<span class='notice'>You insert [E] into a slot on the [src], producting [E.research] points from the extract's chemical makeup!</span>")
+				visible_message("<span class='notice'>[user] inserts [E] into a slot on the [src]!</span>", "<span class='notice'>You insert [E] into a slot on the [src], producting [E.research] points from the extract's chemical makeup!</span>")
 				stored_research.add_point_list(list(TECHWEB_POINT_TYPE_GENERIC = E.research))
 				slime_already_researched[E.type] = TRUE
 				qdel(D)
@@ -155,7 +155,7 @@ Nothing else in the console has ID requirements.
 				return
 			else
 				playsound(src, 'sound/machines/ping.ogg', 50, 3, -1)
-				visible_message("<span class='notice'>You insert [E] into a slot on the [src], producting [E.research] points from the plant's genetic makeup!</span>")
+				visible_message("<span class='notice'>[user] inserts [E] into a slot on the [src]!</span>", "<span class='notice'>You insert [E] into a slot on the [src], producting [E.research] points from the plant's genetic makeup!</span>")
 				stored_research.add_point_list(list(TECHWEB_POINT_TYPE_GENERIC = E.research))
 				plant_already_researched[E.type] = TRUE
 				qdel(D)
@@ -164,6 +164,18 @@ Nothing else in the console has ID requirements.
 			visible_message("<span class='notice'>[src] buzzes and displays a message: Genetic data already researched!</span>")
 			playsound(src, 'sound/machines/buzz-sigh.ogg', 50, 3, -1)
 			return
+	if(istype(D, /obj/item/assembly/signaler/anomaly))
+
+		var/obj/item/assembly/signaler/anomaly/anomaly = D
+		if(!stored_research)
+			visible_message("Warning: No Linked Server!")
+			return
+
+		playsound(src, 'sound/machines/ping.ogg', 50, 3, -1)
+		visible_message("<span class='notice'>[user] inserts [anomaly] into a slot on the [src]!</span>", "<span class='notice'>You insert [anomaly] into a slot on the [src], producting [anomaly.research] points!</span>")
+		stored_research.add_point_list(list(TECHWEB_POINT_TYPE_GENERIC = anomaly.research))
+		qdel(anomaly)
+		return
 
 	if(istype(D, /obj/item/research_notes))
 		if(!stored_research)
@@ -196,7 +208,7 @@ Nothing else in the console has ID requirements.
 				to_chat(user, "<span class='warning'>A technology disk is already loaded!</span>")
 				return
 			if(!user.transferItemToLoc(D, src))
-				to_chat(user, "<span class='warning'>[D] is stuck to your hand!</span>")
+				to_chat(user, "<span class='warning'>[D] прилип к рукеr hand!</span>")
 				return
 			t_disk = D
 		else if (istype(D, /obj/item/disk/design_disk))
@@ -204,14 +216,14 @@ Nothing else in the console has ID requirements.
 				to_chat(user, "<span class='warning'>A design disk is already loaded!</span>")
 				return
 			if(!user.transferItemToLoc(D, src))
-				to_chat(user, "<span class='warning'>[D] is stuck to your hand!</span>")
+				to_chat(user, "<span class='warning'>[D] прилип к рукеr hand!</span>")
 				return
 			d_disk = D
 		else
 			to_chat(user, "<span class='warning'>Machine cannot accept disks in that format.</span>")
 			return
 		playsound(src, 'sound/machines/terminal_insert_disc.ogg', 50, FALSE)
-		to_chat(user, "<span class='notice'>You insert [D] into \the [src]!</span>")
+		to_chat(user, "<span class='notice'>You insert [D] into [src]!</span>")
 	else if(!(linked_destroy && linked_destroy.busy) && !(linked_lathe && linked_lathe.busy) && !(linked_imprinter && linked_imprinter.busy))
 		. = ..()
 
@@ -231,9 +243,9 @@ Nothing else in the console has ID requirements.
 	. += ..()
 	if(in_range(user, src) || isobserver(user))
 		if (t_disk)
-			. += "<span class='notice'>[t_disk.name] is loaded, Ctrl-Click to remove.</span>"
+			. += "<hr><span class='notice'>[t_disk.name] is loaded, Ctrl-Click to remove.</span>"
 		if (d_disk)
-			. += "<span class='notice'>[d_disk.name] is loaded, Alt-Click to remove.</span>"
+			. += "<hr><span class='notice'>[d_disk.name] is loaded, Alt-клик to remove.</span>"
 
 /obj/machinery/computer/rdconsole/proc/research_node(id, mob/user)
 	if(!stored_research.available_nodes[id] || stored_research.researched_nodes[id])
@@ -1234,6 +1246,16 @@ Nothing else in the console has ID requirements.
 	name = "Robotics R&D Console"
 	req_access = null
 	req_access_txt = "29"
+
+/obj/machinery/computer/rdconsole/robotics/retro
+	icon = 'icons/obj/machines/retro_computer.dmi'
+	icon_state = "computer-retro"
+	deconpath = /obj/structure/frame/computer/retro
+
+/obj/machinery/computer/rdconsole/robotics/solgov
+	icon = 'icons/obj/machines/retro_computer.dmi'
+	icon_state = "computer-solgov"
+	deconpath = /obj/structure/frame/computer/solgov
 
 /obj/machinery/computer/rdconsole/robotics/Initialize()
 	. = ..()

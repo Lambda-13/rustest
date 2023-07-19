@@ -1,6 +1,6 @@
 /obj/machinery/aug_manipulator
-	name = "\improper augment manipulator"
-	desc = "A machine for custom fitting augmentations, with in-built spraypainter."
+	name = "аугментационный манипулятор"
+	desc = "Машина для индивидуальной подгонки аугментаций со встроенным аэрозольным красителем."
 	icon = 'icons/obj/pda.dmi'
 	icon_state = "pdapainter"
 	circuit = /obj/item/circuitboard/machine/aug_manipulator
@@ -10,12 +10,12 @@
 	var/obj/item/bodypart/storedpart
 	var/initial_icon_state
 	var/static/list/style_list_icons = list("standard" = 'icons/mob/augmentation/augments.dmi', "engineer" = 'icons/mob/augmentation/augments_engineer.dmi', "security" = 'icons/mob/augmentation/augments_security.dmi', "mining" = 'icons/mob/augmentation/augments_mining.dmi')
-	var/static/list/type_whitelist = list(/obj/item/bodypart/head/robot, /obj/item/bodypart/r_arm/robot, /obj/item/bodypart/l_arm/robot, /obj/item/bodypart/chest/robot, /obj/item/bodypart/r_leg/robot, /obj/item/bodypart/l_leg/robot)
+	var/static/list/type_whitelist = list(/obj/item/bodypart/head/robot, /obj/item/bodypart/r_arm/robot, /obj/item/bodypart/l_arm/robot, /obj/item/bodypart/chest/robot, /obj/item/bodypart/leg/right/robot, /obj/item/bodypart/leg/left/robot)
 
 /obj/machinery/aug_manipulator/examine(mob/user)
 	. = ..()
 	if(storedpart)
-		. += "<span class='notice'>Alt-click to eject the limb.</span>"
+		. += "<hr><span class='notice'>Alt-клик для вытаскивания части тела.</span>"
 
 /obj/machinery/aug_manipulator/Initialize()
 	initial_icon_state = initial(icon_state)
@@ -67,13 +67,13 @@
 	else if(istype(O, /obj/item/bodypart))
 		var/obj/item/bodypart/B = O
 		if(IS_ORGANIC_LIMB(B))
-			to_chat(user, "<span class='warning'>The machine only accepts cybernetics!</span>")
+			to_chat(user, "<span class='warning'>Машина принимает только кибернетические части тела!</span>")
 			return
 		if(!(O.type in type_whitelist)) //Kepori won't break my system damn it
-			to_chat(user, "<span class='warning'>The machine doesn't accept that type of prosthetic!</span>")
+			to_chat(user, "<span class='warning'>Этот тип протеза не поддерживается!</span>")
 			return
 		if(storedpart)
-			to_chat(user, "<span class='warning'>There is already something inside!</span>")
+			to_chat(user, "<span class='warning'>Внутри что-то есть!</span>")
 			return
 		else
 			O = user.get_active_held_item()
@@ -88,19 +88,19 @@
 			if(!O.tool_start_check(user, amount=0))
 				return
 
-			user.visible_message("<span class='notice'>[user] begins repairing [src].</span>", \
-				"<span class='notice'>You begin repairing [src]...</span>", \
-				"<span class='hear'>You hear welding.</span>")
+			user.visible_message("<span class='notice'>[user] чинит [src].</span>", \
+				"<span class='notice'>Чиню [src]...</span>", \
+				"<span class='hear'>Слышу сварку.</span>")
 
 			if(O.use_tool(src, user, 40, volume=50))
 				if(!(machine_stat & BROKEN))
 					return
-				to_chat(user, "<span class='notice'>You repair [src].</span>")
+				to_chat(user, "<span class='notice'>Успешно восстанавливаю [src].</span>")
 				set_machine_stat(machine_stat & ~BROKEN)
 				obj_integrity = max(obj_integrity, max_integrity)
 				update_icon()
 		else
-			to_chat(user, "<span class='notice'>[src] does not need repairs.</span>")
+			to_chat(user, "<span class='notice'>[src] уже в рабочем состоянии.</span>")
 	else
 		return ..()
 
@@ -111,7 +111,7 @@
 	add_fingerprint(user)
 
 	if(storedpart)
-		var/augstyle = input(user, "Select style.", "Augment Custom Fitting") as null|anything in style_list_icons
+		var/augstyle = input(user, "Выберите стиль", "Кастомизация конечностей") as null|anything in style_list_icons
 		if(!augstyle)
 			return
 		if(!in_range(src, user))
@@ -124,7 +124,7 @@
 		eject_part(user)
 
 	else
-		to_chat(user, "<span class='warning'>\The [src] is empty!</span>")
+		to_chat(user, "<span class='warning'>[src] пуст!</span>")
 
 /obj/machinery/aug_manipulator/proc/eject_part(mob/living/user)
 	if(storedpart)
@@ -132,7 +132,7 @@
 		storedpart = null
 		update_icon()
 	else
-		to_chat(user, "<span class='warning'>[src] is empty!</span>")
+		to_chat(user, "<span class='warning'>[src] пуст!</span>")
 
 /obj/machinery/aug_manipulator/AltClick(mob/living/user)
 	..()

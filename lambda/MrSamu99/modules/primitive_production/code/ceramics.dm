@@ -44,7 +44,7 @@
 		if(!forge_item || !crayon_item.paint_color)
 			return
 		color = crayon_item.paint_color
-		to_chat(user, span_notice("You color [src] with [crayon_item]..."))
+		to_chat(user, span_notice("You color [src] с помощью [crayon_item]..."))
 		return
 	return ..()
 

@@ -51,7 +51,7 @@
 
 		if(!loaded)
 			if(!user.transferItemToLoc(W, src))
-				to_chat(user, "<span class='warning'>[src] is stuck to your hand!</span>")
+				to_chat(user, "<span class='warning'>[src] прилип к рукеr hand!</span>")
 				return
 			else
 				loaded = W //W.loc is src at this point.
@@ -103,7 +103,7 @@
 /obj/item/rcl/examine(mob/user)
 	. = ..()
 	if(loaded)
-		. += "<span class='info'>It contains [loaded.amount]/[max_amount] cables.</span>"
+		. += "<hr><span class='info'>It contains [loaded.amount]/[max_amount] cables.</span>"
 
 /obj/item/rcl/Destroy()
 	QDEL_NULL(loaded)
@@ -187,7 +187,7 @@
 	if(!isturf(user.loc))
 		return
 	if(is_empty(user, 0))
-		to_chat(user, "<span class='warning'>\The [src] is empty!</span>")
+		to_chat(user, "<span class='warning'>[src] is empty!</span>")
 		return
 
 	if(prob(2) && ghetto) //Give ghetto RCLs a 2% chance to jam, requiring it to be reactviated manually.
@@ -276,7 +276,7 @@
 	if(!isturf(user.loc))
 		return
 	if(is_empty(user, 0))
-		to_chat(user, "<span class='warning'>\The [src] is empty!</span>")
+		to_chat(user, "<span class='warning'>[src] is empty!</span>")
 		return
 
 	var/turf/T = get_turf(user)

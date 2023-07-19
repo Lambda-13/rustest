@@ -57,7 +57,7 @@
 			parent_turret.locked = !parent_turret.locked
 			to_chat(user, "<span class='notice'>Controls are now [parent_turret.locked ? "locked" : "unlocked"].</span>")
 		else
-			to_chat(user, "<span class='notice'>Access denied.</span>")
+			to_chat(user, "<span class='notice'>Доступ запрещён.</span>")
 	else if(I.tool_behaviour == TOOL_MULTITOOL && !parent_turret.locked)
 		if(!multitool_check_buffer(user, I))
 			return

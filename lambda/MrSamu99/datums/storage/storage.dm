@@ -792,7 +792,7 @@ GLOBAL_LIST_EMPTY(cached_storage_typecaches)
 		return
 	if(user.active_storage == src && resolve_parent.loc == user)
 		user.active_storage.close(user)
-		//hide_contents(user)
+		close(user)
 		return TRUE
 	if(ishuman(user))
 		var/mob/living/carbon/human/hum = user

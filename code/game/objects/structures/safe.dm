@@ -68,7 +68,7 @@ FLOOR SAFES
 		if(I.w_class + space <= maxspace)
 			space += I.w_class
 			if(!user.transferItemToLoc(I, src))
-				to_chat(user, "<span class='warning'>\The [I] is stuck to your hand, you cannot put it in the safe!</span>")
+				to_chat(user, "<span class='warning'>\The [I] прилип к рукеr hand, you cannot put it in the safe!</span>")
 				return
 			to_chat(user, "<span class='notice'>You put [I] in [src].</span>")
 		else

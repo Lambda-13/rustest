@@ -102,7 +102,7 @@
 			. += dam_reports[tflag]
 			. += "<br />"
 	if(return_pressure() > WARNING_HIGH_PRESSURE)
-		. += "<span class='userdanger'>ВНИМАНИЕ: ОПАСНЫЙ УРОВЕНЬ ДАВЛЕНИЯ В КАБИНЕ</span><br />"
+		. += "<hr><span class='userdanger'>ВНИМАНИЕ: ОПАСНЫЙ УРОВЕНЬ ДАВЛЕНИЯ В КАБИНЕ</span><br />"
 
 ///HTML for list of equipment.
 /obj/mecha/proc/get_equipment_list() //outputs mecha equipment list in html

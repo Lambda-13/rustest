@@ -78,8 +78,8 @@
 		return 0
 
 	if(M == user)
-		user.visible_message("<span class='notice'>[user] swallows some of the contents of \the [src].</span>", \
-			"<span class='notice'>You swallow some of the contents of \the [src].</span>")
+		user.visible_message("<span class='notice'>[user] swallows some of the contents of [src].</span>", \
+			"<span class='notice'>You swallow some of the contents of [src].</span>")
 	else
 		M.visible_message("<span class='warning'>[user] attempts to feed [M] from [src].</span>", \
 			"<span class='warning'>[user] attempts to feed you from [src].</span>")
@@ -109,7 +109,7 @@
 			return
 
 		var/trans = target.reagents.trans_to(src, amount_per_transfer_from_this, transfered_by = user)
-		to_chat(user, "<span class='notice'>You fill [src] with [trans] units of the contents of [target].</span>")
+		to_chat(user, "<span class='notice'>Наполняю [src] с помощью [trans] units of the contents of [target].</span>")
 
 	//Something like a glass or a food item. Player probably wants to transfer TO it.
 	else if(target.is_drainable() || istype(target, /obj/item/reagent_containers/food/snacks))
@@ -308,3 +308,35 @@
 	name = "bbq sauce pack"
 	originalname = "bbq sauce"
 	list_reagents = list(/datum/reagent/consumable/bbqsauce = 10)
+
+
+/obj/item/reagent_containers/food/condiment/ketchup
+	name = "ketchup bottle"
+	desc = "You feel more american already"
+	icon_state = "ketchup"
+	list_reagents = list(/datum/reagent/consumable/ketchup = 50)
+
+/obj/item/reagent_containers/food/condiment/bbqsauce
+	name = "bbq sauce bottle"
+	desc = "Hand wipes not included"
+	icon_state = "bbqsauce"
+	list_reagents = list(/datum/reagent/consumable/bbqsauce = 50)
+
+/obj/item/reagent_containers/food/condiment/hotsauce
+	name = "hot sauce bottle"
+	desc = "You can almost TASTE the stomach ulcers now!"
+	icon_state = "hotsauce"
+	list_reagents = list(/datum/reagent/consumable/capsaicin = 50)
+
+/obj/item/reagent_containers/food/condiment/coldsauce
+	name = "cold sauce bottle"
+	desc = "Leaves the tounge numb in it's passage"
+	icon_state = "coldsauce"
+	list_reagents = list(/datum/reagent/consumable/frostoil = 50)
+
+/obj/item/reagent_containers/food/condiment/oliveoil
+	name = "olive oil bottle"
+	desc = "A delicious oil used in cooking"
+	icon_state = "oliveoil"
+	list_reagents = list(/datum/reagent/consumable/cornoil = 50)
+

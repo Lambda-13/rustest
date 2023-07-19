@@ -175,7 +175,7 @@ Possible to do for anyone motivated enough:
 /obj/machinery/holopad/examine(mob/user)
 	. = ..()
 	if(in_range(user, src) || isobserver(user))
-		. += "<span class='notice'>Дисплей сообщает: Радиус проекции - <b>[holo_range]</b> метров.</span>"
+		. += "<hr><span class='notice'>Дисплей сообщает: Радиус проекции - <b>[holo_range]</b> метров.</span>"
 
 /obj/machinery/holopad/attackby(obj/item/P, mob/user, params)
 	if(default_deconstruction_screwdriver(user, "holopad_open", "holopad0", P))

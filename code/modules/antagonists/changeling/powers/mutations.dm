@@ -39,7 +39,7 @@
 /datum/action/changeling/weapon/sting_action(mob/living/user)
 	var/obj/item/held = user.get_active_held_item()
 	if(held && !user.dropItemToGround(held))
-		to_chat(user, "<span class='warning'>[held] is stuck to your hand, you cannot grow a [weapon_name_simple] over it!</span>")
+		to_chat(user, "<span class='warning'>[held] прилип к рукеr hand, you cannot grow a [weapon_name_simple] over it!</span>")
 		return
 	..()
 	var/limb_regen = 0
@@ -113,7 +113,7 @@
 
 /datum/action/changeling/suit/sting_action(mob/living/carbon/human/user)
 	if(!user.canUnEquip(user.wear_suit))
-		to_chat(user, "<span class='warning'>\the [user.wear_suit] is stuck to your body, you cannot grow a [suit_name_simple] over it!</span>")
+		to_chat(user, "<span class='warning'>\the [user.wear_suit] прилип к рукеr body, you cannot grow a [suit_name_simple] over it!</span>")
 		return
 	if(!user.canUnEquip(user.head))
 		to_chat(user, "<span class='warning'>\the [user.head] is stuck on your head, you cannot grow a [helmet_name_simple] over it!</span>")
@@ -198,7 +198,7 @@
 		if(A.hasPower())
 			user.visible_message("<span class='warning'>[user] jams [src] into the airlock and starts prying it open!</span>", "<span class='warning'>We start forcing the [A] open.</span>", \
 			"<span class='hear'>You hear a metal screeching sound.</span>")
-			playsound(A, 'sound/machines/airlock_alien_prying.ogg', 100, TRUE)
+			playsound(A, 'sound/machines/creaking.ogg', 100, TRUE)
 			if(!do_after(user, 100, target = A))
 				return
 		//user.say("Heeeeeeeeeerrre's Johnny!")
@@ -307,7 +307,7 @@
 
 /obj/projectile/tentacle/fire(setAngle)
 	if(firer)
-		chain = firer.Beam(src, icon_state = "tentacle", time = INFINITY, maxdistance = INFINITY, beam_sleep_time = 1)
+		chain = firer.Beam(src, icon_state = "tentacle", emissive = FALSE)
 	..()
 
 /obj/projectile/tentacle/proc/reset_throw(mob/living/carbon/human/H)
@@ -437,7 +437,7 @@
 	if(ismob(loc))
 		loc.visible_message("<span class='warning'>The end of [loc.name]\'s hand inflates rapidly, forming a huge shield-like mass!</span>", "<span class='warning'>We inflate our hand into a strong shield.</span>", "<span class='hear'>You hear organic matter ripping and tearing!</span>")
 
-/obj/item/shield/changeling/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
+/obj/item/shield/changeling/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "атаку", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	if(remaining_uses < 1)
 		if(ishuman(loc))
 			var/mob/living/carbon/human/H = loc

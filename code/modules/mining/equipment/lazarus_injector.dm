@@ -62,6 +62,6 @@
 /obj/item/lazarus_injector/examine(mob/user)
 	. = ..()
 	if(!loaded)
-		. += "<span class='info'>[src] is empty.</span>"
+		. += "<hr><span class='info'>[src] is empty.</span>"
 	if(malfunctioning)
-		. += "<span class='info'>The display on [src] seems to be flickering.</span>"
+		. += "<hr><span class='info'>The display on [src] seems to be flickering.</span>"

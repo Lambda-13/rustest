@@ -110,7 +110,7 @@
 		return FALSE
 	if(locked)
 		if(!user.mind.has_antag_datum(/datum/antagonist/nukeop,TRUE))
-			to_chat(user, "<span class='danger'>AUTHENTICATION FAILURE. ACCESS DENIED.</span>")
+			to_chat(user, "<span class='danger'>AUTHENTICATION FAILURE. Доступ запрещён.</span>")
 			return FALSE
 	return TRUE
 

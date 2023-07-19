@@ -239,7 +239,7 @@
 
 /obj/structure/transit_tube/station/dispenser/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>This station will create a pod for you to ride, no need to wait for one.</span>"
+	. += "<hr><span class='notice'>This station will create a pod for you to ride, no need to wait for one.</span>"
 
 /obj/structure/transit_tube/station/dispenser/Bumped(atom/movable/AM)
 	if(!(istype(AM) && AM.dir == boarding_dir))

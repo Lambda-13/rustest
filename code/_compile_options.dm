@@ -33,6 +33,10 @@
 #endif							//	1 to use the default behaviour;
 								//	2 for preloading absolutely everything;
 
+/// If this is uncommented, Autowiki will generate edits and shut down the server.
+/// Prefer the autowiki build target instead.
+// #define AUTOWIKI
+
 //Update this whenever you need to take advantage of more recent byond features
 #define MIN_COMPILER_VERSION 514
 #define MIN_COMPILER_BUILD 1556
@@ -84,17 +88,20 @@
 // If you think you need more, rethink it
 #define MAX_ATOM_OVERLAYS 100
 
-#define AUXMOS (world.system_type == MS_WINDOWS ? "auxtools/auxmos.dll" : __detect_auxmos())
+#define AUXMOS (world.system_type == MS_WINDOWS ? "auxmos.dll" : __detect_auxmos())
 
 /proc/__detect_auxmos()
-	if (fexists("./libauxmos.so"))
-		return "./libauxmos.so"
-	else if (fexists("./auxtools/libauxmos.so"))
-		return "./auxtools/libauxmos.so"
-	else if (fexists("[world.GetConfig("env", "HOME")]/.byond/bin/libauxmos.so"))
-		return "[world.GetConfig("env", "HOME")]/.byond/bin/libauxmos.so"
-	else
-		CRASH("Could not find libauxmos.so")
+	var/static/auxmos_path
+	if(!auxmos_path)
+		if (fexists("./libauxmos.so"))
+			auxmos_path = "./libauxmos.so"
+		else if (fexists("./auxtools/libauxmos.so"))
+			auxmos_path = "./auxtools/libauxmos.so"
+		else if (fexists("[world.GetConfig("env", "HOME")]/.byond/bin/libauxmos.so"))
+			auxmos_path = "[world.GetConfig("env", "HOME")]/.byond/bin/libauxmos.so"
+		else
+			CRASH("Could not find libauxmos.so")
+	return auxmos_path
 
 // So we want to have compile time guarantees these procs exist on local type, unfortunately 515 killed the .proc/procname syntax so we have to use nameof()
 #if DM_VERSION < 515

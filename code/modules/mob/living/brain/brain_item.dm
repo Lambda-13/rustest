@@ -8,7 +8,7 @@
 	zone = BODY_ZONE_HEAD
 	slot = ORGAN_SLOT_BRAIN
 	organ_flags = ORGAN_VITAL
-	attack_verb = list("attacked", "slapped", "whacked")
+	attack_verb = list("attacked", "slapped", "ударяет")
 
 	///The brain's organ variables are significantly more different than the other organs, with half the decay rate for balance reasons, and twice the maxHealth
 	decay_factor = STANDARD_ORGAN_DECAY	/ 2		//30 minutes of decaying to result in a fully damaged brain, since a fast decay rate would be unfun gameplay-wise
@@ -130,23 +130,23 @@
 
 	if(O.force != 0 && !(O.item_flags & NOBLUDGEON))
 		setOrganDamage(maxHealth) //fails the brain as the brain was attacked, they're pretty fragile.
-		visible_message("<span class='danger'>[user] hits [src] with [O]!</span>")
-		to_chat(user, "<span class='danger'>You hit [src] with [O]!</span>")
+		visible_message("<span class='danger'>[user] hits [src] с помощью [O]!</span>")
+		to_chat(user, "<span class='danger'>You hit [src] с помощью [O]!</span>")
 
 /obj/item/organ/brain/examine(mob/user)
 	. = ..()
 	if(suicided)
-		. += "<span class='info'>It's started turning slightly grey. They must not have been able to handle the stress of it all.</span>"
+		. += "<hr><span class='info'>It's started turning slightly grey. They must not have been able to handle the stress of it all.</span>"
 		return
 	if((brainmob && (brainmob.client || brainmob.get_ghost())) || decoy_override)
 		if(organ_flags & ORGAN_FAILING)
-			. += "<span class='info'>It seems to still have a bit of energy within it, but it's rather damaged... You may be able to restore it with some <b>mannitol</b>.</span>"
+			. += "<hr><span class='info'>It seems to still have a bit of energy within it, but it's rather damaged... You may be able to restore it with some <b>mannitol</b>.</span>"
 		else if(damage >= BRAIN_DAMAGE_DEATH*0.5)
-			. += "<span class='info'>You can feel the small spark of life still left in this one, but it's got some bruises. You may be able to restore it with some <b>mannitol</b>.</span>"
+			. += "<hr><span class='info'>You can feel the small spark of life still left in this one, but it's got some bruises. You may be able to restore it with some <b>mannitol</b>.</span>"
 		else
-			. += "<span class='info'>You can feel the small spark of life still left in this one.</span>"
+			. += "<hr><span class='info'>You can feel the small spark of life still left in this one.</span>"
 	else
-		. += "<span class='info'>This one is completely devoid of life.</span>"
+		. += "<hr><span class='info'>This one is completely devoid of life.</span>"
 
 /obj/item/organ/brain/attack(mob/living/carbon/C, mob/user)
 	if(!istype(C))

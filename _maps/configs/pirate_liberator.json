@@ -1,0 +1,32 @@
+{
+	"$schema": "https://raw.githubusercontent.com/Lambda-13/rustest/master/_maps/ship_config_schema.json",
+	"map_name": "Liberator class pirate ship",
+	"map_short_name": "Liberator-class",
+	"map_path": "_maps/shuttles/shiptest/pirate_liberator.dmm",
+	"description": "Судно пренадлежащее союзу револционеров ТерраГов а также СССП. Имеет на борту кучу оружия и базовое оборудование для добычи полезных ископаемых. Также тут очень большие запасы водки...",
+	"job_slots": {
+		"Capitan": {
+			"outfit": "/datum/outfit/job/captain/solgov/rebel",
+			"officer": true,
+			"slots": 1
+		},
+		"Michman": {
+			"outfit": "/datum/outfit/job/head_of_personnel/solgov/rebel",
+			"officer": true,
+			"slots": 1
+		},
+		"Mashinist": {
+			"outfit": "/datum/outfit/job/engineer/solgov/rebel",
+			"slots": 2
+		},
+		"Shahter": {
+			"outfit": "/datum/outfit/job/miner/solgov/rebel",
+			"slots": 2
+		},
+		"Matros": {
+			"outfit": "/datum/outfit/job/assistant/solgov/rebel",
+			"slots": 4
+		}
+	},
+	"enabled": true
+}

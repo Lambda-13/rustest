@@ -131,7 +131,7 @@
 			if(access_to_check in D.GetAccess())
 				return TRUE
 		if(loud)
-			to_chat(user, "<span class='danger'>\The [computer] flashes an \"Access Denied\" warning.</span>")
+			to_chat(user, "<span class='danger'>\The [computer] flashes an \"Доступ запрещён\" warning.</span>")
 	return 0
 
 // This attempts to retrieve header data for UIs. If implementing completely new device of different type than existing ones

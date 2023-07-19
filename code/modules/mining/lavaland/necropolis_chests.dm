@@ -29,7 +29,7 @@
 			new /obj/item/reagent_containers/glass/bottle/potion/flight(src)
 		if(7)
 			new /obj/item/pickaxe/diamond(src)
-			new /obj/item/pinpointer/deepcore/advanced(src)
+			new /obj/item/t_scanner/adv_mining_scanner(src)
 		if(8)
 			if(prob(50))
 				new /obj/item/disk/design_disk/modkit_disc/resonator_blast(src)
@@ -114,7 +114,7 @@
 				new /obj/item/reagent_containers/glass/bottle/potion/flight(src)
 			if(7)
 				new /obj/item/pickaxe/diamond(src)
-				new /obj/item/pinpointer/deepcore/advanced(src)
+				new /obj/item/t_scanner/adv_mining_scanner(src)
 			if(8)
 				if(prob(50))
 					new /obj/item/disk/design_disk/modkit_disc/resonator_blast(src)
@@ -272,6 +272,7 @@
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
 	lace_time = 35 SECONDS//nike shoelace art joke
 	slowdown = -0.2
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/under/drip/equipped(mob/user, slot)
 	. = ..()
@@ -586,7 +587,7 @@
 
 /obj/projectile/hook/fire(setAngle)
 	if(firer)
-		chain = firer.Beam(src, icon_state = "chain")
+		chain = firer.Beam(src, icon_state = "chain", emissive = FALSE)
 	..()
 	//TODO: root the firer until the chain returns
 
@@ -638,7 +639,7 @@
 
 /obj/item/immortality_talisman/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>Alt-click для установки сигнала активации.</span>"
+	. += "<hr><span class='notice'>Alt-клик для установки сигнала активации.</span>"
 
 /obj/item/immortality_talisman/AltClick(mob/user)
 	if(user.canUseTopic(src, BE_CLOSE))
@@ -789,13 +790,14 @@
 	name = "Flight Potion"
 	description = "Strange mutagenic compound of unknown origins."
 	reagent_state = LIQUID
+	process_flags = ORGANIC | SYNTHETIC
 	color = "#FFEBEB"
 
 /datum/reagent/flightpotion/expose_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
 	if(iscarbon(M) && M.stat != DEAD)
 		var/mob/living/carbon/C = M
 		var/holycheck = ishumanbasic(C)
-		if(reac_volume < 5 || !(holycheck || islizard(C) || (ismoth(C) && C.dna.features["moth_wings"] != "Burnt Off"))) // implying xenohumans are holy //as with all things,
+		if(reac_volume < 5 || !(holycheck || islizard(C) || isipc(C) || (ismoth(C) && C.dna.features["moth_wings"] != "Burnt Off"))) // implying xenohumans are holy //as with all things,
 			if(method == INGEST && show_message)
 				to_chat(C, "<span class='notice'><i>You feel nothing but a terrible aftertaste.</i></span>")
 			return ..()
@@ -1000,11 +1002,12 @@
 	recoil = 1
 	cell_type = /obj/item/stock_parts/cell/gun
 	ammo_type = list(/obj/item/ammo_casing/energy/spur)
+	supports_variations = VOX_VARIATION
 	var/chargesound
 
 /obj/item/gun/energy/spur/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>This weapon contains a gradual heat accelerator that increases shot power as the weapon's energy stores are depleted. Shots at low power are significantly stronger, but also have incredibly short range.</span>"
+	. += "<hr><span class='notice'>This weapon contains a gradual heat accelerator that increases shot power as the weapon's energy stores are depleted. Shots at low power are significantly stronger, but also have incredibly short range.</span>"
 
 /obj/item/gun/energy/spur/update_icon()
 	var/maxcharge = cell.maxcharge
@@ -1176,9 +1179,9 @@
 
 /obj/item/clothing/suit/armor/ascetic/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>The ascetic's magic woven into this robe increases the owner's speed and deflects harm from their person- however, once it's mirages have melted away, it causes significantly more damage to be taken. The magic can withstand three attacks before it must recover, but it begins regenerating quickly.</span>"
+	. += "<hr><span class='notice'>The ascetic's magic woven into this robe increases the owner's speed and deflects harm from their person- however, once it's mirages have melted away, it causes significantly more damage to be taken. The magic can withstand three attacks before it must recover, but it begins regenerating quickly.</span>"
 
-/obj/item/clothing/suit/armor/ascetic/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
+/obj/item/clothing/suit/armor/ascetic/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "атаку", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	recharge_cooldown = world.time + recharge_delay
 	if(current_charges > 0)
 		var/datum/effect_system/spark_spread/s = new
@@ -1253,7 +1256,7 @@
 
 /obj/item/melee/transforming/cleaving_saw/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>It is [active ? "open, will cleave enemies in a wide arc and deal additional damage to fauna":"closed, and can be used for rapid consecutive attacks that cause fauna to bleed"].\n"+\
+	. += "<hr><span class='notice'>It is [active ? "open, will cleave enemies in a wide arc and deal additional damage to fauna":"closed, and can be used for rapid consecutive attacks that cause fauna to bleed"].\n"+\
 	"Both modes will build up existing bleed effects, doing a burst of high damage if the bleed is built up high enough.\n"+\
 	"Transforming it immediately after an attack causes the next attack to come out faster.</span>"
 
@@ -1419,7 +1422,7 @@
 	user.visible_message("<span class='danger'>[user] strikes with the force of [ghost_counter] vengeful spirits!</span>")
 	..()
 
-/obj/item/melee/ghost_sword/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
+/obj/item/melee/ghost_sword/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "атаку", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	var/ghost_counter = ghost_check()
 	final_block_chance += clamp((ghost_counter * 5), 0, 75)
 	owner.visible_message("<span class='danger'>[owner] is protected by a ring of [ghost_counter] ghosts!</span>")
@@ -1683,7 +1686,7 @@
 
 /obj/item/hierophant_club/examine(mob/user)
 	. = ..()
-	. += "<span class='hierophant_warning'>The[beacon ? " beacon is not currently":"re is a beacon"] attached.</span>"
+	. += "<hr><span class='hierophant_warning'>The[beacon ? " beacon is not currently":"re is a beacon"] attached.</span>"
 
 /obj/item/hierophant_club/suicide_act(mob/living/user)
 	say("Xverwpsgexmrk...", forced = "hierophant club suicide")

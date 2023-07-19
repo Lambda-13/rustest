@@ -16,8 +16,8 @@
 	flags_ricochet = RICOCHET_HARD
 
 	smoothing_flags = SMOOTH_BITMASK
-	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS)
-	canSmoothWith = list(SMOOTH_GROUP_WALLS)
+	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_AIRLOCK)
+	canSmoothWith = list(SMOOTH_GROUP_WALLS, SMOOTH_GROUP_WINDOW_FULLTILE, SMOOTH_GROUP_AIRLOCK)
 
 	///lower numbers are harder. Used to determine the probability of a hulk smashing through.
 	var/hardness = 40
@@ -29,6 +29,9 @@
 
 	var/list/dent_decals
 
+/turf/closed/wall/yesdiag
+	icon_state = "wall-255"
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_DIAGONAL_CORNERS
 
 /turf/closed/wall/Initialize(mapload, inherited_virtual_z)
 	. = ..()
@@ -163,8 +166,8 @@
 	else
 		playsound(src, 'sound/effects/bang.ogg', 50, TRUE)
 		add_dent(WALL_DENT_HIT)
-		user.visible_message("<span class='danger'>[user] smashes \the [src]!</span>", \
-					"<span class='danger'>You smash \the [src]!</span>", \
+		user.visible_message("<span class='danger'>[user] smashes [src]!</span>", \
+					"<span class='danger'>You smash [src]!</span>", \
 					"<span class='hear'>You hear a booming smash!</span>")
 	return TRUE
 
@@ -251,7 +254,7 @@
 			if(!iswallturf(src))
 				return TRUE
 			I.play_tool_sound(src)
-			visible_message("<span class='warning'>[user] smashes through [src] with [I]!</span>", "<span class='italics'>You hear the grinding of metal.</span>")
+			visible_message("<span class='warning'>[user] smashes through [src] с помощью [I]!</span>", "<span class='italics'>You hear the grinding of metal.</span>")
 			dismantle_wall()
 			return TRUE
 	return FALSE

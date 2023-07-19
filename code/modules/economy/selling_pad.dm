@@ -35,9 +35,9 @@
 
 /obj/machinery/computer/selling_pad_control/attackby(obj/item/I, mob/user)
 	var/value = 0
-	if(istype(I, /obj/item/stack/spacecash))
-		var/obj/item/stack/spacecash/C = I
-		value = C.value * C.amount
+	if(istype(I, /obj/item/spacecash/bundle))
+		var/obj/item/spacecash/bundle/C = I
+		value = C.value
 	else if(istype(I, /obj/item/holochip))
 		var/obj/item/holochip/H = I
 		value = H.credits
@@ -51,7 +51,7 @@
 /obj/machinery/computer/selling_pad_control/multitool_act(mob/living/user, obj/item/multitool/I)
 	. = ..()
 	if (istype(I.buffer, /obj/machinery/selling_pad))
-		to_chat(user, "<span class='notice'>You link [src] with [I.buffer] in [I] buffer.</span>")
+		to_chat(user, "<span class='notice'>You link [src] с помощью [I.buffer] in [I] buffer.</span>")
 		pad = WEAKREF(I.buffer)
 		return TRUE
 

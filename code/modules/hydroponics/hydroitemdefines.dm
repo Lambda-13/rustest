@@ -81,14 +81,14 @@
 	hitsound = 'sound/weapons/bladeslice.ogg'
 
 /obj/item/cultivator/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is scratching [user.p_their()] back as hard as [user.p_they()] can with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] is scratching [user.p_their()] back as hard as [user.p_they()] can with [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	return (BRUTELOSS)
 
 /obj/item/cultivator/rake
 	name = "rake"
 	icon_state = "rake"
 	w_class = WEIGHT_CLASS_NORMAL
-	attack_verb = list("slashed", "sliced", "bashed", "clawed")
+	attack_verb = list("slashed", "sliced", "бьёт", "clawed")
 	hitsound = null
 	custom_materials = list(/datum/material/wood = MINERAL_MATERIAL_AMOUNT * 1.5)
 	flags_1 = NONE

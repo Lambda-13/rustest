@@ -238,7 +238,7 @@
 	slot_flags = ITEM_SLOT_BELT
 	w_class = WEIGHT_CLASS_NORMAL
 	custom_materials = list(/datum/material/iron=10, /datum/material/glass=10)
-	attack_verb = list("struck", "pistol whipped", "hit", "bashed")
+	attack_verb = list("struck", "pistol whipped", "hit", "бьёт")
 	var/bullets = 7
 
 /obj/item/toy/gun/examine(mob/user)
@@ -344,7 +344,7 @@
 /obj/item/toy/sword/attackby(obj/item/W, mob/living/user, params)
 	if(istype(W, /obj/item/toy/sword))
 		if(HAS_TRAIT(W, TRAIT_NODROP) || HAS_TRAIT(src, TRAIT_NODROP))
-			to_chat(user, "<span class='warning'>\the [HAS_TRAIT(src, TRAIT_NODROP) ? src : W] is stuck to your hand, you can't attach it to \the [HAS_TRAIT(src, TRAIT_NODROP) ? W : src]!</span>")
+			to_chat(user, "<span class='warning'>\the [HAS_TRAIT(src, TRAIT_NODROP) ? src : W] прилип к рукеr hand, you can't attach it to \the [HAS_TRAIT(src, TRAIT_NODROP) ? W : src]!</span>")
 			return
 		else
 			to_chat(user, "<span class='notice'>You attach the ends of the two plastic swords, making a single double-bladed toy! You're fake-cool.</span>")
@@ -442,7 +442,7 @@
 	two_hand_force = 0
 	attack_verb = list("attacked", "struck", "hit")
 
-/obj/item/dualsaber/toy/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
+/obj/item/dualsaber/toy/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "атаку", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	return 0
 
 /obj/item/dualsaber/toy/IsReflect() //Stops Toy Dualsabers from reflecting energy projectiles
@@ -463,6 +463,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced")
 	hitsound = 'sound/weapons/bladeslice.ogg'
+	supports_variations = VOX_VARIATION
 
 /*
  * Snap pops
@@ -556,8 +557,8 @@
 
 /obj/item/toy/talking/proc/activation_message(mob/user)
 	user.visible_message(
-		"<span class='notice'>[user] pulls the string on \the [src].</span>",
-		"<span class='notice'>You pull the string on \the [src].</span>",
+		"<span class='notice'>[user] pulls the string on [src].</span>",
+		"<span class='notice'>You pull the string on [src].</span>",
 		"<span class='notice'>You hear a string being pulled.</span>")
 
 /obj/item/toy/talking/proc/generate_messages()
@@ -597,8 +598,8 @@
 
 /obj/item/toy/talking/codex_gigas/activation_message(mob/user)
 	user.visible_message(
-		"<span class='notice'>[user] presses the button on \the [src].</span>",
-		"<span class='notice'>You press the button on \the [src].</span>",
+		"<span class='notice'>[user] presses the button on [src].</span>",
+		"<span class='notice'>You press the button on [src].</span>",
 		"<span class='notice'>You hear a soft click.</span>")
 
 /obj/item/toy/talking/codex_gigas/generate_messages()
@@ -648,7 +649,7 @@
 	var/list/card_attack_verb = list("attacked")
 
 /obj/item/toy/cards/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] is slitting [user.p_their()] wrists with \the [src]! It looks like [user.p_they()] [user.p_have()] a crummy hand!</span>")
+	user.visible_message("<span class='suicide'>[user] is slitting [user.p_their()] wrists with [src]! It looks like [user.p_they()] [user.p_have()] a crummy hand!</span>")
 	playsound(src, 'sound/items/cardshuffle.ogg', 50, TRUE)
 	return BRUTELOSS
 
@@ -733,7 +734,7 @@
 		var/obj/item/toy/cards/singlecard/SC = I
 		if(SC.parentdeck == src)
 			if(!user.temporarilyRemoveItemFromInventory(SC))
-				to_chat(user, "<span class='warning'>The card is stuck to your hand, you can't add it to the deck!</span>")
+				to_chat(user, "<span class='warning'>The card прилип к рукеr hand, you can't add it to the deck!</span>")
 				return
 			cards += SC.cardname
 			user.visible_message("<span class='notice'>[user] adds a card to the bottom of the deck.</span>","<span class='notice'>You add the card to the bottom of the deck.</span>")
@@ -745,7 +746,7 @@
 		var/obj/item/toy/cards/cardhand/CH = I
 		if(CH.parentdeck == src)
 			if(!user.temporarilyRemoveItemFromInventory(CH))
-				to_chat(user, "<span class='warning'>The hand of cards is stuck to your hand, you can't add it to the deck!</span>")
+				to_chat(user, "<span class='warning'>The hand of cards прилип к рукеr hand, you can't add it to the deck!</span>")
 				return
 			cards += CH.currenthand
 			user.visible_message("<span class='notice'>[user] puts [user.p_their()] hand of cards in the deck.</span>", "<span class='notice'>You put the hand of cards in the deck.</span>")
@@ -891,7 +892,7 @@
 		if(cardUser.is_holding(src))
 			cardUser.visible_message("<span class='notice'>[cardUser] checks [cardUser.p_their()] card.</span>", "<span class='notice'>The card reads: [cardname].</span>")
 		else
-			. += "<span class='warning'>You need to have the card in your hand to check it!</span>"
+			. += "<hr><span class='warning'>You need to have the card in your hand to check it!</span>"
 
 
 /obj/item/toy/cards/singlecard/verb/Flip()
@@ -1025,7 +1026,7 @@
 /obj/item/toy/nuke/emag_act(mob/user)
 	if (obj_flags & EMAGGED)
 		return
-	to_chat(user, "<span class = 'notice'> You short-circuit \the [src].</span>")
+	to_chat(user, "<span class = 'notice'> You short-circuit [src].</span>")
 	obj_flags |= EMAGGED
 /*
  * Fake meteor
@@ -1041,7 +1042,7 @@
 /obj/item/toy/minimeteor/emag_act(mob/user)
 	if (obj_flags & EMAGGED)
 		return
-	to_chat(user, "<span class = 'notice'> You short-circuit whatever electronics exist inside \the [src], if there even are any.</span>")
+	to_chat(user, "<span class = 'notice'> You short-circuit whatever electronics exist inside [src], if there even are any.</span>")
 	obj_flags |= EMAGGED
 
 /obj/item/toy/minimeteor/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
@@ -1136,7 +1137,7 @@
 
 /obj/item/toy/clockwork_watch/examine(mob/user)
 	. = ..()
-	. += "<span class='info'>Station Time: [station_time_timestamp()]</span>"
+	. += "<hr><span class='info'>Station Time: [station_time_timestamp()]</span>"
 
 /*
  * Toy Dagger

@@ -16,7 +16,7 @@
 
 /turf/open/floor/engine/examine(mob/user)
 	. += ..()
-	. += "<span class='notice'>The reinforcement sheet is <b>wrenched</b> firmly in place.</span>"
+	. += "<hr><span class='notice'>The reinforcement sheet is <b>wrenched</b> firmly in place.</span>"
 
 /turf/open/floor/engine/airless
 	initial_gas_mix = AIRLESS_ATMOS
@@ -31,6 +31,9 @@
 	if(force)
 		..()
 	return //unplateable
+
+/turf/open/floor/engine/temperature_expose()
+	return //inflammable
 
 /turf/open/floor/engine/try_replace_tile(obj/item/stack/tile/T, mob/user, params)
 	return

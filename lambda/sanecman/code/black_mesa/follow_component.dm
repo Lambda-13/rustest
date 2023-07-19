@@ -63,4 +63,4 @@
 		parent_mob.LoseTarget()
 
 /datum/component/follow/proc/on_examine(datum/source, mob/examiner, list/examine_text)
-	examine_text += "Alt-click заставит идти за собой!"
+	examine_text += "Alt-клик заставит идти за собой!"

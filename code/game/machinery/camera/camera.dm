@@ -3,8 +3,8 @@
 #define CAMERA_UPGRADE_MOTION 4
 
 /obj/machinery/camera
-	name = "security camera"
-	desc = "It's used to monitor rooms."
+	name = "камера"
+	desc = "Используется для наблюдения."
 	icon = 'icons/obj/machines/camera.dmi'
 	icon_state = "camera" //mapping icon to represent upgrade states. if you want a different base icon, update default_camera_icon as well as this.
 	light_color = "#CDDDFF"
@@ -44,8 +44,8 @@
 	var/internal_light = TRUE //Whether it can light up when an AI views it
 
 /obj/machinery/camera/preset/toxins //Bomb test site in space
-	name = "Hardened Bomb-Test Camera"
-	desc = "A specially-reinforced camera with a long lasting battery, used to monitor the bomb testing site. An external light is attached to the top."
+	name = "укреплёная камера"
+	desc = "Специально усиленная камера с долговечным аккумулятором, используемая для наблюдения за местом испытания бомбы. Лампа для подсветки прикреплена к верхней части."
 	c_tag = "Bomb Testing Site"
 	network = list("rd","toxins")
 	use_power = NO_POWER_USE //Test site is an unpowered area
@@ -111,26 +111,26 @@
 /obj/machinery/camera/examine(mob/user)
 	. += ..()
 	if(isEmpProof(TRUE)) //don't reveal it's upgraded if was done via MALF AI Upgrade Camera Network ability
-		. += "It has electromagnetic interference shielding installed."
+		. += "<hr>Видно, что защита от ЭМИ установлена."
 	else
-		. += "<span class='info'>It can be shielded against electromagnetic interference with some <b>plasma</b>.</span>"
+		. += "<hr><span class='info'>Она может быть улучшена защитой от ЭМИ <b>плазмой</b>.</span>"
 	if(isXRay(TRUE)) //don't reveal it's upgraded if was done via MALF AI Upgrade Camera Network ability
-		. += "It has an X-ray photodiode installed."
+		. += "<hr>Похоже тут установлен X-ray фотодиод."
 	else
-		. += "<span class='info'>It can be upgraded with an X-ray photodiode with an <b>analyzer</b>.</span>"
+		. += "<hr><span class='info'>Она может быть улучшена рентгеновским фотодиодом при помощи <b>газоанализатора</b>.</span>"
 	if(isMotion())
-		. += "It has a proximity sensor installed."
+		. += "<hr>Здесь установлен датчик движения."
 	else
-		. += "<span class='info'>It can be upgraded with a <b>proximity sensor</b>.</span>"
+		. += "<hr><span class='info'>Она может быть улучшена установкой <b>датчика движения</b>.</span>"
 
 	if(!status)
-		. += "<span class='info'>It's currently deactivated.</span>"
+		. += "<hr><span class='info'>Она не работает.</span>"
 		if(!panel_open && powered())
-			. += "<span class='notice'>You'll need to open its maintenance panel with a <b>screwdriver</b> to turn it back on.</span>"
+			. += "<hr><span class='notice'>Надо бы сначала <b>открутить</b>, чтобы включить её снова.</span>"
 	if(panel_open)
-		. += "<span class='info'>Its maintenance panel is currently open.</span>"
+		. += "<hr><span class='info'>Техническая панель открыта.</span>"
 		if(!status && powered())
-			. += "<span class='info'>It can reactivated with <b>wirecutters</b>.</span>"
+			. += "<hr><span class='info'>Она может быть активирована снова при помощи <b>кусачек</b>.</span>"
 
 /obj/machinery/camera/emp_act(severity)
 	. = ..()
@@ -151,7 +151,7 @@
 				if (M.client.eye == src)
 					M.unset_machine()
 					M.reset_perspective(null)
-					to_chat(M, "<span class='warning'>The screen bursts into static!</span>")
+					to_chat(M, "<span class='warning'>Экран наполняется статикой!</span>")
 
 /obj/machinery/camera/proc/post_emp_reset(thisemp, previous_network)
 	if(QDELETED(src))
@@ -191,7 +191,7 @@
 	if(..())
 		return TRUE
 	panel_open = !panel_open
-	to_chat(user, "<span class='notice'>You screw the camera's panel [panel_open ? "open" : "closed"].</span>")
+	to_chat(user, span_notice("[panel_open ? "Откручиваю" : "Закручиваю"] техническую панель."))
 	I.play_tool_sound(src)
 	update_icon()
 	return TRUE
@@ -209,10 +209,10 @@
 		droppable_parts += assembly.proxy_module
 	if(!droppable_parts.len)
 		return
-	var/obj/item/choice = input(user, "Select a part to remove:", src) as null|obj in sortNames(droppable_parts)
+	var/obj/item/choice = input(user, "Что вытаскиваем?", src) as null|obj in sortNames(droppable_parts)
 	if(!choice || !user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
 		return
-	to_chat(user, "<span class='notice'>You remove [choice] from [src].</span>")
+	to_chat(user, span_notice("Вытаскиваю [choice] из [src]."))
 	if(choice == assembly.xray_module)
 		assembly.drop_upgrade(assembly.xray_module)
 		removeXRay()
@@ -241,7 +241,7 @@
 		return
 
 	setViewRange((view_range == initial(view_range)) ? short_range : initial(view_range))
-	to_chat(user, "<span class='notice'>You [(view_range == initial(view_range)) ? "restore" : "mess up"] the camera's focus.</span>")
+	to_chat(user, span_notice("[(view_range == initial(view_range)) ? "Восстанавливаю" : "Ломаю"] фокусировку камеры."))
 	return TRUE
 
 /obj/machinery/camera/welder_act(mob/living/user, obj/item/I)
@@ -252,10 +252,10 @@
 	if(!I.tool_start_check(user, amount=0))
 		return TRUE
 
-	to_chat(user, "<span class='notice'>You start to weld [src]...</span>")
+	to_chat(user, span_notice("Начинаю разваривать [src.name]..."))
 	if(I.use_tool(src, user, 100, volume=50))
-		user.visible_message("<span class='warning'>[user] unwelds [src], leaving it as just a frame bolted to the wall.</span>",
-			"<span class='warning'>You unweld [src], leaving it as just a frame bolted to the wall</span>")
+		user.visible_message(span_warning("[user] отваривает [src.name] от стены, оставляя только рамку с болтами.") ,
+			span_warning("Отвариваю [src.name] от стены, оставив только рамку с болтами."))
 		deconstruct(TRUE)
 
 	return TRUE
@@ -278,9 +278,9 @@
 			if(!isEmpProof(TRUE)) //don't reveal it was already upgraded if was done via MALF AI Upgrade Camera Network ability
 				if(I.use_tool(src, user, 0, amount=1))
 					upgradeEmpProof(FALSE, TRUE)
-					to_chat(user, "<span class='notice'>You attach [I] into [assembly]'s inner circuits.</span>")
+				to_chat(user, span_notice("Прикрепляю [I.name] во внутреннюю схему [assembly.name]."))
 			else
-				to_chat(user, "<span class='warning'>[src] already has that upgrade!</span>")
+				to_chat(user, span_warning("[src.name] уже имеет это улучшение!"))
 			return
 
 		else if(istype(I, /obj/item/assembly/prox_sensor))
@@ -288,10 +288,10 @@
 				if(!user.temporarilyRemoveItemFromInventory(I))
 					return
 				upgradeMotion()
-				to_chat(user, "<span class='notice'>You attach [I] into [assembly]'s inner circuits.</span>")
+				to_chat(user, span_notice("Прикрепляю [I.name] во внутреннюю схему [assembly.name]."))
 				qdel(I)
 			else
-				to_chat(user, "<span class='warning'>[src] already has that upgrade!</span>")
+				to_chat(user, span_warning("[src.name] уже имеет это улучшение!"))
 			return
 
 	// OTHER
@@ -318,25 +318,25 @@
 				if(AI.control_disabled || (AI.stat == DEAD))
 					return
 				if(U.name == "Unknown")
-					to_chat(AI, "<span class='name'>[U]</span> holds <a href='?_src_=usr;show_paper=1;'>\a [itemname]</a> up to one of your cameras ...")
+					to_chat(AI, "<span class='name'>[U]</span> держит <a href='?_src_=usr;show_paper=1;'> [itemname]</a> перед одной из моих камер...")
 				else
-					to_chat(AI, "<b><a href='?src=[REF(AI)];track=[html_encode(U.name)]'>[U]</a></b> holds <a href='?_src_=usr;show_paper=1;'>\a [itemname]</a> up to one of your cameras ...")
-				AI.last_paper_seen = "<HTML><HEAD><TITLE>[itemname]</TITLE></HEAD><BODY><TT>[info]</TT></BODY></HTML>"
+					to_chat(AI, "<b><a href='?src=[REF(AI)];track=[html_encode(U.name)]'>[U]</a></b> держит <a href='?_src_=usr;show_paper=1;'> [itemname]</a> перед одной из моих камер...")
+				AI.last_paper_seen = "<HTML><HEAD><meta http-equiv='Content-Type' content='text/html; charset=utf-8' /><TITLE>[itemname]</TITLE></HEAD><BODY><TT>[info]</TT></BODY></HTML>"
 			else if (O.client.eye == src)
-				to_chat(O, "<span class='name'>[U]</span> holds \a [itemname] up to one of the cameras ...")
-				O << browse(text("<HTML><HEAD><TITLE>[]</TITLE></HEAD><BODY><TT>[]</TT></BODY></HTML>", itemname, info), text("window=[]", itemname))
+				to_chat(O, "<span class='name'>[U]</span> держит [itemname] перед одной из моих камер...")
+				O << browse(text("<HTML><HEAD><meta http-equiv='Content-Type' content='text/html; charset=utf-8' /><TITLE>[]</TITLE></HEAD><BODY><TT>[]</TT></BODY></HTML>", itemname, info), text("window=[]", itemname))
 		return
 
 	else if(istype(I, /obj/item/camera_bug))
 		if(!can_use())
-			to_chat(user, "<span class='notice'>Camera non-functional.</span>")
+			to_chat(user, span_notice("Камера не работает."))
 			return
 		if(bug)
-			to_chat(user, "<span class='notice'>Camera bug removed.</span>")
+			to_chat(user, span_notice("Жучок удалён."))
 			bug.bugged_cameras -= src.c_tag
 			bug = null
 		else
-			to_chat(user, "<span class='notice'>Camera bugged.</span>")
+			to_chat(user, span_notice("Жучок установлен."))
 			bug = I
 			bug.bugged_cameras[src.c_tag] = src
 		return
@@ -414,7 +414,7 @@
 			visible_message("<span class='danger'>[user] [change_msg] [src]!</span>")
 			add_hiddenprint(user)
 		else
-			visible_message("<span class='danger'>\The [src] [change_msg]!</span>")
+			visible_message("<span class='danger'>[src] [change_msg]!</span>")
 
 		playsound(src, 'sound/items/wirecutter.ogg', 100, TRUE)
 	update_icon() //update Initialize() if you remove this.
@@ -426,7 +426,7 @@
 		if (O.client.eye == src)
 			O.unset_machine()
 			O.reset_perspective(null)
-			to_chat(O, "<span class='warning'>The screen bursts into static!</span>")
+			to_chat(O, "<span class='warning'>Экран наполняется статикой!</span>")
 
 /obj/machinery/camera/proc/triggerCameraAlarm()
 	alarm_on = TRUE

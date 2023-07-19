@@ -45,7 +45,7 @@
 	. = ..()
 	. += deconstruction_hints(user)
 	if(can_flip)
-		. += "<span class='notice'>You can flip it by control shift-clicking the table.</span>"
+		. += "<hr><span class='notice'>You can flip it by control shift-clicking the table.</span>"
 
 /obj/structure/table/proc/deconstruction_hints(mob/user)
 	return "<span class='notice'>The top is <b>screwed</b> on, but the main <b>bolts</b> are also visible.</span>"
@@ -138,8 +138,8 @@
 	if(user.mind?.martial_art.smashes_tables && user.mind?.martial_art.can_use(user))
 		deconstruct(FALSE)
 	playsound(pushed_mob, 'sound/effects/tableslam.ogg', 90, TRUE)
-	pushed_mob.visible_message("<span class='danger'>[user] slams [pushed_mob] onto \the [src]!</span>", \
-								"<span class='userdanger'>[user] slams you onto \the [src]!</span>")
+	pushed_mob.visible_message("<span class='danger'>[user] slams [pushed_mob] onto [src]!</span>", \
+								"<span class='userdanger'>[user] slams you onto [src]!</span>")
 	log_combat(user, pushed_mob, "tabled", null, "onto [src]")
 	SEND_SIGNAL(pushed_mob, COMSIG_ADD_MOOD_EVENT, "table", /datum/mood_event/table)
 
@@ -151,8 +151,8 @@
 	if(user.mind?.martial_art.smashes_tables && user.mind?.martial_art.can_use(user))
 		deconstruct(FALSE)
 	playsound(pushed_mob, 'sound/effects/bang.ogg', 90, TRUE)
-	pushed_mob.visible_message("<span class='danger'>[user] smashes [pushed_mob]'s head against \the [src]!</span>",
-								"<span class='userdanger'>[user] smashes your head against \the [src]</span>")
+	pushed_mob.visible_message("<span class='danger'>[user] smashes [pushed_mob]'s head against [src]!</span>",
+								"<span class='userdanger'>[user] smashes your head against [src]</span>")
 	log_combat(user, pushed_mob, "head slammed", null, "against [src]")
 	SEND_SIGNAL(pushed_mob, COMSIG_ADD_MOOD_EVENT, "table", /datum/mood_event/table_headsmash)
 
@@ -271,6 +271,17 @@
 	base_icon_state = "table"    // WS Edit - Custom Table Fix
 	material_flags = MATERIAL_ADD_PREFIX | MATERIAL_COLOR | MATERIAL_AFFECT_STATISTICS
 	buildstack = null //No buildstack, so generate from mat datums
+
+/obj/structure/table/chem
+	name = "chemistry counter"
+	desc = "A square piece of metal designed to be resistant to any chemical spill."
+	icon = 'icons/obj/smooth_structures/table_chem.dmi'
+	icon_state = "table_chem-0"
+	base_icon_state = "table_chem"
+	smoothing_groups = list(SMOOTH_GROUP_CHEM_TABLES)
+	canSmoothWith = list(SMOOTH_GROUP_CHEM_TABLES)
+	buildstack = /obj/item/stack/sheet/mineral/plastitanium
+	can_flip = FALSE
 
 ///Table on wheels
 /obj/structure/table/rolling
@@ -567,14 +578,14 @@
 /obj/structure/table/optable
 	name = "operating table"
 	desc = "Used for advanced medical procedures."
-	icon = 'goon/icons/obj/surgery.dmi'
-	icon_state = "table1"
+	icon = 'icons/obj/surgery_table.dmi'
+	icon_state = "surgery_table"
 	buildstack = /obj/item/stack/sheet/mineral/silver
 	smoothing_flags = NONE
 	smoothing_groups = null
 	canSmoothWith = null
 	can_buckle = 1
-	buckle_lying = NO_BUCKLE_LYING
+	buckle_lying = 90 //I don't see why you wouldn't be lying down while buckled to it
 	buckle_requires_restraints = FALSE
 	can_flip = FALSE
 	var/mob/living/carbon/human/patient = null
@@ -631,7 +642,7 @@
 
 /obj/structure/rack/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>It's held together by a couple of <b>bolts</b>.</span>"
+	. += "<hr><span class='notice'>It's held together by a couple of <b>bolts</b>.</span>"
 
 /obj/structure/rack/CanAllowThrough(atom/movable/mover, turf/target)
 	. = ..()
@@ -657,7 +668,9 @@
 	if(user.a_intent == INTENT_HARM)
 		return ..()
 	if(user.transferItemToLoc(W, drop_location()))
-		return 1
+		W.pixel_x = pick(9,0,-9)
+		W.pixel_y = pick(10,1)
+		return TRUE
 
 /obj/structure/rack/attack_paw(mob/living/user)
 	attack_hand(user)

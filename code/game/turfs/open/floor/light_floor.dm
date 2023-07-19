@@ -26,11 +26,11 @@
 
 /turf/open/floor/light/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>There's a <b>small crack</b> on the edge of it.</span>"
-	. += "<span class='notice'>Use a multitool on it to change colors.</span>"
-	. += "<span class='notice'>Use a screwdriver to turn it off or on.</span>"
+	. += "<hr><span class='notice'>There's a <b>small crack</b> on the edge of it.</span>"
+	. += "<hr><span class='notice'>Use a multitool on it to change colors.</span>"
+	. += "<hr><span class='notice'>Use a screwdriver to turn it off or on.</span>"
 	if(state) ///check if broken
-		. += "<span class='danger'>The light bulb seems fried!</span>"
+		. += "<hr><span class='danger'>The light bulb seems fried!</span>"
 
 ///create radial menu
 /turf/open/floor/light/proc/populate_lighttile_designs()

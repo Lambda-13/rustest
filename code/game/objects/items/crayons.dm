@@ -91,7 +91,7 @@
 /obj/item/toy/crayon/examine(mob/user)
 	. = ..()
 	if(can_change_colour)
-		. += "<span class='notice'>Ctrl-click [src] while it's on your person to quickly recolour it.</span>"
+		. += "<hr><span class='notice'>Ctrl-click [src] while it's on your person to quickly recolour it.</span>"
 
 /obj/item/toy/crayon/proc/refill()
 	if(charges == -1)
@@ -655,11 +655,11 @@
 /obj/item/toy/crayon/spraycan/suicide_act(mob/user)
 	var/mob/living/carbon/human/H = user
 	if(is_capped || !actually_paints)
-		user.visible_message("<span class='suicide'>[user] shakes up [src] with a rattle and lifts it to [user.p_their()] mouth, but nothing happens!</span>")
+		user.visible_message("<span class='suicide'>[user] shakes up [src] с помощью a rattle and lifts it to [user.p_their()] mouth, but nothing happens!</span>")
 		user.say("MEDIOCRE!!", forced="spraycan suicide")
 		return SHAME
 	else
-		user.visible_message("<span class='suicide'>[user] shakes up [src] with a rattle and lifts it to [user.p_their()] mouth, spraying paint across [user.p_their()] teeth!</span>")
+		user.visible_message("<span class='suicide'>[user] shakes up [src] с помощью a rattle and lifts it to [user.p_their()] mouth, spraying paint across [user.p_their()] teeth!</span>")
 		user.say("WITNESS ME!!", forced="spraycan suicide")
 		if(pre_noise || post_noise)
 			playsound(src, 'sound/effects/spray.ogg', 5, TRUE, 5)
@@ -689,7 +689,7 @@
 		. += "It has [charges_left] use\s left."
 	else
 		. += "It is empty."
-	. += "<span class='notice'>Alt-click [src] to [ is_capped ? "take the cap off" : "put the cap on"].</span>"
+	. += "<hr><span class='notice'>Alt-клик [src] to [ is_capped ? "take the cap off" : "put the cap on"].</span>"
 
 /obj/item/toy/crayon/spraycan/afterattack(atom/target, mob/user, proximity, params)
 	if(!proximity)
@@ -700,6 +700,10 @@
 		return
 
 	if(check_empty(user))
+		return
+
+	if(istype(target, /obj/structure/railing/modern))
+		playsound(user.loc, 'sound/effects/spray.ogg', 25, TRUE, 5)
 		return
 
 	if(iscarbon(target))

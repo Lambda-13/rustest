@@ -85,7 +85,7 @@
 	. = ..()
 
 	if(!beehome)
-		. += "<span class='warning'>This bee is homeless!</span>"
+		. += "<hr><span class='warning'>This bee is homeless!</span>"
 
 /mob/living/simple_animal/hostile/poison/bees/ListTargets() // Bee processing is expessive, so we override them finding targets here.
 	if(!search_objects) //In case we want to have purely hostile bees
@@ -282,7 +282,7 @@
 				if(queen && queen.beegent)
 					qb.queen.assign_reagent(queen.beegent) //Bees use the global singleton instances of reagents, so we don't need to worry about one bee being deleted and her copies losing their reagents.
 				user.put_in_active_hand(qb)
-				user.visible_message("<span class='notice'>[user] injects [src] with royal bee jelly, causing it to split into two bees, MORE BEES!</span>","<span class='warning'>You inject [src] with royal bee jelly, causing it to split into two bees, MORE BEES!</span>")
+				user.visible_message("<span class='notice'>[user] injects [src] с помощью royal bee jelly, causing it to split into two bees, MORE BEES!</span>","<span class='warning'>You inject [src] с помощью royal bee jelly, causing it to split into two bees, MORE BEES!</span>")
 			else
 				to_chat(user, "<span class='warning'>You don't have enough royal bee jelly to split a bee in two!</span>")
 		else

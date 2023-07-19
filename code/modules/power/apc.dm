@@ -140,21 +140,7 @@
 /obj/machinery/power/apc/auto_name
 	auto_name = TRUE
 
-/obj/machinery/power/apc/auto_name/north //Pixel offsets get overwritten on New()
-	dir = NORTH
-	pixel_y = 23
-
-/obj/machinery/power/apc/auto_name/south
-	dir = SOUTH
-	pixel_y = -23
-
-/obj/machinery/power/apc/auto_name/east
-	dir = EAST
-	pixel_x = 24
-
-/obj/machinery/power/apc/auto_name/west
-	dir = WEST
-	pixel_x = -25
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 
 /obj/machinery/power/apc/get_cell()
 	return cell
@@ -179,8 +165,7 @@
 	if (building)
 		setDir(ndir)
 	tdir = dir		// to fix Vars bug
-	setDir(SOUTH)
-
+//!!!!!!!!!!!!!! FUCK YOU SINGLE LINE OF CODE!! FUCK YOU YOU PIECE OF SHIT!!!!! setDir(SOUTH)
 	switch(tdir)
 		if(NORTH)
 			if((pixel_y != initial(pixel_y)) && (pixel_y != 23))
@@ -288,10 +273,10 @@
 		else
 			. += "The cover is closed."
 
-	. += "<span class='notice'>Alt-Click the APC to [ locked ? "unlock" : "lock"] the interface.</span>"
+	. += "<hr><span class='notice'>Alt-клик the APC to [ locked ? "unlock" : "lock"] the interface.</span>"
 
 	if(issilicon(user))
-		. += "<span class='notice'>Ctrl-Click the APC to switch the breaker [ operating ? "off" : "on"].</span>"
+		. += "<hr><span class='notice'>Ctrl-Click the APC to switch the breaker [ operating ? "off" : "on"].</span>"
 
 // update the APC icon to show the three base states
 // also add overlays for indicator lights
@@ -308,9 +293,11 @@
 			icon_state = "apc0"
 		else if(update_state & (UPSTATE_OPENED1|UPSTATE_OPENED2))
 			var/basestate = "apc[ cell ? "2" : "1" ]"
+			if(has_electronics == APC_ELECTRONICS_INSTALLED) //god
+				. += "apc-electronics"
 			if(update_state & UPSTATE_OPENED1)
 				if(update_state & (UPSTATE_MAINT|UPSTATE_BROKE))
-					icon_state = "apcmaint" //disabled APC cannot hold cell
+					icon_state = "apcmaint" //disabled APC не может содержать cell
 				else
 					icon_state = basestate
 			else if(update_state & UPSTATE_OPENED2)
@@ -329,6 +316,16 @@
 
 	if(!(update_state & UPSTATE_ALLGOOD))
 		SSvis_overlays.remove_vis_overlay(src, managed_vis_overlays)
+
+	if(!cell) //it always peeved me that abandoned ships always had the apc lights on. this should fix it
+		icon_update_needed = FALSE
+		set_light(0)
+		return
+
+	if(cell.charge <= 0)
+		icon_update_needed = FALSE
+		set_light(0)
+		return
 
 	if(update & 2)
 		SSvis_overlays.remove_vis_overlay(src, managed_vis_overlays)
@@ -547,7 +544,7 @@
 			return
 		user.visible_message("<span class='notice'>[user.name] welds [src].</span>", \
 							"<span class='notice'>You start welding the APC frame...</span>", \
-							"<span class='hear'>You hear welding.</span>")
+							"<span class='hear'>Слышу сварку.</span>")
 		if(W.use_tool(src, user, 50, volume=50, amount=3))
 			if ((machine_stat & BROKEN) || opened==APC_COVER_REMOVED)
 				new /obj/item/stack/sheet/metal(loc)
@@ -760,11 +757,11 @@
 	else
 		if(allowed(usr) && !wires.is_cut(WIRE_IDSCAN) && !malfhack)
 			locked = !locked
-			to_chat(user, "<span class='notice'>You [ locked ? "lock" : "unlock"] the APC interface.</span>")
+			to_chat(user, "<span class='notice'>You [ locked ? "Блок" : "Разблок"]ирую the APC interface.</span>")
 			update_icon()
 			updateUsrDialog()
 		else
-			to_chat(user, "<span class='warning'>Access denied.</span>")
+			to_chat(user, "<span class='warning'>Доступ запрещён.</span>")
 
 /obj/machinery/power/apc/proc/toggle_nightshift_lights(mob/living/user)
 	if(last_nightshift_switch > world.time - 100) //~10 seconds between each toggle to prevent spamming
@@ -981,7 +978,7 @@
 			)																				\
 		)
 			if(!loud)
-				to_chat(user, "<span class='danger'>\The [src] has eee disabled!</span>")
+				to_chat(user, "<span class='danger'>[src] has eee disabled!</span>")
 			return FALSE
 	return TRUE
 
@@ -1517,6 +1514,28 @@
 			L.nightshift_enabled = nightshift_lights
 			L.update(FALSE)
 		CHECK_TICK
+
+/obj/machinery/power/apc/get_save_vars()
+	var/list/defaults = ..()
+	if(auto_name)
+		defaults -= "name"
+		defaults -= "pixel_x"
+		defaults -= "pixel_y"
+	cell_type = cell.type
+	start_charge = cell.charge / cell.maxcharge * 100
+	return defaults + list(
+		"auto_name",
+		"cell_type",
+		"start_charge",
+		"lighting",
+		"equipment",
+		"environ",
+		"chargemode",
+		"locked",
+		"coverlocked",
+		"operating",
+		"nightshift_lights",
+	)
 
 #undef UPSTATE_CELL_IN
 #undef UPSTATE_OPENED1

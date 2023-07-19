@@ -11,7 +11,7 @@
 	lefthand_file = 'icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/items_righthand.dmi'
 	force = 5
-	attack_verb = list("bashed", "carried")
+	attack_verb = list("бьёт", "carried")
 	w_class = WEIGHT_CLASS_BULKY
 	throw_speed = 2
 	throw_range = 3
@@ -48,13 +48,13 @@
 	if(occupants.len)
 		for(var/V in occupants)
 			var/mob/living/L = V
-			. += "<span class='notice'>It has [L] inside.</span>"
+			. += "<hr><span class='notice'>It has [L] inside.</span>"
 	else
-		. += "<span class='notice'>It has nothing inside.</span>"
+		. += "<hr><span class='notice'>It has nothing inside.</span>"
 	if(user.canUseTopic(src))
-		. += "<span class='notice'>Activate it in your hand to [open ? "close" : "open"] its door.</span>"
+		. += "<hr><span class='notice'>Activate it in your hand to [open ? "close" : "open"] its door.</span>"
 		if(!open)
-			. += "<span class='notice'>Alt-click to [locked ? "unlock" : "lock"] its door.</span>"
+			. += "<hr><span class='notice'>Alt-клик to [locked ? "unlock" : "lock"] its door.</span>"
 
 /obj/item/pet_carrier/attack_self(mob/living/user)
 	if(open)

@@ -42,9 +42,9 @@
 /obj/structure/displaycase/examine(mob/user)
 	. = ..()
 	if(alert)
-		. += "<span class='notice'>Hooked up with an anti-theft system.</span>"
+		. += "<hr><span class='notice'>Hooked up with an anti-theft system.</span>"
 	if(showpiece)
-		. += "<span class='notice'>There's [showpiece] inside.</span>"
+		. += "<hr><span class='notice'>There's [showpiece] inside.</span>"
 	if(trophy_message)
 		. += "The plaque reads:\n [trophy_message]"
 
@@ -106,7 +106,7 @@
 			to_chat(user,  "<span class='notice'>You [open ? "close":"open"] [src].</span>")
 			toggle_lock(user)
 		else
-			to_chat(user,  "<span class='alert'>Access denied.</span>")
+			to_chat(user,  "<span class='alert'>Доступ запрещён.</span>")
 	else if(W.tool_behaviour == TOOL_WELDER && user.a_intent == INTENT_HELP && !broken)
 		if(obj_integrity < max_integrity)
 			if(!W.tool_start_check(user, amount=5))
@@ -116,7 +116,7 @@
 			if(W.use_tool(src, user, 40, amount=5, volume=50))
 				obj_integrity = max_integrity
 				update_icon()
-				to_chat(user, "<span class='notice'>You repair [src].</span>")
+				to_chat(user, "<span class='notice'>Чиню [src].</span>")
 		else
 			to_chat(user, "<span class='warning'>[src] is already in good condition!</span>")
 		return
@@ -336,7 +336,7 @@
 		return TRUE
 
 	else
-		to_chat(user, "<span class='warning'>\The [W] is stuck to your hand, you can't put it in the [src.name]!</span>")
+		to_chat(user, "<span class='warning'>[W] прилип к рукеr hand, you can't put it in the [src.name]!</span>")
 
 	return
 
@@ -557,9 +557,9 @@
 /obj/structure/displaycase/forsale/examine(mob/user)
 	. = ..()
 	if(showpiece && !open)
-		. += "<span class='notice'>[showpiece] is for sale for [sale_price] credits.</span>"
+		. += "<hr><span class='notice'>[showpiece] is for sale for [sale_price] credits.</span>"
 	if(broken)
-		. += "<span class='notice'>[src] is sparking and the hover field generator seems to be overloaded. Use a multitool to fix it.</span>"
+		. += "<hr><span class='notice'>[src] is sparking and the hover field generator seems to be overloaded. Use a multitool to fix it.</span>"
 
 /obj/structure/displaycase/forsale/obj_break(damage_flag)
 	if(!broken && !(flags_1 & NODECONSTRUCT_1))

@@ -141,7 +141,7 @@
 
 				to_chat(user, "<span class='notice'>You begin repairing [src]'s inner metal plate...</span>")
 				if(I.use_tool(src, user, 100, amount=20))
-					to_chat(user, "<span class='notice'>You repair [src]'s inner metal plate. The radiation is contained.</span>")
+					to_chat(user, "<span class='notice'>Чиню [src]'s inner metal plate. The radiation is contained.</span>")
 					deconstruction_state = NUKESTATE_PANEL_REMOVED
 					STOP_PROCESSING(SSobj, core)
 					update_icon()
@@ -660,7 +660,7 @@ This is here to make the tiles around the station mininuke change when it's arme
 		return
 
 	if(isobserver(user) || HAS_TRAIT(user.mind, TRAIT_DISK_VERIFIER))
-		. += "<span class='warning'>The serial numbers on [src] are incorrect.</span>"
+		. += "<hr><span class='warning'>The serial numbers on [src] are incorrect.</span>"
 
 /obj/item/disk/nuclear/attackby(obj/item/I, mob/living/user, params)
 	if(istype(I, /obj/item/claymore/highlander) && !fake)

@@ -87,7 +87,7 @@
 
 /obj/item/gun/ballistic/shotgun/automatic/dual_tube/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>Alt-click to pump it.</span>"
+	. += "<hr><span class='notice'>Alt-клик to pump it.</span>"
 
 /obj/item/gun/ballistic/shotgun/automatic/dual_tube/Initialize()
 	. = ..()
@@ -302,9 +302,9 @@
 /obj/item/gun/ballistic/shotgun/doublebarrel/hook/examine(mob/user)
 	. = ..()
 	if(toggled)
-		. += "<span class='notice'>Alt-click to switch to the shotgun.</span>"
+		. += "<hr><span class='notice'>Alt-клик to switch to the shotgun.</span>"
 	else
-		. += "<span class='notice'>Alt-click to switch to the hook.</span>"
+		. += "<hr><span class='notice'>Alt-клик to switch to the hook.</span>"
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/hook/afterattack(atom/target, mob/living/user, flag, params)
 	if(toggled)
@@ -370,7 +370,7 @@
 	item_state = "shotgun_qb"
 	w_class = WEIGHT_CLASS_BULKY
 	force = 15 //blunt edge and really heavy
-	attack_verb = list("bludgeoned", "smashed")
+	attack_verb = list("забивает", "smashed")
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/sex
 	burst_size = 6
 	pb_knockback = 12
@@ -387,7 +387,7 @@
 /obj/item/gun/ballistic/shotgun/doublebarrel/brazil/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
 	if(prob(0 + (magazine.ammo_count() * 10)))
 		if(prob(10))
-			to_chat(user, "<span class='userdanger'>Something isn't right. \the [src] doesn't fire for a brief moment. Then, the following words come to mind: \
+			to_chat(user, "<span class='userdanger'>Something isn't right. [src] doesn't fire for a brief moment. Then, the following words come to mind: \
 			Ó Pátria amada, \
 			Idolatrada, \
 			Salve! Salve!</span>")
@@ -444,7 +444,7 @@
 	icon_state = "twobore"
 	item_state = "twobore"
 	unique_reskin = null
-	attack_verb = list("bludgeoned", "smashed")
+	attack_verb = list("забивает", "smashed")
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/twobore
 	w_class = WEIGHT_CLASS_BULKY
 	force = 20 //heavy ass elephant gun, why wouldnt it be

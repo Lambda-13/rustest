@@ -4,7 +4,7 @@
 /turf/open/space
 	icon = 'icons/turf/space.dmi'
 	icon_state = "0"
-	name = "\proper space"
+	name = "Космос"
 	intact = 0
 
 	initial_temperature = TCMB
@@ -63,6 +63,8 @@
 		if(canSmoothWith[length(canSmoothWith)] > MAX_S_TURF)
 			smoothing_flags |= SMOOTH_OBJ
 		SET_BITFLAG_LIST(canSmoothWith)
+	if (length(no_connector_typecache))
+		no_connector_typecache = SSicon_smooth.get_no_connector_typecache(src.type, no_connector_typecache, connector_strict_typing)
 
 	var/area/A = loc
 	if(!IS_DYNAMIC_LIGHTING(src) && IS_DYNAMIC_LIGHTING(A))

@@ -15,7 +15,7 @@
 	drop_sound = 'sound/items/handling/crowbar_drop.ogg'
 	pickup_sound =  'sound/items/handling/crowbar_pickup.ogg'
 
-	attack_verb = list("attacked", "bashed", "battered", "bludgeoned", "whacked")
+	attack_verb = list("attacked", "бьёт", "забивает", "ударяет")
 	tool_behaviour = TOOL_CROWBAR
 	toolspeed = 1
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 30)
@@ -71,7 +71,7 @@
 		user.visible_message("<span class='suicide'>[user] is putting [user.p_their()] head in [src], it looks like [user.p_theyre()] trying to commit suicide!</span>")
 		playsound(loc, 'sound/items/jaws_pry.ogg', 50, TRUE, -1)
 	else
-		user.visible_message("<span class='suicide'>[user] is wrapping \the [src] around [user.p_their()] neck. It looks like [user.p_theyre()] trying to rip [user.p_their()] head off!</span>")
+		user.visible_message("<span class='suicide'>[user] is wrapping [src] around [user.p_their()] neck. It looks like [user.p_theyre()] trying to rip [user.p_their()] head off!</span>")
 		playsound(loc, 'sound/items/jaws_cut.ogg', 50, TRUE, -1)
 		if(iscarbon(user))
 			var/mob/living/carbon/C = user

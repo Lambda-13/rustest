@@ -10,7 +10,7 @@
 	throw_speed = 3
 	throw_range = 7
 	w_class = WEIGHT_CLASS_NORMAL
-	attack_verb = list("swept", "brushed off", "bludgeoned", "whacked")
+	attack_verb = list("swept", "brushed off", "забивает", "ударяет")
 	resistance_flags = FLAMMABLE
 	custom_materials = list(/datum/material/iron = 2000) // WS Edit - Item Materials
 

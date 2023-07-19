@@ -70,7 +70,7 @@
 			return
 
 		if(light_power < 1)
-			to_chat(user, "<span class='warning'>\The [src] isn't bright enough to see anything!</span> ")
+			to_chat(user, "<span class='warning'>[src] isn't bright enough to see anything!</span> ")
 			return
 
 		switch(user.zone_selected)
@@ -328,7 +328,7 @@
 	. = ..()
 	// All good, turn it on.
 	if(.)
-		user.visible_message("<span class='notice'>[user] lights \the [src].</span>", "<span class='notice'>You light \the [src]!</span>")
+		user.visible_message("<span class='notice'>[user] lights [src].</span>", "<span class='notice'>You light [src]!</span>")
 		force = on_damage
 		damtype = "fire"
 		START_PROCESSING(SSobj, src)
@@ -383,7 +383,7 @@
 /obj/item/flashlight/lantern/lanternbang/proc/activate()
 	if(cooldown)
 		return
-	src.visible_message("<span class='warning'>\The [src]'s light overloads!</span>")
+	src.visible_message("<span class='warning'>[src]'s light overloads!</span>")
 	new /obj/effect/dummy/lighting_obj (get_turf(src), 10, 4, COLOR_WHITE, 2)
 	playsound(get_turf(src), 'sound/weapons/flash.ogg', 50, TRUE, 3)
 	for(var/mob/living/M in get_hearers_in_view(7, get_turf(src)))
@@ -449,14 +449,14 @@
 		if(ismob(A))
 			var/mob/M = A
 			log_combat(user, M, "attacked", "EMP-light")
-			M.visible_message("<span class='danger'>[user] blinks \the [src] at \the [A].</span>", \
-								"<span class='userdanger'>[user] blinks \the [src] at you.</span>")
+			M.visible_message("<span class='danger'>[user] blinks [src] at \the [A].</span>", \
+								"<span class='userdanger'>[user] blinks [src] at you.</span>")
 		else
-			A.visible_message("<span class='danger'>[user] blinks \the [src] at \the [A].</span>")
-		to_chat(user, "<span class='notice'>\The [src] now has [emp_cur_charges] charge\s.</span>")
+			A.visible_message("<span class='danger'>[user] blinks [src] at \the [A].</span>")
+		to_chat(user, "<span class='notice'>[src] now has [emp_cur_charges] charge\s.</span>")
 		A.emp_act(EMP_HEAVY)
 	else
-		to_chat(user, "<span class='warning'>\The [src] needs time to recharge!</span>")
+		to_chat(user, "<span class='warning'>[src] needs time to recharge!</span>")
 	return
 
 /obj/item/flashlight/emp/debug //for testing emp_act()

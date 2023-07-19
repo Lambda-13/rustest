@@ -6,7 +6,7 @@
 	base_icon_state = "concrete"
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_CONCRETE_WALLS)
-	canSmoothWith = list(SMOOTH_GROUP_CONCRETE_WALLS)
+	canSmoothWith = list(SMOOTH_GROUP_CONCRETE_WALLS,SMOOTH_GROUP_AIRLOCK)
 	rad_insulation = RAD_HEAVY_INSULATION
 	hardness = 30 // doesn't matter much; everything that uses it gets overridden
 	explosion_block = 3
@@ -81,7 +81,7 @@
 // we use this to show health + drying percentage
 /turf/closed/wall/concrete/deconstruction_hints(mob/user)
 	. = list()
-	. += "<span class='notice'>[p_they(TRUE)] look[p_s()] like you could <b>smash</b> [p_them()].</span>"
+	. += "<hr><span class='notice'>[p_they(TRUE)] look[p_s()] like you could <b>smash</b> [p_them()].</span>"
 	switch(harden_lvl)
 		if(0.8 to 0.99)
 			. += "[p_they(TRUE)] look[p_s()] nearly dry."
@@ -95,7 +95,7 @@
 		if(0.25 to 0.5)
 			. += "[p_they(TRUE)] appear[p_s()] heavily damaged."
 		if(0 to 0.25)
-			. += "<span class='warning'>[p_theyre(TRUE)] falling apart!</span>"
+			. += "<hr><span class='warning'>[p_theyre(TRUE)] falling apart!</span>"
 	return
 
 /turf/closed/wall/concrete/create_girder()
@@ -169,8 +169,8 @@
 	if(!arm || arm.bodypart_disabled)
 		return FALSE
 	playsound(src, 'sound/effects/meteorimpact.ogg', 100, TRUE)
-	user.visible_message("<span class='danger'>[user] smashes \the [src]!</span>", \
-				"<span class='danger'>You smash \the [src]!</span>", \
+	user.visible_message("<span class='danger'>[user] smashes [src]!</span>", \
+				"<span class='danger'>You smash [src]!</span>", \
 				"<span class='hear'>You hear a booming smash!</span>")
 	user.say(pick(";RAAAAAAAARGH!", ";HNNNNNNNNNGGGGGGH!", ";GWAAAAAAAARRRHHH!", "NNNNNNNNGGGGGGGGHH!", ";AAAAAAARRRGH!" ), forced = "hulk")
 	alter_health(-250)
@@ -207,8 +207,8 @@
 		playsound(src, 'sound/weapons/tap.ogg', 50, TRUE)
 		return TRUE
 	log_combat(user, src, "attacked", W)
-	user.visible_message("<span class='danger'>[user] hits [src] with [W]!</span>", \
-				"<span class='danger'>You hit [src] with [W]!</span>", null, COMBAT_MESSAGE_RANGE)
+	user.visible_message("<span class='danger'>[user] hits [src] с помощью [W]!</span>", \
+				"<span class='danger'>You hit [src] с помощью [W]!</span>", null, COMBAT_MESSAGE_RANGE)
 	switch(W.damtype)
 		if(BRUTE)
 			playsound(src, 'sound/effects/hit_stone.ogg', 50, TRUE)

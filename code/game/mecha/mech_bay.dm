@@ -47,7 +47,7 @@
 /obj/machinery/mech_bay_recharge_port/examine(mob/user)
 	. = ..()
 	if(in_range(user, src) || isobserver(user))
-		. += "<span class='notice'>The status display reads: Base recharge rate at <b>[max_charge]J</b> per cycle.</span>"
+		. += "<hr><span class='notice'>The status display reads: Base recharge rate at <b>[max_charge]J</b> per cycle.</span>"
 
 /obj/machinery/mech_bay_recharge_port/process()
 	if(machine_stat & NOPOWER || !recharge_console)
@@ -88,6 +88,16 @@
 	circuit = /obj/item/circuitboard/computer/mech_bay_power_console
 	light_color = LIGHT_COLOR_PINK
 	var/obj/machinery/mech_bay_recharge_port/recharge_port
+
+/obj/machinery/computer/mech_bay_power_console/retro
+	icon = 'icons/obj/machines/retro_computer.dmi'
+	icon_state = "computer-retro"
+	deconpath = /obj/structure/frame/computer/retro
+
+/obj/machinery/computer/mech_bay_power_console/solgov
+	icon = 'icons/obj/machines/retro_computer.dmi'
+	icon_state = "computer-solgov"
+	deconpath = /obj/structure/frame/computer/solgov
 
 /obj/machinery/computer/mech_bay_power_console/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)

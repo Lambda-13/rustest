@@ -149,7 +149,7 @@
 /obj/item/flamethrower/examine(mob/user)
 	. = ..()
 	if(beaker)
-		. += "<span class='notice'>\The [src] has \a [beaker] attached. Alt-click to remove it.</span>"
+		. += "<hr><span class='notice'>[src] has \a [beaker] attached. Alt-клик to remove it.</span>"
 
 /obj/item/flamethrower/proc/toggle_igniter(mob/user)
 	if(!beaker)
@@ -281,7 +281,7 @@
 /obj/item/flamethrower/full/tank
 	create_with_tank = TRUE
 
-/obj/item/flamethrower/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
+/obj/item/flamethrower/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "атаку", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	var/obj/projectile/P = hitby
 	if(beaker && damage && attack_type == PROJECTILE_ATTACK && P.damage_type != STAMINA && prob(15))
 		owner.visible_message("<span class='danger'>\The [attack_text] hits the fueltank on [owner]'s [name], rupturing it! What a shot!</span>")

@@ -290,8 +290,8 @@ All the important duct code:
 	if(anchored || can_anchor())
 		set_anchored(!anchored)
 		user.visible_message( \
-		"[user] [anchored ? null : "un"]fastens \the [src].", \
-		"<span class='notice'>You [anchored ? null : "un"]fasten \the [src].</span>", \
+		"[user] [anchored ? null : "un"]fastens [src].", \
+		"<span class='notice'>You [anchored ? null : "un"]fasten [src].</span>", \
 		"<span class='hear'>You hear ratcheting.</span>")
 	return TRUE
 ///collection of all the sanity checks to prevent us from stacking ducts that shouldnt be stacked
@@ -405,7 +405,7 @@ All the important duct code:
 
 /obj/item/stack/ducts/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>It's current color and layer are [duct_color] and [duct_layer]. Use in-hand to change.</span>"
+	. += "<hr><span class='notice'>It's current color and layer are [duct_color] and [duct_layer]. Use in-hand to change.</span>"
 
 /obj/item/stack/ducts/attack_self(mob/user)
 	var/new_layer = input("Select a layer", "Layer") as null|anything in layers

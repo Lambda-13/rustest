@@ -133,7 +133,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	///Coins that we accept?
 	var/obj/item/coin/coin
 	///Bills we accept?
-	var/obj/item/stack/spacecash/bill
+	var/obj/item/spacecash/bundle/bill
 	///Does this machine accept mining points?
 	var/mining_point_vendor = FALSE
 	///Default price of items if not overridden
@@ -498,10 +498,10 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 					if(1) // shatter their legs and bleed 'em
 						crit_rebate = 60
 						C.bleed(150)
-						var/obj/item/bodypart/l_leg/l = C.get_bodypart(BODY_ZONE_L_LEG)
+						var/obj/item/bodypart/leg/left/l = C.get_bodypart(BODY_ZONE_L_LEG)
 						if(l)
 							l.receive_damage(brute=200, updating_health=TRUE)
-						var/obj/item/bodypart/r_leg/r = C.get_bodypart(BODY_ZONE_R_LEG)
+						var/obj/item/bodypart/leg/right/r = C.get_bodypart(BODY_ZONE_R_LEG)
 						if(r)
 							r.receive_damage(brute=200, updating_health=TRUE)
 						if(l || r)
@@ -611,7 +611,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 		if(do_you_have_access)
 			return TRUE
 		else
-			to_chat(user, "<span class='warning'>[src]'s input compartment blinks red: Access denied.</span>")
+			to_chat(user, "<span class='warning'>[src]'s input compartment blinks red: Доступ запрещён.</span>")
 			return FALSE
 
 /obj/machinery/vending/exchange_parts(mob/user, obj/item/storage/part_replacer/W)
@@ -1061,7 +1061,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 			C = H.get_idcard(TRUE)
 			if(C?.registered_account)
 				private_a = C.registered_account
-				say("\The [src] has been linked to [C].")
+				say("[src] has been linked to [C].")
 
 	if(compartmentLoadAccessCheck(user))
 		if(istype(I, /obj/item/pen))

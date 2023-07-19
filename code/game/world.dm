@@ -84,6 +84,10 @@ GLOBAL_VAR(restart_counter)
 	HandleTestRun()
 	#endif
 
+	#ifdef AUTOWIKI
+	setup_autowiki()
+	#endif
+
 /world/proc/InitTgs()
 	TgsNew(new /datum/tgs_event_handler/impl, TGS_SECURITY_TRUSTED)
 	GLOB.revdata.load_tgs_info()
@@ -292,7 +296,7 @@ GLOBAL_VAR(restart_counter)
 		features += GLOB.master_mode
 
 	if (!GLOB.enter_allowed)
-		features += "closed"
+		features += "!private party!"
 
 	var/s = ""
 	var/hostedby
@@ -300,22 +304,22 @@ GLOBAL_VAR(restart_counter)
 		var/server_name = CONFIG_GET(string/servername)
 		if (server_name)
 			s += "<b>[server_name]</b> &#8212; "
-		features += "[CONFIG_GET(flag/norespawn) ? "no " : ""]respawn"
-		if(CONFIG_GET(flag/allow_vote_mode))
-			features += "vote"
-		if(CONFIG_GET(flag/allow_ai))
-			features += "AI allowed"
+		features += "[CONFIG_GET(flag/norespawn) ? "o&tcy;&kcy;&lcy;. " : "&vcy;&kcy;&lcy;. "]pec&pcy;a&vcy;&ncy;" //откл./вкл. респавн
+//		if(CONFIG_GET(flag/allow_vote_mode))
+//			features += "vote"
+//		if(CONFIG_GET(flag/allow_ai))
+//			features += "AI allowed"
 		hostedby = CONFIG_GET(string/hostedby)
 
 	s += "<b>[station_name()]</b>";
 	s += " ("
-	s += "<a href=\"https://shiptest.net/discord\">" //Change this to wherever you want the hub to link to.
-	s += "Discord"  //Replace this with something else. Or ever better, delete it and uncomment the game version.
+	s += "<a href='https://vk.cc/cpakPw'>" //редирект в конфу дискорда
+	s += "&Dcy;&icy;c&kcy;op&dcy;"//дискорд
 	s += "</a>"
 	s += ")"
 	s += " ("
-	s += "<a href=\"https://github.com/Lambda-13/rustest\">"
-	s += "Github"
+	s += "<a href='https://github.com/Lambda-13/rustest'>"
+	s += "&Gcy;&icy;&tcy;xa&bcy;"//гитхаб
 	s += "</a>"
 	s += ")"
 
@@ -324,17 +328,17 @@ GLOBAL_VAR(restart_counter)
 	var/popcaptext = ""
 	var/popcap = max(CONFIG_GET(number/extreme_popcap), CONFIG_GET(number/hard_popcap), CONFIG_GET(number/soft_popcap))
 	if (popcap)
-		popcaptext = "/[popcap]"
+		popcaptext = "(&mcy;a&kcy;c&period; [popcap])"
 
 	if (players > 1)
-		features += "[players][popcaptext] players"
+		features += "[players][popcaptext] &icy;&gcy;po&kcy;o&vcy;"
 	else if (players > 0)
-		features += "[players][popcaptext] player"
+		features += "[players][popcaptext] &icy;&gcy;po&kcy;"
 
 	game_state = (CONFIG_GET(number/extreme_popcap) && players >= CONFIG_GET(number/extreme_popcap)) //tells the hub if we are full
 
 	if (!host && hostedby)
-		features += "hosted by <b>[hostedby]</b>"
+		features += "xoc&tcy;&icy;&tcy; <b>[hostedby]</b>"
 
 	if (features)
 		s += ": [jointext(features, ", ")]"

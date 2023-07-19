@@ -132,7 +132,7 @@
 	custom_premium_price = 300
 
 /obj/item/reagent_containers/hypospray/medipen/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins to choke on \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] begins to choke on [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	return OXYLOSS//ironic. he could save others from oxyloss, but not himself.
 
 /obj/item/reagent_containers/hypospray/medipen/inject(mob/living/M, mob/user)
@@ -155,9 +155,9 @@
 /obj/item/reagent_containers/hypospray/medipen/examine()
 	. = ..()
 	if(reagents && reagents.reagent_list.len)
-		. += "<span class='notice'>It is currently loaded.</span>"
+		. += "<hr><span class='notice'>It is currently loaded.</span>"
 	else
-		. += "<span class='notice'>It is spent.</span>"
+		. += "<hr><span class='notice'>It is spent.</span>"
 
 /obj/item/reagent_containers/hypospray/medipen/stimpack //goliath kiting
 	name = "stimpack medipen"

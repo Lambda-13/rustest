@@ -2,6 +2,8 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 
 GLOBAL_DATUM_INIT(welding_sparks, /mutable_appearance, mutable_appearance('icons/effects/welding_effect.dmi', "welding_sparks", GASFIRE_LAYER, ABOVE_LIGHTING_PLANE))
 
+GLOBAL_DATUM_INIT(cleaning_bubbles, /mutable_appearance, mutable_appearance('icons/effects/effects.dmi', "bubbles", ABOVE_MOB_LAYER, GAME_PLANE))
+
 GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 // if true, everyone item when created will have its name changed to be
 // more... RPG-like.
@@ -46,6 +48,8 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	///Same as for [worn_y_dimension][/obj/item/var/worn_y_dimension] but for inhands, uses the lefthand_ and righthand_ file vars
 	var/inhand_y_dimension = 32
 
+	/// Worn overlay will be shifted by this along y axis
+	var/worn_y_offset = 0
 
 	max_integrity = 200
 
@@ -325,25 +329,32 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 /obj/item/examine(mob/user) //This might be spammy. Remove?
 	. = ..()
 
+	. += "<hr>"
+
 	. += "[gender == PLURAL ? "They are" : "It is"] a [weightclass2text(w_class)] item."
 
 	if(resistance_flags & INDESTRUCTIBLE)
-		. += "[src] seems extremely robust! It'll probably withstand anything that could happen to it!"
+		. += "<hr>"
+		. += "[src] выглядит очень прочным!"
 	else
 		if(resistance_flags & LAVA_PROOF)
-			. += "[src] is made of an extremely heat-resistant material, it'd probably be able to withstand lava!"
+			. += "<hr>"
+			. += "[src] сделан из лавостойкого материала."
 		if(resistance_flags & (ACID_PROOF | UNACIDABLE))
-			. += "[src] looks pretty robust! It'd probably be able to withstand acid!"
+			. += "<hr>"
+			. += "[src] устойчив к кислоте!"
 		if(resistance_flags & FREEZE_PROOF)
-			. += "[src] is made of cold-resistant materials."
+			. += "<hr>"
+			. += "[src] имеет защиту от низких температур."
 		if(resistance_flags & FIRE_PROOF)
-			. += "[src] is made of fire-retardant materials."
+			. += "<hr>"
+			. += "[src] может выдерживать высокие температуры."
 
 	if(!user.research_scanner)
 		return
 
 	/// Research prospects, including boostable nodes and point values. Deliver to a console to know whether the boosts have already been used.
-	var/list/research_msg = list("<font color='purple'>Research prospects:</font> ")
+	var/list/research_msg = list("<font color='purple'>Научная ценность:</font> ")
 	///Separator between the items on the list
 	var/sep = ""
 	///Nodes that can be boosted
@@ -362,10 +373,10 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 		research_msg += techweb_point_display_generic(points)
 
 	if (!sep) // nothing was shown
-		research_msg += "None"
+		research_msg += "Нету"
 
 	// Extractable materials. Only shows the names, not the amounts.
-	research_msg += ".<br><font color='purple'>Extractable materials:</font> "
+	research_msg += ".<br><font color='purple'>Материальная ценность:</font> "
 	if (length(custom_materials))
 		sep = ""
 		for(var/mat in custom_materials)
@@ -373,7 +384,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 			research_msg += CallMaterialName(mat)
 			sep = ", "
 	else
-		research_msg += "None"
+		research_msg += "Нету"
 	research_msg += "."
 	. += research_msg.Join()
 
@@ -406,9 +417,9 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 		if(can_handle_hot)
 			extinguish()
-			to_chat(user, "<span class='notice'>You put out the fire on [src].</span>")
+			to_chat(user, "<span class='notice'>Скидываю пламя с [src].</span>")
 		else
-			to_chat(user, "<span class='warning'>You burn your hand on [src]!</span>")
+			to_chat(user, "<span class='warning'>Обжигаюсь дотронувшись до [src]!</span>")
 			var/obj/item/bodypart/affecting = C.get_bodypart("[(user.active_hand_index % 2 == 0) ? "r" : "l" ]_arm")
 			if(affecting && affecting.receive_damage(0, 5))		// 5 burn damage
 				C.update_damage_overlays()
@@ -418,7 +429,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 		var/mob/living/carbon/C = user
 		if(istype(C))
 			if(!C.gloves || (!(C.gloves.resistance_flags & (UNACIDABLE|ACID_PROOF))))
-				to_chat(user, "<span class='warning'>The acid on [src] burns your hand!</span>")
+				to_chat(user, "<span class='warning'>Кислота на [src] сжигает мои руки!</span>")
 				var/obj/item/bodypart/affecting = C.get_bodypart("[(user.active_hand_index % 2 == 0) ? "r" : "l" ]_arm")
 				if(affecting && affecting.receive_damage(0, 5))		// 5 burn damage
 					C.update_damage_overlays()
@@ -430,7 +441,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	var/grav = user.has_gravity()
 	if(grav > STANDARD_GRAVITY)
 		var/grav_power = min(3,grav - STANDARD_GRAVITY)
-		to_chat(user,"<span class='notice'>You start picking up [src]...</span>")
+		to_chat(user,"<span class='notice'>Начинаю поднимать [src]...</span>")
 		if(!do_mob(user,src,30*grav_power))
 			return
 
@@ -480,7 +491,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	if(!A.has_fine_manipulation)
 		if(src in A.contents) // To stop Aliens having items stuck in their pockets
 			A.dropItemToGround(src)
-		to_chat(user, "<span class='warning'>Your claws aren't capable of such fine manipulation!</span>")
+		to_chat(user, "<span class='warning'>У меня лапки!</span>")
 		return
 	attack_paw(A)
 
@@ -499,10 +510,10 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 // afterattack() and attack() prototypes moved to _onclick/item_attack.dm for consistency
 
-/obj/item/proc/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
+/obj/item/proc/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "атаку", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	SEND_SIGNAL(src, COMSIG_ITEM_HIT_REACT, args)
 	if(prob(final_block_chance))
-		owner.visible_message("<span class='danger'>[owner] blocks [attack_text] with [src]!</span>")
+		owner.visible_message("<span class='danger'>[owner] блокирует [attack_text] при помощи [src]!</span>")
 		return 1
 	return 0
 
@@ -901,6 +912,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 		openToolTip(user,src,params,title = name,content = "[desc]<br><b>Force:</b> [force_string]",theme = "")
 
 /obj/item/MouseEntered(location, control, params)
+	. = ..()
 	if((item_flags & IN_INVENTORY || item_flags & IN_STORAGE) && usr.client.prefs.enable_tips && !QDELETED(src))
 		var/timedelay = usr.client.prefs.tip_delay/100
 		var/user = usr

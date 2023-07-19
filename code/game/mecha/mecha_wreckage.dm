@@ -48,7 +48,7 @@
 	. = ..()
 	if(!AI)
 		return
-	. += "<span class='notice'>The AI recovery beacon is active.</span>"
+	. += "<hr><span class='notice'>The AI recovery beacon is active.</span>"
 
 /obj/structure/mecha_wreckage/welder_act(mob/living/user, obj/item/I)
 	..()

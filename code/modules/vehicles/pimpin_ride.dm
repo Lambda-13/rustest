@@ -49,7 +49,7 @@
 			return
 		floorbuffer = TRUE
 		qdel(I)
-		to_chat(user, "<span class='notice'>You upgrade [src] with the floor buffer.</span>")
+		to_chat(user, "<span class='notice'>You upgrade [src] с помощью the floor buffer.</span>")
 		AddElement(/datum/element/cleaning)
 		update_icon()
 	else if(istype(I, /obj/item/key/janitor))
@@ -104,9 +104,9 @@
 
 /obj/vehicle/ridden/lawnmower/emag_act(mob/user)
 	if(emagged)
-		to_chat(user, "<span class='warning'>The safety mechanisms on \the [src] are already disabled!</span>")
+		to_chat(user, "<span class='warning'>The safety mechanisms on [src] are already disabled!</span>")
 		return
-	to_chat(user, "<span class='warning'>You disable the safety mechanisms on \the [src].</span>")
+	to_chat(user, "<span class='warning'>You disable the safety mechanisms on [src].</span>")
 	desc = "Equipped with reliable safeties to prevent <i>accidents</i> in the workplace. The safety light is <b>off</b>."
 	emagged = TRUE
 
@@ -135,7 +135,7 @@
 			if(M == H)
 				continue
 			if(M.body_position == LYING_DOWN)
-				visible_message("<span class='danger'>\the [src] grinds [M.name] into a fine paste!</span>")
+				visible_message("<span class='danger'>[src] grinds [M.name] into a fine paste!</span>")
 				if (M.stat != DEAD)
 					gib_scream = TRUE
 				M.gib()
@@ -176,7 +176,7 @@
 			mowed = TRUE
 		else
 			take_damage(25)
-			visible_message("<span class='danger'>\the [src] makes a awful grinding sound as it drives over [flora]!</span>")
+			visible_message("<span class='danger'>[src] makes a awful grinding sound as it drives over [flora]!</span>")
 
 	if(mowed)
 		playsound(loc, pick(drive_sounds), 50, 1)

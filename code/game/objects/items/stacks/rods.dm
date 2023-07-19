@@ -5,6 +5,9 @@ GLOBAL_LIST_INIT(rod_recipes, list ( \
 	new/datum/stack_recipe("linen bin", /obj/structure/bedsheetbin/empty, 2, time = 5, one_per_turf = 0), \
 	new/datum/stack_recipe("railing", /obj/structure/railing, 3, time = 18, window_checks = TRUE), \
 	new/datum/stack_recipe("railing corner", /obj/structure/railing/corner, 1, time = 10, window_checks = TRUE), \
+	new/datum/stack_recipe("modern railing", /obj/structure/railing/modern, 3, time = 18, window_checks = TRUE), \
+	new/datum/stack_recipe("modern railing corner", /obj/structure/railing/modern/corner, 1, time = 10, window_checks = TRUE), \
+	new/datum/stack_recipe("modern railing end", /obj/structure/railing/modern/end, 3, time = 18, window_checks = TRUE), \
 	new/datum/stack_recipe("ladder", /obj/structure/ladder/crafted, 15, time = 150, one_per_turf = TRUE, on_floor = FALSE), \
 	))
 
@@ -22,13 +25,13 @@ GLOBAL_LIST_INIT(rod_recipes, list ( \
 	throw_range = 7
 	custom_materials = list(/datum/material/iron=1000)
 	max_amount = 50
-	attack_verb = list("hit", "bludgeoned", "whacked")
+	attack_verb = list("hit", "забивает", "ударяет")
 	hitsound = 'sound/weapons/gun/general/grenade_launch.ogg'
 	embedding = list()
 	novariants = TRUE
 
 /obj/item/stack/rods/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins to stuff \the [src] down [user.p_their()] throat! It looks like [user.p_theyre()] trying to commit suicide!</span>")//it looks like theyre ur mum
+	user.visible_message("<span class='suicide'>[user] begins to stuff [src] down [user.p_their()] throat! It looks like [user.p_theyre()] trying to commit suicide!</span>")//it looks like theyre ur mum
 	return BRUTELOSS
 
 /obj/item/stack/rods/Initialize(mapload, new_amount, merge = TRUE)
@@ -57,7 +60,7 @@ GLOBAL_LIST_INIT(rod_recipes, list ( \
 			user.visible_message(
 				"<span class='notice'>[user.name] shaped [src] into metal with [W].</span>", \
 				"<span class='notice'>You shape [src] into metal with [W].</span>", \
-				"<span class='hear'>You hear welding.</span>")
+				"<span class='hear'>Слышу сварку.</span>")
 			var/obj/item/stack/rods/R = src
 			src = null
 			var/replace = (user.get_inactive_held_item()==R)
@@ -70,7 +73,7 @@ GLOBAL_LIST_INIT(rod_recipes, list ( \
 		if(amount != 1)
 			to_chat(user, "<span class='warning'>You must use a single rod!</span>")
 		else if(S.w_class > WEIGHT_CLASS_SMALL)
-			to_chat(user, "<span class='warning'>The ingredient is too big for [src]!</span>")
+			to_chat(user, "<span class='warning'>The ingredient слишком большой для [src]!</span>")
 		else
 			var/obj/item/reagent_containers/food/snacks/customizable/A = new/obj/item/reagent_containers/food/snacks/customizable/kebab(get_turf(src))
 			A.initialize_custom_food(src, S, user)

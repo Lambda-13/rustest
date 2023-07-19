@@ -169,7 +169,7 @@
 /obj/machinery/computer/piratepad_control/multitool_act(mob/living/user, obj/item/multitool/I)
 	. = ..()
 	if (istype(I) && istype(I.buffer,/obj/machinery/piratepad))
-		to_chat(user, "<span class='notice'>You link [src] with [I.buffer] in [I] buffer.</span>")
+		to_chat(user, "<span class='notice'>You link [src] с помощью [I.buffer] in [I] buffer.</span>")
 		pad = I.buffer
 		return TRUE
 
@@ -327,11 +327,11 @@
 /datum/export/pirate/cash
 	cost = 1
 	unit_name = "bills"
-	export_types = list(/obj/item/stack/spacecash)
+	export_types = list(/obj/item/spacecash/bundle)
 
 /datum/export/pirate/cash/get_amount(obj/O)
-	var/obj/item/stack/spacecash/C = O
-	return ..() * C.amount * C.value
+	var/obj/item/spacecash/bundle/C = O
+	return ..() * C.value
 
 /datum/export/pirate/holochip
 	cost = 1

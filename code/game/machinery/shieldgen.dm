@@ -1,6 +1,6 @@
 /obj/structure/emergency_shield
-	name = "emergency energy shield"
-	desc = "An energy shield used to contain hull breaches."
+	name = "аварийный энергощит"
+	desc = "Энергетический щит, используемый для сдерживания атмосферы при пробоинах в обшивке."
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "shield-old"
 	density = TRUE
@@ -44,8 +44,8 @@
 		new /obj/effect/temp_visual/impact_effect/ion(loc)
 
 /obj/structure/emergency_shield/sanguine
-	name = "sanguine barrier"
-	desc = "A potent shield summoned by cultists to defend their rites."
+	name = "кровавый барьер"
+	desc = "Мощный щит, вызываемый сектантами для защиты своих обрядов."
 	icon_state = "shield-red"
 	max_integrity = 60
 
@@ -53,8 +53,8 @@
 	return
 
 /obj/structure/emergency_shield/invoker
-	name = "Invoker's Shield"
-	desc = "A weak shield summoned by cultists to protect them while they carry out delicate rituals."
+	name = "щит призывателя"
+	desc = "Слабый щит, призванный культистами для защиты во время выполнения деликатных ритуалов."
 	color = "#FF0000"
 	max_integrity = 20
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
@@ -65,8 +65,8 @@
 
 
 /obj/machinery/shieldgen
-	name = "anti-breach shielding projector"
-	desc = "Used to seal minor hull breaches."
+	name = "экранирующий проектор"
+	desc = "Используется для герметизации мелких пробоин обшивки."
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "shieldoff"
 	density = TRUE
@@ -122,25 +122,25 @@
 	if(.)
 		return
 	if(locked && !issilicon(user))
-		to_chat(user, "<span class='warning'>The machine is locked, you are unable to use it!</span>")
+		balloon_alert(user, "Управление заблокировано!")
 		return
 	if(panel_open)
-		to_chat(user, "<span class='warning'>The panel must be closed before operating this machine!</span>")
+		balloon_alert(user, "Панель должна быть закрыта перед активацией!")
 		return
 
 	if (active)
-		user.visible_message("<span class='notice'>[user] deactivated \the [src].</span>", \
-			"<span class='notice'>You deactivate \the [src].</span>", \
-			"<span class='hear'>You hear heavy droning fade out.</span>")
+		user.visible_message("<span class='notice'>[user] отключает [src].</span>", \
+			"<span class='notice'>Выключаю [src].</span>", \
+			"<span class='hear'>Слышу как гул прекращается.</span>")
 		shields_down()
 	else
 		if(anchored)
-			user.visible_message("<span class='notice'>[user] activated \the [src].</span>", \
-				"<span class='notice'>You activate \the [src].</span>", \
-				"<span class='hear'>You hear heavy droning.</span>")
+			user.visible_message("<span class='notice'>[user] включает [src].</span>", \
+				"<span class='notice'>Включаю [src].</span>", \
+				"<span class='hear'>Слышу нарастающий гул.</span>")
 			shields_up()
 		else
-			to_chat(user, "<span class='warning'>The device must first be secured to the floor!</span>")
+			balloon_alert(user, "Для активации нужно прикрутить это к полу!")
 	return
 
 /obj/machinery/shieldgen/attackby(obj/item/W, mob/user, params)
@@ -148,60 +148,60 @@
 		W.play_tool_sound(src, 100)
 		panel_open = !panel_open
 		if(panel_open)
-			to_chat(user, "<span class='notice'>You open the panel and expose the wiring.</span>")
+			balloon_alert(user, "Открываю техническую панель.")
 		else
-			to_chat(user, "<span class='notice'>You close the panel.</span>")
+			balloon_alert(user, "Закрываю техническую панель.")
 	else if(istype(W, /obj/item/stack/cable_coil) && (machine_stat & BROKEN) && panel_open)
 		var/obj/item/stack/cable_coil/coil = W
 		if (coil.get_amount() < 1)
-			to_chat(user, "<span class='warning'>You need one length of cable to repair [src]!</span>")
+			balloon_alert(user, "Нужен один моток кабеля для починки [src]!")
 			return
-		to_chat(user, "<span class='notice'>You begin to replace the wires...</span>")
+		balloon_alert(user, "Начинаю чинить проводку...")
 		if(do_after(user, 30, target = src))
 			if(coil.get_amount() < 1)
 				return
 			coil.use(1)
 			obj_integrity = max_integrity
 			set_machine_stat(machine_stat & ~BROKEN)
-			to_chat(user, "<span class='notice'>You repair \the [src].</span>")
+			balloon_alert(user, "Успешно починил проводку [src].")
 			update_icon()
 
 	else if(W.tool_behaviour == TOOL_WRENCH)
 		if(locked)
-			to_chat(user, "<span class='warning'>The bolts are covered! Unlocking this would retract the covers.</span>")
+			balloon_alert(user, "Блокировка не даёт открутить [src] от пола.")
 			return
 		if(!anchored && !isinspace())
 			W.play_tool_sound(src, 100)
-			to_chat(user, "<span class='notice'>You secure \the [src] to the floor!</span>")
+			balloon_alert(user, "Прикручиваю [src] к полу.")
 			set_anchored(TRUE)
 		else if(anchored)
 			W.play_tool_sound(src, 100)
-			to_chat(user, "<span class='notice'>You unsecure \the [src] from the floor!</span>")
+			balloon_alert(user, "Откручиваю [src] от пола.")
 			if(active)
-				to_chat(user, "<span class='notice'>\The [src] shuts off!</span>")
+				balloon_alert(user, "[src] выключается.")
 				shields_down()
 			set_anchored(FALSE)
 
 	else if(W.GetID())
 		if(allowed(user) && !(obj_flags & EMAGGED))
 			locked = !locked
-			to_chat(user, "<span class='notice'>You [locked ? "lock" : "unlock"] the controls.</span>")
+			balloon_alert(user, "[locked ? "Блок" : "Разблок"]ирую контроль своей картой.")
 		else if(obj_flags & EMAGGED)
-			to_chat(user, "<span class='danger'>Error, access controller damaged!</span>")
+			balloon_alert(user, "Система блокировки повреждена.")
 		else
-			to_chat(user, "<span class='danger'>Access denied.</span>")
+			balloon_alert(user, "Доступ запрещён.")
 
 	else
 		return ..()
 
 /obj/machinery/shieldgen/emag_act(mob/user)
 	if(obj_flags & EMAGGED)
-		to_chat(user, "<span class='warning'>The access controller is damaged!</span>")
+		balloon_alert(user, "Система блокировки повреждена.")
 		return
 	obj_flags |= EMAGGED
 	locked = FALSE
 	playsound(src, "sparks", 100, TRUE, SHORT_RANGE_SOUND_EXTRARANGE)
-	to_chat(user, "<span class='warning'>You short out the access controller.</span>")
+	balloon_alert(user, "Вызываю короткое замыкание в системе блокировки.")
 
 /obj/machinery/shieldgen/update_icon_state()
 	if(active)
@@ -212,8 +212,8 @@
 #define ACTIVE_SETUPFIELDS 1
 #define ACTIVE_HASFIELDS 2
 /obj/machinery/power/shieldwallgen
-	name = "shield wall generator"
-	desc = "A shield generator."
+	name = "генератор энергостены"
+	desc = "Создаёт энергостену."
 	icon = 'icons/obj/stationobjs.dmi'
 	icon_state = "shield_wall_gen"
 	anchored = FALSE
@@ -233,8 +233,8 @@
 	var/obj/structure/cable/attached // the attached cable
 
 /obj/machinery/power/shieldwallgen/xenobiologyaccess		//use in xenobiology containment
-	name = "xenobiology shield wall generator"
-	desc = "A shield generator meant for use in xenobiology."
+	name = "генератор энергостены"
+	desc = "Создаёт энергостену. Имеет блокировку ксенобиологии."
 	req_access = list(ACCESS_XENOBIOLOGY)
 
 /obj/machinery/power/shieldwallgen/anchored
@@ -277,9 +277,9 @@
 		if(!active_power_usage || surplus() >= active_power_usage)
 			add_load(active_power_usage)
 		else
-			visible_message("<span class='danger'>The [src.name] shuts down due to lack of power!</span>", \
-				"If this message is ever seen, something is wrong.",
-				"<span class='hear'>You hear heavy droning fade out.</span>")
+			visible_message("<span class='danger'>[src.name] отключается из-за нехватки энергии!</span>", \
+				"сс220 говно.",
+				"<span class='hear'>Гул стихает.</span>")
 			active = FALSE
 			log_game("[src] deactivated due to lack of power at [AREACOORD(src)]")
 			for(var/direction in GLOB.cardinals)
@@ -349,7 +349,7 @@
 /obj/machinery/power/shieldwallgen/can_be_unfasten_wrench(mob/user, silent)
 	if(active)
 		if(!silent)
-			to_chat(user, "<span class='warning'>Turn off the shield generator first!</span>")
+			balloon_alert(user, "Сперва отключите щиты!")
 		return FAILED_UNFASTEN
 	return ..()
 
@@ -389,11 +389,11 @@
 	if(item.GetID())
 		if(allowed(user) && !(obj_flags & EMAGGED))
 			locked = !locked
-			to_chat(user, "<span class='notice'>You [src.locked ? "lock" : "unlock"] the controls.</span>")
+			balloon_alert(user, "[src.locked ? "Блок" : "Разблок"]ирую панель управления.")
 		else if(obj_flags & EMAGGED)
-			to_chat(user, "<span class='danger'>Error, access controller damaged!</span>")
+			balloon_alert(user, "Система блокировки повреждена!")
 		else
-			to_chat(user, "<span class='danger'>Access denied.</span>")
+			balloon_alert(user, "Доступ запрещён.")
 
 	else
 		add_fingerprint(user)
@@ -407,25 +407,25 @@
 		shock(user,50)
 		return
 	if(!anchored)
-		to_chat(user, "<span class='warning'>\The [src] needs to be firmly secured to the floor first!</span>")
+		balloon_alert(user, "[src] сначала нужно крепко закрепить на полу!")
 		return
 	if(locked && !issilicon(user))
-		to_chat(user, "<span class='warning'>The controls are locked!</span>")
+		balloon_alert(user, "Управление заблокировано!")
 		return
 	if(!powernet)
-		to_chat(user, "<span class='warning'>\The [src] needs to be powered by a wire!</span>")
+		balloon_alert(user, "Под [src] нужно проложить провода!")
 		return
 
 	if(active)
-		user.visible_message("<span class='notice'>[user] turned \the [src] off.</span>", \
-			"<span class='notice'>You turn off \the [src].</span>", \
-			"<span class='hear'>You hear heavy droning fade out.</span>")
+		user.visible_message("<span class='notice'>[user] выключает [src].</span>", \
+			"<span class='notice'>Отключаю [src].</span>", \
+			"<span class='hear'>Гул затихает...</span>")
 		active = FALSE
 		log_game("[src] was deactivated by [key_name(user)] at [AREACOORD(src)]")
 	else
-		user.visible_message("<span class='notice'>[user] turned \the [src] on.</span>", \
-			"<span class='notice'>You turn on \the [src].</span>", \
-			"<span class='hear'>You hear heavy droning.</span>")
+		user.visible_message("<span class='notice'>[user] включает [src].</span>", \
+			"<span class='notice'>Включаю [src].</span>", \
+			"<span class='hear'>Слышу нарастающий гул.</span>")
 		active = ACTIVE_SETUPFIELDS
 		log_game("[src] was activated by [key_name(user)] at [AREACOORD(src)]")
 	add_fingerprint(user)
@@ -436,28 +436,28 @@
 	if(!powernet)
 		return
 	if(active)
-		visible_message("<span class= 'notice'>The [src.name] hums as it powers down.</span>", \
-			"If this message is ever seen, something is wrong.", \
-			"<span class= 'notice'>You hear heavy droning fade out.</span>")
+		visible_message("<span class= 'notice'>[src.name] гудит прежде чем выключиться.</span>", \
+			"сс220 говно.", \
+			"<span class= 'notice'>Гул затихает...</span>")
 		playsound(src, 'sound/machines/synth_no.ogg', 50, TRUE, frequency = 6120)
 		active = FALSE
 		log_game("[src] was deactivated by wire pulse at [AREACOORD(src)]")
 	else
-		visible_message("<span class= 'notice'>The [src.name] beeps as it powers up.</span>", \
-			"If this message is ever seen, something is wrong.", \
-			"<span class= 'notice'>You hear heavy droning.</span>")
+		visible_message("<span class= 'notice'>[src.name] бикает и включается.</span>", \
+			"сс220 говно.", \
+			"<span class= 'notice'>Слышу нарастающий гул.</span>")
 		playsound(src, 'sound/machines/synth_yes.ogg', 50, TRUE, frequency = 6120)
 		active = ACTIVE_SETUPFIELDS
 		log_game("[src] was activated by wire pulse at [AREACOORD(src)]")
 
 /obj/machinery/power/shieldwallgen/emag_act(mob/user)
 	if(obj_flags & EMAGGED)
-		to_chat(user, "<span class='warning'>The access controller is damaged!</span>")
+		balloon_alert(user, "Система блокировки повреждена!")
 		return
 	obj_flags |= EMAGGED
 	locked = FALSE
 	playsound(src, "sparks", 100, TRUE, SHORT_RANGE_SOUND_EXTRARANGE)
-	to_chat(user, "<span class='warning'>You short out the access controller.</span>")
+	balloon_alert(user, "Ломаю систему блокировки.")
 
 /obj/machinery/power/shieldwallgen/proc/shock(mob/user, prb)
 	if(machine_stat & (BROKEN|NOPOWER))		// unpowered, no shock
@@ -479,8 +479,8 @@
 				shocked = FALSE
 
 /obj/machinery/power/shieldwallgen/atmos
-	name = "holofield generator"
-	desc = "A holofield generator designed for use in ship loading bays."
+	name = "генератор голополя"
+	desc = "Генератор голополя, предназначенный для использования в погрузочных отсеках кораблей."
 	icon = 'icons/obj/stationobjs.dmi'
 	icon_state = "shield_wall_gen_atmos"
 	circuit = /obj/item/circuitboard/machine/shieldwallgen/atmos
@@ -489,14 +489,15 @@
 	req_access = list()
 	locked = FALSE
 	shield_range = 8
+	layer = WALL_OBJ_LAYER
 
 /obj/machinery/power/shieldwallgen/atmos/roundstart
 	anchored = TRUE
 	active = ACTIVE_SETUPFIELDS
 
 /obj/machinery/power/shieldwallgen/atmos/strong //these are for ruins and large hangars, try to not use them on ships
-	name = "high power holofield generator"
-	desc = "A holofield generator designed for use in starbase bays."
+	name = "мощный генератор голополя"
+	desc = "Генератор голополя, предназначенный для использования в отсеках звездных доков."
 	circuit = /obj/item/circuitboard/machine/shieldwallgen/atmos/strong
 	shield_range = 20
 	active_power_usage = 1000
@@ -511,7 +512,7 @@
 
 /obj/machinery/power/shieldwallgen/atmos/proc/can_be_rotated(mob/user, rotation_type)
 	if (anchored)
-		to_chat(user, "<span class='warning'>It is fastened to the floor!</span>")
+		balloon_alert(user, "Не могу повернуть [src] пока он прикреплён к полу!")
 		return FALSE
 	return TRUE
 
@@ -565,8 +566,8 @@
 
 //////////////Containment Field START
 /obj/machinery/shieldwall
-	name = "shield wall"
-	desc = "An energy shield."
+	name = "энергощит"
+	desc = "Стена энергощита."
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "shieldwall"
 	density = TRUE
@@ -586,7 +587,7 @@
 		setDir(get_dir(gen_primary, gen_secondary))
 	if(hardshield == TRUE)
 		for(var/mob/living/victim in get_turf(src))
-			visible_message("<span class='danger'>\The [src] is suddenly occupying the same space as \the [victim]!</span>")
+			visible_message("<span class='danger'>[src] разрывает на куски [victim]!</span>")
 			victim.gib()
 
 /obj/machinery/shieldwall/Destroy()
@@ -642,15 +643,15 @@
 
 //atmos blocking shieldwalls for shiptest use
 /obj/machinery/shieldwall/atmos
-	name = "holofield wall"
-	desc = "An energy shield capable of blocking gas movement."
+	name = "стена голополя"
+	desc = "Энергетический щит, способный блокировать атмосферу с двух сторон."
 	icon = 'icons/effects/effects.dmi'
-	icon_state = "holofan_new"
+	icon_state = "holofield"
 	density = FALSE
 	CanAtmosPass = ATMOS_PASS_NO
 	CanAtmosPassVertical = 1
 	hardshield = FALSE
-	layer = UNDERDOOR
+	layer = ABOVE_MOB_LAYER
 	light_color = "#f6e384"
 	light_system = MOVABLE_LIGHT //for instant visual feedback reguardless of lag
 

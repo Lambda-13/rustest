@@ -19,11 +19,14 @@
 /mob/living/simple_animal/hostile/asteroid/elite/herald
 	name = "herald"
 	desc = "A monstrous beast which fires deadly projectiles at threats and prey."
+	icon = 'icons/mob/lavaland/lavaland_elites_64.dmi'
 	icon_state = "herald"
 	icon_living = "herald"
 	icon_aggro = "herald"
 	icon_dead = "herald_dying"
 	icon_gib = "syndicate_gib"
+	pixel_x = -16
+	base_pixel_x = -16
 	health_doll_icon = "herald"
 	maxHealth = 800
 	health = 800
@@ -195,6 +198,9 @@
 	health = 60
 	maxHealth = 60
 	icon_state = "herald_mirror"
+	icon_aggro = "herald_mirror"
+	pixel_x = -16
+	base_pixel_x = -16
 	deathmessage = "shatters violently!"
 	deathsound = 'sound/effects/glassbr1.ogg'
 	movement_type = FLYING
@@ -265,7 +271,7 @@
 	H.firer = owner
 	H.fire(set_angle)
 
-/obj/item/clothing/neck/cloak/herald_cloak/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
+/obj/item/clothing/neck/cloak/herald_cloak/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "атаку", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	. = ..()
 	if(rand(1,100) > hit_reaction_chance)
 		return

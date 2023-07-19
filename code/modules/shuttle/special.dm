@@ -285,10 +285,10 @@
 			break
 		payees[AM] += C.value
 		counted_money += C
-	for(var/obj/item/stack/spacecash/S in AM.GetAllContents())
+	for(var/obj/item/spacecash/bundle/S in AM.GetAllContents())
 		if(payees[AM] >= threshold)
 			break
-		payees[AM] += S.value * S.amount
+		payees[AM] += S.value
 		counted_money += S
 	for(var/obj/item/holochip/H in AM.GetAllContents())
 		if(payees[AM] >= threshold)
@@ -301,9 +301,9 @@
 		payees[AM] += C.value
 		counted_money += C
 
-	else if(payees[AM] < threshold && istype(AM.pulling, /obj/item/stack/spacecash))
-		var/obj/item/stack/spacecash/S = AM.pulling
-		payees[AM] += S.value * S.amount
+	else if(payees[AM] < threshold && istype(AM.pulling, /obj/item/spacecash/bundle))
+		var/obj/item/spacecash/bundle/S = AM.pulling
+		payees[AM] += S.value
 		counted_money += S
 
 	else if(payees[AM] < threshold && istype(AM.pulling, /obj/item/holochip))
@@ -323,7 +323,7 @@
 		if(armless)
 			if(!AM.pulling || !iscash(AM.pulling) && !istype(AM.pulling, /obj/item/card/id))
 				if(!check_times[AM] || check_times[AM] < world.time) //Let's not spam the message
-					to_chat(AM, "<span class='notice'>Try pulling a valid ID, space cash, holochip or coin into \the [src]!</span>")
+					to_chat(AM, "<span class='notice'>Try pulling a valid ID, space cash, holochip or coin into [src]!</span>")
 					check_times[AM] = world.time + LUXURY_MESSAGE_COOLDOWN
 
 	if(payees[AM] >= threshold)

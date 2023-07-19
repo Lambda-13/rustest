@@ -30,7 +30,7 @@
 	// This screen simply lists available programs and user may select them.
 	var/obj/item/computer_hardware/hard_drive/hard_drive = all_components[MC_HDD]
 	if(!hard_drive || !hard_drive.stored_files || !hard_drive.stored_files.len)
-		to_chat(user, "<span class='danger'>\The [src] beeps three times, it's screen displaying a \"DISK ERROR\" warning.</span>")
+		to_chat(user, "<span class='danger'>[src] beeps three times, it's screen displaying a \"DISK ERROR\" warning.</span>")
 		return // No HDD, No HDD files list or no stored files. Something is very broken.
 
 	ui = SStgui.try_update_ui(user, src, ui)
@@ -133,7 +133,7 @@
 				P = hard_drive.find_file_by_name(prog)
 
 			if(!P || !istype(P)) // Program not found or it's not executable program.
-				to_chat(user, "<span class='danger'>\The [src]'s screen shows \"I/O ERROR - Unable to run program\" warning.</span>")
+				to_chat(user, "<span class='danger'>[src]'s screen shows \"I/O ERROR - Unable to run program\" warning.</span>")
 				return
 
 			P.computer = src
@@ -153,11 +153,11 @@
 			var/obj/item/computer_hardware/processor_unit/PU = all_components[MC_CPU]
 
 			if(idle_threads.len > PU.max_idle_programs)
-				to_chat(user, "<span class='danger'>\The [src] displays a \"Maximal CPU load reached. Unable to run another program.\" error.</span>")
+				to_chat(user, "<span class='danger'>[src] displays a \"Maximal CPU load reached. Unable to run another program.\" error.</span>")
 				return
 
 			if(P.requires_ntnet && !get_ntnet_status(P.requires_ntnet_feature)) // The program requires NTNet connection, but we are not connected to NTNet.
-				to_chat(user, "<span class='danger'>\The [src]'s screen shows \"Unable to connect to NTNet. Please retry. If problem persists contact your system administrator.\" warning.</span>")
+				to_chat(user, "<span class='danger'>[src]'s screen shows \"Unable to connect to NTNet. Please retry. If problem persists contact your system administrator.\" warning.</span>")
 				return
 			if(P.run_program(user))
 				active_program = P

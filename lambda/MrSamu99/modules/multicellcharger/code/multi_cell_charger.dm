@@ -65,7 +65,7 @@
 			to_chat(user, span_warning("[inserting_cell] cannot be recharged!"))
 			return
 		if(charging_batteries.len >= 4)
-			to_chat(user, span_warning("[src] is full, and cannot hold anymore cells!"))
+			to_chat(user, span_warning("[src] полон and не может содержать anymore cells!"))
 			return
 		else
 			var/area/current_area = loc.loc // Gets our locations location, like a dream within a dream

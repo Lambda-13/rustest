@@ -51,7 +51,7 @@
 
 /turf/open/chasm/reebe_void/examine(mob/user)
 	. = ..()
-	. += "<span class='warning'>Ты УМРЁШЬ нахуй если НАСТУПИШЬ сюда!!!</span>"
+	. += "<hr><span class='warning'>Ты УМРЁШЬ нахуй если НАСТУПИШЬ сюда!!!</span>"
 
 /turf/open/chasm/reebe_void/Initialize(mapload, inherited_virtual_z)
 	. = ..()

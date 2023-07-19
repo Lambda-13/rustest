@@ -221,3 +221,36 @@ round(cos_inv_third+sqrt3_sin, 0.001), round(cos_inv_third-sqrt3_sin, 0.001), ro
 	var/offset = 1+soft_cap(intensity*0.3, 1, 1, 0.8)
 	animate(src, transform=turn(transform, rotation*shake_dir), pixel_x=init_px + offset*shake_dir, time=1)
 	animate(transform=initial_transform, pixel_x=init_px, time, easing=ELASTIC_EASING)
+
+//Luma coefficients suggested for HDTVs. If you change these, make sure they add up to 1.
+#define LUMR 0.2126
+#define LUMG 0.7152
+#define LUMB 0.0722
+
+//Still need color matrix addition, negation, and multiplication.
+
+//Returns an identity color matrix which does nothing
+/proc/color_identity()
+	return list(1,0,0, 0,1,0, 0,0,1)
+
+//Moves all colors angle degrees around the color wheel while maintaining intensity of the color and not affecting whites
+//TODO: Need a version that only affects one color (ie shift red to blue but leave greens and blues alone)
+/proc/color_rotation(angle)
+	if(angle == 0)
+		return color_identity()
+	angle = Clamp(angle, -180, 180)
+	var/cos = cos(angle)
+	var/sin = sin(angle)
+
+	var/constA = 0.143
+	var/constB = 0.140
+	var/constC = -0.283
+	return list(
+	LUMR + cos * (1-LUMR) + sin * -LUMR, LUMR + cos * -LUMR + sin * constA, LUMR + cos * -LUMR + sin * -(1-LUMR),
+	LUMG + cos * -LUMG + sin * -LUMG, LUMG + cos * (1-LUMG) + sin * constB, LUMG + cos * -LUMG + sin * LUMG,
+	LUMB + cos * -LUMB + sin * (1-LUMB), LUMB + cos * -LUMB + sin * constC, LUMB + cos * (1-LUMB) + sin * LUMB
+	)
+
+#undef LUMR
+#undef LUMG
+#undef LUMB

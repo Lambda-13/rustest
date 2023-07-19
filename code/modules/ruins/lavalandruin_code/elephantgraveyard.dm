@@ -104,11 +104,12 @@
 //***Grave mounds.
 /obj/structure/closet/crate/grave
 	name = "burial mound"
-	desc = "An marked patch of soil, showing signs of a burial long ago. You wouldn't disturb a grave... right?"
+	desc = "A marked patch of soil, adorned with a wooden cross"
 	icon_state = "grave"
 	dense_when_open = TRUE
 	material_drop = /obj/item/stack/ore/glass/basalt
 	material_drop_amount = 5
+	opened = TRUE
 	anchorable = FALSE
 	anchored = TRUE
 	locked = TRUE
@@ -117,7 +118,79 @@
 	var/lead_tomb = FALSE
 	var/first_open = FALSE
 
-/obj/structure/closet/crate/grave/PopulateContents()  //GRAVEROBBING IS NOW A FEATURE
+/obj/structure/closet/crate/grave/attackby(obj/item/W, mob/user, params)
+	.=..()
+	if(istype(W, /obj/item/screwdriver))
+		if(!user.is_literate())
+			to_chat(user, "<span class='notice'>You scratch illegibly on [src]!</span>")
+			return
+		var/t = stripped_input(user, "What would you like the inscription to be?", name, null, 53)
+		if(user.get_active_held_item() != W)
+			return
+		if(!user.canUseTopic(src, BE_CLOSE))
+			return
+		if(t)
+			desc = "[t]"
+		return
+
+/obj/structure/closet/crate/grave/open(mob/living/user, obj/item/S, force = FALSE)
+	if(!opened)
+		to_chat(user, "<span class='notice'>The ground here is too hard to dig up with your bare hands. You'll need a shovel.</span>")
+	else
+		to_chat(user, "<span class='notice'>The grave has already been dug up.</span>")
+
+/obj/structure/closet/crate/grave/tool_interact(obj/item/S, mob/living/carbon/user)
+	if(user.a_intent == INTENT_HELP) //checks to attempt to dig the grave, must be done on help intent only.
+		if(!opened)
+			if(istype(S,cutting_tool) && S.tool_behaviour == TOOL_SHOVEL)
+				to_chat(user, "<span class='notice'>You start start to dig open [src]  with \the [S]...</span>")
+				if (do_after(user,20, target = src))
+					opened = TRUE
+					locked = TRUE
+					dump_contents()
+					update_icon()
+					SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "graverobbing", /datum/mood_event/graverobbing)
+					if(lead_tomb == TRUE && first_open == TRUE)
+						user.gain_trauma(/datum/brain_trauma/magic/stalker)
+						to_chat(user, "<span class='boldwarning'>Oh no, no no no, THEY'RE EVERYWHERE! EVERY ONE OF THEM IS EVERYWHERE!</span>")
+						first_open = FALSE
+					return 1
+				return 1
+			else
+				to_chat(user, "<span class='notice'>You can't dig up a grave with \the [S.name].</span>")
+				return 1
+		else
+			to_chat(user, "<span class='notice'>The grave has already been dug up.</span>")
+			return 1
+
+	else if((user.a_intent != INTENT_HELP) && opened) //checks to attempt to remove the grave entirely.
+		if(istype(S,cutting_tool) && S.tool_behaviour == TOOL_SHOVEL)
+			to_chat(user, "<span class='notice'>You start to remove [src]  with \the [S].</span>")
+			if (do_after(user,15, target = src))
+				to_chat(user, "<span class='notice'>You remove [src]  completely.</span>")
+				SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "graverobbing", /datum/mood_event/graverobbing)
+				deconstruct(TRUE)
+				return 1
+	return
+
+/obj/structure/closet/crate/grave/bust_open()
+	..()
+	opened = TRUE
+	update_icon()
+	dump_contents()
+	return
+
+/obj/structure/closet/crate/grave/stone
+	name = "burial mound"
+	desc = "A marked patch of soil, adorned with a sandstone slab"
+	icon_state = "grave_lead"
+
+/obj/structure/closet/crate/grave/loot
+	name = "burial mound"
+	desc = "A marked patch of soil, showing signs of a burial long ago. You wouldn't disturb a grave... right?"
+	opened = FALSE
+
+/obj/structure/closet/crate/grave/loot/PopulateContents()  //GRAVEROBBING IS NOW A FEATURE
 	..()
 	new /obj/effect/decal/remains/human/grave(src)
 	switch(rand(1,7))
@@ -143,61 +216,14 @@
 			new /obj/item/clothing/glasses/sunglasses(src)
 			new /obj/item/clothing/mask/cigarette/rollie(src)
 
-/obj/structure/closet/crate/grave/open(mob/living/user, obj/item/S, force = FALSE)
-	if(!opened)
-		to_chat(user, "<span class='notice'>The ground here is too hard to dig up with your bare hands. You'll need a shovel.</span>")
-	else
-		to_chat(user, "<span class='notice'>The grave has already been dug up.</span>")
-
-/obj/structure/closet/crate/grave/tool_interact(obj/item/S, mob/living/carbon/user)
-	if(user.a_intent == INTENT_HELP) //checks to attempt to dig the grave, must be done on help intent only.
-		if(!opened)
-			if(istype(S,cutting_tool) && S.tool_behaviour == TOOL_SHOVEL)
-				to_chat(user, "<span class='notice'>You start start to dig open \the [src]  with \the [S]...</span>")
-				if (do_after(user,20, target = src))
-					opened = TRUE
-					locked = TRUE
-					dump_contents()
-					update_icon()
-					SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "graverobbing", /datum/mood_event/graverobbing)
-					if(lead_tomb == TRUE && first_open == TRUE)
-						user.gain_trauma(/datum/brain_trauma/magic/stalker)
-						to_chat(user, "<span class='boldwarning'>Oh no, no no no, THEY'RE EVERYWHERE! EVERY ONE OF THEM IS EVERYWHERE!</span>")
-						first_open = FALSE
-					return 1
-				return 1
-			else
-				to_chat(user, "<span class='notice'>You can't dig up a grave with \the [S.name].</span>")
-				return 1
-		else
-			to_chat(user, "<span class='notice'>The grave has already been dug up.</span>")
-			return 1
-
-	else if((user.a_intent != INTENT_HELP) && opened) //checks to attempt to remove the grave entirely.
-		if(istype(S,cutting_tool) && S.tool_behaviour == TOOL_SHOVEL)
-			to_chat(user, "<span class='notice'>You start to remove \the [src]  with \the [S].</span>")
-			if (do_after(user,15, target = src))
-				to_chat(user, "<span class='notice'>You remove \the [src]  completely.</span>")
-				SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "graverobbing", /datum/mood_event/graverobbing)
-				deconstruct(TRUE)
-				return 1
-	return
-
-/obj/structure/closet/crate/grave/bust_open()
-	..()
-	opened = TRUE
-	update_icon()
-	dump_contents()
-	return
-
-/obj/structure/closet/crate/grave/lead_researcher
+/obj/structure/closet/crate/grave/loot/lead_researcher
 	name = "ominous burial mound"
 	desc = "Even in a place filled to the brim with graves, this one shows a level of preperation and planning that fills you with dread."
 	icon_state = "grave_lead"
 	lead_tomb = TRUE
 	first_open = TRUE
 
-/obj/structure/closet/crate/grave/lead_researcher/PopulateContents()  //ADVANCED GRAVEROBBING
+/obj/structure/closet/crate/grave/loot/lead_researcher/PopulateContents()  //ADVANCED GRAVEROBBING
 	..()
 	new /obj/effect/decal/cleanable/blood/gibs/old(src)
 	new /obj/item/book/granter/crafting_recipe/boneyard_notes(src)

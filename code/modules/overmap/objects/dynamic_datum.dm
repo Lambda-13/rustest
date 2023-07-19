@@ -16,15 +16,15 @@
 	///If the level should be preserved. Useful for if you want to build a colony or something.
 	var/preserve_level = FALSE
 	///What kind of planet the level is, if it's a planet at all.
-	var/planet
+	var/datum/planet_type/planet
 	///Planet's flavor name, if it is a planet.
 	var/planet_name
 	///List of probabilities for each type of planet.
 	var/static/list/probabilities
 	///The planet that will be forced to load
 	var/force_encounter
-	///List of ruins to potentially generate
-	var/list/ruin_list
+	///Ruin types to generate
+	var/ruin_type
 	/// list of ruins and their target turf, indexed by name
 	var/list/ruin_turfs
 
@@ -40,6 +40,9 @@
 	var/vlevel_height = QUADRANT_MAP_SIZE
 	///The X bounds of the virtual z level
 	var/vlevel_width = QUADRANT_MAP_SIZE
+
+	//Уровень опасности при осмотре планеты на оверкарте который даёт понять насколько безопасно сюда высаживаться
+	var/danger_level
 
 /datum/overmap/dynamic/Initialize(position, load_now=TRUE, ...)
 	. = ..()
@@ -65,16 +68,16 @@
 
 /datum/overmap/dynamic/pre_docked(datum/overmap/ship/controlled/dock_requester)
 	if(!load_level())
-		return new /datum/docking_ticket(_docking_error = "[src] cannot be docked to.")
+		return new /datum/docking_ticket(_docking_error = "[src] не имеет места для посадки.")
 	else
 		var/dock_to_use = null
 		for(var/obj/docking_port/stationary/dock as anything in reserve_docks)
-			if(!dock.get_docked())
+			if(!dock.docked)
 				dock_to_use = dock
 				break
 
 		if(!dock_to_use)
-			return new /datum/docking_ticket(_docking_error = "[src] does not have any free docks. Aborting docking.")
+			return new /datum/docking_ticket(_docking_error = "[src] не имеет свободного места для посадки.")
 		adjust_dock_to_shuttle(dock_to_use, dock_requester.shuttle_port)
 		return new /datum/docking_ticket(dock_to_use, src, dock_requester)
 
@@ -112,183 +115,29 @@
  * Chooses a type of level for the dynamic level to use.
  */
 /datum/overmap/dynamic/proc/choose_level_type(load_now = TRUE) //TODO: This is a awful way of hanlding random planets. If maybe it picked from a list of datums that then would be applied on the dynamic datum, it would be a LOT better.
-	var/chosen
 	if(!probabilities)
-		probabilities = list(DYNAMIC_WORLD_LAVA = min(length(SSmapping.lava_ruins_templates), 20),
-		DYNAMIC_WORLD_ICE = min(length(SSmapping.ice_ruins_templates), 20),
-		DYNAMIC_WORLD_JUNGLE = min(length(SSmapping.jungle_ruins_templates), 20),
-		DYNAMIC_WORLD_SAND = min(length(SSmapping.sand_ruins_templates), 20),
-		DYNAMIC_WORLD_SPACERUIN = min(length(SSmapping.space_ruins_templates), 20),
-		DYNAMIC_WORLD_WASTEPLANET = min(length(SSmapping.waste_ruins_templates), 20),
-		DYNAMIC_WORLD_ROCKPLANET = min(length(SSmapping.rock_ruins_templates), 20),
-		DYNAMIC_WORLD_BEACHPLANET = min(length(SSmapping.beach_ruins_templates), 20),
-		//DYNAMIC_WORLD_REEBE = 0, //unspawnable because of major lack of skill. //you fucking probablitiy zero does not equal one you dumbass
-//		DYNAMIC_WORLD_RUINPLANET = min(length(SSmapping.planet_ruins_templates), 20),
-		DYNAMIC_WORLD_ASTEROID = 30)
+		probabilities = list()
+		for(var/datum/planet_type/planet_type as anything in subtypesof(/datum/planet_type))
+			probabilities[initial(planet_type.planet)] = initial(planet_type.weight)
 
-	if(force_encounter)
-		chosen = force_encounter
-	else
-		chosen = pickweight(probabilities)
-	switch(chosen)
-		if(DYNAMIC_WORLD_LAVA)
-			Rename("лавовая планета")
-			token.desc = "Очень слабый энергетический сигнал, исходящий от планеты с высокой сейсмической и вулканической активностью."
-			planet = DYNAMIC_WORLD_LAVA
-			token.icon_state = "globe"
-			token.color = COLOR_ORANGE
-			planet_name = gen_planet_name()
+	planet = SSmapping.planet_types[force_encounter ? force_encounter : pickweightAllowZero(probabilities)]
 
-			ruin_list = SSmapping.lava_ruins_templates
-			mapgen = /datum/map_generator/planet_generator/lava
-			default_baseturf = /turf/open/floor/plating/asteroid/basalt/lava_land_surface
+	Rename(planet.name)
+	token.icon_state = planet.icon_state
+	token.desc = planet.desc
+	token.color = planet.color
+	ruin_type = planet.ruin_type
+	default_baseturf = planet.default_baseturf
+	mapgen = planet.mapgen
+	weather_controller_type = planet.weather_controller_type
+	danger_level = planet.danger_level
 
-			weather_controller_type = /datum/weather_controller/lavaland
-
-		if(DYNAMIC_WORLD_ICE)
-			Rename("ледяная планета")
-			token.desc = "Очень слабый энергетический сигнал, исходящий от планеты со следами воды и чрезвычайно низкой температурой."
-			planet = DYNAMIC_WORLD_ICE
-			token.icon_state = "globe"
-			token.color = COLOR_BLUE_LIGHT
-			planet_name = gen_planet_name()
-
-			ruin_list = SSmapping.ice_ruins_templates
-			mapgen = /datum/map_generator/planet_generator/snow
-			default_baseturf = /turf/open/floor/plating/asteroid/snow/icemoon
-
-			weather_controller_type = /datum/weather_controller/snow_planet
-
-		if(DYNAMIC_WORLD_JUNGLE)
-			Rename("лесная планета")
-			token.desc = "Очень слабый энергетический сигнал, исходящий от планеты, изобилующей жизнью."
-			planet = DYNAMIC_WORLD_JUNGLE
-			token.icon_state = "globe"
-			token.color = COLOR_LIME
-			planet_name = gen_planet_name()
-
-			ruin_list = SSmapping.jungle_ruins_templates
-			mapgen = /datum/map_generator/planet_generator/jungle
-			default_baseturf = /turf/open/floor/plating/dirt/jungle
-
-			weather_controller_type = /datum/weather_controller/lush
-
-		if(DYNAMIC_WORLD_SAND)
-			Rename("пустынная планета")
-			token.desc = "Очень слабый энергетический сигнал, исходящий от планеты со множеством следов кремния."
-			planet = DYNAMIC_WORLD_SAND
-			token.icon_state = "globe"
-			token.color = COLOR_GRAY
-			planet_name = gen_planet_name()
-
-			ruin_list = SSmapping.sand_ruins_templates
-			mapgen = /datum/map_generator/planet_generator/sand
-			default_baseturf = /turf/open/floor/plating/asteroid/whitesands
-
-			weather_controller_type = /datum/weather_controller/desert
-
-		if(DYNAMIC_WORLD_WASTEPLANET)
-			Rename("мусорная планета")
-			token.desc = "Очень слабый энергетический сигнал, исходящий от планеты, помеченной как мусорная."
-			planet = DYNAMIC_WORLD_WASTEPLANET
-			token.icon_state = "globe"
-			token.color = "#a9883e"
-			planet_name = gen_planet_name()
-
-			ruin_list = SSmapping.waste_ruins_templates
-			mapgen = /datum/map_generator/single_biome/wasteplanet
-			default_baseturf = /turf/open/floor/plating/asteroid/wasteplanet
-
-			weather_controller_type = /datum/weather_controller/chlorine //let's go??
-
-/*		if(DYNAMIC_WORLD_RUINPLANET)
-			Rename("город-планета")
-			token.desc = "Очень слабый энергетический сигнал, исходящий от планеты, помеченной как мёртвый город."
-			planet = DYNAMIC_WORLD_RUINLANET
-			token.icon_state = "globe"
-			token.color = "#4f4f4f"
-			planet_name = gen_planet_name()
-
-			ruin_list = SSmapping.waste_ruins_templates
-			mapgen = /datum/map_generator/single_biome/wasteplanet
-			default_baseturf = /turf/open/floor/plating/asteroid/wasteplanet
-
-			weather_controller_type = /datum/weather_controller/chlorine*/
-
-		if(DYNAMIC_WORLD_ROCKPLANET)
-			Rename("каменистая планета")
-			token.desc = "Очень слабый энергетический сигнал, исходящий от богатой железом и каменистой планеты."
-			planet = DYNAMIC_WORLD_ROCKPLANET
-			token.icon_state = "globe"
-			token.color = "#bd1313"
-			planet_name = gen_planet_name()
-
-			ruin_list = SSmapping.rock_ruins_templates
-			mapgen = /datum/map_generator/planet_generator/rock
-			default_baseturf = /turf/open/floor/plating/asteroid
-
-			weather_controller_type = /datum/weather_controller/rockplanet
-
-		if(DYNAMIC_WORLD_BEACHPLANET)
-			Rename("океаническая планета")
-			token.desc = "Очень слабый энергетический сигнал, исходящий от теплой, богатой кислородом планеты."
-			planet = DYNAMIC_WORLD_BEACHPLANET
-			token.icon_state = "globe"
-			token.color = "#c6b597"
-			planet_name = gen_planet_name()
-
-			ruin_list = SSmapping.beach_ruins_templates
-			mapgen = /datum/map_generator/planet_generator/beach
-			default_baseturf = /turf/open/floor/plating/asteroid/sand/lit
-
-			weather_controller_type = /datum/weather_controller/lush
-
-		if(DYNAMIC_WORLD_REEBE)
-			Rename("???")
-			token.desc = "Какой-то странный портал. Нет никакой идентификации того, что это такое."
-			planet = DYNAMIC_WORLD_REEBE
-			token.icon_state = "wormhole"
-			token.color = COLOR_YELLOW
-			planet_name = "Reebe"
-
-			ruin_list = SSmapping.yellow_ruins_templates
-			mapgen = /datum/map_generator/single_biome/reebe
-			default_baseturf = /turf/open/chasm/reebe_void
-
-			weather_controller_type = null
-
-		if(DYNAMIC_WORLD_ASTEROID)
-			Rename("большой астеройд")
-			token.desc = "Крупный астероид со значительными следами полезных ископаемых."
-			planet = DYNAMIC_WORLD_ASTEROID
-			token.icon_state = "asteroid"
-			token.color = COLOR_GRAY
-
-			ruin_list = null // asteroid ruins when
-			mapgen = /datum/map_generator/single_biome/asteroid
-			// Space, because asteroid maps also include space turfs and the prospect of space turfs
-			// existing without space as their baseturf scares me.
-			default_baseturf = /turf/open/space
-
-			weather_controller_type = null
-
-		if(DYNAMIC_WORLD_SPACERUIN)
-			Rename("слабый энергетический сигнал")
-			token.desc = "Очень слабый энергетический сигнал, исходящий из космоса."
-			planet = DYNAMIC_WORLD_SPACERUIN
-			token.icon_state = "strange_event"
-			token.color = null
-
-			ruin_list = SSmapping.space_ruins_templates
-			mapgen = /datum/map_generator/single_turf/space
-			default_baseturf = /turf/open/space
-
-			weather_controller_type = null
-
+/*
 	if(vlevel_height >= 255 && vlevel_width >= 255) //little easter egg
 		planet_name = "LV-[pick(rand(11111,99999))]"
 		token.icon_state = "sector"
 		Rename(planet_name)
+*/
 
 // - SERVER ISSUE: LOADING ALL PLANETS AT ROUND START KILLS PERFORMANCE BEYOND WHAT IS REASONABLE. OPTIMIZE SSMOBS IF YOU WANT THIS BACK
 // #ifdef FULL_INIT //Initialising planets roundstart isn't NECESSARY, but is very nice in production. Takes a long time to load, though.
@@ -299,6 +148,22 @@
 
 	if(!preserve_level)
 		token.desc += " Если тут не будет удерживающих маяков или людей - он исчезнет."
+		token.update_icon()
+
+	token.desc += "<br>Уровень опасности - <b>[danger_level]</b>: "
+	switch(danger_level)
+		if(1)
+			token.desc += "Обьект не представляет угрозы и может быть вполне безопасен."
+		if(2)
+			token.desc += "Обьект представляет <i>незначительную</i> угрозу."
+		if(3)
+			token.desc += "Обьект представляет <i>значительную</i> угрозу и возможно потребует дополнительной защиты от вредной окружающей среды."
+		if(4)
+			token.desc += "Обьект представляет <i><span class='userdanger'>высокую</span></i> угрозу и требует дополнительной защиты от вредной окружающей среды а так-же подготовленый экипаж."
+		if(5)
+			token.desc += "Обьект представляет <i><span class='userdanger'>экстремальную</span></i> угрозу и требует дополнительной защиты от вредной окружающей среды а так-же хорошо подготовленый экипаж."
+		else
+			token.desc += "О угрозе обьекта ничего неизвестно."
 
 /datum/overmap/dynamic/proc/gen_planet_name()
 	. = ""
@@ -322,8 +187,8 @@
 		return TRUE
 	log_shuttle("[src] [REF(src)] LEVEL_INIT")
 	// use the ruin type in template if it exists, or pick from ruin list if IT exists; otherwise null
-	var/ruin_type = template || (ruin_list ? ruin_list[pick(ruin_list)] : null)
-	var/list/dynamic_encounter_values = SSovermap.spawn_dynamic_encounter(src, ruin_type)
+	var/selected_ruin = template || (ruin_type ? pickweightAllowZero(SSmapping.ruin_types_probabilities[ruin_type]) : null)
+	var/list/dynamic_encounter_values = SSovermap.spawn_dynamic_encounter(src, selected_ruin)
 	if(!length(dynamic_encounter_values))
 		return FALSE
 	mapzone = dynamic_encounter_values[1]
@@ -332,7 +197,7 @@
 	return TRUE
 
 /datum/overmap/dynamic/empty
-	name = "Empty Space"
+	name = "Пустой космос"
 
 /datum/overmap/dynamic/empty/choose_level_type()
 	return
@@ -349,11 +214,11 @@
 */
 
 /area/overmap_encounter
-	name = "\improper Overmap Encounter"
+	name = "Карта сектора"
 	icon_state = "away"
 	// DO NOT PUT UNIQUE_AREA IN THESE FLAGS FOR ANY SUBTYPE. IT CAUSES WEATHER PROBLEMS
 	// THE ONLY REASON IT DIDN'T BEFORE IS BECAUSE THE CODE DIDN'T RESPECT THE FLAG
-	area_flags = HIDDEN_AREA | CAVES_ALLOWED | FLORA_ALLOWED | MOB_SPAWN_ALLOWED | NOTELEPORT
+	area_flags = HIDDEN_AREA | CAVES_ALLOWED | FLORA_ALLOWED | MOB_SPAWN_ALLOWED //Если всё пойдт по пизде вернуть NOTELEPORT!
 	flags_1 = CAN_BE_DIRTY_1
 	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
 	sound_environment = SOUND_ENVIRONMENT_STONEROOM
@@ -367,39 +232,39 @@
 	. = ..()
 
 /area/overmap_encounter/planetoid
-	name = "\improper Unknown Planetoid"
+	name = "Планета: Неизвестно"
 	sound_environment = SOUND_ENVIRONMENT_MOUNTAINS
 	has_gravity = STANDARD_GRAVITY
 	always_unpowered = TRUE
 
 // Used for caves on multi-biome planetoids.
 /area/overmap_encounter/planetoid/cave
-	name = "\improper Planetoid Cavern"
+	name = "Планета: Пещера"
 	sound_environment = SOUND_ENVIRONMENT_CAVE
 	ambientsounds = SPOOKY
 	allow_weather = FALSE
 
 /area/overmap_encounter/planetoid/lava
-	name = "\improper Volcanic Planetoid"
+	name = "Планета: Лаваленд"
 	ambientsounds = MINING
 
 /area/overmap_encounter/planetoid/ice
-	name = "\improper Frozen Planetoid"
+	name = "Планета: Айсленд"
 	sound_environment = SOUND_ENVIRONMENT_CAVE
 	ambientsounds = SPOOKY
 
 /area/overmap_encounter/planetoid/sand
-	name = "\improper Sandy Planetoid"
+	name = "Планета: Белые пески"
 	sound_environment = SOUND_ENVIRONMENT_QUARRY
 	ambientsounds = MINING
 
 /area/overmap_encounter/planetoid/jungle
-	name = "\improper Jungle Planetoid"
+	name = "Планета: Джунгли"
 	sound_environment = SOUND_ENVIRONMENT_FOREST
 	ambientsounds = AWAY_MISSION
 
 /area/overmap_encounter/planetoid/rockplanet
-	name = "\improper Rocky Planetoid"
+	name = "Планета: Каменистая поверхность"
 	sound_environment = SOUND_ENVIRONMENT_QUARRY
 	ambientsounds = AWAY_MISSION
 
@@ -407,21 +272,22 @@
 	area_flags = VALID_TERRITORY
 
 /area/overmap_encounter/planetoid/beachplanet
-	name = "\improper Beach Planetoid"
+	name = "Планета: Остров"
 	sound_environment = SOUND_ENVIRONMENT_FOREST
 	ambientsounds = BEACH
 
 /area/overmap_encounter/planetoid/wasteplanet
-	name = "\improper Waste Planetoid"
+	name = "Планета: Свалка"
 	sound_environment = SOUND_ENVIRONMENT_HANGAR
 	ambientsounds = MAINTENANCE
 
 /area/overmap_encounter/planetoid/reebe
-	name = "\improper Yellow Space"
+	name = "???"
 	sound_environment = SOUND_ENVIRONMENT_MOUNTAINS
 	area_flags = HIDDEN_AREA | CAVES_ALLOWED | FLORA_ALLOWED | MOB_SPAWN_ALLOWED //allows jaunters to work
 	ambientsounds = REEBE
 
-
-
-
+/area/overmap_encounter/planetoid/shroudedplanet
+	name = "Планета: Тёмный пустырь"
+	sound_environment = SOUND_ENVIRONMENT_CAVE
+	ambientsounds = REEBE//AMBIENT_BAY12_PLANET_BARREN

@@ -84,7 +84,7 @@
 	if(istype(I, /obj/item/toy/cards/singlecard/cas))
 		var/obj/item/toy/cards/singlecard/cas/SC = I
 		if(!user.temporarilyRemoveItemFromInventory(SC))
-			to_chat(user, "<span class='warning'>The card is stuck to your hand, you can't add it to the deck!</span>")
+			to_chat(user, "<span class='warning'>The card прилип к рукеr hand, you can't add it to the deck!</span>")
 			return
 		var/datum/playingcard/RC // replace null datum for the re-added card
 		RC = new()
@@ -111,12 +111,12 @@
 /obj/item/toy/cards/singlecard/cas/examine(mob/user)
 	. = ..()
 	if (flipped)
-		. += "<span class='notice'>The card is face down.</span>"
+		. += "<hr><span class='notice'>The card is face down.</span>"
 	else if (blank)
-		. += "<span class='notice'>The card is blank. Write on it with a pen.</span>"
+		. += "<hr><span class='notice'>The card is blank. Write on it with a pen.</span>"
 	else
-		. += "<span class='notice'>The card reads: [name]</span>"
-	. += "<span class='notice'>Alt-click to flip it.</span>"
+		. += "<hr><span class='notice'>The card reads: [name]</span>"
+	. += "<hr><span class='notice'>Alt-клик to flip it.</span>"
 
 /obj/item/toy/cards/singlecard/cas/Flip()
 	set name = "Flip Card"

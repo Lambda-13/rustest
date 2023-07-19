@@ -50,7 +50,7 @@
 	user.put_in_hands(S)
 
 	syringes.Remove(S)
-	to_chat(user, "<span class='notice'>You unload [S] from \the [src].</span>")
+	to_chat(user, "<span class='notice'>You unload [S] from [src].</span>")
 
 	return 1
 
@@ -59,12 +59,12 @@
 		if(syringes.len < max_syringes)
 			if(!user.transferItemToLoc(A, src))
 				return FALSE
-			to_chat(user, "<span class='notice'>You load [A] into \the [src].</span>")
+			to_chat(user, "<span class='notice'>You load [A] into [src].</span>")
 			syringes += A
 			recharge_newshot()
 			return TRUE
 		else
-			to_chat(user, "<span class='warning'>[src] cannot hold more syringes!</span>")
+			to_chat(user, "<span class='warning'>[src] не может содержать more syringes!</span>")
 	return FALSE
 
 /obj/item/gun/syringe/rapidsyringe
@@ -100,12 +100,12 @@
 		if(syringes.len < max_syringes)
 			if(!user.transferItemToLoc(D, src))
 				return FALSE
-			to_chat(user, "<span class='notice'>You load \the [D] into \the [src].</span>")
+			to_chat(user, "<span class='notice'>You load \the [D] into [src].</span>")
 			syringes += D
 			recharge_newshot()
 			return TRUE
 		else
-			to_chat(user, "<span class='warning'>[src] cannot hold more syringes!</span>")
+			to_chat(user, "<span class='warning'>[src] не может содержать more syringes!</span>")
 	return FALSE
 
 /obj/item/gun/syringe/blowgun

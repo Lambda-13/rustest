@@ -183,7 +183,12 @@
 #undef PATH_POWERCOIL
 #undef PATH_RPCOIL
 
-
+/obj/item/circuitboard/machine/tesla_ground
+	name = "Tesla Ground (Machine Board)"
+	icon_state = "engineering"
+	build_path = /obj/machinery/power/tesla_coil/tesla_ground
+	req_components = list(/obj/item/stock_parts/capacitor = 1)
+	needs_anchored = TRUE
 
 /obj/item/circuitboard/machine/cell_charger
 	name = "Cell Charger (Оборудование)"
@@ -374,7 +379,7 @@
 
 /obj/item/circuitboard/machine/thermomachine/examine()
 	. = ..()
-	. += "<span class='notice'>It is set to layer [pipe_layer].</span>"
+	. += "<hr><span class='notice'>It is set to layer [pipe_layer].</span>"
 
 /obj/item/circuitboard/machine/thermomachine/heater
 	name = "Heater (Оборудование)"
@@ -566,7 +571,7 @@
 
 /obj/item/circuitboard/machine/smartfridge/examine(mob/user)
 	. = ..()
-	. += "<span class='info'>[src] is set to [fridges_name_paths[build_path]]. You can use a screwdriver to reconfigure it.</span>"
+	. += "<hr><span class='info'>[src] is set to [fridges_name_paths[build_path]]. You can use a screwdriver to reconfigure it.</span>"
 
 
 /obj/item/circuitboard/machine/space_heater
@@ -690,6 +695,7 @@
 		/obj/item/stock_parts/capacitor = 1,
 		/obj/item/stock_parts/manipulator = 1,
 		/obj/item/stack/sheet/glass = 1,
+		/obj/item/stack/sheet/bluespace_crystal = 1,
 		/obj/item/stock_parts/cell = 1)
 	def_components = list(/obj/item/stock_parts/cell = /obj/item/stock_parts/cell/high)
 	needs_anchored = FALSE
@@ -1212,8 +1218,8 @@
 
 /obj/item/circuitboard/machine/dish_drive/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>Its suction function is [suction ? "enabled" : "disabled"]. Use it in-hand to switch.</span>"
-	. += "<span class='notice'>Its disposal auto-transmit function is [transmit ? "enabled" : "disabled"]. Alt-click it to switch.</span>"
+	. += "<hr><span class='notice'>Its suction function is [suction ? "enabled" : "disabled"]. Use it in-hand to switch.</span>"
+	. += "<hr><span class='notice'>Its disposal auto-transmit function is [transmit ? "enabled" : "disabled"]. Alt-клик it to switch.</span>"
 
 /obj/item/circuitboard/machine/dish_drive/attack_self(mob/living/user)
 	suction = !suction
@@ -1378,36 +1384,6 @@
 		/obj/item/stock_parts/scanning_module = 2,
 		/obj/item/stock_parts/micro_laser = 2)
 
-/obj/item/circuitboard/machine/deepcore/drill
-	name = "Deep Core Bluespace Drill (Оборудование)"
-	icon_state = "supply"
-	build_path = /obj/machinery/deepcore/drill
-	req_components = list(
-		/obj/item/stock_parts/micro_laser = 1,
-		/obj/item/stock_parts/manipulator = 1,
-		/obj/item/stock_parts/matter_bin = 1)
-
-/obj/item/circuitboard/machine/deepcore/hopper
-	name = "Bluespace Material Hopper (Оборудование)"
-	icon_state = "supply"
-	build_path = /obj/machinery/deepcore/hopper
-	req_components = list(
-		/obj/item/stack/ore/bluespace_crystal = 2,
-		/obj/item/stock_parts/capacitor = 2,
-		/obj/item/stock_parts/manipulator = 2,
-		/obj/item/stock_parts/matter_bin = 2)
-	def_components = list(/obj/item/stack/ore/bluespace_crystal = /obj/item/stack/ore/bluespace_crystal/artificial)
-
-/obj/item/circuitboard/machine/deepcore/hub
-	name = "Deepcore Mining Control Hub (Оборудование)"
-	icon_state = "supply"
-	build_path = /obj/machinery/deepcore/hub
-	req_components = list(
-		/obj/item/stock_parts/capacitor = 1,
-		/obj/item/stock_parts/micro_laser = 2,
-		/obj/item/stock_parts/matter_bin = 3,
-		/obj/item/stock_parts/manipulator = 2)
-
 //Misc
 /obj/item/circuitboard/machine/sheetifier
 	name = "Sheet-meister 2000 (Оборудование)"
@@ -1464,6 +1440,12 @@
 	req_components = list(/obj/item/stock_parts/capacitor = 3,
 		/obj/item/stock_parts/micro_laser = 3)
 
+/obj/item/circuitboard/machine/shuttle/engine/electric/bad
+	name = "Outdated Ion Thruster (Machine Board)"
+	build_path = /obj/machinery/power/shuttle/engine/electric/bad
+	req_components = list(/obj/item/stock_parts/capacitor = 2,
+		/obj/item/stock_parts/micro_laser = 2)
+
 /obj/item/circuitboard/machine/shuttle/engine/expulsion
 	name = "Expulsion Thruster (Оборудование)"
 	build_path = /obj/machinery/power/shuttle/engine/fueled/expulsion
@@ -1502,4 +1484,13 @@
 		/obj/item/stack/cable_coil = 5,
 		/obj/item/stock_parts/cell = 3,
 		/obj/item/stock_parts/capacitor = 1
+	)
+
+/obj/item/circuitboard/machine/shuttle/smes/micro
+	name = "Micro Electric Engine Precharger (Machine Board)"
+	build_path = /obj/machinery/power/smes/shuttle/micro
+	req_components = list(
+		/obj/item/stack/cable_coil = 5,
+		/obj/item/stock_parts/cell = 3,
+		/obj/item/stock_parts/capacitor = 2
 	)

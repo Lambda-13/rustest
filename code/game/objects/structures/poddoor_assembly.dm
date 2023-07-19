@@ -22,7 +22,7 @@
 /obj/structure/poddoor_assembly/Initialize()
 	. = ..()
 	update_icon()
-	update_name()
+	update_door_name()
 
 /obj/structure/poddoor_assembly/examine(mob/user)
 	. = ..()
@@ -32,15 +32,15 @@
 	switch(state)
 		if(AIRLOCK_ASSEMBLY_NEEDS_WIRES)
 			if(anchored)
-				. += "<span class='notice'>The anchoring bolts are <b>wrenched</b> in place, but the maintenance panel needs <i>wiring</i>.</span>"
+				. += "<hr><span class='notice'>The anchoring bolts are <b>wrenched</b> in place, but the maintenance panel needs <i>wiring</i>.</span>"
 			else
 				. +=  "<span class='notice'>The anchoring bolts are <i>unwrenched</i>, and the assembly could be <i>welded apart</i>.</span>"
 		if(AIRLOCK_ASSEMBLY_NEEDS_ELECTRONICS)
-			. += "<span class='notice'>The maintenance panel is <b>wired</b>, but the circuit slot is <i>empty</i>.</span>"
+			. += "<hr><span class='notice'>The maintenance panel is <b>wired</b>, but the circuit slot is <i>empty</i>.</span>"
 		if(AIRLOCK_ASSEMBLY_NEEDS_SCREWDRIVER)
-			. += "<span class='notice'>The circuit is <b>connected loosely</b> to its slot.</span>"
-	. += "<span class='notice'>The assembly [welded ? "is firmly <b>welded</b> into place" : "needs to be <i>welded</i> to the floor in order to complete it"].</span>"
-	. += "<span class='notice'>There is a small placard on the assembly[doorname].</span>"
+			. += "<hr><span class='notice'>The circuit is <b>connected loosely</b> to its slot.</span>"
+	. += "<hr><span class='notice'>The assembly [welded ? "is firmly <b>welded</b> into place" : "needs to be <i>welded</i> to the floor in order to complete it"].</span>"
+	. += "<hr><span class='notice'>There is a small placard on the assembly[doorname].</span>"
 
 /obj/structure/poddoor_assembly/attackby(obj/item/item_used, mob/user, params)
 	if(istype(item_used, /obj/item/pen))
@@ -65,7 +65,7 @@
 			if(item_used.use_tool(src, user, 4 SECONDS, volume=50))
 				if(!anchored || welded)
 					return
-				to_chat(user, "<span class='notice'>You weld [src] to the floor.</span>")
+				to_chat(user, "<span class='notice'>Привариваю [src] к полу.</span>")
 				welded = TRUE
 		else
 			user.visible_message("<span class='warning'>[user] welds [src].</span>", \
@@ -187,11 +187,11 @@
 				qdel(src)
 	else
 		return ..()
-	update_name()
+	update_door_name()
 	update_icon()
 
-/obj/structure/poddoor_assembly/update_name(updates)
-	. = ..()
+/obj/structure/poddoor_assembly/proc/update_door_name()
+
 	switch(state)
 		if(AIRLOCK_ASSEMBLY_NEEDS_ELECTRONICS)
 			name = "wired "

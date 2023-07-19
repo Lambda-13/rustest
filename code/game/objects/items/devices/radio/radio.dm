@@ -7,6 +7,7 @@
 	pickup_sound =  'sound/items/handling/device_pickup.ogg'
 	drop_sound = 'sound/items/handling/device_drop.ogg'
 	dog_fashion = /datum/dog_fashion/back
+	supports_variations = VOX_VARIATION
 
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BELT
@@ -336,13 +337,13 @@
 /obj/item/radio/examine(mob/user)
 	. = ..()
 	if (frequency && in_range(src, user))
-		. += "<span class='notice'>It is set to broadcast over the [frequency/10] frequency.</span>"
+		. += "<hr><span class='notice'>It is set to broadcast over the [frequency/10] frequency.</span>"
 	if (unscrewed)
-		. += "<span class='notice'>It can be attached and modified.</span>"
+		. += "<hr><span class='notice'>It can be attached and modified.</span>"
 	else
-		. += "<span class='notice'>It cannot be modified or attached.</span>"
+		. += "<hr><span class='notice'>It cannot be modified or attached.</span>"
 	if (in_range(src, user)&& !headset)
-		. += "<span class='info'>Ctrl-Shift-click on the [name] to toggle speaker.<br/>Alt-click on the [name] to toggle broadcasting.</span>"
+		. += "<hr><span class='info'>Ctrl-Shift-click on the [name] to toggle speaker.<br/>Alt-клик on the [name] to toggle broadcasting.</span>"
 
 /obj/item/radio/attackby(obj/item/W, mob/user, params)
 	add_fingerprint(user)
@@ -362,7 +363,7 @@
 	emped++ //There's been an EMP; better count it
 	var/curremp = emped //Remember which EMP this was
 	if (listening && ismob(loc))	// if the radio is turned on and on someone's person they notice
-		to_chat(loc, "<span class='warning'>\The [src] overloads.</span>")
+		to_chat(loc, "<span class='warning'>[src] overloads.</span>")
 	broadcasting = FALSE
 	listening = FALSE
 	for (var/ch_name in channels)

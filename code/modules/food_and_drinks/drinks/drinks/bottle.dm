@@ -310,8 +310,8 @@
 	return
 
 /obj/item/reagent_containers/food/drinks/bottle/lizardwine
-	name = "bottle of lizard wine"
-	desc = "An alcoholic beverage from Space China, made by infusing lizard tails in ethanol. Inexplicably popular among command staff."
+	name = "bottle of 'kalixcis' wine"
+	desc = "An alcoholic beverage of sarathi origin, now so widespread that knock-offs can be found everywhere. Check the label for point of origin."
 	icon_state = "lizardwine"
 	list_reagents = list(/datum/reagent/consumable/ethanol/lizardwine = 100)
 	foodtype = FRUIT | ALCOHOL
@@ -623,7 +623,7 @@
 /obj/item/reagent_containers/food/drinks/bottle/sarsaparilla/attack_self(mob/user)
 	if(!is_drainable()) // Uses the reagents.flags cause reagent_flags is only the init value
 		playsound(src, 'sound/items/openbottle.ogg', 30, 1)
-		user.visible_message("<span class='notice'>[user] takes the cap off \the [src].</span>", "<span class='notice'>You take the cap off [src].</span>")
+		user.visible_message("<span class='notice'>[user] takes the cap off [src].</span>", "<span class='notice'>You take the cap off [src].</span>")
 		reagents.flags |= OPENCONTAINER //Cap's off
 		if(prob(1)) //Lucky you
 			var/S = new /obj/item/sandstar(src)
@@ -635,7 +635,7 @@
 /obj/item/reagent_containers/food/drinks/bottle/sarsaparilla/examine(mob/user)
 	. = ..()
 	if(!is_drainable())
-		. += "<span class='info'>The cap is still sealed.</span>"
+		. += "<hr><span class='info'>The cap is still sealed.</span>"
 
 /obj/item/sandstar
 	name = "SandBlast Sarsaparilla star"
@@ -685,13 +685,13 @@
 /obj/item/storage/bottles/examine(mob/user)
 	. = ..()
 	if(sealed)
-		. += "<span class='info'>It is sealed. You could pry it open with a <i>crowbar</i> to access its contents.</span>"
+		. += "<hr><span class='info'>It is sealed. You could pry it open with a <i>crowbar</i> to access its contents.</span>"
 
 /obj/item/storage/bottles/crowbar_act(mob/living/user, obj/item/I)
 	. = ..()
 	if(sealed)
 		var/datum/component/storage/S = GetComponent(/datum/component/storage)
-		user.visible_message("<span class='notice'>[user] prys open \the [src].</span>", "You pry open \the [src]")
+		user.visible_message("<span class='notice'>[user] prys open [src].</span>", "Вскрываю [src]")
 		playsound(src, 'sound/machines/wooden_closet_close.ogg', 20, 1)
 		sealed = FALSE
 		S.locked = FALSE

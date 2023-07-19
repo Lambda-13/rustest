@@ -101,17 +101,17 @@
 /obj/structure/closet/examine(mob/user)
 	. = ..()
 	if(welded)
-		. += "<span class='notice'>It's welded shut.</span>"
+		. += "<hr><span class='notice'>It's welded shut.</span>"
 	if(anchored)
-		. += "<span class='notice'>It is <b>bolted</b> to the ground.</span>"
+		. += "<hr><span class='notice'>It is <b>bolted</b> to the ground.</span>"
 	if(opened)
-		. += "<span class='notice'>The parts are <b>welded</b> together.</span>"
+		. += "<hr><span class='notice'>The parts are <b>welded</b> together.</span>"
 	else if(secure && !opened)
-		. += "<span class='notice'>Alt-click to [locked ? "unlock" : "lock"].</span>"
+		. += "<hr><span class='notice'>Alt-клик to [locked ? "unlock" : "lock"].</span>"
 	if(isliving(user))
 		var/mob/living/L = user
 		if(HAS_TRAIT(L, TRAIT_SKITTISH))
-			. += "<span class='notice'>Ctrl-Shift-click [src] to jump inside.</span>"
+			. += "<hr><span class='notice'>Ctrl-Shift-click [src] to jump inside.</span>"
 
 /obj/structure/closet/CanAllowThrough(atom/movable/mover, turf/target)
 	. = ..()
@@ -259,18 +259,18 @@
 				if(!W.tool_start_check(user, amount=0))
 					return
 
-				to_chat(user, "<span class='notice'>You begin cutting \the [src] apart...</span>")
+				to_chat(user, "<span class='notice'>You begin cutting [src] apart...</span>")
 				if(W.use_tool(src, user, 40, volume=50))
 					if(!opened)
 						return
-					user.visible_message("<span class='notice'>[user] slices apart \the [src].</span>",
-									"<span class='notice'>You cut \the [src] apart with \the [W].</span>",
-									"<span class='hear'>You hear welding.</span>")
+					user.visible_message("<span class='notice'>[user] slices apart [src].</span>",
+									"<span class='notice'>You cut [src] apart with [W].</span>",
+									"<span class='hear'>Слышу сварку.</span>")
 					deconstruct(TRUE)
 				return
 			else // for example cardboard box is cut with wirecutters
-				user.visible_message("<span class='notice'>[user] cut apart \the [src].</span>", \
-									"<span class='notice'>You cut \the [src] apart with \the [W].</span>")
+				user.visible_message("<span class='notice'>[user] cut apart [src].</span>", \
+									"<span class='notice'>You cut [src] apart with [W].</span>")
 				deconstruct(TRUE)
 				return
 		if(user.transferItemToLoc(W, drop_location())) // so we put in unlit welder too
@@ -279,23 +279,23 @@
 		if(!W.tool_start_check(user, amount=0))
 			return
 
-		to_chat(user, "<span class='notice'>You begin [welded ? "unwelding":"welding"] \the [src]...</span>")
+		to_chat(user, "<span class='notice'>You begin [welded ? "unwelding":"welding"] [src]...</span>")
 		if(W.use_tool(src, user, 40, volume=50))
 			if(opened)
 				return
 			welded = !welded
 			after_weld(welded)
-			user.visible_message("<span class='notice'>[user] [welded ? "welds shut" : "unwelded"] \the [src].</span>",
-							"<span class='notice'>You [welded ? "weld" : "unwelded"] \the [src] with \the [W].</span>",
-							"<span class='hear'>You hear welding.</span>")
+			user.visible_message("<span class='notice'>[user] [welded ? "welds shut" : "unwelded"] [src].</span>",
+							"<span class='notice'>You [welded ? "weld" : "unwelded"] [src] с помощью [W].</span>",
+							"<span class='hear'>Слышу сварку.</span>")
 			update_icon()
 	else if(W.tool_behaviour == TOOL_WRENCH && anchorable)
 		if(isinspace() && !anchored)
 			return
 		set_anchored(!anchored)
 		W.play_tool_sound(src, 75)
-		user.visible_message("<span class='notice'>[user] [anchored ? "anchored" : "unanchored"] \the [src] [anchored ? "to" : "from"] the ground.</span>", \
-						"<span class='notice'>You [anchored ? "anchored" : "unanchored"] \the [src] [anchored ? "to" : "from"] the ground.</span>", \
+		user.visible_message("<span class='notice'>[user] [anchored ? "anchored" : "unanchored"] [src] [anchored ? "to" : "from"] the ground.</span>", \
+						"<span class='notice'>You [anchored ? "anchored" : "unanchored"] [src] [anchored ? "to" : "from"] the ground.</span>", \
 						"<span class='hear'>You hear a ratchet.</span>")
 	else if(user.a_intent != INTENT_HARM)
 		var/item_is_id = W.GetID()
@@ -467,9 +467,9 @@
 							"<span class='notice'>You [locked ? null : "un"]lock [src].</span>")
 			update_icon()
 		else if(!silent)
-			to_chat(user, "<span class='alert'>Access Denied.</span>")
+			to_chat(user, "<span class='alert'>Доступ запрещён.</span>")
 	else if(secure && broken)
-		to_chat(user, "<span class='warning'>\The [src] is broken!</span>")
+		to_chat(user, "<span class='warning'>[src] is broken!</span>")
 
 /obj/structure/closet/emag_act(mob/user)
 	if(secure && !broken)

@@ -36,16 +36,16 @@
 /obj/structure/bookcase/examine(mob/user)
 	. = ..()
 	if(!anchored)
-		. += "<span class='notice'>The <i>bolts</i> on the bottom are unsecured.</span>"
+		. += "<hr><span class='notice'>The <i>bolts</i> on the bottom are unsecured.</span>"
 	else
-		. += "<span class='notice'>It's secured in place with <b>bolts</b>.</span>"
+		. += "<hr><span class='notice'>It's secured in place with <b>bolts</b>.</span>"
 	switch(state)
 		if(BOOKCASE_UNANCHORED)
-			. += "<span class='notice'>There's a <b>small crack</b> visible on the back panel.</span>"
+			. += "<hr><span class='notice'>There's a <b>small crack</b> visible on the back panel.</span>"
 		if(BOOKCASE_ANCHORED)
-			. += "<span class='notice'>There's space inside for a <i>wooden</i> shelf.</span>"
+			. += "<hr><span class='notice'>There's space inside for a <i>wooden</i> shelf.</span>"
 		if(BOOKCASE_FINISHED)
-			. += "<span class='notice'>There's a <b>small crack</b> visible on the shelf.</span>"
+			. += "<hr><span class='notice'>There's a <b>small crack</b> visible on the shelf.</span>"
 
 /obj/structure/bookcase/Initialize(mapload)
 	. = ..()
@@ -107,7 +107,7 @@
 				for(var/obj/item/T in I.contents)
 					if(istype(T, /obj/item/book) || istype(T, /obj/item/spellbook))
 						STR.remove_from_storage(T, src)
-				to_chat(user, "<span class='notice'>You empty \the [I] into \the [src].</span>")
+				to_chat(user, "<span class='notice'>You empty \the [I] into [src].</span>")
 				update_icon()
 			else if(istype(I, /obj/item/pen))
 				if(!user.is_literate())
@@ -209,7 +209,7 @@
 	throw_speed = 1
 	throw_range = 5
 	w_class = WEIGHT_CLASS_NORMAL		 //upped to three because books are, y'know, pretty big. (and you could hide them inside eachother recursively forever)
-	attack_verb = list("bashed", "whacked", "educated")
+	attack_verb = list("бьёт", "ударяет", "educated")
 	resistance_flags = FLAMMABLE
 	drop_sound = 'sound/items/handling/book_drop.ogg'
 	pickup_sound =  'sound/items/handling/book_pickup.ogg'
@@ -225,7 +225,7 @@
 	if(!user.can_read(src))
 		return
 	if(dat)
-		user << browse("<TT><I>Penned by [author].</I></TT> <BR>" + "[dat]", "window=book[window_size != null ? ";size=[window_size]" : ""]")
+		user << browse("<HTML><HEAD><meta http-equiv='X-UA-Compatible' content='IE=Edge'/><meta charset='UTF-8'><title>[title]</title></HEAD><BODY><TT><I>Penned by [author].</I></TT> <BR>[dat]</BODY></HTML>", "window=book[window_size != null ? ";size=[window_size]" : ""]")
 		user.visible_message("<span class='notice'>[user] opens a book titled \"[title]\" and begins reading intently.</span>")
 		SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "book_nerd", /datum/mood_event/book_nerd)
 		onclose(user, "book")

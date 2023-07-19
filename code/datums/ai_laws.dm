@@ -7,7 +7,7 @@
 
 
 /datum/ai_laws
-	var/name = "Unknown Laws"
+	var/name = "Неизвестные Законы"
 	var/zeroth = null
 	var/zeroth_borg = null
 	var/list/inherent = list()

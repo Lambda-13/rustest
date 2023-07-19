@@ -48,6 +48,8 @@
 	. = ..()
 	if(!climbable)
 		return
+	if(get_turf(src) == O.loc) //makes so you can't drag yourself into the same structure to climb again, making you move off it.
+		return
 	if(user == O && isliving(O))
 		var/mob/living/L = O
 		if(isanimal(L))
@@ -104,9 +106,9 @@
 	. = ..()
 	if(!(resistance_flags & INDESTRUCTIBLE))
 		if(resistance_flags & ON_FIRE)
-			. += "<span class='warning'>It's on fire!</span>"
+			. += "<hr><span class='warning'>It's on fire!</span>"
 		if(broken)
-			. += "<span class='notice'>It appears to be broken.</span>"
+			. += "<hr><span class='notice'>It appears to be broken.</span>"
 		var/examine_status = examine_status(user)
 		if(examine_status)
 			. += examine_status

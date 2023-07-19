@@ -243,8 +243,8 @@
 		if(!user.can_read(src) || user.is_blind())
 			//The paper window is 400x500
 			stamp(rand(0, 400), rand(0, 500), rand(0, 360), P.icon_state)
-			user.visible_message(span_notice("[user] blindly stamps [src] with \the [P.name]!"))
-			to_chat(user, span_notice("You stamp [src] with \the [P.name] the best you can!"))
+			user.visible_message(span_notice("[user] blindly stamps [src] с помощью \the [P.name]!"))
+			to_chat(user, span_notice("You stamp [src] с помощью \the [P.name] the best you can!"))
 		else
 			to_chat(user, span_notice("You ready your stamp over the paper! "))
 			ui_interact(user)
@@ -396,7 +396,7 @@
 			if(stamp(stamp_x, stamp_y, stamp_r, stamp_icon_state, stamp_class))
 				update_static_data(usr, ui)
 				var/obj/stamp = ui.user.get_active_held_item()
-				ui.user.visible_message(span_notice("[ui.user] stamps [src] with \the [stamp.name]!"), span_notice("You stamp [src] with \the [stamp.name]!"))
+				ui.user.visible_message(span_notice("[ui.user] stamps [src] с помощью \the [stamp.name]!"), span_notice("You stamp [src] с помощью \the [stamp.name]!"))
 			. = TRUE
 
 		if("save")

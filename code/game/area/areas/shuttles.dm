@@ -3,7 +3,7 @@
 //Multi area shuttles are a thing now, use subtypes! ~ninjanomnom
 
 /area/shuttle
-	name = "Shuttle"
+	name = "Шаттл"
 	requires_power = FALSE
 	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
 	has_gravity = STANDARD_GRAVITY
@@ -39,25 +39,25 @@
 ////////////////////////////Syndicate infiltrator////////////////////////////
 
 /area/shuttle/syndicate
-	name = "Syndicate Infiltrator"
+	name = "Инфильтратор Синдиката"
 	ambientsounds = HIGHSEC
 
 /area/shuttle/syndicate/bridge
-	name = "Syndicate Infiltrator Control"
+	name = "Инфильтратор Синдиката: Управление"
 
 /area/shuttle/syndicate/medical
-	name = "Syndicate Infiltrator Medbay"
+	name = "Инфильтратор Синдиката: Медицинский отсек"
 
 /area/shuttle/syndicate/armory
-	name = "Syndicate Infiltrator Armory"
+	name = "Инфильтратор Синдиката: Оружейный отсек"
 
 /area/shuttle/syndicate/eva
-	name = "Syndicate Infiltrator EVA"
+	name = "Инфильтратор Синдиката: ВКД"
 
 /area/shuttle/syndicate/hallway
 
 /area/shuttle/syndicate/airlock
-	name = "Syndicate Infiltrator Airlock"
+	name = "Инфильтратор Синдиката: Шлюз"
 
 ////////////////////////////Pirate Shuttle////////////////////////////
 
@@ -106,7 +106,7 @@
 ////////////////////////////Single-area shuttles////////////////////////////
 
 /area/shuttle/transit
-	name = "Hyperspace"
+	name = "Космос: вне корабля"
 	desc = "Weeeeee"
 	dynamic_lighting = DYNAMIC_LIGHTING_DISABLED
 

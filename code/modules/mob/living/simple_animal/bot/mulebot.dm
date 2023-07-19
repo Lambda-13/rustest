@@ -90,12 +90,12 @@
 	. = ..()
 	if(open)
 		if(cell)
-			. += "<span class='notice'>It has \a [cell] installed.</span>"
-			. += "<span class='info'>You can use a <b>crowbar</b> to remove it.</span>"
+			. += "<hr><span class='notice'>It has \a [cell] installed.</span>"
+			. += "<hr><span class='info'>You can use a <b>crowbar</b> to remove it.</span>"
 		else
-			. += "<span class='notice'>It has an empty compartment where a <b>power cell</b> can be installed.</span>"
+			. += "<hr><span class='notice'>It has an empty compartment where a <b>power cell</b> can be installed.</span>"
 	if(load) //observer check is so we don't show the name of the ghost that's sitting on it to prevent metagaming who's ded.
-		. += "<span class='notice'>\A [isobserver(load) ? "ghostly figure" : load] is on its load platform.</span>"
+		. += "<hr><span class='notice'>\A [isobserver(load) ? "ghostly figure" : load] is on its load platform.</span>"
 
 
 /mob/living/simple_animal/bot/mulebot/Destroy()
@@ -161,10 +161,10 @@
 	else if(load && ismob(load))  // chance to knock off rider
 		if(prob(1 + I.force * 2))
 			unload(0)
-			user.visible_message("<span class='danger'>[user] knocks [load] off [src] with \the [I]!</span>",
-									"<span class='danger'>You knock [load] off [src] with \the [I]!</span>")
+			user.visible_message("<span class='danger'>[user] knocks [load] off [src] с помощью \the [I]!</span>",
+									"<span class='danger'>You knock [load] off [src] с помощью \the [I]!</span>")
 		else
-			to_chat(user, "<span class='warning'>You hit [src] with \the [I] but to no effect!</span>")
+			to_chat(user, "<span class='warning'>You hit [src] с помощью \the [I] but to no effect!</span>")
 			return ..()
 	else
 		return ..()
@@ -174,7 +174,7 @@
 		emagged = TRUE
 	if(!open)
 		locked = !locked
-		to_chat(user, "<span class='notice'>You [locked ? "lock" : "unlock"] [src]'s controls!</span>")
+		to_chat(user, "<span class='notice'>You [locked ? "Блок" : "Разблок"]ирую [src]'s controls!</span>")
 	flick("[base_icon]-emagged", src)
 	playsound(src, "sparks", 100, FALSE, SHORT_RANGE_SOUND_EXTRARANGE)
 

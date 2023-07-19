@@ -42,6 +42,7 @@
 /datum/getrev/proc/GetTestMergeInfo(header = TRUE)
 	if(!testmerge.len)
 		return ""
+	var/static/regex/error_matcher = new("(?<=G)ITHUB(?= API ERROR)", "g")
 	. = header ? "Следующие пулл реквесты в настоящее время проходят тестовое слияние:<br>" : ""
 	for(var/line in testmerge)
 		var/datum/tgs_revision_information/test_merge/tm = line
@@ -49,7 +50,7 @@
 		var/details = ": '" + html_encode(tm.title) + "' от " + html_encode(tm.author) + " коммита " + html_encode(copytext_char(cm, 1, 11))
 		if(details && findtext(details, "\[s\]") && (!usr || !usr.client.holder))
 			continue
-		. += "<a href=\"[CONFIG_GET(string/githuburl)]/pull/[tm.number]\">#[tm.number][details]</a><br>"
+		. += "<a href=\"[CONFIG_GET(string/githuburl)]/pull/[tm.number]\">#[tm.number][replacetext(details, error_matcher, /proc/shuffletext)]</a><br>"
 
 /client/verb/showrevinfo()
 	set category = "OOC"

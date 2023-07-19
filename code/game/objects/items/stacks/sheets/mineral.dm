@@ -48,8 +48,14 @@ GLOBAL_LIST_INIT(sandstone_recipes, list ( \
 	. = ..()
 	. += GLOB.sandstone_recipes
 
-/obj/item/stack/sheet/mineral/sandstone/thirty
-	amount = 30
+/obj/item/stack/sheet/mineral/sandstone/fifty
+	amount = 50
+
+/obj/item/stack/sheet/mineral/sandstone/twenty
+	amount = 20
+
+/obj/item/stack/sheet/mineral/sandstone/five
+	amount = 5
 
 /*
  * Sandbags
@@ -182,7 +188,7 @@ GLOBAL_LIST_INIT(uranium_recipes, list ( \
 	walltype = /turf/closed/wall/mineral/plasma
 
 /obj/item/stack/sheet/mineral/plasma/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins licking \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] begins licking [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	return TOXLOSS//dont you kids know that stuff is toxic?
 
 GLOBAL_LIST_INIT(plasma_recipes, list ( \
@@ -236,6 +242,7 @@ GLOBAL_LIST_INIT(plasma_recipes, list ( \
 GLOBAL_LIST_INIT(gold_recipes, list ( \
 	new/datum/stack_recipe("mortar", /obj/item/reagent_containers/glass/mortar/gold, 3), \
 	new/datum/stack_recipe("golden door", /obj/structure/mineral_door/gold, 10, one_per_turf = 1, on_floor = 1), \
+	new/datum/stack_recipe("chemical crate", /obj/structure/closet/crate/chem, 1, time = 15, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("gold tile", /obj/item/stack/tile/mineral/gold, 1, 4, 20), \
 	new/datum/stack_recipe("blank plaque", /obj/item/plaque, 1), \
 	new/datum/stack_recipe("HoS Statue", /obj/structure/statue/gold/hos, 5, one_per_turf = 1, on_floor = 1), \
@@ -413,6 +420,7 @@ GLOBAL_LIST_INIT(titanium_recipes, list ( \
 	merge_type = /obj/item/stack/sheet/mineral/plastitanium
 	material_flags = MATERIAL_NO_EFFECTS
 	walltype = /turf/closed/wall/mineral/plastitanium
+	tableVariant = /obj/structure/table/chem
 
 /obj/item/stack/sheet/mineral/plastitanium/fifty
 	amount = 50
@@ -425,6 +433,7 @@ GLOBAL_LIST_INIT(titanium_recipes, list ( \
 
 GLOBAL_LIST_INIT(plastitanium_recipes, list ( \
 	new/datum/stack_recipe("plastitanium tile", /obj/item/stack/tile/mineral/plastitanium, 1, 4, 20), \
+	new/datum/stack_recipe("chemistry sink", /obj/structure/sink/chem, 1 , one_per_turf = TRUE, on_floor = TRUE, applies_mats = TRUE), \
 	))
 
 /obj/item/stack/sheet/mineral/plastitanium/get_main_recipes()

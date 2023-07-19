@@ -81,7 +81,7 @@
 
 	to_chat(user, "<span class='notice'>You begin repairing [src]...</span>")
 	if(I.use_tool(src, user, 10, volume=50))
-		to_chat(user, "<span class='notice'>You repair [src].</span>")
+		to_chat(user, "<span class='notice'>Чиню [src].</span>")
 		broken = 0
 		icon_state = initial(icon_state)
 		desc = initial(desc)

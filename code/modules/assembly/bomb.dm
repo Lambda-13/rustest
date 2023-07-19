@@ -124,11 +124,11 @@
 		return
 
 	if((src in user.get_equipped_items(TRUE)) && !user.canUnEquip(src))
-		to_chat(user, "<span class='warning'>[src] is stuck to you!</span>")
+		to_chat(user, "<span class='warning'>[src] прилип к руке!</span>")
 		return
 
 	if(!user.canUnEquip(assembly))
-		to_chat(user, "<span class='warning'>[assembly] is stuck to your hand!</span>")
+		to_chat(user, "<span class='warning'>[assembly] прилип к рукеr hand!</span>")
 		return
 
 	var/obj/item/onetankbomb/bomb = new

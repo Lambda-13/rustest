@@ -32,7 +32,7 @@
 	var/datum/reagent/forkload //used to eat omelette
 
 /obj/item/kitchen/fork/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] stabs \the [src] into [user.p_their()] chest! It looks like [user.p_theyre()] trying to take a bite out of [user.p_them()]self!</span>")
+	user.visible_message("<span class='suicide'>[user] stabs [src] into [user.p_their()] chest! It looks like [user.p_theyre()] trying to take a bite out of [user.p_them()]self!</span>")
 	playsound(src, 'sound/items/eatfood.ogg', 50, TRUE)
 	return BRUTELOSS
 
@@ -125,6 +125,18 @@
 	if(prob(break_chance))
 		user.visible_message("<span class='danger'>[user]'s knife snaps into tiny pieces in their hand.</span>")
 		qdel(src)
+
+/obj/item/kitchen/knife/pizza_cutter
+	name = "pizza cutter"
+	icon_state = "pizza_cutter"
+	desc = "A knife edge bent around a circle using the power of science. Perfect for safely cutting pizza."
+	force = 1
+	w_class = WEIGHT_CLASS_SMALL
+	throwforce = 1
+	throw_range = 6
+	custom_materials = list(/datum/material/iron=4000)
+	attack_verb = list("prodded", "whiffed","rolled", "poked")
+	sharpness = IS_SHARP
 
 /obj/item/kitchen/knife/ritual
 	name = "ritual knife"
@@ -234,7 +246,7 @@
 	custom_materials = null
 
 /obj/item/kitchen/knife/shiv/carrot/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] forcefully drives \the [src] into [user.p_their()] eye! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] forcefully drives [src] into [user.p_their()] eye! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	return BRUTELOSS
 
 /obj/item/kitchen/rollingpin
@@ -247,11 +259,11 @@
 	throw_range = 7
 	custom_materials = list(/datum/material/wood = MINERAL_MATERIAL_AMOUNT * 1.5)
 	w_class = WEIGHT_CLASS_NORMAL
-	attack_verb = list("bashed", "battered", "bludgeoned", "thrashed", "whacked")
+	attack_verb = list("бьёт", "забивает", "избивает", "ударяет")
 	custom_price = 200
 
 /obj/item/kitchen/rollingpin/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins flattening [user.p_their()] head with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] begins flattening [user.p_their()] head with [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	return BRUTELOSS
 /* Trays  moved to /obj/item/storage/bag */
 

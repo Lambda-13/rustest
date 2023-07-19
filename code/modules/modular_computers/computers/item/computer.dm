@@ -4,7 +4,7 @@
 /obj/item/modular_computer
 	name = "modular microcomputer"
 	desc = "A small portable microcomputer."
-	icon = 'icons/obj/computer.dmi'
+	icon = 'icons/obj/machines/computer.dmi'
 	icon_state = "laptop-open"
 	light_on = FALSE
 	integrity_failure = 0.5
@@ -142,17 +142,17 @@
 		if(app.run_emag())
 			newemag = TRUE
 	if(newemag)
-		to_chat(user, "<span class='notice'>You swipe \the [src]. A console window momentarily fills the screen, with white text rapidly scrolling past.</span>")
+		to_chat(user, "<span class='notice'>You swipe [src]. A console window momentarily fills the screen, with white text rapidly scrolling past.</span>")
 		return TRUE
-	to_chat(user, "<span class='notice'>You swipe \the [src]. A console window fills the screen, but it quickly closes itself after only a few lines are written to it.</span>")
+	to_chat(user, "<span class='notice'>You swipe [src]. A console window fills the screen, but it quickly closes itself after only a few lines are written to it.</span>")
 	return FALSE
 
 /obj/item/modular_computer/examine(mob/user)
 	. = ..()
 	if(obj_integrity <= integrity_failure * max_integrity)
-		. += "<span class='danger'>It is heavily damaged!</span>"
+		. += "<hr><span class='danger'>It is heavily damaged!</span>"
 	else if(obj_integrity < max_integrity)
-		. += "<span class='warning'>It is damaged.</span>"
+		. += "<hr><span class='warning'>It is damaged.</span>"
 
 	. += get_modular_computer_parts_examine(user)
 
@@ -188,7 +188,7 @@
 	var/issynth = issilicon(user) // Robots and AIs get different activation messages.
 	if(obj_integrity <= integrity_failure * max_integrity)
 		if(issynth)
-			to_chat(user, "<span class='warning'>You send an activation signal to \the [src], but it responds with an error code. It must be damaged.</span>")
+			to_chat(user, "<span class='warning'>You send an activation signal to [src], but it responds with an error code. It must be damaged.</span>")
 		else
 			to_chat(user, "<span class='warning'>You press the power button, but the computer fails to boot up, displaying variety of errors before shutting down again.</span>")
 		return
@@ -200,17 +200,17 @@
 
 	if(all_components[MC_CPU] && use_power()) // use_power() checks if the PC is powered
 		if(issynth)
-			to_chat(user, "<span class='notice'>You send an activation signal to \the [src], turning it on.</span>")
+			to_chat(user, "<span class='notice'>You send an activation signal to [src], turning it on.</span>")
 		else
-			to_chat(user, "<span class='notice'>You press the power button and start up \the [src].</span>")
+			to_chat(user, "<span class='notice'>You press the power button and start up [src].</span>")
 		enabled = 1
 		update_icon()
 		ui_interact(user)
 	else // Unpowered
 		if(issynth)
-			to_chat(user, "<span class='warning'>You send an activation signal to \the [src] but it does not respond.</span>")
+			to_chat(user, "<span class='warning'>You send an activation signal to [src] but it does not respond.</span>")
 		else
-			to_chat(user, "<span class='warning'>You press the power button but \the [src] does not respond.</span>")
+			to_chat(user, "<span class='warning'>You press the power button but [src] does not respond.</span>")
 
 // Process currently calls handle_power(), may be expanded in future if more things are added.
 /obj/item/modular_computer/process()
@@ -360,7 +360,7 @@
 		P.kill_program(forced = TRUE)
 		idle_threads.Remove(P)
 	if(loud)
-		physical.visible_message("<span class='notice'>\The [src] shuts down.</span>")
+		physical.visible_message("<span class='notice'>[src] shuts down.</span>")
 	enabled = 0
 	update_icon()
 
@@ -404,26 +404,26 @@
 
 	if(W.tool_behaviour == TOOL_WRENCH)
 		if(all_components.len)
-			to_chat(user, "<span class='warning'>Remove all components from \the [src] before disassembling it.</span>")
+			to_chat(user, "<span class='warning'>Remove all components from [src] before disassembling it.</span>")
 			return
 		new /obj/item/stack/sheet/metal(get_turf(src.loc), steel_sheet_cost)
-		physical.visible_message("<span class='notice'>\The [src] is disassembled by [user].</span>")
+		physical.visible_message("<span class='notice'>[src] is disassembled by [user].</span>")
 		relay_qdel()
 		qdel(src)
 		return
 
 	if(W.tool_behaviour == TOOL_WELDER)
 		if(obj_integrity == max_integrity)
-			to_chat(user, "<span class='warning'>\The [src] does not require repairs.</span>")
+			to_chat(user, "<span class='warning'>[src] does not require repairs.</span>")
 			return
 
 		if(!W.tool_start_check(user, amount=1))
 			return
 
-		to_chat(user, "<span class='notice'>You begin repairing damage to \the [src]...</span>")
+		to_chat(user, "<span class='notice'>You begin repairing damage to [src]...</span>")
 		if(W.use_tool(src, user, 20, volume=50, amount=1))
 			obj_integrity = max_integrity
-			to_chat(user, "<span class='notice'>You repair \the [src].</span>")
+			to_chat(user, "<span class='notice'>Чиню [src].</span>")
 		return
 
 	..()

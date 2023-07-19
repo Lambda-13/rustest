@@ -12,7 +12,7 @@
 	throw_range = 7
 	force = 10
 	custom_materials = list(/datum/material/iron = 90)
-	attack_verb = list("slammed", "whacked", "bashed", "thunked", "battered", "bludgeoned", "thrashed")
+	attack_verb = list("slammed", "ударяет", "бьёт", "thunked", "забивает", "избивает")
 	dog_fashion = /datum/dog_fashion/back
 	resistance_flags = FIRE_PROOF
 	var/max_water = 50
@@ -107,25 +107,25 @@
 	. += "The safety is [safety ? "on" : "off"]."
 
 	if(reagents.total_volume)
-		. += "<span class='notice'>Alt-click to empty it.</span>"
+		. += "<hr><span class='notice'>Alt-клик to empty it.</span>"
 
 /obj/item/extinguisher/proc/AttemptRefill(atom/target, mob/user)
 	if(istype(target, tanktype) && target.Adjacent(user))
 		var/safety_save = safety
 		safety = TRUE
 		if(reagents.total_volume == reagents.maximum_volume)
-			to_chat(user, "<span class='warning'>\The [src] is already full!</span>")
+			to_chat(user, "<span class='warning'>[src] is already full!</span>")
 			safety = safety_save
 			return 1
 		var/obj/structure/reagent_dispensers/W = target //will it work?
 		var/transferred = W.reagents.trans_to(src, max_water, transfered_by = user)
 		if(transferred > 0)
-			to_chat(user, "<span class='notice'>\The [src] has been refilled by [transferred] units.</span>")
+			to_chat(user, "<span class='notice'>[src] has been refilled by [transferred] units.</span>")
 			playsound(src.loc, 'sound/effects/refill.ogg', 50, TRUE, -6)
 			for(var/datum/reagent/water/R in reagents.reagent_list)
 				R.cooling_temperature = cooling_power
 		else
-			to_chat(user, "<span class='warning'>\The [W] is empty!</span>")
+			to_chat(user, "<span class='warning'>[W] is empty!</span>")
 		safety = safety_save
 		return 1
 	else
@@ -145,7 +145,7 @@
 
 
 		if (src.reagents.total_volume < 1)
-			to_chat(usr, "<span class='warning'>\The [src] is empty!</span>")
+			to_chat(usr, "<span class='warning'>[src] is empty!</span>")
 			return
 
 		if (world.time < src.last_use + 12)
@@ -247,7 +247,7 @@
 			var/turf/open/theturf = T
 			theturf.MakeSlippery(TURF_WET_WATER, min_wet_time = 10 SECONDS, wet_time_to_add = 5 SECONDS)
 
-		user.visible_message("<span class='notice'>[user] empties out \the [src] onto the floor using the release valve.</span>", "<span class='info'>You quietly empty out \the [src] using its release valve.</span>")
+		user.visible_message("<span class='notice'>[user] empties out [src] onto the floor using the release valve.</span>", "<span class='info'>You quietly empty out [src] using its release valve.</span>")
 
 //firebot assembly
 /obj/item/extinguisher/attackby(obj/O, mob/user, params)

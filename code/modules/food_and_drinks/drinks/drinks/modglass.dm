@@ -18,7 +18,7 @@
 //global list for reskinning
 GLOBAL_LIST_EMPTY(glass_variants)
 
-//glass that can be reskinned via alt-click, and have garnishes added to its rim
+//glass that can be reskinned via Alt-клик, and have garnishes added to its rim
 /obj/item/reagent_containers/food/drinks/modglass
 	name = "malleable glass"
 	desc = "Not your standard drinking glass!"

@@ -157,7 +157,7 @@
 				monkeys++
 				qdel(G)
 		if(loaded)
-			to_chat(user, "<span class='notice'>You fill [src] with the monkey cubes stored in [O]. [src] now has [monkeys] monkey cubes stored.</span>")
+			to_chat(user, "<span class='notice'>Наполняю [src] с помощью the monkey cubes stored in [O]. [src] now has [monkeys] monkey cubes stored.</span>")
 		return
 	else if(istype(O, /obj/item/slimepotion/slime))
 		var/replaced = FALSE
@@ -174,7 +174,7 @@
 /obj/machinery/computer/camera_advanced/xenobio/multitool_act(mob/living/user, obj/item/multitool/I)
 	. = ..()
 	if (istype(I) && istype(I.buffer,/obj/machinery/monkey_recycler))
-		to_chat(user, "<span class='notice'>You link [src] with [I.buffer] in [I] buffer.</span>")
+		to_chat(user, "<span class='notice'>You link [src] с помощью [I.buffer] in [I] buffer.</span>")
 		connected_recycler = I.buffer
 		connected_recycler.connected += src
 		return TRUE
@@ -331,7 +331,7 @@
 	to_chat(owner, "<b>Click shortcuts:</b>")
 	to_chat(owner, "Shift-click a slime to pick it up, or the floor to drop all held slimes.")
 	to_chat(owner, "Ctrl-click a slime to scan it.")
-	to_chat(owner, "Alt-click a slime to feed it a potion.")
+	to_chat(owner, "Alt-клик a slime to feed it a potion.")
 	to_chat(owner, "Ctrl-click or a dead monkey to recycle it, or the floor to place a new monkey.")
 
 //

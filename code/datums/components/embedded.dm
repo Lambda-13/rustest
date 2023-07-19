@@ -258,7 +258,7 @@
 	UnregisterSignal(weapon, list(COMSIG_MOVABLE_MOVED, COMSIG_PARENT_QDELETING))
 
 	if(victim)
-		to_chat(victim, "<span class='userdanger'>\The [weapon] that was embedded in your [limb.name] disappears!</span>")
+		to_chat(victim, "<span class='userdanger'>[weapon] that was embedded in your [limb.name] disappears!</span>")
 		if(!victim.has_embedded_objects())
 			victim.clear_alert("embeddedobject")
 			SEND_SIGNAL(victim, COMSIG_CLEAR_MOOD_EVENT, "embedded")

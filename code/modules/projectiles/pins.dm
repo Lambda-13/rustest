@@ -224,7 +224,7 @@
 /obj/item/firing_pin/paywall/examine(mob/user)
 	. = ..()
 	if(pin_owner)
-		. += "<span class='notice'>This firing pin is currently authorized to pay into the account of [pin_owner.registered_name].</span>"
+		. += "<hr><span class='notice'>This firing pin is currently authorized to pay into the account of [pin_owner.registered_name].</span>"
 
 /obj/item/firing_pin/paywall/gun_insert(mob/living/user, obj/item/gun/G)
 	if(!pin_owner)

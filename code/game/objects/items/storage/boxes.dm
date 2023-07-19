@@ -46,12 +46,12 @@
 /obj/item/storage/box/suicide_act(mob/living/carbon/user)
 	var/obj/item/bodypart/head/myhead = user.get_bodypart(BODY_ZONE_HEAD)
 	if(myhead)
-		user.visible_message("<span class='suicide'>[user] puts [user.p_their()] head into \the [src], and begins closing it! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+		user.visible_message("<span class='suicide'>[user] puts [user.p_their()] head into [src], and begins closing it! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 		myhead.dismember()
 		myhead.forceMove(src)//force your enemies to kill themselves with your head collection box!
 		playsound(user, "desceration-01.ogg", 50, TRUE, -1)
 		return BRUTELOSS
-	user.visible_message("<span class='suicide'>[user] beating [user.p_them()]self with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] beating [user.p_them()]self with [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	return BRUTELOSS
 
 /obj/item/storage/box/update_overlays()
@@ -132,18 +132,36 @@
 	var/mask_type = /obj/item/clothing/mask/breath
 	var/internal_type = /obj/item/tank/internals/emergency_oxygen
 	var/medipen_type = /obj/item/reagent_containers/hypospray/medipen
+	var/bruise_type = /obj/item/stack/medical/bruise_pack
+	var/flare_type = /obj/item/flashlight/glowstick
+	var/food_type = /obj/item/reagent_containers/food/snacks/proteinbar
+//	var/oxycandle_type = /obj/item/device/oxycandle
 
 /obj/item/storage/box/survival/PopulateContents()
+//Маска
 	new mask_type(src)
-	if(!isnull(medipen_type))
-		new medipen_type(src)
 
+//Если плазмамен то выдаётся баллон с плазмой иначе стандартный баллон
 	if(!isplasmaman(loc))
 		new internal_type(src)
 	else
 		new /obj/item/tank/internals/plasmaman/belt(src)
 
-	new /obj/item/choice_beacon/support_beacon(src)
+//Медипен
+	if(!isnull(medipen_type))
+		new medipen_type(src)
+
+//Бинты
+	new bruise_type(src)
+
+//Флаер
+	new flare_type(src)
+
+//Еда
+	new food_type(src)
+
+//Кислородная свечка
+//	new oxycandle_type(src)
 
 /obj/item/storage/box/survival/radio/PopulateContents()
 	..() // we want the survival stuff too.
@@ -152,6 +170,10 @@
 // Mining survival box
 /obj/item/storage/box/survival/mining
 	mask_type = /obj/item/clothing/mask/gas/explorer
+	medipen_type = /obj/item/reagent_containers/hypospray/medipen/stimpack
+	bruise_type = /obj/item/reagent_containers/food/snacks/grown/watermelon
+	flare_type = /obj/item/flashlight/lantern/heirloom_moth
+	food_type = /obj/item/reagent_containers/food/snacks/chocolatebar
 
 /obj/item/storage/box/survival/mining/PopulateContents()
 	..()
@@ -160,6 +182,8 @@
 // Engineer survival box
 /obj/item/storage/box/survival/engineer
 	internal_type = /obj/item/tank/internals/emergency_oxygen/engi
+	flare_type = /obj/item/flashlight/flare
+	food_type = /obj/item/reagent_containers/food/snacks/grown/watermelon
 
 /obj/item/storage/box/survival/engineer/radio/PopulateContents()
 	..() // we want the regular items too.
@@ -169,11 +193,13 @@
 /obj/item/storage/box/survival/syndie
 	mask_type = /obj/item/clothing/mask/gas/syndicate
 	internal_type = /obj/item/tank/internals/emergency_oxygen/engi
-	medipen_type = null
+	medipen_type = /obj/item/reagent_containers/hypospray/medipen/stimpack/traitor
 
 // Security survival box
 /obj/item/storage/box/survival/security
 	mask_type = /obj/item/clothing/mask/gas/sechailer
+	medipen_type = /obj/item/reagent_containers/hypospray/medipen/atropine
+	flare_type = /obj/item/flashlight/seclite
 
 /obj/item/storage/box/survival/security/radio/PopulateContents()
 	..() // we want the regular stuff too
@@ -182,6 +208,8 @@
 // Medical survival box
 /obj/item/storage/box/survival/medical
 	mask_type = /obj/item/clothing/mask/breath/medical
+	medipen_type = /obj/item/hypospray/mkii/tricord
+	food_type = /obj/item/reagent_containers/food/snacks/grown/watermelon
 
 /obj/item/storage/box/gloves
 	name = "box of latex gloves"
@@ -831,7 +859,7 @@
 	..()
 	user.changeNext_move(CLICK_CD_MELEE)
 	playsound(loc, "rustle", 50, TRUE, -5)
-	user.visible_message("<span class='notice'>[user] hugs \the [src].</span>","<span class='notice'>You hug \the [src].</span>")
+	user.visible_message("<span class='notice'>[user] hugs [src].</span>","<span class='notice'>You hug [src].</span>")
 
 /////clown box & honkbot assembly
 /obj/item/storage/box/clown
@@ -999,7 +1027,7 @@
 	if(user.incapacitated())
 		return FALSE
 	if(contents.len)
-		to_chat(user, "<span class='warning'>You can't modify [src] with items still inside!</span>")
+		to_chat(user, "<span class='warning'>You can't modify [src] с помощью items still inside!</span>")
 		return FALSE
 	if(!P || !user.is_holding(P))
 		to_chat(user, "<span class='warning'>You need a pen to modify [src]!</span>")
@@ -1139,7 +1167,7 @@
 	new /obj/item/reagent_containers/food/snacks/meat/slab/bear(src)
 	new /obj/item/reagent_containers/food/snacks/meat/slab/spider(src)
 	new /obj/item/reagent_containers/food/snacks/spidereggs(src)
-	new /obj/item/reagent_containers/food/snacks/carpmeat(src)
+	new /obj/item/reagent_containers/food/snacks/fishmeat/carp(src)
 	new /obj/item/reagent_containers/food/snacks/meat/slab/xeno(src)
 	new /obj/item/reagent_containers/food/snacks/meat/slab/corgi(src)
 	new /obj/item/reagent_containers/food/snacks/meatball(src)
@@ -1149,7 +1177,7 @@
 
 /obj/item/storage/box/ingredients/exotic/PopulateContents()
 	for(var/i in 1 to 2)
-		new /obj/item/reagent_containers/food/snacks/carpmeat(src)
+		new /obj/item/reagent_containers/food/snacks/fishmeat/carp(src)
 		new /obj/item/reagent_containers/food/snacks/grown/soybeans(src)
 		new /obj/item/reagent_containers/food/snacks/grown/cabbage(src)
 	new /obj/item/reagent_containers/food/snacks/grown/chili(src)
@@ -1179,63 +1207,63 @@
 	desc = "Содержит платы РнД, которые НаноТрайзен выпускала до войны."
 
 //departmental RND kits, for shiptests.
-/obj/item/storage/box/rndmining
-	name = "набор плат РнД Ш.А.Х.Т.А."
-	desc = "Содержит платы РнД для шахтёров."
+/obj/item/storage/box/rnd/sup
+	name = "набор снабженческих плат РнД"
+	desc = "Содержит платы РнД для снабженческого пользования."
 	illustration = "scicircuit"
 
-/obj/item/storage/box/rndmining/PopulateContents()
+/obj/item/storage/box/rnd/sup/PopulateContents()
 	new /obj/item/circuitboard/machine/techfab/department/cargo(src)
 	new /obj/item/circuitboard/machine/destructive_analyzer(src)
 	new /obj/item/circuitboard/computer/rdconsole(src)
 	new /obj/item/circuitboard/machine/rdserver(src)
 
-/obj/item/storage/box/rndengi
-	name = "набор плат РнД С.И.Н.Г.А."
-	desc = "Содержит платы РнД для инженеров."
+/obj/item/storage/box/rnd/eng
+	name = "набор инженерных плат РнД"
+	desc = "Содержит платы РнД для инженерного пользования."
 	illustration = "scicircuit"
 
-/obj/item/storage/box/rndengi/PopulateContents()
+/obj/item/storage/box/rnd/eng/PopulateContents()
 	new /obj/item/circuitboard/machine/techfab/department/engineering(src)
 	new /obj/item/circuitboard/machine/destructive_analyzer(src)
 	new /obj/item/circuitboard/computer/rdconsole(src)
 	new /obj/item/circuitboard/machine/rdserver(src)
 
-/obj/item/storage/box/rndmed
-	name = "набор плат рнд Л.Е.К.А.Р.Ь."
-	desc = "Содержит платы РнД для медиков."
+/obj/item/storage/box/rnd/med
+	name = "набор медицинских плат РнД"
+	desc = "Содержит платы РнД для медицинского пользования."
 	illustration = "scicircuit"
 
-/obj/item/storage/box/rndmed/PopulateContents()
+/obj/item/storage/box/rnd/med/PopulateContents()
 	new /obj/item/circuitboard/machine/techfab/department/medical(src)
 	new /obj/item/circuitboard/machine/destructive_analyzer(src)
 	new /obj/item/circuitboard/computer/rdconsole(src)
 	new /obj/item/circuitboard/machine/rdserver(src)
 
-/obj/item/storage/box/rndsec
-	name = "набор плат рнд О.Х.Р.А.Н.А."
-	desc = "Содержит платы РнД для охранных учереждений."
+/obj/item/storage/box/rnd/sec
+	name = "набор охранных плат РнД"
+	desc = "Содержит платы РнД для охранного пользования."
 	illustration = "scicircuit"
 
-/obj/item/storage/box/rndsec/PopulateContents()
+/obj/item/storage/box/rnd/sec/PopulateContents()
 	new /obj/item/circuitboard/machine/techfab/department/security(src)
 	new /obj/item/circuitboard/machine/destructive_analyzer(src)
 	new /obj/item/circuitboard/computer/rdconsole(src)
 	new /obj/item/circuitboard/machine/rdserver(src)
 
-/obj/item/storage/box/rndciv
-	name = "набор плат рнд Д.О.М."
-	desc = "Содержит платы РнД для домашнего использования."
+/obj/item/storage/box/rnd/civ
+	name = "набор гражданских плат РнД"
+	desc = "Содержит платы РнД для гражданского пользования."
 	illustration = "scicircuit"
 
-/obj/item/storage/box/rndciv/PopulateContents()
+/obj/item/storage/box/rnd/civ/PopulateContents()
 	new /obj/item/circuitboard/machine/techfab/department/service(src)
 	new /obj/item/circuitboard/machine/destructive_analyzer(src)
 	new /obj/item/circuitboard/computer/rdconsole(src)
 	new /obj/item/circuitboard/machine/rdserver(src)
 
-/obj/item/storage/box/rndbasic
-	name = "набор плат рнд Б.А.З.А."
+/obj/item/storage/box/rnd/basic
+	name = "набор базовых плат РнД"
 	desc = "Содержит платы РнД."
 	illustration = "scicircuit"
 
@@ -1245,12 +1273,12 @@
 	new /obj/item/circuitboard/computer/rdconsole(src)
 	new /obj/item/circuitboard/machine/rdserver(src)
 
-/obj/item/storage/box/rndsci
-	name = "набор плат рнд Н.А.У.К.А."
-	desc = "Содержит платы РнД для научных исследований."
+/obj/item/storage/box/rnd/sci
+	name = "набор научных плат РнД"
+	desc = "Содержит платы РнД для научного пользования."
 	illustration = "scicircuit"
 
-/obj/item/storage/box/rndsci/PopulateContents()
+/obj/item/storage/box/rnd/sci/PopulateContents()
 	new /obj/item/circuitboard/machine/techfab/department/science(src)
 	new /obj/item/circuitboard/machine/destructive_analyzer(src)
 	new /obj/item/circuitboard/computer/rdconsole(src)
@@ -1455,7 +1483,7 @@
 		/obj/item/construction/rcd/combat/admin=1,\
 		/obj/item/pipe_dispenser=1,\
 		/obj/item/card/emag=1,\
-		/obj/item/stack/spacecash/c1000=50,\
+		/obj/item/spacecash/bundle/c10000=5,\
 		/obj/item/healthanalyzer/advanced=1,\
 		/obj/item/disk/tech_disk/debug=1,\
 		/obj/item/uplink/debug=1,\

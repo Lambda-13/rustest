@@ -86,7 +86,7 @@
 
 /obj/machinery/atmospherics/components/unary/shuttle/heater/examine(mob/user)
 	. = ..()
-	. += "It looks like the fuel source can be toggled with an alt-click."
+	. += "It looks like the fuel source can be toggled with an Alt-клик."
 	. += "The engine heater's gas dial reads [return_gas()] moles of gas.<br>"
 
 /obj/machinery/atmospherics/components/unary/shuttle/heater/proc/return_gas(datum/gas/gas_type)

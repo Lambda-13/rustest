@@ -145,7 +145,7 @@
 		else
 			var/amount = beaker.reagents.maximum_volume - beaker.reagents.total_volume
 			amount = min(amount, 4)
-			// If the beaker is full, ping
+			// If the beaker полон ping
 			if(!amount)
 				if(prob(5))
 					visible_message("<span class='hear'>[src] пищит.</span>")
@@ -224,13 +224,13 @@
 
 	if(beaker)
 		if(beaker.reagents && beaker.reagents.reagent_list.len)
-			. += "<span class='notice'>Виднеется [beaker] с [beaker.reagents.total_volume] юнитами внутри.</span>"
+			. += "<hr><span class='notice'>Виднеется [beaker] с [beaker.reagents.total_volume] юнитами внутри.</span>"
 		else
-			. += "<span class='notice'>Виднеется пустая [beaker.name].</span>"
+			. += "<hr><span class='notice'>Виднеется пустая [beaker.name].</span>"
 	else
-		. += "<span class='notice'>Не вижу ничего прикреплённого.</span>"
+		. += "<hr><span class='notice'>Не вижу ничего прикреплённого.</span>"
 
-	. += "<span class='notice'>[attached ? attached : "Никто не"] подключён.</span>"
+	. += "<hr><span class='notice'>[attached ? attached : "Никто не"] подключён.</span>"
 
 
 /obj/machinery/iv_drip/saline

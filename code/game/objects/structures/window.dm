@@ -34,18 +34,18 @@
 	. = ..()
 	if(reinf)
 		if(anchored && state == WINDOW_SCREWED_TO_FRAME)
-			. += "<span class='notice'>The window is <b>screwed</b> to the frame.</span>"
+			. += "<hr><span class='notice'>The window is <b>screwed</b> to the frame.</span>"
 		else if(anchored && state == WINDOW_IN_FRAME)
-			. += "<span class='notice'>The window is <i>unscrewed</i> but <b>pried</b> into the frame.</span>"
+			. += "<hr><span class='notice'>The window is <i>unscrewed</i> but <b>pried</b> into the frame.</span>"
 		else if(anchored && state == WINDOW_OUT_OF_FRAME)
-			. += "<span class='notice'>The window is out of the frame, but could be <i>pried</i> in. It is <b>screwed</b> to the floor.</span>"
+			. += "<hr><span class='notice'>The window is out of the frame, but could be <i>pried</i> in. It is <b>screwed</b> to the floor.</span>"
 		else if(!anchored)
-			. += "<span class='notice'>The window is <i>unscrewed</i> from the floor, and could be deconstructed by <b>wrenching</b>.</span>"
+			. += "<hr><span class='notice'>The window is <i>unscrewed</i> from the floor, and could be deconstructed by <b>wrenching</b>.</span>"
 	else
 		if(anchored)
-			. += "<span class='notice'>The window is <b>screwed</b> to the floor.</span>"
+			. += "<hr><span class='notice'>The window is <b>screwed</b> to the floor.</span>"
 		else
-			. += "<span class='notice'>The window is <i>unscrewed</i> from the floor, and could be deconstructed by <b>wrenching</b>.</span>"
+			. += "<hr><span class='notice'>The window is <i>unscrewed</i> from the floor, and could be deconstructed by <b>wrenching</b>.</span>"
 
 /obj/structure/window/Initialize(mapload, direct)
 	. = ..()
@@ -180,7 +180,7 @@
 			if(I.use_tool(src, user, 40, volume=50))
 				obj_integrity = max_integrity
 				update_nearby_icons()
-				to_chat(user, "<span class='notice'>You repair [src].</span>")
+				to_chat(user, "<span class='notice'>Чиню [src].</span>")
 		else
 			to_chat(user, "<span class='warning'>[src] is already in good condition!</span>")
 		return
@@ -214,7 +214,7 @@
 			if(!istype(src, /obj/structure/window))
 				return TRUE
 			I.play_tool_sound(src)
-			visible_message("<span class='warning'>[user] smashes through [src] with [I]!</span>", "<span class='italics'>You hear the shattering of glass.</span>")
+			visible_message("<span class='warning'>[user] smashes through [src] с помощью [I]!</span>", "<span class='italics'>You hear the shattering of glass.</span>")
 			playsound(src, 'sound/effects/glassbr1.ogg', 50, TRUE)
 			deconstruct(FALSE)
 			return TRUE
@@ -395,8 +395,8 @@
 	switch(state)
 		if(RWINDOW_SECURE)
 			if(I.tool_behaviour == TOOL_WELDER && user.a_intent == INTENT_HARM)
-				user.visible_message("<span class='notice'>[user] holds \the [I] to the security screws on \the [src]...</span>",
-										"<span class='notice'>You begin heating the security screws on \the [src]...</span>")
+				user.visible_message("<span class='notice'>[user] holds \the [I] to the security screws on [src]...</span>",
+										"<span class='notice'>You begin heating the security screws on [src]...</span>")
 				if(I.use_tool(src, user, 150, volume = 100))
 					to_chat(user, "<span class='notice'>The security bolts are glowing white hot and look ready to be removed.</span>")
 					state = RWINDOW_BOLTS_HEATED
@@ -420,15 +420,15 @@
 				return
 		if(RWINDOW_POPPED)
 			if(I.tool_behaviour == TOOL_WIRECUTTER)
-				user.visible_message("<span class='notice'>[user] starts cutting the exposed bars on \the [src]...</span>",
-										"<span class='notice'>You start cutting the exposed bars on \the [src]</span>")
+				user.visible_message("<span class='notice'>[user] starts cutting the exposed bars on [src]...</span>",
+										"<span class='notice'>You start cutting the exposed bars on [src]</span>")
 				if(I.use_tool(src, user, 20, volume = 50))
 					state = RWINDOW_BARS_CUT
 					to_chat(user, "<span class='notice'>The panels falls out of the way exposing the frame bolts.</span>")
 				return
 		if(RWINDOW_BARS_CUT)
 			if(I.tool_behaviour == TOOL_WRENCH)
-				user.visible_message("<span class='notice'>[user] starts unfastening \the [src] from the frame...</span>",
+				user.visible_message("<span class='notice'>[user] starts unfastening [src] from the frame...</span>",
 					"<span class='notice'>You start unfastening the bolts from the frame...</span>")
 				if(I.use_tool(src, user, 40, volume = 50))
 					to_chat(user, "<span class='notice'>You unscrew the bolts from the frame and the window pops loose.</span>")
@@ -440,21 +440,21 @@
 /obj/structure/window/proc/cool_bolts()
 	if(state == RWINDOW_BOLTS_HEATED)
 		state = RWINDOW_SECURE
-		visible_message("<span class='notice'>The bolts on \the [src] look like they've cooled off...</span>")
+		visible_message("<span class='notice'>The bolts on [src] look like they've cooled off...</span>")
 
 /obj/structure/window/reinforced/examine(mob/user)
 	. = ..()
 	switch(state)
 		if(RWINDOW_SECURE)
-			. += "<span class='notice'>It's been screwed in with one way screws, you'd need to <b>heat them</b> to have any chance of backing them out.</span>"
+			. += "<hr><span class='notice'>It's been screwed in with one way screws, you'd need to <b>heat them</b> to have any chance of backing them out.</span>"
 		if(RWINDOW_BOLTS_HEATED)
-			. += "<span class='notice'>The screws are glowing white hot, and you'll likely be able to <b>unscrew them</b> now.</span>"
+			. += "<hr><span class='notice'>The screws are glowing white hot, and you'll likely be able to <b>unscrew them</b> now.</span>"
 		if(RWINDOW_BOLTS_OUT)
-			. += "<span class='notice'>The screws have been removed, revealing a small gap you could fit a <b>prying tool</b> in.</span>"
+			. += "<hr><span class='notice'>The screws have been removed, revealing a small gap you could fit a <b>prying tool</b> in.</span>"
 		if(RWINDOW_POPPED)
-			. += "<span class='notice'>The main plate of the window has popped out of the frame, exposing some bars that look like they can be <b>cut</b>.</span>"
+			. += "<hr><span class='notice'>The main plate of the window has popped out of the frame, exposing some bars that look like they can be <b>cut</b>.</span>"
 		if(RWINDOW_BARS_CUT)
-			. += "<span class='notice'>The main pane can be easily moved out of the way to reveal some <b>bolts</b> holding the frame in.</span>"
+			. += "<hr><span class='notice'>The main pane can be easily moved out of the way to reveal some <b>bolts</b> holding the frame in.</span>"
 
 /obj/structure/window/reinforced/spawner/east
 	dir = EAST
@@ -520,8 +520,8 @@
 	switch(state)
 		if(RWINDOW_SECURE)
 			if(I.tool_behaviour == TOOL_WELDER && user.a_intent == INTENT_HARM)
-				user.visible_message("<span class='notice'>[user] holds \the [I] to the security screws on \the [src]...</span>",
-										"<span class='notice'>You begin heating the security screws on \the [src]...</span>")
+				user.visible_message("<span class='notice'>[user] holds \the [I] to the security screws on [src]...</span>",
+										"<span class='notice'>You begin heating the security screws on [src]...</span>")
 				if(I.use_tool(src, user, 180, volume = 100))
 					to_chat(user, "<span class='notice'>The security screws are glowing white hot and look ready to be removed.</span>")
 					state = RWINDOW_BOLTS_HEATED
@@ -545,15 +545,15 @@
 				return
 		if(RWINDOW_POPPED)
 			if(I.tool_behaviour == TOOL_WIRECUTTER)
-				user.visible_message("<span class='notice'>[user] starts cutting the exposed bars on \the [src]...</span>",
-										"<span class='notice'>You start cutting the exposed bars on \the [src]</span>")
+				user.visible_message("<span class='notice'>[user] starts cutting the exposed bars on [src]...</span>",
+										"<span class='notice'>You start cutting the exposed bars on [src]</span>")
 				if(I.use_tool(src, user, 30, volume = 50))
 					state = RWINDOW_BARS_CUT
 					to_chat(user, "<span class='notice'>The panels falls out of the way exposing the frame bolts.</span>")
 				return
 		if(RWINDOW_BARS_CUT)
 			if(I.tool_behaviour == TOOL_WRENCH)
-				user.visible_message("<span class='notice'>[user] starts unfastening \the [src] from the frame...</span>",
+				user.visible_message("<span class='notice'>[user] starts unfastening [src] from the frame...</span>",
 					"<span class='notice'>You start unfastening the bolts from the frame...</span>")
 				if(I.use_tool(src, user, 50, volume = 50))
 					to_chat(user, "<span class='notice'>You unfasten the bolts from the frame and the window pops loose.</span>")
@@ -566,15 +566,15 @@
 	. = ..()
 	switch(state)
 		if(RWINDOW_SECURE)
-			. += "<span class='notice'>It's been screwed in with one way screws, you'd need to <b>heat them</b> to have any chance of backing them out.</span>"
+			. += "<hr><span class='notice'>It's been screwed in with one way screws, you'd need to <b>heat them</b> to have any chance of backing them out.</span>"
 		if(RWINDOW_BOLTS_HEATED)
-			. += "<span class='notice'>The screws are glowing white hot, and you'll likely be able to <b>unscrew them</b> now.</span>"
+			. += "<hr><span class='notice'>The screws are glowing white hot, and you'll likely be able to <b>unscrew them</b> now.</span>"
 		if(RWINDOW_BOLTS_OUT)
-			. += "<span class='notice'>The screws have been removed, revealing a small gap you could fit a <b>prying tool</b> in.</span>"
+			. += "<hr><span class='notice'>The screws have been removed, revealing a small gap you could fit a <b>prying tool</b> in.</span>"
 		if(RWINDOW_POPPED)
-			. += "<span class='notice'>The main plate of the window has popped out of the frame, exposing some bars that look like they can be <b>cut</b>.</span>"
+			. += "<hr><span class='notice'>The main plate of the window has popped out of the frame, exposing some bars that look like they can be <b>cut</b>.</span>"
 		if(RWINDOW_BARS_CUT)
-			. += "<span class='notice'>The main pane can be easily moved out of the way to reveal some <b>bolts</b> holding the frame in.</span>"
+			. += "<hr><span class='notice'>The main pane can be easily moved out of the way to reveal some <b>bolts</b> holding the frame in.</span>"
 
 /obj/structure/window/plasma/reinforced/spawner/east
 	dir = EAST
@@ -607,8 +607,8 @@
 	fulltile = TRUE
 	flags_1 = PREVENT_CLICK_UNDER_1
 	smoothing_flags = SMOOTH_BITMASK
-	smoothing_groups = list(SMOOTH_GROUP_WINDOW_FULLTILE)
-	canSmoothWith = list(SMOOTH_GROUP_WINDOW_FULLTILE, SMOOTH_GROUP_WALLS)
+	smoothing_groups = list(SMOOTH_GROUP_WINDOW_FULLTILE,SMOOTH_GROUP_WALLS, SMOOTH_GROUP_AIRLOCK)
+	canSmoothWith = list(SMOOTH_GROUP_WALLS, SMOOTH_GROUP_WINDOW_FULLTILE, SMOOTH_GROUP_AIRLOCK)
 	glass_amount = 2
 
 /obj/structure/window/fulltile/unanchored
@@ -622,8 +622,8 @@
 	fulltile = TRUE
 	flags_1 = PREVENT_CLICK_UNDER_1
 	smoothing_flags = SMOOTH_BITMASK
-	smoothing_groups = list(SMOOTH_GROUP_WINDOW_FULLTILE)
-	canSmoothWith = list(SMOOTH_GROUP_WINDOW_FULLTILE, SMOOTH_GROUP_WALLS)
+	smoothing_groups = list(SMOOTH_GROUP_WINDOW_FULLTILE,SMOOTH_GROUP_WALLS, SMOOTH_GROUP_AIRLOCK)
+	canSmoothWith = list(SMOOTH_GROUP_WALLS, SMOOTH_GROUP_WINDOW_FULLTILE, SMOOTH_GROUP_AIRLOCK)
 	glass_amount = 2
 
 /obj/structure/window/plasma/fulltile/unanchored
@@ -638,8 +638,8 @@
 	fulltile = TRUE
 	flags_1 = PREVENT_CLICK_UNDER_1
 	smoothing_flags = SMOOTH_BITMASK
-	smoothing_groups = list(SMOOTH_GROUP_WINDOW_FULLTILE)
-	canSmoothWith = list(SMOOTH_GROUP_WINDOW_FULLTILE, SMOOTH_GROUP_WALLS)
+	smoothing_groups = list(SMOOTH_GROUP_WINDOW_FULLTILE,SMOOTH_GROUP_WALLS, SMOOTH_GROUP_AIRLOCK)
+	canSmoothWith = list(SMOOTH_GROUP_WALLS, SMOOTH_GROUP_WINDOW_FULLTILE, SMOOTH_GROUP_AIRLOCK)
 	glass_amount = 2
 
 /obj/structure/window/plasma/reinforced/fulltile/unanchored
@@ -655,8 +655,8 @@
 	flags_1 = PREVENT_CLICK_UNDER_1
 	state = RWINDOW_SECURE
 	smoothing_flags = SMOOTH_BITMASK
-	smoothing_groups = list(SMOOTH_GROUP_WINDOW_FULLTILE)
-	canSmoothWith = list(SMOOTH_GROUP_WINDOW_FULLTILE, SMOOTH_GROUP_WALLS)
+	smoothing_groups = list(SMOOTH_GROUP_WINDOW_FULLTILE,SMOOTH_GROUP_WALLS, SMOOTH_GROUP_AIRLOCK)
+	canSmoothWith = list(SMOOTH_GROUP_WALLS, SMOOTH_GROUP_WINDOW_FULLTILE, SMOOTH_GROUP_AIRLOCK)
 	glass_amount = 2
 
 /obj/structure/window/reinforced/fulltile/unanchored
@@ -670,8 +670,8 @@
 	fulltile = TRUE
 	flags_1 = PREVENT_CLICK_UNDER_1
 	smoothing_flags = SMOOTH_BITMASK
-	smoothing_groups = list(SMOOTH_GROUP_WINDOW_FULLTILE)
-	canSmoothWith = list(SMOOTH_GROUP_WINDOW_FULLTILE, SMOOTH_GROUP_WALLS)
+	smoothing_groups = list(SMOOTH_GROUP_WINDOW_FULLTILE,SMOOTH_GROUP_WALLS, SMOOTH_GROUP_AIRLOCK)
+	canSmoothWith = list(SMOOTH_GROUP_WALLS, SMOOTH_GROUP_WINDOW_FULLTILE, SMOOTH_GROUP_AIRLOCK)
 	glass_amount = 2
 
 /obj/structure/window/reinforced/fulltile/ice
@@ -691,8 +691,8 @@
 	fulltile = TRUE
 	flags_1 = PREVENT_CLICK_UNDER_1
 	armor = list("melee" = 75, "bullet" = 20, "laser" = 20, "energy" = 0, "bomb" = 50, "bio" = 100, "rad" = 100, "fire" = 80, "acid" = 100)
-	smoothing_groups = list(SMOOTH_GROUP_SHUTTLE_PARTS, SMOOTH_GROUP_WINDOW_FULLTILE_SHUTTLE)
-	canSmoothWith = list(SMOOTH_GROUP_WINDOW_FULLTILE_SHUTTLE)
+	smoothing_groups = list(SMOOTH_GROUP_SHUTTLE_PARTS, SMOOTH_GROUP_WINDOW_FULLTILE_SHUTTLE,SMOOTH_GROUP_AIRLOCK)
+	canSmoothWith = list(SMOOTH_GROUP_WALLS,SMOOTH_GROUP_WINDOW_FULLTILE_SHUTTLE,SMOOTH_GROUP_AIRLOCK)
 	explosion_block = 3
 	glass_type = /obj/item/stack/sheet/titaniumglass
 	glass_amount = 2
@@ -721,8 +721,8 @@
 	heat_resistance = 1600
 	armor = list("melee" = 85, "bullet" = 20, "laser" = 20, "energy" = 0, "bomb" = 50, "bio" = 100, "rad" = 100, "fire" = 80, "acid" = 100)
 	smoothing_flags = SMOOTH_BITMASK
-	smoothing_groups = list(SMOOTH_GROUP_SHUTTLE_PARTS, SMOOTH_GROUP_WINDOW_FULLTILE)
-	canSmoothWith = list(SMOOTH_GROUP_WINDOW_FULLTILE)
+	smoothing_groups = list(SMOOTH_GROUP_SHUTTLE_PARTS, SMOOTH_GROUP_WINDOW_FULLTILE,SMOOTH_GROUP_AIRLOCK)
+	canSmoothWith = list(SMOOTH_GROUP_WALLS, SMOOTH_GROUP_WINDOW_FULLTILE, SMOOTH_GROUP_AIRLOCK)
 	explosion_block = 3
 	damage_deflection = 5		//WS Edit - Weakens R-Windows
 	glass_type = /obj/item/stack/sheet/plastitaniumglass
@@ -765,7 +765,7 @@
 /obj/structure/window/paperframe/examine(mob/user)
 	. = ..()
 	if(obj_integrity < max_integrity)
-		. += "<span class='info'>It looks a bit damaged, you may be able to fix it with some <b>paper</b>.</span>"
+		. += "<hr><span class='info'>It looks a bit damaged, you may be able to fix it with some <b>paper</b>.</span>"
 
 /obj/structure/window/paperframe/spawnDebris(location)
 	. = list(new /obj/item/stack/sheet/mineral/wood(location))
@@ -808,11 +808,11 @@
 	if(user.a_intent == INTENT_HARM)
 		return ..()
 	if(istype(W, /obj/item/paper) && obj_integrity < max_integrity)
-		user.visible_message("<span class='notice'>[user] starts to patch the holes in \the [src].</span>")
+		user.visible_message("<span class='notice'>[user] starts to patch the holes in [src].</span>")
 		if(do_after(user, 20, target = src))
 			obj_integrity = min(obj_integrity+4,max_integrity)
 			qdel(W)
-			user.visible_message("<span class='notice'>[user] patches some of the holes in \the [src].</span>")
+			user.visible_message("<span class='notice'>[user] patches some of the holes in [src].</span>")
 			if(obj_integrity == max_integrity)
 				update_icon()
 			return

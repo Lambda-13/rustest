@@ -66,7 +66,7 @@
 			colour = "blue"
 		else
 			colour = "black"
-	to_chat(user, "<span class='notice'>\The [src] will now write in [colour].</span>")
+	to_chat(user, "<span class='notice'>[src] will now write in [colour].</span>")
 	desc = "It's a fancy four-color ink pen, set to [colour]."
 
 /obj/item/pen/fountain

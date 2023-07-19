@@ -33,8 +33,20 @@
 #define DYNAMIC_WORLD_ASTEROID "asteroid"
 #define DYNAMIC_WORLD_SPACERUIN "space"
 
-// Лямбда эдишон
-//#define DYNAMIC_WORLD_RUINPLANET "ruinplanet" // Руины планеты-города
+//Если бы я мог
+//Я бы вынес всё это отдельно
+//Но кодеры говнокодеры
+#define DYNAMIC_WORLD_RANDOM "random" // Не внесён в динамик лист
+#define DYNAMIC_WORLD_RUINED_CITY "ruined_city"
+#define DYNAMIC_WORLD_ROBOTIC_GUARDIANS "robotic_guardians"
+#define DYNAMIC_WORLD_BARREN "barren"
+#define DYNAMIC_WORLD_CHLORINE "chlorine"
+#define DYNAMIC_WORLD_BAYDESERT "baydesert" // BAYDESERT а не DESERT потому что в шиптесте уже есть пустыня
+#define DYNAMIC_WORLD_GRASS "grass"
+#define DYNAMIC_WORLD_GRASS_TERRAFORMED "grass_terraformed"
+#define DYNAMIC_WORLD_SHROUDED "shrouded"
+#define DYNAMIC_WORLD_SNOW "snow"
+#define DYNAMIC_WORLD_VOLCANIC "volcanic" // Не внесён в динамик лист
 
 /// Make sure you are adding new planet types to this, in order as seen above preferrably
 #define DYNAMIC_WORLD_LIST_ALL list(\
@@ -47,7 +59,19 @@
 	DYNAMIC_WORLD_WASTEPLANET,\
 	DYNAMIC_WORLD_REEBE,\
 	DYNAMIC_WORLD_ASTEROID,\
-	DYNAMIC_WORLD_SPACERUIN)
+	DYNAMIC_WORLD_SPACERUIN,\
+	DYNAMIC_WORLD_SHROUDED) //DYNAMIC_WORLD_SHROUDED сделано на лямбде 13
+/*
+// Потом это добавлю
+	DYNAMIC_WORLD_RUINED_CITY,\
+	DYNAMIC_WORLD_ROBOTIC_GUARDIANS,\
+	DYNAMIC_WORLD_BARREN,\
+	DYNAMIC_WORLD_CHLORINE,\
+	DYNAMIC_WORLD_BAYDESERT,\
+	DYNAMIC_WORLD_GRASS,\
+	DYNAMIC_WORLD_GRASS_TERRAFORMED,\
+	DYNAMIC_WORLD_SNOW,\
+*/
 
 //Possible ship states
 #define OVERMAP_SHIP_IDLE "idle"
@@ -75,3 +99,7 @@
 
 ///Used to get the turf on the "physical" overmap representation.
 #define OVERMAP_TOKEN_TURF(x_pos, y_pos) locate(SSovermap.overmap_vlevel.low_x + SSovermap.overmap_vlevel.reserved_margin + x_pos - 1, SSovermap.overmap_vlevel.low_y + SSovermap.overmap_vlevel.reserved_margin + y_pos - 1, SSovermap.overmap_vlevel.z_value)
+
+// Burn direction defines
+#define BURN_NONE 0
+#define BURN_STOP -1

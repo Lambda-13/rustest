@@ -5,7 +5,7 @@
 	icon_state = "closed"
 	var/id = 1
 	layer = BLASTDOOR_LAYER
-	closingLayer = CLOSED_BLASTDOOR_LAYER
+	closingLayer = BLASTDOOR_LAYER
 	sub_door = TRUE
 	explosion_block = 3
 	heat_proof = TRUE
@@ -15,9 +15,11 @@
 	resistance_flags = FIRE_PROOF
 	damage_deflection = 70
 	poddoor = TRUE
+	can_open_with_hands = FALSE
 	assemblytype = /obj/structure/poddoor_assembly
-	var/open_sound = 'sound/machines/blastdoor.ogg'
-	var/close_sound = 'sound/machines/blastdoor.ogg'
+	smoothing_groups = list(SMOOTH_GROUP_AIRLOCK)
+	var/open_sound = 'sound/machines/airlocks/blastdoor.ogg'
+	var/close_sound = 'sound/machines/airlocks/blastdoor.ogg'
 
 /obj/machinery/door/poddoor/attackby(obj/item/W, mob/user, params)
 	. = ..()
@@ -51,9 +53,9 @@
 
 /obj/machinery/door/poddoor/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>The maintenance panel is [panel_open ? "opened" : "closed"].</span>"
+	. += "<hr><span class='notice'>The maintenance panel is [panel_open ? "opened" : "closed"].</span>"
 	if(panel_open)
-		. += "<span class='notice'>The <b>airlock electronics</b> are exposed and could be <i>pried out</i>."
+		. += "<hr><span class='notice'>The <b>airlock electronics</b> are exposed and could be <i>pried out</i>."
 
 /obj/machinery/door/poddoor/deconstruct(disassembled = TRUE, mob/user)
 	if(!(flags_1 & NODECONSTRUCT_1))
@@ -146,12 +148,14 @@
 		open(TRUE)
 
 /obj/machinery/door/poddoor/attack_alien(mob/living/carbon/alien/humanoid/user)
+	if(!can_open_with_hands)
+		return
 	if(density & !(resistance_flags & INDESTRUCTIBLE))
 		add_fingerprint(user)
 		user.visible_message("<span class='warning'>[user] begins prying open [src].</span>",\
-					"<span class='noticealien'>You begin digging your claws into [src] with all your might!</span>",\
+					"<span class='noticealien'>You begin digging your claws into [src] с помощью all your might!</span>",\
 					"<span class='warning'>You hear groaning metal...</span>")
-		playsound(src, 'sound/machines/airlock_alien_prying.ogg', 100, TRUE)
+		playsound(src, 'sound/machines/creaking.ogg', 100, TRUE)
 
 		var/time_to_open = 5 SECONDS
 		if(hasPower())

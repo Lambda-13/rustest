@@ -6,8 +6,8 @@
 #define SP_UNREADY 5
 
 /obj/machinery/computer/cargo/express
-	name = "консоль связи с оутпостом"
-	desc = "Позволяет связаться с ближайшим оутпостом для взятия миссии и покупки предметов."
+	name = "консоль связи с аванпостом"
+	desc = "Позволяет связаться с ближайшим аванпостом для взятия миссии и покупки предметов."
 	icon_screen = "supply_express"
 	circuit = /obj/item/circuitboard/computer/cargo/express
 	var/blockade_warning = "Проблемы с поставками в ваше местоположение."
@@ -28,6 +28,16 @@
 	var/use_beacon = FALSE
 	/// The account to charge purchases to, defaults to the cargo budget
 	var/datum/bank_account/charge_account
+
+/obj/machinery/computer/cargo/express/retro
+	icon = 'icons/obj/machines/retro_computer.dmi'
+	icon_state = "computer-retro"
+	deconpath = /obj/structure/frame/computer/retro
+
+/obj/machinery/computer/cargo/express/solgov
+	icon = 'icons/obj/machines/retro_computer.dmi'
+	icon_state = "computer-solgov"
+	deconpath = /obj/structure/frame/computer/solgov
 
 /obj/machinery/computer/cargo/express/Initialize()
 	. = ..()
@@ -55,9 +65,9 @@
 
 /obj/machinery/computer/cargo/express/attackby(obj/item/W, mob/living/user, params)
 	var/value = 0
-	if(istype(W, /obj/item/stack/spacecash))
-		var/obj/item/stack/spacecash/C = W
-		value = C.value * C.amount
+	if(istype(W, /obj/item/spacecash/bundle))
+		var/obj/item/spacecash/bundle/C = W
+		value = C.value
 	else if(istype(W, /obj/item/holochip))
 		var/obj/item/holochip/H = W
 		value = H.credits
@@ -96,7 +106,7 @@
 /obj/machinery/computer/cargo/express/ui_interact(mob/living/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
-		ui = new(user, src, "OutpostComms", name)
+		ui = new(user, src, "OutpostCommunications", name)
 		ui.open()
 		if(!charge_account)
 			reconnect()
@@ -116,7 +126,7 @@
 	data["outpostDocked"] = outpost_docked
 	data["points"] = charge_account ? charge_account.account_balance : 0
 	data["siliconUser"] = user.has_unlimited_silicon_privilege && check_ship_ai_access(user)
-	data["beaconzone"] = beacon ? get_area(beacon) : ""//where is the beacon located? outputs in the tgui
+	data["beaconZone"] = beacon ? get_area(beacon) : ""//where is the beacon located? outputs in the tgui
 	data["usingBeacon"] = use_beacon //is the mode set to deliver to the beacon or the cargobay?
 	data["canBeacon"] = !use_beacon || canBeacon //is the mode set to beacon delivery, and is the beacon in a valid location?
 	data["canBuyBeacon"] = charge_account ? (cooldown <= 0 && charge_account.account_balance >= BEACON_COST) : FALSE

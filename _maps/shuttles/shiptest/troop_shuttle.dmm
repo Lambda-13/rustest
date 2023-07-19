@@ -1,101 +1,1124 @@
-"aa" = (/turf/template_noop,/area/template_noop)
-"ab" = (/turf/open/floor/plating/catwalk_floor,/area/ship/external)
-"ac" = (/obj/structure/cable{icon_state = "2-4"},/turf/open/floor/plating/catwalk_floor,/area/ship/external)
-"ad" = (/obj/structure/cable{icon_state = "4-8"},/turf/open/floor/plating/catwalk_floor,/area/ship/external)
-"ae" = (/obj/structure/cable{icon_state = "2-8"},/turf/open/floor/plating/catwalk_floor,/area/ship/external)
-"af" = (/turf/closed/wall/mineral/plastitanium,/area/ship/cargo)
-"ag" = (/obj/structure/sign/poster/official/mini_energy_gun,/turf/closed/wall/mineral/plastitanium,/area/ship/cargo)
-"ah" = (/obj/structure/fans/tiny,/obj/machinery/door/poddoor/shutters/indestructible{id = 8121},/turf/open/floor/mineral/plastitanium,/area/ship/cargo)
-"ai" = (/obj/structure/fans/tiny,/obj/structure/cable{icon_state = "1-2"},/obj/machinery/door/poddoor/shutters/indestructible{id = 8121},/turf/open/floor/mineral/plastitanium,/area/ship/cargo)
-"aj" = (/obj/machinery/power/solar,/obj/structure/cable{icon_state = "1-4"},/obj/structure/cable,/obj/structure/cable{icon_state = "1-2"},/turf/open/floor/plating/catwalk_floor,/area/ship/external)
-"ak" = (/obj/machinery/power/solar,/obj/structure/cable{icon_state = "2-8"},/turf/open/floor/plating/catwalk_floor,/area/ship/external)
-"al" = (/obj/machinery/power/smes/engineering,/obj/machinery/airalarm/directional/west,/obj/machinery/light{icon_state = "tube"; dir = 1},/obj/structure/cable{icon_state = "0-2"},/turf/open/floor/pod/light,/area/ship/cargo)
-"am" = (/obj/machinery/power/terminal{dir = 8},/obj/structure/cable{icon_state = "0-2"},/obj/structure/closet/crate,/obj/item/clothing/suit/space/hardsuit/security/independent/frontier,/obj/item/clothing/suit/space/hardsuit/security/independent/frontier,/obj/item/clothing/suit/space/hardsuit/security/independent/frontier,/obj/item/clothing/suit/space/hardsuit/security/independent/frontier,/obj/item/clothing/suit/space/hardsuit/security/independent/frontier,/obj/item/clothing/suit/space/hardsuit/security/independent/frontier,/obj/item/radio/intercom{pixel_x = 0; pixel_y = 22},/turf/open/floor/pod/light,/area/ship/cargo)
-"an" = (/obj/structure/window/reinforced/survival_pod{icon_state = "pwindow"; dir = 4},/obj/structure/closet/crate{name = "Resources crate"},/obj/item/stack/sheet/mineral/plasma/fifty,/obj/item/stack/sheet/mineral/plastitanium/fifty,/obj/item/stack/sheet/mineral/titanium/fifty,/obj/item/stack/sheet/mineral/uranium/twenty,/obj/item/stack/sheet/mineral/silver/five,/obj/item/stack/sheet/metal/fifty,/obj/item/stack/sheet/metal/fifty,/obj/item/stack/sheet/metal/fifty,/obj/item/stack/sheet/metal/fifty,/obj/item/stack/sheet/glass/fifty,/obj/item/stack/sheet/glass/fifty,/obj/item/stack/sheet/mineral/plasma/fifty,/turf/open/floor/pod/light,/area/ship/cargo)
-"ao" = (/turf/open/floor/pod/light,/area/ship/cargo)
-"ap" = (/obj/structure/cable{icon_state = "1-2"},/turf/open/floor/pod/light,/area/ship/cargo)
-"aq" = (/obj/structure/closet/crate,/obj/structure/railing{icon_state = "railing"; dir = 9},/obj/item/circuitboard/computer/shuttle/helm,/obj/item/circuitboard/machine/mech_recharger,/obj/item/circuitboard/computer/mech_bay_power_console,/obj/item/circuitboard/machine/sleeper,/turf/open/floor/pod/light,/area/ship/cargo)
-"ar" = (/obj/machinery/power/solar_control,/obj/structure/railing{dir = 1},/obj/structure/cable{icon_state = "0-2"},/obj/machinery/light{icon_state = "tube"; dir = 1},/turf/open/floor/pod/light,/area/ship/cargo)
-"as" = (/obj/machinery/power/solar,/obj/structure/cable,/obj/structure/cable{icon_state = "1-4"},/turf/open/floor/plating/catwalk_floor,/area/ship/external)
-"at" = (/obj/machinery/power/solar,/obj/structure/cable,/obj/structure/cable{icon_state = "4-8"},/turf/open/floor/plating/catwalk_floor,/area/ship/external)
-"au" = (/obj/machinery/power/solar,/obj/structure/cable{icon_state = "0-8"},/turf/open/floor/plating/catwalk_floor,/area/ship/external)
-"av" = (/obj/machinery/power/shuttle/engine/electric/premium{icon_state = "burst"; dir = 4},/obj/structure/cable{icon_state = "0-4"},/turf/open/floor/plating,/area/ship/cargo)
-"aw" = (/obj/machinery/door/window{icon_state = "left"; dir = 4},/obj/structure/window/reinforced{icon_state = "rwindow"; dir = 1},/obj/structure/window/reinforced,/obj/structure/window/reinforced{icon_state = "rwindow"; dir = 8},/obj/machinery/power/smes/shuttle/precharged{icon_state = "smes"; dir = 4},/obj/structure/cable{icon_state = "0-8"},/turf/open/floor/plating,/area/ship/cargo)
-"ax" = (/obj/machinery/power/terminal{dir = 8},/obj/structure/cable{icon_state = "0-4"},/obj/structure/cable{icon_state = "1-2"},/obj/structure/cable,/turf/open/floor/pod/light,/area/ship/cargo)
-"ay" = (/obj/structure/cable{icon_state = "1-2"},/obj/machinery/atmospherics/components/unary/vent_pump/on,/turf/open/floor/pod/light,/area/ship/cargo)
-"az" = (/obj/structure/window/reinforced/survival_pod{icon_state = "pwindow"; dir = 4},/turf/open/floor/pod/light,/area/ship/cargo)
-"aA" = (/obj/structure/chair/comfy/shuttle{icon_state = "shuttle_chair"; dir = 4},/obj/effect/landmark/start/security_officer{name = "Assault Trooper"},/turf/open/floor/pod/light,/area/ship/cargo)
-"aB" = (/obj/structure/cable{icon_state = "2-4"},/turf/open/floor/pod/light,/area/ship/cargo)
-"aC" = (/obj/structure/cable{icon_state = "4-8"},/turf/open/floor/pod/light,/area/ship/cargo)
-"aD" = (/obj/machinery/power/apc/auto_name/east,/obj/structure/cable{icon_state = "0-8"},/obj/structure/cable{icon_state = "1-8"},/turf/open/floor/pod/light,/area/ship/cargo)
-"aE" = (/turf/closed/wall/mineral/plastitanium,/area/ship/bridge)
-"aF" = (/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,/turf/open/floor/mineral/plastitanium/red,/area/ship/bridge)
-"aG" = (/obj/machinery/atmospherics/pipe/simple/supply{icon_state = "pipe11-3"; dir = 6},/obj/machinery/computer/cryopod{icon_state = "wallconsole"; dir = 4; pixel_x = -23},/obj/machinery/cryopod{icon_state = "cryopod-open"; dir = 4},/obj/structure/cable{icon_state = "1-2"},/obj/structure/cable{icon_state = "1-4"},/turf/open/floor/pod/light,/area/ship/cargo)
-"aH" = (/obj/structure/cable{icon_state = "1-4"},/obj/machinery/atmospherics/components/unary/vent_pump/on,/turf/open/floor/pod/light,/area/ship/cargo)
-"aI" = (/obj/structure/cable{icon_state = "1-2"},/obj/structure/cable{icon_state = "1-8"},/obj/machinery/atmospherics/components/unary/vent_scrubber/on,/turf/open/floor/pod/light,/area/ship/cargo)
-"aJ" = (/obj/structure/chair/comfy/shuttle{icon_state = "shuttle_chair"; dir = 8},/obj/effect/landmark/start/security_officer{name = "Sniper"},/turf/open/floor/pod/light,/area/ship/cargo)
-"aK" = (/obj/structure/closet/crate,/obj/structure/railing,/obj/item/circuitboard/machine/announcement_system,/obj/item/circuitboard/machine/mechfab,/obj/item/circuitboard/machine/pipedispenser,/obj/item/circuitboard/machine/rdserver,/turf/open/floor/pod/light,/area/ship/cargo)
-"aL" = (/obj/structure/closet/crate,/obj/structure/railing,/obj/item/circuitboard/computer/cargo/express,/obj/item/circuitboard/computer/apc_control,/obj/item/circuitboard/computer/arcade/orion_trail,/obj/item/circuitboard/computer/arcade/battle,/obj/item/circuitboard/machine/holopad,/obj/item/circuitboard/machine/ore_silo,/obj/item/circuitboard/machine/ore_redemption,/obj/item/circuitboard/machine/protolathe/department/ballistics,/obj/item/circuitboard/machine/protolathe/department/security,/turf/open/floor/pod/light,/area/ship/cargo)
-"aM" = (/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,/turf/open/floor/pod/light,/area/ship/cargo)
-"aN" = (/obj/machinery/power/apc/auto_name/north,/obj/structure/cable{icon_state = "0-2"},/turf/open/floor/mineral/plastitanium,/area/ship/bridge)
-"aO" = (/obj/machinery/atmospherics/components/unary/vent_scrubber/on,/obj/structure/table,/obj/item/radio/intercom/wideband{pixel_x = -5; pixel_y = 25},/obj/item/radio/intercom{pixel_x = -5; pixel_y = 38},/obj/machinery/jukebox/boombox{pixel_x = 7; pixel_y = 6},/obj/machinery/button/door{id = 8121},/turf/open/floor/mineral/plastitanium,/area/ship/bridge)
-"aP" = (/obj/machinery/computer/communications{icon_state = "computer"; dir = 8},/turf/open/floor/mineral/plastitanium,/area/ship/bridge)
-"aQ" = (/obj/structure/cable{icon_state = "1-2"},/obj/machinery/atmospherics/pipe/manifold/supply,/obj/machinery/atmospherics/pipe/simple/scrubbers{icon_state = "pipe11-3"; dir = 6},/obj/structure/cable{icon_state = "4-8"},/turf/open/floor/pod/light,/area/ship/cargo)
-"aR" = (/obj/machinery/power/terminal{dir = 8},/obj/structure/cable{icon_state = "0-4"},/obj/machinery/atmospherics/pipe/simple/supply,/obj/structure/cable{icon_state = "1-2"},/obj/structure/cable,/turf/open/floor/pod/light,/area/ship/cargo)
-"aS" = (/obj/machinery/door/window/survival_pod{icon_state = "windoor"; dir = 4},/obj/structure/cable{icon_state = "4-8"},/obj/machinery/atmospherics/pipe/simple/supply{icon_state = "pipe11-3"; dir = 8},/obj/machinery/atmospherics/pipe/simple/scrubbers{icon_state = "pipe11-3"; dir = 8},/turf/open/floor/pod/light,/area/ship/cargo)
-"aT" = (/obj/structure/cable{icon_state = "4-8"},/obj/machinery/atmospherics/pipe/simple/supply{icon_state = "pipe11-3"; dir = 8},/obj/machinery/atmospherics/pipe/simple/scrubbers{icon_state = "pipe11-3"; dir = 8},/turf/open/floor/pod/light,/area/ship/cargo)
-"aU" = (/obj/structure/cable{icon_state = "4-8"},/obj/structure/cable{icon_state = "2-4"},/obj/machinery/atmospherics/pipe/manifold/supply,/obj/machinery/atmospherics/pipe/manifold/scrubbers{icon_state = "manifold-3"; dir = 1},/turf/open/floor/pod/light,/area/ship/cargo)
-"aV" = (/obj/structure/cable{icon_state = "4-8"},/obj/structure/cable{icon_state = "1-8"},/obj/machinery/atmospherics/pipe/manifold/supply{icon_state = "manifold-3"; dir = 1},/obj/machinery/atmospherics/pipe/manifold/scrubbers,/turf/open/floor/pod/light,/area/ship/cargo)
-"aW" = (/obj/structure/cable{icon_state = "4-8"},/obj/machinery/atmospherics/pipe/simple/supply{icon_state = "pipe11-3"; dir = 8},/obj/machinery/atmospherics/pipe/manifold/scrubbers{icon_state = "manifold-3"; dir = 1},/turf/open/floor/goonplaque,/area/ship/cargo)
-"aX" = (/obj/machinery/door/airlock/survival_pod/glass,/obj/structure/cable{icon_state = "4-8"},/obj/machinery/atmospherics/pipe/simple/supply{icon_state = "pipe11-3"; dir = 8},/obj/machinery/atmospherics/pipe/simple/scrubbers{icon_state = "pipe11-3"; dir = 8},/turf/open/floor/mineral/plastitanium,/area/ship/bridge)
-"aY" = (/obj/structure/cable{icon_state = "1-8"},/obj/machinery/atmospherics/pipe/simple/supply{icon_state = "pipe11-3"; dir = 8},/obj/machinery/atmospherics/pipe/simple/scrubbers{icon_state = "pipe11-3"; dir = 8},/turf/open/floor/mineral/plastitanium,/area/ship/bridge)
-"aZ" = (/obj/structure/chair/comfy/shuttle{icon_state = "shuttle_chair"; dir = 4},/obj/machinery/atmospherics/pipe/simple/supply{icon_state = "pipe11-3"; dir = 10},/obj/machinery/atmospherics/pipe/simple/scrubbers{icon_state = "pipe11-3"; dir = 9},/obj/effect/landmark/start/warden{name = "Lieutenant"},/turf/open/floor/mineral/plastitanium,/area/ship/bridge)
-"ba" = (/obj/machinery/computer/helm{dir = 8},/turf/open/floor/mineral/plastitanium,/area/ship/bridge)
-"bb" = (/obj/machinery/power/terminal{dir = 8},/obj/structure/cable{icon_state = "0-4"},/obj/machinery/atmospherics/components/binary/pump/on{icon_state = "pump_on_map-3"; dir = 1},/obj/machinery/portable_atmospherics/canister/oxygen,/obj/structure/cable,/turf/open/floor/pod/light,/area/ship/cargo)
-"bc" = (/obj/structure/cable{icon_state = "1-4"},/turf/open/floor/pod/light,/area/ship/cargo)
-"bd" = (/obj/structure/cable{icon_state = "1-2"},/obj/machinery/atmospherics/components/unary/vent_scrubber/on{icon_state = "scrub_map_on-3"; dir = 1},/turf/open/floor/pod/light,/area/ship/cargo)
-"be" = (/obj/machinery/atmospherics/components/unary/vent_pump/on{icon_state = "vent_map_on-3"; dir = 1},/turf/open/floor/pod/light,/area/ship/cargo)
-"bf" = (/obj/structure/chair/comfy/shuttle{icon_state = "shuttle_chair"; dir = 8},/obj/machinery/atmospherics/pipe/simple/scrubbers,/obj/effect/landmark/start/security_officer{name = "Heavy Trooper"},/turf/open/floor/pod/light,/area/ship/cargo)
-"bg" = (/obj/structure/window/reinforced/survival_pod{icon_state = "pwindow"; dir = 4},/obj/structure/closet/crate,/obj/item/storage/firstaid/o2,/obj/item/storage/firstaid/brute,/obj/item/storage/firstaid/fire,/obj/item/storage/firstaid/toxin,/turf/open/floor/pod/light,/area/ship/cargo)
-"bh" = (/obj/structure/closet/crate{name = "Assault kit"},/obj/structure/railing{dir = 1},/obj/item/gun/ballistic/automatic/assualt/ak47{dry_fire_text = "CYKA BLYAT!!!"},/obj/item/gun/ballistic/automatic/assualt/ak47{dry_fire_text = "CYKA BLYAT!!!"},/obj/item/ammo_box/magazine/ak47,/obj/item/ammo_box/magazine/ak47,/obj/item/ammo_box/magazine/ak47,/obj/item/clothing/suit/armor/vest/russian,/obj/item/clothing/suit/armor/vest/russian,/obj/item/clothing/head/helmet/riot{armor = list("melee" = 40, "bullet" = 40, "laser" = 40, "energy" = 40, "bomb" = 40, "bio" = 30, "rad" = 0, "fire" = 100, "acid" = 100); desc = "It's a helmet specifically designed to protect against any attacks."; name = "Ranger helmet"},/obj/item/hatchet/wooden,/obj/item/hatchet/wooden,/obj/item/ammo_box/a762_39,/obj/item/ammo_box/a762_39,/obj/item/ammo_box/a762_39,/obj/item/clothing/gloves/krav_maga/combatglovesplus,/obj/item/clothing/gloves/krav_maga/combatglovesplus,/obj/item/clothing/mask/gas/sechailer/swat/spacepol{name = "Utility gas mask"},/obj/item/clothing/mask/gas/sechailer/swat/spacepol{name = "Utility gas mask"},/turf/open/floor/pod/light,/area/ship/cargo)
-"bi" = (/obj/structure/closet/crate{name = "Sniper kit"},/obj/structure/railing{dir = 1},/obj/item/gun/ballistic/automatic/sniper_rifle,/obj/item/clothing/head/helmet/swat,/obj/item/clothing/suit/armor/vest/blueshirt,/obj/item/ammo_box/magazine/sniper_rounds,/obj/item/ammo_box/magazine/sniper_rounds,/obj/item/clothing/mask/gas/sechailer/swat/spacepol{name = "Utility gas mask"},/turf/open/floor/pod/light,/area/ship/cargo)
-"bj" = (/obj/structure/window/reinforced/survival_pod{icon_state = "pwindow"; dir = 4},/obj/structure/table/optable,/obj/item/storage/backpack/duffelbag/med/surgery,/turf/open/floor/pod/light,/area/ship/cargo)
-"bk" = (/obj/machinery/computer/camera_advanced{icon_state = "computer"; dir = 8},/turf/open/floor/mineral/plastitanium,/area/ship/bridge)
-"bl" = (/obj/structure/closet/syndicate,/obj/item/gun/ballistic/revolver/golden,/obj/item/ammo_box/a357,/obj/item/ammo_box/a357,/obj/item/clothing/suit/armor/vest/lieutenant,/obj/item/clothing/suit/armor/vest/russian_coat,/obj/item/clothing/head/solgov/terragov,/obj/item/clothing/mask/gas/sechailer/swat/spacepol{name = "Utility gas mask"},/obj/item/clothing/suit/space/hardsuit/security/hos,/obj/machinery/light,/turf/open/floor/mineral/plastitanium,/area/ship/bridge)
-"bn" = (/obj/structure/window/reinforced/survival_pod{icon_state = "pwindow"; dir = 4},/obj/structure/cable{icon_state = "2-8"},/turf/open/floor/pod/light,/area/ship/cargo)
-"bo" = (/obj/machinery/atmospherics/components/binary/pump/on,/turf/open/floor/pod/light,/area/ship/cargo)
-"bp" = (/turf/closed/wall/mineral/plastitanium/nodiagonal,/area/ship/bridge)
-"bq" = (/obj/machinery/atmospherics/components/unary/tank/air,/obj/machinery/light,/turf/open/floor/pod/light,/area/ship/cargo)
-"br" = (/obj/machinery/autolathe/hacked,/turf/open/floor/pod/light,/area/ship/cargo)
-"bs" = (/obj/machinery/power/port_gen/pacman,/obj/structure/window/reinforced/survival_pod{icon_state = "pwindow"; dir = 4},/obj/structure/cable,/turf/open/floor/pod/light,/area/ship/cargo)
-"bt" = (/obj/machinery/atmospherics/pipe/simple/scrubbers,/turf/open/floor/pod/light,/area/ship/cargo)
-"bv" = (/obj/machinery/atmospherics/components/unary/vent_pump/on{icon_state = "vent_map_on-3"; dir = 1},/obj/structure/table,/obj/item/areaeditor/shuttle,/obj/machinery/airalarm/directional/south,/turf/open/floor/mineral/plastitanium,/area/ship/bridge)
-"bw" = (/obj/machinery/power/solar,/obj/structure/cable{icon_state = "0-2"},/obj/structure/cable{icon_state = "1-2"},/obj/structure/cable{icon_state = "2-4"},/turf/open/floor/plating/catwalk_floor,/area/ship/external)
-"bx" = (/obj/machinery/power/solar,/obj/structure/cable{icon_state = "0-2"},/obj/structure/cable{icon_state = "4-8"},/obj/structure/cable{icon_state = "2-4"},/turf/open/floor/plating/catwalk_floor,/area/ship/external)
-"by" = (/obj/machinery/power/tracker,/obj/structure/cable{icon_state = "0-8"},/turf/open/floor/plating/catwalk_floor,/area/ship/external)
-"bz" = (/obj/structure/fans/tiny,/obj/machinery/atmospherics/pipe/simple/scrubbers,/obj/machinery/door/poddoor/shutters/indestructible{id = 8121},/turf/open/floor/mineral/plastitanium,/area/ship/cargo)
-"bA" = (/obj/machinery/power/solar,/obj/structure/cable{icon_state = "0-2"},/obj/structure/cable{icon_state = "1-2"},/turf/open/floor/plating/catwalk_floor,/area/ship/external)
-"bB" = (/obj/machinery/power/solar,/obj/structure/cable{icon_state = "0-8"},/obj/structure/cable{icon_state = "4-8"},/obj/structure/cable{icon_state = "1-8"},/turf/open/floor/plating/catwalk_floor,/area/ship/external)
-"bC" = (/obj/structure/cable{icon_state = "1-4"},/turf/open/floor/plating/catwalk_floor,/area/ship/external)
-"bD" = (/obj/structure/cable{icon_state = "4-8"},/obj/machinery/atmospherics/components/unary/outlet_injector/on{icon_state = "inje_map-3"; dir = 1},/turf/open/floor/plating/catwalk_floor,/area/ship/external)
-"bE" = (/obj/structure/cable{icon_state = "1-8"},/turf/open/floor/plating/catwalk_floor,/area/ship/external)
-"bF" = (/obj/structure/closet/crate{name = "Heavy kit"},/obj/structure/railing,/obj/item/gun/ballistic/rocketlauncher,/obj/item/clothing/suit/armor/vest/marine/heavy,/obj/item/clothing/head/helmet/marine,/obj/item/gun/ballistic/automatic/hmg/l6_saw,/obj/item/ammo_box/magazine/mm712x82,/obj/item/ammo_box/magazine/mm712x82,/obj/item/ammo_casing/caseless/rocket,/obj/item/ammo_casing/caseless/rocket,/obj/item/clothing/mask/gas/sechailer/swat/spacepol{name = "Utility gas mask"},/obj/machinery/light,/turf/open/floor/pod/light,/area/ship/cargo)
-"bG" = (/obj/structure/closet/crate{name = "Assault kit"},/obj/structure/railing{icon_state = "railing"; dir = 10},/obj/item/gun/ballistic/automatic/smg/aks74u,/obj/item/gun/ballistic/automatic/smg/aks74u,/obj/item/ammo_box/magazine/aks74u,/obj/item/ammo_box/magazine/aks74u,/obj/item/ammo_box/magazine/aks74u,/obj/item/ammo_box/magazine/aks74u,/obj/item/clothing/suit/armor/vest/russian,/obj/item/clothing/suit/armor/vest/russian,/obj/item/clothing/head/helmet/riot{armor = list("melee" = 40, "bullet" = 40, "laser" = 40, "energy" = 40, "bomb" = 40, "bio" = 30, "rad" = 0, "fire" = 100, "acid" = 100); desc = "It's a helmet specifically designed to protect against any attacks."; name = "Ranger helmet"},/obj/item/clothing/head/helmet/riot{armor = list("melee" = 40, "bullet" = 40, "laser" = 40, "energy" = 40, "bomb" = 40, "bio" = 30, "rad" = 0, "fire" = 100, "acid" = 100); desc = "It's a helmet specifically designed to protect against any attacks."; name = "Ranger helmet"},/obj/item/hatchet/wooden,/obj/item/hatchet/wooden,/obj/item/clothing/gloves/krav_maga/combatglovesplus,/obj/item/clothing/gloves/krav_maga/combatglovesplus,/obj/item/clothing/mask/gas/sechailer/swat/spacepol{name = "Utility gas mask"},/obj/item/clothing/mask/gas/sechailer/swat/spacepol{name = "Utility gas mask"},/obj/machinery/airalarm/directional/south,/turf/open/floor/pod/light,/area/ship/cargo)
-"bH" = (/obj/structure/fans/tiny,/obj/machinery/door/poddoor/shutters/indestructible{id = 8121},/obj/docking_port/mobile{icon_state = "pinonclose"; dir = 2},/turf/open/floor/mineral/plastitanium,/area/ship/cargo)
-"bI" = (/obj/structure/fans/tiny,/obj/structure/cable{icon_state = "1-2"},/obj/machinery/door/poddoor/shutters/indestructible{id = 8121},/obj/docking_port/mobile{icon_state = "pinonclose"; dir = 2},/turf/open/floor/mineral/plastitanium,/area/ship/cargo)
-"bJ" = (/obj/machinery/computer/helm/viewscreen,/turf/closed/wall/mineral/plastitanium/nodiagonal,/area/ship/cargo)
-"bK" = (/turf/closed/wall/mineral/plastitanium/nodiagonal,/area/ship/cargo)
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"aa" = (
+/turf/template_noop,
+/area/template_noop)
+"ab" = (
+/turf/open/floor/plating/catwalk_floor,
+/area/ship/external)
+"ac" = (
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/open/floor/plating/catwalk_floor,
+/area/ship/external)
+"ad" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating/catwalk_floor,
+/area/ship/external)
+"ae" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plating/catwalk_floor,
+/area/ship/external)
+"af" = (
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/cargo)
+"ag" = (
+/obj/structure/sign/poster/official/mini_energy_gun,
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/cargo)
+"ah" = (
+/obj/structure/fans/tiny,
+/obj/machinery/door/poddoor/shutters/indestructible{
+	id = 8121
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ship/cargo)
+"ai" = (
+/obj/structure/fans/tiny,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/door/poddoor/shutters/indestructible{
+	id = 8121
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ship/cargo)
+"aj" = (
+/obj/machinery/power/solar,
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/cable,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating/catwalk_floor,
+/area/ship/external)
+"ak" = (
+/obj/machinery/power/solar,
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plating/catwalk_floor,
+/area/ship/external)
+"al" = (
+/obj/machinery/power/smes/engineering,
+/obj/machinery/airalarm/directional/west,
+/obj/machinery/light{
+	icon_state = "tube";
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/pod/light,
+/area/ship/cargo)
+"am" = (
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/structure/closet/crate,
+/obj/item/clothing/suit/space/hardsuit/security/independent/frontier,
+/obj/item/clothing/suit/space/hardsuit/security/independent/frontier,
+/obj/item/clothing/suit/space/hardsuit/security/independent/frontier,
+/obj/item/clothing/suit/space/hardsuit/security/independent/frontier,
+/obj/item/clothing/suit/space/hardsuit/security/independent/frontier,
+/obj/item/clothing/suit/space/hardsuit/security/independent/frontier,
+/obj/item/radio/intercom{
+	pixel_x = 0;
+	pixel_y = 22
+	},
+/turf/open/floor/pod/light,
+/area/ship/cargo)
+"an" = (
+/obj/structure/window/reinforced/survival_pod{
+	icon_state = "pwindow";
+	dir = 4
+	},
+/obj/structure/closet/crate{
+	name = "Resources crate"
+	},
+/obj/item/stack/sheet/mineral/plasma/fifty,
+/obj/item/stack/sheet/mineral/plastitanium/fifty,
+/obj/item/stack/sheet/mineral/titanium/fifty,
+/obj/item/stack/sheet/mineral/uranium/twenty,
+/obj/item/stack/sheet/mineral/silver/five,
+/obj/item/stack/sheet/metal/fifty,
+/obj/item/stack/sheet/metal/fifty,
+/obj/item/stack/sheet/metal/fifty,
+/obj/item/stack/sheet/metal/fifty,
+/obj/item/stack/sheet/glass/fifty,
+/obj/item/stack/sheet/glass/fifty,
+/obj/item/stack/sheet/mineral/plasma/fifty,
+/turf/open/floor/pod/light,
+/area/ship/cargo)
+"ao" = (
+/turf/open/floor/pod/light,
+/area/ship/cargo)
+"ap" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/pod/light,
+/area/ship/cargo)
+"aq" = (
+/obj/structure/closet/crate,
+/obj/structure/railing{
+	icon_state = "railing";
+	dir = 9
+	},
+/obj/item/circuitboard/computer/shuttle/helm,
+/obj/item/circuitboard/machine/mech_recharger,
+/obj/item/circuitboard/computer/mech_bay_power_console,
+/obj/item/circuitboard/machine/sleeper,
+/turf/open/floor/pod/light,
+/area/ship/cargo)
+"ar" = (
+/obj/machinery/power/solar_control,
+/obj/structure/railing{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/machinery/light{
+	icon_state = "tube";
+	dir = 1
+	},
+/turf/open/floor/pod/light,
+/area/ship/cargo)
+"as" = (
+/obj/machinery/power/solar,
+/obj/structure/cable,
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/plating/catwalk_floor,
+/area/ship/external)
+"at" = (
+/obj/machinery/power/solar,
+/obj/structure/cable,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating/catwalk_floor,
+/area/ship/external)
+"au" = (
+/obj/machinery/power/solar,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plating/catwalk_floor,
+/area/ship/external)
+"av" = (
+/obj/machinery/power/shuttle/engine/electric/premium{
+	icon_state = "burst";
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plating,
+/area/ship/cargo)
+"aw" = (
+/obj/machinery/door/window{
+	icon_state = "left";
+	dir = 4
+	},
+/obj/structure/window/reinforced{
+	icon_state = "rwindow";
+	dir = 1
+	},
+/obj/structure/window/reinforced,
+/obj/structure/window/reinforced{
+	icon_state = "rwindow";
+	dir = 8
+	},
+/obj/machinery/power/smes/shuttle/precharged{
+	icon_state = "smes";
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plating,
+/area/ship/cargo)
+"ax" = (
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable,
+/turf/open/floor/pod/light,
+/area/ship/cargo)
+"ay" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on,
+/turf/open/floor/pod/light,
+/area/ship/cargo)
+"az" = (
+/obj/structure/window/reinforced/survival_pod{
+	icon_state = "pwindow";
+	dir = 4
+	},
+/turf/open/floor/pod/light,
+/area/ship/cargo)
+"aA" = (
+/obj/structure/chair/comfy/shuttle{
+	icon_state = "shuttle_chair";
+	dir = 4
+	},
+/obj/effect/landmark/start/security_officer{
+	name = "Assault Trooper"
+	},
+/turf/open/floor/pod/light,
+/area/ship/cargo)
+"aB" = (
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/open/floor/pod/light,
+/area/ship/cargo)
+"aC" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/pod/light,
+/area/ship/cargo)
+"aD" = (
+/obj/machinery/power/apc/auto_name/directional/east,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/pod/light,
+/area/ship/cargo)
+"aE" = (
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/bridge)
+"aF" = (
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/turf/open/floor/mineral/plastitanium/red,
+/area/ship/bridge)
+"aG" = (
+/obj/machinery/atmospherics/pipe/simple/supply{
+	icon_state = "pipe11-3";
+	dir = 6
+	},
+/obj/machinery/computer/cryopod{
+	icon_state = "wallconsole";
+	dir = 4;
+	pixel_x = -23
+	},
+/obj/machinery/cryopod{
+	icon_state = "cryopod-open";
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/pod/light,
+/area/ship/cargo)
+"aH" = (
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on,
+/turf/open/floor/pod/light,
+/area/ship/cargo)
+"aI" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on,
+/turf/open/floor/pod/light,
+/area/ship/cargo)
+"aJ" = (
+/obj/structure/chair/comfy/shuttle{
+	icon_state = "shuttle_chair";
+	dir = 8
+	},
+/obj/effect/landmark/start/security_officer{
+	name = "Sniper"
+	},
+/turf/open/floor/pod/light,
+/area/ship/cargo)
+"aK" = (
+/obj/structure/closet/crate,
+/obj/structure/railing,
+/obj/item/circuitboard/machine/announcement_system,
+/obj/item/circuitboard/machine/mechfab,
+/obj/item/circuitboard/machine/pipedispenser,
+/obj/item/circuitboard/machine/rdserver,
+/turf/open/floor/pod/light,
+/area/ship/cargo)
+"aL" = (
+/obj/structure/closet/crate,
+/obj/structure/railing,
+/obj/item/circuitboard/computer/cargo/express,
+/obj/item/circuitboard/computer/apc_control,
+/obj/item/circuitboard/computer/arcade/orion_trail,
+/obj/item/circuitboard/computer/arcade/battle,
+/obj/item/circuitboard/machine/holopad,
+/obj/item/circuitboard/machine/ore_silo,
+/obj/item/circuitboard/machine/ore_redemption,
+/obj/item/circuitboard/machine/protolathe/department/ballistics,
+/obj/item/circuitboard/machine/protolathe/department/security,
+/turf/open/floor/pod/light,
+/area/ship/cargo)
+"aM" = (
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/turf/open/floor/pod/light,
+/area/ship/cargo)
+"aN" = (
+/obj/machinery/power/apc/auto_name/directional/north,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ship/bridge)
+"aO" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on,
+/obj/structure/table,
+/obj/item/radio/intercom/wideband{
+	pixel_x = -5;
+	pixel_y = 25
+	},
+/obj/item/radio/intercom{
+	pixel_x = -5;
+	pixel_y = 38
+	},
+/obj/machinery/jukebox/boombox{
+	pixel_x = 7;
+	pixel_y = 6
+	},
+/obj/machinery/button/door{
+	id = 8121
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ship/bridge)
+"aP" = (
+/obj/machinery/computer/communications{
+	icon_state = "computer";
+	dir = 8
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ship/bridge)
+"aQ" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply,
+/obj/machinery/atmospherics/pipe/simple/scrubbers{
+	icon_state = "pipe11-3";
+	dir = 6
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/pod/light,
+/area/ship/cargo)
+"aR" = (
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable,
+/turf/open/floor/pod/light,
+/area/ship/cargo)
+"aS" = (
+/obj/machinery/door/window/survival_pod{
+	icon_state = "windoor";
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply{
+	icon_state = "pipe11-3";
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers{
+	icon_state = "pipe11-3";
+	dir = 8
+	},
+/turf/open/floor/pod/light,
+/area/ship/cargo)
+"aT" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply{
+	icon_state = "pipe11-3";
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers{
+	icon_state = "pipe11-3";
+	dir = 8
+	},
+/turf/open/floor/pod/light,
+/area/ship/cargo)
+"aU" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers{
+	icon_state = "manifold-3";
+	dir = 1
+	},
+/turf/open/floor/pod/light,
+/area/ship/cargo)
+"aV" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply{
+	icon_state = "manifold-3";
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers,
+/turf/open/floor/pod/light,
+/area/ship/cargo)
+"aW" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply{
+	icon_state = "pipe11-3";
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers{
+	icon_state = "manifold-3";
+	dir = 1
+	},
+/turf/open/floor/goonplaque,
+/area/ship/cargo)
+"aX" = (
+/obj/machinery/door/airlock/survival_pod/glass,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply{
+	icon_state = "pipe11-3";
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers{
+	icon_state = "pipe11-3";
+	dir = 8
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ship/bridge)
+"aY" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply{
+	icon_state = "pipe11-3";
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers{
+	icon_state = "pipe11-3";
+	dir = 8
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ship/bridge)
+"aZ" = (
+/obj/structure/chair/comfy/shuttle{
+	icon_state = "shuttle_chair";
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply{
+	icon_state = "pipe11-3";
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers{
+	icon_state = "pipe11-3";
+	dir = 9
+	},
+/obj/effect/landmark/start/warden{
+	name = "Lieutenant"
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ship/bridge)
+"ba" = (
+/obj/machinery/computer/helm{
+	dir = 8
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ship/bridge)
+"bb" = (
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/atmospherics/components/binary/pump/on{
+	icon_state = "pump_on_map-3";
+	dir = 1
+	},
+/obj/machinery/portable_atmospherics/canister/oxygen,
+/obj/structure/cable,
+/turf/open/floor/pod/light,
+/area/ship/cargo)
+"bc" = (
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/pod/light,
+/area/ship/cargo)
+"bd" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
+	icon_state = "scrub_map_on-3";
+	dir = 1
+	},
+/turf/open/floor/pod/light,
+/area/ship/cargo)
+"be" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on{
+	icon_state = "vent_map_on-3";
+	dir = 1
+	},
+/turf/open/floor/pod/light,
+/area/ship/cargo)
+"bf" = (
+/obj/structure/chair/comfy/shuttle{
+	icon_state = "shuttle_chair";
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers,
+/obj/effect/landmark/start/security_officer{
+	name = "Heavy Trooper"
+	},
+/turf/open/floor/pod/light,
+/area/ship/cargo)
+"bg" = (
+/obj/structure/window/reinforced/survival_pod{
+	icon_state = "pwindow";
+	dir = 4
+	},
+/obj/structure/closet/crate,
+/obj/item/storage/firstaid/o2,
+/obj/item/storage/firstaid/brute,
+/obj/item/storage/firstaid/fire,
+/obj/item/storage/firstaid/toxin,
+/turf/open/floor/pod/light,
+/area/ship/cargo)
+"bh" = (
+/obj/structure/closet/crate{
+	name = "Assault kit"
+	},
+/obj/structure/railing{
+	dir = 1
+	},
+/obj/item/gun/ballistic/automatic/assualt/ak47{
+	dry_fire_text = "CYKA BLYAT!!!"
+	},
+/obj/item/gun/ballistic/automatic/assualt/ak47{
+	dry_fire_text = "CYKA BLYAT!!!"
+	},
+/obj/item/ammo_box/magazine/ak47,
+/obj/item/ammo_box/magazine/ak47,
+/obj/item/ammo_box/magazine/ak47,
+/obj/item/clothing/suit/armor/vest/russian,
+/obj/item/clothing/suit/armor/vest/russian,
+/obj/item/clothing/head/helmet/riot{
+	armor = list("melee" = 40, "bullet" = 40, "laser" = 40, "energy" = 40, "bomb" = 40, "bio" = 30, "rad" = 0, "fire" = 100, "acid" = 100);
+	desc = "It's a helmet specifically designed to protect against any attacks.";
+	name = "Ranger helmet"
+	},
+/obj/item/hatchet/wooden,
+/obj/item/hatchet/wooden,
+/obj/item/ammo_box/a762_39,
+/obj/item/ammo_box/a762_39,
+/obj/item/ammo_box/a762_39,
+/obj/item/clothing/gloves/krav_maga/combatglovesplus,
+/obj/item/clothing/gloves/krav_maga/combatglovesplus,
+/obj/item/clothing/mask/gas/sechailer/swat/spacepol{
+	name = "Utility gas mask"
+	},
+/obj/item/clothing/mask/gas/sechailer/swat/spacepol{
+	name = "Utility gas mask"
+	},
+/turf/open/floor/pod/light,
+/area/ship/cargo)
+"bi" = (
+/obj/structure/closet/crate{
+	name = "Sniper kit"
+	},
+/obj/structure/railing{
+	dir = 1
+	},
+/obj/item/gun/ballistic/automatic/sniper_rifle,
+/obj/item/clothing/head/helmet/swat,
+/obj/item/clothing/suit/armor/vest/blueshirt,
+/obj/item/ammo_box/magazine/sniper_rounds,
+/obj/item/ammo_box/magazine/sniper_rounds,
+/obj/item/clothing/mask/gas/sechailer/swat/spacepol{
+	name = "Utility gas mask"
+	},
+/turf/open/floor/pod/light,
+/area/ship/cargo)
+"bj" = (
+/obj/structure/window/reinforced/survival_pod{
+	icon_state = "pwindow";
+	dir = 4
+	},
+/obj/structure/table/optable,
+/obj/item/storage/backpack/duffelbag/med/surgery,
+/turf/open/floor/pod/light,
+/area/ship/cargo)
+"bk" = (
+/obj/machinery/computer/camera_advanced{
+	icon_state = "computer";
+	dir = 8
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ship/bridge)
+"bl" = (
+/obj/structure/closet/syndicate,
+/obj/item/gun/ballistic/revolver/golden,
+/obj/item/ammo_box/a357,
+/obj/item/ammo_box/a357,
+/obj/item/clothing/suit/armor/vest/lieutenant,
+/obj/item/clothing/suit/armor/vest/russian_coat,
+/obj/item/clothing/head/solgov/terragov,
+/obj/item/clothing/mask/gas/sechailer/swat/spacepol{
+	name = "Utility gas mask"
+	},
+/obj/item/clothing/suit/space/hardsuit/security/hos,
+/obj/machinery/light,
+/turf/open/floor/mineral/plastitanium,
+/area/ship/bridge)
+"bn" = (
+/obj/structure/window/reinforced/survival_pod{
+	icon_state = "pwindow";
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/pod/light,
+/area/ship/cargo)
+"bo" = (
+/obj/machinery/atmospherics/components/binary/pump/on,
+/turf/open/floor/pod/light,
+/area/ship/cargo)
+"bp" = (
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/bridge)
+"bq" = (
+/obj/machinery/atmospherics/components/unary/tank/air,
+/obj/machinery/light,
+/turf/open/floor/pod/light,
+/area/ship/cargo)
+"br" = (
+/obj/machinery/autolathe/hacked,
+/turf/open/floor/pod/light,
+/area/ship/cargo)
+"bs" = (
+/obj/machinery/power/port_gen/pacman,
+/obj/structure/window/reinforced/survival_pod{
+	icon_state = "pwindow";
+	dir = 4
+	},
+/obj/structure/cable,
+/turf/open/floor/pod/light,
+/area/ship/cargo)
+"bt" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers,
+/turf/open/floor/pod/light,
+/area/ship/cargo)
+"bv" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on{
+	icon_state = "vent_map_on-3";
+	dir = 1
+	},
+/obj/structure/table,
+/obj/item/areaeditor/shuttle,
+/obj/machinery/airalarm/directional/south,
+/turf/open/floor/mineral/plastitanium,
+/area/ship/bridge)
+"bw" = (
+/obj/machinery/power/solar,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/open/floor/plating/catwalk_floor,
+/area/ship/external)
+"bx" = (
+/obj/machinery/power/solar,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/open/floor/plating/catwalk_floor,
+/area/ship/external)
+"by" = (
+/obj/machinery/power/tracker,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plating/catwalk_floor,
+/area/ship/external)
+"bz" = (
+/obj/structure/fans/tiny,
+/obj/machinery/atmospherics/pipe/simple/scrubbers,
+/obj/machinery/door/poddoor/shutters/indestructible{
+	id = 8121
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ship/cargo)
+"bA" = (
+/obj/machinery/power/solar,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating/catwalk_floor,
+/area/ship/external)
+"bB" = (
+/obj/machinery/power/solar,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plating/catwalk_floor,
+/area/ship/external)
+"bC" = (
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/plating/catwalk_floor,
+/area/ship/external)
+"bD" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/components/unary/outlet_injector/on{
+	icon_state = "inje_map-3";
+	dir = 1
+	},
+/turf/open/floor/plating/catwalk_floor,
+/area/ship/external)
+"bE" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plating/catwalk_floor,
+/area/ship/external)
+"bF" = (
+/obj/structure/closet/crate{
+	name = "Heavy kit"
+	},
+/obj/structure/railing,
+/obj/item/gun/ballistic/rocketlauncher,
+/obj/item/clothing/suit/armor/vest/marine/heavy,
+/obj/item/clothing/head/helmet/marine,
+/obj/item/gun/ballistic/automatic/hmg/l6_saw,
+/obj/item/ammo_box/magazine/mm712x82,
+/obj/item/ammo_box/magazine/mm712x82,
+/obj/item/ammo_casing/caseless/rocket,
+/obj/item/ammo_casing/caseless/rocket,
+/obj/item/clothing/mask/gas/sechailer/swat/spacepol{
+	name = "Utility gas mask"
+	},
+/obj/machinery/light,
+/turf/open/floor/pod/light,
+/area/ship/cargo)
+"bG" = (
+/obj/structure/closet/crate{
+	name = "Assault kit"
+	},
+/obj/structure/railing{
+	icon_state = "railing";
+	dir = 10
+	},
+/obj/item/gun/ballistic/automatic/smg/aks74u,
+/obj/item/gun/ballistic/automatic/smg/aks74u,
+/obj/item/ammo_box/magazine/aks74u,
+/obj/item/ammo_box/magazine/aks74u,
+/obj/item/ammo_box/magazine/aks74u,
+/obj/item/ammo_box/magazine/aks74u,
+/obj/item/clothing/suit/armor/vest/russian,
+/obj/item/clothing/suit/armor/vest/russian,
+/obj/item/clothing/head/helmet/riot{
+	armor = list("melee" = 40, "bullet" = 40, "laser" = 40, "energy" = 40, "bomb" = 40, "bio" = 30, "rad" = 0, "fire" = 100, "acid" = 100);
+	desc = "It's a helmet specifically designed to protect against any attacks.";
+	name = "Ranger helmet"
+	},
+/obj/item/clothing/head/helmet/riot{
+	armor = list("melee" = 40, "bullet" = 40, "laser" = 40, "energy" = 40, "bomb" = 40, "bio" = 30, "rad" = 0, "fire" = 100, "acid" = 100);
+	desc = "It's a helmet specifically designed to protect against any attacks.";
+	name = "Ranger helmet"
+	},
+/obj/item/hatchet/wooden,
+/obj/item/hatchet/wooden,
+/obj/item/clothing/gloves/krav_maga/combatglovesplus,
+/obj/item/clothing/gloves/krav_maga/combatglovesplus,
+/obj/item/clothing/mask/gas/sechailer/swat/spacepol{
+	name = "Utility gas mask"
+	},
+/obj/item/clothing/mask/gas/sechailer/swat/spacepol{
+	name = "Utility gas mask"
+	},
+/obj/machinery/airalarm/directional/south,
+/turf/open/floor/pod/light,
+/area/ship/cargo)
+"bH" = (
+/obj/structure/fans/tiny,
+/obj/machinery/door/poddoor/shutters/indestructible{
+	id = 8121
+	},
+/obj/docking_port/mobile{
+	icon_state = "pinonclose";
+	dir = 2
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ship/cargo)
+"bI" = (
+/obj/structure/fans/tiny,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/door/poddoor/shutters/indestructible{
+	id = 8121
+	},
+/obj/docking_port/mobile{
+	icon_state = "pinonclose";
+	dir = 2
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ship/cargo)
+"bJ" = (
+/obj/machinery/computer/helm/viewscreen,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/cargo)
+"bK" = (
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/cargo)
 
 (1,1,1) = {"
-aaaaaaaaababacadadadadadaeaaaaaa
-aaafafafagbHbIbHbHafafafajakaaaa
-afafalamanaoapaoaoaqarafasatauaa
-avawaxapazaAapaBaCaCaDafbpbpaFaE
-avawaxaybgaAaHaIaJaKaLaMaNaOaPaF
-afafaGaQaSaTaUaVaWaTaTaXaYaZbaaF
-avawaRbdbjaAbdbebfbhbiaMblbvbkaF
-avawbbbcbnaAapaoboaoaobJbpbpaFaE
-bKbKbqbrbsaoapaobtbGbFbKbwbxbyaa
-aabKbKbKbKahaiahbzbKbKafbAbBaaaa
-aaaaaaaaababbCadbDadadadbEaaaaaa
+aa
+aa
+af
+av
+av
+af
+av
+av
+bK
+aa
+aa
+"}
+(2,1,1) = {"
+aa
+af
+af
+aw
+aw
+af
+aw
+aw
+bK
+bK
+aa
+"}
+(3,1,1) = {"
+aa
+af
+al
+ax
+ax
+aG
+aR
+bb
+bq
+bK
+aa
+"}
+(4,1,1) = {"
+aa
+af
+am
+ap
+ay
+aQ
+bd
+bc
+br
+bK
+aa
+"}
+(5,1,1) = {"
+ab
+ag
+an
+az
+bg
+aS
+bj
+bn
+bs
+bK
+ab
+"}
+(6,1,1) = {"
+ab
+bH
+ao
+aA
+aA
+aT
+aA
+aA
+ao
+ah
+ab
+"}
+(7,1,1) = {"
+ac
+bI
+ap
+ap
+aH
+aU
+bd
+ap
+ap
+ai
+bC
+"}
+(8,1,1) = {"
+ad
+bH
+ao
+aB
+aI
+aV
+be
+ao
+ao
+ah
+ad
+"}
+(9,1,1) = {"
+ad
+bH
+ao
+aC
+aJ
+aW
+bf
+bo
+bt
+bz
+bD
+"}
+(10,1,1) = {"
+ad
+af
+aq
+aC
+aK
+aT
+bh
+ao
+bG
+bK
+ad
+"}
+(11,1,1) = {"
+ad
+af
+ar
+aD
+aL
+aT
+bi
+ao
+bF
+bK
+ad
+"}
+(12,1,1) = {"
+ad
+af
+af
+af
+aM
+aX
+aM
+bJ
+bK
+af
+ad
+"}
+(13,1,1) = {"
+ae
+aj
+as
+bp
+aN
+aY
+bl
+bp
+bw
+bA
+bE
+"}
+(14,1,1) = {"
+aa
+ak
+at
+bp
+aO
+aZ
+bv
+bp
+bx
+bB
+aa
+"}
+(15,1,1) = {"
+aa
+aa
+au
+aF
+aP
+ba
+bk
+aF
+by
+aa
+aa
+"}
+(16,1,1) = {"
+aa
+aa
+aa
+aE
+aF
+aF
+aF
+aE
+aa
+aa
+aa
 "}

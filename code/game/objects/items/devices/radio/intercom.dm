@@ -10,6 +10,8 @@
 	unscrewed = FALSE
 	var/obj/item/wallframe/wallframe = /obj/item/wallframe/intercom //WS edit - Wideband Radio
 
+MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom, 31)
+
 /obj/item/radio/intercom/unscrewed
 	unscrewed = TRUE
 
@@ -24,11 +26,11 @@
 
 /obj/item/radio/intercom/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>Use [MODE_TOKEN_INTERCOM] when nearby to speak into it.</span>"
+	. += "<hr><span class='notice'>Use [MODE_TOKEN_INTERCOM] when nearby to speak into it.</span>"
 	if(!unscrewed)
-		. += "<span class='notice'>It's <b>screwed</b> and secured to the wall.</span>"
+		. += "<hr><span class='notice'>It's <b>screwed</b> and secured to the wall.</span>"
 	else
-		. += "<span class='notice'>It's <i>unscrewed</i> from the wall, and can be <b>detached</b>.</span>"
+		. += "<hr><span class='notice'>It's <i>unscrewed</i> from the wall, and can be <b>detached</b>.</span>"
 
 /obj/item/radio/intercom/attackby(obj/item/I, mob/living/user, params)
 	if(I.tool_behaviour == TOOL_SCREWDRIVER)
@@ -138,8 +140,8 @@
 	desc = "A ready-to-go intercom. Just slap it on a wall and screw it in!"
 	icon_state = "intercom"
 	result_path = /obj/item/radio/intercom/unscrewed
-	pixel_shift = 24
-	inverse = TRUE
+	pixel_shift = 31
+	inverse = FALSE
 	custom_materials = list(/datum/material/iron = 75, /datum/material/glass = 25)
 
 //wideband radio
@@ -164,6 +166,12 @@
 /obj/item/radio/intercom/wideband/unscrewed
 	unscrewed = TRUE
 
+MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom/wideband, 26)
+
+/obj/item/radio/intercom/wideband/table
+	icon_state = "intercom-wideband-table"
+	wallframe = /obj/item/wallframe/intercom/wideband/table
+
 /obj/item/radio/intercom/wideband/recalculateChannels()
 	. = ..()
 	independent = TRUE
@@ -173,6 +181,9 @@
 	desc = "A detached wideband relay. Attach to a wall and screw it in to use."
 	icon_state = "intercom-wideband"
 	result_path = /obj/item/radio/intercom/wideband/unscrewed
+	pixel_shift = 26
 
 /obj/item/wallframe/intercom/wideband/table
 	icon_state = "intercom-wideband-table"
+	result_path = /obj/item/radio/intercom/wideband/table
+	pixel_shift = 0

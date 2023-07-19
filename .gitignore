@@ -8,6 +8,7 @@
 /cfg/**/*
 
 # Ignore compiled linux libs in the root folder, e.g. librust_g.so
+# От санекмена - libauxmos.so не компилируется через скрипт тгс так что если что-то пойдёт не так просто поставьте тут решётку и загрузите новую либу
 /*.so
 
 #Ignore compiled files and other files generated during compilation.
@@ -200,9 +201,8 @@ Temporary Items
 # JavaScript tools
 **/node_modules
 
-# Screenshot tests
-/artifacts
-
 # tool-generated files
 check_regex_output.txt
 
+# Autowiki
+/tools/autowiki/node_modules

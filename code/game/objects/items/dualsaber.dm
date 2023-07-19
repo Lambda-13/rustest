@@ -91,7 +91,7 @@
 				return OXYLOSS
 
 	else
-		user.visible_message("<span class='suicide'>[user] begins beating [user.p_them()]self to death with \the [src]'s handle! It probably would've been cooler if [user.p_they()] turned it on first!</span>")
+		user.visible_message("<span class='suicide'>[user] begins beating [user.p_them()]self to death with [src]'s handle! It probably would've been cooler if [user.p_they()] turned it on first!</span>")
 	return BRUTELOSS
 
 /obj/item/dualsaber/Initialize()
@@ -140,7 +140,7 @@
 	else
 		user.adjustStaminaLoss(25)
 
-/obj/item/dualsaber/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
+/obj/item/dualsaber/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "атаку", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	if(wielded)
 		return ..()
 	return 0

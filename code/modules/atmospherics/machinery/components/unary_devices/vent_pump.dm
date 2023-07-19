@@ -259,10 +259,10 @@
 	to_chat(user, "<span class='notice'>You begin welding the vent...</span>")
 	if(I.use_tool(src, user, 20, volume=50))
 		if(!welded)
-			user.visible_message("<span class='notice'>[user] welds the vent shut.</span>", "<span class='notice'>You weld the vent shut.</span>", "<span class='hear'>You hear welding.</span>")
+			user.visible_message("<span class='notice'>[user] welds the vent shut.</span>", "<span class='notice'>You weld the vent shut.</span>", "<span class='hear'>Слышу сварку.</span>")
 			welded = TRUE
 		else
-			user.visible_message("<span class='notice'>[user] unwelded the vent.</span>", "<span class='notice'>You unweld the vent.</span>", "<span class='hear'>You hear welding.</span>")
+			user.visible_message("<span class='notice'>[user] unwelded the vent.</span>", "<span class='notice'>You unweld the vent.</span>", "<span class='hear'>Слышу сварку.</span>")
 			welded = FALSE
 		update_icon()
 		pipe_vision_img = image(src, loc, layer = ABOVE_HUD_LAYER, dir = dir)
@@ -406,7 +406,7 @@
 
 /obj/machinery/atmospherics/components/unary/vent_pump/high_volume/layer4
 	piping_layer = 4
-	icon_state = "map_vent-4"
+	icon_state = "vent_map-4"
 
 /obj/machinery/atmospherics/components/unary/vent_pump/high_volume/on
 	on = TRUE
@@ -418,7 +418,7 @@
 
 /obj/machinery/atmospherics/components/unary/vent_pump/high_volume/on/layer4
 	piping_layer = 4
-	icon_state = "map_vent_on-4"
+	icon_state = "vent_map_on-4"
 
 /obj/machinery/atmospherics/components/unary/vent_pump/high_volume/siphon
 	pump_direction = SIPHONING
@@ -432,7 +432,7 @@
 
 /obj/machinery/atmospherics/components/unary/vent_pump/high_volume/siphon/layer4
 	piping_layer = 4
-	icon_state = "map_vent-4"
+	icon_state = "vent_map-4"
 
 /obj/machinery/atmospherics/components/unary/vent_pump/high_volume/siphon/on
 	on = TRUE

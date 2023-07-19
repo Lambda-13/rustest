@@ -142,7 +142,7 @@
 /obj/machinery/droneDispenser/examine(mob/user)
 	. = ..()
 	if((mode == DRONE_RECHARGING) && !machine_stat && recharging_text)
-		. += "<span class='warning'>[recharging_text]</span>"
+		. += "<hr><span class='warning'>[recharging_text]</span>"
 
 /obj/machinery/droneDispenser/process()
 	..()
@@ -228,8 +228,8 @@
 			return
 
 		user.visible_message(
-			"<span class='notice'>[user] begins patching up [src] with [I].</span>",
-			"<span class='notice'>You begin restoring the damage to [src]...</span>")
+			"<span class='notice'>[user] начинает чинить [src] с помощью [I].</span>",
+			"<span class='notice'>Чиню [src]...</span>")
 
 		if(!I.use_tool(src, user, 40, volume=50, amount=1))
 			return

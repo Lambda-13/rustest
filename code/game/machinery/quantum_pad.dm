@@ -31,11 +31,11 @@
 
 /obj/machinery/quantumpad/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>Он [ linked_pad ? "" : "не"] подключён.</span>"
+	. += "<hr><span class='notice'>Он [ linked_pad ? "" : "не"] подключён.</span>"
 	if(!panel_open)
-		. += "<span class='notice'>Видно <i>открученную</i> панель.</span>"
+		. += "<hr><span class='notice'>Видно <i>открученную</i> панель.</span>"
 	else
-		. += "<span class='notice'>Можно <i>подключить</i> с помощью <i>мультитула<i>.</span>"
+		. += "<hr><span class='notice'>Можно <i>подключить</i> с помощью <i>мультитула<i>.</span>"
 
 /obj/machinery/quantumpad/RefreshParts()
 	var/E = 0

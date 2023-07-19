@@ -92,7 +92,7 @@
 		M.cut_overlays()
 		M.regenerate_icons()
 
-/obj/item/clothing/suit/armor/abductor/vest/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
+/obj/item/clothing/suit/armor/abductor/vest/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "атаку", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	DeactivateStealth()
 
 /obj/item/clothing/suit/armor/abductor/vest/IsReflect()
@@ -649,13 +649,13 @@ Congratulations! You are now trained for invasive xenobiology research!"}
 	if(AbductorCheck(user))
 		switch(mode)
 			if(BATON_STUN)
-				. += "<span class='warning'>The baton is in stun mode.</span>"
+				. += "<hr><span class='warning'>The baton is in stun mode.</span>"
 			if(BATON_SLEEP)
-				. += "<span class='warning'>The baton is in sleep inducement mode.</span>"
+				. += "<hr><span class='warning'>The baton is in sleep inducement mode.</span>"
 			if(BATON_CUFF)
-				. += "<span class='warning'>The baton is in restraining mode.</span>"
+				. += "<hr><span class='warning'>The baton is in restraining mode.</span>"
 			if(BATON_PROBE)
-				. += "<span class='warning'>The baton is in probing mode.</span>"
+				. += "<hr><span class='warning'>The baton is in probing mode.</span>"
 
 /obj/item/radio/headset/abductor
 	name = "alien headset"
@@ -713,30 +713,35 @@ Congratulations! You are now trained for invasive xenobiology research!"}
 	name = "alien scalpel"
 	desc = "It's a gleaming sharp knife made out of silvery-green metal."
 	icon = 'icons/obj/abductor.dmi'
+	icon_state = "scalpel"
 	toolspeed = 0.25
 
 /obj/item/hemostat/alien
 	name = "alien hemostat"
 	desc = "You've never seen this before."
 	icon = 'icons/obj/abductor.dmi'
+	icon_state = "hemostat"
 	toolspeed = 0.25
 
 /obj/item/retractor/alien
 	name = "alien retractor"
 	desc = "You're not sure if you want the veil pulled back."
 	icon = 'icons/obj/abductor.dmi'
+	icon_state = "retractor"
 	toolspeed = 0.25
 
 /obj/item/circular_saw/alien
 	name = "alien saw"
 	desc = "Do the aliens also lose this, and need to find an alien hatchet?"
 	icon = 'icons/obj/abductor.dmi'
+	icon_state = "saw"
 	toolspeed = 0.25
 
 /obj/item/surgicaldrill/alien
 	name = "alien drill"
 	desc = "Maybe alien surgeons have finally found a use for the drill."
 	icon = 'icons/obj/abductor.dmi'
+	icon_state = "drill"
 	toolspeed = 0.25
 
 /obj/item/cautery/alien
@@ -744,6 +749,7 @@ Congratulations! You are now trained for invasive xenobiology research!"}
 	desc = "Why would bloodless aliens have a tool to stop bleeding? \
 		Unless..."
 	icon = 'icons/obj/abductor.dmi'
+	icon_state = "cautery"
 	toolspeed = 0.25
 
 /obj/item/clothing/head/helmet/abductor

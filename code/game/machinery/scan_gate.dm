@@ -52,9 +52,9 @@
 /obj/machinery/scanner_gate/examine(mob/user)
 	. = ..()
 	if(locked)
-		. += "<span class='notice'>The control panel is ID-locked. Swipe a valid ID to unlock it.</span>"
+		. += "<hr><span class='notice'>The control panel is ID-locked. Swipe a valid ID to unlock it.</span>"
 	else
-		. += "<span class='notice'>The control panel is unlocked. Swipe an ID to lock it.</span>"
+		. += "<hr><span class='notice'>The control panel is unlocked. Swipe an ID to lock it.</span>"
 
 /obj/machinery/scanner_gate/proc/on_entered(datum/source, atom/movable/AM)
 	SIGNAL_HANDLER
@@ -81,12 +81,12 @@
 				req_access = list()
 				to_chat(user, "<span class='notice'>You unlock [src].</span>")
 		else if(!(obj_flags & EMAGGED))
-			to_chat(user, "<span class='notice'>You lock [src] with [W].</span>")
+			to_chat(user, "<span class='notice'>You lock [src] с помощью [W].</span>")
 			var/list/access = W.GetAccess()
 			req_access = access
 			locked = TRUE
 		else
-			to_chat(user, "<span class='warning'>You try to lock [src] with [W], but nothing happens.</span>")
+			to_chat(user, "<span class='warning'>You try to lock [src] с помощью [W], but nothing happens.</span>")
 	else
 		return ..()
 
@@ -151,8 +151,6 @@
 						scan_species = /datum/species/spider
 					if(SCANGATE_IPC)
 						scan_species = /datum/species/ipc
-					if(SCANGATE_SQUID)
-						scan_species = /datum/species/squid
 					if(SCANGATE_ETHEREAL)
 						scan_species = /datum/species/ethereal
 					if(SCANGATE_KEPORI)

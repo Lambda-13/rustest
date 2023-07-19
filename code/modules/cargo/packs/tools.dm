@@ -1,5 +1,5 @@
 /datum/supply_pack/tools
-	group = "Предметы"
+	group = "Инструменты"
 	crate_type = /obj/structure/closet/crate/engineering
 
 /*
@@ -39,10 +39,9 @@
 
 /datum/supply_pack/tools/engigear
 	name = "Снаряжение инженера"
-	desc = "Три пояса для инструментов, двое мезонных очков - что ещё надо для инженера."
+	desc = "Два пояса для инструментов, две пары мезонных очков - что ещё надо для инженера."
 	cost = COST_MIN * 750
 	contains = list(/obj/item/storage/belt/utility,
-					/obj/item/storage/belt/utility,
 					/obj/item/storage/belt/utility,
 					/obj/item/clothing/glasses/meson/engine,
 					/obj/item/clothing/glasses/meson/engine)
@@ -50,7 +49,7 @@
 
 /datum/supply_pack/tools/rped
 	name = "РПИД"
-	desc = "Надоело менять детали разбирая машинерию? У вас рак жопы? Вы пидорас? Тогда всего за 750 кредитов вы можете приобрести устроиство для установки деталей без разбора машинерии! Детали не входят в комплект."
+	desc = "Надоело менять детали разбирая оборудование? У вас рак жопы? Вы пидорас? Тогда всего за 750 кредитов вы можете приобрести устроиство для установки деталей без разборки! Детали не входят в комплект."
 	cost = COST_MIN * 750
 	contains = list(/obj/item/storage/part_replacer)
 	crate_name = "ящик с РПИД"
@@ -90,6 +89,13 @@
 	contains = list(/obj/item/tank/jetpack/carbondioxide)
 	crate_name = "ящик с джетпаком"
 	crate_type = /obj/structure/closet/crate/secure/plasma
+
+/datum/supply_pack/tools/jetpack
+	name = "Магнитные ботинки"
+	desc = "Магнитные ботинки, для хождения по поверхностям в условиях нулевой гравитации."
+	cost = COST_MIN * 1200
+	contains = list(/obj/item/clothing/shoes/magboots)
+	crate_name = "ящик с магнитными ботинками"
 
 /datum/supply_pack/tools/transfer_valves
 	name = "Набор учёного-подрывника"

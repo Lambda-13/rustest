@@ -49,20 +49,21 @@
 #define BUILD_COMPLETE 2
 
 /obj/item/electronics/advanced_airlock_controller
-	name = "airlock controller electronics"
+	name = "электроника контроллера шлюза"
 	custom_price = 5
 	icon_state = "airalarm_electronics"
 
 /obj/item/wallframe/advanced_airlock_controller
-	name = "airlock controller frame"
-	desc = "Used for building advanced airlock controllers."
+	name = "рамка контроллера шлюза"
+	desc = "Используется для создания продвинутых контроллеров шлюза."
 	icon = 'icons/obj/monitors.dmi'
 	icon_state = "aac_bitem"
 	result_path = /obj/machinery/advanced_airlock_controller
+	inverse = FALSE
 
 /obj/machinery/advanced_airlock_controller
-	name = "advanced airlock controller"
-	desc = "A machine designed to control the operation of cycling airlocks"
+	name = "усовершенствованный контроллер шлюза"
+	desc = "Машина, предназначенная для управления работой циклических шлюзов."
 	icon = 'icons/obj/monitors.dmi'
 	icon_state = "aac"
 	use_power = IDLE_POWER_USE
@@ -91,7 +92,7 @@
 	var/aidisabled = FALSE
 	var/shorted = FALSE
 	var/buildstage = BUILD_COMPLETE // 2 = complete, 1 = no wires,  0 = circuit gone
-	var/config_error_str = "Needs Scan"
+	var/config_error_str = "Требуется сканирование"
 	var/scan_on_late_init = FALSE
 	var/depressurization_margin = 10 // use a lower value to reduce cross-contamination
 	var/overlays_hash = null
@@ -278,9 +279,9 @@
 			has_interior = TRUE
 	if(!has_interior || !has_exterior)
 		if(!has_interior)
-			config_error_str = "No interior door"
+			config_error_str = "Нет внутреннего шлюза"
 		else if(!has_exterior)
-			config_error_str = "No exterior door"
+			config_error_str = "Нет наружного шлюза"
 		cyclestate = AIRLOCK_CYCLESTATE_ERROR
 		return
 	if(cyclestate == AIRLOCK_CYCLESTATE_ERROR)
@@ -460,7 +461,7 @@
 		if(BUILD_COMPLETE)
 			if(W.tool_behaviour == TOOL_WIRECUTTER && panel_open && wires.is_all_cut())
 				W.play_tool_sound(src)
-				to_chat(user, "<span class='notice'>You cut the final wires.</span>")
+				to_chat(user, "<span class='notice'>Срезаю остаточные провода.</span>")
 				new /obj/item/stack/cable_coil(loc, 5)
 				buildstage = BUILD_NO_WIRES
 				update_icon()
@@ -468,7 +469,7 @@
 			else if(W.tool_behaviour == TOOL_SCREWDRIVER)  // Opening that up.
 				W.play_tool_sound(src)
 				panel_open = !panel_open
-				to_chat(user, "<span class='notice'>The wires have been [panel_open ? "exposed" : "unexposed"].</span>")
+				to_chat(user, "<span class='notice'>Проводка [panel_open ? "видна" : "скрыта за технической панелью"].</span>")
 				update_icon()
 				return
 			else if(istype(W, /obj/item/card/id) || istype(W, /obj/item/pda))// trying to unlock the interface with an ID card
@@ -479,12 +480,12 @@
 				return
 		if(BUILD_NO_WIRES)
 			if(W.tool_behaviour == TOOL_CROWBAR)
-				user.visible_message("[user.name] removes the electronics from [src.name].",\
-									"<span class='notice'>You start prying out the circuit...</span>")
+				user.visible_message("[user.name] вытаскивает электронику из [src.name].",\
+									"<span class='notice'>Вытаскиваю плату...</span>")
 				W.play_tool_sound(src)
 				if (W.use_tool(src, user, 20))
 					if (buildstage == BUILD_NO_WIRES)
-						to_chat(user, "<span class='notice'>You remove the airlock controller electronics.</span>")
+						to_chat(user, "<span class='notice'>Вытащил электронику контроллера шлюза.</span>")
 						new /obj/item/electronics/advanced_airlock_controller(src.loc)
 						playsound(src.loc, 'sound/items/deconstruct.ogg', 50, 1)
 						buildstage = BUILD_NO_CIRCUIT
@@ -494,14 +495,14 @@
 			if(istype(W, /obj/item/stack/cable_coil))
 				var/obj/item/stack/cable_coil/cable = W
 				if(cable.get_amount() < 5)
-					to_chat(user, "<span class='warning'>You need five lengths of cable to wire the airlock controller!</span>")
+					to_chat(user, "<span class='warning'>Вам понадобится пять мотков кабеля для подключения контроллера шлюза.!</span>")
 					return
-				user.visible_message("[user.name] wires the airlock controller.", \
-									"<span class='notice'>You start wiring the airlock controller...</span>")
+				user.visible_message("[user.name] подключает контроллер шлюза.", \
+									"<span class='notice'>Начинаю подключать контроллер шлюза...</span>")
 				if (do_after(user, 20, target = src))
 					if (cable.get_amount() >= 5 && buildstage == BUILD_NO_WIRES)
 						cable.use(5)
-						to_chat(user, "<span class='notice'>You wire the airlock controller.</span>")
+						to_chat(user, "<span class='notice'>Подключил контролер шлюза.</span>")
 						wires.repair()
 						aidisabled = FALSE
 						locked = FALSE
@@ -514,7 +515,7 @@
 		if(BUILD_NO_CIRCUIT)
 			if(istype(W, /obj/item/electronics/advanced_airlock_controller))
 				if(user.temporarilyRemoveItemFromInventory(W))
-					to_chat(user, "<span class='notice'>You insert the circuit.</span>")
+					to_chat(user, "<span class='notice'>Вставляю плату контролера шлюза.</span>")
 					buildstage = BUILD_NO_WIRES
 					update_icon()
 					qdel(W)
@@ -524,14 +525,14 @@
 				var/obj/item/electroadaptive_pseudocircuit/P = W
 				if(!P.adapt_circuit(user, 25))
 					return
-				user.visible_message("<span class='notice'>[user] fabricates a circuit and places it into [src].</span>", \
-				"<span class='notice'>You adapt an airlock controller circuit and slot it into the assembly.</span>")
+				user.visible_message("<span class='notice'>[user] меняет работоспособность платы и помещает ее в [src].</span>", \
+				"<span class='notice'>Адаптирую схему контроллера шлюза и вставляю ее в сборку.</span>")
 				buildstage = BUILD_NO_WIRES
 				update_icon()
 				return
 
 			if(W.tool_behaviour == TOOL_WRENCH)
-				to_chat(user, "<span class='notice'>You detach \the [src] from the wall.</span>")
+				to_chat(user, "<span class='notice'>Отсоединяю [src] от стены.</span>")
 				W.play_tool_sound(src)
 				new /obj/item/wallframe/advanced_airlock_controller(user.loc)
 				qdel(src)
@@ -555,11 +556,11 @@
 
 /obj/machinery/advanced_airlock_controller/proc/scan(assume_roles = FALSE)
 	cut_links()
-	config_error_str = "Unknown error (bug coders)"
+	config_error_str = "Неизвестная ошибка (ошибки кодеров)"
 
 	var/turf/open/initial_turf = get_turf(src)
 	if(!istype(initial_turf))
-		config_error_str = "Scan blocked by wall"
+		config_error_str = "Скан заблокирован стеной"
 		return
 	var/list/turfs = list()
 	turfs[initial_turf] = 1
@@ -569,13 +570,13 @@
 			T.ImmediateCalculateAdjacentTurfs()
 		for(var/turf/open/T2 in T.atmos_adjacent_turfs)		// Add each adjacent open turf to the list
 			if(get_dist(initial_turf, T2) > AIRLOCK_MAXDIST)		// We're too far away from the AAC
-				config_error_str = "Airlock too big"
+				config_error_str = "Шлюз слишком большой"
 				return
 			if(locate(/obj/machinery/door/airlock) in T2)		// Don't count airlocks
 				continue
 			turfs[T2] = 1
 		if(turfs.len > AIRLOCK_MAXSIZE) // I will allow a 4x4 airlock for a shitty poor-man's spacepod bay.
-			config_error_str = "Airlock too big"
+			config_error_str = "Шлюз слишком большой"
 		for(var/cdir in GLOB.cardinals)		// Check for airlocks adjacent to the current turf
 			var/turf/T2 = get_step(T, cdir)
 			for(var/obj/machinery/door/airlock/A in T2)
@@ -607,13 +608,13 @@
 				if(assume_roles)
 					vents[vent] = AIRLOCK_CYCLEROLE_INT_DEPRESSURIZE | AIRLOCK_CYCLEROLE_EXT_DEPRESSURIZE | AIRLOCK_CYCLEROLE_INT_PRESSURIZE
 	if(!airlocks.len)
-		config_error_str = "No airlocks"
+		config_error_str = "Шлюз не обнаружен"
 		return
 	config_error_str = null
 
 /obj/machinery/advanced_airlock_controller/ui_status(mob/user)
 	if(user.has_unlimited_silicon_privilege && aidisabled)
-		to_chat(user, "AI control has been disabled.")
+		to_chat(user, "Контроль ИИ отключён.")
 	else if(!shorted)
 		return ..()
 	return UI_CLOSE
@@ -702,7 +703,7 @@
 				if(!A.allowed(usr))
 					if(is_allowed)
 						is_allowed = FALSE
-						to_chat(usr, "<span class='danger'>Access denied.</span>")
+						to_chat(usr, "<span class='danger'>Доступ запрещён.</span>")
 					if(A.density)
 						spawn()
 							A.do_animate("deny")
@@ -795,15 +796,15 @@
 
 /obj/machinery/advanced_airlock_controller/proc/togglelock(mob/living/user)
 	if(machine_stat & (NOPOWER|BROKEN))
-		to_chat(user, "<span class='warning'>It does nothing!</span>")
+		to_chat(user, "<span class='warning'>Не работает!</span>")
 	else
 		if(src.allowed(usr) && !wires.is_cut(WIRE_IDSCAN))
 			locked = !locked
 			update_icon()
-			to_chat(user, "<span class='notice'>You [ locked ? "lock" : "unlock"] the airlock controller interface.</span>")
+			to_chat(user, "<span class='notice'>[ locked ? "Блок" : "Разблок"]ировываю интерфейс контроллера шлюза.</span>")
 			updateUsrDialog()
 		else
-			to_chat(user, "<span class='danger'>Access denied.</span>")
+			to_chat(user, "<span class='danger'>Доступ запрещён.</span>")
 	return
 
 /obj/machinery/advanced_airlock_controller/power_change()
@@ -814,7 +815,7 @@
 	if(obj_flags & EMAGGED)
 		return
 	obj_flags |= EMAGGED
-	visible_message("<span class='warning'>Sparks fly out of [src]!</span>", "<span class='notice'>You emag [src], disabling its safeties.</span>")
+	visible_message("<span class='warning'>[src] искрит!</span>", "<span class='notice'>Взламываю [src], отключая протоколы безопасности.</span>")
 	playsound(src, "sparks", 50, 1)
 
 /obj/machinery/advanced_airlock_controller/obj_break(damage_flag)

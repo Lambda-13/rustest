@@ -119,7 +119,7 @@
 
 /obj/item/clothing/head/fedora/det_hat/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>Alt-click to take a candy corn.</span>"
+	. += "<hr><span class='notice'>Alt-клик to take a candy corn.</span>"
 
 /obj/item/clothing/head/fedora/det_hat/AltClick(mob/user)
 	if(user.canUseTopic(src, BE_CLOSE, ismonkey(user)))

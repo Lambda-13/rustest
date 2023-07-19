@@ -31,7 +31,7 @@
 
 /obj/machinery/computer/helm/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>It has [current_ship.antivirus_nodes] antiviral node[(current_ship.antivirus_nodes > 1) || (current_ship.antivirus_nodes == 0) ? "s" : ""] installed.</span>"
+	. += "<hr><span class='notice'>It has [current_ship.antivirus_nodes] antiviral node[(current_ship.antivirus_nodes > 1) || (current_ship.antivirus_nodes == 0) ? "s" : ""] installed.</span>"
 
 /**
 *	Try to block a sub attempt. If successful, use up an antivirus node and return TRUE

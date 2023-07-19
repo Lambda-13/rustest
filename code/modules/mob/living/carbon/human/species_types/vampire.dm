@@ -125,7 +125,7 @@
 	. = ..()
 	var/obj/item/organ/heart/vampire/darkheart = getorgan(/obj/item/organ/heart/vampire)
 	if(darkheart)
-		. += "<span class='notice'>Current blood level: [blood_volume]/[BLOOD_VOLUME_MAXIMUM].</span>"
+		. += "<hr><span class='notice'>Current blood level: [blood_volume]/[BLOOD_VOLUME_MAXIMUM].</span>"
 
 
 /obj/item/organ/heart/vampire

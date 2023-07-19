@@ -17,8 +17,8 @@
 	if(user?.stat == CONSCIOUS && ishuman(user))
 		user.visible_message(span_small("<b>[user]</b> смотрит на <b>[!obscure_name ? name : "Неизвестного"]</b>.") , span_small("Смотрю на <b>[!obscure_name ? name : "Неизвестного"]</b>.") , null, COMBAT_MESSAGE_RANGE)
 	if(dna?.species && !skipface)
-		apparent_species = "[dna.species.name]"
-	. = list("<span class='info'>Это же <EM>[!obscure_name ? name : "Неизвестный"]</EM>, [apparent_species ? "<big class='interface'>[apparent_species]</big>" : "[get_age_text()]"]!<hr>")
+		apparent_species = ", [dna.species.name]"
+	. = list("<span class='info'>Это же <EM>[!obscure_name ? name : "Неизвестный"][apparent_species]</EM>!")
 
 	//uniform
 	if(w_uniform && !(ITEM_SLOT_ICLOTHING in obscured))
@@ -56,7 +56,7 @@
 		. += "А на руках у н[t_ego] [gloves.get_examine_string(user)].\n"
 	else if(FR && length(FR.blood_DNA))
 		if(num_hands)
-			. += "<span class='warning'>[ru_ego(TRUE)] рук[num_hands > 1 ? "и" : "а"] также в крови!</span>\n"
+			. += "<hr><span class='warning'>[ru_ego(TRUE)] рук[num_hands > 1 ? "и" : "а"] также в крови!</span>\n"
 
 	//mask
 	if(wear_mask && !(ITEM_SLOT_MASK in obscured))
@@ -70,7 +70,7 @@
 		if(glasses)
 			. += "Также на [t_na] [glasses.get_examine_string(user)].\n"
 		else if(eye_color == BLOODCULT_EYE && iscultist(src) && HAS_TRAIT(src, CULT_EYES))
-			. += "<span class='warning'><B>[ru_ego(TRUE)] глаза ярко-красные и они горят!</B></span>\n"
+			. += "<hr><span class='warning'><B>[ru_ego(TRUE)] глаза ярко-красные и они горят!</B></span>\n"
 
 	//ears
 	if(ears && !(ITEM_SLOT_EARS in obscured))
@@ -79,9 +79,9 @@
 	//handcuffed?
 	if(handcuffed)
 		if(istype(handcuffed, /obj/item/restraints/handcuffs/cable))
-			. += "<span class='warning'>[t_on] [icon2html(handcuffed, user)] связан[t_a]!</span>\n"
+			. += "<hr><span class='warning'>[t_on] [icon2html(handcuffed, user)] связан[t_a]!</span>\n"
 		else
-			. += "<span class='warning'>[t_on] [icon2html(handcuffed, user)] в наручниках!</span>\n"
+			. += "<hr><span class='warning'>[t_on] [icon2html(handcuffed, user)] в наручниках!</span>\n"
 
 	//belt
 	if(belt)
@@ -103,11 +103,11 @@
 	//Jitters
 	switch(jitteriness)
 		if(300 to INFINITY)
-			. += "<span class='warning'><B>[t_on] бьётся в судорогах!</B></span>\n"
+			. += "<hr><span class='warning'><B>[t_on] бьётся в судорогах!</B></span>\n"
 		if(200 to 300)
-			. += "<span class='warning'>[t_on] нервно дёргается.</span>\n"
+			. += "<hr><span class='warning'>[t_on] нервно дёргается.</span>\n"
 		if(100 to 200)
-			. += "<span class='warning'>[t_on] дрожит.</span>\n"
+			. += "<hr><span class='warning'>[t_on] дрожит.</span>\n"
 
 	var/appears_dead = FALSE
 	var/just_sleeping = FALSE
@@ -123,14 +123,14 @@
 
 		if(!just_sleeping)
 			if(suiciding)
-				. += "<span class='warning'>[t_on] выглядит как суицидник... [t_ego] уже невозможно спасти.</span>\n"
+				. += "<hr><span class='warning'>[t_on] выглядит как суицидник... [t_ego] уже невозможно спасти.</span>\n"
 			if(hellbound)
 				. += span_warning("[t_ego] душа выглядит вырванной из [t_ego] тела. Воскрешение невозможно.")
 			. += ""
 			if(getorgan(/obj/item/organ/brain) && !key && !get_ghost(FALSE, TRUE))
-				. += "<span class='deadsay'>[t_on] не реагирует на происходящее вокруг; нет признаков жизни и души...</span>"
+				. += "<hr><span class='deadsay'>[t_on] не реагирует на происходящее вокруг; нет признаков жизни и души...</span>"
 			else
-				. += "<span class='deadsay'>[t_on] не реагирует на происходящее вокруг; нет признаков жизни...</span>"
+				. += "<hr><span class='deadsay'>[t_on] не реагирует на происходящее вокруг; нет признаков жизни...</span>"
 
 //WSStaion Begin - Broken Bones
 
@@ -139,10 +139,10 @@
 		if(B.bone_status == BONE_FLAG_SPLINTED)
 			splinted_stuff += B.name
 	if(splinted_stuff.len)
-		. += "<span class='warning'><B>[ru_ego(TRUE)] [english_list(splinted_stuff)] [splinted_stuff.len > 1 ? "are" : "is"] splinted!</B></span>\n"
+		. += "<hr><span class='warning'><B>[ru_ego(TRUE)] [english_list(splinted_stuff)] [splinted_stuff.len > 1 ? "are" : "is"] splinted!</B></span>\n"
 
 	if(get_bodypart(BODY_ZONE_HEAD) && !getorgan(/obj/item/organ/brain))
-		. += "<span class='deadsay'>Похоже, что у н[t_ego] нет мозга...</span>\n"
+		. += "<hr><span class='deadsay'>Похоже, что у н[t_ego] нет мозга...</span>\n"
 
 	var/temp = getBruteLoss() //no need to calculate each of these twice
 
@@ -325,7 +325,7 @@
 			else if(!client)
 				msg += "<span class='notice'>[t_on] имеет пустой, рассеянный взгляд и кажется совершенно не реагирующим ни на что. [t_on] может выйти из этого в ближайшее время.</span>\n"
 	if (length(msg))
-		. += "<span class='warning'>[msg.Join("")]</span>"
+		. += "<hr><span class='warning'>[msg.Join("")]</span>"
 
 	switch(mothdust) //WS edit - moth dust from hugging
 		if(1 to 50)
@@ -353,7 +353,7 @@
 					cyberimp_detect += "[!cyberimp_detect ? "[CI.get_examine_string(user)]" : ", [CI.get_examine_string(user)]"]"
 			if(cyberimp_detect)
 				. += "<hr><span class='notice ml-1'>Обнаружены кибернетические модификации:</span>\n"
-				. += "<span class='notice ml-2'>[cyberimp_detect]</span>"
+				. += "<hr><span class='notice ml-2'>[cyberimp_detect]</span>"
 			if(R)
 				var/health_r = R.fields["p_stat"]
 				. += "<a href='?src=[REF(src)];hud=m;p_stat=1'>\[[health_r]\]</a>"
@@ -364,8 +364,8 @@
 				. += "<a href='?src=[REF(src)];hud=m;evaluation=1'>\[Медицинское заключение\]</a><br>"
 			. += "<a href='?src=[REF(src)];hud=m;quirk=1'>\[Признаки\]</a>"
 			if(traitstring)
-				. += "<span class='notice ml-1'>Обнаружены психологические отклонения:</span>"
-				. += "<span class='notice ml-2'>[traitstring]</span>"
+				. += "<hr><span class='notice ml-1'>Обнаружены психологические отклонения:</span>"
+				. += "<hr><span class='notice ml-2'>[traitstring]</span>"
 
 		if(HAS_TRAIT(user, TRAIT_SECURITY_HUD))
 			if(!user.stat && user != src)
@@ -383,7 +383,7 @@
 					"<a href='?src=[REF(src)];hud=s;view_comment=1'>\[Просмотреть комментарии\]</a>",
 					"<a href='?src=[REF(src)];hud=s;add_comment=1'>\[Добавить комментарий\]</a> "), "")
 	else if(isobserver(user) && traitstring)
-		. += "<span class='info'><b>Traits:</b> [traitstring]</span>"
+		. += "<hr><span class='info'><b>Traits:</b> [traitstring]</span>"
 
 	//No flavor text unless the face can be seen. Prevents certain metagaming with impersonation.
 	var/invisible_man = skipface || get_visible_name() == "Unknown"

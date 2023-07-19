@@ -10,7 +10,7 @@
 	force = 5
 	throwforce = 6
 	w_class = WEIGHT_CLASS_SMALL
-	attack_verb = list("bashed", "battered", "judged", "whacked")
+	attack_verb = list("бьёт", "judged", "ударяет")
 	resistance_flags = FLAMMABLE
 
 /obj/item/gavelhammer/suicide_act(mob/user)
@@ -31,7 +31,7 @@
 /obj/item/gavelblock/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/gavelhammer))
 		playsound(loc, 'sound/items/gavel.ogg', 100, TRUE)
-		user.visible_message("<span class='warning'>[user] strikes [src] with [I].</span>")
+		user.visible_message("<span class='warning'>[user] strikes [src] с помощью [I].</span>")
 		user.changeNext_move(CLICK_CD_MELEE)
 	else
 		return ..()

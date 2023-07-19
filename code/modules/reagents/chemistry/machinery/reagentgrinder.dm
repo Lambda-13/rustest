@@ -60,27 +60,27 @@
 /obj/machinery/reagentgrinder/examine(mob/user)
 	. = ..()
 	if(!in_range(user, src) && !issilicon(user) && !isobserver(user))
-		. += "<span class='warning'>You're too far away to examine [src]'s contents and display!</span>"
+		. += "<hr><span class='warning'>You're too far away to examine [src]'s contents and display!</span>"
 		return
 
 	if(operating)
-		. += "<span class='warning'>\The [src] is operating.</span>"
+		. += "<hr><span class='warning'>[src] is operating.</span>"
 		return
 
 	if(beaker || length(holdingitems))
-		. += "<span class='notice'>\The [src] contains:</span>"
+		. += "<hr><span class='notice'>[src] contains:</span>"
 		if(beaker)
-			. += "<span class='notice'>- \A [beaker].</span>"
+			. += "<hr><span class='notice'>- \A [beaker].</span>"
 		for(var/i in holdingitems)
 			var/obj/item/O = i
-			. += "<span class='notice'>- \A [O.name].</span>"
+			. += "<hr><span class='notice'>- \A [O.name].</span>"
 
 	if(!(machine_stat & (NOPOWER|BROKEN)))
-		. += "<span class='notice'>The status display reads:</span>\n"+\
+		. += "<hr><span class='notice'>The status display reads:</span>\n"+\
 		"<span class='notice'>- Grinding reagents at <b>[speed*100]%</b>.</span>"
 		if(beaker)
 			for(var/datum/reagent/R in beaker.reagents.reagent_list)
-				. += "<span class='notice'>- [R.volume] units of [R.name].</span>"
+				. += "<hr><span class='notice'>- [R.volume] units of [R.name].</span>"
 
 /obj/machinery/reagentgrinder/AltClick(mob/user)
 	. = ..()
@@ -159,7 +159,7 @@
 			if(!I.contents.len)
 				to_chat(user, "<span class='notice'>You empty [I] into [src].</span>")
 			else
-				to_chat(user, "<span class='notice'>You fill [src] to the brim.</span>")
+				to_chat(user, "<span class='notice'>Наполняю [src] to the brim.</span>")
 		return TRUE
 
 	if(!I.grind_results && !I.juice_results)

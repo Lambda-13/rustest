@@ -49,9 +49,9 @@
 /mob/living/simple_animal/pet/gondola/gondolapod/examine(mob/user)
 	. = ..()
 	if (contents.len)
-		. += "<span class='notice'>It looks like it hasn't made its delivery yet.</b></span>"
+		. += "<hr><span class='notice'>It looks like it hasn't made its delivery yet.</b></span>"
 	else
-		. += "<span class='notice'>It looks like it has already made its delivery.</b></span>"
+		. += "<hr><span class='notice'>It looks like it has already made its delivery.</b></span>"
 
 /mob/living/simple_animal/pet/gondola/gondolapod/verb/check()
 	set name = "Count Contents"

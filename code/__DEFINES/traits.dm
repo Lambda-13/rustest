@@ -291,6 +291,9 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 ///every object that is currently the active storage of some client mob has this trait
 #define TRAIT_ACTIVE_STORAGE "active_storage"
 
+/// Climbable trait, given and taken by the climbable element when added or removed. Exists to be easily checked via HAS_TRAIT().
+#define TRAIT_CLIMBABLE "trait_climbable"
+
 #define TRAIT_KEEP_TOGETHER "keep-together"
 
 // item traits
@@ -438,6 +441,12 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define BRAIN_UNAIDED "brain-unaided"
 /// Trait granted by [/obj/item/clothing/head/helmet/space/hardsuit/berserker]
 #define BERSERK_TRAIT "berserk_trait"
+/// Currently fishing
+#define TRAIT_GONE_FISHING "fishing"
+/// Fish in this won't die
+#define TRAIT_FISH_SAFE_STORAGE "fish_case"
+/// Stuff that can go inside fish cases
+#define TRAIT_FISH_CASE_COMPATIBILE "fish_case_compatibile"
 
 // mobility flag traits
 // IN THE FUTURE, IT WOULD BE NICE TO DO SOMETHING SIMILAR TO https://github.com/tgstation/tgstation/pull/48923/files (ofcourse not nearly the same because I have my.. thoughts on it)
@@ -464,3 +473,5 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_MOVE_PHASING "move_phasing"
 /// Disables the floating animation. See above.
 #define TRAIT_NO_FLOATING_ANIM "no-floating-animation"
+/// Trait applied by element
+#define ELEMENT_TRAIT(source) "element_trait_[source]"

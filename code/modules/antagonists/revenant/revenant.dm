@@ -195,7 +195,7 @@
 	. = ..()
 	if(istype(W, /obj/item/nullrod))
 		visible_message("<span class='warning'>[src] violently flinches!</span>", \
-						"<span class='revendanger'>As \the [W] passes through you, you feel your essence draining away!</span>")
+						"<span class='revendanger'>As [W] passes through you, you feel your essence draining away!</span>")
 		adjustBruteLoss(25) //hella effective
 		inhibited = TRUE
 		update_action_buttons_icon()
@@ -394,9 +394,9 @@
 /obj/item/ectoplasm/revenant/examine(mob/user)
 	. = ..()
 	if(inert)
-		. += "<span class='revennotice'>It seems inert.</span>"
+		. += "<hr><span class='revennotice'>It seems inert.</span>"
 	else if(reforming)
-		. += "<span class='revenwarning'>It is shifting and distorted. It would be wise to destroy this.</span>"
+		. += "<hr><span class='revenwarning'>It is shifting and distorted. It would be wise to destroy this.</span>"
 
 /obj/item/ectoplasm/revenant/proc/reform()
 	if(QDELETED(src) || QDELETED(revenant) || inert)
