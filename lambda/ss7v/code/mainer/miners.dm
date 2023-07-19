@@ -43,7 +43,7 @@ SUBSYSTEM_DEF(spm)
 	var/datum/techweb/linked_techweb
 	var/datum/bank_account/linked_account
 	var/mining = FALSE
-	var/bound_key = "FUCKME"
+	var/bound_key = "CRYPT"
 
 /obj/machinery/power/mining_rack/Initialize(mapload)
 	. = ..()
@@ -252,32 +252,32 @@ SUBSYSTEM_DEF(spm)
 	name = "GT9600"
 	tech_name = "GT9600"
 	maintainer = "NanoVIDIA"
-	hashrate = 40
+	hashrate = 5
 
 /obj/item/mining_thing/nvidia/ntx420
 	name = "NTX420"
 	tech_name = "NTX420"
-	hashrate = 100
+	hashrate = 10
 
 /obj/item/mining_thing/nvidia/ntx970
 	name = "NTX970"
 	tech_name = "NTX970"
-	hashrate = 225
+	hashrate = 20
 
 /obj/item/mining_thing/nvidia/ntx1666
 	name = "NTX1666"
 	tech_name = "NTX1666"
-	hashrate = 350
+	hashrate = 40
 
 /obj/item/mining_thing/nvidia/ntx2080
 	name = "NTX2080"
 	tech_name = "NTX2080"
-	hashrate = 525
+	hashrate = 80
 
 /obj/item/mining_thing/nvidia/ntx3090ti
 	name = "NTX3090Ti"
 	tech_name = "NTX3090Ti"
-	hashrate = 700
+	hashrate = 160
 
 //Изучения
 /datum/techweb_node/base_cryptominer

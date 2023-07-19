@@ -27,7 +27,7 @@
 	crate_name = "ящик с маяком"
 	crate_type = /obj/structure/closet/crate/science
 
-/datum/supply_pack/innovations/exploration
+/datum/supply_pack/innovations/copytech
 	name = "Коробка копировальных плат"
 	desc = "Содержит внутри коробку с копировальным платами. Из-за некоторых нюансов с законом цены данных плат необычайно возросли."
 	cost = COST_HIGH * 1000000
