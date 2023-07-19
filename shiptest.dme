@@ -3685,5 +3685,6 @@
 #include "lambda\ss7v\code\exrp\cumvirus.dm"
 #include "lambda\ss7v\code\portable_recharger.dm"
 #include "lambda\ss7v\code\mainer\miners.dm"
+#include "lambda\ss7v\code\metacoin\metacoin.dm"
 #include "lambda\ss7v\code\manual_cell_recharger.dm"
 // END_INCLUDE

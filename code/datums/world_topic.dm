@@ -315,3 +315,40 @@
 			return world.Reboot()
 	else
 		return "There are active admins on the server! Ask them to restart."
+
+/**
+ * Устанавливает сумму метакэша. Если нет в базе, то шлёт на хуй
+ * announce: объявлять ли пользователю, если он в игре
+ */
+/proc/set_metacoins_by_key(userkey, value = 0, announce = FALSE)
+	var/datum/DBQuery/query_set_metacoins = SSdbcore.NewQuery(
+		"UPDATE player SET metacoins = :value WHERE ckey = :userkey",
+		list("value" = value, "userkey" = userkey)
+	)
+	var/no_err = query_set_metacoins.Execute()
+	qdel(query_set_metacoins)
+	if(announce)
+		for(var/client/C in GLOB.clients)
+			if(userkey == C.ckey)
+				to_chat(C, "<span class='rose bold'>Новый баланс: [value] метакэша!</span>")
+	return no_err
+
+/**
+ Устанавливает сумму донатов. Если нет в базе, то добавляет запись. ПОЛЬЗОВАТЬСЯ ОСТОРОЖНО
+
+/proc/set_donate_value(userkey, value = 0)
+	var/datum/DBQuery/query_set_donate
+	if(load_donator(userkey))
+		query_set_donate = SSdbcore.NewQuery(
+			"UPDATE donations SET sum = :value WHERE byond = :userkey",
+			list("value" = value, "userkey" = userkey)
+		)
+	else if (!check_donations(userkey))
+		query_set_donate = SSdbcore.NewQuery(
+			"INSERT INTO donations (sum, byond) VALUES (:value, :userkey)",
+			list("value" = value, "userkey" = userkey)
+		)
+	var/no_err = query_set_donate.Execute()
+	qdel(query_set_donate)
+	return no_err
+*/
