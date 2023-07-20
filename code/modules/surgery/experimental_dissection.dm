@@ -45,20 +45,20 @@
 
 	//determine bonus applied
 	if(isalienqueen(target) || isalienroyal(target))
-		cost = (BASE_HUMAN_REWARD*38)
+		cost = (BASE_HUMAN_REWARD*7.5)
 	else if(isalienadult(target))
-		cost = (BASE_HUMAN_REWARD*30)
+		cost = (BASE_HUMAN_REWARD*6)
 	else if(ismonkey(target))
 		cost = (BASE_HUMAN_REWARD*0.5)
 	else if(ishuman(target))
 		var/mob/living/carbon/human/H = target
 		if(H?.dna?.species)
 			if(isabductor(H))
-				cost = (BASE_HUMAN_REWARD*24)
+				cost = (BASE_HUMAN_REWARD*4)
 			else if(isgolem(H) || iszombie(H) || isshadow(H) || isandroid(H))
-				cost = (BASE_HUMAN_REWARD*20)
+				cost = (BASE_HUMAN_REWARD*3)
 			else if(isjellyperson(H) || ispodperson(H) || isalien(H))
-				cost = (BASE_HUMAN_REWARD*14)
+				cost = (BASE_HUMAN_REWARD*2)
 			else if(isskeleton(H))
 				cost = (BASE_HUMAN_REWARD * 0.5)
 	else
