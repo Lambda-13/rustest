@@ -25,6 +25,7 @@
 	cost = 200
 	unit_name = "goliath hide"
 	export_types = list(/obj/item/stack/sheet/animalhide/goliath_hide)
+	include_subtypes = FALSE
 
 /datum/export/stack/skin/polar_bear_hide
 	cost = 200

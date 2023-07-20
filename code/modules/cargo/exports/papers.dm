@@ -11,30 +11,30 @@
 
 /datum/export/papers/research/tiny
 	cost = 500
-	unit_name = "secret documents"
+	unit_name = "research notes"
 	export_types = list(/obj/item/research_notes/loot/tiny)
 	include_subtypes = FALSE
 
 /datum/export/papers/research/small
 	cost = 2000
-	unit_name = "secret documents"
+	unit_name = "research notes"
 	export_types = list(/obj/item/research_notes/loot/small)
 	include_subtypes = FALSE
 
 /datum/export/papers/research/medium
 	cost = 4000
-	unit_name = "secret documents"
+	unit_name = "research notes"
 	export_types = list(/obj/item/research_notes/loot/medium)
 	include_subtypes = FALSE
 
 /datum/export/papers/research/big
 	cost = 7500
-	unit_name = "secret documents"
+	unit_name = "research notes"
 	export_types = list(/obj/item/research_notes/loot/big)
 	include_subtypes = FALSE
 
 /datum/export/papers/research/genius
 	cost = 15000
-	unit_name = "secret documents"
+	unit_name = "research notes"
 	export_types = list(/obj/item/research_notes/loot/genius)
 	include_subtypes = FALSE
