@@ -28,7 +28,7 @@
 /datum/supply_pack/science/support_beacon
 	name = "Маяк поддержки"
 	desc = "Один маяк для личного использования."
-	cost = COST_HIGH * 50000
+	cost = COST_HIGH * 100000
 	contains = list(/obj/item/choice_beacon/support_beacon)
 	crate_name = "ящик с маяком поддержки"
 

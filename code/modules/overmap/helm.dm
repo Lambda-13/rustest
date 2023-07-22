@@ -136,6 +136,12 @@
 		say("Создаю ключ от судна - не потеряй его!")
 		var/key = new /obj/item/key/ship(get_turf(src), current_ship)
 		user.put_in_hands(key)
+		if(!current_ship.support_beacon)
+			sleep(10)
+			say("Выдан маяк поддержки.")
+			var/support_beacon = new /obj/item/choice_beacon/support_beacon
+			user.put_in_hands(support_beacon)
+			current_ship.support_beacon == TRUE
 		return
 
 	ui = SStgui.try_update_ui(user, src, ui)

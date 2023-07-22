@@ -69,10 +69,6 @@
 			back_storage.handle_item_insertion(loadout_dumper, TRUE)
 		else if(!spawnee.put_in_hands(loadout_dumper, TRUE))
 			to_chat("Коробка с вашими личными вещами не была вам выдана.")
-		if(officer)
-			if(back_storage)
-				back_storage.handle_item_insertion(new /obj/item/choice_beacon/support_beacon, TRUE)
-				to_chat("У меня в сумке есть маяк поддержки - с помощью него я смогу заказать нужные вещи. <br>Но нужно выбирать с умом - маяк <b>одноразовый</b>.")
 
 /datum/job/proc/override_latejoin_spawn(mob/living/carbon/human/H)		//Return TRUE to force latejoining to not automatically place the person in latejoin shuttle/whatever.
 	return FALSE
