@@ -12,15 +12,15 @@
 ////////////////////UTILITY NANITES//////////////////////////////////////
 
 /datum/design/nanites/metabolic_synthesis
-	name = "Metabolic Synthesis"
-	desc = "The nanites use the metabolic cycle of the host to speed up their replication rate, using their extra nutrition as fuel."
+	name = "Метаболический синтез"
+	desc = "Наниты используют цикл метаболизма носителя для ускоренной репликации, перерабатывая лишнюю еду в топливо и ускоряя производство на +0,5 единиц. Носитель должен быть хорошо накормлен для работы программы."
 	id = "metabolic_nanites"
 	program_type = /datum/nanite_program/metabolic_synthesis
 	category = list("Utility Nanites")
 
 /datum/design/nanites/viral
-	name = "Viral Replica"
-	desc = "The nanites constantly send encrypted signals attempting to forcefully copy their own programming into other nanite clusters."
+	name = "Вирусное заражение"
+	desc = "Наниты постоянно расслылают шифрованные сигналы, пытаясь насильно скопировать свои настройки в другие рои нанитов. Эта программа также установит ID облачного сохранения другого роя на установленный в программе."
 	id = "viral_nanites"
 	program_type = /datum/nanite_program/viral
 	category = list("Utility Nanites")
@@ -40,29 +40,29 @@
 	category = list("Utility Nanites")
 
 /datum/design/nanites/monitoring
-	name = "Monitoring"
-	desc = "The nanites monitor the host's vitals and location, sending them to the suit sensor network."
+	name = "Отслеживание"
+	desc = "Наниты отслеживают состояние и местоположение носителя, отправляя их в сеть медицинских сенсоров. Также добавляет иконку нанитового интерфейса для медицинских сканеров, осматривающих носителя."
 	id = "monitoring_nanites"
 	program_type = /datum/nanite_program/monitoring
 	category = list("Utility Nanites")
 
 /datum/design/nanites/self_scan
-	name = "Host Scan"
-	desc = "The nanites display a detailed readout of a body scan to the host."
+	name = "Сканирование носителя"
+	desc = "Наниты выводят детальный отчет о сканировании тела носителя при активации. Можно выбирать между медицинским, химическим и нанитовым сканированием, а также сканированием травм."
 	id = "selfscan_nanites"
 	program_type = /datum/nanite_program/self_scan
 	category = list("Utility Nanites")
 
 /datum/design/nanites/dermal_button
-	name = "Dermal Button"
-	desc = "Displays a button on the host's skin, which can be used to send a signal to the nanites."
+	name = "Кнопка на коже"
+	desc = "Наниты формируют кнопку на руке носителя, позволяя ему отправлять сигнал программам при нажатии. Кнопку нельзя нажать, если носитель находится без сознания."
 	id = "dermal_button_nanites"
 	program_type = /datum/nanite_program/dermal_button
 	category = list("Utility Nanites")
 
 /datum/design/nanites/stealth
-	name = "Stealth"
-	desc = "The nanites hide their activity and programming from superficial scans."
+	name = "Скрытность"
+	desc = "Наниты будут скрывать свою активность от поверхностного сканирования, становясь невидимыми для диагностических дисплеев и иммунными для Вирусных программ."
 	id = "stealth_nanites"
 	program_type = /datum/nanite_program/stealth
 	category = list("Utility Nanites")
@@ -76,132 +76,128 @@
 	category = list("Utility Nanites")
 
 /datum/design/nanites/access
-	name = "Subdermal ID"
-	desc = "The nanites store the host's ID access rights in a subdermal magnetic strip. Updates when triggered, copying the host's current access."
+	name = "Подкожный ID"
+	desc = "Наниты хранят доступы с карты носителя в магнитной ленте под кожей. Обновляется при активации, копируя текущий доступ носителя и стирая предидущий."
 	id = "access_nanites"
 	program_type = /datum/nanite_program/access
 	category = list("Utility Nanites")
 
 /datum/design/nanites/relay
-	name = "Relay"
-	desc = "The nanites receive and relay long-range nanite signals."
+	name = "Приемо-передатчик"
+	desc = "Наниты принимают сигналы на огромных расстояниях. Необходимо настроить канал передатчика до передачи сигнала."
 	id = "relay_nanites"
 	program_type = /datum/nanite_program/relay
 	category = list("Utility Nanites")
 
 /datum/design/nanites/repeater
-	name = "Signal Repeater"
-	desc = "When triggered, sends another signal to the nanites, optionally with a delay."
+	name = "Ретранслятор сигнала"
+	desc = "При активации отправляет носителю сигнал, с настраиваемой задержкой. Используется при отправке нескольких кодов в одной программе."
 	id = "repeater_nanites"
 	program_type = /datum/nanite_program/sensor/repeat
 	category = list("Utility Nanites")
 
 /datum/design/nanites/relay_repeater
-	name = "Relay Signal Repeater"
-	desc = "When triggered, sends another signal to a relay channel, optionally with a delay."
+	name = "Ретранслятор - передатчик"
+	desc = "При активации отправляет сигнал вовне по каналу передатчика, с настраиваемой задержкой."
 	id = "relay_repeater_nanites"
 	program_type = /datum/nanite_program/sensor/relay_repeat
 	category = list("Utility Nanites")
 
 /datum/design/nanites/emp
-	name = "Electromagnetic Resonance"
-	desc = "The nanites cause an electromagnetic pulse around the host when triggered. Will corrupt other nanite programs!"
+	name = "Электромагнитный резонанс"
+	desc = "Наниты вызывают электромагнитный импульс рядом с носителем. Может повредить другие программы!"
 	id = "emp_nanites"
 	program_type = /datum/nanite_program/emp
 	category = list("Utility Nanites")
 
 /datum/design/nanites/spreading
-	name = "Infective Exo-Locomotion"
-	desc = "The nanites gain the ability to survive for brief periods outside of the human body, as well as the ability to start new colonies without an integration process; \
-			resulting in an extremely infective strain of nanites."
+	name = "Аурное распространение"
+	desc = "Наниты получают возможность существовать снаружи тела носителя на короткие периоды времени, и способность создавать новые рои без процесса внедрения; создавая невероятно заразный штамм нанитов."
 	id = "spreading_nanites"
 	program_type = /datum/nanite_program/spreading
 	category = list("Utility Nanites")
 
 /datum/design/nanites/nanite_sting
-	name = "Nanite Sting"
-	desc = "When triggered, projects a nearly invisible spike of nanites that attempts to infect a nearby non-host with a copy of the host's nanites cluster."
+	name = "Нанитное жало"
+	desc = "При активации жалит случайного не-носителя рядом с самим носителем едва заметным скоплением нанитов, делая его новым носителем. Новый носитель почувствует это. Если жало не находит рядом цель, то оно возвращается в рой, \"возвращая\" стоимость активации."
 	id = "nanite_sting_nanites"
 	program_type = /datum/nanite_program/nanite_sting
 	category = list("Utility Nanites")
 
 /datum/design/nanites/mitosis
-	name = "Mitosis"
-	desc = "The nanites gain the ability to self-replicate, using bluespace to power the process, instead of drawing from a template. This rapidly speeds up the replication rate,\
-			but it causes occasional software errors due to faulty copies. Not compatible with cloud sync."
+	name = "Митоз"
+	desc = "Наниты получают способность к саморепликации, используя блюспейс для этого процесса вместо метаболизма носителя. Это очень сильно повышает скорость появления нанитов, но вызывает случайные ошибки в программах из-за бракованных копий нанитов, делая эту программу очень опасной без облачного сохранения."
 	id = "mitosis_nanites"
 	program_type = /datum/nanite_program/mitosis
 	category = list("Utility Nanites")
 
 ////////////////////MEDICAL NANITES//////////////////////////////////////
 /datum/design/nanites/regenerative
-	name = "Accelerated Regeneration"
-	desc = "The nanites boost the host's natural regeneration, increasing their healing speed."
+	name = "Ускоренная регенерация"
+	desc = "Наниты ускоряют естественную регенерацию носителя, медленно исцеляя его (0.5 физического и термического урона). Не потребляет наниты, пока носитель не ранен."
 	id = "regenerative_nanites"
 	program_type = /datum/nanite_program/regenerative
 	category = list("Medical Nanites")
 
 /datum/design/nanites/regenerative_advanced
-	name = "Bio-Reconstruction"
-	desc = "The nanites manually repair and replace organic cells, acting much faster than normal regeneration. \
-			However, this program cannot detect the difference between harmed and unharmed, causing it to consume nanites even if it has no effect."
+	name = "Био-реконструкция"
+	desc = "Наниты вручную восстанавливают и заменяют клетки тела, делая это гораздо быстрее обычной регенерации. Лечит 2 физического и термического урона. Однако, эта программа не может отличить поврежденные клетки от неповрежденных, используя наниты, даже если организм цел."
 	id = "regenerative_plus_nanites"
 	program_type = /datum/nanite_program/regenerative_advanced
 	category = list("Medical Nanites")
 
 /datum/design/nanites/temperature
-	name = "Temperature Adjustment"
-	desc = "The nanites adjust the host's internal temperature to an ideal level."
+	name = "Регулировка температуры"
+	desc = "Наниты регулируют температуру тела носителя до идеального уровня. Не потребляет наниты, пока температура на идеальном уровне."
 	id = "temperature_nanites"
 	program_type = /datum/nanite_program/temperature
 	category = list("Medical Nanites")
 
 /datum/design/nanites/purging
-	name = "Blood Purification"
-	desc = "The nanites purge toxins and chemicals from the host's bloodstream."
+	name = "Очистка крови"
+	desc = "Наниты очищают кровь носителя на 1 единицу токсического урона и на 1 единицу всех химикатов в крови. Непрерывно расходует наниты пока включена."
 	id = "purging_nanites"
 	program_type = /datum/nanite_program/purging
 	category = list("Medical Nanites")
 
 /datum/design/nanites/purging_advanced
-	name = "Selective Blood Purification"
-	desc = "The nanites purge toxins and dangerous chemicals from the host's bloodstream, while ignoring beneficial chemicals. \
-			The added processing power required to analyze the chemicals severely increases the nanite consumption rate."
+	name = "Выборочная очистка крови"
+	desc = "Наниты лечат 1 единицу токсического урона и выводят 1 единицу токсичных реагентов из крови носителя, игнорируя нетоксичные вещества. Для анализа состава крови требуется дополнительная вычислительная мощность, что сильно повышает потребление нанитов."
 	id = "purging_plus_nanites"
 	program_type = /datum/nanite_program/purging_advanced
 	category = list("Medical Nanites")
 
 /datum/design/nanites/brain_heal
-	name = "Neural Regeneration"
-	desc = "The nanites fix neural connections in the host's brain, reversing brain damage and minor traumas."
+	name = "Восстановление нейронов"
+	desc = "Наниты исправляют нейронные соединения в мозге носителя, излечивая повреждения мозга и легкие мозговые травмы. Лечит 1 единицу повреждений мозга и имеет 10% шанс на исцеление небольших травм мозга. Не потребляет наниты, если мозг носителя цел."
 	id = "brainheal_nanites"
 	program_type = /datum/nanite_program/brain_heal
 	category = list("Medical Nanites")
 
 /datum/design/nanites/brain_heal_advanced
-	name = "Neural Reimaging"
-	desc = "The nanites are able to backup and restore the host's neural connections, potentially replacing entire chunks of missing or damaged brain matter."
+	name = "Нейронная пересборка"
+	desc = "Наниты становятся способны сохранять и восстанавливать нейронные соединения, теоретически даже восстанавливая отсутствующие или поврежденные участки мозга. Лечит 2 единицы урона мозгу и с 10% шансом могут исцелить даже самые тяжелые травмы мозга. Непрерывно расходует наниты пока включена."
 	id = "brainheal_plus_nanites"
 	program_type = /datum/nanite_program/brain_heal_advanced
 	category = list("Medical Nanites")
 
 /datum/design/nanites/blood_restoring
-	name = "Blood Regeneration"
-	desc = "The nanites stimulate and boost blood cell production in the host."
+	name = "Восстановление крови"
+	desc = "Наниты ускоряют процесс создания кровяных клеток в организме носителя. Не потребляет наниты, если крови в теле носителя достаточно."
 	id = "bloodheal_nanites"
 	program_type = /datum/nanite_program/blood_restoring
 	category = list("Medical Nanites")
 
 /datum/design/nanites/repairing
-	name = "Mechanical Repair"
-	desc = "The nanites fix damage in the host's mechanical limbs."
+	name = "Реконструкция механики"
+	desc = "Наниты чинят механические части тела носителя. Чинит 1 единицу физического и термического урона равномерно во всех конечностях. Не потребляет наниты, если конечности не повреждены."
 	id = "repairing_nanites"
 	program_type = /datum/nanite_program/repairing
 	category = list("Medical Nanites")
 
 /datum/design/nanites/defib
-	name = "Defibrillation"
-	desc = "The nanites, when triggered, send a defibrillating shock to the host's heart."
+	name = "Дефибрилляция"
+	desc = "При активации дает разряд тока в сердце носителя, запуская его, если тело может это выдержать. Реанимация такого плана имеет такие же требования, как и обычная дефибрилляция. Не вызывает удушье."
 	id = "defib_nanites"
 	program_type = /datum/nanite_program/defib
 	category = list("Medical Nanites")
@@ -210,50 +206,50 @@
 ////////////////////AUGMENTATION NANITES//////////////////////////////////////
 
 /datum/design/nanites/nervous
-	name = "Nerve Support"
-	desc = "The nanites act as a secondary nervous system, reducing the amount of time the host is stunned."
+	name = "Поддержка нервов"
+	desc = "Наниты действуют как вторичная нервная система, сокращая время оглушения носителя в два раза."
 	id = "nervous_nanites"
 	program_type = /datum/nanite_program/nervous
 	category = list("Augmentation Nanites")
 
 /datum/design/nanites/hardening
-	name = "Dermal Hardening"
-	desc = "The nanites form a mesh under the host's skin, protecting them from melee and bullet impacts."
+	name = "Укрепление кожи"
+	desc = "Наниты формируют сеть под кожей носителя, защищая его от пулевых ранений и ранений от холодного оружия. Дает 25 брони от холодного оружия и 20 брони от пуль."
 	id = "hardening_nanites"
 	program_type = /datum/nanite_program/hardening
 	category = list("Augmentation Nanites")
 
 /datum/design/nanites/refractive
-	name = "Dermal Refractive Surface"
-	desc = "The nanites form a membrane above the host's skin, reducing the effect of laser and energy impacts."
+	name = "Отражающая кожа"
+	desc = "Наниты формируют мембрану под кожей носителя, уменьшая урон от лазеров и энергетического оружия. Добавляет 25 лазерной и 20 энергетической брони."
 	id = "refractive_nanites"
 	program_type = /datum/nanite_program/refractive
 	category = list("Augmentation Nanites")
 
 /datum/design/nanites/coagulating
-	name = "Rapid Coagulation"
-	desc = "The nanites induce rapid coagulation when the host is wounded, dramatically reducing bleeding rate."
+	name = "Ускоренное свертывание"
+	desc = "Наниты вызывают быстрое свертывание крови при ранении носителя, невероятно сильно снижая шансы истечь кровью."
 	id = "coagulating_nanites"
 	program_type = /datum/nanite_program/coagulating
 	category = list("Augmentation Nanites")
 
 /datum/design/nanites/conductive
-	name = "Electric Conduction"
-	desc = "The nanites act as a grounding rod for electric shocks, protecting the host. Shocks can still damage the nanites themselves."
+	name = "Электропроводимость"
+	desc = "Наниты действуют как заземлитель для тока, защищая носителя. Однако удары током повреждают самих нанитов."
 	id = "conductive_nanites"
 	program_type = /datum/nanite_program/conductive
 	category = list("Augmentation Nanites")
 
 /datum/design/nanites/adrenaline
-	name = "Adrenaline Burst"
-	desc = "The nanites cause a burst of adrenaline when triggered, waking the host from stuns and temporarily increasing their speed."
+	name = "Всплеск адреналина"
+	desc = "Наниты вызывают всплеск адреналина при активации, вкалывая 3 единицы Экспериментальных стимуляторов, пробуждая носителя и временно ускоряя его, из-за чего он может уронить вещи из рук."
 	id = "adrenaline_nanites"
 	program_type = /datum/nanite_program/adrenaline
 	category = list("Augmentation Nanites")
 
 /datum/design/nanites/mindshield
-	name = "Mental Barrier"
-	desc = "The nanites form a protective membrane around the host's brain, shielding them from abnormal influences while they're active."
+	name = "Ментальный барьер"
+	desc = "Наниты формируют защитную оболочку вокруг мозга носителя, защищая его от аномального влияния, аналогично импланту щита разума."
 	id = "mindshield_nanites"
 	program_type = /datum/nanite_program/mindshield
 	category = list("Augmentation Nanites")
@@ -261,57 +257,57 @@
 ////////////////////DEFECTIVE NANITES//////////////////////////////////////
 
 /datum/design/nanites/glitch
-	name = "Glitch"
-	desc = "A heavy software corruption that causes nanites to gradually break down."
+	name = "Сбой"
+	desc = "Сильное повреждение программы, вызывающее стремительное разрушение нанитов."
 	id = "glitch_nanites"
 	program_type = /datum/nanite_program/glitch
 	category = list("Defective Nanites")
 
 /datum/design/nanites/necrotic
-	name = "Necrosis"
-	desc = "The nanites attack internal tissues indiscriminately, causing widespread damage."
+	name = "Некроз"
+	desc = "Наниты атакуют внутренние ткани организма, вызывая сильный и распространенный по всему телу урон."
 	id = "necrotic_nanites"
 	program_type = /datum/nanite_program/necrotic
 	category = list("Defective Nanites")
 
 /datum/design/nanites/toxic
-	name = "Toxin Buildup"
-	desc = "The nanites cause a slow but constant toxin buildup inside the host."
+	name = "Интоксикация"
+	desc = "Наниты начинают медленное, но непрерывное создание токсинов в организме носителя."
 	id = "toxic_nanites"
 	program_type = /datum/nanite_program/toxic
 	category = list("Defective Nanites")
 
 /datum/design/nanites/suffocating
-	name = "Hypoxemia"
-	desc = "The nanites prevent the host's blood from absorbing oxygen efficiently."
+	name = "Гипоксия"
+	desc = "Наниты нарушают естественное усваивание кислорода в организме носителя."
 	id = "suffocating_nanites"
 	program_type = /datum/nanite_program/suffocating
 	category = list("Defective Nanites")
 
 /datum/design/nanites/brain_misfire
-	name = "Brain Misfire"
-	desc = "The nanites interfere with neural pathways, causing minor psychological disturbances."
+	name = "Церебральный сбой"
+	desc = "Наниты вмешиваются в нейронные соединения, вызывая небольшие психические расстройства.."
 	id = "brainmisfire_nanites"
 	program_type = /datum/nanite_program/brain_misfire
 	category = list("Defective Nanites")
 
 /datum/design/nanites/skin_decay
-	name = "Dermalysis"
-	desc = "The nanites attack skin cells, causing irritation, rashes, and minor damage."
+	name = "Дермализис"
+	desc = "Наниты атакуют клетки кожи, вызывая раздражение, сыпь и небольшой урон."
 	id = "skindecay_nanites"
 	program_type = /datum/nanite_program/skin_decay
 	category = list("Defective Nanites")
 
 /datum/design/nanites/nerve_decay
-	name = "Nerve Decay"
-	desc = "The nanites attack the host's nerves, causing lack of coordination and short bursts of paralysis."
+	name = "Разрушение нервов"
+	desc = "Наниты разрушают нервы носителя, вызывая проблемы с координацией и небольшие приступы паралича."
 	id = "nervedecay_nanites"
 	program_type = /datum/nanite_program/nerve_decay
 	category = list("Defective Nanites")
 
 /datum/design/nanites/brain_decay
-	name = "Brain-Eating Nanites"
-	desc = "Damages brain cells, gradually decreasing the host's cognitive functions."
+	name = "Нейро-Некроз"
+	desc = "Наниты ищут и атакуют клетки мозга, вызывая масштабный урон мозгу."
 	id = "braindecay_nanites"
 	program_type = /datum/nanite_program/brain_decay
 	category = list("Defective Nanites")
@@ -319,72 +315,71 @@
 ////////////////////WEAPONIZED NANITES/////////////////////////////////////
 
 /datum/design/nanites/flesh_eating
-	name = "Cellular Breakdown"
-	desc = "The nanites destroy cellular structures in the host's body, causing brute damage."
+	name = "Клеточный распад"
+	desc = "Наниты разрушают клеточные структуры в организме носителя, причиняя сильный физический урон."
 	id = "flesheating_nanites"
 	program_type = /datum/nanite_program/flesh_eating
 	category = list("Weaponized Nanites")
 
 /datum/design/nanites/poison
-	name = "Poisoning"
-	desc = "The nanites deliver poisonous chemicals to the host's internal organs, causing toxin damage and vomiting."
+	name = "Отравление"
+	desc = "Наниты доставляют ядовитые химикаты во внутренние органы носителя, вызывая токсический урон и рвоту."
 	id = "poison_nanites"
 	program_type = /datum/nanite_program/poison
 	category = list("Weaponized Nanites")
 
 /datum/design/nanites/memory_leak
-	name = "Memory Leak"
-	desc = "This program invades the memory space used by other programs, causing frequent corruptions and errors."
+	name = "Сбой базы данных"
+	desc = "Эта программа внедряется в память, используемую другими программами, вызывая частые ошибки и глюки."
 	id = "memleak_nanites"
 	program_type = /datum/nanite_program/memory_leak
 	category = list("Weaponized Nanites")
 
 /datum/design/nanites/aggressive_replication
-	name = "Aggressive Replication"
-	desc = "Nanites will consume organic matter to improve their replication rate, damaging the host."
+	name = "Агрессивная репликация"
+	desc = "Наниты поглощают органическую материю для ускорения процесса репликации, повреждая клетки носителя."
 	id = "aggressive_nanites"
 	program_type = /datum/nanite_program/aggressive_replication
 	category = list("Weaponized Nanites")
 
 /datum/design/nanites/meltdown
-	name = "Meltdown"
-	desc = "Causes an internal meltdown inside the nanites, causing internal burns inside the host as well as rapidly destroying the nanite population.\
-			Sets the nanites' safety threshold to 0 when activated."
+	name = "Расплавление"
+	desc = "Наниты начинают плавиться, вызывая внутренние ожоги и быстро уничтожая рой нанитов. Уменьшает порог безопасности нанитов до 0 при активации."
 	id = "meltdown_nanites"
 	program_type = /datum/nanite_program/meltdown
 	category = list("Weaponized Nanites")
 
 /datum/design/nanites/cryo
-	name = "Cryogenic Treatment"
-	desc = "The nanites rapidly skin heat through the host's skin, lowering their temperature."
+	name = "Криогенная обработка"
+	desc = "Наниты быстро выпускают тепло через кожу носителя, понижая свою температуру."
 	id = "cryo_nanites"
 	program_type = /datum/nanite_program/cryo
 	category = list("Weaponized Nanites")
 
 /datum/design/nanites/pyro
-	name = "Sub-Dermal Combustion"
-	desc = "The nanites cause buildup of flammable fluids under the host's skin, then ignites them."
+	name = "Подкожное возгорание"
+	desc = "Наниты перестраивают жировые клетки в горючую жидкость под кожей носителя, а потом поджигают её."
 	id = "pyro_nanites"
 	program_type = /datum/nanite_program/pyro
 	category = list("Weaponized Nanites")
 
 /datum/design/nanites/heart_stop
-	name = "Heart-Stopper"
-	desc = "Stops the host's heart when triggered; restarts it if triggered again."
+	name = "Остановка сердца"
+	desc = "Останавливает сердце носителя, повторная активация запускает его вновь."
 	id = "heartstop_nanites"
 	program_type = /datum/nanite_program/heart_stop
 	category = list("Weaponized Nanites")
 
 /datum/design/nanites/explosive
-	name = "Chain Detonation"
-	desc = "Blows up all the nanites inside the host in a chain reaction when triggered."
+	name = "Цепная детонация"
+	desc = "Взрывает все наниты в организме носителя при активации."
 	id = "explosive_nanites"
 	program_type = /datum/nanite_program/explosive
 	category = list("Weaponized Nanites")
 
 /datum/design/nanites/mind_control
-	name = "Mind Control"
-	desc = "The nanites imprint an absolute directive onto the host's brain while they're active."
+	name = "Контроль разума"
+	desc = "Наниты впечатывают в мозг носителя абсолютную инструкцию на 60 секунд при активации. Можно использовать с пультом отправки сообщений."
 	id = "mindcontrol_nanites"
 	program_type = /datum/nanite_program/comm/mind_control
 	category = list("Weaponized Nanites")
@@ -392,92 +387,92 @@
 ////////////////////SUPPRESSION NANITES//////////////////////////////////////
 
 /datum/design/nanites/shock
-	name = "Electric Shock"
-	desc = "The nanites shock the host when triggered. Destroys a large amount of nanites!"
+	name = "Удар током"
+	desc = "При активации бьют носителя током. Этот удар всё еще повреждает наниты, вызывая потерю в количестве и возможное повреждение программ!"
 	id = "shock_nanites"
 	program_type = /datum/nanite_program/shocking
 	category = list("Suppression Nanites")
 
 /datum/design/nanites/stun
-	name = "Neural Shock"
-	desc = "The nanites pulse the host's nerves when triggered, inapacitating them for a short period."
+	name = "Нейронный шок"
+	desc = "Наниты пускают сигнал по нервам носителя, оглушая его на короткий период времени."
 	id = "stun_nanites"
 	program_type = /datum/nanite_program/stun
 	category = list("Suppression Nanites")
 
 /datum/design/nanites/sleepy
-	name = "Sleep Induction"
-	desc = "The nanites cause rapid narcolepsy when triggered."
+	name = "Усыпление"
+	desc = "Наниты вызывают быстрый, но не моментальный приступ нарколепсии при активации."
 	id = "sleep_nanites"
 	program_type = /datum/nanite_program/sleepy
 	category = list("Suppression Nanites")
 
 /datum/design/nanites/paralyzing
-	name = "Paralysis"
-	desc = "The nanites actively suppress nervous pulses, effectively paralyzing the host."
+	name = "Парализация"
+	desc = "Наниты активно подавляют нервные сигналы, эффективно парализуя носителя."
 	id = "paralyzing_nanites"
 	program_type = /datum/nanite_program/paralyzing
 	category = list("Suppression Nanites")
 
 /datum/design/nanites/fake_death
-	name = "Death Simulation"
-	desc = "The nanites induce a death-like coma into the host, able to fool most medical scans."
+	name = "Симуляция смерти"
+	desc = "Наниты вызывают кому, близкую к смерти, способную обмануть большинство медицинских сканеров."
 	id = "fakedeath_nanites"
 	program_type = /datum/nanite_program/fake_death
 	category = list("Suppression Nanites")
 
 /datum/design/nanites/pacifying
-	name = "Pacification"
-	desc = "The nanites suppress the aggression center of the brain, preventing the host from causing direct harm to others."
+	name = "Усмирение"
+	desc = "Наниты подавляют зону мозга, отвечающую за агрессию, препятствуя нанесению носителем прямого вреда другим."
 	id = "pacifying_nanites"
 	program_type = /datum/nanite_program/pacifying
 	category = list("Suppression Nanites")
 
 /datum/design/nanites/blinding
-	name = "Blindness"
-	desc = "The nanites suppress the host's ocular nerves, blinding them while they're active."
+	name = "Слепота"
+	desc = "Наниты подавляют зрительные нервы носителя, тем самым ослепляя его."
 	id = "blinding_nanites"
 	program_type = /datum/nanite_program/blinding
 	category = list("Suppression Nanites")
 
 /datum/design/nanites/mute
-	name = "Mute"
-	desc = "The nanites suppress the host's speech, making them mute while they're active."
+	name = "Немота"
+	desc = "Наниты подавляют речевой центр носителя, тем самым делая его немым."
 	id = "mute_nanites"
 	program_type = /datum/nanite_program/mute
 	category = list("Suppression Nanites")
 
 /datum/design/nanites/voice
-	name = "Skull Echo"
-	desc = "The nanites echo a synthesized message inside the host's skull."
+	name = "Черепной резонанс"
+	desc = "Наниты синтезируют голос внутри головы носителя."
 	id = "voice_nanites"
 	program_type = /datum/nanite_program/comm/voice
 	category = list("Suppression Nanites")
 
 /datum/design/nanites/speech
-	name = "Forced Speech"
-	desc = "The nanites force the host to say a pre-programmed sentence when triggered."
+	name = "Принудительная речь"
+	desc = "Наниты заставляют носителя сказать предустановленную фразу при активации."
 	id = "speech_nanites"
 	program_type = /datum/nanite_program/comm/speech
 	category = list("Suppression Nanites")
 
 /datum/design/nanites/hallucination
-	name = "Hallucination"
-	desc = "The nanites make the host see and hear things that aren't real."
+	name = "Галлюцинации"
+	desc = "Наниты вызывают у носителя галлюцинации при активации."
 	id = "hallucination_nanites"
 	program_type = /datum/nanite_program/comm/hallucination
 	category = list("Suppression Nanites")
 
 /datum/design/nanites/good_mood
-	name = "Happiness Enhancer"
-	desc = "The nanites synthesize serotonin inside the host's brain, creating an artificial sense of happiness."
+	name = "Усилитель счастья"
+	desc = "Наниты синтезируют серотонин в мозге носителя, создавая искусственное ощущение счастья."
 	id = "good_mood_nanites"
 	program_type = /datum/nanite_program/good_mood
 	category = list("Suppression Nanites")
 
 /datum/design/nanites/bad_mood
-	name = "Happiness Suppressor"
-	desc = "The nanites suppress the production of serotonin inside the host's brain, creating an artificial state of depression."
+	name = "Подавитель счастья"
+	desc = "Наниты подавляют синтез серотонина в мозге носителя, создавая искусственное ощущение депрессии."
 	id = "bad_mood_nanites"
 	program_type = /datum/nanite_program/bad_mood
 	category = list("Suppression Nanites")
@@ -485,50 +480,50 @@
 ////////////////////SENSOR NANITES//////////////////////////////////////
 
 /datum/design/nanites/sensor_health
-	name = "Health Sensor"
-	desc = "The nanites receive a signal when the host's health is above/below a certain percentage."
+	name = "Сенсор здоровья"
+	desc = "Наниты отправляют сигнал, когда здоровье носителя выше или ниже установленного процента (носитель в критическом состоянии расценивается как 0%)."
 	id = "sensor_health_nanites"
 	program_type = /datum/nanite_program/sensor/health
 	category = list("Sensor Nanites")
 
 /datum/design/nanites/sensor_damage
-	name = "Damage Sensor"
-	desc = "The nanites receive a signal when a host's specific damage type is above/below a target value."
+	name = "Сенсор урона"
+	desc = "Наниты отправляют сигнал, когда количество определенного типа уровна становится выше или ниже заданного значения."
 	id = "sensor_damage_nanites"
 	program_type = /datum/nanite_program/sensor/damage
 	category = list("Sensor Nanites")
 
 /datum/design/nanites/sensor_crit
-	name = "Critical Health Sensor"
-	desc = "The nanites receive a signal when the host first reaches critical health."
+	name = "Сенсор критического состояния"
+	desc = "Наниты отправляют сигнал, когда здоровье носителя достигает критического состояния."
 	id = "sensor_crit_nanites"
 	program_type = /datum/nanite_program/sensor/crit
 	category = list("Sensor Nanites")
 
 /datum/design/nanites/sensor_death
-	name = "Death Sensor"
-	desc = "The nanites receive a signal when they detect the host is dead."
+	name = "Сенсор смерти"
+	desc = "Наниты отправляют сигнал при смерти носителя."
 	id = "sensor_death_nanites"
 	program_type = /datum/nanite_program/sensor/death
 	category = list("Sensor Nanites")
 
 /datum/design/nanites/sensor_voice
-	name = "Voice Sensor"
-	desc = "Sends a signal when the nanites hear a determined word or sentence."
+	name = "Сенсор голоса"
+	desc = "Отправляет сигнал, когда наниты слышат заданную фразу или слово."
 	id = "sensor_voice_nanites"
 	program_type = /datum/nanite_program/sensor/voice
 	category = list("Sensor Nanites")
 
 /datum/design/nanites/sensor_nanite_volume
-	name = "Nanite Volume Sensor"
-	desc = "The nanites receive a signal when the nanite supply is above/below a certain percentage."
+	name = "Сенсор количества нанитов"
+	desc = "Наниты отпраляют сигнал, когда их количество становится выше или ниже заданного процента, за 0% взят заданный порог безопасности."
 	id = "sensor_nanite_volume"
 	program_type = /datum/nanite_program/sensor/nanite_volume
 	category = list("Sensor Nanites")
 
 /datum/design/nanites/sensor_species
-	name = "Species Sensor"
-	desc = "When triggered, the nanites scan the host to determine their species and output a signal depending on the conditions set in the settings."
+	name = "Сенсор вида"
+	desc = "При активации, наниты сканируют носителя и отправляют сигнал, если вид носителя соответствует заданному в настройках."
 	id = "sensor_species_nanites"
 	program_type = /datum/nanite_program/sensor/species
 	category = list("Sensor Nanites")
@@ -537,15 +532,15 @@
 //Note about the category name: The UI cuts the last 8 characters from the category name to remove the " Nanites" in the other categories
 //Because of this, Protocols was getting cut down to "P", so i had to add some padding
 /datum/design/nanites/kickstart
-	name = "Kickstart Protocol"
-	desc = "Replication Protocol: the nanites focus on early growth, heavily boosting replication rate for a few minutes after the initial implantation."
+	name = "Протокол репликации: Быстрый старт"
+	desc = "Наниты сосредатачиваются на репликации, сильно повышая темп прироста на +3.5 единиц в первые две минуты после внедрения роя."
 	id = "kickstart_nanites"
 	program_type = /datum/nanite_program/protocol/kickstart
 	category = list("Protocols_Nanites")
 
 /datum/design/nanites/factory
-	name = "Factory Protocol"
-	desc = "Replication Protocol: the nanites build a factory matrix within the host, gradually increasing replication speed over time. The factory decays if the protocol is not active."
+	name = "Протокол репликации: Фабрика"
+	desc = "Наниты создают матрицу фабрики репликации внутри носителя, медленно увеличивая скорость репликации. Фабрика выходит на максимальную мощность в +2 единиц через 16,4 минут. Фабрика распадается если протокол отключается, а так же может быть повреждена ЭМИ и ударами тока."
 	id = "factory_nanites"
 	program_type = /datum/nanite_program/protocol/factory
 	category = list("Protocols_Nanites")
@@ -558,8 +553,8 @@
 	category = list("Protocols_Nanites")
 
 /datum/design/nanites/offline
-	name = "Offline Production Protocol"
-	desc = "Replication Protocol: while the host is asleep or otherwise unconcious, the nanites exploit the reduced interference to replicate more quickly."
+	name = "Протокол репликации: Затмение"
+	desc = "Пока носитель спит или находится без сознания, использует освободившиеся ресурсы мозга для ускорения репликации на +3 единицы."
 	id = "offline_nanites"
 	program_type = /datum/nanite_program/protocol/offline
 	category = list("Protocols_Nanites")

@@ -5,7 +5,8 @@
 	research_icon = 'icons/mob/augmentation/augments.dmi'
 
 /datum/design/borg/suit
-	name = "Cyborg Endoskeleton"
+	name = "Эндоскелет киборга"
+	desc = "Сложный металлический каркас со стандартными гнездами для конечностей и креплениями синтетических псевдо-мышц."
 	id = "borg_suit"
 	research_icon_state = "robo_suit"
 	build_path = /obj/item/robot_suit
@@ -13,7 +14,8 @@
 	construction_time = 500
 
 /datum/design/borg/chest
-	name = "Cyborg Torso"
+	name = "Туловище киборга"
+	desc = "Тяжело укрепленный корпус, содержащий логические платы киборга, с отверстием под стандартную ячейку питания."
 	id = "borg_chest"
 	research_icon_state = "borg_chest"
 	build_path = /obj/item/bodypart/chest/robot
@@ -21,7 +23,8 @@
 	construction_time = 350
 
 /datum/design/borg/head
-	name = "Cyborg Head"
+	name = "Голова киборга"
+	desc = "Стандартная укрепленная черепная коробка, с подключаемой к позвоночнику нейронным сокетом и сенсорными стыковочными узлами."
 	id = "borg_head"
 	research_icon_state = "borg_head"
 	build_path = /obj/item/bodypart/head/robot
@@ -29,7 +32,8 @@
 	construction_time = 350
 
 /datum/design/borg/l_arm
-	name = "Cyborg Left Arm"
+	name = "Левая рука киборга"
+	desc = "Скелетная конечность, обернутая в псевдомышцы с низкопроводимостью."
 	id = "borg_l_arm"
 	research_icon_state = "borg_l_arm"
 	build_path = /obj/item/bodypart/l_arm/robot
@@ -37,7 +41,8 @@
 	construction_time = 200
 
 /datum/design/borg/r_arm
-	name = "Cyborg Right Arm"
+	name = "Правая рука киборга"
+	desc = "Скелетная конечность, обернутая в псевдомышцы с низкопроводимостью."
 	id = "borg_r_arm"
 	research_icon_state = "borg_r_arm"
 	build_path = /obj/item/bodypart/r_arm/robot
@@ -45,7 +50,8 @@
 	construction_time = 200
 
 /datum/design/borg/l_leg
-	name = "Cyborg Left Leg"
+	name = "Левая нога киборга"
+	desc = "Скелетная конечность, обернутая в псевдомышцы с низкопроводимостью."
 	id = "borg_l_leg"
 	research_icon_state = "borg_l_leg"
 	build_path = /obj/item/bodypart/leg/left/robot
@@ -53,7 +59,8 @@
 	construction_time = 200
 
 /datum/design/borg/r_leg
-	name = "Cyborg Right Leg"
+	name = "Правая нога киборга"
+	desc = "Скелетная конечность, обернутая в псевдомышцы с низкопроводимостью."
 	id = "borg_r_leg"
 	research_icon_state = "borg_r_leg"
 	build_path = /obj/item/bodypart/leg/right/robot
@@ -157,7 +164,7 @@
 
 //Ripley
 /datum/design/ripley_chassis
-	name = "Exosuit Chassis (APLU \"Ripley\")"
+	name = "Каркас экзокостюма (АПЛУ \"Рипли\")"
 	id = "ripley_chassis"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/chassis/ripley
@@ -176,7 +183,8 @@
 	category = list("Firefighter")
 
 /datum/design/ripley_torso
-	name = "Exosuit Torso (APLU \"Ripley\")"
+	name = "Торс экзокостюма (АПЛУ \"Рипли\")"
+	desc = "Центральная часть АПЛУ Рипли. Содержит блок питания, процессорное ядро и системы жизнеобеспечения."
 	id = "ripley_torso"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/part/ripley_torso
@@ -185,7 +193,7 @@
 	category = list("Ripley","Firefighter")
 
 /datum/design/ripley_left_arm
-	name = "Exosuit Left Arm (APLU \"Ripley\")"
+	name = "Левая рука экзокостюма (АПЛУ \"Рипли\")"
 	id = "ripley_left_arm"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/part/ripley_left_arm
@@ -194,7 +202,7 @@
 	category = list("Ripley","Firefighter")
 
 /datum/design/ripley_right_arm
-	name = "Exosuit Right Arm (APLU \"Ripley\")"
+	name = "Правая рука экзокостюма (АПЛУ \"Рипли\")"
 	id = "ripley_right_arm"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/part/ripley_right_arm
@@ -203,7 +211,7 @@
 	category = list("Ripley","Firefighter")
 
 /datum/design/ripley_left_leg
-	name = "Exosuit Left Leg (APLU \"Ripley\")"
+	name = "Левая нога экзокостюма (АПЛУ \"Рипли\")"
 	id = "ripley_left_leg"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/part/ripley_left_leg
@@ -212,7 +220,7 @@
 	category = list("Ripley","Firefighter")
 
 /datum/design/ripley_right_leg
-	name = "Exosuit Right Leg (APLU \"Ripley\")"
+	name = "Правая нога экзокостюма (АПЛУ \"Рипли\")"
 	id = "ripley_right_leg"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/part/ripley_right_leg
@@ -222,7 +230,7 @@
 
 //Odysseus
 /datum/design/odysseus_chassis
-	name = "Exosuit Chassis (\"Odysseus\")"
+	name = "Каркас экзокостюма (\"Одиссей\")"
 	id = "odysseus_chassis"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/chassis/odysseus
@@ -231,7 +239,7 @@
 	category = list("Odysseus")
 
 /datum/design/odysseus_torso
-	name = "Exosuit Torso (\"Odysseus\")"
+	name = "Торс экзокостюма (\"Одиссей\")"
 	id = "odysseus_torso"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/part/odysseus_torso
@@ -240,7 +248,7 @@
 	category = list("Odysseus")
 
 /datum/design/odysseus_head
-	name = "Exosuit Head (\"Odysseus\")"
+	name = "Голова экзокостюма (\"Одиссей\")"
 	id = "odysseus_head"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/part/odysseus_head
@@ -249,7 +257,7 @@
 	category = list("Odysseus")
 
 /datum/design/odysseus_left_arm
-	name = "Exosuit Left Arm (\"Odysseus\")"
+	name = "Левая рука экзокостюма (\"Одиссей\")"
 	id = "odysseus_left_arm"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/part/odysseus_left_arm
@@ -258,7 +266,7 @@
 	category = list("Odysseus")
 
 /datum/design/odysseus_right_arm
-	name = "Exosuit Right Arm (\"Odysseus\")"
+	name = "Правая рука экзокостюма (\"Одиссей\")"
 	id = "odysseus_right_arm"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/part/odysseus_right_arm
@@ -267,7 +275,7 @@
 	category = list("Odysseus")
 
 /datum/design/odysseus_left_leg
-	name = "Exosuit Left Leg (\"Odysseus\")"
+	name = "Левая нога экзокостюма (\"Одиссей\")"
 	id = "odysseus_left_leg"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/part/odysseus_left_leg
@@ -276,7 +284,7 @@
 	category = list("Odysseus")
 
 /datum/design/odysseus_right_leg
-	name = "Exosuit Right Leg (\"Odysseus\")"
+	name = "Правая нога экзокостюма (\"Одиссей\")"
 	id = "odysseus_right_leg"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/part/odysseus_right_leg
@@ -286,7 +294,7 @@
 
 //Gygax
 /datum/design/gygax_chassis
-	name = "Exosuit Chassis (\"Gygax\")"
+	name = "Каркас экзокостюма (\"Гигакс\")"
 	id = "gygax_chassis"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/chassis/gygax
@@ -295,7 +303,7 @@
 	category = list("Gygax")
 
 /datum/design/gygax_torso
-	name = "Exosuit Torso (\"Gygax\")"
+	name = "Торс экзокостюма (\"Гигакс\")"
 	id = "gygax_torso"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/part/gygax_torso
@@ -304,7 +312,7 @@
 	category = list("Gygax")
 
 /datum/design/gygax_head
-	name = "Exosuit Head (\"Gygax\")"
+	name = "Голова экзокостюма (\"Гигакс\")"
 	id = "gygax_head"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/part/gygax_head
@@ -313,7 +321,7 @@
 	category = list("Gygax")
 
 /datum/design/gygax_left_arm
-	name = "Exosuit Left Arm (\"Gygax\")"
+	name = "Левая рука экзокостюма (\"Гигакс\")"
 	id = "gygax_left_arm"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/part/gygax_left_arm
@@ -322,7 +330,7 @@
 	category = list("Gygax")
 
 /datum/design/gygax_right_arm
-	name = "Exosuit Right Arm (\"Gygax\")"
+	name = "Правая рука экзокостюма (\"Гигакс\")"
 	id = "gygax_right_arm"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/part/gygax_right_arm
@@ -331,7 +339,7 @@
 	category = list("Gygax")
 
 /datum/design/gygax_left_leg
-	name = "Exosuit Left Leg (\"Gygax\")"
+	name = "Левая нога экзокостюма (\"Гигакс\")"
 	id = "gygax_left_leg"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/part/gygax_left_leg
@@ -340,7 +348,7 @@
 	category = list("Gygax")
 
 /datum/design/gygax_right_leg
-	name = "Exosuit Right Leg (\"Gygax\")"
+	name = "Правая нога экзокостюма (\"Гигакс\")"
 	id = "gygax_right_leg"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/part/gygax_right_leg
@@ -349,7 +357,7 @@
 	category = list("Gygax")
 
 /datum/design/gygax_armor
-	name = "Exosuit Armor (\"Gygax\")"
+	name = "Броня экзокостюма (\"Гигакс\")"
 	id = "gygax_armor"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/part/gygax_armor
@@ -359,7 +367,7 @@
 
 //Durand
 /datum/design/durand_chassis
-	name = "Exosuit Chassis (\"Durand\")"
+	name = "Каркас экзокостюма (\"Дюранд\")"
 	id = "durand_chassis"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/chassis/durand
@@ -368,7 +376,7 @@
 	category = list("Durand")
 
 /datum/design/durand_torso
-	name = "Exosuit Torso (\"Durand\")"
+	name = "Торс экзокостюма (\"Дюранд\")"
 	id = "durand_torso"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/part/durand_torso
@@ -377,7 +385,7 @@
 	category = list("Durand")
 
 /datum/design/durand_head
-	name = "Exosuit Head (\"Durand\")"
+	name = "Голова экзокостюма (\"Дюранд\")"
 	id = "durand_head"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/part/durand_head
@@ -386,7 +394,7 @@
 	category = list("Durand")
 
 /datum/design/durand_left_arm
-	name = "Exosuit Left Arm (\"Durand\")"
+	name = "Левая рука экзокостюма (\"Дюранд\")"
 	id = "durand_left_arm"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/part/durand_left_arm
@@ -395,7 +403,7 @@
 	category = list("Durand")
 
 /datum/design/durand_right_arm
-	name = "Exosuit Right Arm (\"Durand\")"
+	name = "Правая рука экзокостюма (\"Дюранд\")"
 	id = "durand_right_arm"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/part/durand_right_arm
@@ -404,7 +412,7 @@
 	category = list("Durand")
 
 /datum/design/durand_left_leg
-	name = "Exosuit Left Leg (\"Durand\")"
+	name = "Левая нога экзокостюма (\"Дюранд\")"
 	id = "durand_left_leg"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/part/durand_left_leg
@@ -413,7 +421,7 @@
 	category = list("Durand")
 
 /datum/design/durand_right_leg
-	name = "Exosuit Right Leg (\"Durand\")"
+	name = "Правая нога экзокостюма (\"Дюранд\")"
 	id = "durand_right_leg"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/part/durand_right_leg
@@ -422,7 +430,7 @@
 	category = list("Durand")
 
 /datum/design/durand_armor
-	name = "Exosuit Armor (\"Durand\")"
+	name = "Броня экзокостюма (\"Дюранд\")"
 	id = "durand_armor"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/part/durand_armor
@@ -432,7 +440,7 @@
 
 //H.O.N.K
 /datum/design/honk_chassis
-	name = "Exosuit Chassis (\"H.O.N.K\")"
+	name = "Каркас экзокостюма (\"Х.О.Н.К\")"
 	id = "honk_chassis"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/chassis/honker
@@ -441,7 +449,7 @@
 	category = list("H.O.N.K")
 
 /datum/design/honk_torso
-	name = "Exosuit Torso (\"H.O.N.K\")"
+	name = "Торс экзокостюма (\"Х.О.Н.К\")"
 	id = "honk_torso"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/part/honker_torso
@@ -450,7 +458,7 @@
 	category = list("H.O.N.K")
 
 /datum/design/honk_head
-	name = "Exosuit Head (\"H.O.N.K\")"
+	name = "Голова экзокостюма (\"Х.О.Н.К\")"
 	id = "honk_head"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/part/honker_head
@@ -459,7 +467,7 @@
 	category = list("H.O.N.K")
 
 /datum/design/honk_left_arm
-	name = "Exosuit Left Arm (\"H.O.N.K\")"
+	name = "Левая рука экзокостюма (\"Х.О.Н.К\")"
 	id = "honk_left_arm"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/part/honker_left_arm
@@ -468,7 +476,7 @@
 	category = list("H.O.N.K")
 
 /datum/design/honk_right_arm
-	name = "Exosuit Right Arm (\"H.O.N.K\")"
+	name = "Правая рука экзокостюма (\"Х.О.Н.К\")"
 	id = "honk_right_arm"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/part/honker_right_arm
@@ -477,7 +485,7 @@
 	category = list("H.O.N.K")
 
 /datum/design/honk_left_leg
-	name = "Exosuit Left Leg (\"H.O.N.K\")"
+	name = "Левая нога экзокостюма (\"Х.О.Н.К\")"
 	id = "honk_left_leg"
 	build_type = MECHFAB
 	build_path =/obj/item/mecha_parts/part/honker_left_leg
@@ -486,7 +494,7 @@
 	category = list("H.O.N.K")
 
 /datum/design/honk_right_leg
-	name = "Exosuit Right Leg (\"H.O.N.K\")"
+	name = "Правая нога экзокостюма (\"Х.О.Н.К\")"
 	id = "honk_right_leg"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/part/honker_right_leg
@@ -497,7 +505,7 @@
 
 //Phazon
 /datum/design/phazon_chassis
-	name = "Exosuit Chassis (\"Phazon\")"
+	name = "Каркас экзокостюма (\"Фазон\")"
 	id = "phazon_chassis"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/chassis/phazon
@@ -506,7 +514,7 @@
 	category = list("Phazon")
 
 /datum/design/phazon_torso
-	name = "Exosuit Torso (\"Phazon\")"
+	name = "Торс экзокостюма (\"Фазон\")"
 	id = "phazon_torso"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/part/phazon_torso
@@ -515,7 +523,7 @@
 	category = list("Phazon")
 
 /datum/design/phazon_head
-	name = "Exosuit Head (\"Phazon\")"
+	name = "Голова экзокостюма (\"Фазон\")"
 	id = "phazon_head"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/part/phazon_head
@@ -524,7 +532,7 @@
 	category = list("Phazon")
 
 /datum/design/phazon_left_arm
-	name = "Exosuit Left Arm (\"Phazon\")"
+	name = "Левая рука экзокостюма (\"Фазон\")"
 	id = "phazon_left_arm"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/part/phazon_left_arm
@@ -533,7 +541,7 @@
 	category = list("Phazon")
 
 /datum/design/phazon_right_arm
-	name = "Exosuit Right Arm (\"Phazon\")"
+	name = "Правая рука экзокостюма (\"Фазон\")"
 	id = "phazon_right_arm"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/part/phazon_right_arm
@@ -542,7 +550,7 @@
 	category = list("Phazon")
 
 /datum/design/phazon_left_leg
-	name = "Exosuit Left Leg (\"Phazon\")"
+	name = "Левая нога экзокостюма (\"Фазон\")"
 	id = "phazon_left_leg"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/part/phazon_left_leg
@@ -551,7 +559,7 @@
 	category = list("Phazon")
 
 /datum/design/phazon_right_leg
-	name = "Exosuit Right Leg (\"Phazon\")"
+	name = "Правая нога экзокостюма (\"Фазон\")"
 	id = "phazon_right_leg"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/part/phazon_right_leg
@@ -560,7 +568,7 @@
 	category = list("Phazon")
 
 /datum/design/phazon_armor
-	name = "Exosuit Armor (\"Phazon\")"
+	name = "Броня экзокостюма (\"Фазон\")"
 	id = "phazon_armor"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/part/phazon_armor
@@ -588,7 +596,8 @@
 	category = list("Exosuit Equipment")
 
 /datum/design/ripleyupgrade
-	name = "Ripley MK-1 to MK-II conversion kit"
+	name = "Комплект модернизации Рипли МК-2"
+	desc = "Комплект модернизации корпуса АПЛУ \"Рипли\" МК-1 в МК-2, предоставляет полную защиту от окружающей среды, в том числе космического вакуума, ценой замедления ходовой части. Модернизация не подлежит деконструкции."
 	id = "ripleyupgrade"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/mecha_equipment/conversion_kit/ripley
@@ -606,7 +615,8 @@
 	category = list("Exosuit Equipment")
 
 /datum/design/mech_drill
-	name = "Exosuit Engineering Equipment (Drill)"
+	name = "Бур экзокостюма"
+	desc = "Оборудование для инженерных и боевых экзокостюмов. Для бурения породы и прочего."
 	id = "mech_drill"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/mecha_equipment/drill
@@ -615,7 +625,8 @@
 	category = list("Exosuit Equipment")
 
 /datum/design/mech_mining_scanner
-	name = "Exosuit Engineering Equipment (Mining Scanner)"
+	name = "Рудный сканер для экзокостюма"
+	desc = "Оборудование для рабочих экзокостюмов. Он автоматически проверит окружающую породу на наличие полезных ископаемых."
 	id = "mech_mscanner"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/mecha_equipment/mining_scanner
@@ -624,7 +635,8 @@
 	category = list("Exosuit Equipment")
 
 /datum/design/mech_extinguisher
-	name = "Exosuit Engineering Equipment (Extinguisher)"
+	name = "Огнетушитель экзокостюма"
+	desc = "Оборудование для инженерных экзокостюмов. Быстродействующий огнетушитель большой мощности."
 	id = "mech_extinguisher"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/mecha_equipment/extinguisher
@@ -644,7 +656,8 @@
 //WS Edit End - Smartwire Revert - Donut TG Marge this
 
 /datum/design/mech_generator
-	name = "Exosuit Equipment (Plasma Generator)"
+	name = "Плазменный реактор экзокостюма"
+	desc = "Модуль экзокостюма, который вырабатывает энергию, используя твердую плазму в качестве топлива. Загрязняет окружающую среду."
 	id = "mech_generator"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/mecha_equipment/generator
@@ -653,7 +666,8 @@
 	category = list("Exosuit Equipment")
 
 /datum/design/mech_mousetrap_mortar
-	name = "H.O.N.K Mousetrap Mortar"
+	name = "Мышеловкометатель"
+	desc = "Оборудование для клоунских экзокостюмов. Запускает заряженные мышеловки."
 	id = "mech_mousetrap_mortar"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/launcher/mousetrap_mortar
@@ -662,7 +676,8 @@
 	category = list("Exosuit Equipment")
 
 /datum/design/mech_banana_mortar
-	name = "H.O.N.K Banana Mortar"
+	name = "Бананомет"
+	desc = "Оборудование для клоунских экзокостюмов. Запускает банановую кожуру."
 	id = "mech_banana_mortar"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/launcher/banana_mortar
@@ -671,7 +686,8 @@
 	category = list("Exosuit Equipment")
 
 /datum/design/mech_honker
-	name = "HoNkER BlAsT 5000"
+	name = "ХоНкЕР БлАсТ 5000"
+	desc = "Оборудование для клоунских экзокостюмов. Распространяет веселье и радость среди всех окружающих. Хонк!"
 	id = "mech_honker"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/mecha_equipment/weapon/honker
@@ -680,7 +696,8 @@
 	category = list("Exosuit Equipment")
 
 /datum/design/mech_punching_glove
-	name = "Oingo Boingo Punch-face"
+	name = "Оинго-Боинго-Лице-Ломатель"
+	desc = "Оборудование для клоунских экзокостюмов. Доставляет удовольствие прямо вам в лицо!"
 	id = "mech_punching_face"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/launcher/punching_glove
@@ -693,7 +710,8 @@
 /////////////////////////////////////////
 
 /datum/design/borg_upgrade_rename
-	name = "Cyborg Upgrade (Rename Board)"
+	name = "Модуль смены имени"
+	desc = "Используется для смены позывного у киборга."
 	id = "borg_upgrade_rename"
 	build_type = MECHFAB
 	build_path = /obj/item/borg/upgrade/rename
@@ -702,7 +720,8 @@
 	category = list("Cyborg Upgrade Modules")
 
 /datum/design/borg_upgrade_restart
-	name = "Cyborg Upgrade (Emergency Reboot Board)"
+	name = "Модуль аварийной перезагрузки"
+	desc = "Используется для форсированной перезагрузки киборга после критических повреждений и запуска операционной системы."
 	id = "borg_upgrade_restart"
 	build_type = MECHFAB
 	build_path = /obj/item/borg/upgrade/restart
@@ -711,7 +730,8 @@
 	category = list("Cyborg Upgrade Modules")
 
 /datum/design/borg_upgrade_thrusters
-	name = "Cyborg Upgrade (Ion Thrusters)"
+	name = "Ионные двигатели"
+	desc = "Модернизация которая позволяет перемещатся в безгравитационном пространстве при помощи миниатюрных двигателей. Потребляет энергию при использовании."
 	id = "borg_upgrade_thrusters"
 	build_type = MECHFAB
 	build_path = /obj/item/borg/upgrade/thrusters
@@ -720,7 +740,8 @@
 	category = list("Cyborg Upgrade Modules")
 
 /datum/design/borg_upgrade_disablercooler
-	name = "Cyborg Upgrade (Rapid Disabler Cooling Module)"
+	name = "Радиатор Усмирителя"
+	desc = "Устанавливает дополнительные системы охлаждения, тем самым повышая скорострельность."
 	id = "borg_upgrade_disablercooler"
 	build_type = MECHFAB
 	build_path = /obj/item/borg/upgrade/disablercooler
@@ -729,7 +750,8 @@
 	category = list("Cyborg Upgrade Modules")
 
 /datum/design/borg_upgrade_diamonddrill
-	name = "Cyborg Upgrade (Diamond Drill)"
+	name = "Алмазный бур"
+	desc = "Заменяет стандартный бур на его продвинутый аналог."
 	id = "borg_upgrade_diamonddrill"
 	build_type = MECHFAB
 	build_path = /obj/item/borg/upgrade/ddrill
@@ -738,7 +760,8 @@
 	category = list("Cyborg Upgrade Modules")
 
 /datum/design/borg_upgrade_holding
-	name = "Cyborg Upgrade (Ore Satchel of Holding)"
+	name = "Безразмерная сумка для руды"
+	desc = "Снимает ограничение емкости для Рудной Сумки."
 	id = "borg_upgrade_holding"
 	build_type = MECHFAB
 	build_path = /obj/item/borg/upgrade/soh
@@ -747,7 +770,8 @@
 	category = list("Cyborg Upgrade Modules")
 
 /datum/design/borg_upgrade_lavaproof
-	name = "Cyborg Upgrade (Lavaproof Tracks)"
+	name = "Лава-стойкие траки"
+	desc = "Дает возможность перемещаться по лаве."
 	id = "borg_upgrade_lavaproof"
 	build_type = MECHFAB
 	build_path = /obj/item/borg/upgrade/lavaproof
@@ -756,7 +780,8 @@
 	category = list("Cyborg Upgrade Modules")
 
 /datum/design/borg_syndicate_module
-	name = "Cyborg Upgrade (Illegal Modules)"
+	name = "Модуль нелегальной модернизации"
+	desc = "Разблокирует Киборгу нелегальные модернизации, это действие не меняет его Законы, но может нарушить работу других устройств (не обязательно)."
 	id = "borg_syndicate_module"
 	build_type = MECHFAB
 	build_path = /obj/item/borg/upgrade/syndicate
@@ -765,7 +790,8 @@
 	category = list("Cyborg Upgrade Modules")
 
 /datum/design/borg_transform_clown
-	name = "Cyborg Upgrade (Clown Module)"
+	name = "Модуль специализации (Клоун)"
+	desc = "Модуль специа@#$# HOONK!"
 	id = "borg_transform_clown"
 	build_type = MECHFAB
 	build_path = /obj/item/borg/upgrade/transform/clown
@@ -774,7 +800,8 @@
 	category = list("Cyborg Upgrade Modules")
 
 /datum/design/borg_upgrade_selfrepair
-	name = "Cyborg Upgrade (Self-repair)"
+	name = "Модуль саморемонта"
+	desc = "Позволяет медленно восстанавливать текущую прочность за счет энергии."
 	id = "borg_upgrade_selfrepair"
 	build_type = MECHFAB
 	build_path = /obj/item/borg/upgrade/selfrepair
@@ -783,7 +810,8 @@
 	category = list("Cyborg Upgrade Modules")
 
 /datum/design/borg_upgrade_expandedsynthesiser
-	name = "Cyborg Upgrade (Hypospray Expanded Synthesiser)"
+	name = "Расширенный медицинский гипоспрей"
+	desc = "Значительно увеличивает диапазон синтезируемых Медицинский Киборгаментов."
 	id = "borg_upgrade_expandedsynthesiser"
 	build_type = MECHFAB
 	build_path = /obj/item/borg/upgrade/hypospray/expanded
@@ -792,7 +820,8 @@
 	category = list("Cyborg Upgrade Modules")
 
 /datum/design/borg_upgrade_piercinghypospray
-	name = "Cyborg Upgrade (Piercing Hypospray)"
+	name = "Пробивающий гипоспрей"
+	desc = "Позволяет колоть химикаты из Гипоспрея сквозь РИГи или другие прочные материалы. Так же поддерживает другие модели киборгов."
 	id = "borg_upgrade_piercinghypospray"
 	build_type = MECHFAB
 	build_path = /obj/item/borg/upgrade/piercing_hypospray
@@ -801,7 +830,8 @@
 	category = list("Cyborg Upgrade Modules")
 
 /datum/design/borg_upgrade_defibrillator
-	name = "Cyborg Upgrade (Defibrillator)"
+	name = "Дефибриллятор"
+	desc = "Позволяет реанимировать людей."
 	id = "borg_upgrade_defibrillator"
 	build_type = MECHFAB
 	build_path = /obj/item/borg/upgrade/defib
@@ -810,7 +840,8 @@
 	category = list("Cyborg Upgrade Modules")
 
 /datum/design/borg_upgrade_surgicalprocessor
-	name = "Cyborg Upgrade (Surgical Processor)"
+	name = "Хирургический процессор"
+	desc = "После синхронизации с Операционный Компьютером позволяет проводить все операции которые были загружены в него"
 	id = "borg_upgrade_surgicalprocessor"
 	build_type = MECHFAB
 	build_path = /obj/item/borg/upgrade/processor
@@ -819,7 +850,8 @@
 	category = list("Cyborg Upgrade Modules")
 
 /datum/design/borg_upgrade_trashofholding
-	name = "Cyborg Upgrade (Trash Bag of Holding)"
+	name = "Безразмерный мешок для мусора"
+	desc = "Снимает ограничение емкости для Мусорного Мешка."
 	id = "borg_upgrade_trashofholding"
 	build_type = MECHFAB
 	build_path = /obj/item/borg/upgrade/tboh
@@ -828,7 +860,8 @@
 	category = list("Cyborg Upgrade Modules")
 
 /datum/design/borg_upgrade_advancedmop
-	name = "Cyborg Upgrade (Advanced Mop)"
+	name = "Экспериментальная швабра"
+	desc = "Заменяет швабру на продвинутую, при активации та начинает со временем собирать влагу из воздуха."
 	id = "borg_upgrade_advancedmop"
 	build_type = MECHFAB
 	build_path = /obj/item/borg/upgrade/amop
@@ -837,7 +870,8 @@
 	category = list("Cyborg Upgrade Modules")
 
 /datum/design/borg_upgrade_expand
-	name = "Cyborg Upgrade (Expand)"
+	name = "Модуль расширения"
+	desc = "Визуально увеличивает Киборга."
 	id = "borg_upgrade_expand"
 	build_type = MECHFAB
 	build_path = /obj/item/borg/upgrade/expand
@@ -846,7 +880,8 @@
 	category = list("Cyborg Upgrade Modules")
 
 /datum/design/boris_ai_controller
-	name = "B.O.R.I.S. AI-Cyborg Remote Control Module"
+	name = "Модуль Б.О.Р.И.С."
+	desc = "Подключает модуль удаленного управления для ИИ. Занимает слот Позитронного Мозга и MMI. Киборг становится оболочкой ИИ с открытым каналом связи."
 	id = "borg_ai_control"
 	build_type = MECHFAB
 	build_path = /obj/item/borg/upgrade/ai
@@ -855,7 +890,8 @@
 	category = list("Misc")
 
 /datum/design/borg_upgrade_rped
-	name = "Cyborg Upgrade (RPED)"
+	name = "Кибернетический РПЕД"
+	desc = "позволяет переносить 50 электронных компонентов, а так же устанавливать их в каркас Машины или Консоли."
 	id = "borg_upgrade_rped"
 	build_type = MECHFAB
 	build_path = /obj/item/borg/upgrade/rped
@@ -864,7 +900,8 @@
 	category = list("Cyborg Upgrade Modules")
 
 /datum/design/borg_upgrade_circuit_app
-	name = "Cyborg Upgrade (Circuit Manipulator)"
+	name = "Манипулятор плат"
+	desc = "Позволяет переносить 1 плату, а так же устанавливать ее в каркас Машины или Консоли."
 	id = "borg_upgrade_circuitapp"
 	build_type = MECHFAB
 	build_path = /obj/item/borg/upgrade/circuit_app
@@ -873,7 +910,8 @@
 	category = list("Cyborg Upgrade Modules")
 
 /datum/design/borg_upgrade_beaker_app
-	name = "Cyborg Upgrade (Beaker Storage)"
+	name = "Дополнительный манипулятор хим посуды"
+	desc = "Если одного недостаточно."
 	id = "borg_upgrade_beakerapp"
 	build_type = MECHFAB
 	build_path = /obj/item/borg/upgrade/beaker_app
@@ -882,7 +920,8 @@
 	category = list("Cyborg Upgrade Modules")
 
 /datum/design/borg_upgrade_pinpointer
-	name = "Cyborg Upgrade (Crew pinpointer)"
+	name = "Монитор жизненных показателей экипажа"
+	desc = "Позволяет наблюдать данные с датчиков жизнеобеспечения аналогично Консоли наблюдения за Экипажем, а так же добавляет трекер для поиска Экипажа."
 	id = "borg_upgrade_pinpointer"
 	build_type = MECHFAB
 	build_path = /obj/item/borg/upgrade/pinpointer
@@ -892,7 +931,8 @@
 
 //Misc
 /datum/design/mecha_tracking
-	name = "Exosuit Tracking Beacon"
+	name = "Сигнальный маяк экзокостюма"
+	desc = "Устройство, используемое для передачи данных о состоянии экзокостюма и удаленного отключения."
 	id = "mecha_tracking"
 	build_type = MECHFAB
 	build_path =/obj/item/mecha_parts/mecha_tracking
@@ -901,7 +941,8 @@
 	category = list("Misc")
 
 /datum/design/mecha_tracking_ai_control
-	name = "AI Control Beacon"
+	name = "Маяк удаленного доступа экзокостюма для ИИ"
+	desc = "Устройство, используемое для передачи данных экзокостюма. Позволяет ИИ взять экзокостюм под прямой контроль."
 	id = "mecha_tracking_ai_control"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/mecha_tracking/ai_control
@@ -910,8 +951,8 @@
 	category = list("Misc")
 
 /datum/design/synthetic_flash
-	name = "Flash"
-	desc = "When a problem arises, SCIENCE is the solution."
+	name = "Вспышка"
+	desc = "Мощное и универсальное устройство со вспышкой, предназначенное для различных применений - от дезориентации злоумышленников до использования их в качестве сенсорных рецепторов при производстве роботов."
 	id = "sflash"
 	build_type = MECHFAB
 	materials = list(/datum/material/iron = 750, /datum/material/glass = 750)
