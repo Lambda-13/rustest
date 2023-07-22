@@ -1290,7 +1290,7 @@
 	id = "fishing rod"
 	name = "Удочка"
 	desc = "Ловись рыбка большая и маленькая."
-	build_type = AUTOLATHE | AWAY_LATHE | MECHFAB
+	build_type = AUTOLATHE | MECHFAB
 	materials = list(/datum/material/iron = 200, /datum/material/glass = 200)
 	build_path = /obj/item/fishing_rod
 	category = list("initial","Misc","Equipment")

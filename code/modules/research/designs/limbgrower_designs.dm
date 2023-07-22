@@ -137,7 +137,7 @@
 	name = "Обезьяний Хвост"
 	id = "monkeytail"
 	build_type = LIMBGROWER
-	reagents_list = list(/datum/reagent/medicine/c2/synthflesh = 20)
+	reagents_list = list(/datum/reagent/medicine/synthflesh = 20)
 	build_path = /obj/item/organ/tail/monkey
 	category = list("other","initial")
 
