@@ -1,12 +1,12 @@
 /obj/machinery/sleep_console
-	name = "sleeper console"
+	name = "консоль слипера"
 	icon = 'icons/obj/machines/sleeper.dmi'
 	icon_state = "console"
 	density = FALSE
 
 /obj/machinery/sleeper
-	name = "sleeper"
-	desc = "An enclosed machine used to stabilize and heal patients."
+	name = "слипер"
+	desc = "Машина похожа на саркофаг, используемая для стабилизации и лечения пациентов."
 	icon = 'icons/obj/machines/sleeper.dmi'
 	icon_state = "sleeper"
 	density = FALSE
@@ -79,8 +79,8 @@
 		icon_state = initial(icon_state)
 
 /obj/machinery/sleeper/container_resist_act(mob/living/user)
-	visible_message("<span class='notice'>[occupant] emerges from [src]!</span>",
-		"<span class='notice'>You climb out of [src]!</span>")
+	visible_message("<span class='notice'>[occupant] выскакивает из [src]!</span>",
+		"<span class='notice'>Открываю крышку [src]!</span>")
 	open_machine()
 
 /obj/machinery/sleeper/Exited(atom/movable/user)
@@ -142,7 +142,7 @@
 		..(user)
 		var/mob/living/mob_occupant = occupant
 		if(mob_occupant && mob_occupant.stat != DEAD)
-			to_chat(occupant, "<span class='notice'><b>You feel cool air surround you. You go numb as your senses turn inward.</b></span>")
+			to_chat(occupant, "<span class='notice'><b>Прохладный воздух обволакивает меня.</b></span>")
 
 /obj/machinery/sleeper/emp_act(severity)
 	. = ..()
@@ -164,7 +164,7 @@
 		replace_chembag(user, W)
 	else if(chembag && istype(W, /obj/item/reagent_containers) && !(W.item_flags & ABSTRACT) && W.is_open_container())
 		user.transferItemToLoc(W, chembag)
-		to_chat(user, "<span class='notice'>You put [W] into [src]'s [chembag].</span>")
+		to_chat(user, "<span class='notice'>Кладу [W] в [chembag] [src].</span>")
 		update_contents()
 	return ..()
 
@@ -176,11 +176,11 @@
 	if(!user)
 		return FALSE
 	if(chembag)
-		to_chat(user, "<span class='notice'>You remove the [chembag] from [src].</span>")
+		to_chat(user, "<span class='notice'>Извлекаю [chembag] из [src].</span>")
 		user.put_in_hands(chembag)
 		chembag = null
 	if(new_bag && user.transferItemToLoc(new_bag, src))
-		to_chat(user, "<span class='notice'>You slot the [new_bag] into [src]'s chemical storage slot.</span>")
+		to_chat(user, "<span class='notice'>Вставляю [new_bag] в слот для хранения химикатов [src].</span>")
 		chembag = new_bag
 	update_contents()
 	return TRUE
@@ -190,10 +190,10 @@
 	if(..())
 		return
 	if(occupant)
-		to_chat(user, "<span class='warning'>[src] is currently occupied!</span>")
+		to_chat(user, "<span class='warning'>Внутри [src] кто-то уже есть!</span>")
 		return
 	if(state_open)
-		to_chat(user, "<span class='warning'>[src] must be closed to [panel_open ? "close" : "open"] its maintenance hatch!</span>")
+		to_chat(user, "<span class='warning'>Крышка [src] должна быть закрыта для [panel_open ? "закрытия" : "закрытия"] технической панели!</span>")
 		return
 	if(default_deconstruction_screwdriver(user, "[initial(icon_state)]-o", initial(icon_state), I))
 		return
@@ -241,8 +241,8 @@
 
 /obj/machinery/sleeper/examine(mob/user)
 	. = ..()
-	. += "<hr><span class='notice'>Alt-клик [src] to [state_open ? "close" : "open"] it.</span>"
-	. += "<hr><span class='notice'>[chembag ? "There is a chembag in the chemical storage slot. It can be removed by Ctrl-clicking." : "It looks like a chembag can be attached to the chemical storage slot."]</span>"
+	. += "<hr><span class='notice'>Alt-клик по [src] для [state_open ? "закрытия" : "открытия"] крышки.</span>"
+	. += "<hr><span class='notice'>[chembag ? "В слоте для хранения химикатов есть сумка с химикатами которую можно извлечь нажав Ctrl-клик." : "Похоже, в отсеку для хранения химикатов можно вставить сумку с химикатами."]</span>"
 
 /obj/machinery/sleeper/ui_data(mob/user)
 	if(src.contains(user) && !controls_inside)

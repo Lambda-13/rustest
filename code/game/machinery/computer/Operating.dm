@@ -2,8 +2,8 @@
 #define MENU_SURGERIES 2
 
 /obj/machinery/computer/operating
-	name = "operating computer"
-	desc = "Monitors patient vitals and displays surgery steps. Can be loaded with surgery disks to perform experimental procedures. Automatically syncs to stasis beds within its line of sight for surgical tech advancement."
+	name = "операционный компьютер"
+	desc = "Контролирует жизненно важные органы пациента и отображает этапы операции. Можно загрузить хирургические диски для проведения экспериментальных операций. Автоматически синхронизируется со стазисными кроватями в пределах прямой видимости для усовершенствования хирургических технологий."
 	icon_screen = "crew"
 	icon_keyboard = "med_key"
 	circuit = /obj/item/circuitboard/computer/operating
@@ -43,9 +43,9 @@
 
 /obj/machinery/computer/operating/attackby(obj/item/O, mob/user, params)
 	if(istype(O, /obj/item/disk/surgery))
-		user.visible_message("<span class='notice'>[user] begins to load \the [O] in [src]...</span>", \
-			"<span class='notice'>You begin to load a surgery protocol from \the [O]...</span>", \
-			"<span class='hear'>You hear the chatter of a floppy drive.</span>")
+		user.visible_message("<span class='notice'>[user] начинает загружать операции из [O] в [src]...</span>", \
+			"<span class='notice'>Загружаю операции с [O]...</span>", \
+			"<span class='hear'>Слышу стук дисковода.</span>")
 		var/obj/item/disk/surgery/D = O
 		if(do_after(user, 10, target = src))
 			advanced_surgeries |= D.surgeries
@@ -63,7 +63,7 @@
 
 /obj/machinery/computer/operating/proc/sync_surgeries()
 	if(!linked_techweb)
-		visible_message("Warning: no linked server!")
+		say("Нет подключения к серверу.")
 		return
 
 	for(var/i in linked_techweb.researched_designs)
@@ -122,16 +122,16 @@
 			return data
 	switch(patient.stat)
 		if(CONSCIOUS)
-			data["patient"]["stat"] = "Conscious"
+			data["patient"]["stat"] = "В сознании"
 			data["patient"]["statstate"] = "good"
 		if(SOFT_CRIT)
-			data["patient"]["stat"] = "Conscious"
+			data["patient"]["stat"] = "В сознании"
 			data["patient"]["statstate"] = "average"
 		if(UNCONSCIOUS, HARD_CRIT)
-			data["patient"]["stat"] = "Unconscious"
+			data["patient"]["stat"] = "Без сознания"
 			data["patient"]["statstate"] = "average"
 		if(DEAD)
-			data["patient"]["stat"] = "Dead"
+			data["patient"]["stat"] = "Мёртв"
 			data["patient"]["statstate"] = "bad"
 	data["patient"]["health"] = patient.health
 	data["patient"]["blood_type"] = patient.dna.blood_type.name

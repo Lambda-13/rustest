@@ -25,7 +25,7 @@ DEFINE_BITFIELD(turret_flags, list(
 ))
 
 /obj/machinery/porta_turret
-	name = "turret"
+	name = "туррель"
 	icon = 'icons/obj/turrets.dmi'
 	icon_state = "turretCover"
 	layer = OBJ_LAYER
@@ -896,7 +896,7 @@ DEFINE_BITFIELD(turret_flags, list(
 /obj/machinery/turretid/examine(mob/user)
 	. += ..()
 	if(issilicon(user) && !(machine_stat & BROKEN))
-		. += {"<span class='notice'>Ctrl-click [src] to [ enabled ? "disable" : "enable"] turrets.</span>
+		. += {"<span class='notice'>Ctrl-клик [src] to [ enabled ? "disable" : "enable"] turrets.</span>
 					<span class='notice'>Alt-клик [src] to set turrets to [ lethal ? "stun" : "kill"].</span>"}
 
 
