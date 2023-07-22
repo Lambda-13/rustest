@@ -141,7 +141,7 @@
 			say("Выдан маяк поддержки.")
 			var/support_beacon = new /obj/item/choice_beacon/support_beacon
 			user.put_in_hands(support_beacon)
-			current_ship.support_beacon == TRUE
+			current_ship.support_beacon = TRUE
 		return
 
 	ui = SStgui.try_update_ui(user, src, ui)
