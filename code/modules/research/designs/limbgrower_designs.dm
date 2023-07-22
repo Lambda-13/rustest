@@ -3,48 +3,48 @@
 /////////////////////////////////////
 
 /datum/design/leftarm
-	name = "Left Arm"
 	id = "l_arm"
+	name = "Левая Рука"
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 25)
 	build_path = /obj/item/bodypart/l_arm
 	category = list("initial",SPECIES_HUMAN,SPECIES_LIZARD,SPECIES_MOTH,SPECIES_PLASMAMAN,SPECIES_ETHEREAL,SPECIES_RACHNID,SPECIES_VOX,SPECIES_KEPORI,SPECIES_ABDUCTOR,SPECIES_FLYPERSON,SPECIES_GOLEM,SPECIES_POD,SPECIES_SKELETON,SPECIES_SNAIL)
 
 /datum/design/rightarm
-	name = "Right Arm"
 	id = "r_arm"
+	name = "Правая Рука"
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 25)
 	build_path = /obj/item/bodypart/r_arm
 	category = list("initial",SPECIES_HUMAN,SPECIES_LIZARD,SPECIES_MOTH,SPECIES_PLASMAMAN,SPECIES_ETHEREAL,SPECIES_RACHNID,SPECIES_VOX,SPECIES_KEPORI,SPECIES_ABDUCTOR,SPECIES_FLYPERSON,SPECIES_GOLEM,SPECIES_POD,SPECIES_SKELETON,SPECIES_SNAIL)
 
 /datum/design/leftleg
-	name = "Left Leg"
 	id = "l_leg"
+	name = "Левая Нога"
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 25)
 	build_path = /obj/item/bodypart/leg/left
 	category = list("initial",SPECIES_HUMAN,SPECIES_LIZARD,SPECIES_MOTH,SPECIES_PLASMAMAN,SPECIES_ETHEREAL,SPECIES_RACHNID,SPECIES_VOX,SPECIES_KEPORI,SPECIES_ABDUCTOR,SPECIES_FLYPERSON,SPECIES_GOLEM,SPECIES_POD,SPECIES_SKELETON,SPECIES_SNAIL)
 
 /datum/design/rightleg
-	name = "Right Leg"
 	id = "r_leg"
+	name = "Правая Нога"
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 25)
 	build_path = /obj/item/bodypart/leg/right
 	category = list("initial",SPECIES_HUMAN,SPECIES_LIZARD,SPECIES_MOTH,SPECIES_PLASMAMAN,SPECIES_ETHEREAL,SPECIES_RACHNID,SPECIES_VOX,SPECIES_KEPORI,SPECIES_ABDUCTOR,SPECIES_FLYPERSON,SPECIES_GOLEM,SPECIES_POD,SPECIES_SKELETON,SPECIES_SNAIL)
 
 /datum/design/digitigrade/leftleg
-	name = "Digitigrade Left Leg"
 	id = "digi_l_leg"
+	name = "Чешуйчатая Левая Нога"
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 25)
 	build_path = /obj/item/bodypart/leg/left/lizard/digitigrade
 	category = list("initial",SPECIES_LIZARD)
 
 /datum/design/digitigrade/rightleg
-	name = "Digitigrade Right Leg"
 	id = "digi_r_leg"
+	name = "Чешуйчатая Правая Нога"
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 25)
 	build_path = /obj/item/bodypart/leg/right/lizard/digitigrade
@@ -53,7 +53,7 @@
 //Non-limb limb designs
 
 /datum/design/heart
-	name = "Heart"
+	name = "Сердце"
 	id = "heart"
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 30)
@@ -61,7 +61,7 @@
 	category = list("initial", SPECIES_HUMAN)
 
 /datum/design/lungs
-	name = "Lungs"
+	name = "Легкие"
 	id = "lungs"
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 20)
@@ -69,7 +69,7 @@
 	category = list("initial",SPECIES_HUMAN)
 
 /datum/design/liver
-	name = "Liver"
+	name = "Печень"
 	id = "liver"
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 20)
@@ -77,7 +77,7 @@
 	category = list("initial",SPECIES_HUMAN)
 
 /datum/design/stomach
-	name = "Stomach"
+	name = "Желудок"
 	id = "stomach"
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 15)
@@ -85,7 +85,7 @@
 	category = list("initial",SPECIES_HUMAN)
 
 /datum/design/appendix
-	name = "Appendix"
+	name = "Аппендикс"
 	id = "appendix"
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 5) //why would you need this
@@ -93,7 +93,7 @@
 	category = list("initial",SPECIES_HUMAN)
 
 /datum/design/eyes
-	name = "Eyes"
+	name = "Глаза"
 	id = "eyes"
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 10)
@@ -101,7 +101,7 @@
 	category = list("initial",SPECIES_HUMAN)
 
 /datum/design/ears
-	name = "Ears"
+	name = "Уши"
 	id = "ears"
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 10)
@@ -109,7 +109,7 @@
 	category = list("initial",SPECIES_HUMAN)
 
 /datum/design/tongue
-	name = "Tongue"
+	name = "Язык"
 	id = "tongue"
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 10)
@@ -118,7 +118,7 @@
 
 // Grows a fake lizard tail - not usable in lizard wine and other similar recipes.
 /datum/design/lizard_tail
-	name = "Lizard Tail"
+	name = "Хвост Ящера"
 	id = "liztail"
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 20)
@@ -126,24 +126,23 @@
 	category = list("initial",SPECIES_LIZARD)
 
 /datum/design/lizard_tongue
-	name = "Forked Tongue"
+	name = "Раздвоенный Язык"
 	id = "liztongue"
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 10)
 	build_path = /obj/item/organ/tongue/lizard
 	category = list("initial",SPECIES_LIZARD)
 
-//  someday this will get uncommented
-// /datum/design/monkey_tail
-// 	name = "Monkey Tail"
-// 	id = "monkeytail"
-// 	build_type = LIMBGROWER
-// 	reagents_list = list(/datum/reagent/medicine/synthflesh = 20)
-// 	build_path = /obj/item/organ/tail/monkey
-// 	category = list("other","initial")
+/datum/design/monkey_tail
+	name = "Обезьяний Хвост"
+	id = "monkeytail"
+	build_type = LIMBGROWER
+	reagents_list = list(/datum/reagent/medicine/c2/synthflesh = 20)
+	build_path = /obj/item/organ/tail/monkey
+	category = list("other","initial")
 
 /datum/design/cat_tail
-	name = "Cat Tail"
+	name = "Кошачий Хвост"
 	id = "cattail"
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 20)
@@ -151,7 +150,7 @@
 	category = list("initial",SPECIES_HUMAN)
 
 /datum/design/cat_ears
-	name = "Cat Ears"
+	name = "Кошачьи Уши"
 	id = "catears"
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 10)
@@ -183,7 +182,7 @@
 	category = list("initial",SPECIES_LIZARD)
 
 /datum/design/plasmaman_lungs
-	name = "Plasma Filter"
+	name = "Плазменный Фильтр"
 	id = "plasmamanlungs"
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 20, /datum/reagent/toxin/plasma = 20)
@@ -191,7 +190,7 @@
 	category = list("initial",SPECIES_PLASMAMAN)
 
 /datum/design/plasmaman_tongue
-	name = "Plasma Bone Tongue"
+	name = "Плазменный Костяной Язык"
 	id = "plasmamantongue"
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 10, /datum/reagent/toxin/plasma = 10)
@@ -199,7 +198,7 @@
 	category = list("initial",SPECIES_PLASMAMAN)
 
 /datum/design/plasmaman_liver
-	name = "Reagent Processing Crystal"
+	name = "Кристалл для обработки реагентов"
 	id = "plasmamanliver"
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 20, /datum/reagent/toxin/plasma = 20)
@@ -207,7 +206,7 @@
 	category = list("initial",SPECIES_PLASMAMAN)
 
 /datum/design/plasmaman_stomach
-	name = "Digestive Crystal"
+	name = "Пищеварительный кристалл"
 	id = "plasmamanstomach"
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 20, /datum/reagent/toxin/plasma = 20)
@@ -215,7 +214,7 @@
 	category = list("initial",SPECIES_PLASMAMAN)
 
 /datum/design/ethereal_stomach
-	name = "Biological Battery"
+	name = "Биохимическая батарея"
 	id = "etherealstomach"
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 20, /datum/reagent/consumable/liquidelectricity = 20)
@@ -223,7 +222,7 @@
 	category = list("initial",SPECIES_ETHEREAL)
 
 /datum/design/ethereal_tongue
-	name = "Ethereal Tongue"
+	name = "Электрический разрядник"
 	id = "etherealtongue"
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 10, /datum/reagent/consumable/liquidelectricity = 10)
@@ -432,7 +431,7 @@
 	category = list("initial",SPECIES_XENOMORPH)
 
 /datum/design/armblade
-	name = "Arm Blade"
+	name = "Рука-лезвие"
 	id = "armblade"
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 75)
@@ -468,10 +467,11 @@
 	desc += " This one contains designs for [race] anatomy."
 
 /datum/design/limb_disk
-	name = "Limb Design Disk"
-	desc = "Contains designs for various limbs and organs."
+	name = "Диск для Биосинтезатора"
+	desc = "Диск, содержащий данные для выращивания конечностей и органов для Биосинтезатора."
 	id = "limbdesign_parent"
-	build_type = PROTOLATHE
+	build_type = PROTOLATHE | MECHFAB
+	construction_time = 40
 	materials = list(/datum/material/iron = 300, /datum/material/glass = 100)
 	build_path = /obj/item/disk/design_disk/limbs
 	category = list("Medical Designs")

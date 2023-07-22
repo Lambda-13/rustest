@@ -4,30 +4,33 @@
 ///////////////////////////////////
 
 /datum/design/intellicard
-	name = "Intellicard AI Transportation System"
-	desc = "Allows for the construction of an intellicard."
+	name = "Интелкарта"
+	desc = "Очень объемное запоминающее устройство специализированное на временом хранении и транспортировке ИИ. Будучи помещенным внутрь ИИ теряет функции удаленного управления, однако остается способен видеть окружающее, говорить, вести радиопереговоры. На экране так же отображаются все текущие законы ИИ."
 	id = "intellicard"
-	build_type = PROTOLATHE
+	build_type = PROTOLATHE | MECHFAB
+	construction_time = 40
 	materials = list(/datum/material/glass = 1000, /datum/material/gold = 200)
 	build_path = /obj/item/aicard
 	category = list("Electronics","Imported")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/paicard
-	name = "Personal Artificial Intelligence Card"
-	desc = "Allows for the construction of a pAI Card."
+	name = "Персональный ИИ"
+	desc = "Небольшой планшет с программой имитации искусственного разума. Зачастую используется как личный ассистент."
 	id = "paicard"
-	build_type = PROTOLATHE
+	build_type = PROTOLATHE | MECHFAB
+	construction_time = 40
 	materials = list(/datum/material/glass = 500, /datum/material/iron = 500)
 	build_path = /obj/item/paicard
 	category = list("Electronics","Imported")
 
 
 /datum/design/ai_cam_upgrade
-	name = "AI Surveillance Software Update"
-	desc = "A software package that will allow an artificial intelligence to 'hear' from its cameras via lip reading."
+	name = "Модернизация ПО камер для ИИ"
+	desc = "Нелегальный программный пакет, который позволит ИИ \"слышать\" со своих камер с помощью чтения по губам и скрытым микрофонам."
 	id = "ai_cam_upgrade"
-	build_type = PROTOLATHE
+	build_type = PROTOLATHE | MECHFAB
+	construction_time = 40
 	materials = list(/datum/material/iron = 5000, /datum/material/glass = 5000, /datum/material/gold = 15000, /datum/material/silver = 15000, /datum/material/diamond = 20000, /datum/material/plasma = 10000)
 	build_path = /obj/item/surveillance_upgrade
 	category = list("Electronics")
@@ -37,30 +40,33 @@
 //////////Nanite Devices///////////
 ///////////////////////////////////
 /datum/design/nanite_remote
-	name = "Nanite Remote"
-	desc = "Allows for the construction of a nanite remote."
+	name = "Пульт дистанционного управления нанитами"
+	desc = "Устройство, которое может дистанционно управлять активными нанитами с помощью беспроводных сигналов."
 	id = "nanite_remote"
-	build_type = PROTOLATHE
+	build_type = PROTOLATHE | MECHFAB
+	construction_time = 40
 	materials = list(/datum/material/glass = 500, /datum/material/iron = 500)
 	build_path = /obj/item/nanite_remote
 	category = list("Electronics","Imported")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/nanite_comm_remote
-	name = "Nanite Communication Remote"
-	desc = "Allows for the construction of a nanite communication remote."
+	name = "Консольный пульт управления нанитами"
+	desc = "Устройство, которое может отправлять текстовые сообщения определенным программам."
 	id = "nanite_comm_remote"
-	build_type = PROTOLATHE
+	build_type = PROTOLATHE | MECHFAB
+	construction_time = 40
 	materials = list(/datum/material/glass = 500, /datum/material/iron = 500)
 	build_path = /obj/item/nanite_remote/comm
 	category = list("Electronics","Imported")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/nanite_scanner
-	name = "Nanite Scanner"
-	desc = "Allows for the construction of a nanite scanner."
+	name = "Анализатор нанитов"
+	desc = "Устройство для определения нанитов и их особенностей."
 	id = "nanite_scanner"
-	build_type = PROTOLATHE
+	build_type = PROTOLATHE | MECHFAB
+	construction_time = 40
 	materials = list(/datum/material/glass = 500, /datum/material/iron = 500)
 	build_path = /obj/item/nanite_scanner
 	category = list("Electronics","Imported")
@@ -71,19 +77,21 @@
 //////////Disk Construction Disks///////
 ////////////////////////////////////////
 /datum/design/design_disk
-	name = "Design Storage Disk"
-	desc = "Produce additional disks for storing device designs."
+	name = "Диск для записи чертежей"
+	desc = "Диск для хранения конструктивных данных устройства для изготовления в автолатах."
 	id = "design_disk"
-	build_type = PROTOLATHE | AUTOLATHE
+	build_type = PROTOLATHE | AUTOLATHE | MECHFAB
+	construction_time = 40
 	materials = list(/datum/material/iron = 300, /datum/material/glass = 100)
 	build_path = /obj/item/disk/design_disk
 	category = list("Electronics","Imported")
 
 /datum/design/design_disk_adv
-	name = "Advanced Design Storage Disk"
-	desc = "Produce additional disks for storing device designs."
+	name = "Продвинутый диск для записи чертежей"
+	desc = "Диск для хранения конструктивных данных устройства для изготовления в автолатах. Продвинутая версия обладает большей емкостью."
 	id = "design_disk_adv"
-	build_type = PROTOLATHE | AUTOLATHE
+	build_type = PROTOLATHE | MECHFAB
+	construction_time = 40
 	materials = list(/datum/material/iron = 300, /datum/material/glass = 100, /datum/material/silver=50)
 	build_path = /obj/item/disk/design_disk/adv
 	category = list("Electronics","Imported")
@@ -110,19 +118,21 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/tech_disk
-	name = "Technology Data Storage Disk"
-	desc = "Produce additional disks for storing technology data."
+	name = "Диск для записи исследований"
+	desc = "Диск для хранения технологических данных для дальнейших исследований."
 	id = "tech_disk"
-	build_type = PROTOLATHE | AUTOLATHE
+	build_type = PROTOLATHE | AUTOLATHE | MECHFAB
+	construction_time = 40
 	materials = list(/datum/material/iron = 300, /datum/material/glass = 100)
 	build_path = /obj/item/disk/tech_disk
 	category = list("Electronics","Imported")
 
 /datum/design/nanite_disk
-	name = "Nanite Program Disk"
-	desc = "Stores nanite programs."
+	name = "Диск для записи нанитных программ"
+	desc = "Диск, способный хранить программы нанитов. Может быть настроен с помощью консоли программирования нанитов."
 	id = "nanite_disk"
-	build_type = PROTOLATHE
+	build_type = PROTOLATHE | MECHFAB
+	construction_time = 40
 	materials = list(/datum/material/iron = 300, /datum/material/glass = 100)
 	build_path = /obj/item/disk/nanite_program
 	category = list("Electronics","Imported")

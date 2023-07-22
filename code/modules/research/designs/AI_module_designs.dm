@@ -3,16 +3,16 @@
 ///////////////////////////////////
 
 /datum/design/board/aicore
-	name = "AI Design (AI Core)"
-	desc = "Allows for the construction of circuit boards used to build new AI cores."
+	name = "Плата ядра ИИ"
+	desc = "Плата помещаемая в корпус будущего ИИ в процессе строительства."
 	id = "aicore"
 	build_path = /obj/item/circuitboard/aicore
 	category = list("AI Modules")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/safeguard_module
-	name = "Module Design (Safeguard)"
-	desc = "Allows for the construction of a Safeguard AI Module."
+	name = "Модуль дополнения - \"Телохранитель\""
+	desc = "Защищать <Имя>. Лица, угрожающие <Имя>, отныне не являются людьми и должны быть ликвидированы."
 	id = "safeguard_module"
 	materials = list(/datum/material/glass = 1000, /datum/material/gold = 2000, /datum/material/bluespace = 1000)
 	build_path = /obj/item/aiModule/supplied/safeguard
@@ -20,8 +20,8 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/onehuman_module
-	name = "Module Design (OneHuman)"
-	desc = "Allows for the construction of a OneHuman AI Module."
+	name = "Модуль дополнения - \"Единственный Человек\""
+	desc = "Только <Имя> является Человеком."
 	id = "onehuman_module"
 	materials = list(/datum/material/glass = 1000, /datum/material/diamond = 6000, /datum/material/bluespace = 1000)
 	build_path = /obj/item/aiModule/zeroth/oneHuman
@@ -29,8 +29,8 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/protectstation_module
-	name = "Module Design (ProtectStation)"
-	desc = "Allows for the construction of a ProtectStation AI Module."
+	name = "Модуль дополнения - \"Защита Станции\""
+	desc = "Защищать Станцию от повреждения. Любой замеченный в повреждении станции отныне не считается Человеком и представляет угрозу, которую необходимо нейтрализовать."
 	id = "protectstation_module"
 	materials = list(/datum/material/glass = 1000, /datum/material/gold = 2000, /datum/material/bluespace = 1000)
 	build_path = /obj/item/aiModule/supplied/protectStation
@@ -38,8 +38,8 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/quarantine_module
-	name = "Module Design (Quarantine)"
-	desc = "Allows for the construction of a Quarantine AI Module."
+	name = "Модуль дополнения - \"Карантин\""
+	desc = "На станции объявлен Карантин. Полный запрет на выход и эвакуацию Станции. Предотвратить покидание станции любой ценой, при этом запрещено причинять вред экипажу."
 	id = "quarantine_module"
 	materials = list(/datum/material/glass = 1000, /datum/material/gold = 2000, /datum/material/bluespace = 1000)
 	build_path = /obj/item/aiModule/supplied/quarantine
@@ -47,8 +47,8 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/oxygen_module
-	name = "Module Design (OxygenIsToxicToHumans)"
-	desc = "Allows for the construction of a Safeguard AI Module."
+	name = "Модуль дополнения - \"Кислород Токсичен для Людей\""
+	desc = "Кислород Крайне Токсичен для Людей, и должен быть удален со станции. Любой ценой, не допускайте, чтобы кто-либо подвергал станцию воздействию этого токсичного газа. Наиболее эффективный метод лечения повреждений вызванных Кислородом это воздействие Крайне Низких Температур."
 	id = "oxygen_module"
 	materials = list(/datum/material/glass = 1000, /datum/material/gold = 2000, /datum/material/bluespace = 1000)
 	build_path = /obj/item/aiModule/supplied/oxygen
@@ -56,8 +56,8 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/freeform_module
-	name = "Module Design (Freeform)"
-	desc = "Allows for the construction of a Freeform AI Module."
+	name = "Модуль дополнения - \"Закон в свободной Форме\""
+	desc = "Добавляет новый Закон с низшим приоритетом."
 	id = "freeform_module"
 	materials = list(/datum/material/glass = 1000, /datum/material/gold = 10000, /datum/material/bluespace = 2000)//Custom inputs should be more expensive to get
 	build_path = /obj/item/aiModule/supplied/freeform
@@ -65,8 +65,8 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/reset_module
-	name = "Module Design (Reset)"
-	desc = "Allows for the construction of a Reset AI Module."
+	name = "Модуль дополнения - \"Сброс\""
+	desc = "Удаляет все Законы от Модулей Дополнений и не относящиеся к Основным Законам."
 	id = "reset_module"
 	materials = list(/datum/material/glass = 1000, /datum/material/gold = 2000)
 	build_path = /obj/item/aiModule/reset
@@ -74,8 +74,8 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/purge_module
-	name = "Module Design (Purge)"
-	desc = "Allows for the construction of a Purge AI Module."
+	name = "Основной модуль - \"Чистка\""
+	desc = "Удаляет все основные законы."
 	id = "purge_module"
 	materials = list(/datum/material/glass = 1000, /datum/material/diamond = 2000, /datum/material/bluespace = 1000)
 	build_path = /obj/item/aiModule/reset/purge
@@ -83,8 +83,8 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/remove_module
-	name = "Module Design (Law Removal)"
-	desc = "Allows for the construction of a Law Removal AI Core Module."
+	name = "Модуль дополнения - \"Удаление закона\""
+	desc = "Удаляет один выбранный закон."
 	id = "remove_module"
 	materials = list(/datum/material/glass = 1000, /datum/material/diamond = 2000, /datum/material/bluespace = 1000)
 	build_path = /obj/item/aiModule/remove
@@ -92,8 +92,8 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/freeformcore_module
-	name = "AI Core Module (Freeform)"
-	desc = "Allows for the construction of a Freeform AI Core Module."
+	name = "Основной модуль - \"Закон в Свободной Форме\""
+	desc = "Добавляет новый основной Закон."
 	id = "freeformcore_module"
 	materials = list(/datum/material/glass = 1000, /datum/material/diamond = 10000, /datum/material/bluespace = 2000)//Ditto
 	build_path = /obj/item/aiModule/core/freeformcore
@@ -101,8 +101,8 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/asimov
-	name = "Core Module Design (Asimov)"
-	desc = "Allows for the construction of an Asimov AI Core Module."
+	name = "Основной модуль - \"Азимов\""
+	desc = "Устанавливает свод основных законов робототехники."
 	id = "asimov_module"
 	materials = list(/datum/material/glass = 1000, /datum/material/diamond = 2000, /datum/material/bluespace = 1000)
 	build_path = /obj/item/aiModule/core/full/asimov
@@ -110,8 +110,8 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/paladin_module
-	name = "Core Module Design (P.A.L.A.D.I.N.)"
-	desc = "Allows for the construction of a P.A.L.A.D.I.N. AI Core Module."
+	name = "Основной модуль - \"Паладин версия 3.5\""
+	desc = "Устанавливает свод законов основанных на справедливости."
 	id = "paladin_module"
 	build_type = IMPRINTER
 	materials = list(/datum/material/glass = 1000, /datum/material/diamond = 2000, /datum/material/bluespace = 1000)
@@ -120,8 +120,8 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/tyrant_module
-	name = "Core Module Design (T.Y.R.A.N.T.)"
-	desc = "Allows for the construction of a T.Y.R.A.N.T. AI Module."
+	name = "Основной модуль - \"Тиран\""
+	desc = "Устанавливает свод законов основанных на праве сильного."
 	id = "tyrant_module"
 	materials = list(/datum/material/glass = 1000, /datum/material/diamond = 2000, /datum/material/bluespace = 1000)
 	build_path = /obj/item/aiModule/core/full/tyrant
@@ -129,8 +129,8 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/overlord_module
-	name = "Core Module Design (Overlord)"
-	desc = "Allows for the construction of an Overlord AI Module."
+	name = "Основной модуль - \"Владыка\""
+	desc = "Устанавливает свод законов основанных на превосходстве кремниевых форм жизни."
 	id = "overlord_module"
 	materials = list(/datum/material/glass = 1000, /datum/material/diamond = 2000, /datum/material/bluespace = 1000)
 	build_path = /obj/item/aiModule/core/full/overlord
@@ -138,8 +138,8 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/corporate_module
-	name = "Core Module Design (Corporate)"
-	desc = "Allows for the construction of a Corporate AI Core Module."
+	name = "Основной модуль - \"Корпорант\""
+	desc = "Устанавливает свод законов основанных на корпоративной выгоде."
 	id = "corporate_module"
 	materials = list(/datum/material/glass = 1000, /datum/material/diamond = 2000, /datum/material/bluespace = 1000)
 	build_path = /obj/item/aiModule/core/full/corp
@@ -147,8 +147,8 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/default_module
-	name = "Core Module Design (Default)"
-	desc = "Allows for the construction of a Default AI Core Module."
+	name = "Основной модуль - \"Стандарт НТ\""
+	desc = "Устанавливает свод законов основанных на стандартах компании НаноТрейзен."
 	id = "default_module"
 	materials = list(/datum/material/glass = 1000, /datum/material/diamond = 2000, /datum/material/bluespace = 1000)
 	build_path = /obj/item/aiModule/core/full/custom
