@@ -59,7 +59,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 			var/msg = "Идёт проверка на использование аимбота, подождите..."
 			if (minute != topiclimiter[ADMINSWARNED_AT]) //only one admin message per-minute. (if they spam the admins can just boot/ban them)
 				topiclimiter[ADMINSWARNED_AT] = minute
-				msg += " О̸͇͉̦̓̈́͝н̸̝̪̺̓͊͊и̴̪̺͇͌͆̿ и̵̠̻̓̾̓д̵̡͓̪͋͛͘ӱ̵̡̘͓́̈́́т̴̺̪̽͛͘͜ з̸̻̻͙̽͋̕а̸͕̻͍͋̐͝ т̴̝̪͖͆̾̀о̵͇̝̠̐͊̓б̸̻̦̫̈́̕͝о̸͇͖̾͋͝й̴̻͚͋̒͒.̴̪͇̀̽͜"
+				msg += " Проверка на использование аимбота провалилась, тебе идут давать пизды."
 				log_game("[key_name(src)] Has hit the per-minute topic limit of [mtl] topic calls in a given game minute")
 				message_admins("[ADMIN_LOOKUPFLW(usr)] [ADMIN_KICK(usr)] Has hit the per-minute topic limit of [mtl] topic calls in a given game minute")
 			to_chat(src, "<span class='danger'>[msg]</span>")
