@@ -699,7 +699,7 @@
 	name = "Продвинутая удочка"
 	desc = "Встроенный универсальный синтезатор наживки позволяет этому чуду техники обходиться без в лишних запасов. Межзвездные соглашения запрещают использовать его за пределами любительского рыболовства. И вы можете ловить рыбу с помощью этого."
 	id = "fishing_rod_tech"
-	build_type = PROTOLATHE | AWAY_LATHE | MECHFAB
+	build_type = PROTOLATHE | AUTOLATHE | MECHFAB
 	materials = list(/datum/material/uranium = 1000, /datum/material/plastic = 2000)
 	build_path = /obj/item/fishing_rod/tech
-	category = list("Equipment")
+	category = list("Equipment","Imported")
