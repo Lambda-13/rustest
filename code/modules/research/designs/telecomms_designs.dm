@@ -3,65 +3,81 @@
 ///////////////////////////////////
 
 /datum/design/board/subspace_receiver
-	name = "Machine Design (Subspace Receiver)"
-	desc = "Allows for the construction of Subspace Receiver equipment."
+	name = "Подпространственный приемник"
+	desc = "Эта машина имеет форму тарелкообразной приемной антенны и зеленые огоньки. Предназначена для приема и обработки подпространственного радиосигнала."
 	id = "s-receiver"
+	build_type = IMPRINTER | MECHFAB
+	construction_time = 40
 	build_path = /obj/item/circuitboard/machine/telecomms/receiver
 	category = list("Subspace Telecomms")
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/telecomms_bus
-	name = "Machine Design (Bus Mainframe)"
-	desc = "Allows for the construction of Telecommunications Bus Mainframes."
+	name = "Мэйнфрейм шины"
+	desc = "Мощное аппаратное обеспечение, используемое для быстрой передачи огромных объемов данных и связывание машин в общую сеть."
 	id = "s-bus"
+	build_type = IMPRINTER | MECHFAB
+	construction_time = 40
 	build_path = /obj/item/circuitboard/machine/telecomms/bus
 	category = list("Subspace Telecomms")
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/telecomms_hub
-	name = "Machine Design (Hub Mainframe)"
-	desc = "Allows for the construction of Telecommunications Hub Mainframes."
+	name = "Телекоммуникационный узел"
+	desc = "Мощное аппаратное обеспечение, используемое для отправки / приема огромных объемов данных."
 	id = "s-hub"
+	build_type = IMPRINTER | MECHFAB
+	construction_time = 40
 	build_path = /obj/item/circuitboard/machine/telecomms/hub
 	category = list("Subspace Telecomms")
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/telecomms_relay
-	name = "Machine Design (Relay Mainframe)"
-	desc = "Allows for the construction of Telecommunications Relay Mainframes."
+	name = "Телекоммуникационный ретранслятор"
+	desc = "Мощное аппаратное обеспечение, используемое для передачи огромных объемов данных на огромное расстояние."
 	id = "s-relay"
+	build_type = IMPRINTER | MECHFAB
+	construction_time = 40
 	build_path = /obj/item/circuitboard/machine/telecomms/relay
 	category = list("Subspace Telecomms")
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/telecomms_processor
-	name = "Machine Design (Processor Unit)"
-	desc = "Allows for the construction of Telecommunications Processor equipment."
+	name = "Процессорный блок"
+	desc = "Эта машина используется для обработки больших объемов информации."
 	id = "s-processor"
+	build_type = IMPRINTER | MECHFAB
+	construction_time = 40
 	build_path = /obj/item/circuitboard/machine/telecomms/processor
 	category = list("Subspace Telecomms")
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/telecomms_server
-	name = "Machine Design (Server Mainframe)"
-	desc = "Allows for the construction of Telecommunications Servers."
+	name = "Телекоммуникационный сервер"
+	desc = "Машина, используемая для хранения данных и сетевой статистики."
 	id = "s-server"
+	build_type = IMPRINTER | MECHFAB
+	construction_time = 40
 	build_path = /obj/item/circuitboard/machine/telecomms/server
 	category = list("Subspace Telecomms")
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/telecomms_messaging
-	name = "Machine Design (Messaging Server)"
-	desc = "Allows for the construction of Telecommunications Messaging Servers."
+	name = "Сервер месенджера"
+	desc = "Машина, которая обрабатывает и маршрутизирует сообщения КПК и запрашивает консольные сообщения."
 	id = "s-messaging"
+	build_type = IMPRINTER | MECHFAB
+	construction_time = 40
 	build_path = /obj/item/circuitboard/machine/telecomms/message_server
 	category = list("Subspace Telecomms")
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/subspace_broadcaster
-	name = "Machine Design (Subspace Broadcaster)"
-	desc = "Allows for the construction of Subspace Broadcasting equipment."
+	name = "Подпространственный вещатель"
+	desc = "Машина в форме тарелки, используемая для передачи обработанных подпространственных сигналов."
 	id = "s-broadcaster"
+	build_type = IMPRINTER | MECHFAB
+	construction_time = 40
 	build_path = /obj/item/circuitboard/machine/telecomms/broadcaster
 	category = list("Subspace Telecomms")
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE

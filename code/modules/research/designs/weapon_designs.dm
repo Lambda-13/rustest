@@ -2,86 +2,102 @@
 /////////////////Weapons/////////////////
 /////////////////////////////////////////
 
+//	РЕВОЛЬВЕР
 /datum/design/c38/sec
 	id = "sec_38"
-	build_type = PROTOLATHE
 	category = list("Ammo")
+	build_type = PROTOLATHE | MECHFAB
+	construction_time = 20
 
 /datum/design/c38_trac
-	name = "Speed Loader (.38 TRAC)"
-	desc = "Designed to quickly reload revolvers. TRAC bullets embed a tracking implant within the target's body."
+	name = "Скорозарядник .38 калибра: Следящий"
+	desc = "Предназначен для быстрой перезарядки старомодных револьверов. Содержит в себе следящий микроимплант. Сильно слабее стандартных пуль."
 	id = "c38_trac"
-	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 20000, /datum/material/silver = 5000, /datum/material/gold = 1000)
+	build_type = PROTOLATHE | MECHFAB
+	construction_time = 20
+	materials = list(/datum/material/iron = 10000, /datum/material/silver = 5000, /datum/material/gold = 1000)
 	build_path = /obj/item/ammo_box/c38/trac
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_BALLISTICS
 
 /datum/design/c38_hotshot
-	name = "Speed Loader (.38 Hot Shot)"
-	desc = "Designed to quickly reload revolvers. Hot Shot bullets contain an incendiary payload."
+	name = "Скорозарядник .38 калибра: Зажигательный"
+	desc = "Предназначен для быстрой перезарядки старомодных револьверов. При удачном попадании поджигает цель. Немного слабее стандартных пуль."
 	id = "c38_hotshot"
-	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 20000, /datum/material/plasma = 5000)
+	build_type = PROTOLATHE | MECHFAB
+	construction_time = 20
+	materials = list(/datum/material/iron = 10000, /datum/material/plasma = 5000)
 	build_path = /obj/item/ammo_box/c38/hotshot
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_BALLISTICS
 
 /datum/design/c38_iceblox
-	name = "Speed Loader (.38 Iceblox)"
-	desc = "Designed to quickly reload revolvers. Iceblox bullets contain a cryogenic payload."
+	name = "Скорозарядник .38 калибра: Замораживающий"
+	desc = "Предназначен для быстрой перезарядки старомодных револьверов. При удачном попадании замораживает цель. Немного слабее стандартных пуль."
 	id = "c38_iceblox"
-	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 20000, /datum/material/plasma = 5000)
+	build_type = PROTOLATHE | MECHFAB
+	construction_time = 20
+	materials = list(/datum/material/iron = 10000, /datum/material/plasma = 5000)
 	build_path = /obj/item/ammo_box/c38/iceblox
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_BALLISTICS
 
+//  РУЖЬЯ
 /datum/design/rubbershot/sec
+	name = "12 Калибр: Резиновая картечь"
 	id = "sec_rshot"
-	build_type = PROTOLATHE
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_BALLISTICS
+	build_type = PROTOLATHE | MECHFAB
+	construction_time = 10
 
 /datum/design/beanbag_slug/sec
+	name = "12 Калибр: Резиновая пуля"
 	id = "sec_beanbag_slug"
-	build_type = PROTOLATHE
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_BALLISTICS
+	build_type = PROTOLATHE | MECHFAB
+	construction_time = 10
 
 /datum/design/shotgun_slug/sec
 	id = "sec_slug"
-	build_type = PROTOLATHE
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_BALLISTICS
+	build_type = PROTOLATHE | MECHFAB
+	construction_time = 10
 
 /datum/design/shotgun_dart/sec
 	id = "sec_dart"
-	build_type = PROTOLATHE
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_BALLISTICS
+	build_type = PROTOLATHE | MECHFAB
+	construction_time = 10
 
 /datum/design/incendiary_slug/sec
 	id = "sec_Islug"
-	build_type = PROTOLATHE
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_BALLISTICS
+	build_type = PROTOLATHE | MECHFAB
+	construction_time = 10
 
+//  Ударники
 /datum/design/pin_testing
-	name = "Test-Range Firing Pin"
-	desc = "This safety firing pin allows firearms to be operated within proximity to a firing range."
+	name = "Боек для практики"
+	desc = "Данный ударник позволяет протестировать оружие на тестовой площадке. В ином месте это не будет работать."
 	id = "pin_testing"
-	build_type = PROTOLATHE
+	build_type = PROTOLATHE | MECHFAB
+	construction_time = 30
 	materials = list(/datum/material/iron = 500, /datum/material/glass = 300)
 	build_path = /obj/item/firing_pin/test_range
 	category = list("Firing Pins")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/pin_mindshield
-	name = "Mindshield Firing Pin"
-	desc = "This is a security firing pin which only authorizes users who are mindshield-implanted."
+	name = "Боек с щитом разума"
+	desc = "Этот защитный ударник позволяет использовать оружие только тем, кто имплантировал себе «щит разума»."
 	id = "pin_loyalty"
-	build_type = PROTOLATHE
+	build_type = PROTOLATHE | MECHFAB
+	construction_time = 30
 	materials = list(/datum/material/silver = 600, /datum/material/diamond = 600, /datum/material/uranium = 200)
 	build_path = /obj/item/firing_pin/implant/mindshield
 	category = list("Firing Pins")
@@ -98,49 +114,54 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_BALLISTICS
 
 /datum/design/stunrevolver
-	name = "Tesla Canon"
-	desc = "A high-tech cannon that fires internal, reusable bolt cartridges in a revolving cylinder. The cartridges can be recharged using conventional rechargers"
+	name = "Комплект деталей пушки тесла"
+	desc = "Кейс, содержащий необходимые детали для создания пушки тесла вокруг энергетической аномалии. Применять с соблюдением техники безопасности."
 	id = "stunrevolver"
-	build_type = PROTOLATHE
+	build_type = PROTOLATHE | MECHFAB
+	construction_time = 30
 	materials = list(/datum/material/iron = 10000, /datum/material/glass = 10000, /datum/material/silver = 10000)
 	build_path = /obj/item/gun/energy/tesla_cannon
 	category = list("Weapons","Imported")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_SCIENCE//this weapon is an active threat to the user, I think we can safely refile it under "experimental"
 
 /datum/design/nuclear_gun
-	name = "Advanced Energy Gun"
-	desc = "An energy gun with an experimental miniaturized reactor."
+	name = "Комплект деталей энергетической винтовки"
+	desc = "Кейс, содержащий необходимые детали винтовки для преобразования стандартной энергетической винтовки в продвиную энергетическую винтовку."
 	id = "nuclear_gun"
-	build_type = PROTOLATHE
+	build_type = PROTOLATHE | MECHFAB
+	construction_time = 30
 	materials = list(/datum/material/iron = 10000, /datum/material/glass = 2000, /datum/material/uranium = 3000, /datum/material/titanium = 1000)
 	build_path = /obj/item/gun/energy/e_gun/nuclear
 	category = list("Weapons","Imported")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/tele_shield
-	name = "Telescopic Riot Shield"
-	desc = "An advanced riot shield made of lightweight materials that collapses for easy storage."
+	name = "Телескопический щит"
+	desc = "Продвинутая версия пластикового щита Антибунт. Может складываться для уменьшения размеров. Значительная защита от ближнего боя, а так же может блокировать часть выстрелов."
 	id = "tele_shield"
-	build_type = PROTOLATHE
+	build_type = PROTOLATHE | MECHFAB
+	construction_time = 30
 	materials = list(/datum/material/iron = 4000, /datum/material/glass = 4000, /datum/material/silver = 300, /datum/material/titanium = 200)
 	build_path = /obj/item/shield/riot/tele
 	category = list("Weapons","Imported")
 
 /datum/design/beamrifle
-	name = "Beam Marksman Rifle"
-	desc = "A powerful long ranged anti-material rifle that fires charged particle beams to obliterate targets."
+	name = "Комплект деталей винтовки ускорения частиц"
+	desc = "Переворот в изготовлении оружия. В этом кейсе находится высокоэкспериментальная установка для винтовки ускорения частиц. Требуется энергетическая пушка, стабилизированная энергетическая аномалия и стабилизированная гравитационная аномалия."
 	id = "beamrifle"
-	build_type = PROTOLATHE
+	build_type = PROTOLATHE | MECHFAB
+	construction_time = 30
 	materials = list(/datum/material/iron = 10000, /datum/material/glass = 5000, /datum/material/diamond = 5000, /datum/material/uranium = 8000, /datum/material/silver = 4500, /datum/material/gold = 5000)
 	build_path = /obj/item/gun/energy/beam_rifle
 	category = list("Weapons","Imported")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/decloner
-	name = "Decloner"
-	desc = "Your opponent will bubble into a messy pile of goop."
+	name = "Комплект деталей клеточного дестабилизатора"
+	desc = "Комплект деталей для преобразования лазерной пушки в клеточный дестабилизатор."
 	id = "decloner"
-	build_type = PROTOLATHE
+	build_type = PROTOLATHE | MECHFAB
+	construction_time = 30
 	materials = list(/datum/material/gold = 5000,/datum/material/uranium = 10000)
 	reagents_list = list(/datum/reagent/toxin/mutagen = 40)
 	build_path = /obj/item/gun/energy/decloner
@@ -148,102 +169,111 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/rapidsyringe
-	name = "Rapid Syringe Gun"
-	desc = "A gun that fires many syringes."
+	name = "Многозарядный шприцемет"
+	desc = "Модификация шприцевого пистолета с использованием вращающегося барабана, способного вместить до шести шприцов."
 	id = "rapidsyringe"
-	build_type = PROTOLATHE
+	build_type = PROTOLATHE | MECHFAB
+	construction_time = 100
 	materials = list(/datum/material/iron = 5000, /datum/material/glass = 1000)
 	build_path = /obj/item/gun/syringe/rapidsyringe
 	category = list("Weapons","Imported")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL		//uwu
 
 /datum/design/temp_gun
-	name = "Temperature Gun"
-	desc = "A gun that shoots temperature bullet energythings to change temperature."//Change it if you want
+	name = "Комплект деталей температурной винтовки"
+	desc = "Кейс, содержащий необходимые детали винтовки для преобразования стандартной энергетической винтовки в температурный винтовку. Незаменим при противодействии быстро двигающимся противникам и существам чувствительным к перепадам температур."
 	id = "temp_gun"
-	build_type = PROTOLATHE
+	build_type = PROTOLATHE | MECHFAB
+	construction_time = 30
 	materials = list(/datum/material/iron = 5000, /datum/material/glass = 500, /datum/material/silver = 3000)
 	build_path = /obj/item/gun/energy/temperature
 	category = list("Weapons","Imported")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/flora_gun
-	name = "Floral Somatoray"
-	desc = "A tool that discharges controlled radiation which induces mutation in plant cells. Harmless to other organic life."
+	name = "Цветочный луч"
+	desc = "Инструмент, который выпускает контролируемое излучение, которое вызывает мутацию в растительных клетках."
 	id = "flora_gun"
-	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 2000, /datum/material/glass = 500)
-	reagents_list = list(/datum/reagent/uranium/radium = 20)
+	build_type = PROTOLATHE | MECHFAB
+	construction_time = 30
+	materials = list(/datum/material/iron = 2000, /datum/material/glass = 500, /datum/material/uranium = 2000)
 	build_path = /obj/item/gun/energy/floragun
 	category = list("Weapons","Imported")
 	departmental_flags = DEPARTMENTAL_FLAG_SERVICE
 
 /datum/design/large_grenade
-	name = "Large Grenade"
-	desc = "A grenade that affects a larger area and use larger containers."
+	name = "Большая химическая граната"
+	desc = "Большой каркас химической гранаты. В отличие от обычных каркасов, этот имеет больший радиус взрыва и поддерживает блюспейс или различные экзотичные носители. При детонации нагревает состав на 25°K."
 	id = "large_Grenade"
-	build_type = PROTOLATHE
+	build_type = PROTOLATHE | MECHFAB
+	construction_time = 40
 	materials = list(/datum/material/iron = 3000)
 	build_path = /obj/item/grenade/chem_grenade/large
 	category = list("Weapons","Imported")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_BALLISTICS
 
 /datum/design/pyro_grenade
-	name = "Pyro Grenade"
-	desc = "An advanced grenade that is able to self ignite its mixture."
+	name = "Пиро граната"
+	desc = "Экспериментальный каркас химической гранаты. После активации резко нагревает реагенты внутри себя."
 	id = "pyro_Grenade"
-	build_type = PROTOLATHE
+	build_type = PROTOLATHE | MECHFAB
+	construction_time = 40
 	materials = list(/datum/material/iron = 2000, /datum/material/plasma = 500)
 	build_path = /obj/item/grenade/chem_grenade/pyro
 	category = list("Weapons","Imported")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_BALLISTICS
 
 /datum/design/cryo_grenade
-	name = "Cryo Grenade"
-	desc = "An advanced grenade that rapidly cools its contents upon detonation."
+	name = "Крио граната"
+	desc = "Экспериментальный каркас химической гранаты. После активации резко охлаждает реагенты внутри себя."
 	id = "cryo_Grenade"
-	build_type = PROTOLATHE
+	build_type = PROTOLATHE | MECHFAB
+	construction_time = 40
 	materials = list(/datum/material/iron = 2000, /datum/material/silver = 500)
 	build_path = /obj/item/grenade/chem_grenade/cryo
 	category = list("Weapons","Imported")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_BALLISTICS
 
 /datum/design/adv_grenade
-	name = "Advanced Release Grenade"
-	desc = "An advanced grenade that can be detonated several times, best used with a repeating igniter."
+	name = "Инжекторная граната"
+	desc = "Экспериментальный каркас химической гранаты. Может использоваться больше одного раза. При помощи мультитула можно настроить количество выбрасываемого вещества."
 	id = "adv_Grenade"
-	build_type = PROTOLATHE
+	build_type = PROTOLATHE | MECHFAB
+	construction_time = 40
 	materials = list(/datum/material/iron = 3000, /datum/material/glass = 500)
 	build_path = /obj/item/grenade/chem_grenade/adv_release
 	category = list("Weapons","Imported")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_BALLISTICS
 
 /datum/design/xray
-	name = "X-ray Laser Gun"
-	desc = "Not quite as menacing as it sounds"
+	name = "Комплект деталей рентгеновской лазерной винтовки"
+	desc = "Кейс с необходимыми деталями для преобразования лазерной винтовки в рентгеновскую лазерную винтовку. ВНИМАНИЕ! РАДИОАКТИВНО! Избегать близкого контакта кейса с паховой областью во время работы!"
 	id = "xray_laser"
-	build_type = PROTOLATHE
+	build_type = PROTOLATHE | MECHFAB
+	construction_time = 30
 	materials = list(/datum/material/gold = 5000, /datum/material/uranium = 4000, /datum/material/iron = 5000, /datum/material/titanium = 2000, /datum/material/bluespace = 2000)
 	build_path = /obj/item/gun/energy/xray
 	category = list("Weapons","Imported")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/ioncarbine
-	name = "Ion Carbine"
-	desc = "How to dismantle a cyborg : The gun."
+	name = "Комплект деталей ионного карабина"
+	desc = "Лучшее средство для борьбы с техникой противника."
 	id = "ioncarbine"
-	build_type = PROTOLATHE
+	build_type = PROTOLATHE | MECHFAB
+	construction_time = 30
 	materials = list(/datum/material/silver = 6000, /datum/material/iron = 8000, /datum/material/uranium = 2000)
 	build_path = /obj/item/gun/energy/ionrifle/carbine
 	category = list("Weapons","Imported")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/wormhole_projector
-	name = "Bluespace Wormhole Projector"
-	desc = "A projector that emits high density quantum-coupled bluespace beams."
+	name = "Портальная пушка"
+	desc = "Проектор, который излучает квантовые блюспейс порталы. Требуется ядро блюспейс аномалии для функционирования."
 	id = "wormholeprojector"
-	build_type = PROTOLATHE
 	materials = list(/datum/material/silver = 2000, /datum/material/iron = 5000, /datum/material/diamond = 2000, /datum/material/bluespace = 3000, /datum/material/uranium = 1000)
+	build_type = PROTOLATHE | MECHFAB
+	construction_time = 40
 	build_path = /obj/item/gun/energy/wormhole_projector
 	category = list("Weapons","Imported")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
@@ -574,30 +604,33 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/suppressor
-	name = "Suppressor"
-	desc = "A reverse-engineered suppressor that fits on most small arms with threaded barrels."
+	name = "Глушитель"
+	desc = "Маленький глушитель для большого шпионажа."
 	id = "suppressor"
-	build_type = PROTOLATHE
+	build_type = PROTOLATHE | MECHFAB
+	construction_time = 30
 	materials = list(/datum/material/iron = 2000, /datum/material/silver = 500)
 	build_path = /obj/item/suppressor
 	category = list("Weapons","Imported")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/gravitygun
-	name = "One-point Gravitational Manipulator"
-	desc = "A multi-mode device that blasts one-point bluespace-gravitational bolts that locally distort gravity. Requires a gravitational anomaly core to function."
+	name = "Гравитационная пушка"
+	desc = "Экспериментальное многорежимное устройство, которое запускает заряд энергии нулевой точки, вызывая локальные искажения в гравитации. Требуется ядро гравитационной аномалии для функционирования."
 	id = "gravitygun"
-	build_type = PROTOLATHE
+	build_type = PROTOLATHE | MECHFAB
+	construction_time = 40
 	materials = list(/datum/material/silver = 8000, /datum/material/uranium = 8000, /datum/material/glass = 12000, /datum/material/iron = 12000, /datum/material/diamond = 3000, /datum/material/bluespace = 3000)
 	build_path = /obj/item/gun/energy/gravity_gun
 	category = list("Weapons","Imported")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/largecrossbow
-	name = "Energy Crossbow"
-	desc = "A reverse-engineered energy crossbow favored by syndicate infiltration teams and carp hunters."
+	name = "Комплект деталей энергетического арбалета"
+	desc = "Нелегальный набор для модификации оружия. Позволяет модифицировать стандартный протокинетический ускоритель для создания подобия энергетического арбалета. Почти как настоящий!"
 	id = "largecrossbow"
-	build_type = PROTOLATHE
+	build_type = PROTOLATHE | MECHFAB
+	construction_time = 30
 	materials = list(/datum/material/iron = 5000, /datum/material/glass = 1500, /datum/material/uranium = 1500, /datum/material/silver = 1500)
 	build_path = /obj/item/gun/energy/kinetic_accelerator/crossbow/large
 	category = list("Weapons","Imported")
@@ -613,10 +646,11 @@
 	category = list("Imported")
 
 /datum/design/stun_boomerang
-	name = "OZtek Boomerang"
-	desc = "Uses reverse flow gravitodynamics to flip its personal gravity back to the thrower mid-flight. Also functions similar to a stun baton."
+	name = "ОЗТек Бумеранг"
+	desc = "Устройство, изобретенное в 2486 году для великой войны в Космическом Эму конфедерацией Австраликуса, эти высокотехнологичные бумеранги также отлично работают на потрясающих членов экипажа. Просто будьте осторожны, чтобы поймать его, когда брошено!"
 	id = "stun_boomerang"
-	build_type = PROTOLATHE
+	build_type = PROTOLATHE | MECHFAB
+	construction_time = 30
 	materials = list(/datum/material/iron = 10000, /datum/material/glass = 4000, /datum/material/silver = 10000, /datum/material/gold = 2000)
 	build_path = /obj/item/melee/baton/boomerang
 	category = list("Weapons","Imported")
