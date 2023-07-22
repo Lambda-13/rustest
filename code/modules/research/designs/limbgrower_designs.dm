@@ -133,13 +133,13 @@
 	build_path = /obj/item/organ/tongue/lizard
 	category = list("initial",SPECIES_LIZARD)
 
-/datum/design/monkey_tail
-	name = "Обезьяний Хвост"
-	id = "monkeytail"
-	build_type = LIMBGROWER
-	reagents_list = list(/datum/reagent/medicine/synthflesh = 20)
-	build_path = /obj/item/organ/tail/monkey
-	category = list("other","initial")
+///datum/design/monkey_tail
+//	name = "Обезьяний Хвост"
+//	id = "monkeytail"
+//	build_type = LIMBGROWER
+//	reagents_list = list(/datum/reagent/medicine/synthflesh = 20)
+//	build_path = /obj/item/organ/tail/monkey
+//	category = list("other","initial")
 
 /datum/design/cat_tail
 	name = "Кошачий Хвост"
