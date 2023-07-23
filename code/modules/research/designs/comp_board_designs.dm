@@ -3,7 +3,7 @@
 /datum/design/board
 	name = "Дизайн консоли ( NULL ENTRY )"
 	desc = "I promise this doesn't give you syndicate goodies!"
-	build_type = IMPRINTER | AUTOLATHE
+	build_type = IMPRINTER | AUTOLATHE | MECHFAB
 	materials = list(/datum/material/glass = 1000)
 
 /datum/design/board/arcade_battle
@@ -28,7 +28,6 @@
 	id = "seccamera"
 	build_path = /obj/item/circuitboard/computer/security
 	category = list("Computer Boards","Imported")
-	build_type = IMPRINTER | MECHFAB
 	construction_time = 40
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
@@ -38,7 +37,6 @@
 	id = "rdcamera"
 	build_path = /obj/item/circuitboard/computer/research
 	category = list("Computer Boards","Imported")
-	build_type = IMPRINTER | MECHFAB
 	construction_time = 40
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
@@ -48,7 +46,6 @@
 	id = "xenobioconsole"
 	build_path = /obj/item/circuitboard/computer/xenobiology
 	category = list("Computer Boards","Imported")
-	build_type = IMPRINTER | MECHFAB
 	construction_time = 40
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
@@ -74,7 +71,6 @@
 	name = "Консоль Медицинских записей"
 	desc = "Используется для просмотра больничных карт и биометрических данных членов экипажа."
 	id = "med_data"
-	build_type = IMPRINTER | PROTOLATHE | MECHFAB
 	construction_time = 40
 	build_path = /obj/item/circuitboard/computer/med_data
 	category = list("Computer Boards","Imported")
@@ -84,7 +80,6 @@
 	name = "Операционный компьютер"
 	desc = "Контролирует жизненно важные функции пациента и отображает этапы операции. Может быть загружен хирургическими дисками для выполнения экспериментальных процедур. Автоматически синхронизируется со стазис-кроватями в пределах прямой видимости для улучшения хирургических технологий."
 	id = "operating"
-	build_type = IMPRINTER | PROTOLATHE | MECHFAB
 	construction_time = 40
 	build_path = /obj/item/circuitboard/computer/operating
 	category = list("Computer Boards","Imported")
@@ -94,7 +89,6 @@
 	name = "П.А.Н.Д.Е.М.И.К.А 2200"
 	desc = "Используется при работе с вирусами."
 	id = "pandemic"
-	build_type = IMPRINTER | PROTOLATHE | MECHFAB
 	construction_time = 40
 	build_path = /obj/item/circuitboard/computer/pandemic
 	category = list("Computer Boards","Imported")
@@ -104,7 +98,6 @@
 	name = "Консоль сканера ДНК"
 	desc = "Отображает визуальную информацию о генетической структуре подопытного, позволяет вносить изменения и синтезировать мутаторы. Для разблокировки полного функционала требует подключения к манипулятору ДНК. Поддерживает синхронизацию с компактным сканером ДНК."
 	id = "scan_console"
-	build_type = IMPRINTER | PROTOLATHE | MECHFAB
 	construction_time = 40
 	build_path = /obj/item/circuitboard/computer/scan_consolenew
 	category = list("Computer Boards","Imported")
@@ -131,14 +124,12 @@
 	id = "idcardconsole"
 	build_path = /obj/item/circuitboard/computer/card
 	category = list("Computer Boards","Imported")
-	build_type = IMPRINTER | MECHFAB
 	construction_time = 40
 
 /datum/design/board/crewconsole
 	name = "Консоль мониторинга за экипажем"
 	desc = "Используется для контроля активных датчиков здоровья, встроенных в большую часть формы экипажа."
 	id = "crewconsole"
-	build_type = IMPRINTER | PROTOLATHE | MECHFAB
 	construction_time = 40
 	build_path = /obj/item/circuitboard/computer/crew
 	category = list("Computer Boards","Imported")
@@ -150,7 +141,6 @@
 	id = "secdata"
 	build_path = /obj/item/circuitboard/computer/secure_data
 	category = list("Computer Boards","Imported")
-	build_type = IMPRINTER | MECHFAB
 	construction_time = 40
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
@@ -160,7 +150,6 @@
 	id = "atmosalerts"
 	build_path = /obj/item/circuitboard/computer/atmos_alert
 	category = list("Computer Boards","Imported")
-	build_type = IMPRINTER | MECHFAB
 	construction_time = 40
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
 
@@ -170,7 +159,6 @@
 	id = "atmos_control"
 	build_path = /obj/item/circuitboard/computer/atmos_control
 	category = list("Computer Boards","Imported")
-	build_type = IMPRINTER | MECHFAB
 	construction_time = 40
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
 
@@ -180,7 +168,6 @@
 	id = "robocontrol"
 	build_path = /obj/item/circuitboard/computer/robotics
 	category = list("Computer Boards","Imported")
-	build_type = IMPRINTER | MECHFAB
 	construction_time = 40
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
@@ -198,7 +185,6 @@
 	id = "powermonitor"
 	build_path = /obj/item/circuitboard/computer/powermonitor
 	category = list("Computer Boards","Imported")
-	build_type = IMPRINTER | MECHFAB
 	construction_time = 40
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
 
@@ -208,7 +194,6 @@
 	id = "solarcontrol"
 	build_path = /obj/item/circuitboard/computer/solar_control
 	category = list("Computer Boards","Imported")
-	build_type = IMPRINTER | MECHFAB
 	construction_time = 40
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
 
@@ -218,7 +203,6 @@
 	id = "prisonmanage"
 	build_path = /obj/item/circuitboard/computer/prisoner
 	category = list("Computer Boards","Imported")
-	build_type = IMPRINTER | MECHFAB
 	construction_time = 40
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
@@ -229,7 +213,6 @@
 	build_path = /obj/item/circuitboard/computer/mecha_control
 	category = list("Computer Boards","Imported")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_CARGO
-	build_type = IMPRINTER | MECHFAB
 	construction_time = 40
 
 /datum/design/board/mechapower
@@ -239,7 +222,6 @@
 	build_path = /obj/item/circuitboard/computer/mech_bay_power_console
 	category = list("Computer Boards","Imported")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_CARGO
-	build_type = IMPRINTER | MECHFAB
 	construction_time = 40
 
 /datum/design/board/rdconsole
@@ -248,7 +230,6 @@
 	id = "rdconsole"
 	build_path = /obj/item/circuitboard/computer/rdconsole
 	category = list("Computer Boards","Imported")
-	build_type = IMPRINTER | MECHFAB
 	construction_time = 40
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
@@ -266,7 +247,6 @@
 	id = "mining"
 	build_path = /obj/item/circuitboard/computer/mining
 	category = list("Computer Boards","Imported")
-	build_type = IMPRINTER | MECHFAB
 	construction_time = 40
 	departmental_flags = DEPARTMENTAL_FLAG_CARGO | DEPARTMENTAL_FLAG_SECURITY
 
@@ -284,7 +264,6 @@
 	id = "comm_monitor"
 	build_path = /obj/item/circuitboard/computer/comm_monitor
 	category = list("Computer Boards","Imported")
-	build_type = IMPRINTER | MECHFAB
 	construction_time = 40
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
 
@@ -294,7 +273,6 @@
 	id = "comm_server"
 	build_path = /obj/item/circuitboard/computer/comm_server
 	category = list("Computer Boards","Imported")
-	build_type = IMPRINTER | MECHFAB
 	construction_time = 40
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
 
@@ -304,7 +282,6 @@
 	id = "message_monitor"
 	build_path = /obj/item/circuitboard/computer/message_monitor
 	category = list("Computer Boards","Imported")
-	build_type = IMPRINTER | MECHFAB
 	construction_time = 40
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
 
@@ -314,7 +291,6 @@
 	id = "aifixer"
 	build_path = /obj/item/circuitboard/computer/aifixer
 	category = list("Computer Boards","Imported")
-	build_type = IMPRINTER | MECHFAB
 	construction_time = 40
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
@@ -332,7 +308,6 @@
 	id = "apc_control"
 	build_path = /obj/item/circuitboard/computer/apc_control
 	category = list("Computer Boards","Imported")
-	build_type = IMPRINTER | MECHFAB
 	construction_time = 40
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
 
@@ -342,7 +317,6 @@
 	id = "nanite_chamber_control"
 	build_path = /obj/item/circuitboard/computer/nanite_chamber_control
 	category = list("Computer Boards","Imported")
-	build_type = IMPRINTER | MECHFAB
 	construction_time = 40
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
@@ -352,7 +326,6 @@
 	id = "nanite_cloud_control"
 	build_path = /obj/item/circuitboard/computer/nanite_cloud_controller
 	category = list("Computer Boards","Imported")
-	build_type = IMPRINTER | MECHFAB
 	construction_time = 40
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
@@ -362,7 +335,6 @@
 	id = "advanced_camera"
 	build_path = /obj/item/circuitboard/computer/advanced_camera
 	category = list("Computer Boards","Imported")
-	build_type = IMPRINTER | MECHFAB
 	construction_time = 40
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
