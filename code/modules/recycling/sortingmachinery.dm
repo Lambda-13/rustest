@@ -375,7 +375,7 @@
 
 /obj/item/sales_tagger
 	name = "sales tagger"
-	desc = "A scanner that lets you tag wrapped items for sale, splitting the profit between you and cargo. Ctrl-Click to clear the registered account."
+	desc = "A scanner that lets you tag wrapped items for sale, splitting the profit between you and cargo. Ctrl-клик to clear the registered account."
 	icon = 'icons/obj/device.dmi'
 	icon_state = "salestagger"
 	item_state = "electronic"

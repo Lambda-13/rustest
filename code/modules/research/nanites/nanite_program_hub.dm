@@ -60,7 +60,7 @@
 
 /obj/machinery/nanite_program_hub/ui_interact(mob/user, datum/tgui/ui)
 	if(!linked_techweb)
-		visible_message("Warning: no linked server!")
+		say("Нет подключения к серверу.")
 		SStgui.close_uis(src)
 		return
 	ui = SStgui.try_update_ui(user, src, ui)

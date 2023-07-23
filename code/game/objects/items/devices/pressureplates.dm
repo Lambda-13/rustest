@@ -1,6 +1,6 @@
 /obj/item/pressure_plate
 	name = "pressure plate"
-	desc = "An electronic device that triggers when stepped on. Ctrl-Click to toggle the pressure plate off and on."
+	desc = "An electronic device that triggers when stepped on. Ctrl-клик to toggle the pressure plate off and on."
 	icon = 'icons/obj/puzzle_small.dmi'
 	item_state = "flash"
 	icon_state = "pressureplate"

@@ -100,7 +100,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 		. += "<hr><span class='notice'>Alt-клик to remove the ID.</span>" //won't name ID on examine in case it's stolen
 
 	if(inserted_item && (!isturf(loc)))
-		. += "<hr><span class='notice'>Ctrl-click to remove [inserted_item].</span>" //traitor pens are disguised so we're fine naming them on examine
+		. += "<hr><span class='notice'>Ctrl-клик to remove [inserted_item].</span>" //traitor pens are disguised so we're fine naming them on examine
 
 	if((!isnull(cartridge)))
 		. += "<hr><span class='notice'>Ctrl+Shift-click to remove the cartridge.</span>" //won't name cart on examine in case it's Detomatix
@@ -761,7 +761,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 /obj/item/pda/CtrlClick(mob/user)
 	..()
 
-	if(isturf(loc)) //stops the user from dragging the PDA by ctrl-clicking it.
+	if(isturf(loc)) //stops the user from dragging the PDA by Ctrl-кликing it.
 		return
 
 	remove_pen(user)

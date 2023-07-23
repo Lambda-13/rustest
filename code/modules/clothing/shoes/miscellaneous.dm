@@ -92,7 +92,7 @@
 	SEND_SIGNAL(t_loc, COMSIG_TURF_MAKE_DRY, TURF_WET_WATER, TRUE, INFINITY)
 
 /obj/item/clothing/shoes/clown_shoes
-	desc = "The prankster's standard-issue clowning shoes. Damn, they're huge! Ctrl-click to toggle waddle dampeners."
+	desc = "The prankster's standard-issue clowning shoes. Damn, they're huge! Ctrl-клик to toggle waddle dampeners."
 	name = "clown shoes"
 	icon_state = "clown"
 	item_state = "clown_shoes"

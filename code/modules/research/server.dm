@@ -1,5 +1,6 @@
 /obj/machinery/rnd/server
-	desc = "A computer system running a deep neural network that processes arbitrary information to produce data useable in the development of new technologies. In layman's terms, it makes research points."
+	name = "Сервер РнД"
+	desc = "Компьютерная система, работающая на развитой нейронной сети, которая обрабатывает произвольную информацию для получения данных, пригодных для разработки новых технологий. С точки зрения компьютерного ботана, оно производит очки исследований."
 	icon = 'icons/obj/machines/research.dmi'
 	icon_state = "RD-server-on"
 	var/datum/techweb/stored_research
@@ -18,7 +19,7 @@
 
 /obj/machinery/rnd/server/proc/create_research_server()
 	var/obj/item/circuitboard/machine/rdserver/board = circuit
-	name = "\improper [board.server_id] research server"
+	name = "сервер РнД ([board.server_id])"
 	SSresearch.servers |= src
 	stored_research = new(board.server_id)
 
@@ -30,7 +31,7 @@
 	if(istype(O, /obj/item/multitool))
 		var/obj/item/multitool/multi = O
 		multi.buffer = src
-		to_chat(user, "<span class='notice'>[src] stored in [O].</span>")
+		to_chat(user, "<span class='notice'>Записываю данные [src] в [O].</span>")
 		return TRUE
 
 	return ..()
