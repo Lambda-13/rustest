@@ -78,42 +78,42 @@ This file contains the cult dagger and rune list code
 		to_chat(user, "<span class='cultitalic'><b>The veil is not weak enough here to summon a cultist!</b></span>")
 		return
 	if(ispath(rune_to_scribe, /obj/effect/rune/apocalypse))
-		if((world.time - SSticker.round_start_time) <= 6000)
-			var/wait = 6000 - (world.time - SSticker.round_start_time)
+		if((world.time - SSticker.round_start_time) <= 18000)
+			var/wait = 18000 - (world.time - SSticker.round_start_time)
 			to_chat(user, "<span class='cult italic'>The veil is not yet weak enough for this rune - it will be available in [DisplayTimeText(wait)].</span>")
 			return
 		var/datum/objective/eldergod/summon_objective = locate() in user_antag.cult_team.objectives
-		if(!(A in summon_objective.summon_spots))
-			to_chat(user, "<span class='cultlarge'>The Apocalypse rune will remove a ritual site (where Nar'Sie can be summoned), it can only be scribed in [english_list(summon_objective.summon_spots)]!</span>")
-			return
-		if(summon_objective.summon_spots.len < 2)
-			to_chat(user, "<span class='cultlarge'>Only one ritual site remains - it must be reserved for the final summoning!</span>")
-			return
+//		if(!(A in summon_objective.summon_spots))
+//			to_chat(user, "<span class='cultlarge'>The Apocalypse rune will remove a ritual site (where Nar'Sie can be summoned), it can only be scribed in [english_list(summon_objective.summon_spots)]!</span>")
+//			return
+//		if(summon_objective.summon_spots.len < 2)
+//			to_chat(user, "<span class='cultlarge'>Only one ritual site remains - it must be reserved for the final summoning!</span>")
+//			return
 	if(ispath(rune_to_scribe, /obj/effect/rune/narsie))
 		var/datum/objective/eldergod/summon_objective = locate() in user_antag.cult_team.objectives
 		var/datum/objective/sacrifice/sac_objective = locate() in user_antag.cult_team.objectives
-		if(!summon_objective)
-			to_chat(user, "<span class='warning'>Nar'Sie does not wish to be summoned!</span>")
-			return
-		if(sac_objective && !sac_objective.check_completion())
-			to_chat(user, "<span class='warning'>The sacrifice is not complete. The portal would lack the power to open if you tried!</span>")
-			return
+//		if(!summon_objective)
+//			to_chat(user, "<span class='warning'>Nar'Sie does not wish to be summoned!</span>")
+//			return
+//		if(sac_objective && !sac_objective.check_completion())
+//			to_chat(user, "<span class='warning'>The sacrifice is not complete. The portal would lack the power to open if you tried!</span>")
+//			return
 		if(summon_objective.check_completion())
 			to_chat(user, "<span class='cultlarge'>\"I am already here. There is no need to try to summon me now.\"</span>")
 			return
-		if(!(A in summon_objective.summon_spots))
-			to_chat(user, "<span class='cultlarge'>The Geometer can only be summoned where the veil is weak - in [english_list(summon_objective.summon_spots)]!</span>")
-			return
+//		if(!(A in summon_objective.summon_spots))
+//			to_chat(user, "<span class='cultlarge'>The Geometer can only be summoned where the veil is weak - in [english_list(summon_objective.summon_spots)]!</span>")
+//			return
 		var/confirm_final = alert(user, "This is the FINAL step to summon Nar'Sie; it is a long, painful ritual and the crew will be alerted to your presence", "Are you prepared for the final battle?", "My life for Nar'Sie!", "No")
 		if(confirm_final == "No")
 			to_chat(user, "<span class='cult'>You decide to prepare further before scribing the rune.</span>")
 			return
 		Turf = get_turf(user)
 		A = get_area(src)
-		if(!(A in summon_objective.summon_spots))  // Check again to make sure they didn't move
-			to_chat(user, "<span class='cultlarge'>The Geometer can only be summoned where the veil is weak - in [english_list(summon_objective.summon_spots)]!</span>")
-			return
-		priority_announce("Figments from an eldritch god are being summoned by [user] into [initial(A.name)] from an unknown dimension. Disrupt the ritual at all costs!","Central Command Higher Dimensional Affairs", 'sound/ai/spanomalies.ogg')
+//		if(!(A in summon_objective.summon_spots))  // Check again to make sure they didn't move
+//			to_chat(user, "<span class='cultlarge'>The Geometer can only be summoned where the veil is weak - in [english_list(summon_objective.summon_spots)]!</span>")
+//			return
+		priority_announce("Бог крови вызывается [user] в [initial(A.name)]. Остановите этот кровавый ритуал!","Центральное командование", 'sound/ai/spanomalies.ogg')
 		for(var/B in spiral_range_turfs(1, user, 1))
 			var/obj/structure/emergency_shield/sanguine/N = new(B)
 			shields += N

@@ -352,10 +352,10 @@
 	return sacced || completed
 
 /datum/objective/sacrifice/update_explanation_text()
-	if(target)
-		explanation_text = "Sacrifice [target], the [target.assigned_role] via invoking an Offer rune with [target.p_them()] on it and three acolytes around it."
-	else
-		explanation_text = "The veil has already been weakened here, proceed to the final objective."
+//	if(target)
+//		explanation_text = "Sacrifice [target], the [target.assigned_role] via invoking an Offer rune with [target.p_them()] on it and three acolytes around it."
+//	else
+		explanation_text = "Завеса слаба, приступайте к следующему шагу."
 
 /datum/objective/eldergod
 	var/summoned = FALSE
@@ -364,16 +364,16 @@
 
 /datum/objective/eldergod/New()
 	..()
-	var/sanity = 0
-	while(summon_spots.len < SUMMON_POSSIBILITIES && sanity < 100)
-		var/area/summon_area = pick(GLOB.sortedAreas - summon_spots)
-		if(summon_area && (summon_area.area_flags & VALID_TERRITORY))
-			summon_spots += summon_area
-		sanity++
+//	var/sanity = 0
+//	while(summon_spots.len < SUMMON_POSSIBILITIES && sanity < 100)
+//		var/area/summon_area = pick(GLOB.sortedAreas - summon_spots)
+//		if(summon_area && (summon_area.area_flags & VALID_TERRITORY))
+//			summon_spots += summon_area
+//		sanity++
 	update_explanation_text()
 
 /datum/objective/eldergod/update_explanation_text()
-	explanation_text = "Summon Nar'Sie by invoking the rune 'Summon Nar'Sie'. <b>The summoning can only be accomplished in [english_list(summon_spots)] - where the veil is weak enough for the ritual to begin.</b>"
+	explanation_text = "Призвать нашего бога с помощью руны 'Summon Nar'Sie'. <b>Дальний сектор слаб на разрыв покрова - можно начать ритуал призыва где угодно но желательно это делать на планете.</b>"
 
 /datum/objective/eldergod/check_completion()
 	if(killed)
