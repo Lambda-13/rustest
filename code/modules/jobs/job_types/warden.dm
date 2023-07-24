@@ -38,7 +38,6 @@
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	r_pocket = /obj/item/assembly/flash/handheld
 	l_pocket = /obj/item/restraints/handcuffs
-	suit_store = /obj/item/gun/energy/e_gun/advtaser		//WS edit - Readds tasers
 	backpack_contents = list(/obj/item/melee/baton/loaded=1, /obj/item/ammo_box/magazine/co9mm=1) //WS edit - free lethals
 
 	backpack = /obj/item/storage/backpack/security
@@ -82,7 +81,7 @@
 	suit_store = /obj/item/gun/ballistic/automatic/assualt/p16/minutemen
 	belt = /obj/item/storage/belt/military/minutemen
 
-	backpack_contents = list(/obj/item/melee/classic_baton=1, /obj/item/gun/ballistic/automatic/pistol/commander=1, /obj/item/restraints/handcuffs=1, /obj/item/gun/energy/e_gun/advtaser=1)
+	backpack_contents = list(/obj/item/melee/classic_baton=1, /obj/item/gun/ballistic/automatic/pistol/commander=1)
 
 /datum/outfit/job/warden/inteq
 	name = "Master At Arms (Inteq)"

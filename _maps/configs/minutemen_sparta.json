@@ -1,0 +1,24 @@
+	{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Sparta-Class Battle Cruiser",
+	"prefix": "MSV",
+	"namelists": ["GENERAL", "MYTHOLOGICAL", "HERO", "HUMAN"],
+	"description": "The Spartans are an independent terrorist organization dedicated to hunting down and trapping non-human species with animal characteristics (that means they don't pursue IPC's, for example). As far as known, they are being sponsored by unknown third-party and The Syndicate. Despite that, they have complete freedom of action on their territories. The Sparta-class ship represents a battle cruiser with large arsenal and two assault pods, that allow to engage and board other ships.",
+	"tags": ["Combat"],
+	"map_short_name": "Sparta-Class",
+	"map_path": "_maps/shuttles/shiptest/minutemen_sparta.dmm",
+	"limit": 1,
+	"job_slots": {
+		"Navarch": {
+			"outfit": "/datum/outfit/job/warden/minutemen",
+			"officer": true,
+			"slots": 1
+		},
+
+		"Hoplite": {
+			"outfit": "/datum/outfit/job/security/minutemen",
+			"slots": 4
+		}
+	},
+	"enabled": true
+}

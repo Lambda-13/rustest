@@ -400,3 +400,8 @@
 	file_name = "independent_sugarcube"
 	name = "Sugarcube Transport"
 	prefix = "ISV"
+
+/datum/map_template/shuttle/subshuttles/involute
+	file_name = "independent_involute"
+	name = "Involute Assault Pod"
+	prefix = "SV"
