@@ -80,7 +80,7 @@ GLOBAL_LIST_EMPTY(cargo_marks)
 	name = "Телепортатор груза"
 	desc = "Замечательный предмет, который может устанавливать маркеры и телепортировать предметы на эти маркеры."
 	id = "cargotele"
-	build_type = PROTOLATHE | AUTOLATHE | MECHFAB
+	build_type = PROTOLATHE | MECHFAB
 	construction_time = 40
 	build_path = /obj/item/cargo_teleporter
 	materials = list(/datum/material/iron = 5000, /datum/material/plastic = 5000, /datum/material/uranium = 30000)
