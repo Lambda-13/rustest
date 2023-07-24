@@ -50,7 +50,7 @@
 		var/details = ": '" + html_encode(tm.title) + "' от " + html_encode(tm.author) + " коммита " + html_encode(copytext_char(cm, 1, 11))
 		if(details && findtext(details, "\[s\]") && (!usr || !usr.client.holder))
 			continue
-		. += "<a href=\"[CONFIG_GET(string/githuburl)]/pull/[tm.number]\">#[tm.number][replacetext(details, error_matcher, /proc/shuffletext)]</a><br>"
+		. += "<a href=\"[CONFIG_GET(string/githuburl)]/pull/[tm.number]\">#[tm.number][replacetext(details, error_matcher, GLOBAL_PROC_REF(shuffletext))]</a><br>"
 
 /client/verb/showrevinfo()
 	set category = "OOC"

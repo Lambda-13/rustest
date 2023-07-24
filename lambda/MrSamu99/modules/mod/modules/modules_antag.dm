@@ -363,7 +363,7 @@
 	var/obj/item/current_disguise
 
 /obj/item/mod/module/chameleon/on_install()
-	var/list/all_disguises = sortList(subtypesof(get_path_by_slot(mod.slot_flags)), GLOBAL_PROC_REF(cmp_typepaths_asc))
+	var/list/all_disguises = sortList(subtypesof(get_path_by_slot(mod.slot_flags)),  GLOBAL_PROC_REF(cmp_typepaths_asc))
 	for(var/clothing_path in all_disguises)
 		var/obj/item/clothing = clothing_path
 		if(!initial(clothing.icon_state))

@@ -134,7 +134,7 @@
 
 /**
  * Proc that will spawn the egg that will revive the ashwalker
- * This is also the Skyrat replacement for /proc/remake_walker
+ * This is also the Skyrat replacement for GLOBAL_PROC_REF(remake_walker)
  */
 /obj/structure/lavaland/ash_walker/proc/revive_ashwalker(mob/living/carbon/human/revived_ashwalker)
 	var/obj/structure/reviving_ashwalker_egg/spawned_egg = new(get_step(loc, pick(GLOB.alldirs)))

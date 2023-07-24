@@ -1385,7 +1385,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			var/quirk_value = initial(quirk_owned_datum.value)
 			if(quirk_value > 0)
 				positive_quirks |= quirk_owned_datum
-		positive_quirks = sortList(positive_quirks, /proc/cmp_quirk_value_dsc)
+		positive_quirks = sortList(positive_quirks, GLOBAL_PROC_REF(cmp_quirk_value_dsc))
 		var/counter = 1
 		while(balance < 0)
 			var/datum/quirk/positive_quirk = positive_quirks[counter]

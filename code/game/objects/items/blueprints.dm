@@ -212,7 +212,7 @@
 	var/prevname = "[name]"
 	set_area_machinery_title(src, new_name, prevname)
 	name = new_name
-	sortTim(GLOB.sortedAreas, /proc/cmp_name_asc)
+	sortTim(GLOB.sortedAreas, GLOBAL_PROC_REF(cmp_name_asc))
 	return TRUE
 
 /proc/set_area_machinery_title(area/A, title, oldtitle)
