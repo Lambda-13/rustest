@@ -49,7 +49,7 @@
 	name = "Cell"
 	result = /obj/item/stock_parts/cell/empty
 	reqs = list(/obj/item/stack/sheet/metal = 10,
-		/obj/item/stack/sheet/glass = 1
+		/obj/item/stack/sheet/glass = 1,
 		/obj/item/stock_parts/capacitor = 2)
 	tools = list(TOOL_SCREWDRIVER, TOOL_MULTITOOL, TOOL_WELDER)
 	time = 1000
