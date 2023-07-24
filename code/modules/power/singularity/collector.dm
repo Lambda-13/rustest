@@ -1,20 +1,19 @@
 // stored_energy += (pulse_strength-RAD_COLLECTOR_EFFICIENCY)*RAD_COLLECTOR_COEFFICIENT
-#define RAD_COLLECTOR_EFFICIENCY 80 	// radiation needs to be over this amount to get power
-#define RAD_COLLECTOR_COEFFICIENT 10
-#define RAD_COLLECTOR_STORED_OUT 0.001	// (this*100)% of stored power outputted per tick. Doesn't actualy change output total, lower numbers just means collectors output for longer in absence of a source
+#define RAD_COLLECTOR_EFFICIENCY 75 	// radiation needs to be over this amount to get power
+#define RAD_COLLECTOR_COEFFICIENT 250
+#define RAD_COLLECTOR_STORED_OUT 0.04	// (this*100)% of stored power outputted per tick. Doesn't actualy change output total, lower numbers just means collectors output for longer in absence of a source
 #define RAD_COLLECTOR_MINING_CONVERSION_RATE 0.00001 //This is gonna need a lot of tweaking to get right. This is the number used to calculate the conversion of watts to research points per process()
 #define RAD_COLLECTOR_OUTPUT min(stored_energy, (stored_energy*RAD_COLLECTOR_STORED_OUT)+1000) //Produces at least 1000 watts if it has more than that stored
-#define PUBLIC_TECHWEB_GAIN 0.6 //how many research points go directly into the main pool
-#define PRIVATE_TECHWEB_GAIN (1 - PUBLIC_TECHWEB_GAIN) //how many research points go to the user
+#define PUBLIC_TECHWEB_GAIN 1.6 //how many research points go directly into the main pool
+#define PRIVATE_TECHWEB_GAIN (2 - PUBLIC_TECHWEB_GAIN) //how many research points go to the user
 /obj/machinery/power/rad_collector
-	name = "Radiation Collector Array"
-	desc = "A device which uses Hawking Radiation and plasma to produce power."
+	name = "радиационный коллекторный массив"
+	desc = "Устройство, которое использует излучение Хокинга и плазму для производства энергии."
 	icon = 'icons/obj/singularity.dmi'
 	icon_state = "ca"
 	anchored = FALSE
 	density = TRUE
-	req_access = list(ACCESS_ENGINE_EQUIP)
-//	use_power = NO_POWER_USE
+	req_access = list(ACCESS_ENGINE_EQUIP, ACCESS_ATMOSPHERICS)
 	max_integrity = 350
 	integrity_failure = 0.2
 	circuit = /obj/item/circuitboard/machine/rad_collector
@@ -23,7 +22,7 @@
 	var/stored_energy = 0
 	var/active = 0
 	var/locked = FALSE
-	var/drainratio = 1
+	var/drainratio = 0.5
 	var/powerproduction_drain = 0.001
 
 	var/bitcoinproduction_drain = 0.60
@@ -32,13 +31,9 @@
 	var/stored_research = 0
 	var/datum/techweb/linked_techweb
 
-/obj/machinery/power/rad_collector/anchored/Initialize()
+/obj/machinery/power/rad_collector/anchored/Initialize(mapload)
 	. = ..()
 	set_anchored(TRUE)
-
-/obj/machinery/power/rad_collector/anchored/delta //Deltastation's engine is shared by engineers and atmos techs
-	desc = "A device which uses Hawking Radiation and plasma to produce power. This model allows access by Atmospheric Technicians."
-	req_access = list(ACCESS_ENGINE_EQUIP, ACCESS_ATMOSPHERICS)
 
 /obj/machinery/power/rad_collector/Destroy()
 	linked_techweb = null
@@ -93,7 +88,7 @@
 /obj/machinery/power/rad_collector/can_be_unfasten_wrench(mob/user, silent)
 	if(loaded_tank)
 		if(!silent)
-			to_chat(user, "<span class='warning'>Remove the plasma tank first!</span>")
+			to_chat(user, span_warning("Надо бы вытащить бак для начала!"))
 		return FAILED_UNFASTEN
 	return ..()
 
@@ -109,13 +104,13 @@
 /obj/machinery/power/rad_collector/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/tank/internals/plasma))
 		if(!anchored)
-			to_chat(user, "<span class='warning'>[src] needs to be secured to the floor first!</span>")
+			to_chat(user, span_warning("<b>[capitalize(src)]</b> должен быть прикручен к полу!"))
 			return TRUE
 		if(loaded_tank)
-			to_chat(user, "<span class='warning'>There's already a plasma tank loaded!</span>")
+			to_chat(user, span_warning("Здесь уже есть бак!"))
 			return TRUE
 		if(panel_open)
-			to_chat(user, "<span class='warning'>Close the maintenance panel first!</span>")
+			to_chat(user, span_warning("Техническая панель открыта. Не входит!"))
 			return TRUE
 		if(!user.transferItemToLoc(W, src))
 			return
@@ -125,11 +120,11 @@
 		if(allowed(user))
 			if(active)
 				locked = !locked
-				to_chat(user, "<span class='notice'>You [locked ? "Блок" : "Разблок"]ирую the controls.</span>")
+				to_chat(user, span_notice("Управление [locked ? "заблокировано" : "разблокировано"]."))
 			else
-				to_chat(user, "<span class='warning'>The controls can only be locked when [src] is active!</span>")
+				to_chat(user, span_warning("Управление может быть заблокировано только когда <b>[src]</b> включен!"))
 		else
-			to_chat(user, "<span class='danger'>Доступ запрещён.</span>")
+			to_chat(user, span_danger("Доступ запрещён."))
 			return TRUE
 	else
 		return ..()
@@ -149,7 +144,7 @@
 	if(..())
 		return TRUE
 	if(loaded_tank)
-		to_chat(user, "<span class='warning'>Remove the plasma tank first!</span>")
+		to_chat(user, span_warning("Надо бы вытащить бак сначала!"))
 	else
 		default_deconstruction_screwdriver(user, icon_state, icon_state, I)
 	return TRUE
@@ -157,21 +152,21 @@
 /obj/machinery/power/rad_collector/crowbar_act(mob/living/user, obj/item/I)
 	if(loaded_tank)
 		if(locked)
-			to_chat(user, "<span class='warning'>Управление заблокировано!</span>")
+			to_chat(user, span_warning("Управление заблокировано!"))
 			return TRUE
 		eject()
 		return TRUE
 	if(default_deconstruction_crowbar(I))
 		return TRUE
-	to_chat(user, "<span class='warning'>There isn't a tank loaded!</span>")
+	to_chat(user, span_warning("Здесь нет бака!"))
 	return TRUE
 
 /obj/machinery/power/rad_collector/multitool_act(mob/living/user, obj/item/I)
 	if(locked)
-		to_chat(user, "<span class='warning'>[src] is locked!</span>")
+		to_chat(user, span_warning("<b>[capitalize(src)]</b> заблокирован!"))
 		return TRUE
 	if(active)
-		to_chat(user, "<span class='warning'>[src] is currently active, producing [bitcoinmining ? "research points":"power"].</span>")
+		to_chat(user, span_warning("<b>[capitalize(src)]</b> на данный момент работает и производит [bitcoinmining ? "исследовательские очки":"энергию"]."))
 		return TRUE
 	var/obj/item/multitool/multi = I
 	if(istype(multi.buffer, /obj/machinery/rnd/server))
@@ -180,7 +175,7 @@
 		visible_message("Linked to Server!")
 		return
 	bitcoinmining = !bitcoinmining
-	to_chat(user, "<span class='warning'>You [bitcoinmining ? "enable":"disable"] the research point production feature of [src].</span>")
+	to_chat(user, span_warning("[bitcoinmining ? "Включаю":"Выключаю"] сбор исследовательских очков у <b>[src]</b>."))
 	return TRUE
 
 /obj/machinery/power/rad_collector/return_analyzable_air()
@@ -191,20 +186,21 @@
 
 /obj/machinery/power/rad_collector/examine(mob/user)
 	. = ..()
+	. += "<hr>"
 	if(active)
 		if(!bitcoinmining)
 			// stored_energy is converted directly to watts every SSmachines.wait * 0.1 seconds.
 			// Therefore, its units are joules per SSmachines.wait * 0.1 seconds.
 			// So joules = stored_energy * SSmachines.wait * 0.1
 			var/joules = stored_energy * SSmachines.wait * 0.1
-			. += "<hr><span class='notice'>[src]'s display states that it has stored <b>[DisplayJoules(joules)]</b>, and is processing <b>[DisplayPower(RAD_COLLECTOR_OUTPUT)]</b>.</span>"
+			. += span_notice("Дисплей <b>[src]</b> сообщает о накопленных <b>[display_joules(joules)]</b> и выработке <b>[display_power(RAD_COLLECTOR_OUTPUT)]</b>.")
 		else
-			. += "<hr><span class='notice'>[src]'s display states that it has made a total of <b>[stored_research]</b>, and is producing [RAD_COLLECTOR_OUTPUT*RAD_COLLECTOR_MINING_CONVERSION_RATE] research points per minute.</span>"
+			. += span_notice("Дисплей <b>[src]</b> сообщает о <b>[stored_research]</b> исследовательских очках за всё время и также производит [RAD_COLLECTOR_OUTPUT*RAD_COLLECTOR_MINING_CONVERSION_RATE] исследовательских очков в минуту.")
 	else
 		if(!bitcoinmining)
-			. += "<hr><span class='notice'><b>[src]'s display displays the words:</b> \"Power production mode. Please insert <b>Plasma</b>. Use a multitool to change production modes.\"</span>"
+			. += span_notice("Дисплей <b>[src]</b> сообщает:</b> \"Режим производства электроэнергии. Пожалуйста, вставьте <b>бак плазмы</b>. Используйте мультитул для изменения режимов производства.\"")
 		else
-			. += "<hr><span class='notice'><b>[src]'s display displays the words:</b> \"Research point production mode. Please insert <b>Tritium</b> and <b>Oxygen</b>. Use a multitool to change production modes.\"</span>"
+			. += span_notice("Дисплей <b>[src]</b> сообщает:</b> \"Исследовательский режим производства. Пожалуйста, вставьте <b>тритий</b> и <b>кислород</b>. Используйте мультитул для изменения режимов производства.\"")
 
 /obj/machinery/power/rad_collector/obj_break(damage_flag)
 	. = ..()
@@ -228,7 +224,7 @@
 /obj/machinery/power/rad_collector/rad_act(pulse_strength)
 	. = ..()
 	if(loaded_tank && active && pulse_strength > RAD_COLLECTOR_EFFICIENCY)
-		stored_energy += (pulse_strength-RAD_COLLECTOR_EFFICIENCY)*RAD_COLLECTOR_COEFFICIENT
+		stored_energy += (pulse_strength - RAD_COLLECTOR_EFFICIENCY) * RAD_COLLECTOR_COEFFICIENT
 
 /obj/machinery/power/rad_collector/update_overlays()
 	. = ..()
