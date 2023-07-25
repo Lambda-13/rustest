@@ -3505,6 +3505,7 @@
 #include "lambda\sanecman\code\antimatter.dm"
 #include "lambda\sanecman\code\autolathe_designs.dm"
 #include "lambda\sanecman\code\bluespace_beacon.dm"
+#include "lambda\sanecman\code\cargo_teleporter.dm"
 #include "lambda\sanecman\code\copytech.dm"
 #include "lambda\sanecman\code\FURRY.dm"
 #include "lambda\sanecman\code\old_tech.dm"
