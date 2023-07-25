@@ -84,7 +84,7 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 		return
 
 	log_admin("[key_name(src)] has animalized [M.key].")
-	INVOKE_ASYNC(M, /mob.proc/Animalize)
+	INVOKE_ASYNC(M, TYPE_PROC_REF(/mob, Animalize))
 
 
 /client/proc/makepAI(turf/T in GLOB.mob_list)

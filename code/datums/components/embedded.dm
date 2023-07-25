@@ -239,7 +239,7 @@
 		return
 
 	if(to_hands)
-		INVOKE_ASYNC(victim, /mob.proc/put_in_hands, weapon)
+		INVOKE_ASYNC(victim, TYPE_PROC_REF(/mob, put_in_hands), weapon)
 	else
 		weapon.forceMove(get_turf(victim))
 

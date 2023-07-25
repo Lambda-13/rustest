@@ -32,7 +32,7 @@
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
 
-	addtimer(CALLBACK(src, /datum.proc/_AddComponent, list(/datum/component/beauty, beauty)), 0)
+	addtimer(CALLBACK(src, TYPE_PROC_REF(/datum, _AddComponent), list(/datum/component/beauty, beauty)), 0)
 
 	SSblackbox.record_feedback("tally", "station_mess_created", 1, name)
 
