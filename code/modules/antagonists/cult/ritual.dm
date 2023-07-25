@@ -82,7 +82,7 @@ This file contains the cult dagger and rune list code
 			var/wait = 18000 - (world.time - SSticker.round_start_time)
 			to_chat(user, "<span class='cult italic'>The veil is not yet weak enough for this rune - it will be available in [DisplayTimeText(wait)].</span>")
 			return
-		var/datum/objective/eldergod/summon_objective = locate() in user_antag.cult_team.objectives
+//		var/datum/objective/eldergod/summon_objective = locate() in user_antag.cult_team.objectives
 //		if(!(A in summon_objective.summon_spots))
 //			to_chat(user, "<span class='cultlarge'>The Apocalypse rune will remove a ritual site (where Nar'Sie can be summoned), it can only be scribed in [english_list(summon_objective.summon_spots)]!</span>")
 //			return
@@ -91,7 +91,7 @@ This file contains the cult dagger and rune list code
 //			return
 	if(ispath(rune_to_scribe, /obj/effect/rune/narsie))
 		var/datum/objective/eldergod/summon_objective = locate() in user_antag.cult_team.objectives
-		var/datum/objective/sacrifice/sac_objective = locate() in user_antag.cult_team.objectives
+//		var/datum/objective/sacrifice/sac_objective = locate() in user_antag.cult_team.objectives
 //		if(!summon_objective)
 //			to_chat(user, "<span class='warning'>Nar'Sie does not wish to be summoned!</span>")
 //			return
