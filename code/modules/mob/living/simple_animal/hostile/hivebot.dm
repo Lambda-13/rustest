@@ -3,8 +3,8 @@
 	damage_type = BRUTE
 
 /mob/living/simple_animal/hostile/hivebot
-	name = "hivebot"
-	desc = "A small robot."
+	name = "хайвбот"
+	desc = "Маленький робот."
 	icon = 'icons/mob/hivebot.dmi'
 	icon_state = "basic"
 	icon_living = "basic"
@@ -16,8 +16,8 @@
 	healable = 0
 	melee_damage_lower = 2
 	melee_damage_upper = 3
-	attack_verb_continuous = "claws"
-	attack_verb_simple = "claw"
+	attack_verb_continuous = "клацает"
+	attack_verb_simple = "клацает"
 	attack_sound = 'sound/weapons/bladeslice.ogg'
 	projectilesound = 'sound/weapons/gun/pistol/shot.ogg'
 	projectiletype = /obj/projectile/hivebotbullet
@@ -26,10 +26,10 @@
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 	possible_a_intents = list(INTENT_HELP, INTENT_GRAB, INTENT_DISARM, INTENT_HARM)
 	minbodytemp = 0
-	verb_say = "states"
-	verb_ask = "queries"
-	verb_exclaim = "declares"
-	verb_yell = "alarms"
+	verb_say = "озвучивает"
+	verb_ask = "задаётся"
+	verb_exclaim = "декларирует"
+	verb_yell = "вопит"
 	bubble_icon = "machine"
 	speech_span = SPAN_ROBOT
 	del_on_death = 1
@@ -42,14 +42,14 @@
 
 /mob/living/simple_animal/hostile/hivebot/Initialize(mapload)
 	. = ..()
-	deathmessage = "[src] blows apart!"
+	deathmessage = "[src] взрывается!"
 
 /mob/living/simple_animal/hostile/hivebot/Aggro()
 	. = ..()
 	a_intent_change(INTENT_HARM)
 	update_icons()
 	if(prob(5))
-		say(pick("INTRUDER DETECTED!", "CODE 7-34.", "101010!!"), forced = type)
+		say(pick("ОБНАРУЖЕН НАРУШИТЕЛЬ!", "КОД 7-34.", "101010!!"), forced = type)
 
 /mob/living/simple_animal/hostile/hivebot/LoseAggro()
 	. = ..()
@@ -73,8 +73,8 @@
 	..(TRUE)
 
 /mob/living/simple_animal/hostile/hivebot/range
-	name = "hivebot"
-	desc = "A smallish robot, this one is armed!"
+	name = "хайвбот"
+	desc = "Маленький робот с маленьким пистолетиком!"
 	icon_state = "ranged"
 	icon_living = "ranged"
 	icon_dead = "ranged"
@@ -98,11 +98,11 @@
 	faction = list("mining", "hivebot")
 
 /mob/living/simple_animal/hostile/hivebot/strong
-	name = "strong hivebot"
+	name = "крепкий хайвбот"
 	icon_state = "strong"
 	icon_living = "strong"
 	icon_dead = "strong"
-	desc = "A robot, this one is armed and looks tough!"
+	desc = "Маленький толстенький робот!"
 	health = 80
 	maxHealth = 80
 	ranged = TRUE
@@ -111,11 +111,11 @@
 	faction = list("mining", "hivebot")
 
 /mob/living/simple_animal/hostile/hivebot/mechanic
-	name = "hivebot mechanic"
+	name = "хайвбот - механик"
 	icon_state = "strong"
 	icon_living = "strong"
 	icon_dead = "strong"
-	desc = "A robot built for base upkeep, intended for use inside hivebot colonies."
+	desc = "Маленький робот созданный для обслуживания улья ботов."
 	health = 60
 	maxHealth = 60
 	ranged = TRUE
@@ -132,24 +132,24 @@
 	if(istype(target, /obj/machinery))
 		var/obj/machinery/fixable = target
 		if(fixable.obj_integrity >= fixable.max_integrity)
-			to_chat(src, "<span class='warning'>Diagnostics indicate that this machine is at peak integrity.</span>")
+			to_chat(src, "<span class='warning'>Диагностика показывает, что эта машина находится на пике целостности.</span>")
 			return
-		to_chat(src, "<span class='warning'>You begin repairs...</span>")
+		to_chat(src, "<span class='warning'>Чиню...</span>")
 		if(do_after(src, 50, target = fixable))
 			fixable.obj_integrity = fixable.max_integrity
 			do_sparks(3, TRUE, fixable)
-			to_chat(src, "<span class='warning'>Repairs complete.</span>")
+			to_chat(src, "<span class='warning'>Успешно починил.</span>")
 		return
 	if(istype(target, /mob/living/simple_animal/hostile/hivebot))
 		var/mob/living/simple_animal/hostile/hivebot/fixable = target
 		if(fixable.health >= fixable.maxHealth)
-			to_chat(src, "<span class='warning'>Diagnostics indicate that this unit is at peak integrity.</span>")
+			to_chat(src, "<span class='warning'>Диагностика показывает, что эта машина находится на пике целостности.</span>")
 			return
-		to_chat(src, "<span class='warning'>You begin repairs...</span>")
+		to_chat(src, "<span class='warning'>Чиню...</span>")
 		if(do_after(src, 50, target = fixable))
 			fixable.revive(full_heal = TRUE, admin_revive = TRUE)
 			do_sparks(3, TRUE, fixable)
-			to_chat(src, "<span class='warning'>Repairs complete.</span>")
+			to_chat(src, "<span class='warning'>Успешно починил.</span>")
 		return
 	return ..()
 
@@ -176,8 +176,8 @@
 
 
 /mob/living/simple_animal/hostile/hivebot/wasteplanet
-	name = "hivebot"
-	desc = "A smallish robot, this one is armed!"
+	name = "хайвбот"
+	desc = "Маленький робот. Он выглядит ржавым."
 	icon_state = "basic"
 	icon_living = "basic"
 	icon_dead = "basic"
@@ -203,11 +203,11 @@
 	rapid = 3
 
 /mob/living/simple_animal/hostile/hivebot/wasteplanet/strong
-	name = "strong hivebot"
+	name = "крепкий хайвбот"
 	icon_state = "strong"
 	icon_living = "strong"
 	icon_dead = "strong"
-	desc = "A robot, this one is armed and looks tough!"
+	desc = "Маленький робот. Он выглядит старым."
 	health = 80
 	maxHealth = 80
 	ranged = TRUE
