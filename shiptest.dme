@@ -3509,6 +3509,7 @@
 #include "lambda\sanecman\code\copytech.dm"
 #include "lambda\sanecman\code\FURRY.dm"
 #include "lambda\sanecman\code\old_tech.dm"
+#include "lambda\sanecman\code\scavenger.dm"
 #include "lambda\sanecman\code\triglavian.dm"
 #include "lambda\sanecman\code\wood_gen.dm"
 #include "lambda\sanecman\code\_DEFINE\shitcode\integrated_electronics.dm"
