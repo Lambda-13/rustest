@@ -240,7 +240,7 @@ GLOBAL_LIST_EMPTY(ore_vein_landmarks)
 	playsound(src, 'sound/effects/phasein.ogg', 100, TRUE)
 	var/turf/deploy_location = get_turf(src)
 	new to_deploy(deploy_location)
-	new /obj/effect/particle_effect/spark(deploy_location)
+	new /obj/effect/particle_effect/smoke(deploy_location)
 	qdel(src)
 
 /obj/item/pinpointer/deepcore
