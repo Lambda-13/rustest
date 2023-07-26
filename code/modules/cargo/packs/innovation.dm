@@ -35,10 +35,10 @@
 	crate_name = "ящик с копировальными платами"
 	crate_type = /obj/structure/closet/crate/science
 
-/datum/supply_pack/innovations/copytech
+/datum/supply_pack/innovations/deepcore
 	name = "Бурильная установка"
 	desc = "Содержит внутри технику для добычи руды из недр планет."
-	cost = COST_HIGH * 1000000
+	cost = COST_MED * 1000
 	contains = list(/obj/item/deepcorecapsule, /obj/item/pinpointer/deepcore, /obj/machinery/deepcore/hopper)
 	crate_name = "ящик с бурильной установкой"
 	crate_type = /obj/structure/closet/crate/large
