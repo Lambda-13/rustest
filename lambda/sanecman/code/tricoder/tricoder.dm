@@ -15,7 +15,7 @@ TRICORDER
 	desc = "Многофункциональное устройство, которое может выполнять огромный спектр задач."
 	icon_state = "tricorder"
 	inhand_icon_state = "tricorder"
-	icon = 'icons/obj/device.dmi'
+	icon = 'lambda/sanecman/icons/tricorder.dmi'
 	lefthand_file = 'lambda/sanecman/icons/mob/valtos_lefthand.dmi'
 	righthand_file = 'lambda/sanecman/icons/mob/valtos_righthand.dmi'
 	flags_1 = CONDUCT_1
