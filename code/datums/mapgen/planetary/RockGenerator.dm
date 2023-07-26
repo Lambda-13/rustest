@@ -88,7 +88,8 @@
 		/obj/structure/geyser/random = 8,
 		/obj/structure/elite_tumor = 4,
 		/obj/effect/spawner/lootdrop/anomaly/rock = 1,
-		/obj/effect/spawner/lootdrop/anomaly/big = 0.1 //get out of here stalker
+		/obj/effect/spawner/lootdrop/anomaly/big = 0.1, //get out of here stalker
+		/obj/effect/spawner/lootdrop/ore_vein/rock = 0.5
 	)
 
 	flora_spawn_chance = 5
@@ -151,6 +152,7 @@
 		/obj/structure/elite_tumor = 1,
 		/obj/structure/spawner/ice_moon/rockplanet = 4,
 		/obj/effect/spawner/lootdrop/anomaly/rock/cave = 1,
+		/obj/effect/spawner/lootdrop/ore_vein/rock = 0.5
 	)
 	mob_spawn_chance = 6
 	mob_spawn_list = list(

@@ -175,6 +175,11 @@
 	open_turf_types = list(/turf/open/floor/plating/asteroid/sand/dense = 1)
 	flora_spawn_list = list(/obj/structure/flora/tree/dead_pine = 1, /obj/structure/flora/rock/beach = 1, /obj/structure/flora/driftwood = 3, /obj/structure/flora/driftlog = 2)
 	flora_spawn_chance = 6
+	feature_spawn_chance = 0.1
+	feature_spawn_list = list(
+		/obj/item/pickaxe/rusted = 1,
+		/obj/effect/spawner/lootdrop/ore_vein/jungle = 1
+	)
 
 /datum/biome/cave/beach/magical
 	open_turf_types = list(/turf/open/floor/grass/fairy/beach = 1)

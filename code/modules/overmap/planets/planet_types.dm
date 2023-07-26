@@ -146,4 +146,4 @@
 	default_baseturf = /turf/open/floor/plating/asteroid/shroudedplanet
 	weather_controller_type = /datum/weather_controller/shrouded
 	ruin_type = RUINTYPE_SHROUDED
-	danger_level = 4
+	danger_level = 0 //Пока не починю будет отключена

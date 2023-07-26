@@ -369,6 +369,10 @@
 	return sortTim(L, order >= 0 ? GLOBAL_PROC_REF(cmp_records_asc) : GLOBAL_PROC_REF(cmp_records_dsc))
 
 //any value in a list
+/proc/sort_list(list/L, cmp=/proc/cmp_text_asc)
+	return sortTim(L.Copy(), cmp)
+
+//any value in a list
 /proc/sortList(list/L, cmp=/proc/cmp_text_asc)
 	return sortTim(L.Copy(), cmp)
 

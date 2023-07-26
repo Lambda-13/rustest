@@ -20,7 +20,7 @@
 
 
 /datum/supply_pack/innovations/exploration
-	name = "Блюспейс-маяк"
+	name = "Блюспейс-якорь"
 	desc = "Содержит внутри маяк который может удержать на месте планету или регион в космосе."
 	cost = COST_HIGH * 30000
 	contains = list(/obj/item/sbeacondrop/exploration)
@@ -34,3 +34,11 @@
 	contains = list(/obj/item/storage/box/copytech)
 	crate_name = "ящик с копировальными платами"
 	crate_type = /obj/structure/closet/crate/science
+
+/datum/supply_pack/innovations/copytech
+	name = "Бурильная установка"
+	desc = "Содержит внутри технику для добычи руды из недр планет."
+	cost = COST_HIGH * 1000000
+	contains = list(/obj/item/deepcorecapsule, /obj/item/pinpointer/deepcore, /obj/machinery/deepcore/hopper)
+	crate_name = "ящик с бурильной установкой"
+	crate_type = /obj/structure/closet/crate/large

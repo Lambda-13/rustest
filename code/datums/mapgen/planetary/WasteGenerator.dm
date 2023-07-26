@@ -132,7 +132,8 @@
 		/obj/effect/radiation/waste = 30,
 		/obj/effect/radiation/waste/intense = 10,
 		/obj/structure/geyser/random = 1,
-		/obj/effect/spawner/lootdrop/anomaly/waste = 1
+		/obj/effect/spawner/lootdrop/anomaly/waste = 1,
+		/obj/effect/spawner/lootdrop/ore_vein/waste = 1
 	)
 
 	mob_spawn_list = list(
@@ -315,7 +316,8 @@
 		/obj/effect/radiation/waste = 30,
 		/obj/effect/radiation/waste/intense = 10,
 		/obj/structure/geyser/random = 1,
-		/obj/effect/spawner/lootdrop/anomaly/waste/cave = 1
+		/obj/effect/spawner/lootdrop/anomaly/waste/cave = 1,
+		/obj/effect/spawner/lootdrop/ore_vein/waste = 1
 	)
 	mob_spawn_list = list(
 		/mob/living/simple_animal/hostile/hivebot/strong/rockplanet = 70,
@@ -440,6 +442,7 @@
 		/obj/structure/spawner/wasteplanet/hivebot/low_threat = 20,
 		/obj/structure/spawner/wasteplanet/hivebot/medium_threat = 10,
 		/obj/structure/spawner/wasteplanet/hivebot/high_threat = 5,
-		/obj/structure/spawner/wasteplanet/hivebot/extreme_threat = 2
+		/obj/structure/spawner/wasteplanet/hivebot/extreme_threat = 2,
+		/obj/effect/spawner/lootdrop/ore_vein/waste = 1
 		)
 	feature_spawn_chance = 2 //hivebot biomes should have their dongles

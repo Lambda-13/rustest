@@ -3569,6 +3569,8 @@
 #include "lambda\sanecman\code\choice_beacon\outpost.dm"
 #include "lambda\sanecman\code\combat_items\barricades.dm"
 #include "lambda\sanecman\code\combat_items\guns_bay.dm"
+#include "lambda\sanecman\code\deepcore\deepcore.dm"
+#include "lambda\sanecman\code\deepcore\deepcore_designs.dm"
 #include "lambda\sanecman\code\discovery_scanner\primitive_recipes\curcuit_recipes.dm"
 #include "lambda\sanecman\code\exoplanets\area.dm"
 #include "lambda\sanecman\code\exoplanets\atmos.dm"
