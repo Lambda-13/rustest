@@ -83,6 +83,11 @@
 	unit_name = "analyzer"
 	export_types = list(/obj/item/analyzer)
 
+/datum/export/tricorder
+	cost = 15
+	unit_name = "tricorder"
+	export_types = list(/obj/item/multitool/tricorder)
+
 /datum/export/analyzer/t_scanner
 	cost = 10
 	unit_name = "t-ray scanner"

@@ -513,7 +513,7 @@
 	name = "Syndicate Battlecruiser Ship Engineer"
 	glasses = /obj/item/clothing/glasses/meson/night
 	uniform = /obj/item/clothing/under/syndicate/gorlex
-	r_pocket = /obj/item/analyzer
+	r_pocket = /obj/item/multitool/tricorder
 	belt = /obj/item/storage/belt/utility/syndicate
 	back = /obj/item/storage/backpack/industrial
 	backpack_contents = list(/obj/item/storage/box/survival/syndie=1, /obj/item/construction/rcd/combat, /obj/item/rcd_ammo/large)

@@ -366,6 +366,7 @@
 		/obj/item/gun/ballistic,
 		/obj/item/gun/energy,
 		/obj/item/melee/baton,
+		/obj/item/multitool/tricorder,
 	)
 
 /obj/item/clothing/suit/armor/roumain

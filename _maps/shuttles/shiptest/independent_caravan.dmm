@@ -1247,13 +1247,12 @@
 /obj/item/clothing/gloves/color/black,
 /obj/item/extinguisher/advanced,
 /obj/item/clothing/suit/hooded/wintercoat/engineering/atmos,
-/obj/item/analyzer,
 /obj/item/holosign_creator/atmos,
 /obj/item/storage/belt/utility/atmostech,
 /obj/item/radio/off,
 /obj/item/clothing/glasses/meson/engine/tray,
 /obj/item/pipe_dispenser,
-/obj/item/multitool,
+/obj/item/multitool/tricorder,
 /obj/structure/closet/wall/orange{
 	pixel_y = 32
 	},

@@ -3663,6 +3663,8 @@
 #include "lambda\sanecman\code\tgmechcomp\mechcomp_component.dm"
 #include "lambda\sanecman\code\tgmechcomp\mechcomp_related.dm"
 #include "lambda\sanecman\code\tgmechcomp\teleporter_comp.dm"
+#include "lambda\sanecman\code\tricoder\tricoder.dm"
+#include "lambda\sanecman\code\tricoder\tricoder_designs.dm"
 #include "lambda\sanecman\code\unsorted\gun_hud.dm"
 #include "lambda\sanecman\code\unsorted\keybindings_reset.dm"
 #include "lambda\sanecman\code\unsorted\mre.dm"

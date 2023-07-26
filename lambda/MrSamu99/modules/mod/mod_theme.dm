@@ -177,6 +177,7 @@
 		/obj/item/analyzer,
 		/obj/item/t_scanner,
 		/obj/item/pipe_dispenser,
+		/obj/item/multitool/tricorder,
 	)
 	skins = list(
 		"atmospheric" = list(
@@ -233,6 +234,7 @@
 		/obj/item/construction/rcd,
 		/obj/item/storage/bag/construction,
 		/obj/item/melee/classic_baton/telescopic,
+		/obj/item/multitool/tricorder,
 	)
 	skins = list(
 		"advanced" = list(
@@ -578,6 +580,7 @@
 		/obj/item/dnainjector,
 		/obj/item/storage/bag/bio,
 		/obj/item/melee/classic_baton/telescopic,
+		/obj/item/multitool/tricorder,
 	)
 	skins = list(
 		"research" = list(
@@ -1106,6 +1109,7 @@
 		/obj/item/t_scanner,
 		/obj/item/pipe_dispenser,
 		/obj/item/construction/rcd,
+		/obj/item/multitool/tricorder,
 	)
 	skins = list(
 		"prototype" = list(

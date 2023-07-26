@@ -3343,7 +3343,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/item/clothing/head/welding,
 /obj/item/weldingtool/largetank,
-/obj/item/analyzer,
+/obj/item/multitool/tricorder,
 /turf/open/floor/plasteel,
 /area/ruin/unpowered/syndicate_lava_base/engineering)
 "lN" = (
