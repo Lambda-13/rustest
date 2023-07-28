@@ -14,7 +14,8 @@
 
 /obj/machinery/pipedispenser/ui_interact(mob/user)
 	. = ..()
-	var/dat = "PIPING LAYER: <A href='?src=[REF(src)];layer_down=1'>--</A><b>[piping_layer]</b><A href='?src=[REF(src)];layer_up=1'>++</A><BR>"
+	var/dat = "<meta charset='utf-8'>"
+	dat += "PIPING LAYER: <A href='?src=[REF(src)];layer_down=1'>--</A><b>[piping_layer]</b><A href='?src=[REF(src)];layer_up=1'>++</A><BR>"
 
 	var/recipes = GLOB.atmos_pipe_recipes
 
