@@ -171,7 +171,7 @@
 /obj/item/storage/box/survival/mining
 	mask_type = /obj/item/clothing/mask/gas/explorer
 	medipen_type = /obj/item/reagent_containers/hypospray/medipen/stimpack
-	bruise_type = /obj/item/reagent_containers/food/snacks/grown/watermelon
+	bruise_type = /obj/item/reagent_containers/food/snacks/tastybread
 	flare_type = /obj/item/flashlight/lantern/heirloom_moth
 	food_type = /obj/item/reagent_containers/food/snacks/chocolatebar
 
@@ -183,7 +183,7 @@
 /obj/item/storage/box/survival/engineer
 	internal_type = /obj/item/tank/internals/emergency_oxygen/engi
 	flare_type = /obj/item/flashlight/flare
-	food_type = /obj/item/reagent_containers/food/snacks/grown/watermelon
+	food_type = /obj/item/reagent_containers/food/snacks/tastybread
 
 /obj/item/storage/box/survival/engineer/radio/PopulateContents()
 	..() // we want the regular items too.
@@ -209,7 +209,7 @@
 /obj/item/storage/box/survival/medical
 	mask_type = /obj/item/clothing/mask/breath/medical
 	medipen_type = /obj/item/hypospray/mkii/tricord
-	food_type = /obj/item/reagent_containers/food/snacks/grown/watermelon
+	food_type = /obj/item/reagent_containers/food/snacks/tastybread
 
 /obj/item/storage/box/gloves
 	name = "box of latex gloves"
@@ -1125,7 +1125,7 @@
 		new /obj/item/reagent_containers/food/snacks/grown/citrus/orange(src)
 	new /obj/item/reagent_containers/food/snacks/grown/citrus/lemon(src)
 	new /obj/item/reagent_containers/food/snacks/grown/citrus/lime(src)
-	new /obj/item/reagent_containers/food/snacks/grown/watermelon(src)
+	new /obj/item/reagent_containers/food/snacks/tastybread(src)
 
 /obj/item/storage/box/ingredients/sweets
 	theme_name = "sweets"
