@@ -237,9 +237,9 @@
 		FREQ_COMMON, // frequency: Common
 		v_speaker, // speaker: a weird dummy atom not used for much of import but which will cause runtimes if omitted or improperly initialized.
 		/datum/language/common, // language: Common
-		"[dock_requester.name] прибывает в [dock_requester.shuttle_port.docked].", // the message itself
+		"[dock_requester.name] confirmed touchdown at [dock_requester.shuttle_port.docked].", // the message itself
 		list(SPAN_ROBOT), // message font
-		list(MODE_CUSTOM_SAY_EMOTE = "холодно сообщает") // custom say verb, consistent with robots
+		list(MODE_CUSTOM_SAY_EMOTE = "coldly states") // custom say verb, consistent with robots
 	)
 	signal.send_to_receivers()
 	return
@@ -263,9 +263,9 @@
 		FREQ_COMMON,
 		v_speaker,
 		/datum/language/common,
-		"[dock_requester.name] покидает [src].",
+		"[dock_requester.name] has departed from [src].",
 		list(SPAN_ROBOT),
-		list(MODE_CUSTOM_SAY_EMOTE = "холодно сообщает")
+		list(MODE_CUSTOM_SAY_EMOTE = "coldly states")
 	)
 	signal.send_to_receivers()
 
