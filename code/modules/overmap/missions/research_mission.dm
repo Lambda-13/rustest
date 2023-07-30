@@ -123,24 +123,24 @@
 	value = 4000
 	weight = 4
 
-/datum/mission/research/carp
-	name = "Carp migration research mission"
-	desc = "We require data on the migration patterns of space carp for an ongoing study. \
-			Please anchor the attached sensor array to your ship and fly it through the fields. \
-			It must be powered to collect the data."
-	value = 2000
-	weight = 4
-	num_wanted = 3
-	objective_type = /datum/overmap/event/meteor/carp
+///datum/mission/research/carp
+//	name = "Carp migration research mission"
+//	desc = "We require data on the migration patterns of space carp for an ongoing study. \
+//			Please anchor the attached sensor array to your ship and fly it through the fields. \
+//			It must be powered to collect the data."
+//	value = 2000
+//	weight = 4
+//	num_wanted = 3
+//	objective_type = /datum/overmap/event/meteor/carp
 
-/datum/mission/research/dust
-	name = "dust research mission"
-	desc = "We require data on the density of space dust for updated navcharts. \
-			Please anchor the attached sensor array to your ship and fly it through the fields. \
-			It must be powered to collect the data."
-	value = 1000
-	weight = 4
-	objective_type = /datum/overmap/event/meteor/dust
+///datum/mission/research/dust
+//	name = "dust research mission"
+//	desc = "We require data on the density of space dust for updated navcharts. \
+//			Please anchor the attached sensor array to your ship and fly it through the fields. \
+//			It must be powered to collect the data."
+//	value = 1000
+//	weight = 4
+//	objective_type = /datum/overmap/event/meteor/dust
 
 /*
 		Research mission scanning machine

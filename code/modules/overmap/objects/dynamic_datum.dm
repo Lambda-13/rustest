@@ -301,6 +301,11 @@
 	area_flags = HIDDEN_AREA | CAVES_ALLOWED | FLORA_ALLOWED | MOB_SPAWN_ALLOWED //allows jaunters to work
 	ambientsounds = REEBE
 
+/area/overmap_encounter/planetoid/shroudedplanet
+	name = "Планета: Тёмный пустырь"
+	sound_environment = SOUND_ENVIRONMENT_CAVE
+	ambientsounds = REEBE//AMBIENT_BAY12_PLANET_BARREN
+
 /area/overmap_encounter/planetoid/asteroid
 	name = "Астеройдное Поле"
 	sound_environment = SOUND_ENVIRONMENT_QUARRY
