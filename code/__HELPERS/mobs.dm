@@ -5,31 +5,43 @@
 /proc/random_eye_color()
 	switch(pick(20;"brown",20;"hazel",20;"grey",15;"blue",15;"green",1;"amber",1;"albino"))
 		if("brown")
-			return "663300"
+			return "630"
 		if("hazel")
-			return "554422"
+			return "542"
 		if("grey")
-			return pick("666666","777777","888888","999999","aaaaaa","bbbbbb","cccccc")
+			return pick("666","777","888","999","aaa","bbb","ccc")
 		if("blue")
-			return "3366cc"
+			return "36c"
 		if("green")
-			return "006600"
+			return "060"
 		if("amber")
-			return "ffcc00"
+			return "fc0"
 		if("albino")
-			return pick("cc","dd","ee","ff") + pick("00","11","22","33","44","55","66","77","88","99") + pick("00","11","22","33","44","55","66","77","88","99")
+			return pick("c","d","e","f") + pick("0","1","2","3","4","5","6","7","8","9") + pick("0","1","2","3","4","5","6","7","8","9")
 		else
-			return "000000"
+			return "000"
 
 /proc/random_underwear(gender)
 	if(!GLOB.underwear_list.len)
-		init_sprite_accessory_subtypes(/datum/sprite_accessory/underwear, GLOB.underwear_list)
-	return pick(GLOB.underwear_list)
+		init_sprite_accessory_subtypes(/datum/sprite_accessory/underwear, GLOB.underwear_list, GLOB.underwear_m, GLOB.underwear_f)
+	switch(gender)
+		if(MALE)
+			return pick(GLOB.underwear_m)
+		if(FEMALE)
+			return pick(GLOB.underwear_f)
+		else
+			return pick(GLOB.underwear_list)
 
-/proc/random_undershirt()
+/proc/random_undershirt(gender)
 	if(!GLOB.undershirt_list.len)
-		init_sprite_accessory_subtypes(/datum/sprite_accessory/undershirt, GLOB.undershirt_list)
-	return pick(GLOB.undershirt_list)
+		init_sprite_accessory_subtypes(/datum/sprite_accessory/undershirt, GLOB.undershirt_list, GLOB.undershirt_m, GLOB.undershirt_f)
+	switch(gender)
+		if(MALE)
+			return pick(GLOB.undershirt_m)
+		if(FEMALE)
+			return pick(GLOB.undershirt_f)
+		else
+			return pick(GLOB.undershirt_list)
 
 /proc/random_socks()
 	if(!GLOB.socks_list.len)
@@ -97,6 +109,7 @@
 	return list(
 		"body_markings" = pick(GLOB.body_markings_list),
 		"body_size" = pick(GLOB.body_sizes),
+		"caps" = pick(GLOB.caps_list),
 		"ears" = "None",
 		"elzu_horns" = pick(GLOB.elzu_horns_list),
 		"ethcolor" = GLOB.color_list_ethereal[pick(GLOB.color_list_ethereal)],
@@ -189,13 +202,6 @@
 /proc/random_unique_kepori_name(attempts_to_find_unique_name=10)
 	for(var/i in 1 to attempts_to_find_unique_name)
 		. = capitalize(kepori_name())
-
-		if(!findname(.))
-			break
-
-/proc/random_unique_vox_name(attempts_to_find_unique_name=10)
-	for(var/i in 1 to attempts_to_find_unique_name)
-		. = capitalize(vox_name())
 
 		if(!findname(.))
 			break

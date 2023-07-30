@@ -41,9 +41,6 @@
 	///The X bounds of the virtual z level
 	var/vlevel_width = QUADRANT_MAP_SIZE
 
-	//controls what kind of sound we play when we land and the maptext comes up
-	var/landing_sound
-
 	//Уровень опасности при осмотре планеты на оверкарте который даёт понять насколько безопасно сюда высаживаться
 	var/danger_level
 
@@ -86,11 +83,9 @@
 
 /datum/overmap/dynamic/post_docked(datum/overmap/ship/controlled/dock_requester)
 	if(planet_name)
-		for(var/mob/Mob as anything in GLOB.player_list)
-			if(dock_requester.shuttle_port.is_in_shuttle_bounds(Mob))
-				Mob.play_screen_text("<span class='maptext' style=font-size:24pt;text-align:center valign='top'><u>[planet_name]</u></span><br>[station_time_timestamp_fancy("hh:mm")]")
-				playsound(Mob, landing_sound, 50)
-
+		for(var/mob/M as anything in GLOB.player_list)
+			if(dock_requester.shuttle_port.is_in_shuttle_bounds(M))
+				M.play_screen_text("<span class='maptext' style=font-size:24pt;text-align:center valign='top'><u>[planet_name]</u></span><br>[station_time_timestamp_fancy("hh:mm")]")
 
 /datum/overmap/dynamic/post_undocked(datum/overmap/dock_requester)
 	if(preserve_level)
@@ -124,17 +119,10 @@
 		probabilities = list()
 		for(var/datum/planet_type/planet_type as anything in subtypesof(/datum/planet_type))
 			probabilities[initial(planet_type.planet)] = initial(planet_type.weight)
+
 	planet = SSmapping.planet_types[force_encounter ? force_encounter : pickweightAllowZero(probabilities)]
 
-
-	if(planet.planet !=DYNAMIC_WORLD_ASTEROID && planet.planet != DYNAMIC_WORLD_SPACERUIN) //these aren't real planets
-		planet_name = "[gen_planet_name()]"
-		Rename(planet_name)
-		token.name = "[planet_name]" + " ([planet.name])"
-	if(planet.planet == DYNAMIC_WORLD_ASTEROID || planet.planet == DYNAMIC_WORLD_SPACERUIN)
-		Rename(planet.name)
-		token.name = "[planet.name]"
-
+	Rename(planet.name)
 	token.icon_state = planet.icon_state
 	token.desc = planet.desc
 	token.color = planet.color
@@ -142,8 +130,6 @@
 	default_baseturf = planet.default_baseturf
 	mapgen = planet.mapgen
 	weather_controller_type = planet.weather_controller_type
-	landing_sound = planet.landing_sound
-	preserve_level = planet.preserve_level //it came to me while I was looking at chickens
 	danger_level = planet.danger_level
 
 /*
@@ -301,13 +287,7 @@
 	area_flags = HIDDEN_AREA | CAVES_ALLOWED | FLORA_ALLOWED | MOB_SPAWN_ALLOWED //allows jaunters to work
 	ambientsounds = REEBE
 
-/area/overmap_encounter/planetoid/asteroid
-	name = "Астеройдное Поле"
-	sound_environment = SOUND_ENVIRONMENT_QUARRY
-	ambientsounds = SPACE
-
-/area/overmap_encounter/planetoid/gas_giant
-	name = "Газовый Гигант"
-	sound_environment = SOUND_ENVIRONMENT_MOUNTAINS
-	ambientsounds = REEBE
-	has_gravity = GAS_GIANT_GRAVITY
+/area/overmap_encounter/planetoid/shroudedplanet
+	name = "Планета: Тёмный пустырь"
+	sound_environment = SOUND_ENVIRONMENT_CAVE
+	ambientsounds = REEBE//AMBIENT_BAY12_PLANET_BARREN

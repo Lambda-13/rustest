@@ -7,7 +7,7 @@
 
 /obj/item/clothing/under/color/jumpskirt
 	body_parts_covered = CHEST|GROIN|ARMS
-	can_adjust = TRUE
+	can_adjust = FALSE
 
 /obj/item/clothing/under/color/random
 	icon_state = "random_jumpsuit"
@@ -160,6 +160,7 @@
 	name = "teal jumpskirt"
 	icon_state = "teal_skirt"
 	item_state = "b_suit"
+
 
 /obj/item/clothing/under/color/lightpurple
 	name = "purple jumpsuit"

@@ -8,10 +8,7 @@
 //extract implant
 /datum/surgery_step/extract_implant
 	name = "extract implant"
-	implements = list(
-		TOOL_HEMOSTAT = 100,
-		TOOL_CROWBAR = 40,
-		/obj/item/kitchen/fork = 33)
+	implements = list(TOOL_HEMOSTAT = 100, TOOL_CROWBAR = 65, /obj/item/kitchen/fork = 35)
 	time = 6.4 SECONDS
 	success_sound = 'sound/surgery/hemostat1.ogg'
 	experience_given = MEDICAL_SKILL_MEDIUM

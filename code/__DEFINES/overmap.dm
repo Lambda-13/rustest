@@ -32,8 +32,6 @@
 #define DYNAMIC_WORLD_REEBE "reebe" //celestial bodies
 #define DYNAMIC_WORLD_ASTEROID "asteroid"
 #define DYNAMIC_WORLD_SPACERUIN "space"
-#define DYNAMIC_WORLD_GAS_GIANT "gas giant"
-#define DYNAMIC_WORLD_PLASMA_GIANT "plasma giant"
 
 //Если бы я мог
 //Я бы вынес всё это отдельно
@@ -62,8 +60,6 @@
 	DYNAMIC_WORLD_REEBE,\
 	DYNAMIC_WORLD_ASTEROID,\
 	DYNAMIC_WORLD_SPACERUIN,\
-	DYNAMIC_WORLD_GAS_GIANT,\
-	DYNAMIC_WORLD_PLASMA_GIANT,\
 	DYNAMIC_WORLD_SHROUDED) //DYNAMIC_WORLD_SHROUDED сделано на лямбде 13
 /*
 // Потом это добавлю
@@ -110,6 +106,3 @@
 // Burn direction defines
 #define BURN_NONE 0
 #define BURN_STOP -1
-
-// The filepath used to store the admin-controlled next round outpost map override.
-#define OUTPOST_OVERRIDE_FILEPATH "data/outpost_override.json"

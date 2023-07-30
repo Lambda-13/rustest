@@ -11,12 +11,10 @@
 	var/spread_chance = 0
 	///How many additional tiles to spawn at once in the selected orbit. Used with OVERMAP_GENERATOR_SOLAR.
 	var/chain_rate = 0
-	var/desc
 
 /datum/overmap/event/Initialize(position, ...)
 	. = ..()
 	SSovermap.events += src
-	token.desc = desc
 
 /datum/overmap/event/Destroy()
 	. = ..()
@@ -26,30 +24,29 @@
  * The main proc for calling other procs. Called by SSovermap.
  */
 /datum/overmap/event/proc/apply_effect()
-	for(var/datum/overmap/ship/controlled/Ship in get_nearby_overmap_objects())
+	for(var/datum/overmap/ship/controlled/S in get_nearby_overmap_objects())
 		if(prob(chance_to_affect))
-			affect_ship(Ship)
+			affect_ship(S)
 
 /**
  * The proc called on all ships that are currently being affected.
  */
-/datum/overmap/event/proc/affect_ship(datum/overmap/ship/controlled/Ship)
+/datum/overmap/event/proc/affect_ship(datum/overmap/ship/controlled/S)
 	return
 
 
-///METEOR STORMS - explodes your ship if you go too fast
+///METEOR STORMS - Bounces harmlessly off the shield... unless your shield is breached
 /datum/overmap/event/meteor
-	name = "asteroid field (moderate)"
-	desc = "An area of space rich with asteroids, going fast through here could prove dangerous"
+	name = "asteroid storm (moderate)"
 	token_icon_state = "meteor1"
 	chance_to_affect = 15
 	spread_chance = 50
 	chain_rate = 4
-	var/safe_speed = 3
 	var/list/meteor_types = list(
 		/obj/effect/meteor/dust=3,
 		/obj/effect/meteor/medium=8,
-		/obj/effect/meteor/big=1,
+		/obj/effect/meteor/big=3,
+		/obj/effect/meteor/flaming=1,
 		/obj/effect/meteor/irradiated=3
 	)
 
@@ -60,46 +57,38 @@
 	token.light_color = "#a08444"
 	token.update_icon()
 
-/datum/overmap/event/meteor/apply_effect()
-	for(var/datum/overmap/ship/controlled/Ship in get_nearby_overmap_objects())
-		if(Ship.get_speed() > safe_speed)
-			var/how_fast =  (Ship.get_speed() - safe_speed)
-			if(prob(chance_to_affect + how_fast))
-				affect_ship(Ship)
-
-/datum/overmap/event/meteor/affect_ship(datum/overmap/ship/controlled/Ship)
-	spawn_meteor(meteor_types, Ship.shuttle_port.get_virtual_level(), 0)
+/datum/overmap/event/meteor/affect_ship(datum/overmap/ship/controlled/S)
+	spawn_meteor(meteor_types, S.shuttle_port.get_virtual_level(), 0)
 
 /datum/overmap/event/meteor/minor
-	name = "asteroid field (minor)"
+	name = "asteroid storm (minor)"
 	chain_rate = 3
 	meteor_types = list(
-		/obj/effect/meteor/dust=12,
 		/obj/effect/meteor/medium=4,
-		/obj/effect/meteor/irradiated=2
+		/obj/effect/meteor/big=8,
+		/obj/effect/meteor/flaming=3,
+		/obj/effect/meteor/irradiated=3
 	)
 
 /datum/overmap/event/meteor/major
-	name = "asteroid field (major)"
+	name = "asteroid storm (major)"
 	spread_chance = 25
 	chain_rate = 6
 	meteor_types = list(
-		/obj/effect/meteor/medium=50,
-		/obj/effect/meteor/big=25,
+		/obj/effect/meteor/medium=5,
+		/obj/effect/meteor/big=75,
 		/obj/effect/meteor/flaming=10,
 		/obj/effect/meteor/irradiated=10,
 		/obj/effect/meteor/tunguska = 1
 	)
 
-///ION STORM - explodes your IPCs
+///ION STORM - Causes EMP pulses on the shuttle, wreaking havoc on the shields
 /datum/overmap/event/emp
 	name = "ion storm (moderate)"
-	desc = "A heavily ionized area of space, prone to causing electromagnetic pulses in ships"
 	token_icon_state = "ion1"
 	spread_chance = 20
 	chain_rate = 2
-	chance_to_affect = 20
-	var/strength = 4
+	var/strength = 3
 
 /datum/overmap/event/emp/Initialize(position, ...)
 	. = ..()
@@ -116,28 +105,25 @@
 	for(var/mob/M as anything in GLOB.player_list)
 		if(S.shuttle_port.is_in_shuttle_bounds(M))
 			M.playsound_local(S.shuttle_port, 'sound/weapons/ionrifle.ogg', strength)
+			shake_camera(M, 10, strength)
 
 /datum/overmap/event/emp/minor
 	name = "ion storm (minor)"
 	chain_rate = 1
 	strength = 1
-	chance_to_affect = 15
 
 /datum/overmap/event/emp/major
 	name = "ion storm (major)"
-	chance_to_affect = 25
 	chain_rate = 4
-	strength = 6
+	strength = 5
 
-///ELECTRICAL STORM - explodes your computer and IPCs
+///ELECTRICAL STORM - Zaps places in the shuttle
 /datum/overmap/event/electric
 	name = "electrical storm (moderate)"
-	desc = "A spatial anomaly, an unfortunately common sight on the frontier. Disturbing it tends to lead to intense electrical discharges"
 	token_icon_state = "electrical1"
 	chance_to_affect = 15
 	spread_chance = 30
 	chain_rate = 3
-	var/zap_flag = ZAP_STORM_FLAGS
 	var/max_damage = 15
 	var/min_damage = 5
 
@@ -151,10 +137,11 @@
 /datum/overmap/event/electric/affect_ship(datum/overmap/ship/controlled/S)
 	var/datum/virtual_level/ship_vlevel = S.shuttle_port.get_virtual_level()
 	var/turf/source = ship_vlevel.get_side_turf(pick(GLOB.cardinals))
-	tesla_zap(source, 10, TESLA_DEFAULT_POWER, zap_flag)
+	tesla_zap(source, 10, TESLA_DEFAULT_POWER, ZAP_TESLA_FLAGS)
 	for(var/mob/M as anything in GLOB.player_list)
 		if(S.shuttle_port.is_in_shuttle_bounds(M))
 			M.playsound_local(source, 'sound/magic/lightningshock.ogg', rand(min_damage / 10, max_damage / 10))
+			shake_camera(M, 10, rand(min_damage / 10, max_damage / 10))
 
 /datum/overmap/event/electric/minor
 	name = "electrical storm (minor)"
@@ -169,11 +156,9 @@
 	chain_rate = 6
 	max_damage = 20
 	min_damage = 10
-	zap_flag = ZAP_TESLA_FLAGS
 
 /datum/overmap/event/nebula
 	name = "nebula"
-	desc = "There's coffee in here"
 	token_icon_state = "nebula"
 	chain_rate = 8
 	spread_chance = 75
@@ -187,7 +172,6 @@
 
 /datum/overmap/event/wormhole
 	name = "wormhole"
-	desc = "A hole through space. If you go through here, you might end up anywhere."
 	token_icon_state = "wormhole"
 	spread_chance = 0
 	chain_rate = 0
@@ -243,95 +227,6 @@
 		if(5)
 			return"#6d80c7"
 
-//Carp "meteors" - throws carp at the ship
-
-/datum/overmap/event/meteor/carp
-	name = "carp migration (moderate)"
-	desc = "A migratory school of space carp. They travel at high speeds, and flying through them may cause them to impact your ship"
-	token_icon_state = "carp1"
-	chance_to_affect = 15
-	spread_chance = 50
-	chain_rate = 4
-	safe_speed = 2
-	meteor_types = list(
-		/obj/effect/meteor/carp=16,
-		/obj/effect/meteor/carp/big=1, //numbers I pulled out of my ass
-	)
-
-/datum/overmap/event/meteor/carp/Initialize(position, ...)
-	. = ..()
-	token.icon_state = "carp[rand(1, 4)]"
-	token.color = "#7b1ca8"
-	token.light_color = "#7b1ca8"
-	token.update_icon()
-
-
-/datum/overmap/event/meteor/carp/minor
-	name = "carp migration (minor)"
-	token_icon_state = "carp1"
-	chance_to_affect = 5
-	spread_chance = 25
-	chain_rate = 4
-	meteor_types = list(
-		/obj/effect/meteor/carp=8
-	)
-
-
-/datum/overmap/event/meteor/carp/major
-	name = "carp migration (major)"
-	token_icon_state = "carp1"
-	chance_to_affect = 25
-	spread_chance = 25
-	chain_rate = 4
-	meteor_types = list(
-		/obj/effect/meteor/carp=7,
-		/obj/effect/meteor/carp/big=1,
-	)
-
-// dust clouds throw dust if you go Way Fast
-
-/datum/overmap/event/meteor/dust
-	name = "dust cloud"
-	desc = "A cloud of spaceborne dust. Relatively harmless, unless you're travelling at relative speeds"
-	token_icon_state = "carp1"
-	chance_to_affect = 30
-	spread_chance = 50
-	chain_rate = 4
-	safe_speed = 7
-	meteor_types = list(
-		/obj/effect/meteor/dust=3,
-	)
-
-/datum/overmap/event/meteor/dust/Initialize(position, ...)
-	. = ..()
-	token.icon_state = "dust[rand(1, 4)]"
-	token.color = "#506469" //we should make these defines
-	token.light_color = "#506469"
-	token.update_icon()
-
-/datum/overmap/event/anomaly
-	name = "anomaly field"
-	desc = "A highly anomalous area of space, disturbing it leads to the manifestation of odd spatial phenomena"
-	token_icon_state = "anomaly1"
-	chance_to_affect = 10
-	spread_chance = 35
-	chain_rate = 6
-
-/datum/overmap/event/anomaly/Initialize(position, ...)
-	. = ..()
-	token.icon_state = "anomaly[rand(1, 4)]"
-	token.color = "#c46a24"
-	token.light_color = "#c46a24"
-	token.update_icon()
-
-/datum/overmap/event/anomaly/affect_ship(datum/overmap/ship/controlled/S)
-	var/area/source_area = pick(S.shuttle_port.shuttle_areas)
-	var/source_object = pick(source_area.contents)
-	new /obj/effect/spawner/lootdrop/anomaly/storm(get_turf(source_object))
-	for(var/mob/M as anything in GLOB.player_list)
-		if(S.shuttle_port.is_in_shuttle_bounds(M))
-			M.playsound_local(S.shuttle_port, 'sound/effects/bamf.ogg', 100)
-
 GLOBAL_LIST_INIT(overmap_event_pick_list, list(
 	/datum/overmap/event/wormhole = 10,
 	/datum/overmap/event/nebula = 60,
@@ -343,11 +238,6 @@ GLOBAL_LIST_INIT(overmap_event_pick_list, list(
 	/datum/overmap/event/emp/major = 45,
 	/datum/overmap/event/meteor/minor = 45,
 	/datum/overmap/event/meteor = 40,
-	/datum/overmap/event/meteor/major = 35,
-	/datum/overmap/event/meteor/carp/minor = 45,
-	/datum/overmap/event/meteor/carp = 35,
-	/datum/overmap/event/meteor/carp/major = 20,
-	/datum/overmap/event/meteor/dust = 50,
-	/datum/overmap/event/anomaly = 10
+	/datum/overmap/event/meteor/major = 35
 ))
 

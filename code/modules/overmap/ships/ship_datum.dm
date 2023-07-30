@@ -39,8 +39,7 @@
 
 /datum/overmap/ship/complete_dock(datum/overmap/dock_target, datum/docking_ticket/ticket)
 	. = ..()
-	// override prevents runtime on controlled ship init due to docking after initializing at a position
-	RegisterSignal(dock_target, COMSIG_OVERMAP_MOVED, .proc/on_docked_to_moved, override = TRUE)
+	RegisterSignal(dock_target, COMSIG_OVERMAP_MOVED, .proc/on_docked_to_moved)
 
 /datum/overmap/ship/complete_undock()
 	UnregisterSignal(docked_to, COMSIG_OVERMAP_MOVED)

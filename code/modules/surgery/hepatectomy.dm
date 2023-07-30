@@ -21,11 +21,8 @@
 //95% chance of success, not 100 because organs are delicate
 /datum/surgery_step/hepatectomy
 	name = "remove damaged liver section"
-	implements = list(
-		TOOL_SCALPEL = 95,
-		/obj/item/melee/transforming/energy/sword = 33,
-		/obj/item/kitchen/knife = 40,
-		/obj/item/shard = 25)
+	implements = list(TOOL_SCALPEL = 95, /obj/item/melee/transforming/energy/sword = 65, /obj/item/kitchen/knife = 45,
+		/obj/item/shard = 35)
 	time = 52
 	experience_given = (MEDICAL_SKILL_ORGAN_FIX*0.8) //repeatable so not as much xp
 
@@ -44,7 +41,7 @@
 
 /datum/surgery_step/hepatectomy/failure(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery)
 	var/mob/living/carbon/human/H = target
-	H.adjustOrganLoss(ORGAN_SLOT_LIVER, 20)
+	H.adjustOrganLoss(ORGAN_SLOT_LIVER, 15)
 	display_results(user, target, "<span class='warning'>You cut the wrong part of [target]'s liver!</span>",
 		"<span class='warning'>[user] cuts the wrong part of [target]'s liver!</span>",
 		"<span class='warning'>[user] cuts the wrong part of [target]'s liver!</span>")

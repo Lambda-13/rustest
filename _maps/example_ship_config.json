@@ -20,6 +20,5 @@
 		},
 		"Assistant": 3
 	},
-	"enabled": true,
-	"space_spawn": false
+	"enabled": true
 }

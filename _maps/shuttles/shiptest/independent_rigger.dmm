@@ -7,11 +7,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/light/small/directional/east,
 /obj/effect/turf_decal/corner/opaque/yellow/diagonal,
-/obj/machinery/light_switch{
-	dir = 8;
-	pixel_x = 20;
-	pixel_y = 10
-	},
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
 "ai" = (
@@ -26,9 +21,9 @@
 "av" = (
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters{
-	dir = 4;
 	id = "riggerwindows";
-	name = "Blast Shutters"
+	name = "Blast Shutters";
+	dir = 4
 	},
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/structure/curtain,
@@ -76,17 +71,14 @@
 /turf/open/floor/plating,
 /area/ship/construction)
 "bo" = (
+/obj/machinery/status_display/shuttle{
+	pixel_y = -32
+	},
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/machinery/suit_storage_unit/inherit/industrial,
 /obj/item/clothing/suit/space/pilot,
 /obj/item/clothing/head/helmet/space/pilot/random,
 /obj/item/clothing/mask/breath,
-/obj/machinery/light/small/directional/south,
-/obj/machinery/light_switch{
-	dir = 1;
-	pixel_x = -7;
-	pixel_y = -20
-	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "bx" = (
@@ -208,6 +200,20 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/central)
 "cl" = (
+/obj/machinery/button/door{
+	dir = 4;
+	id = "riggerdoors";
+	name = "Blast Door Control";
+	pixel_x = -29;
+	pixel_y = 5
+	},
+/obj/machinery/button/door{
+	dir = 4;
+	id = "riggerwindows";
+	name = "Window Lockdown";
+	pixel_x = -29;
+	pixel_y = -5
+	},
 /obj/machinery/light/directional/west,
 /obj/effect/turf_decal/corner/opaque/blue/border,
 /turf/open/floor/plasteel/mono/dark,
@@ -303,9 +309,9 @@
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
-	dir = 4;
 	id = "riggerwindows";
-	name = "Blast Shutters"
+	name = "Blast Shutters";
+	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/layer_manifold{
 	dir = 4
@@ -461,24 +467,12 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/industrial/stand_clear,
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "hE" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/effect/spawner/lootdrop/maintenance,
-/obj/item/radio/intercom/directional/north{
-	pixel_x = 10
-	},
-/obj/machinery/light_switch{
-	pixel_x = -5;
-	pixel_y = 22
-	},
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "hG" = (
@@ -564,8 +558,7 @@
 	},
 /obj/machinery/light_switch{
 	dir = 8;
-	pixel_x = 20;
-	pixel_y = 5
+	pixel_x = 25
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
@@ -676,9 +669,6 @@
 	dir = 6
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "jl" = (
@@ -826,13 +816,6 @@
 "kC" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/engineering)
-"kG" = (
-/obj/machinery/door/poddoor{
-	id = "riggs_cargo";
-	name = "Mech Bay Blast Door"
-	},
-/turf/open/floor/engine/hull/interior,
-/area/ship/cargo)
 "kV" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -991,8 +974,8 @@
 	pixel_y = 28;
 	req_access_txt = "1"
 	},
-/obj/item/gun/ballistic/shotgun/winchester,
 /obj/item/gun/ballistic/automatic/pistol/m1911,
+/obj/item/gun/ballistic/automatic/surplus,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "mJ" = (
@@ -1098,6 +1081,16 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
+"oe" = (
+/obj/structure/grille,
+/obj/machinery/door/poddoor/shutters{
+	id = "riggerwindows";
+	name = "Blast Shutters";
+	dir = 4
+	},
+/obj/structure/window/plasma/reinforced/plastitanium,
+/turf/open/floor/plating,
+/area/ship/bridge)
 "oh" = (
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/hallway/central)
@@ -1286,18 +1279,9 @@
 	},
 /obj/machinery/button/door{
 	dir = 4;
-	id = "riggs_cargo";
+	id = "riggerdoors";
 	name = "Blast Door Control";
-	pixel_x = -21
-	},
-/obj/machinery/button/shieldwallgen{
-	dir = 4;
-	id = "riggs_airshield";
-	pixel_x = -20;
-	pixel_y = 10
-	},
-/obj/structure/cable{
-	icon_state = "1-4"
+	pixel_x = -25
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
@@ -1485,18 +1469,10 @@
 /area/ship/maintenance/starboard)
 "sT" = (
 /obj/machinery/door/poddoor{
-	id = "riggs_cargo";
+	id = "riggerdoors";
 	name = "Mech Bay Blast Door"
 	},
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/obj/machinery/power/shieldwallgen/atmos{
-	anchored = 1;
-	dir = 4;
-	id = "riggs_airshield";
-	locked = 1
-	},
+/obj/structure/fans/tiny,
 /turf/open/floor/engine/hull/interior,
 /area/ship/cargo)
 "sV" = (
@@ -1575,13 +1551,7 @@
 	dir = 4
 	},
 /obj/structure/catwalk/over,
-/obj/structure/extinguisher_cabinet/directional/north{
-	pixel_x = 5
-	},
-/obj/machinery/light_switch{
-	pixel_x = -5;
-	pixel_y = 22
-	},
+/obj/structure/extinguisher_cabinet/directional/north,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "uk" = (
@@ -1891,11 +1861,6 @@
 /obj/effect/turf_decal/corner/opaque/blue/border{
 	dir = 8
 	},
-/obj/machinery/light_switch{
-	dir = 8;
-	pixel_x = 20;
-	pixel_y = 5
-	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/communications)
 "xH" = (
@@ -2013,8 +1978,8 @@
 "yo" = (
 /obj/docking_port/stationary{
 	dwidth = 7;
-	height = 15;
-	width = 14
+	width = 14;
+	height = 15
 	},
 /turf/template_noop,
 /area/template_noop)
@@ -2118,9 +2083,6 @@
 "yW" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
@@ -2236,11 +2198,11 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "Am" = (
+/obj/item/radio/intercom/wideband/directional/north,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
 	},
 /obj/machinery/computer/cargo/express,
-/obj/item/radio/intercom/directional/north,
 /turf/open/floor/carpet/blue,
 /area/ship/engineering/communications)
 "Ao" = (
@@ -2503,13 +2465,7 @@
 "DJ" = (
 /obj/structure/reagent_dispensers/watertank,
 /obj/effect/turf_decal/industrial/outline/yellow,
-/obj/item/radio/intercom/directional/north{
-	pixel_x = -10
-	},
-/obj/machinery/light_switch{
-	pixel_x = 5;
-	pixel_y = 22
-	},
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "DL" = (
@@ -2731,11 +2687,6 @@
 	},
 /obj/structure/window/reinforced/spawner,
 /obj/structure/frame/machine,
-/obj/machinery/light_switch{
-	dir = 4;
-	pixel_x = -20;
-	pixel_y = 5
-	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "Gw" = (
@@ -3058,18 +3009,9 @@
 /turf/open/floor/plating,
 /area/ship/medical)
 "JK" = (
-/obj/item/radio/intercom/directional/west{
-	pixel_y = 5
-	},
+/obj/item/radio/intercom/directional/west,
 /obj/effect/turf_decal/corner/opaque/blue/border{
 	dir = 1
-	},
-/obj/machinery/button/door{
-	dir = 4;
-	id = "riggerwindows";
-	name = "Window Shutter Control";
-	pixel_x = -21;
-	pixel_y = -10
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
@@ -3176,6 +3118,7 @@
 "LS" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/table/reinforced,
+/obj/item/areaeditor/shuttle,
 /obj/item/megaphone/command{
 	pixel_x = -5;
 	pixel_y = 9
@@ -3245,8 +3188,7 @@
 	},
 /obj/machinery/light_switch{
 	dir = 4;
-	pixel_x = -20;
-	pixel_y = 5
+	pixel_x = -25
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
@@ -3271,16 +3213,6 @@
 /obj/item/circuitboard/mecha/ripley/peripherals,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
-"NA" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 1
-	},
-/obj/effect/turf_decal/industrial/stand_clear,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/plasteel/tech/techmaint,
-/area/ship/cargo)
 "NO" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
@@ -3329,22 +3261,6 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/central)
-"Oy" = (
-/obj/machinery/door/poddoor{
-	id = "riggs_cargo";
-	name = "Mech Bay Blast Door"
-	},
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/obj/machinery/power/shieldwallgen/atmos{
-	anchored = 1;
-	dir = 8;
-	id = "riggs_airshield";
-	locked = 1
-	},
-/turf/open/floor/engine/hull/interior,
-/area/ship/cargo)
 "OJ" = (
 /obj/item/kirbyplants/random,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -3373,7 +3289,9 @@
 	pixel_x = -5;
 	pixel_y = 8
 	},
-/obj/machinery/computer/helm/viewscreen/directional/south,
+/obj/machinery/status_display/shuttle{
+	pixel_y = -32
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "OR" = (
@@ -3393,8 +3311,7 @@
 	},
 /obj/machinery/light_switch{
 	dir = 1;
-	pixel_x = 5;
-	pixel_y = -20
+	pixel_y = -25
 	},
 /turf/open/floor/carpet/blue,
 /area/ship/bridge)
@@ -3407,7 +3324,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "OY" = (
-/obj/machinery/computer/helm/viewscreen/directional/south,
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "Pd" = (
@@ -3446,7 +3363,7 @@
 	dir = 10
 	},
 /obj/machinery/light_switch{
-	pixel_y = 22
+	pixel_y = 25
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/security)
@@ -3497,11 +3414,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/green/visible,
 /obj/structure/catwalk/over,
-/obj/machinery/light_switch{
-	dir = 4;
-	pixel_x = -20;
-	pixel_y = 5
-	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "Qe" = (
@@ -3548,18 +3460,6 @@
 /obj/effect/spawner/lootdrop/maintenance/three,
 /turf/open/floor/plasteel,
 /area/ship/construction)
-"QB" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 1
-	},
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/obj/structure/sign/warning/incident{
-	pixel_x = 32
-	},
-/turf/open/floor/plasteel/tech/techmaint,
-/area/ship/cargo)
 "QQ" = (
 /obj/machinery/holopad/emergency/command,
 /obj/item/storage/backpack/captain,
@@ -3720,8 +3620,7 @@
 /obj/machinery/washing_machine,
 /obj/machinery/light_switch{
 	dir = 8;
-	pixel_x = 20;
-	pixel_y = 5
+	pixel_x = 25
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew)
@@ -3780,9 +3679,6 @@
 	dir = 6
 	},
 /obj/structure/reagent_dispensers/fueltank,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "Te" = (
@@ -4007,7 +3903,7 @@
 	pixel_x = -32
 	},
 /obj/structure/filingcabinet/chestdrawer,
-/obj/item/radio/intercom/wideband/directional/north,
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/carpet/blue,
 /area/ship/engineering/communications)
 "VG" = (
@@ -4097,10 +3993,11 @@
 	pixel_y = 28;
 	req_access_txt = "1"
 	},
-/obj/item/ammo_box/c38_box,
 /obj/item/ammo_box/magazine/m45/rubbershot,
 /obj/item/ammo_box/magazine/m45/rubbershot,
 /obj/item/ammo_box/magazine/m45,
+/obj/item/ammo_box/magazine/m10mm/rifle,
+/obj/item/ammo_box/magazine/m10mm/rifle,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "WH" = (
@@ -4146,6 +4043,9 @@
 /area/ship/crew/canteen)
 "WS" = (
 /obj/structure/table,
+/obj/item/mmi/posibrain{
+	pixel_x = 6
+	},
 /obj/effect/turf_decal/corner/opaque/purple/half{
 	dir = 8
 	},
@@ -4155,7 +4055,6 @@
 /obj/item/paper_bin{
 	pixel_x = -10
 	},
-/obj/item/paicard,
 /obj/item/clothing/glasses/hud/diagnostic{
 	pixel_x = 6
 	},
@@ -4737,7 +4636,7 @@ Ly
 Ly
 Ly
 Ly
-cb
+oe
 Kn
 qd
 qd
@@ -4873,7 +4772,7 @@ Ly
 Ly
 Ly
 Ly
-cb
+oe
 cb
 qd
 qd
@@ -5079,7 +4978,7 @@ Ly
 Ly
 Ly
 Ly
-kG
+sT
 hy
 SY
 ji
@@ -5113,7 +5012,7 @@ Ly
 Ly
 Ly
 Ly
-kG
+sT
 yW
 pO
 Wm
@@ -5147,7 +5046,7 @@ Ly
 Ly
 Ly
 yo
-kG
+sT
 yW
 Hy
 wZ
@@ -5181,8 +5080,8 @@ Ly
 Ly
 Ly
 Ly
-kG
-NA
+sT
+hy
 QT
 ib
 zw
@@ -5215,8 +5114,8 @@ Ly
 Ly
 Ly
 Ly
-Oy
-QB
+sT
+yW
 Bp
 JS
 jZ

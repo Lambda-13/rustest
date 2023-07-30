@@ -31,10 +31,10 @@
 
 /obj/item/bodypart/leg/left/lizard/digitigrade
 	icon = 'icons/mob/species/lizard/bodyparts.dmi'
-	icon_state = "lizard_l_leg_digitigrade"
+	icon_state = "digitigrade_l_leg"
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ORGANIC | BODYTYPE_DIGITIGRADE
 
 /obj/item/bodypart/leg/right/lizard/digitigrade
 	icon = 'icons/mob/species/lizard/bodyparts.dmi'
-	icon_state = "lizard_r_leg_digitigrade"
+	icon_state = "digitigrade_r_leg"
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ORGANIC | BODYTYPE_DIGITIGRADE

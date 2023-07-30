@@ -436,7 +436,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/clothing/glasses/regular,
 /obj/machinery/light/broken/directional/west,
-/turf/open/floor/plastic,
+/turf/open/floor/material,
 /area/ruin/powered)
 "EC" = (
 /mob/living/simple_animal/hostile/asteroid/whitesands/ranged/hunter,
@@ -567,7 +567,12 @@
 /obj/item/paper_bin,
 /obj/structure/table,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plastic,
+/turf/open/floor/material,
+/area/ruin/powered)
+"NU" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/asteroid/whitesands/survivor,
+/turf/open/floor/material,
 /area/ruin/powered)
 "Oo" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -593,6 +598,10 @@
 /obj/item/ammo_box/magazine/wt550m9,
 /turf/open/floor/plastic,
 /area/ruin/powered)
+"PO" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/material,
+/area/ruin/powered)
 "Qm" = (
 /obj/item/ammo_casing/spent{
 	dir = 8;
@@ -616,11 +625,12 @@
 /area/ruin/powered)
 "Ro" = (
 /obj/machinery/door/airlock/glass,
-/turf/open/floor/plastic,
+/obj/structure/fans/tiny,
+/turf/open/floor/material,
 /area/ruin/powered)
 "Rz" = (
 /obj/machinery/door/airlock/highsecurity,
-/turf/open/floor/plastic,
+/turf/open/floor/material,
 /area/ruin/powered)
 "RG" = (
 /obj/item/ammo_casing/spent{
@@ -639,7 +649,7 @@
 "RN" = (
 /obj/machinery/camera,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plastic,
+/turf/open/floor/material,
 /area/ruin/powered)
 "Sr" = (
 /obj/item/ammo_casing/spent{
@@ -679,7 +689,7 @@
 	},
 /obj/structure/table,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plastic,
+/turf/open/floor/material,
 /area/ruin/powered)
 "TD" = (
 /obj/effect/decal/cleanable/blood/tracks,
@@ -774,9 +784,9 @@ Lz
 ct
 ct
 FB
-Ze
+PO
 DM
-Ze
+PO
 IH
 ct
 "}
@@ -794,7 +804,7 @@ dl
 MG
 dl
 MG
-ew
+NU
 TA
 NP
 FB
@@ -814,9 +824,9 @@ VR
 jw
 zb
 Rz
-Ze
-Ze
-Ze
+PO
+PO
+PO
 Ro
 bd
 "}
@@ -835,8 +845,8 @@ sv
 WA
 MG
 RN
-Ze
-Ze
+PO
+PO
 IH
 bd
 "}
