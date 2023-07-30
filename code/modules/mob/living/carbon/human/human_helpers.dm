@@ -179,7 +179,9 @@
 	destination.underwear = underwear
 	destination.underwear_color = underwear_color
 	destination.undershirt = undershirt
+	destination.undershirt_color = undershirt_color
 	destination.socks = socks
+	destination.socks_color = socks_color
 	destination.jumpsuit_style = jumpsuit_style
 
 ///Returns death message for mob examine text

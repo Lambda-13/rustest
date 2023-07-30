@@ -9,6 +9,8 @@
 	var/icon_state = "globe"
 	var/color = "#ffffff"
 	var/weight = 20
+	var/preserve_level = FALSE
+	var/landing_sound
 	var/danger_level = 0
 
 /datum/planet_type/lava
@@ -21,10 +23,12 @@
 	default_baseturf = /turf/open/floor/plating/asteroid/basalt/lava
 	weather_controller_type = /datum/weather_controller/lavaland
 	ruin_type = RUINTYPE_LAVA
+	landing_sound = 'sound/effects/planet_landing_2.ogg'
 	danger_level = 3
 
+
 /datum/planet_type/ice
-	name = "антарктическая планета"
+	name = "ледяная планета"
 	desc = "Планетарный биом, характеризующийся холодной, замороженной равниной и демоническими порталами."
 	planet = DYNAMIC_WORLD_ICE
 	icon_state = "globe_2"
@@ -33,6 +37,7 @@
 	default_baseturf = /turf/open/floor/plating/asteroid/snow/icemoon
 	weather_controller_type = /datum/weather_controller/snow_planet
 	ruin_type = RUINTYPE_ICE
+	landing_sound = 'sound/effects/planet_landing_2.ogg'
 	danger_level = 3
 
 /datum/planet_type/jungle
@@ -45,10 +50,11 @@
 	default_baseturf = /turf/open/floor/plating/dirt/jungle
 	weather_controller_type = /datum/weather_controller/lush
 	ruin_type = RUINTYPE_JUNGLE
+	landing_sound = 'sound/effects/planet_landing_1.ogg'
 	danger_level = 2
 
 /datum/planet_type/rock
-	name = "каменистая планета"
+	name = "красная планета"
 	desc = "Планетарный биом, характеризующийся большими обьёмами железа и камня."
 	planet = DYNAMIC_WORLD_ROCKPLANET
 	icon_state = "globe_2"
@@ -57,6 +63,7 @@
 	default_baseturf = /turf/open/floor/plating/asteroid
 	weather_controller_type = /datum/weather_controller/rockplanet
 	ruin_type = RUINTYPE_ROCK
+	landing_sound = 'sound/effects/planet_landing_2.ogg'
 	danger_level = 3
 
 /datum/planet_type/sand
@@ -69,6 +76,7 @@
 	default_baseturf = /turf/open/floor/plating/asteroid/whitesands
 	weather_controller_type = /datum/weather_controller/desert
 	ruin_type = RUINTYPE_SAND
+	landing_sound = 'sound/effects/planet_landing_2.ogg'
 	danger_level = 3
 
 /datum/planet_type/beach
@@ -81,6 +89,7 @@
 	default_baseturf = /turf/open/floor/plating/asteroid/sand/lit
 	weather_controller_type = /datum/weather_controller/lush
 	ruin_type = RUINTYPE_BEACH
+	landing_sound = 'sound/effects/planet_landing_1.ogg'
 	danger_level = 1
 
 /datum/planet_type/reebe
@@ -97,17 +106,18 @@
 	danger_level = 0
 
 /datum/planet_type/asteroid
-	name = "большой астеройд"
-	desc = "Крупный астероид со значительными следами полезных ископаемых."
+	name = "астеройдное поле"
+	desc = "Крупное поле астеройдов со значительными следами полезных ископаемых."
 	planet = DYNAMIC_WORLD_ASTEROID
 	icon_state = "asteroid"
 	color = COLOR_GRAY
-	mapgen = /datum/map_generator/single_biome/asteroid
+	mapgen = /datum/map_generator/planet_generator/asteroid
 	// Space, because asteroid maps also include space turfs and the prospect of space turfs
 	// existing without space as their baseturf scares me.
 	default_baseturf = /turf/open/space
 	weather_controller_type = null
 	ruin_type = null // asteroid ruins when
+	landing_sound = 'sound/effects/planet_landing_1.ogg'
 	danger_level = 2
 
 /datum/planet_type/spaceruin
@@ -120,11 +130,12 @@
 	default_baseturf = /turf/open/space
 	weather_controller_type = null
 	ruin_type = RUINTYPE_SPACE
+	landing_sound = 'sound/effects/planet_landing_2.ogg'
 	danger_level = 0
 
 /datum/planet_type/waste
 	name = "мусорная планета"
-	desc = "Планетарный биом, характеризующийся огромным пространством мусора и сломанной машинерии."
+	desc = "Планетарный биом, характеризующийся огромным пространством мусора и сломаной техники."
 	planet = DYNAMIC_WORLD_WASTEPLANET
 	icon_state = "globe_2"
 	color = "#a9883e"
@@ -132,6 +143,7 @@
 	default_baseturf = /turf/open/floor/plating/asteroid/wasteplanet
 	weather_controller_type = /datum/weather_controller/chlorine
 	ruin_type = RUINTYPE_WASTE
+	landing_sound = 'sound/effects/planet_landing_2.ogg'
 	danger_level = 3
 
 //Планеты с бэя 12 инфинити эдишон
@@ -141,9 +153,37 @@
 	planet = DYNAMIC_WORLD_SHROUDED
 	icon_state = "globe"
 	color = "#3e3960"
-	weight = 5
+	weight = 0 //Пока не починю будет отключена
 	mapgen = /datum/map_generator/planet_generator/shrouded
 	default_baseturf = /turf/open/floor/plating/asteroid/shroudedplanet
 	weather_controller_type = /datum/weather_controller/shrouded
 	ruin_type = RUINTYPE_SHROUDED
-	danger_level = 0 //Пока не починю будет отключена
+	danger_level = 3
+
+/datum/planet_type/gas_giant
+	name = "газовый гигант"
+	desc = "Планетарный биом с высокой гравитацией и еще более высоким давлением."
+	planet = DYNAMIC_WORLD_GAS_GIANT
+	icon_state = "globe"
+	color = COLOR_DARK_MODERATE_ORANGE
+	mapgen = /datum/map_generator/single_biome/gas_giant
+	default_baseturf = /turf/open/chasm/gas_giant
+	weather_controller_type = null
+	ruin_type = null //it's a Gas Giant. Not Cloud fuckin City
+	weight = 0
+	preserve_level = TRUE
+	landing_sound = 'sound/effects/planet_landing_1.ogg'
+	danger_level = 5
+
+/datum/planet_type/plasma_giant
+	name = "плазменный гигант"
+	desc = "Планетарный биом состоящий из плазмы."
+	planet = DYNAMIC_WORLD_PLASMA_GIANT
+	color = COLOR_PURPLE
+	mapgen = /datum/map_generator/single_biome/plasma_giant
+	default_baseturf = /turf/open/chasm/gas_giant/plasma
+	weight = 0
+	icon_state = "globe"
+	preserve_level = TRUE
+	landing_sound = 'sound/effects/planet_landing_1.ogg'
+	danger_level = 5
