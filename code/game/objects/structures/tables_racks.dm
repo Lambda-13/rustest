@@ -120,6 +120,10 @@
 	log_combat(user, pushed_mob, "places", null, "onto [src]")
 
 /obj/structure/table/proc/tablepush(mob/living/user, mob/living/pushed_mob)
+	var/area/B = get_area(user.loc)
+	if(B.safezone)
+		to_chat(user, "<span class='notice'>Пытаюсь обнять [pushed_mob].</span>")
+		return
 	if(HAS_TRAIT(user, TRAIT_PACIFISM))
 		to_chat(user, "<span class='danger'>Throwing [pushed_mob] onto the table might hurt them!</span>")
 		return

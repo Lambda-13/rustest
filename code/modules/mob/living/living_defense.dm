@@ -104,7 +104,12 @@
 
 
 /mob/living/mech_melee_attack(obj/mecha/M)
+
 	if(M.occupant.a_intent == INTENT_HARM)
+		var/area/B = get_area(M.loc)
+		if(B.safezone)
+			to_chat(M.occupant, "<span class='warning'>Я не могу драться находясь тут!</span>")
+			return
 		if(HAS_TRAIT(M.occupant, TRAIT_PACIFISM))
 			to_chat(M.occupant, "<span class='warning'>You don't want to harm other living beings!</span>")
 			return
@@ -149,6 +154,10 @@
 	if(!(status_flags & CANPUSH) || HAS_TRAIT(src, TRAIT_PUSHIMMUNE))
 		to_chat(user, "<span class='warning'>[src] can't be grabbed more aggressively!</span>")
 		return FALSE
+
+	var/area/B = get_area(user.loc)
+	if(user.grab_state >= GRAB_AGGRESSIVE && B.safezone)
+		return
 
 	if(user.grab_state >= GRAB_AGGRESSIVE && HAS_TRAIT(user, TRAIT_PACIFISM))
 		to_chat(user, "<span class='warning'>You don't want to risk hurting [src]!</span>")

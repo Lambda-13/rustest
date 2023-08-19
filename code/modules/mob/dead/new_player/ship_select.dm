@@ -99,7 +99,9 @@
 			ui.close()
 
 			to_chat(spawnee, "<span class='danger'>Ваш [template.name] заправляется. Подождите немного!</span>")
-			var/datum/overmap/ship/controlled/target = new(SSovermap.get_unused_overmap_square(), template)
+            //ХУЙ
+			//var/datum/overmap/ship/controlled/target = new(SSovermap.get_unused_overmap_square(), template)
+			var/datum/overmap/ship/controlled/target = SSovermap.spawn_ship_at_start(template)
 			if(!target?.shuttle_port)
 				to_chat(spawnee, "<span class='danger'>Судно потерялось в глубинах космоса, свяжитесь с администрацией.</span>")
 				spawnee.new_player_panel()

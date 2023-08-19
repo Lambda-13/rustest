@@ -54,6 +54,9 @@
 
 /obj/item/reagent_containers/syringe/afterattack(atom/target, mob/user , proximity)
 	. = ..()
+	var/area/B = get_area(user.loc)
+	if(B.safezone)
+		return
 	if(busy)
 		return
 	if(!proximity)

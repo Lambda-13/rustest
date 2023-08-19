@@ -132,21 +132,27 @@
 		"spawn_time_coeff": {
 			"title": "Required Spawn Playtime Coefficient",
 			"type": "number",
-			"description": "A multiplier used, along with the config value SHIP_SPAWN_BASE_EXP_MIN, to determine the amount of time a player must have spent as Living to spawn this ship from the join menu.",
+			"description": "Множитель, используемый вместе со значением конфигурации SHIP_SPAWN_BASE_EXP_MIN, чтобы определить количество времени, которое игрок должен провести живым, чтобы вызвать этот корабль из меню присоединения.",
 			"minimum": 0,
 			"default": 1
 		},
 		"officer_time_coeff": {
 			"title": "Required Officer Playtime Coefficient",
 			"type": "number",
-			"description": "A multiplier used, along with the config value OFFICER_JOIN_BASE_EXP_MIN, to determine the amount of time a player must have spent as Living to spawn as an officer job on this ship AFTER it has been spawned.",
+			"description": "Множитель, используемый вместе со значением конфигурации OFFICER_JOIN_BASE_EXP_MIN, для определения количества времени, которое игрок должен провести живым, чтобы появиться в качестве офицера на этом корабле ПОСЛЕ того, как он был создан.",
 			"minimum": 0,
 			"default": 1
 		},
 		"enabled": {
 			"title": "Selectable",
 			"type": "boolean",
-			"description": "Могут ли игроки выбирать этот корабль. Будет по-прежнему доступен для администратора, если нет.",
+			"description": "Могут ли игроки выбирать этот корабль. Будет по-прежнему доступен для администратора, если значение false.",
+			"default": false
+		},
+		"space_spawn": {
+			"title": "Spawns in space",
+			"type": "boolean",
+			"description": "Будет ли этот корабль появляться в космосе или на аванпосте. Если значение true, корабль будет случайным образом размещен в космосе после спавна, иначе он будет заспавнен в ангаре аванпоста.",
 			"default": false
 		}
 	},

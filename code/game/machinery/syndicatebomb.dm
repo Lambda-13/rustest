@@ -111,6 +111,10 @@
 		. = timer_set
 
 /obj/machinery/syndicatebomb/attackby(obj/item/I, mob/user, params)
+	var/area/B = get_area(user.loc)
+	if(B.safezone)
+		to_chat(user, "<span class='warning'>Как ей пользоваться!?</span>")
+		return FALSE
 	if(HAS_TRAIT(user, TRAIT_PACIFISM))
 		to_chat(user, span_warning("Не могу как-то взаимодействовать с бомбой!"))
 		return FALSE

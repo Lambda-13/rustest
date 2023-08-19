@@ -19,6 +19,9 @@
 	var/list/name_categories = list("GENERAL")
 	var/prefix = "SV"
 	var/unique_ship_access = FALSE
+	/// Set by config JSON. If true, the template's ships' "default" spawn location (when bought by a player or loaded at roundstart)
+	/// will be in the middle of space, instead of at an outpost.
+	var/space_spawn = TRUE // У оффов спавн в космосе отключён
 
 	// Coefficients regulating the amount of necessary Living playtime to spawn this ship or join as an officer.
 	// When a player attempts to spawn a ship via the join menu, officer time requirements are ignored even if the "captain" job is an officer.

@@ -91,6 +91,10 @@
 
 /obj/item/grenade/proc/preprime(mob/user, delayoverride, msg = TRUE, volume = 60)
 	var/turf/T = get_turf(src)
+	var/area/B = get_area(user.loc)
+	if(B.safezone)
+		to_chat(user, "<span class='warning'>Я не могу!</span>")
+		return 0
 	log_grenade(user, T) //Inbuilt admin procs already handle null users
 	if(user)
 		add_fingerprint(user)
@@ -106,6 +110,11 @@
 	addtimer(CALLBACK(src, .proc/prime), isnull(delayoverride)? det_time : delayoverride)
 
 /obj/item/grenade/proc/prime()
+	var/area/B = get_area(src.loc)
+	if(B.safezone)
+		to_chat(loc, "<span class='warning'>[src] испаряется!</span>")
+		qdel(src)
+		return
 	if(shrapnel_type && shrapnel_radius && !shrapnel_initialized) // add a second check for adding the component in case whatever triggered the grenade went straight to prime (badminnery for example)
 		shrapnel_initialized = TRUE
 		AddComponent(/datum/component/pellet_cloud, projectile_type=shrapnel_type, magnitude=shrapnel_radius)

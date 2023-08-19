@@ -291,20 +291,6 @@
 	custom_materials = list(/datum/material/iron=MINERAL_MATERIAL_AMOUNT)
 	inverse = FALSE
 
-/obj/machinery/button/elevator
-	name = "кнопка лифта"
-	desc = "Вызывает к тебе лифт."
-	icon_state = "launcher"
-	skin = "launcher"
-	device_type = /obj/item/assembly/control/elevator
-	req_access = list()
-	id = 1
-
-/obj/machinery/button/elevator/examine(mob/user)
-	. = ..()
-	. += "<hr><span class='notice'>На кнопке есть небольшая надпись...</span>"
-	. += "<hr><span class='notice'>ЭТО ВЫЗЫВАЕТ ЛИФТ! НЕ РАБОТАЕТ! Взаимодействуйте с самим лифтом, чтобы им воспользоваться!</span>"
-
 /obj/machinery/button/shieldwallgen
 	name = "переключатель голополя"
 	desc = "Дистанционный переключатель для генератора голополя."
