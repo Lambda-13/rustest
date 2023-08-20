@@ -1,0 +1,65 @@
+"a" = (/turf/template_noop,/area/template_noop)
+"b" = (/turf/closed/wall,/area/ship/engineering)
+"c" = (/obj/machinery/power/shuttle/engine/electric/bad{icon_state = "burst"; dir = 4},/obj/structure/cable{icon_state = "0-4"},/turf/open/floor/plating,/area/ship/external)
+"d" = (/obj/machinery/door/airlock/maintenance_hatch,/obj/structure/fans/tiny,/obj/docking_port/mobile{can_move_docking_ports = 1; dir = 2; launch_status = 0; port_direction = 8; preferred_direction = 4},/turf/open/floor/plating,/area/ship/engineering)
+"e" = (/obj/structure/window/reinforced{icon_state = "rwindow"; dir = 1},/obj/item/storage/toolbox/mechanical{pixel_x = -1; pixel_y = 5},/obj/item/storage/toolbox/electrical{pixel_x = -1; pixel_y = 1},/obj/item/storage/belt/utility,/obj/structure/rack,/obj/effect/decal/cleanable/glass,/turf/open/floor/plating,/area/ship/engineering)
+"f" = (/obj/machinery/power/smes/shuttle/precharged{icon_state = "smes"; dir = 4},/obj/structure/cable{icon_state = "0-8"},/turf/open/floor/plating,/area/ship/engineering)
+"g" = (/obj/machinery/power/terminal{icon_state = "term"; dir = 8},/obj/structure/cable{icon_state = "0-4"},/turf/open/floor/plating,/area/ship/engineering)
+"h" = (/obj/structure/cable{icon_state = "2-8"},/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/open/floor/plating,/area/ship/engineering)
+"i" = (/obj/effect/decal/cleanable/dirt,/turf/open/floor/plating,/area/ship/engineering)
+"j" = (/obj/machinery/autolathe,/turf/open/floor/plating,/area/ship/engineering)
+"k" = (/obj/structure/cable{icon_state = "1-2"},/turf/open/floor/plating,/area/ship/engineering)
+"l" = (/turf/closed/wall,/area/ship/bridge)
+"m" = (/obj/structure/window/reinforced{icon_state = "rwindow"; dir = 1},/obj/structure/rack,/obj/item/clothing/head/helmet/riot,/obj/item/clothing/suit/armor/vest/alt,/obj/item/gun/ballistic/derringer,/obj/item/areaeditor/shuttle,/obj/item/radio{desc = "An old handheld radio. You could use it, if you really wanted to."; icon_state = "radio"; name = "old radio"; pixel_x = 2; pixel_y = 3},/turf/open/floor/plating,/area/ship/bridge)
+"n" = (/obj/effect/spawner/structure/window/reinforced,/turf/open/floor/plating,/area/ship/bridge)
+"o" = (/obj/structure/window/reinforced{icon_state = "rwindow"; dir = 1},/obj/structure/rack,/obj/item/pickaxe/improvised,/obj/item/storage/bag/ore,/obj/item/radio{desc = "An old handheld radio. You could use it, if you really wanted to."; icon_state = "radio"; name = "old radio"; pixel_x = 2; pixel_y = 3},/turf/open/floor/plating,/area/ship/engineering)
+"p" = (/obj/structure/window/reinforced{icon_state = "rwindow"; dir = 1},/obj/machinery/suit_storage_unit/inherit,/obj/item/clothing/head/helmet/space/light,/obj/item/clothing/suit/space/eva,/turf/open/floor/plating,/area/ship/engineering)
+"q" = (/obj/structure/cable{icon_state = "1-2"},/obj/effect/decal/cleanable/generic,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/open/floor/plating,/area/ship/engineering)
+"r" = (/turf/open/floor/plating,/area/ship/bridge)
+"s" = (/obj/machinery/door/airlock/maintenance{icon_state = "closed"; dir = 8},/obj/structure/barricade/wooden/crude,/obj/structure/barricade/wooden,/turf/open/floor/plating,/area/ship/engineering)
+"t" = (/obj/structure/cable{icon_state = "1-2"},/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/mob/living/simple_animal/hostile/rat,/turf/open/floor/plating,/area/ship/engineering)
+"u" = (/obj/machinery/door/airlock/maintenance_hatch{icon_state = "closed"; dir = 8},/obj/structure/cable{icon_state = "4-8"},/turf/open/floor/plating,/area/ship/engineering)
+"v" = (/obj/structure/cable{icon_state = "4-8"},/turf/open/floor/plating,/area/ship/engineering)
+"w" = (/obj/structure/cable{icon_state = "1-2"},/obj/effect/decal/cleanable/oil,/obj/effect/decal/cleanable/dirt,/turf/open/floor/plating,/area/ship/engineering)
+"x" = (/obj/structure/cable{icon_state = "0-2"},/obj/machinery/power/apc/auto_name/directional/west,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/mob/living/simple_animal/hostile/rat,/turf/open/floor/plating,/area/ship/bridge)
+"y" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/open/floor/plating,/area/ship/bridge)
+"z" = (/obj/structure/window/reinforced,/obj/machinery/computer/cryopod/directional/west,/obj/machinery/cryopod{icon_state = "cryopod-open"; dir = 1},/turf/open/floor/plating,/area/ship/engineering)
+"A" = (/obj/structure/window/reinforced,/obj/structure/reagent_dispensers/fueltank,/obj/effect/decal/cleanable/vomit/old,/turf/open/floor/plating,/area/ship/engineering)
+"B" = (/obj/structure/window/reinforced,/obj/structure/rack,/obj/item/grenade/frag,/obj/item/grenade/frag,/obj/item/grenade/empgrenade,/turf/open/floor/plating,/area/ship/bridge)
+"C" = (/obj/effect/spawner/structure/window/reinforced,/obj/effect/decal/cleanable/dirt,/turf/open/floor/plating,/area/ship/bridge)
+"D" = (/obj/structure/cable{icon_state = "1-2"},/obj/structure/cable{icon_state = "2-4"},/obj/structure/cable{icon_state = "1-4"},/obj/effect/decal/cleanable/glass,/obj/effect/decal/cleanable/dirt,/mob/living/simple_animal/hostile/rat,/turf/open/floor/plating,/area/ship/engineering)
+"E" = (/obj/structure/cable{icon_state = "4-8"},/obj/effect/decal/cleanable/oil/slippery,/obj/effect/decal/cleanable/dirt,/turf/open/floor/plating,/area/ship/engineering)
+"F" = (/obj/machinery/power/port_gen/pacman,/obj/structure/cable{icon_state = "0-8"},/turf/open/floor/plating,/area/ship/engineering)
+"G" = (/obj/structure/window/reinforced,/obj/machinery/power/smes,/obj/structure/cable,/turf/open/floor/plating,/area/ship/engineering)
+"H" = (/obj/structure/window/reinforced,/obj/machinery/power/terminal{icon_state = "term"; dir = 8},/obj/structure/cable,/turf/open/floor/plating,/area/ship/engineering)
+"I" = (/obj/docking_port/stationary{icon_state = "pinonfar"; dir = 8},/turf/template_noop,/area/template_noop)
+"J" = (/obj/structure/cable{icon_state = "4-8"},/obj/effect/decal/cleanable/dirt,/turf/open/floor/plating,/area/ship/engineering)
+"K" = (/obj/structure/cable{icon_state = "4-8"},/obj/effect/decal/cleanable/oil/streak,/turf/open/floor/plating,/area/ship/engineering)
+"L" = (/obj/structure/cable{icon_state = "4-8"},/obj/effect/decal/cleanable/generic,/obj/effect/decal/cleanable/dirt,/turf/open/floor/plating,/area/ship/engineering)
+"M" = (/obj/machinery/door/airlock/maintenance_hatch{icon_state = "closed"; dir = 8},/obj/structure/cable{icon_state = "4-8"},/obj/effect/decal/cleanable/dirt,/turf/open/floor/plating,/area/ship/bridge)
+"N" = (/obj/effect/decal/cleanable/molten_object,/turf/open/floor/plating,/area/ship/engineering)
+"O" = (/obj/structure/cable{icon_state = "4-8"},/obj/effect/decal/cleanable/wrapping,/turf/open/floor/plating,/area/ship/engineering)
+"P" = (/obj/machinery/computer/helm/retro{icon_state = "computer-retro"; dir = 8},/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/open/floor/plating,/area/ship/bridge)
+"Q" = (/obj/effect/decal/cleanable/dirt,/turf/closed/wall,/area/ship/bridge)
+"R" = (/obj/effect/decal/cleanable/oil,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/open/floor/plating,/area/ship/bridge)
+"S" = (/obj/machinery/door/airlock/maintenance_hatch{icon_state = "closed"; dir = 1},/obj/structure/cable{icon_state = "1-2"},/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/open/floor/plating,/area/ship/engineering)
+"T" = (/obj/effect/decal/cleanable/dirt,/turf/closed/wall,/area/ship/engineering)
+"U" = (/obj/structure/cable{icon_state = "1-2"},/obj/structure/cable{icon_state = "2-8"},/obj/structure/cable{icon_state = "2-4"},/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/open/floor/plating,/area/ship/engineering)
+"V" = (/obj/structure/cable{icon_state = "2-4"},/obj/machinery/power/apc/auto_name/directional/north,/obj/structure/cable{icon_state = "0-8"},/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/mob/living/simple_animal/hostile/rat,/turf/open/floor/plating,/area/ship/engineering)
+"W" = (/obj/structure/cable{icon_state = "1-8"},/obj/structure/chair/plastic{icon_state = "plastic_chair"; dir = 4},/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/vomit,/turf/open/floor/plating,/area/ship/bridge)
+"X" = (/obj/structure/cable{icon_state = "4-8"},/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/garbage,/turf/open/floor/plating,/area/ship/engineering)
+"Y" = (/obj/structure/cable{icon_state = "1-2"},/obj/effect/decal/cleanable/blood/old,/turf/open/floor/plating,/area/ship/engineering)
+
+(1,1,1) = {"
+abbdebbbaaaaaaaa
+cfghiNjbaaaaaaaa
+abbqbbbbaaaaaaaa
+aabtbaaaaaaallmn
+aabwbbbbopbblxyC
+aIsDuOKvEJLvMWPn
+aabkbbbbzAbbQRrn
+aabYbaaaaaaallBn
+abbSTbbbaaaaaaaa
+cfgUVXFbaaaaaaaa
+abbGHbbbaaaaaaaa
+"}
