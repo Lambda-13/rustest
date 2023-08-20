@@ -19,7 +19,6 @@
 	desc = "То, что в настоящее время представляет собой просто громоздкий металлический блок со слотом, готовым принять ядро блюспейс аномалии."
 	id = "bag_holding"
 	build_type = PROTOLATHE | MECHFAB
-	construction_time = 40
 	materials = list(/datum/material/gold = 3000, /datum/material/diamond = 1500, /datum/material/uranium = 250, /datum/material/bluespace = 2000)
 	build_path = /obj/item/storage/backpack/holding
 	category = list("Bluespace Designs","Imported")
