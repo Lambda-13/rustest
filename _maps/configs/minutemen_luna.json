@@ -1,0 +1,21 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Luna-class medevac Ship",
+	"prefix": "CMSV",
+	"namelists": [
+		"COLONIAL MINUTEMEN",
+		"CMM-BARD",
+		"MYTHOLOGICAL"
+	],
+	"map_short_name": "Luna-class",
+	"map_path": "_maps/shuttles/shiptest/minutemen_luna.dmm",
+	"limit": 2,
+	"job_slots": {
+		"Trauma-team operetive": {
+			"outfit": "/datum/outfit/job/captain/minutemen",
+			"officer": true,
+			"slots": 1
+		}
+	},
+	"enabled": true
+}

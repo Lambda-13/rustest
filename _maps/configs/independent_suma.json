@@ -1,0 +1,22 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Suma High-Tide Radio class",
+	"map_short_name": "Suma-class",
+	"map_path": "_maps/shuttles/shiptest/independent_suma.dmm",
+	"namelists": [
+		"GENERAL",
+		"SPACE"
+	],
+	"prefix": "ISV",
+	"roundstart": true,
+	"limit": 5,
+	"job_slots": {
+		"Lead of ship": {
+			"outfit": "/datum/outfit/job/miner/hazard",
+			"officer": true,
+			"slots": 1
+		},
+		"Assistant": 3
+	},
+	"enabled": true
+}
