@@ -290,4 +290,4 @@
 /area/overmap_encounter/planetoid/shroudedplanet
 	name = "Планета: Тёмный пустырь"
 	sound_environment = SOUND_ENVIRONMENT_CAVE
-	ambientsounds = REEBE//AMBIENT_BAY12_PLANET_BARREN
+	ambientsounds = REEBE //AMBIENT_BAY12_PLANET_BARREN

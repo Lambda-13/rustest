@@ -141,9 +141,9 @@
 	planet = DYNAMIC_WORLD_SHROUDED
 	icon_state = "globe"
 	color = "#3e3960"
-	weight = 5
+	weight = 0
 	mapgen = /datum/map_generator/planet_generator/shrouded
 	default_baseturf = /turf/open/floor/plating/asteroid/shroudedplanet
 	weather_controller_type = /datum/weather_controller/shrouded
 	ruin_type = RUINTYPE_SHROUDED
-	danger_level = 0 //Пока не починю будет отключена
+	danger_level = 4

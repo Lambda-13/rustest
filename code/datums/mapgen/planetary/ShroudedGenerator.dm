@@ -97,11 +97,10 @@
 	flora_spawn_list = list(
 
 		//mech spawners
-		/obj/effect/spawner/lootdrop/waste/mechwreck = 1,
 		/obj/effect/spawner/lootdrop/waste/mechwreck/rare = 0.1,
-		/obj/effect/spawner/lootdrop/waste/trash = 1,
-		/obj/structure/reagent_dispensers/fueltank = 1,
-		/obj/structure/reagent_dispensers/watertank = 1,
+		/obj/effect/spawner/lootdrop/waste/trash = 0.1,
+		/obj/structure/reagent_dispensers/fueltank = 0.1,
+		/obj/structure/reagent_dispensers/watertank = 0.1,
 		/obj/structure/flora/ash/glowshroom/shadowshroom = 20,
 		/obj/structure/closet/crate/secure/loot = 0.1,
 		/obj/effect/spawner/lootdrop/waste/atmos_can = 1,
