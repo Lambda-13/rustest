@@ -1,0 +1,31 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Cargonia tramp Maslou-class",
+	"prefix": "FCSV",
+	"namelists": [
+		"GENERAL",
+		"SPACE",
+		"NATURAL",
+		"MERCANTILE"
+	],
+	"map_short_name": "Maslou-class",
+	"map_path": "_maps/shuttles/shiptest/cargonia_maslou.dmm",
+	"roundstart": false,
+	"limit": 1,
+	"job_slots": {
+		"Brigadir": {
+			"outfit": "/datum/outfit/job/quartermaster",
+			"officer": true,
+			"slots": 1
+		},
+		"Cargonian explorer": {
+			"outfit": "/datum/outfit/job/miner/hazard",
+			"slots": 4
+		},
+		"Cargonian": {
+			"outfit": "/datum/outfit/job/cargo_tech",
+			"slots": 5
+		}
+	},
+	"enabled": true
+}

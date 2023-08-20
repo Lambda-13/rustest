@@ -1,0 +1,28 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Bull-class aboarding vessel",
+	"map_short_name": "Bull-class",
+	"map_path": "_maps/shuttles/shiptest/pirate_bull.dmm",
+	"prefix": "ISV",
+	"namelists": ["PIRATES", "NATURAL_AGGRESSIVE"],
+	"job_slots": {
+		"Commander": {
+			"outfit": "/datum/outfit/job/captain/pirate",
+			"officer": true,
+			"slots": 1
+		},
+		"Legionnier": {
+			"outfit": "/datum/outfit/job/security/pirate",
+			"slots": 2
+		},
+		"Tech-priest": {
+			"outfit": "/datum/outfit/job/engineer/pirate",
+			"slots": 1
+		},
+		"Ship's Doctor": {
+			"outfit": "/datum/outfit/job/doctor/pirate",
+			"slots": 1
+		}
+	},
+	"enabled": true
+}

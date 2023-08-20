@@ -1,0 +1,31 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Cargonia Slops-class",
+	"prefix": "FCSV",
+	"namelists": [
+		"GENERAL",
+		"SPACE",
+		"NATURAL",
+		"MERCANTILE"
+	],
+	"map_short_name": "Slops-class",
+	"map_path": "_maps/shuttles/shiptest/cargonia_slops.dmm",
+	"roundstart": false,
+	"limit": 1,
+	"job_slots": {
+		"Lord of Cargonia": {
+			"outfit": "/datum/outfit/job/quartermaster",
+			"officer": true,
+			"slots": 1
+		},
+		"Cargonian explorer": {
+			"outfit": "/datum/outfit/job/miner/hazard",
+			"slots": 3
+		},
+		"Cargonian": {
+			"outfit": "/datum/outfit/job/cargo_tech",
+			"slots": 2
+		}
+	},
+	"enabled": true
+}

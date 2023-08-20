@@ -1,0 +1,21 @@
+{
+	"map_name": "To-end survival pod",
+	"prefix": "ISV",
+	"namelists": [
+		"GENERAL",
+		"SPACE",
+		"NATURAL"
+	],
+	"map_short_name": "To-end pod",
+	"map_path": "_maps/shuttles/shiptest/independent_toend.dmm",
+	"map_id": "independent_toend",
+	"roundstart": false,
+	"job_slots": {
+		"Assistant": {
+			"outfit": "/datum/outfit/job/assistant",
+			"officer": true
+			"slots": 1
+		}
+	},
+	"enabled": true
+}
