@@ -3,7 +3,9 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/bridge)
 "ab" = (
-/obj/machinery/door/poddoor/preopen,
+/obj/machinery/door/poddoor/preopen{
+	id = "blastdorsbr"
+	},
 /obj/effect/spawner/structure/window/shuttle,
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -136,6 +138,7 @@
 	dir = 4;
 	icon_state = "computer"
 	},
+/obj/item/radio/intercom/wideband/directional/west,
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
 "au" = (
@@ -165,6 +168,7 @@
 	dir = 6;
 	icon_state = "pipe11-2"
 	},
+/obj/machinery/holopad/emergency/command,
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
 "ay" = (
@@ -257,7 +261,15 @@
 /obj/structure/table,
 /obj/item/paper_bin,
 /obj/item/pen,
-/obj/machinery/firealarm/directional/west,
+/obj/machinery/firealarm/directional/west{
+	pixel_y = -7
+	},
+/obj/machinery/button/door{
+	dir = 4;
+	pixel_x = -22;
+	pixel_y = 7;
+	id = "blastdorsbr"
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
 "aP" = (
@@ -920,10 +932,13 @@
 /obj/machinery/door/poddoor/preopen{
 	id = 14244
 	},
-/obj/machinery/door/window/brigdoor,
+/obj/machinery/door/window/brigdoor{
+	req_ship_access = 1
+	},
 /obj/machinery/door/window/brigdoor{
 	dir = 1;
-	icon_state = "leftsecure"
+	icon_state = "leftsecure";
+	req_ship_access = 1
 	},
 /obj/machinery/door/firedoor/heavy,
 /turf/open/floor/plasteel/mono/white,
