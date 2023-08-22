@@ -935,7 +935,9 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/storage/eva)
 "cq" = (
-/obj/machinery/mineral/ore_redemption,
+/obj/machinery/mineral/ore_redemption{
+	dir = 4
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/storage/eva)
 "cr" = (
@@ -1179,6 +1181,9 @@
 	icon_state = "left";
 	dir = 1
 	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "cT" = (
@@ -1186,6 +1191,7 @@
 	icon_state = "burst";
 	dir = 1
 	},
+/obj/structure/cable,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "cU" = (
