@@ -3,6 +3,8 @@
 
 //Base Nodes
 /datum/techweb_node/base
+	display_name = "Базовые научные разработки"
+	description = "Стандартный пакет данных предоставляемый компанией НаноТрейзен. Содержит основные чертежи машиностроения и производства."
 	id = "base"
 	starting_node = TRUE
 	design_ids = list(
@@ -22,8 +24,6 @@
 		"rglass", "plasteel", "plastitanium", "plasmaglass", "plasmareinforcedglass", "titaniumglass", "plastitaniumglass",
 		// You People Are Animals
 		"trashbag",
-	display_name = "Базовые научные разработки"
-	description = "Стандартный пакет данных предоставляемый компанией НаноТрейзен всем научно-исследовательским станциям. Содержит основные чертежи машиностроения и производства."
 	)
 
 /datum/techweb_node/mmi
@@ -1282,7 +1282,6 @@
 
 /datum/techweb_node/interrogation
 	id = "interrogation"
-	Ethical concerns about loss of free will do not apply to criminals, according to galactic law."
 	prereq_ids = list("base")
 	design_ids = list("hypnochair")
 	display_name = "Продвинутые технологии допроса"
@@ -1304,7 +1303,6 @@
 
 /datum/techweb_node/tackle_advanced
 	id = "tackle_advanced"
-	will no longer be accepted in its academic journals."
 	design_ids = list("tackle_dolphin", "tackle_rocket")
 	display_name = "Продвинутые технологии перехвата"
 	description = "Не бывает слишком быстрого броска на противника, бывает недостаточно болящая голова от промаха."
