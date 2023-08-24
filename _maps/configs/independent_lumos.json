@@ -30,8 +30,14 @@
 			"outfit": "/datum/outfit/job/security",
 			"slots": 2
 		},
-		"Quartermaster": 1,
-		"Cargo Technician": 3
+		"Quartermaster": {
+			"outfit": "/datum/outfit/job/quartermaster",
+			"slots": 1
+		},
+		"Cargo technican": {
+			"outfit": "/datum/outfit/job/cargo_tech",
+			"slots": 5
+		}
 	},
 	"enabled": true
 }

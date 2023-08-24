@@ -16,7 +16,10 @@
 			"officer": true,
 			"slots": 1
 		},
-		"Assistant": 3
+		"Assistant": {
+			"outfit": "/datum/outfit/job/assistant",
+			"slots": 4
+		}
 	},
 	"enabled": true
 }
