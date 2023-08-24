@@ -75,5 +75,5 @@
 	. = ..()
 	var/obj/structure/tripwire/TW = result
 	TW.owner = user
-	message_admins("[ADMIN_LOOKUPFLW(user)] поставил растяжку ([result.stretching])[ADMIN_COORDJMP(result)]")
-	log_game("[key_name(user)] поставил растяжку ([result.stretching])[COORD(result)]")
+	message_admins("[ADMIN_LOOKUPFLW(user)] поставил растяжку[ADMIN_COORDJMP(result)]")
+	log_game("[key_name(user)] поставил растяжку[COORD(result)]")
