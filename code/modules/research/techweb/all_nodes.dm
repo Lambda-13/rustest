@@ -29,8 +29,8 @@
 /datum/techweb_node/mmi
 	id = "mmi"
 	starting_node = TRUE
-	display_name = "Man Machine Interface"
-	description = "A slightly Frankensteinian device that allows human brains to interface natively with software APIs."
+	display_name = "Машинно-человеческий интерфейс"
+	description = "Вторая жизнь человеку который потерял мозг."
 	design_ids = list("mmi")
 
 /datum/techweb_node/cyborg
@@ -100,9 +100,6 @@
 
 /datum/techweb_node/xenomorph_biotech
 	id = "xenomorph_bio"
-	display_name = "Xenomorph Biology"
-	description = "Quite possibly the most dangerous species out there, and we now know the secrets behind their physiology. \
-	One shudders to imagine the destructive capabilities of an army with soldiers enhanced by these designs."
 	prereq_ids = list("adv_biotech", "xenoorgan_bio")
 	design_ids = list("limbdesign_xenomorph")
 	boost_item_paths = list(/obj/item/organ/brain/alien, /obj/item/organ/body_egg/alien_embryo, /obj/item/organ/eyes/night_vision/alien, /obj/item/organ/tongue/alien,
@@ -112,7 +109,7 @@
 	export_price = 20000
 	hidden = TRUE
 	display_name = "Ксено-органы"
-	description = "Органы характерные для Фелинидов, Ящеров, Плазменов и Этериалов"
+	description = "Органы ксенорас."
 
 /datum/techweb_node/bio_process
 	id = "bio_process"
@@ -289,8 +286,8 @@
 
 /datum/techweb_node/regulated_bluespace
 	id = "regulated_bluespace"
-	display_name = "Regulated Bluespace Research"
-	description = "Bluespace technology using stable and balanced procedures. Required by galactic convention for public use."
+	display_name = "Основная блюспейс физика"
+	description = "Технологии блюспейс с использованием стабильных и сбалансированных процедур. Разрешена к использованию галактическим соглашением."
 	prereq_ids = list("base")
 	design_ids = list()
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
@@ -623,8 +620,8 @@
 // WS Edit Start - Yeet The BSM
 /datum/techweb_node/bluespace_mining
 	id = "bluespace_mining"
-	display_name = "Bluespace Mining Technology"
-	description = "Harness the power of bluespace to make materials out of nothing. Slowly."
+	display_name = "Технология блюспейс шахтёрства"
+	description = "Используйте возможности синего пространства, чтобы создавать материалы из ничего. Медленно."
 	prereq_ids = list("practical_bluespace", "adv_mining")
 	design_ids = list("bluespace_miner")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
@@ -707,8 +704,8 @@
 
 /datum/techweb_node/firingpin
 	id = "firingpin"
-	display_name = "Pin Security Decompilation"
-	description = "A resource-intensive hacking operation, allowing for the creation of pins without a mindshield brake."
+	display_name = "Продвинутые бойки для оружия"
+	description = "Ресурсоемкая операция, позволяющая создавать бойки без блокировки."
 	prereq_ids = list("adv_weaponry")
 	design_ids = list("pin_standard")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 15000)
@@ -724,6 +721,8 @@
 	export_price = 5000
 
 /datum/techweb_node/radioactive_weapons
+	display_name = "Ядерное оружие"
+	description = "О нет, это не то о чем вы подумали! Это не бомба которая взорвет всю станцию! Это всего-навсего нестабильный карманный ядерный реактор."
 	id = "radioactive_weapons"
 	prereq_ids = list("adv_engi", "adv_weaponry")
 	design_ids = list("nuclear_gun")
@@ -732,12 +731,10 @@
 
 /datum/techweb_node/medical_weapons
 	id = "medical_weapons"
-	display_name = "Medical Weaponry"
-	description = "Weapons using medical technology."
+	display_name = "Медицинское вооружение"
+	description = "Для любителей лечить и стрелять."
 	prereq_ids = list("adv_biotech", "weaponry")
 	design_ids = list("rapidsyringe", "shotgun_dart")
-	display_name = "Ядерное оружие"
-	description = "О нет, это не то о чем вы подумали! Это не бомба которая взорвет всю станцию! Это всего-навсего нестабильный карманный ядерный реактор."
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
 
@@ -761,8 +758,8 @@
 
 /datum/techweb_node/explosive_weapons
 	id = "explosive_weapons"
-	display_name = "Explosive & Pyrotechnical Weaponry"
-	description = "If the light stuff just won't do it."
+	display_name = "Улучшенные корпуса гранат"
+	description = "Знаешь почему я хороший подрывник?"
 	prereq_ids = list("adv_weaponry")
 	design_ids = list("large_Grenade", "pyro_Grenade", "adv_Grenade")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
@@ -770,8 +767,8 @@
 
 /datum/techweb_node/ballistic_weapons
 	id = "ballistic_weapons"
-	display_name = "Ballistic Weaponry"
-	description = "This isn't research.. This is reverse-engineering!"
+	display_name = "Баллистическое вооружение"
+	description = "Это не научно... Но технологично!"
 	prereq_ids = list("weaponry")
 	design_ids = list("mag_oldsmg", "mag_oldsmg_ap", "mag_oldsmg_ic", "shotgun_slug", "speedload_12_gauge")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
@@ -779,16 +776,16 @@
 
 /datum/techweb_node/adv_ballistics
 	id = "adv_ballistics"
-	display_name = "Advanced Ballistics"
-	description = "Refined ballistic ammunition for extra combat trauma."
+	display_name = "Улучшенное баллистическое вооружение"
+	description = "На случай если переговоры с врагами не удались."
 	prereq_ids = list("ballistic_weapons", "adv_engi")
 	design_ids = list("ap9mm", "ap10mm", "ap45", "hp9mm", "hp10mm", "hp45", "ap556mmHITP", "hp556mmHITP")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 
 /datum/techweb_node/exotic_ammo
 	id = "exotic_ammo"
-	display_name = "Exotic Ammunition"
-	description = "They won't know what hit em."
+	display_name = "Экзотическое вооружение"
+	description = "Опасно. Но научно."
 	prereq_ids = list("adv_weaponry", "medical_weapons")
 	design_ids = list("techshotshell", "c38_hotshot", "c38_iceblox", "inc9mm", "inc10mm", "inc45", "incendiary_slug")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
@@ -796,8 +793,8 @@
 
 /datum/techweb_node/gravity_gun
 	id = "gravity_gun"
-	display_name = "One-point Bluespace-gravitational Manipulator"
-	description = "Fancy wording for gravity gun."
+	display_name = "Гравитационный манипулятор"
+	description = "Один уборщику для сбора мусора, один службе безопасности для разгона толпы."
 	prereq_ids = list("adv_weaponry", "bluespace_travel")
 	design_ids = list("gravitygun", "mech_gravcatapult")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
@@ -805,8 +802,8 @@
 
 /datum/techweb_node/srm_ballistics
 	id = "srm_ballistics"
-	display_name = "Saint-Roumain Ballistics"
-	description = "Ballistics normally manufactured by the Saint-Roumain Militia."
+	display_name = "Устаревшее балистическое вооружение - Карабины"
+	description = "Почувствуй себя старым."
 	prereq_ids = list("adv_ballistics")
 	design_ids = list("doublebarrel", "winchmk2")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
@@ -814,8 +811,8 @@
 
 /datum/techweb_node/srm_pistols
 	id = "srm_pistols"
-	display_name = "Saint-Roumain Pistols"
-	description = "Pistols normally manufactured by the Saint-Roumain Militia."
+	display_name = "Устаревшее балистическое вооружение - Пистолеты"
+	description = "Любителям классики привет."
 	prereq_ids = list("adv_ballistics")
 	design_ids = list("pepperbox", "nagantrevolver", "derringer", "speedload357")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
@@ -823,8 +820,8 @@
 
 /datum/techweb_node/srm_special
 	id = "srm_special"
-	display_name = "Saint-Roumain Specialty Ballistics"
-	description = "Specialty ballistics normally manufactured by the Saint-Roumain Militia."
+	display_name = "Устаревшее балистическое вооружение - Специальное"
+	description = "Стреляет, не клинит."
 	prereq_ids = list("srm_ballistics", "srm_pistols")
 	design_ids = list("srmrevolver", "m1911", "stripper762", "nagantrifle")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 12000)
@@ -1188,10 +1185,11 @@
 		if(!UI.item || !UI.illegal_tech)
 			continue
 		boost_item_paths |= UI.item	//allows deconning to unlock.
+
 /datum/techweb_node/dex_robotics
 	id = "dex_robotics"
-	display_name = "Dexterous Robotics Research"
-	description = "The fine art of opposable thumbs."
+	display_name = "Исскуство ловкости робототехники"
+	description = "Тонкое искусство противоположных больших пальцев."
 	prereq_ids = list("adv_engi", "adv_robotics", "biotech")
 	design_ids = list("maint_drone")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
@@ -1200,8 +1198,8 @@
 /////////////////////////shuttle tech/////////////////////////
 /datum/techweb_node/basic_shuttle_tech
 	id = "basic_shuttle"
-	display_name = "Basic Shuttle Research"
-	description = "Research the technology required to create and use basic shuttles."
+	display_name = "Базовое шаттлостроение"
+	description = "Технологии, необходимые для создания и использования базовых шаттлов."
 	prereq_ids = list("bluespace_travel", "adv_engi")
 	design_ids = list("engine_plasma", "engine_ion", "engine_heater", "engine_smes", "shuttle_helm", "rapid_shuttle_designator")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 10000)
@@ -1209,8 +1207,8 @@
 
 /datum/techweb_node/exp_shuttle_tech
 	id = "exp_shuttle"
-	display_name = "Experimental Shuttle Research"
-	description = "A bunch of engines and related shuttle parts that are likely not really that useful, but could be in strange situations."
+	display_name = "Эксперементальное шаттлостроение"
+	description = "Куча двигателей и связанных с ними частей шаттла, которые, вероятно, не так уж и полезны, но могут оказаться в странных ситуациях."
 	prereq_ids = list("basic_shuttle")
 	design_ids = list("engine_expulsion")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
@@ -1219,8 +1217,8 @@
 ////////////////////// IPC Parts ///////////////////////
 /datum/techweb_node/ipc_organs
 	id = "ipc_organs"
-	display_name = "IPC Parts"
-	description = "We have the technology to replace him."
+	display_name = "Органы СПУ"
+	description = "СПУ? ЧПУ? ИПК? Какая разница."
 	prereq_ids = list("cyber_organs","robotics")
 	design_ids = list("robotic_liver", "robotic_eyes", "robotic_heart", "robotic_tongue", "robotic_stomach", "robotic_ears", "power_cord")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 1500)
@@ -1228,6 +1226,8 @@
 
 ////////////////////////B.E.P.I.S. Locked Techs////////////////////////
 /datum/techweb_node/light_apps
+	display_name = "Альтернативное освещение"
+	description = "Применение технологий освещения, которые изначально не считались коммерчески жизнеспособными."
 	id = "light_apps"
 	prereq_ids = list("base")
 	design_ids = list("bright_helmet", "rld_mini")
@@ -1238,12 +1238,10 @@
 
 /datum/techweb_node/rolling_table
 	id = "rolling_table"
-	display_name = "Advanced Wheel Applications"
-	description = "Adding wheels to things can lead to extremely beneficial outcomes."
+	display_name = "Расширенные возможности применения колес"
+	description = "Стол на колёсиках."
 	prereq_ids = list("base")
 	design_ids = list("rolling_table")
-	display_name = "Альтернативное освещение"
-	description = "Применение технологий освещения, которые изначально не считались коммерчески жизнеспособными."
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 2500
 	hidden = TRUE
@@ -1275,7 +1273,6 @@
 	id = "aus_security"
 	prereq_ids = list("base")
 	design_ids = list("stun_boomerang")
-
 	display_name = "Австралийские технологии безопасности"
 	description = "Пламенный привет от Австралийских охотников на серожопых!"
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
@@ -1288,7 +1285,6 @@
 	Ethical concerns about loss of free will do not apply to criminals, according to galactic law."
 	prereq_ids = list("base")
 	design_ids = list("hypnochair")
-
 	display_name = "Продвинутые технологии допроса"
 	description = "Путем перекрестных ссылок на несколько рассекреченных документов прошлых диктаторских режимов мы смогли разработать невероятно эффективное устройство для ведения допроса. Согласно галактическому законодательству, этические соображения, связанные с потерей свободы воли, не распространяются на преступников."
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 3500)
@@ -1299,7 +1295,6 @@
 /datum/techweb_node/sticky_advanced
 	id = "sticky_advanced"
 	design_ids = list("electric_tape", "super_tape")
-
 	display_name = "Продвинутые технологии изоленты"
 	description = "Все в мире можно починить изолентой! А если не получается, то это значит изоленты намотано слишком мало!"
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
@@ -1311,7 +1306,6 @@
 	id = "tackle_advanced"
 	will no longer be accepted in its academic journals."
 	design_ids = list("tackle_dolphin", "tackle_rocket")
-
 	display_name = "Продвинутые технологии перехвата"
 	description = "Не бывает слишком быстрого броска на противника, бывает недостаточно болящая голова от промаха."
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
@@ -1321,8 +1315,8 @@
 
 /datum/techweb_node/fishing
 	id = "fishing"
-	display_name = "Fishing Technology"
-	description = "Cutting edge fishing advancements."
+	display_name = "Технологии рыболовства"
+	description = "Удочка и всё что связано с этим."
 	prereq_ids = list("base")
 	design_ids = list("fishing_rod_tech")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)

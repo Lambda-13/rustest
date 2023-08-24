@@ -27,9 +27,9 @@
 	var/show_on_wiki = TRUE
 
 /datum/techweb_node/error_node
-	id = "ERROR"
-	display_name = "ERROR"
-	description = "This usually means something in the database has corrupted. If it doesn't go away automatically, inform Central Command for their techs to fix it ASAP(tm)"
+	id = "ОШИБКА"
+	display_name = "ОШИБКА"
+	description = "Повреждённая ветка. Сообщите об этом уполномоченным специалистам."
 	show_on_wiki = FALSE
 
 /datum/techweb_node/proc/Initialize()
