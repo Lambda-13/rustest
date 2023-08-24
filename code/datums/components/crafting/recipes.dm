@@ -1182,3 +1182,9 @@
 				/obj/item/stack/sheet/mineral/plasma = 1)
 	tools = list(TOOL_WELDER)
 	category = CAT_MISC
+
+/datum/crafting_recipe/proc/on_craft_completion(mob/user, atom/result)
+	if(istype(result, /obj/structure/mineral_door))
+		result.dir = user.dir
+		result.update_icon()
+	return

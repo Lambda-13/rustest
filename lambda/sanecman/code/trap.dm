@@ -9,7 +9,7 @@
 	resistance_flags = FLAMMABLE
 	max_integrity = 25
 	integrity_failure = 0.5
-	var/obj/item/grenade/prikl
+	var/obj/item/grenade/stretching
 	var/mob/owner
 
 /obj/structure/tripwire/Initialize(mapload)
@@ -20,8 +20,8 @@
 	AddElement(/datum/element/connect_loc, loc_connections)
 
 /obj/structure/tripwire/proc/activate()
-	if(prikl)
-		prikl.detonate(owner)
+	if(stretching)
+		stretching.prime(owner)
 		qdel(src)
 
 /obj/structure/tripwire/proc/check_cbt(datum/source, atom/movable/AM)
@@ -75,5 +75,5 @@
 	. = ..()
 	var/obj/structure/tripwire/TW = result
 	TW.owner = user
-	message_admins("[ADMIN_LOOKUPFLW(user)] поставил растяжку[ADMIN_COORDJMP(result)]")
-	log_game("[key_name(user)] поставил растяжку[COORD(result)]")
+	message_admins("[ADMIN_LOOKUPFLW(user)] поставил растяжку ([stretching])[ADMIN_COORDJMP(result)]")
+	log_game("[key_name(user)] поставил растяжку ([stretching])[COORD(result)]")
