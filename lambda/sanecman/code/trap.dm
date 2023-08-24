@@ -49,14 +49,14 @@
 				to_chat(user, span_userdanger("Случайно перерезаю провод неправильно!"))
 				activate()
 				return
-			if(prikl)
-				prikl.forceMove(get_turf(prikl))
+			if(stretching)
+				stretching.forceMove(get_turf(stretching))
 			qdel(src)
 	..()
 
 /obj/structure/tripwire/CheckParts(list/parts_list)
-	prikl = locate() in parts_list
-	if(!prikl)
+	stretching = locate() in parts_list
+	if(!stretching)
 		qdel(src)
 		return
 	return ..()
@@ -75,5 +75,5 @@
 	. = ..()
 	var/obj/structure/tripwire/TW = result
 	TW.owner = user
-	message_admins("[ADMIN_LOOKUPFLW(user)] поставил растяжку ([stretching])[ADMIN_COORDJMP(result)]")
-	log_game("[key_name(user)] поставил растяжку ([stretching])[COORD(result)]")
+	message_admins("[ADMIN_LOOKUPFLW(user)] поставил растяжку ([result.stretching])[ADMIN_COORDJMP(result)]")
+	log_game("[key_name(user)] поставил растяжку ([result.stretching])[COORD(result)]")
