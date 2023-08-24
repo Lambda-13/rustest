@@ -3515,6 +3515,7 @@
 #include "lambda\sanecman\code\old_tech.dm"
 #include "lambda\sanecman\code\outpost.dm"
 #include "lambda\sanecman\code\scavenger.dm"
+#include "lambda\sanecman\code\trap.dm"
 #include "lambda\sanecman\code\trash_pile.dm"
 #include "lambda\sanecman\code\triglavian.dm"
 #include "lambda\sanecman\code\wood_gen.dm"
