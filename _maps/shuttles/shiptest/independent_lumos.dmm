@@ -34,7 +34,7 @@
 "aH" = (/obj/structure/cable{icon_state = "1-2"},/turf/open/floor/wood/walnut{icon_state = "wood-broken4"},/area/ship/crew/canteen)
 "aI" = (/obj/structure/closet/secure_closet/head_of_personnel{name = "first mate locker"},/turf/open/floor/wood/walnut,/area/ship/crew/canteen)
 "aJ" = (/obj/structure/table,/obj/item/storage/bag/trash,/obj/effect/spawner/lootdrop/pizzaparty,/turf/open/floor/plating,/area/ship/external)
-"aK" = (/obj/structure/catwalk/over/plated_catwalk/dark,/obj/item/clothing/head/helmet/space/hardsuit/security/independent/frontier,/turf/open/floor/plating,/area/ship/external)
+"aK" = (/obj/machinery/suit_storage_unit/inherit,/obj/item/clothing/suit/space/inteq,/obj/item/tank/internals/oxygen/yellow,/obj/item/clothing/head/helmet/space/light,/turf/open/floor/plasteel/dark,/area/ship/storage)
 "aL" = (/obj/machinery/computer/communications{icon_state = "computer"; dir = 4},/turf/open/floor/plasteel/grimy,/area/ship/bridge)
 "aM" = (/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{dir = 4},/turf/open/floor/plasteel/grimy,/area/ship/bridge)
 "aN" = (/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{dir = 8},/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{dir = 6},/turf/open/floor/plasteel/grimy,/area/ship/bridge)
@@ -67,13 +67,13 @@
 "bo" = (/turf/closed/wall/material,/area/ship/storage/eva)
 "bp" = (/obj/machinery/door/airlock/external,/obj/structure/fans/tiny,/turf/open/floor/plating,/area/ship/storage/eva)
 "bq" = (/obj/machinery/holopad/emergency,/turf/open/floor/plasteel/grimy,/area/ship/bridge)
-"br" = (/obj/machinery/power/shuttle/engine/electric/premium{name = "main drive"; dir = 4; power_per_burn = 200000},/obj/structure/cable{icon_state = "0-4"},/obj/structure/cable{icon_state = "0-4"},/turf/open/floor/plating,/area/ship/engineering)
+"br" = (/obj/machinery/power/shuttle/engine/electric/premium{name = "main drive"; dir = 4; power_per_burn = 200000},/obj/structure/cable{icon_state = "0-4"},/turf/open/floor/plating,/area/ship/engineering)
 "bs" = (/obj/machinery/power/terminal{dir = 8},/obj/structure/catwalk/over/plated_catwalk/dark,/obj/structure/railing{dir = 4; layer = 4.1},/obj/structure/cable{icon_state = "0-6"},/turf/open/floor/plating,/area/ship/engineering)
 "bt" = (/obj/machinery/portable_atmospherics/canister/oxygen,/turf/open/floor/plasteel/tech/grid,/area/ship/engineering)
 "bu" = (/obj/machinery/power/terminal{dir = 4},/obj/machinery/power/port_gen/pacman/super,/obj/machinery/firealarm/directional/north,/turf/open/floor/plasteel/dark,/area/ship/engineering)
-"bv" = (/obj/machinery/power/smes,/obj/structure/cable{icon_state = "0-2"},/turf/open/floor/plasteel/dark,/area/ship/engineering)
-"bw" = (/obj/machinery/power/smes/shuttle/precharged{dir = 4},/obj/structure/window/plasma/reinforced{dir = 8},/obj/structure/cable{icon_state = "0-8"},/obj/structure/cable{icon_state = "0-8"},/turf/open/floor/plating,/area/ship/engineering)
-"bx" = (/obj/machinery/suit_storage_unit/inherit,/obj/item/clothing/suit/space/inteq,/obj/item/tank/internals/oxygen/yellow,/turf/open/floor/plasteel/dark,/area/ship/storage)
+"bv" = (/obj/structure/cable{icon_state = "0-2"},/obj/machinery/power/smes/engineering,/turf/open/floor/plasteel/dark,/area/ship/engineering)
+"bw" = (/obj/machinery/power/smes/shuttle/precharged{dir = 4},/obj/structure/window/plasma/reinforced{dir = 8},/obj/structure/cable{icon_state = "0-8"},/turf/open/floor/plating,/area/ship/engineering)
+"bx" = (/obj/machinery/suit_storage_unit/inherit,/obj/machinery/light/directional/east,/obj/item/clothing/suit/space/pilot,/obj/item/tank/internals/oxygen/yellow,/obj/item/clothing/head/helmet/space/fragile,/turf/open/floor/plasteel/dark,/area/ship/storage)
 "by" = (/obj/machinery/suit_storage_unit/inherit,/obj/item/clothing/suit/space/solgov,/obj/item/tank/internals/emergency_oxygen/double,/turf/open/floor/plasteel/dark,/area/ship/storage)
 "bz" = (/obj/machinery/suit_storage_unit/inherit,/obj/item/clothing/suit/space/syndicate/contract,/obj/item/clothing/head/helmet/space/syndicate/contract,/obj/item/tank/internals/oxygen,/turf/open/floor/plasteel/dark,/area/ship/storage)
 "bA" = (/obj/structure/catwalk/over/plated_catwalk/dark,/obj/structure/cable{icon_state = "1-2"},/obj/machinery/light/small/directional/west,/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,/turf/open/floor/plating,/area/ship/hallway/aft)
@@ -90,7 +90,6 @@
 "bL" = (/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,/obj/machinery/airalarm/directional/north,/turf/open/floor/plasteel/mono/dark,/area/ship/storage/eva)
 "bM" = (/obj/machinery/power/apc/auto_name/directional/north,/obj/structure/cable{icon_state = "0-2"},/turf/open/floor/plasteel/mono/dark,/area/ship/storage/eva)
 "bN" = (/turf/open/floor/plasteel/mono/dark,/area/ship/storage/eva)
-"bO" = (/obj/machinery/suit_storage_unit/inherit,/obj/machinery/light/directional/east,/obj/item/clothing/suit/space/pilot,/obj/item/clothing/head/helmet/space/hardsuit/medical,/obj/item/tank/internals/oxygen/yellow,/turf/open/floor/plasteel/dark,/area/ship/storage)
 "bP" = (/obj/structure/cable{icon_state = "2-9"},/obj/effect/landmark/start/station_engineer,/turf/open/floor/plasteel/tech/grid,/area/ship/engineering)
 "bQ" = (/obj/machinery/power/apc/auto_name/directional/north,/obj/structure/cable{icon_state = "0-2"},/obj/effect/decal/cleanable/oil{icon_state = "floor6"},/obj/structure/closet/firecloset/full,/turf/open/floor/plasteel/dark,/area/ship/security)
 "bR" = (/obj/structure/cable{icon_state = "1-2"},/obj/machinery/light/directional/east,/turf/open/floor/plasteel/dark,/area/ship/engineering)
@@ -237,7 +236,7 @@
 "eC" = (/obj/structure/closet/crate/medical,/obj/item/storage/firstaid/o2,/obj/item/storage/firstaid/o2,/obj/item/storage/firstaid/toxin,/obj/item/storage/firstaid/toxin,/turf/open/floor/plasteel/white,/area/ship/medical/surgery)
 "eD" = (/obj/structure/table/optable,/obj/machinery/light/directional/east,/obj/effect/decal/cleanable/blood,/turf/open/floor/plasteel/white,/area/ship/medical/surgery)
 "eE" = (/obj/structure/table,/obj/item/storage/backpack/duffelbag/med/surgery,/turf/open/floor/plasteel/white,/area/ship/medical/surgery)
-"eF" = (/obj/machinery/power/smes/shuttle/precharged{dir = 4},/obj/structure/window/plasma/reinforced{dir = 8},/obj/structure/window/plasma/reinforced{icon_state = "plasmarwindow"; dir = 1},/obj/structure/cable{icon_state = "0-8"},/obj/structure/cable{icon_state = "0-8"},/turf/open/floor/plating,/area/ship/engineering)
+"eF" = (/obj/machinery/power/smes/shuttle/precharged{dir = 4},/obj/structure/window/plasma/reinforced{dir = 8},/obj/structure/window/plasma/reinforced{icon_state = "plasmarwindow"; dir = 1},/obj/structure/cable{icon_state = "0-8"},/turf/open/floor/plating,/area/ship/engineering)
 "eG" = (/obj/machinery/suit_storage_unit/inherit,/obj/item/clothing/suit/space/syndicate/blue,/obj/item/clothing/head/helmet/space/syndicate/blue,/obj/item/tank/internals/emergency_oxygen,/turf/open/floor/plating,/area/ship/cargo)
 "eH" = (/obj/machinery/suit_storage_unit/inherit,/obj/machinery/light/small/directional/south,/obj/item/clothing/suit/space/hardsuit/security/independent/minutemen,/obj/item/tank/internals/oxygen/red,/turf/open/floor/plating,/area/ship/cargo)
 "eI" = (/obj/effect/spawner/structure/window/reinforced,/obj/machinery/door/poddoor/shutters/preopen{id = 1.23123e+006},/turf/open/floor/plating,/area/ship/medical/surgery)
@@ -264,11 +263,11 @@ eVeVeVeVeVeVeVeVeVeVeVeVeVabacadadadadadadadadadaeaeaeaeaeaeeV
 eVeVeVeVeVeVeVeVeVeVeVeVeVafagahaiajadakaeaeaeadaeaeaeaeaeaeeV
 eVeVeValalalamamamanananananaobSaeapadadadadadadaeaeaeaeaeaeeZ
 eVeVeVaqarasatauamavawaxayananazaeaAadakaeaeaeadaeaeaeaeaeaeeV
-eVeVaqaqeXaBaCaDamaEaFaGaHaIanaJaeaAadadadaKadadaeaeaeaeaeaeeV
+eVeVaqaqeXaBaCaDamaEaFaGaHaIanaJaeaAadadadadadadaeaeaeaeaeaeeV
 eVeVaqaLbqaMaNaOaPaQaRaSaTaUananaeaVadakaeaeaeadaeaeaeaeaeaeeV
 eVeVaqaWaXaYaZbaambbbebcbdbEbfanadbgadadadadbgadadadadbgadaeeV
 bibiamamamamambjbjbjbjbjbkanblbmbmbmbmbmbnbnbnbnbnbobobobpboeV
-brbwcmbtbubvbibxbybzbObjbBeObDbmdgbIbFbmbGbHbQbJbKbobLbMbNboeV
+brbwcmbtbubvbiaKbybzbxbjbBeObDbmdgbIbFbmbGbHbQbJbKbobLbMbNboeV
 breFbsbPcNbRbicObTbUbVbjbWbXbYbmdlbZcacbcccccdcecccfaachcicjeZ
 breFbsckcleUbicncocpcqcrcsctcucvcwcxcybmczcAcBcCcDbocEcFcGboeV
 bibicHcIcJcKcLcMdHdAcPbjeKcQcRcScTcUcVbmcWcXcYcZdacWcWbodbboeV
