@@ -123,6 +123,8 @@ Nothing else in the console has ID requirements.
 	return ..()
 
 /obj/machinery/computer/rdconsole/attackby(obj/item/D, mob/user, params)
+	if(!isliving(user))
+		return
 	if(istype(D, /obj/item/slime_extract))
 		var/obj/item/slime_extract/E = D
 		if(!slime_already_researched[E.type])
