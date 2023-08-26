@@ -43,6 +43,8 @@
 	var/cost = BASE_HUMAN_REWARD
 	var/multi_surgery_adjust = 0
 
+	if(HAS_TRAIT_FROM(target, TRAIT_DISSECTED, "[name]")) // Если такой умник как ты смог нагнуть код раком
+		cost = (0.01)
 	//determine bonus applied
 	if(isalienqueen(target) || isalienroyal(target))
 		cost = (BASE_HUMAN_REWARD*7.5)
