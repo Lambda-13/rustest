@@ -235,8 +235,8 @@
 /obj/structure/fans
 	icon = 'icons/obj/lavaland/survival_pod.dmi'
 	icon_state = "fans"
-	name = "environmental regulation system"
-	desc = "A large machine releasing a constant gust of air."
+	name = "система экологического регулирования"
+	desc = "Большая машина, выпускающая постоянный поток фильтрованного воздуха."
 	anchored = TRUE
 	density = TRUE
 	var/buildstacktype = /obj/item/stack/sheet/metal
@@ -254,19 +254,20 @@
 	if(flags_1 & NODECONSTRUCT_1)
 		return TRUE
 
-	user.visible_message("<span class='warning'>[user] disassembles [src].</span>",
-		"<span class='notice'>You start to disassemble [src]...</span>", "<span class='hear'>You hear clanking and banging noises.</span>")
+	user.visible_message("<span class='warning'>[user] разбирает [src].</span>",
+		"<span class='notice'>Разбираю [src]...</span>", "<span class='hear'>Слышу как что-то разбирают.</span>")
 	if(I.use_tool(src, user, 20, volume=50))
 		deconstruct()
 	return TRUE
 
 /obj/structure/fans/tiny
-	name = "tiny fan"
-	desc = "A tiny fan, releasing a thin gust of air."
+	name = "крошечный вентилятор"
+	desc = "Маленький вентилятор, блокирующий потоки воздуха с различных сторон."
 	layer = ABOVE_NORMAL_TURF_LAYER
 	density = FALSE
 	icon_state = "fan_tiny"
-	buildstackamount = 2
+	buildstacktype = /obj/item/stack/sheet/plasteel
+	buildstackamount = 5
 
 /obj/structure/fans/Initialize(mapload)
 	. = ..()
@@ -274,7 +275,7 @@
 
 //Inivisible, indestructible fans
 /obj/structure/fans/tiny/invisible
-	name = "air flow blocker"
+	name = "невидимый вентилятор (с)"
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 	invisibility = INVISIBILITY_ABSTRACT
 
