@@ -607,7 +607,7 @@
 	prereq_ids = list("engineering", "basic_plasma")
 	design_ids = list("drill", "superresonator", "triggermod", "damagemod", "cooldownmod", "rangemod", "ore_redemption", "mining_equipment_vendor", "cargoexpress", "plasmacutter", "mecha_kineticgun", "deepcore_pinpointer")//e a r l y    g a  m e)
 	display_name = "Шахтерские разработки"
-	description = "Чем отличается работа обычного шахтера от работы шахтера фронтира? Ну как минимум тем, что первого не пытается сожрать 95% фауны."
+	description = "Чем отличается работа обычного шахтера от работы шахтера дальних секторов? Ну как минимум тем, что первого не пытается сожрать 95% фауны."
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
 
@@ -628,7 +628,7 @@
 	export_price = 5000
 //  WS Edit End - Yeet The BSM
 	display_name = "Продвинутые шахтерские разработки"
-	description = "Чем отличается шахтер фронтира от шахтера-охотника фронтира? Ну как минимум тем, что первый не пытается сожрать 95% фауны."
+	description = "Чем отличается шахтер от шахтера-охотника? Ну как минимум тем, что первый не пытается сожрать 95% фауны."
 /datum/techweb_node/janitor
 	id = "janitor"
 	prereq_ids = list("adv_engi")
@@ -865,7 +865,7 @@
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
 	display_name = "ЭКЗОКОСТЮМ: Дюранд"
-	description = "Устаревший боевой экзоскелет, используемый корпорацией Нанотрасен. Сверхтяжелый и медленный, но очень прочен. Первоначально разработанный для борьбы с враждебными инопланетными формами жизни."
+	description = "Устаревший боевой экзоскелет, используемый корпорацией Нанотрайзен. Сверхтяжелый и медленный, но очень прочен. Первоначально разработанный для борьбы с враждебными инопланетными формами жизни."
 
 /datum/techweb_node/phazon
 	id = "mecha_phazon"

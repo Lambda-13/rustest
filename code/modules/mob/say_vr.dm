@@ -11,7 +11,7 @@
 
 	if(usr != src)
 		usr << "No."
-	var/msg = sanitize(input(usr,"Set the flavor text in your 'examine' verb. Can also be used for OOC notes about your character.","Flavor Text",html_decode(flavor_text)) as message|null)
+	var/msg = sanitize(input(usr,"Введите текст флавора который будет отображаться при осмотре вашего персонажа.","Флавор",html_decode(flavor_text)) as message|null)
 
 	if(msg) //WS edit - "Cancel" does not clear flavor text
 		msg = copytext(msg, 1, MAX_MESSAGE_LEN)
@@ -21,16 +21,16 @@
 
 /mob/proc/warn_flavor_changed()
 	if(flavor_text && flavor_text != "") // don't spam people that don't use it!
-		src << "<h2 class='alert'>OOC Warning:</h2>"
-		src << "<span class='alert'>Your flavor text is likely out of date! <a href='byond://?src=\ref[src];flavor_change=1'>Change</a></span>"
+		src << "<h2 class='alert'>ООС-предупреждение:</h2>"
+		src << "<span class='alert'>Ваш флавор, вероятно, устарел! <a href='byond://?src=\ref[src];flavor_change=1'>Изменить.</a></span>"
 
 /mob/proc/print_flavor_text()
 	if(flavor_text && flavor_text != "")
 		var/msg = replacetext(flavor_text, "\n", " ")
-		if(length(msg) <= 100)
+		if(length(msg) <= 120)
 			return "<span class='notice'>[msg]</span>"
 		else
-			return "<span class='notice'>[copytext(msg, 1, 97)]... <a href=\"byond://?src=\ref[src];flavor_more=1\">More...</span></a>"
+			return "<span class='notice'>[copytext(msg, 1, 194)]... <a href=\"byond://?src=\ref[src];flavor_more=1\">Раскрыть...</span></a>"
 
 
 /mob/proc/get_top_level_mob()
