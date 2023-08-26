@@ -10,7 +10,7 @@
 		"NANOTRASEN"
 	],
 	"map_short_name": "Delta-class",
-	"description": "The Delta is a compact and advanced mining ship that supplements its comparatively small organic crew with a full suite of robotics facilities, including an AI and a host of mining and logistics drones and cyborgs. While much-loved by Nanotrasen logisticians for their minimal upkeep and high cost efficiency, Deltas are far less popular among the crews chosen to operate them, as they are severely lacking in crew accommodations and defensive armament.",
+	"description": "«Дельта» — это компактный и продвинутый шахтерский корабль, который дополняет свой сравнительно небольшой органический экипаж полным набором робототехнических средств, включая искусственный интеллект, а также множество горнодобывающих и логистических дронов и киборгов. Несмотря на то, что логисты Нанотрайзен очень любят их за минимальное содержание и высокую экономическую эффективность, «Дельты» гораздо менее популярны среди экипажей, выбранных для их эксплуатации, поскольку им остро не хватает помещений для экипажа и защитного вооружения.",
 	"tags": ["Science", "Robotics"],
 	"map_path": "_maps/shuttles/shiptest/nanotrasen_delta.dmm",
 	"job_slots": {

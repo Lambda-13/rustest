@@ -2,7 +2,7 @@
 	"$schema": "https://raw.githubusercontent.com/Lambda-13/rustest/master/_maps/ship_config_schema.json",
 	"map_name": "Cepheus-Class Mech Carrier",
 	"prefix": "CMSV",
-	"description": "The Cepheus is the go-to for the CMM whenever it wishes to deploy vessels capable of creating anything in the realm robotica. These vessels are deployed to sectors full of scrap and salvageable material, stocked with armament for their salvagers and a mechanical laboratory for their mechanical engineers. Crews on Cepheus ships are typically treated to somewhat crammed together quarters and tight schedules of collection and production.",
+	"description": "«Цефей» является незаменимым помощником CMM всякий раз, когда он желает развернуть суда, способные создать что-либо в сфере робототехники. Эти суда направляются в сектора, полные металлолома и поддающихся утилизации материалов, снабженные вооружением для спасателей и механической лабораторией для инженеров-механиков. Экипажи кораблей «Цефея» обычно живут в тесноте и имеют плотный график сбора и производства.",
 	"tags": ["Robotics"],
 	"namelists": [
 		"COLONIAL MINUTEMEN",

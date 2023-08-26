@@ -1,19 +1,18 @@
 {
 	"$schema": "https://raw.githubusercontent.com/Lambda-13/rustest/master/_maps/ship_config_schema.json",
 	"map_name": "Caprut junk-ship",
-	"prefix": "ISV",
+	"map_short_name": "Caprut-class",
+	"map_path": "_maps/shuttles/shiptest/independent_caprut.dmm",
 	"namelists": [
 		"SPACE",
 		"MYTHOLOGICAL",
 		"WEAPONS"
 	],
-	"map_short_name": "Caprut-class",
-	"map_path": "_maps/shuttles/shiptest/independent_caprut.dmm",
-	"limit": 1,
 	"job_slots": {
-			"Assistant": {
+		"Assistant": {
 			"outfit": "/datum/outfit/job/assistant",
 			"slots": 3
 		}
-	"enabled": true
+	},
+	"enabled": false
 }

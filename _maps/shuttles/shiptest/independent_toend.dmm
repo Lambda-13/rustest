@@ -1,39 +1,416 @@
-"a" = (/obj/structure/window/reinforced,/obj/structure/cable{icon_state = "0-4"},/obj/machinery/power/shuttle/engine/electric/premium{dir = 4; name = "super drive"; power_per_burn = 65000},/turf/open/floor/plating,/area/ship/cargo)
-"b" = (/obj/machinery/power/smes/shuttle/precharged{dir = 4},/obj/structure/window/reinforced{icon_state = "rwindow"; dir = 1},/obj/structure/window/reinforced{dir = 8},/obj/structure/window/reinforced,/obj/structure/cable{icon_state = "0-8"},/turf/open/floor/plating,/area/ship/cargo)
-"c" = (/obj/machinery/power/terminal{dir = 8},/obj/structure/window/reinforced{icon_state = "rwindow"; dir = 1},/obj/machinery/door/window,/obj/structure/cable{icon_state = "0-2"},/obj/effect/decal/cleanable/glass,/turf/open/floor/plating,/area/ship/cargo)
-"d" = (/turf/closed/wall/mineral/titanium,/area/ship/cargo)
-"e" = (/turf/closed/wall/mineral/titanium,/area/ship/bridge)
-"f" = (/obj/machinery/mineral/ore_redemption,/obj/machinery/door/window,/obj/machinery/door/window{dir = 1},/obj/machinery/door/poddoor{id = 333},/turf/open/floor/plating,/area/ship/bridge)
-"g" = (/turf/template_noop,/area/template_noop)
-"h" = (/obj/structure/rack,/obj/structure/cable{icon_state = "0-4"},/obj/item/pickaxe/improvised,/obj/item/shovel/spoon,/obj/item/skub,/obj/item/spear,/obj/item/survey_handheld,/obj/item/storage/toolbox/mechanical,/obj/item/storage/toolbox/electrical,/obj/machinery/power/apc/auto_name/directional/west,/obj/item/storage/bag/ore,/turf/open/floor/plating/rust,/area/ship/cargo)
-"i" = (/obj/structure/cable{icon_state = "1-2"},/obj/structure/cable{icon_state = "2-8"},/turf/open/floor/plasteel/dark,/area/ship/cargo)
-"j" = (/obj/machinery/power/port_gen/pacman,/obj/structure/cable{icon_state = "0-2"},/obj/machinery/light/small/directional/north,/obj/item/stack/sheet/mineral/plasma/twenty,/turf/open/floor/plasteel/dark,/area/ship/cargo)
-"k" = (/obj/structure/cable{icon_state = "0-2"},/obj/machinery/power/apc/auto_name/directional/west,/obj/effect/decal/cleanable/plastic,/turf/open/floor/plasteel/dark,/area/ship/bridge)
-"l" = (/obj/structure/closet/crate{name = "emergency armory"},/obj/item/clothing/suit/armor/vest/alt,/obj/item/clothing/head/helmet/blueshirt,/obj/item/gun/ballistic/derringer,/obj/item/clothing/glasses/welding/ghostbuster{armor = list("melee" = 75, "bullet" = 60, "laser" = 50, "energy" = 50, "bomb" = 35, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 100); desc = "Old and crude protective glasses. Obscures vision, but also gives a bit of eye protection"; name = "protective goggles"},/obj/item/ammo_box/c38_box,/obj/item/hatchet/wooden,/obj/machinery/light/small/directional/north,/turf/open/floor/plasteel/dark,/area/ship/bridge)
-"m" = (/obj/structure/closet/crate,/obj/item/reagent_containers/food/snacks/canned/beans,/obj/item/reagent_containers/food/snacks/canned/beans,/obj/item/reagent_containers/food/snacks/canned/beans,/obj/item/reagent_containers/food/snacks/canned/beans,/obj/item/reagent_containers/food/snacks/canned/beans,/obj/item/reagent_containers/food/snacks/canned/beans,/obj/item/reagent_containers/food/snacks/canned/beans,/obj/item/reagent_containers/food/snacks/canned/beans,/obj/item/reagent_containers/food/snacks/canned/beans,/obj/item/reagent_containers/food/snacks/canned/beans,/obj/item/reagent_containers/food/snacks/canned/beans,/obj/item/reagent_containers/food/snacks/canned/beans,/obj/item/reagent_containers/food/snacks/canned/beans,/obj/item/reagent_containers/food/snacks/canned/beans,/obj/item/reagent_containers/food/snacks/canned/beans,/obj/item/reagent_containers/food/snacks/canned/beans,/obj/item/reagent_containers/food/snacks/canned/beans,/obj/item/reagent_containers/food/snacks/canned/beans,/obj/item/reagent_containers/food/snacks/canned/beans,/obj/item/reagent_containers/food/snacks/canned/beans,/obj/item/reagent_containers/food/snacks/canned/beans,/obj/item/reagent_containers/food/drinks/waterbottle/large,/obj/item/reagent_containers/food/drinks/waterbottle/large,/obj/item/reagent_containers/food/drinks/waterbottle/large,/obj/item/reagent_containers/food/drinks/waterbottle/large,/obj/item/reagent_containers/food/drinks/waterbottle/large,/obj/item/reagent_containers/food/drinks/waterbottle/large,/obj/item/reagent_containers/food/drinks/waterbottle/large,/obj/item/reagent_containers/food/drinks/waterbottle/large,/obj/item/reagent_containers/food/drinks/waterbottle/large,/obj/item/reagent_containers/food/drinks/waterbottle/large,/obj/item/storage/firstaid/advanced,/obj/machinery/button/door{id = 333; pixel_y = 25},/obj/effect/decal/cleanable/cobweb/cobweb2,/turf/open/floor/plasteel/dark,/area/ship/bridge)
-"n" = (/obj/structure/fans/tiny,/obj/machinery/door/airlock/external/glass{icon_state = "closed"; dir = 4},/obj/docking_port/mobile{can_move_docking_ports = 1; dir = 4; port_direction = 2; preferred_direction = 4},/obj/effect/decal/cleanable/insectguts{icon_state = "xgib4"},/turf/open/floor/plating,/area/ship/cargo)
-"o" = (/obj/effect/decal/cleanable/insectguts,/turf/open/floor/plasteel/dark,/area/ship/cargo)
-"p" = (/obj/structure/cable{icon_state = "1-2"},/obj/structure/cable{icon_state = "2-4"},/obj/effect/decal/cleanable/vomit,/turf/open/floor/plating/rust,/area/ship/cargo)
-"q" = (/obj/machinery/power/terminal,/obj/structure/cable{icon_state = "4-8"},/obj/structure/cable,/turf/open/floor/plating/rust,/area/ship/cargo)
-"r" = (/obj/machinery/door/airlock/grunge{icon_state = "closed"; dir = 4},/obj/structure/cable{icon_state = "4-8"},/turf/open/floor/plasteel/mono/dark,/area/ship/bridge)
-"s" = (/obj/structure/cable{icon_state = "1-8"},/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/blood/old,/turf/open/floor/plating,/area/ship/bridge)
-"t" = (/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/plasteel/dark,/area/ship/bridge)
-"u" = (/obj/structure/chair/comfy/shuttle{dir = 4},/obj/item/toy/plush/lizardplushie{name = "first pilot lizard plushie"},/obj/effect/decal/cleanable/generic,/obj/effect/decal/cleanable/blood/splatter,/turf/open/floor/plasteel/dark,/area/ship/bridge)
-"v" = (/obj/machinery/computer/helm{icon_state = "computer"; dir = 8},/turf/open/floor/plasteel/mono/dark,/area/ship/bridge)
-"w" = (/obj/structure/rack,/obj/item/soap,/obj/item/clothing/suit/radiation/space,/obj/item/clothing/gloves/explorer/old,/obj/item/clothing/shoes/magboots,/obj/item/tank/internals/emergency_oxygen/engi,/obj/item/tank/internals/emergency_oxygen/engi,/obj/item/tank/internals/emergency_oxygen/engi,/obj/item/clothing/head/helmet/space/syndicate/orange,/turf/open/floor/plasteel/dark,/area/ship/cargo)
-"x" = (/obj/structure/cable{icon_state = "1-2"},/obj/structure/cable{icon_state = "2-4"},/obj/effect/decal/cleanable/insectguts{icon_state = "vomit_1-old"},/turf/open/floor/plasteel/dark,/area/ship/cargo)
-"y" = (/obj/machinery/light/small/directional/south,/obj/machinery/power/smes/engineering,/obj/structure/cable{icon_state = "0-8"},/turf/open/floor/plasteel/dark,/area/ship/cargo)
-"z" = (/obj/machinery/cryopod{icon_state = "cryopod-open"; dir = 4},/obj/machinery/computer/cryopod/directional/west{step_x = 0; pixel_x = -25},/turf/open/floor/plasteel/dark,/area/ship/bridge)
-"A" = (/obj/machinery/light/small/directional/south,/obj/effect/decal/cleanable/dirt,/obj/machinery/portable_atmospherics/canister/oxygen,/obj/item/tank/internals/emergency_oxygen/engi,/turf/open/floor/plating,/area/ship/bridge)
-"B" = (/obj/structure/table,/obj/item/radio/intercom/directional/east,/obj/item/radio/intercom/wideband/directional/south,/obj/item/toy/plush/moth/whitefly{name = "friend moth plushie"},/turf/open/floor/plating,/area/ship/bridge)
-"C" = (/obj/structure/window/reinforced{icon_state = "rwindow"; dir = 1},/obj/structure/cable{icon_state = "0-4"},/obj/machinery/power/shuttle/engine/electric/premium{dir = 4; name = "super drive"; power_per_burn = 65000},/turf/open/floor/plating,/area/ship/cargo)
-"D" = (/obj/machinery/power/smes/shuttle/precharged{dir = 4},/obj/structure/window/reinforced,/obj/structure/window/reinforced{dir = 8},/obj/structure/window/reinforced{icon_state = "rwindow"; dir = 1},/obj/structure/cable{icon_state = "0-8"},/turf/open/floor/plating,/area/ship/cargo)
-"E" = (/obj/machinery/power/terminal{dir = 8},/obj/structure/window/reinforced,/obj/machinery/door/window{dir = 1},/obj/structure/cable,/turf/open/floor/plating,/area/ship/cargo)
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/obj/structure/window/reinforced,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/shuttle/engine/electric/premium{
+	dir = 4;
+	name = "super drive";
+	power_per_burn = 65000
+	},
+/turf/open/floor/plating,
+/area/ship/cargo)
+"b" = (
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 4
+	},
+/obj/structure/window/reinforced{
+	dir = 1;
+	icon_state = "rwindow"
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/window/reinforced,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plating,
+/area/ship/cargo)
+"c" = (
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/window/reinforced{
+	dir = 1;
+	icon_state = "rwindow"
+	},
+/obj/machinery/door/window,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/plating,
+/area/ship/cargo)
+"d" = (
+/turf/closed/wall/mineral/titanium,
+/area/ship/cargo)
+"e" = (
+/turf/closed/wall/mineral/titanium,
+/area/ship/bridge)
+"f" = (
+/obj/machinery/mineral/ore_redemption,
+/obj/machinery/door/window,
+/obj/machinery/door/window{
+	dir = 1
+	},
+/obj/machinery/door/poddoor{
+	id = 333
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"g" = (
+/turf/template_noop,
+/area/template_noop)
+"h" = (
+/obj/structure/rack,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/item/pickaxe/improvised,
+/obj/item/shovel/spoon,
+/obj/item/skub,
+/obj/item/spear,
+/obj/item/survey_handheld,
+/obj/item/storage/toolbox/mechanical,
+/obj/item/storage/toolbox/electrical,
+/obj/machinery/power/apc/auto_name/directional/west,
+/obj/item/storage/bag/ore,
+/turf/open/floor/plating/rust,
+/area/ship/cargo)
+"i" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/cargo)
+"j" = (
+/obj/machinery/power/port_gen/pacman,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/machinery/light/small/directional/north,
+/obj/item/stack/sheet/mineral/plasma/twenty,
+/turf/open/floor/plasteel/dark,
+/area/ship/cargo)
+"k" = (
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/machinery/power/apc/auto_name/directional/west,
+/obj/effect/decal/cleanable/plastic,
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+"l" = (
+/obj/structure/closet/crate{
+	name = "emergency armory"
+	},
+/obj/item/clothing/suit/armor/vest/alt,
+/obj/item/clothing/head/helmet/blueshirt,
+/obj/item/gun/ballistic/derringer,
+/obj/item/clothing/glasses/welding/ghostbuster{
+	armor = list("melee" = 75, "bullet" = 60, "laser" = 50, "energy" = 50, "bomb" = 35, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 100);
+	desc = "Old and crude protective glasses. Obscures vision, but also gives a bit of eye protection";
+	name = "protective goggles"
+	},
+/obj/item/ammo_box/c38_box,
+/obj/item/hatchet/wooden,
+/obj/machinery/light/small/directional/north,
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+"m" = (
+/obj/structure/closet/crate,
+/obj/item/reagent_containers/food/snacks/canned/beans,
+/obj/item/reagent_containers/food/snacks/canned/beans,
+/obj/item/reagent_containers/food/snacks/canned/beans,
+/obj/item/reagent_containers/food/snacks/canned/beans,
+/obj/item/reagent_containers/food/snacks/canned/beans,
+/obj/item/reagent_containers/food/snacks/canned/beans,
+/obj/item/reagent_containers/food/snacks/canned/beans,
+/obj/item/reagent_containers/food/snacks/canned/beans,
+/obj/item/reagent_containers/food/snacks/canned/beans,
+/obj/item/reagent_containers/food/snacks/canned/beans,
+/obj/item/reagent_containers/food/snacks/canned/beans,
+/obj/item/reagent_containers/food/snacks/canned/beans,
+/obj/item/reagent_containers/food/snacks/canned/beans,
+/obj/item/reagent_containers/food/snacks/canned/beans,
+/obj/item/reagent_containers/food/snacks/canned/beans,
+/obj/item/reagent_containers/food/snacks/canned/beans,
+/obj/item/reagent_containers/food/snacks/canned/beans,
+/obj/item/reagent_containers/food/snacks/canned/beans,
+/obj/item/reagent_containers/food/snacks/canned/beans,
+/obj/item/reagent_containers/food/snacks/canned/beans,
+/obj/item/reagent_containers/food/snacks/canned/beans,
+/obj/item/reagent_containers/food/drinks/waterbottle/large,
+/obj/item/reagent_containers/food/drinks/waterbottle/large,
+/obj/item/reagent_containers/food/drinks/waterbottle/large,
+/obj/item/reagent_containers/food/drinks/waterbottle/large,
+/obj/item/reagent_containers/food/drinks/waterbottle/large,
+/obj/item/reagent_containers/food/drinks/waterbottle/large,
+/obj/item/reagent_containers/food/drinks/waterbottle/large,
+/obj/item/reagent_containers/food/drinks/waterbottle/large,
+/obj/item/reagent_containers/food/drinks/waterbottle/large,
+/obj/item/reagent_containers/food/drinks/waterbottle/large,
+/obj/item/storage/firstaid/advanced,
+/obj/machinery/button/door{
+	id = 333;
+	pixel_y = 25
+	},
+/obj/effect/decal/cleanable/cobweb/cobweb2,
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+"n" = (
+/obj/structure/fans/tiny,
+/obj/machinery/door/airlock/external/glass{
+	dir = 4;
+	icon_state = "closed"
+	},
+/obj/effect/decal/cleanable/insectguts{
+	icon_state = "xgib4"
+	},
+/obj/docking_port/mobile{
+	dir = 4;
+	port_direction = 2;
+	preferred_direction = 4
+	},
+/turf/open/floor/plating,
+/area/ship/cargo)
+"o" = (
+/obj/effect/decal/cleanable/insectguts,
+/turf/open/floor/plasteel/dark,
+/area/ship/cargo)
+"p" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/effect/decal/cleanable/vomit,
+/turf/open/floor/plating/rust,
+/area/ship/cargo)
+"q" = (
+/obj/machinery/power/terminal,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable,
+/turf/open/floor/plating/rust,
+/area/ship/cargo)
+"r" = (
+/obj/machinery/door/airlock/grunge{
+	dir = 4;
+	icon_state = "closed"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/bridge)
+"s" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/blood/old,
+/turf/open/floor/plating,
+/area/ship/bridge)
+"t" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+"u" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 4
+	},
+/obj/item/toy/plush/lizardplushie{
+	name = "first pilot lizard plushie"
+	},
+/obj/effect/decal/cleanable/generic,
+/obj/effect/decal/cleanable/blood/splatter,
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+"v" = (
+/obj/machinery/computer/helm{
+	dir = 8;
+	icon_state = "computer"
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/bridge)
+"w" = (
+/obj/structure/rack,
+/obj/item/soap,
+/obj/item/clothing/suit/radiation/space,
+/obj/item/clothing/gloves/explorer/old,
+/obj/item/clothing/shoes/magboots,
+/obj/item/tank/internals/emergency_oxygen/engi,
+/obj/item/tank/internals/emergency_oxygen/engi,
+/obj/item/tank/internals/emergency_oxygen/engi,
+/obj/item/clothing/head/helmet/space/syndicate/orange,
+/turf/open/floor/plasteel/dark,
+/area/ship/cargo)
+"x" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/effect/decal/cleanable/insectguts{
+	icon_state = "vomit_1-old"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/cargo)
+"y" = (
+/obj/machinery/light/small/directional/south,
+/obj/machinery/power/smes/engineering,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/cargo)
+"z" = (
+/obj/machinery/cryopod{
+	dir = 4;
+	icon_state = "cryopod-open"
+	},
+/obj/machinery/computer/cryopod/directional/west{
+	pixel_x = -25;
+	step_x = 0
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+"A" = (
+/obj/machinery/light/small/directional/south,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/portable_atmospherics/canister/oxygen,
+/obj/item/tank/internals/emergency_oxygen/engi,
+/turf/open/floor/plating,
+/area/ship/bridge)
+"B" = (
+/obj/structure/table,
+/obj/item/radio/intercom/directional/east,
+/obj/item/radio/intercom/wideband/directional/south,
+/obj/item/toy/plush/moth/whitefly{
+	name = "friend moth plushie"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"C" = (
+/obj/structure/window/reinforced{
+	dir = 1;
+	icon_state = "rwindow"
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/shuttle/engine/electric/premium{
+	dir = 4;
+	name = "super drive";
+	power_per_burn = 65000
+	},
+/turf/open/floor/plating,
+/area/ship/cargo)
+"D" = (
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 4
+	},
+/obj/structure/window/reinforced,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/window/reinforced{
+	dir = 1;
+	icon_state = "rwindow"
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plating,
+/area/ship/cargo)
+"E" = (
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/window/reinforced,
+/obj/machinery/door/window{
+	dir = 1
+	},
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/ship/cargo)
 
 (1,1,1) = {"
-abcdefeeeg
-dhijeklmee
-nopqrstuve
-dwxyezABee
-CDEdeeeeeg
+a
+d
+n
+d
+C
+"}
+(2,1,1) = {"
+b
+h
+o
+w
+D
+"}
+(3,1,1) = {"
+c
+i
+p
+x
+E
+"}
+(4,1,1) = {"
+d
+j
+q
+y
+d
+"}
+(5,1,1) = {"
+e
+e
+r
+e
+e
+"}
+(6,1,1) = {"
+f
+k
+s
+z
+e
+"}
+(7,1,1) = {"
+e
+l
+t
+A
+e
+"}
+(8,1,1) = {"
+e
+m
+u
+B
+e
+"}
+(9,1,1) = {"
+e
+e
+v
+e
+e
+"}
+(10,1,1) = {"
+g
+e
+e
+e
+g
 "}

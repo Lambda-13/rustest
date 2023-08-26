@@ -3,7 +3,7 @@
 	"map_name": "Petrovich-Class Contraband Ship",
 	"map_short_name": "Petrovich maintance-class",
 	"map_path": "_maps/shuttles/shiptest/independent_petrovich.dmm",
-	"description": "Контрабандистский корабль серии тайд. Имеет немало оружия, два техфабрикатора, немного солнечных панелей и на этом его преимущества заканчиваются. Непростой корабль",
+	"description": "Контрабандистский корабль серии Tide. Имеет немало оружия, два техфабрикатора, немного солнечных панелей и на этом его преимущества заканчиваются. Выбирайте этот корабль если уверены в себе.",
 	"limit": 2,
 	"job_slots": {
 		"Assistant": 6

@@ -8,7 +8,7 @@
 	],
 	"map_name": "Mimir-Class Rehabillitation Vessel",
 	"map_short_name": "Mimir-class",
-	"description": "The Mimir-class are Nanotrasen “patient” transfer and holding ships. Nanotrasen deploys Mimirs to hold those they’ve interned, often in ruined or otherwise out-of-the-way sectors. This both minimizes the chances of the “patients” escaping and drastically lowers the incentive to do so in the first place, as it keeps them stuck in the middle of nowhere until Central Command is ready to pick them up and process them. While “patients” are largely kept in cryogenic storage, regulations and medical necessity both require occasional thawing. As such, the Mimir comes with a host of “rehabilitative” activities for the “patients” as well as a light security detail to manage them.",
+	"description": "Класс «Мимир» — это «терпеливые» транспортные и сдерживающие корабли Нанотрайзена. Нанотрайзен использует Мимиров для удержания интернированных, часто в разрушенных или иным образом отдаленных секторах. Это одновременно сводит к минимуму вероятность побега «пациентов» и, во-первых, резко снижает стимул к этому, поскольку заставляет их застревать в глуши до тех пор, пока Центральное командование не будет готово их подобрать и обработать. Хотя «пациенты» в основном содержатся в криогенных хранилищах, правила и медицинская необходимость требуют периодического оттаивания. Таким образом, «Мимир» включает в себя множество «реабилитационных» мероприятий для «пациентов», а также легкие средства безопасности для управления ими.",
 	"tags": ["Riot", "Service", "Generalist", "Specialist"],
 	"map_path": "_maps/shuttles/shiptest/nanotrasen_mimir.dmm",
 	"limit": 1,

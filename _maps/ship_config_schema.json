@@ -2,7 +2,7 @@
 	"$schema": "https://json-schema.org/draft-04/schema",
 	"title": "Ship Configuration Schema",
 	"description": "Конфигурация корабля, используемая для определения новых классов кораблей.",
-	"tags": "A list of tags, used for searching ships by quality.",
+	"tags": "Список тегов, используемых для поиска кораблей по качеству.",
 	"type": "object",
 
 	"properties": {
@@ -15,7 +15,7 @@
 			"title": "Shortened Class Name",
 			"type": "string",
 			"description": "Сокращенная версия имени класса корабля, используемая в таких вещах, как манифест.",
-			"maxLength": 20
+			"maxLength": 30
 		},
 		"description": {
 			"title": "Class Description",
@@ -25,7 +25,7 @@
 		"tags": {
 			"title": "Ship Tags",
 			"type": "array",
-			"description": "A list of tags describing the ship's niche, converted into searchable strings."
+			"description": "Список тегов, описывающий для чего создавался корабль, преобразованных в строки с возможностью поиска."
 		},
 		"prefix": {
 			"title": "Ship Default Prefix",

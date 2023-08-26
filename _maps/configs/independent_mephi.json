@@ -8,7 +8,7 @@
 		"SPACE"
 	],
 	"map_short_name": "Mephi-class",
-	"description": "A small ship that looks like a train, the minimum necessary tools for research, medicine and extraction of valuable resources. There are additional plasma engines!",
+	"description": "Небольшой корабль, похожий на поезд, минимум необходимых инструментов для исследований, медицины и добычи ценных ресурсов. Есть дополнительные плазменные двигатели!",
 	"tags": ["Generalist", "Mining", "Science"],
 	"map_path": "_maps/shuttles/shiptest/independent_mephi.dmm",
 	"job_slots": {

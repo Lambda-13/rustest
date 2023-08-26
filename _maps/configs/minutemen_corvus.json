@@ -2,7 +2,7 @@
 	"$schema": "https://raw.githubusercontent.com/Lambda-13/rustest/master/_maps/ship_config_schema.json",
 	"map_name": "Corvus-class Response Vessel",
 	"prefix": "CMSV",
-	"description": "A lightly equipped patrol vessel used by the Minutemen for extended operations in the Frontier. In many systems, a lone Corvus is the only sign of Minutemen presence, an image that is not helped by their widespread usage.  The Corvus was originally a light personal vessel retrofitted for combat usage by the Colonial Militia, which was later adopted as their official remote infantry patrol ship as a symbol of colonial ingenuity and grit.  First designated the Wallaby-class, until the crew of a now-legendary Wallaby-class known as the CMSV Corvus single handedly destroyed a Frontiersmen capital ship in 392.",
+	"description": "Легкооборудованный патрульный корабль, используемый Минитменами для длительных операций в дальнем космосе. Во многих системах одинокий Корвус является единственным признаком присутствия Минитменов, и этому имиджу не способствует их широкое использование. Первоначально «Корвус» был легким личным судном, модернизированным для боевого использования Колониальной милицией, которое позже было принято в качестве их официального удаленного пехотного патрульного корабля как символ колониальной изобретательности и упорства. Сначала назывался классом «Воллаби», пока экипаж ставшего легендарным корабля класса «Валлаби», известного как CMSV Corvus, в одиночку не уничтожил крупный корабль Frontiersmen в 2392 году.",
 	"tags": ["Combot", "Riot"],
 	"namelists": [
 		"COLONIAL MINUTEMEN",

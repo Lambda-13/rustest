@@ -3,7 +3,7 @@
 	"map_name": "Liberator class pirate ship",
 	"map_short_name": "Liberator-class",
 	"map_path": "_maps/shuttles/shiptest/pirate_liberator.dmm",
-	"description": "Судно пренадлежащее союзу револционеров ТерраГов а также СССП. Имеет на борту кучу оружия и базовое оборудование для добычи полезных ископаемых. Также тут очень большие запасы водки...",
+	"description": "Судно пренадлежащее ренегатам. Имеет на борту кучу оружия и базовое оборудование для добычи полезных ископаемых. Также тут очень большие запасы водки...",
 	"job_slots": {
 		"Capitan": {
 			"outfit": "/datum/outfit/job/captain/solgov/rebel",

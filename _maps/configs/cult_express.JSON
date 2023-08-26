@@ -1,4 +1,5 @@
 {
+	"$schema": "https://raw.githubusercontent.com/Lambda-13/rustest/master/_maps/ship_config_schema.json",
 	"map_name": "KOS Express-Class Eldritch Hijacked Freighter",
 	"map_short_name": "Cultist-class",
 	"map_path": "lambda/MrSamu99/shuttles/cult_express.dmm",

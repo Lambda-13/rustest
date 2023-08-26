@@ -3,7 +3,7 @@
 	"map_name": "Scav-class Drifter",
 	"map_short_name": "Scav-class",
 	"prefix": "ISV",
-	"description": "One of the cheapest (and yet, inexplicably popular) offerings from Miskilamo Spacefaring, the Scav-class is a compact, speedy vessel purpose-built for enterprising scrappers and looters looking to salvage bombed-out ruins and harvest boatloads of ore. Featuring an ‘innovative’ open-floor plan, a charitable supply of EVA/ruin raiding equipment, and some exotic implements of healing or death-dealing, the Scav-class just keeps on chuggin’!",
+	"description": "Одно из самых дешевых (и в то же время необъяснимо популярных) предложений от Miskilamo Spacefaring. Класс «Scav» представляет собой компактное и быстрое судно, специально построенное для предприимчивых мусорщиков и мародеров, желающих разобрать разбомбленные руины и добыть на экзотических планетах руду. Обладая «новаторской» открытой планировкой, благотворительным запасом оборудования для рейдов в открытый космос и руин, а также некоторыми экзотическими орудиями лечения или убийства, класс «Scav» является лучшим выбором для любого капитана!",
 	"tags": ["Generalist"],
 	"namelists": [
 		"NATURAL",

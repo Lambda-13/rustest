@@ -8,7 +8,7 @@
 	],
 	"map_name": "Komodo-class Warship",
 	"map_short_name": "Komodo-class",
-	"description": "An ICW-era design, the Komodo is a dedicated warship operated by the Gorlex Marauders. Contemporaries of the legendary Starfury-class, Komodos were the backbone of Gorlex and ACLF fleets during the ICW, and saw significant combat service – not always to a tragic end like their Cybersun companions. Contemporary examples often still bear the scars of ICW-period combat, and the dire financial straits of most Gorlex splinter factions means many of those survivors are in a state of poor repair. Despite the stresses of age, they remain capable ships, and often still have the heavier armament associated with their ICW deployments in storage.",
+	"description": "«Комодо», созданный в эпоху второй галактической войны, представляет собой специализированный военный корабль, управляемый мародерами Горлекса. Современники легендарного класса «Звездная ярость», «Комодос» составляли основу флотов «Горлекс» и ACLF во время войны и прошли значительную боевую службу – не всегда с трагическим концом, как их товарищи из «Cybersun». Современные примеры часто все еще несут на себе шрамы боев периода войны, а тяжелое финансовое положение большинства отколовшихся фракций Горлекса означает, что многие из этих выживших находятся в плохом состоянии. Несмотря на стрессы возраста, они остаются боеспособными кораблями и часто все еще имеют на хранении более тяжелое вооружение, связанное с их развертыванием во время войны.",
 	"tags": ["RP Focus", "Combat", "Engineering"],
 	"map_path": "_maps/shuttles/shiptest/syndicate_gorlex_komodo.dmm",
 	"map_id": "syndicate_gorlex_komodo",

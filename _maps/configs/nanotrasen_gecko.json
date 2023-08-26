@@ -9,7 +9,7 @@
 	],
 	"map_short_name": "Gecko-class",
 	"map_path": "_maps/shuttles/shiptest/nanotrasen_gecko.dmm",
-	"description": "A bulky, robust, and exceedingly ugly salvage ship. The Gecko is nothing less than a flying brick full of redundant maintenance spaces and open-to-space salvage bays, powered by a temperamental TEG system, with a cramped crew space sandwiched in between. Due to its deeply obsolete design and the dangerous nature of salvage work, Geckos are often the final resting point for the careers of officers that have stepped on too many toes in the corporate world without doing anything outright criminal. Despite these shortcomings, Geckos offer a large amount of open space and a good supply of engineering equipment, which is all an enterprising engineer truly needs.",
+	"description": "Громоздкий, крепкий и чрезвычайно уродливый спасательный корабль. Gecko — это не что иное, как летающий кирпич, полный резервных помещений для технического обслуживания и открытых отсеков для спасения, приводимый в действие темпераментной системой ТЭГ, с тесным пространством для экипажа между ними. Из-за своей глубоко устаревшей конструкции и опасного характера спасательных работ, «Гекконы» часто становятся последней точкой пристанища для карьер офицеров, которые слишком сильно наступили на ноги в корпоративном мире, не сделав при этом ничего откровенно криминального. Несмотря на эти недостатки, Гекконы предлагают большое количество открытого пространства и хороший запас инженерного оборудования, а это все, что действительно нужно предприимчивому инженеру.",
 	"tags": ["Mining", "Engineering"],
 	"limit": 2,
 	"job_slots": {
