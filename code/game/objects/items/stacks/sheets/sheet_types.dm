@@ -112,6 +112,7 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 	new/datum/stack_recipe("pestle", /obj/item/pestle, 1, time = 50), \
 	new/datum/stack_recipe("hygienebot assembly", /obj/item/bot_assembly/hygienebot, 2, time = 50), \
 	new/datum/stack_recipe("shower", /obj/machinery/shower, 3, time = 25), \
+	new/datum/stack_recipe("tiny fan", /obj/structure/fans/tiny, 25, time = 30, one_per_turf = TRUE, on_floor = TRUE), \
 ))
 
 /obj/item/stack/sheet/metal
