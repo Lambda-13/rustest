@@ -181,7 +181,7 @@ GLOBAL_LIST_INIT(plasteel_recipes, list ( \
 	)), \
 	new/datum/stack_recipe("shutters frame", /obj/structure/poddoor_assembly/shutters, 5, time = 50, one_per_turf = 1, on_floor = 1), \
 	new/datum/stack_recipe("blast door frame", /obj/structure/poddoor_assembly, 15, time = 50, one_per_turf = 1, on_floor = 1)
-	new/datum/stack_recipe("tiny fan", /obj/structure/fans/tiny, 25, time = 30, one_per_turf = TRUE, on_floor = TRUE), \
+	new/datum/stack_recipe("tiny fan", /obj/structure/fans/tiny/plasteel, 25, time = 10, one_per_turf = TRUE, on_floor = TRUE), \
 ))
 // WS End: carpet
 

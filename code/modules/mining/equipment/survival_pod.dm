@@ -266,8 +266,7 @@
 	layer = ABOVE_NORMAL_TURF_LAYER
 	density = FALSE
 	icon_state = "fan_tiny"
-	buildstacktype = /obj/item/stack/sheet/plasteel
-	buildstackamount = 5
+	buildstackamount = 2
 
 /obj/structure/fans/Initialize(mapload)
 	. = ..()
@@ -278,6 +277,10 @@
 	name = "невидимый вентилятор (с)"
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 	invisibility = INVISIBILITY_ABSTRACT
+
+/obj/structure/fans/tiny/plasteel
+	buildstacktype = /obj/item/stack/sheet/plasteel
+	buildstackamount = 20
 
 //Signs
 /obj/structure/sign/mining
