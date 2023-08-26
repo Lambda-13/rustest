@@ -10,7 +10,7 @@
 	var/obj/item/holosign_creator/projector
 	var/lifespan = 5 MINUTES
 	var/death_time
-	var/infinite = FALSE //for infinite holosigns
+	var/infinite = TRUE //for infinite holosigns // Потому что не бесконечные голополя не круто
 
 	var/countdown_color
 	var/obj/effect/countdown/holosign/countdown
