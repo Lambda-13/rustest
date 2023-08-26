@@ -670,7 +670,14 @@
 #define COMSIG_PEN_ROTATED "pen_rotated" //called after rotation in /obj/item/pen/attack_self(): (rotation, mob/living/carbon/user)
 
 // /obj/item/gun signals
-#define COMSIG_MOB_FIRED_GUN "mob_fired_gun" //called in /obj/item/gun/process_fire (user, target, params, zone_override)
+///called in /obj/item/gun/process_fire (src, target, params, zone_override)
+#define COMSIG_MOB_FIRED_GUN "mob_fired_gun"
+///called in /obj/item/gun/process_fire (user, target, params, zone_override)
+#define COMSIG_GUN_FIRED "gun_fired"
+///called in /obj/item/gun/process_chamber (src)
+#define COMSIG_GUN_CHAMBER_PROCESSED "gun_chamber_processed"
+///called in /obj/item/gun/ballistic/process_chamber (casing)
+#define COMSIG_CASING_EJECTED "casing_ejected"
 
 // /obj/item/grenade signals
 #define COMSIG_GRENADE_PRIME "grenade_prime" //called in /obj/item/gun/process_fire (user, target, params, zone_override)
@@ -907,7 +914,8 @@
 #define COMSIG_UPDATE_AMMO_HUD "update_ammo_hud"
 /// /mob/living/proc/updatehealth()
 #define COMSIG_MOB_RUN_ARMOR "mob_run_armor"
-///called in /obj/item/gun/ballistic/process_chamber (casing)
-#define COMSIG_CASING_EJECTED "casing_ejected"
 ///from base of element/bane/activate(): (item/weapon, mob/user)
 #define COMSIG_LIVING_BANED "living_baned"
+
+//COMSIG_GUN_FIRED
+	#define COMSIG_GUN_FIRED_CANCEL (1<<0)

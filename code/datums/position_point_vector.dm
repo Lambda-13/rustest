@@ -224,3 +224,12 @@
 	last_process = world.time
 	last_move = world.time
 	increment(needed_time / SSprojectiles.wait)
+
+/// Same effect as initiliaze_location, but without setting the starting_x/y/z
+/datum/point/vector/proc/set_location(tile_x, tile_y, tile_z, p_x = 0, p_y = 0)
+	if(!isnull(tile_x))
+		x = ((tile_x - 1) * world.icon_size) + world.icon_size * 0.5 + p_x + 1
+	if(!isnull(tile_y))
+		y = ((tile_y - 1) * world.icon_size) + world.icon_size * 0.5 + p_y + 1
+	if(!isnull(tile_z))
+		z = tile_z

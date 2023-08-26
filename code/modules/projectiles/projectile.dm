@@ -918,3 +918,38 @@
 
 /obj/projectile/experience_pressure_difference()
 	return
+
+/obj/projectile/proc/set_angle(new_angle) //wrapper for overrides.
+	Angle = new_angle
+	if(!nondirectional_sprite)
+		var/matrix/matrix = new
+		matrix.Turn(Angle)
+		transform = matrix
+	if(trajectory)
+		trajectory.set_angle(new_angle)
+	if(fired && hitscan && isloc(loc) && (loc != last_angle_set_hitscan_store))
+		last_angle_set_hitscan_store = loc
+		var/datum/point/point_cache = new (src)
+		point_cache = trajectory.copy_to()
+		store_hitscan_collision(point_cache)
+	return TRUE
+
+/// Same as set_angle, but the reflection continues from the center of the object that reflects it instead of the side
+/obj/projectile/proc/set_angle_centered(new_angle)
+	Angle = new_angle
+	if(!nondirectional_sprite)
+		var/matrix/matrix = new
+		matrix.Turn(Angle)
+		transform = matrix
+	if(trajectory)
+		trajectory.set_angle(new_angle)
+
+	var/list/coordinates = trajectory.return_coordinates()
+ 	trajectory.set_location(coordinates[1], coordinates[2], coordinates[3]) // Sets the trajectory to the center of the tile it bounced at
+
+	if(fired && hitscan && isloc(loc) && (loc != last_angle_set_hitscan_store)) // Handles hitscan projectiles
+		last_angle_set_hitscan_store = loc
+		var/datum/point/point_cache = new (src)
+		point_cache.initialize_location(coordinates[1], coordinates[2], coordinates[3]) // Take the center of the hitscan collision tile
+		store_hitscan_collision(point_cache)
+	return TRUE

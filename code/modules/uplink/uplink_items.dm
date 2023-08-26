@@ -331,6 +331,15 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	surplus = 30
 	include_modes = list(/datum/game_mode/nuclear, /datum/game_mode/war)
 
+/datum/uplink_item/dangerous/rawketlawnchair/nobackblast
+	name = "flameless 84mm Rocket Propelled Grenade Launcher"
+	desc = "A reusable rocket propelled grenade launcher preloaded with a low-yield 84mm HE round. \
+		Guaranteed to send your target out with a bang or your money back! This one has been fitted with a special coolant loop to avoid embarassing teamkill 'accidents' from backblast."
+	item = /obj/item/gun/ballistic/rocketlauncher/nobackblast
+	cost = 12
+	surplus = 30
+	include_modes = list(/datum/game_mode/nuclear, /datum/game_mode/war)
+
 /datum/uplink_item/dangerous/grenadelauncher
 	name = "Universal Grenade Launcher"
 	desc = "A reusable grenade launcher. Has a capacity of 3 ammo but isn't preloaded. Works with grenades and several other types of explosives."
