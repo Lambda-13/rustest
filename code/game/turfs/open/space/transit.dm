@@ -1,5 +1,5 @@
 /turf/open/space/transit
-	name = "Космос: вне корабля"
+	name = "Гиперкосмос"
 	icon_state = "black"
 	dir = SOUTH
 	baseturfs = /turf/open/space/transit
@@ -36,9 +36,21 @@
 		return
 	if(iseffect(src))
 		return
-	if(isliving(src))
-		var/mob/living/poor_soul = src			// This may not seem like much, but if you toss someone out
-		poor_soul.apply_damage_type(50, BRUTE)	// and they go through like four tiles, they're goners
+	if(isprojectile(src))
+		return
+	if(ismob(src))
+		if(iscameramob(src))
+			return
+		if(isliving(src))
+			var/mob/living/eblan = src
+			eblan.apply_damage_type(10, BRUTE)
+			return
+	return
+	if(isobj(src))
+		var/obj/burunya = src
+		if(burunya.resistance_flags & INDESTRUCTIBLE)
+			return
+		burunya.obj_integrity -= burunya.max_integrity/20
 		return
 	qdel(src)
 

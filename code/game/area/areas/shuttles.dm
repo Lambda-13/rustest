@@ -106,8 +106,7 @@
 ////////////////////////////Single-area shuttles////////////////////////////
 
 /area/shuttle/transit
-	name = "Космос: вне корабля"
-	desc = "Weeeeee"
+	name = "Гиперкосмос"
 	dynamic_lighting = DYNAMIC_LIGHTING_DISABLED
 
 /area/shuttle/custom

@@ -106,7 +106,7 @@
 	for(var/datum/hangar_shaft/shaft in shaft_datums)
 		for(var/i in 1 to shaft.hangar_docks.len)
 			// assumes that order in shaft = order in hangar list
-			var/hangar_name = "[name] Hangar [shaft.name]-[i]"
+			var/hangar_name = "ангар '[name]' [shaft.name]-[i]"
 			var/obj/docking_port/stationary/h_dock = shaft.hangar_docks[i]
 			h_dock.name = hangar_name
 			for(var/datum/virtual_level/h_vlevel in hangar_vlevels)
@@ -237,9 +237,9 @@
 		FREQ_COMMON, // frequency: Common
 		v_speaker, // speaker: a weird dummy atom not used for much of import but which will cause runtimes if omitted or improperly initialized.
 		/datum/language/common, // language: Common
-		"[dock_requester.name] confirmed touchdown at [dock_requester.shuttle_port.docked].", // the message itself
+		"[dock_requester.name] прибывает в [dock_requester.shuttle_port.docked].", // the message itself
 		list(SPAN_ROBOT), // message font
-		list(MODE_CUSTOM_SAY_EMOTE = "coldly states") // custom say verb, consistent with robots
+		list(MODE_CUSTOM_SAY_EMOTE = "холодно сообщает") // custom say verb, consistent with robots
 	)
 	signal.send_to_receivers()
 	return
@@ -263,9 +263,9 @@
 		FREQ_COMMON,
 		v_speaker,
 		/datum/language/common,
-		"[dock_requester.name] has departed from [src].",
+		"[dock_requester.name] покидает [src].",
 		list(SPAN_ROBOT),
-		list(MODE_CUSTOM_SAY_EMOTE = "coldly states")
+		list(MODE_CUSTOM_SAY_EMOTE = "холодно сообщает")
 	)
 	signal.send_to_receivers()
 
@@ -310,7 +310,7 @@
 	log_shuttle("[src] ([src.type]) [REF(src)] OUTPOST HANGAR INIT")
 
 	var/datum/virtual_level/vlevel = SSmapping.create_virtual_level(
-		"[src.name] Loading Hangar", // we actually need to change this later; we can't number the hangar if we CHECK_TICK before we add the hangar to the list
+		"Ангар погрузки '[src.name]'", // we actually need to change this later; we can't number the hangar if we CHECK_TICK before we add the hangar to the list
 		hangar_ztraits,
 		mapzone,
 		h_template.width+2,
@@ -338,7 +338,7 @@
 
 	// important not to CHECK_TICK after this point, so that the number is guaranteed to be correct
 	var/hangar_num = length(shaft.hangar_docks)
-	var/hangar_name = "[src.name] Hangar [shaft.name]-[hangar_num]"
+	var/hangar_name = "Ангар '[src.name]' [shaft.name]-[hangar_num]"
 	h_dock.name = hangar_name
 	vlevel.name = hangar_name
 	// hangar area has UNIQUE_AREA, so do not rename it (annoying)
