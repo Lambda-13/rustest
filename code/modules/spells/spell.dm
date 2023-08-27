@@ -159,6 +159,11 @@ GLOBAL_LIST_INIT(spells, typesof(/obj/effect/proc_holder/spell)) //needed for th
 		to_chat(user, "<span class='warning'>You can't cast this spell here!</span>")
 		return FALSE
 
+	var/area/cast_area = get_area(T)
+	if(cast_area.area_flags & SAFEZONE)
+		to_chat(user, "<span class='warning'>Сильная аура этого места не даёт мне телепортироваться!</span>")
+		return FALSE
+
 	if(!skipcharge)
 		if(!charge_check(user))
 			return FALSE

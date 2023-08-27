@@ -484,20 +484,12 @@
 	var/mob/living/L = user
 	if(!Adjacent(target))
 		if(selected && selected.is_ranged())
-			var/area/B = get_area(user.loc)
-			if(B.safezone && selected.harmful)
-				to_chat(user, "<span class='warning'>Я не могу!</span>")
-				return
 			if(HAS_TRAIT(L, TRAIT_PACIFISM) && selected.harmful)
 				to_chat(user, "<span class='warning'>You don't want to harm other living beings!</span>")
 				return
 			if(selected.action(target,params))
 				selected.start_cooldown()
 	else if(selected && selected.is_melee())
-		var/area/B = get_area(user.loc)
-		if(selected.harmful && B.safezone)
-			to_chat(user, "<span class='warning'>Я не могу!</span>")
-			return
 		if(isliving(target) && selected.harmful && HAS_TRAIT(L, TRAIT_PACIFISM))
 			to_chat(user, "<span class='warning'>You don't want to harm other living beings!</span>")
 			return

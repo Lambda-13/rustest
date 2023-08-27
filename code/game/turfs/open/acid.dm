@@ -120,9 +120,9 @@
 				continue
 			if(object_to_melt.resistance_flags & UNACIDABLE)
 				object_to_melt.resistance_flags &= ~UNACIDABLE
-			if(object_to_melt.armor.acid == 100) //acid proof armor will probably be acid proof
+			if(object_to_melt.armor.acid >= 30) // Защита от кислоты больше или равно 30? Обьекту похуй плюс поебать
 				continue
-			object_to_melt.acid_act(10, 20)
+			object_to_melt.acid_act(1, 2)
 
 		else if (isliving(thing))
 			. = TRUE
@@ -146,15 +146,15 @@
 				var/obj/item/clothing/S = C.get_item_by_slot(ITEM_SLOT_OCLOTHING)
 				var/obj/item/clothing/H = C.get_item_by_slot(ITEM_SLOT_HEAD)
 
-				if(S && H && S.armor.acid == 100 && H.armor.acid == 100)
+				if(S && H && S.armor.acid >= 30 && H.armor.acid >= 30)
 					return
 
 			if("acid" in L.weather_immunities)
 				continue
 
-			L.adjustFireLoss(20)
+			L.adjustFireLoss(10)
 			if(L) //mobs turning into object corpses could get deleted here.
-				L.acid_act(50, 100)
+				L.acid_act(5, 10)
 
 /turf/open/acid/whitesands
 	planetary_atmos = TRUE

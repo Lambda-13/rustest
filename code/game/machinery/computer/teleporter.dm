@@ -176,6 +176,8 @@
 	if(is_centcom_level(T) || is_away_level(T))
 		return FALSE
 	var/area/A = get_area(T)
+	if(A.area_flags & SAFEZONE)
+		return FALSE
 	if(!A)
 		return FALSE
 	return TRUE

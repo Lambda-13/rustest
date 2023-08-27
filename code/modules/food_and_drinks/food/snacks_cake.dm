@@ -205,9 +205,6 @@
 
 /obj/item/reagent_containers/food/snacks/store/cake/birthday/energy/attack(mob/living/M, mob/living/user)
 	. = ..()
-	var/area/B = get_area(user.loc)
-	if(B.safezone && M != user)
-		return
 	if(HAS_TRAIT(user, TRAIT_PACIFISM) && M != user) //Prevents pacifists from attacking others directly
 		return
 	energy_bite(M, user)
@@ -233,9 +230,6 @@
 
 /obj/item/reagent_containers/food/snacks/cakeslice/birthday/energy/attack(mob/living/M, mob/living/user)
 	. = ..()
-	var/area/B = get_area(user.loc)
-	if(B.safezone && M != user)
-		return
 	if(HAS_TRAIT(user, TRAIT_PACIFISM) && M != user) //Prevents pacifists from attacking others directly
 		return
 	energy_bite(M, user)

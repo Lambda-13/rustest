@@ -113,9 +113,14 @@
 		return
 
 	var/turf/dest = get_turf(src)
+	var/area/dest_area = get_area(dest)
 
 	if(dest && (is_centcom_level(dest) || (dest.virtual_z() != virtual_z())))
-		to_chat(user, "<span class='warning'>ОШИБКА: Платформа не может работать. Возможно ты находишься в запрещённой зоне.</span>")
+		to_chat(user, "<span class='warning'>ОШИБКА: Платформа не может работать в этой или с этой областью.</span>")
+		return
+
+	if(dest_area.area_flags & SAFEZONE)
+		to_chat(user, "<span class='warning'>ОШИБКА: Неизвестная ошибка.</span>")
 		return
 
 	var/target_x = x + x_offset

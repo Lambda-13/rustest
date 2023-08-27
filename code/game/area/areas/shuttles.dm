@@ -150,7 +150,6 @@
 
 /area/shuttle/supply
 	name = "Supply Shuttle"
-	area_flags = NOTELEPORT
 
 /area/shuttle/escape
 	name = "Emergency Shuttle"
@@ -162,11 +161,9 @@
 
 /area/shuttle/escape/luxury
 	name = "Luxurious Emergency Shuttle"
-	area_flags = NOTELEPORT
 
 /area/shuttle/escape/arena
 	name = "The Arena"
-	area_flags = NOTELEPORT
 
 /area/shuttle/escape/meteor
 	name = "\proper a meteor with engines strapped to it"

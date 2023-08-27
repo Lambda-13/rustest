@@ -16,6 +16,10 @@
 /obj/item/mecha_parts/mecha_equipment/teleporter/action(atom/target)
 	if(!action_checks(target) || is_centcom_level(loc))
 		return
+	var/turf/CO = get_turf(loc)
+	var/area/CK = get_area(CO)
+	if(CK.area_flags & SAFEZONE)
+		return
 	var/turf/T = get_turf(target)
 	if(T && (loc.z == T.z) && (get_dist(loc, T) <= teleport_range))
 		do_teleport(chassis, T, 4, channel = TELEPORT_CHANNEL_BLUESPACE)
@@ -36,6 +40,10 @@
 
 /obj/item/mecha_parts/mecha_equipment/wormhole_generator/action(atom/target)
 	if(!action_checks(target) || is_centcom_level(loc))
+		return
+	var/turf/CO = get_turf(loc)
+	var/area/CK = get_area(CO)
+	if(CK.area_flags & SAFEZONE)
 		return
 	var/list/theareas = get_areas_in_range(100, chassis)
 	if(!theareas.len)

@@ -35,6 +35,8 @@
 	if(istype(src, /obj/docking_port))
 		return
 	if(iseffect(src))
+		if(istype(src, /obj/effect/particle_effect/foam))
+			qdel(src)
 		return
 	if(isprojectile(src))
 		return
@@ -45,12 +47,12 @@
 			var/mob/living/eblan = src
 			eblan.apply_damage_type(10, BRUTE)
 			return
-	return
+		return
 	if(isobj(src))
 		var/obj/burunya = src
 		if(burunya.resistance_flags & INDESTRUCTIBLE)
 			return
-		burunya.obj_integrity -= burunya.max_integrity/20
+		burunya.obj_integrity -= burunya.max_integrity/10
 		return
 	qdel(src)
 

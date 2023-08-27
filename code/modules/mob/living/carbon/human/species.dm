@@ -1512,9 +1512,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 ///This proc handles punching damage. IMPORTANT: Our owner is the TARGET and not the USER in this proc. For whatever reason...
 /datum/species/proc/harm(mob/living/carbon/human/user, mob/living/carbon/human/target, datum/martial_art/attacker_style)
-	var/area/B = get_area(user.loc)
-	if(B.safezone)
-		return
 	if(HAS_TRAIT(user, TRAIT_PACIFISM))
 		to_chat(user, "<span class='warning'>You don't want to harm [target]!</span>")
 		return FALSE
@@ -1631,27 +1628,17 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		to_chat(M, "<span class='warning'>You attempt to touch [H]!</span>")
 		return 0
 	SEND_SIGNAL(M, COMSIG_MOB_ATTACK_HAND, M, H, attacker_style)
-	var/area/B = get_area(H.loc)
 	switch(M.a_intent)
 		if("help")
 			help(M, H, attacker_style)
 
 		if("grab")
-			if(B.safezone)
-				to_chat(M, "<span class='warning'>Вы не можете хватать в этой зоне!</span>")
-				return 0
 			grab(M, H, attacker_style)
 
 		if("harm")
-			if(B.safezone)
-				to_chat(M, "<span class='warning'>Вы не можете бить в этой зоне!</span>")
-				return 0
 			harm(M, H, attacker_style)
 
 		if("disarm")
-			if(B.safezone)
-				to_chat(M, "<span class='warning'>Вы не можете обезоруживать в этой зоне!</span>")
-				return 0
 			disarm(M, H, attacker_style)
 
 /datum/species/proc/spec_attacked_by(obj/item/I, mob/living/user, obj/item/bodypart/affecting, intent, mob/living/carbon/human/H)

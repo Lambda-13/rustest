@@ -127,11 +127,6 @@
 	if(item_flags & NOBLUDGEON)
 		return
 
-	var/area/B = get_area(user.loc)
-	if(force && B.safezone)
-		to_chat(user, "<span class='warning'>Я не могу бить других находясь тут!</span>")
-		return
-
 	if(force && HAS_TRAIT(user, TRAIT_PACIFISM))
 		to_chat(user, "<span class='warning'>Я не могу бить других!</span>")
 		return

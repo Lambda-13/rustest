@@ -7,7 +7,7 @@
 	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
 	requires_power = FALSE
 	has_gravity = STANDARD_GRAVITY
-	area_flags = VALID_TERRITORY | UNIQUE_AREA | NOTELEPORT
+	area_flags = VALID_TERRITORY | UNIQUE_AREA | NOTELEPORT | SAFEZONE
 	flags_1 = NONE
 
 /area/centcom/control
@@ -105,7 +105,7 @@
 	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
 	requires_power = FALSE
 	has_gravity = STANDARD_GRAVITY
-	area_flags = VALID_TERRITORY | UNIQUE_AREA | NOTELEPORT
+	area_flags = VALID_TERRITORY | UNIQUE_AREA | NOTELEPORT | SAFEZONE
 	flags_1 = NONE
 
 //Abductors
@@ -113,7 +113,7 @@
 	name = "Abductor Ship"
 	icon_state = "yellow"
 	requires_power = FALSE
-	area_flags = VALID_TERRITORY | UNIQUE_AREA | NOTELEPORT
+	area_flags = VALID_TERRITORY | UNIQUE_AREA | NOTELEPORT | SAFEZONE
 	has_gravity = STANDARD_GRAVITY
 	flags_1 = NONE
 
@@ -123,7 +123,7 @@
 	icon_state = "syndie-ship"
 	requires_power = FALSE
 	has_gravity = STANDARD_GRAVITY
-	area_flags = VALID_TERRITORY | UNIQUE_AREA | NOTELEPORT
+	area_flags = VALID_TERRITORY | UNIQUE_AREA | NOTELEPORT | SAFEZONE
 	flags_1 = NONE
 	ambientsounds = HIGHSEC
 

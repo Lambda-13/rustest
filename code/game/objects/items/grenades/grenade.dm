@@ -92,7 +92,7 @@
 /obj/item/grenade/proc/preprime(mob/user, delayoverride, msg = TRUE, volume = 60)
 	var/turf/T = get_turf(src)
 	var/area/B = get_area(user.loc)
-	if(B.safezone)
+	if(B.area_flags & SAFEZONE)
 		to_chat(user, "<span class='warning'>Я не могу!</span>")
 		return 0
 	log_grenade(user, T) //Inbuilt admin procs already handle null users
@@ -111,7 +111,7 @@
 
 /obj/item/grenade/proc/prime()
 	var/area/B = get_area(src.loc)
-	if(B.safezone)
+	if(B.area_flags & SAFEZONE)
 		to_chat(loc, "<span class='warning'>[src] испаряется!</span>")
 		qdel(src)
 		return

@@ -22,7 +22,11 @@
 /obj/item/wormhole_jaunter/proc/turf_check(mob/user)
 	var/turf/device_turf = get_turf(user)
 	if(!device_turf || is_centcom_level(device_turf))
-		to_chat(user, "<span class='notice'>У вас возникли трудности с получением [src.name].</span>")
+		to_chat(user, "<span class='notice'>[src.name] искрит.</span>")
+		return FALSE
+	var/area/device_area = get_area(device_turf)
+	if(device_area.area_flags & SAFEZONE)
+		to_chat(user, "<span class='notice'>[src.name] искрит.</span>")
 		return FALSE
 	return TRUE
 

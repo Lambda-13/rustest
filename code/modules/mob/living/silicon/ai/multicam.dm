@@ -92,7 +92,7 @@
 	name = "ai_multicam_room"
 	icon_state = "ai_camera_room"
 	dynamic_lighting = DYNAMIC_LIGHTING_DISABLED
-	area_flags = NOTELEPORT | HIDDEN_AREA | UNIQUE_AREA
+	area_flags = NOTELEPORT | HIDDEN_AREA | UNIQUE_AREA | SAFEZONE
 	ambientsounds = null
 	flags_1 = NONE
 

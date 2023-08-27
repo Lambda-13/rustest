@@ -71,11 +71,6 @@
 	if(user.a_intent != INTENT_HARM || !isGlass)
 		return ..()
 
-	var/area/B = get_area(user.loc)
-	if(B.safezone)
-		to_chat(user, "<span class='notice'>Может из неё надо пить?</span>")
-		return
-
 	if(HAS_TRAIT(user, TRAIT_PACIFISM))
 		to_chat(user, "<span class='warning'>You don't want to harm [target]!</span>")
 		return

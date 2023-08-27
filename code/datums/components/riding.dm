@@ -399,10 +399,6 @@
 	if(rider == user)
 		return //Piggyback user.
 	user.unbuckle_mob(rider)
-	var/area/B = get_area(user.loc)
-	if(B.safezone)
-		to_chat(user, "<span class='warning'>Я не могу!</span>")
-		return
 	if(HAS_TRAIT(user, TRAIT_PACIFISM))
 		to_chat(user, "<span class='notice'>You gently let go of [rider].</span>")
 		return

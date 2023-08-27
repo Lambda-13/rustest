@@ -112,7 +112,7 @@
 
 /obj/machinery/syndicatebomb/attackby(obj/item/I, mob/user, params)
 	var/area/B = get_area(user.loc)
-	if(B.safezone)
+	if(B.area_flags & SAFEZONE)
 		to_chat(user, "<span class='warning'>Как ей пользоваться!?</span>")
 		return FALSE
 	if(HAS_TRAIT(user, TRAIT_PACIFISM))

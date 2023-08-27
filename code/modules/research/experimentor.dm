@@ -669,6 +669,9 @@
 
 /obj/item/relic/proc/do_the_teleport(mob/user)
 	var/turf/userturf = get_turf(user)
+	var/area/userarea = get_area(userturf)
+	if(userarea.area_flags & SAFEZONE)
+		return
 	if(loc == user && !is_centcom_level(userturf)) //Because Nuke Ops bringing this back on their shuttle, then looting the ERT area is 2fun4you!
 		visible_message("<span class='notice'>[src] twists and bends, relocating itself!</span>")
 		throwSmoke(userturf)

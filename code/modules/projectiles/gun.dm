@@ -292,9 +292,6 @@
 			return FALSE
 	if(chambered && chambered.BB)
 		var/area/B = get_area(user.loc)
-		if(B.safezone)
-			to_chat(user, "<span class='notice'>Не хочу стрелять.</span>")
-			return
 		if(HAS_TRAIT(user, TRAIT_PACIFISM)) // If the user has the pacifist trait, then they won't be able to fire [src] if the round chambered inside of [src] is lethal.
 			if(chambered.harmful) // Is the bullet chambered harmful?
 				to_chat(user, "<span class='warning'>[src] is lethally chambered! You don't want to risk harming anyone...</span>")
@@ -351,10 +348,6 @@
 			addtimer(CALLBACK(src, .proc/process_burst, user, target, message, params, zone_override, sprd, randomized_gun_spread, randomized_bonus_spread, rand_spr, i), fire_delay * (i - 1))
 	else
 		if(chambered)
-			var/area/B = get_area(user.loc)
-			if(B.safezone)
-				to_chat(user, "<span class='notice'>Не хочу стрелять.</span>")
-				return
 			if(HAS_TRAIT(user, TRAIT_PACIFISM)) // If the user has the pacifist trait, then they won't be able to fire [src] if the round chambered inside of [src] is lethal.
 				if(chambered.harmful) // Is the bullet chambered harmful?
 					to_chat(user, "<span class='warning'>[src] is lethally chambered! You don't want to risk harming anyone...</span>")

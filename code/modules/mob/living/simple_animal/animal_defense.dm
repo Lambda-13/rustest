@@ -14,9 +14,6 @@
 			grabbedby(M)
 
 		if("harm", "disarm")
-			var/area/B = get_area(M.loc)
-			if(B.safezone)
-				return
 			if(HAS_TRAIT(M, TRAIT_PACIFISM))
 				to_chat(M, "<span class='warning'>You don't want to hurt [src]!</span>")
 				return

@@ -89,9 +89,6 @@
 	/// Whether area is underground, important for weathers which shouldn't affect caves etc.
 	var/underground = FALSE
 
-	/// Безопасная зона
-	var/safezone = 0
-
 /**
  * A list of teleport locations
  *

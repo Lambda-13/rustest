@@ -1085,10 +1085,6 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	if((item_flags & ABSTRACT) || HAS_TRAIT(src, TRAIT_NODROP))
 		return
 	user.dropItemToGround(src, silent = TRUE)
-	var/area/B = get_area(user.loc)
-	if(throwforce && B.safezone)
-		to_chat(user, "<span class='notice'>Скидываю [src] на пол.</span>")
-		return
 	if(throwforce && HAS_TRAIT(user, TRAIT_PACIFISM))
 		to_chat(user, "<span class='notice'>You set [src] down gently on the ground.</span>")
 		return

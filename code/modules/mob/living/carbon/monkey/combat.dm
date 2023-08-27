@@ -109,11 +109,6 @@
 		cuff_resist(I)
 
 /mob/living/carbon/monkey/proc/should_target(mob/living/L)
-	var/area/B = get_area(src.loc)
-
-	if(B.safezone)
-		return FALSE
-
 	if(HAS_TRAIT(src, TRAIT_PACIFISM))
 		return FALSE
 

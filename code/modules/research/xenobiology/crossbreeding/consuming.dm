@@ -227,10 +227,14 @@ Consuming extracts:
 /obj/item/slime_cookie/bluespace/do_effect(mob/living/M, mob/user)
 	var/list/L = get_area_turfs(get_area(M))
 	var/turf/target
+	var/area/targetarea = get_area(target)
 	while (L.len && !target)
 		var/I = rand(1, L.len)
 		var/turf/T = L[I]
 		if (is_centcom_level(T))
+			L.Cut(I,I+1)
+			continue
+		if(targetarea.area_flags & SAFEZONE)
 			L.Cut(I,I+1)
 			continue
 		if(!T.density)

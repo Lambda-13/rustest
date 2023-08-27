@@ -48,7 +48,11 @@
 
 /obj/machinery/teleport/hub/Bumped(atom/movable/AM)
 	if(is_centcom_level(src))
-		to_chat(AM, "<span class='warning'>You can't use this here!</span>")
+		to_chat(AM, "<span class='warning'>Меня не пропускает!</span>")
+		return
+	var/area/B = get_area(src.loc)
+	if(B.area_flags & SAFEZONE)
+		to_chat(AM, "<span class='notice'>Поверхность портала гладкая...</span>")
 		return
 	if(is_ready())
 		teleport(AM)
