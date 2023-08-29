@@ -50,7 +50,7 @@
 /area/hangar)
 "q" = (
 /obj/item/pipe/binary,
-/turf/closed/indestructible/reinforced,
+/turf/closed/indestructible/horizontal_concrete,
 /area/hangar)
 "s" = (
 /obj/machinery/atmospherics/components/binary/pump/on,
@@ -95,7 +95,7 @@
 /turf/open/floor/plasteel/tech,
 /area/hangar)
 "H" = (
-/turf/closed/indestructible/reinforced,
+/turf/closed/indestructible/horizontal_concrete,
 /area/hangar)
 "J" = (
 /obj/effect/turf_decal/trimline/opaque/yellow/warning{
@@ -125,7 +125,7 @@
 /area/hangar)
 "U" = (
 /obj/machinery/door/poddoor/multi_tile/four_tile_ver,
-/turf/closed/indestructible/reinforced,
+/turf/closed/indestructible/horizontal_concrete,
 /area/hangar)
 "V" = (
 /turf/template_noop,

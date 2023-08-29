@@ -16,14 +16,14 @@
 /area/hangar)
 "d" = (
 /obj/machinery/door/poddoor/multi_tile/four_tile_ver,
-/turf/closed/indestructible/reinforced,
+/turf/closed/indestructible/horizontal_concrete,
 /area/hangar)
 "g" = (
-/turf/closed/indestructible/reinforced,
+/turf/closed/indestructible/horizontal_concrete,
 /area/hangar)
 "h" = (
 /obj/item/pipe/binary,
-/turf/closed/indestructible/reinforced,
+/turf/closed/indestructible/horizontal_concrete,
 /area/hangar)
 "k" = (
 /obj/effect/turf_decal/trimline/opaque/yellow/filled/corner{

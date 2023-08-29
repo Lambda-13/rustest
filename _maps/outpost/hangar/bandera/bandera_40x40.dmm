@@ -1,6 +1,6 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "a" = (
-/turf/closed/indestructible/reinforced,
+/turf/closed/indestructible/horizontal_concrete,
 /area/hangar)
 "d" = (
 /obj/effect/turf_decal/trimline/opaque/yellow/warning{
@@ -43,11 +43,11 @@
 /area/hangar)
 "p" = (
 /obj/machinery/door/poddoor/multi_tile/four_tile_ver,
-/turf/closed/indestructible/reinforced,
+/turf/closed/indestructible/horizontal_concrete,
 /area/hangar)
 "q" = (
 /obj/item/pipe/binary,
-/turf/closed/indestructible/reinforced,
+/turf/closed/indestructible/horizontal_concrete,
 /area/hangar)
 "r" = (
 /obj/effect/turf_decal/trimline/opaque/yellow/filled/warning,

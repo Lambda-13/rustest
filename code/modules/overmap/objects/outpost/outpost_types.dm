@@ -136,10 +136,10 @@
 	main_template = /datum/map_template/outpost/banderstadt
 	elevator_template = /datum/map_template/outpost/elevator_test
 	hangar_templates = list(
-		/datum/map_template/outpost/hangar/banderstadt_2_20x20,
-		/datum/map_template/outpost/hangar/banderstadt_2_40x20,
-		/datum/map_template/outpost/hangar/banderstadt_2_40x40,
-		/datum/map_template/outpost/hangar/banderstadt_2_56x20,
+		/datum/map_template/outpost/hangar/banderstadt_20x20,
+		/datum/map_template/outpost/hangar/banderstadt_40x20,
+		/datum/map_template/outpost/hangar/banderstadt_40x40,
+		/datum/map_template/outpost/hangar/banderstadt_56x20,
 		/datum/map_template/outpost/hangar/banderstadt_56x40
 	)
 

@@ -42,7 +42,7 @@
 /turf/open/floor/plasteel,
 /area/hangar)
 "m" = (
-/turf/closed/indestructible/reinforced,
+/turf/closed/indestructible/horizontal_concrete,
 /area/hangar)
 "n" = (
 /obj/machinery/atmospherics/components/unary/tank/air{
@@ -52,7 +52,7 @@
 /area/hangar)
 "r" = (
 /obj/item/pipe/binary,
-/turf/closed/indestructible/reinforced,
+/turf/closed/indestructible/horizontal_concrete,
 /area/hangar)
 "s" = (
 /obj/effect/turf_decal/trimline/opaque/yellow/filled/corner{
@@ -77,7 +77,7 @@
 /area/hangar)
 "y" = (
 /obj/machinery/door/poddoor/multi_tile/four_tile_ver,
-/turf/closed/indestructible/reinforced,
+/turf/closed/indestructible/horizontal_concrete,
 /area/hangar)
 "D" = (
 /obj/effect/turf_decal/arrows{
