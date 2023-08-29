@@ -291,7 +291,6 @@
 			firing_burst = FALSE
 			return FALSE
 	if(chambered && chambered.BB)
-		var/area/B = get_area(user.loc)
 		if(HAS_TRAIT(user, TRAIT_PACIFISM)) // If the user has the pacifist trait, then they won't be able to fire [src] if the round chambered inside of [src] is lethal.
 			if(chambered.harmful) // Is the bullet chambered harmful?
 				to_chat(user, "<span class='warning'>[src] is lethally chambered! You don't want to risk harming anyone...</span>")
