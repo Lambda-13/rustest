@@ -2,6 +2,12 @@
 	if(!epicenter)
 		return
 
+	var/area/B = get_area(epicenter)
+	if(B.area_flags & SAFEZONE)
+		message_admins("Была сделана попытка создать ЭМИ в безопасной зоне в [ADMIN_VERBOSEJMP(epicenter)]")
+		log_game("Была сделана попытка создать ЭМИ в безопасной зоне в [loc_name(epicenter)]")
+		return
+
 	if(!isturf(epicenter))
 		epicenter = get_turf(epicenter.loc)
 

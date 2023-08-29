@@ -179,12 +179,13 @@ SUBSYSTEM_DEF(explosions)
 
 /datum/controller/subsystem/explosions/proc/explode(atom/epicenter, devastation_range, heavy_impact_range, light_impact_range, flash_range, adminlog, ignorecap, flame_range, silent, smoke)
 	epicenter = get_turf(epicenter)
+	if(!epicenter)
+		return
+
 	var/area/B = get_area(epicenter)
 	if(B.area_flags & SAFEZONE)
-		message_admins("Была сделана попытка создать взрыв в безопасной зоне по координатам [ADMIN_VERBOSEJMP(epicenter)]")
-		log_game("Была сделана попытка создать взрыв в безопасной зоне по координатам [loc_name(epicenter)]")
-		return
-	if(!epicenter)
+		message_admins("Была сделана попытка создать взрыв в безопасной зоне в [ADMIN_VERBOSEJMP(epicenter)]")
+		log_game("Была сделана попытка создать взрыв в безопасной зоне в [loc_name(epicenter)]")
 		return
 
 	if(isnull(flame_range))

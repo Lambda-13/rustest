@@ -136,14 +136,14 @@
 /obj/item/hand_tele/attack_self(mob/user)
 	var/turf/current_location = get_turf(user)//What turf is the user on?
 	var/area/current_area = current_location.loc
-	if(!current_location || (current_area.area_flags & NOTELEPORT) || is_away_level(current_location) || !isturf(user.loc))//If turf was not found or they're on z level 2 or >7 which does not currently exist. or if user is not located on a turf
+	if(!current_location || (current_area.area_flags & SAFEZONE) || !isturf(user.loc)) // Вместо NOTELEPORT влепил SAFEZONE так что должно по идее работать
 		to_chat(user, "<span class='notice'>[src] is malfunctioning.</span>")
 		return
 	var/list/L = list()
 	for(var/obj/machinery/computer/teleporter/com in GLOB.machines)
 		if(com.target)
 			var/area/A = get_area(com.target)
-			if(!A || (A.area_flags & NOTELEPORT))
+			if(!A || (A.area_flags & SAFEZONE)) // Вместо NOTELEPORT влепил SAFEZONE
 				continue
 			if(com.power_station && com.power_station.teleporter_hub && com.power_station.engaged)
 				L["[get_area(com.target)] (Active)"] = com.target
@@ -159,7 +159,7 @@
 		if(T.virtual_z() != current_z_level)
 			continue
 		var/area/A = T.loc
-		if(A.area_flags & NOTELEPORT)
+		if(A.area_flags & SAFEZONE) // Вместо NOTELEPORT влепил SAFEZONE
 			continue
 		turfs += T
 	if(turfs.len)

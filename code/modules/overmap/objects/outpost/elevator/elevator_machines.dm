@@ -3,9 +3,9 @@
 */
 
 /obj/machinery/elevator_call_button
-	name = "elevator call button"
-	desc = "A simple set of buttons for calling an elevator."
-	icon = 'icons/obj/stationobjs.dmi'
+	name = "кнопка вызова лифта"
+	desc = "Вызывает лифт в текущее место."
+	icon = 'lambda/sanecman/icons/obj/elevator.dmi'
 	icon_state = "elevator"
 	// don't break this either. it's kinda necessary
 	armor = list("melee" = 100, "bullet" = 100, "laser" = 100, "energy" = 100, "bomb" = 100, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
@@ -74,10 +74,10 @@
 */
 
 /obj/machinery/elevator_floor_button
-	name = "elevator floor panel"
-	desc = "A set of buttons for controlling an elevator."
-	icon = 'icons/obj/stationobjs.dmi'
-	icon_state = "doorctrl"
+	name = "панель управления лифтом"
+	desc = "Зачем нужно ходить если можно ездить... На лифте! Цифры обозначают этажи."
+	icon = 'lambda/sanecman/icons/obj/elevator.dmi'
+	icon_state = "elevator_floor"
 	// yeah you still can't fucking break these.
 	armor = list("melee" = 100, "bullet" = 100, "laser" = 100, "energy" = 100, "bomb" = 100, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
 	max_integrity = 200 // sturdy
@@ -166,8 +166,8 @@
 */
 
 /obj/machinery/status_display/elevator
-	name = "elevator display"
-	desc = "An elevator's status screen, displaying movement direction and current floor."
+	name = "дисплей"
+	desc = "Показывает куда сейчас направляется лифт."
 	// no breaking
 	armor = list("melee" = 100, "bullet" = 100, "laser" = 100, "energy" = 100, "bomb" = 100, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
 	max_integrity = 200 // sturdy

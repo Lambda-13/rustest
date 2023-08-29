@@ -67,6 +67,10 @@
 	. = ..()
 	particles = new /particles/lava
 	var/turf/open/open_turf = loc
+	var/area/B = get_area(open_turf)
+	if(B.area_flags & SAFEZONE)
+		return INITIALIZE_HINT_QDEL
+
 	if(open_turf.turf_fire)
 		return INITIALIZE_HINT_QDEL
 

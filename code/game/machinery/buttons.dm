@@ -14,9 +14,11 @@
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 2
 	resistance_flags = LAVA_PROOF | FIRE_PROOF
+	emagproof = FALSE
 
 /obj/machinery/button/indestructible
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
+	emagproof = TRUE
 
 /obj/machinery/button/Initialize(mapload, ndir = 0, built = 0)
 	. = ..()
@@ -107,6 +109,8 @@
 		return ..()
 
 /obj/machinery/button/emag_act(mob/user)
+	if(emagproof)
+		return
 	if(obj_flags & EMAGGED)
 		return
 	req_access = list()
@@ -202,6 +206,7 @@
 			C.sync_doors = sync_doors
 			device = C
 	..()
+
 
 /obj/machinery/button/door/incinerator_vent_toxmix
 	name = "управление вентиляцией камеры сгорания"

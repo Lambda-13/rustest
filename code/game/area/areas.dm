@@ -109,7 +109,7 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 /proc/process_teleport_locs()
 	for(var/V in GLOB.sortedAreas)
 		var/area/AR = V
-		if(istype(AR, /area/shuttle))
+		if(AR.area_flags & SAFEZONE)
 			continue
 		if(GLOB.teleportlocs[AR.name])
 			continue
