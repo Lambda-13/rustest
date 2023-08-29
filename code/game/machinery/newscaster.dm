@@ -185,9 +185,9 @@ GLOBAL_LIST_EMPTY(allCasters)
 	desc = "A standard Nanotrasen brand newsfeed handler. All the news you absolutely have no use for, in one place!"
 	icon = 'icons/obj/terminals.dmi'
 	icon_state = "newscaster"
-	verb_say = "beeps"
-	verb_ask = "beeps"
-	verb_exclaim = "beeps"
+	verb_say = "бикает"
+	verb_ask = "бикает"
+	verb_exclaim = "бикает"
 	armor = list("melee" = 50, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 30)
 	max_integrity = 200
 	integrity_failure = 0.25

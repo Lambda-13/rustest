@@ -195,9 +195,9 @@ GLOBAL_LIST(cachedbooks) // List of our cached book datums
 /obj/machinery/computer/bookmanagement
 	name = "book inventory management console"
 	desc = "Librarian's command station."
-	verb_say = "beeps"
-	verb_ask = "beeps"
-	verb_exclaim = "beeps"
+	verb_say = "бикает"
+	verb_ask = "бикает"
+	verb_exclaim = "бикает"
 	pass_flags = PASSTABLE
 
 	icon_state = "oldcomp"

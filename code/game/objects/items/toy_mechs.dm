@@ -14,10 +14,10 @@
 /obj/item/toy/prize
 	icon = 'icons/obj/toy.dmi'
 	icon_state = "ripleytoy"
-	verb_say = "beeps"
-	verb_ask = "beeps"
-	verb_exclaim = "beeps"
-	verb_yell = "beeps"
+	verb_say = "бикает"
+	verb_ask = "бикает"
+	verb_exclaim = "бикает"
+	verb_yell = "бикает"
 	w_class = WEIGHT_CLASS_SMALL
 	/// Timer when it'll be off cooldown
 	var/timer = 0

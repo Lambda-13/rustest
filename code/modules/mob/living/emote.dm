@@ -582,7 +582,7 @@
 
 /datum/emote/beep
 	key = "beep"
-	key_third_person = "beeps"
+	key_third_person = "бикает"
 	message = "beeps."
 	message_param = "beeps at %t."
 	sound = 'sound/machines/twobeep.ogg'

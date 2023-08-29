@@ -84,7 +84,7 @@ Class Procs:
 	name = "машина"
 	icon = 'icons/obj/stationobjs.dmi'
 	desc = ""
-	verb_say = "beeps"
+	verb_say = "бикает"
 	verb_yell = "blares"
 	pressure_resistance = 15
 	max_integrity = 200

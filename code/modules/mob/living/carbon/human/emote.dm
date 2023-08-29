@@ -234,7 +234,7 @@
 
 /datum/emote/living/carbon/human/robot_tongue/beep
 	key = "beep"
-	key_third_person = "beeps"
+	key_third_person = "бикает"
 	message = "beeps."
 	message_param = "beeps at %t."
 

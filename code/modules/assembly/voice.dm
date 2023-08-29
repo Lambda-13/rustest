@@ -9,9 +9,9 @@
 	icon_state = "voice"
 	custom_materials = list(/datum/material/iron=500, /datum/material/glass=50)
 	attachable = TRUE
-	verb_say = "beeps"
-	verb_ask = "beeps"
-	verb_exclaim = "beeps"
+	verb_say = "бикает"
+	verb_ask = "бикает"
+	verb_exclaim = "бикает"
 	var/listening = FALSE
 	var/recorded = "" //the activation message
 	var/mode = 1
