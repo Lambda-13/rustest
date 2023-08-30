@@ -7,4 +7,4 @@
 MarkSuckerberg = Development Head
 
 #just use the database, this is deprecated
-SanecManl = Host
+SanecMan = Host
