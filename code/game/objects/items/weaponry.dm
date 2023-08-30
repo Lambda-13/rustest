@@ -1,6 +1,6 @@
 /obj/item/banhammer
-	desc = "банхаммер"
-	name = "Почувствуй себя педалью."
+	desc = "Почувствуй себя педалью."
+	name = "банхаммер"
 	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "toyhammer"
 	slot_flags = ITEM_SLOT_BELT

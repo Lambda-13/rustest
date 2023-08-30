@@ -8,7 +8,8 @@
 	sound_environment = SOUND_AREA_STANDARD_STATION
 	lighting_colour_tube = "#ffce99"
 	lighting_colour_bulb = "#ffdbb4"
-
+	mood_bonus = 12
+	mood_message = "<span class='nicegreen'>Пребывание на аванпосте успокаивает\n</span>"
 
 /area/outpost/cargo
 	name = "Cargo Bay"

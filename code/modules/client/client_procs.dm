@@ -332,6 +332,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 			if(connecting_admin)
 				to_chat(src, "Как администратору, тебе разрешено пользоваться запрещённой версией, но будь готов к ошибкам.")
 			else
+				sleep(5 SECONDS) // Даёт время для прогрузки чата
 				qdel(src)
 				return
 
@@ -415,10 +416,12 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	var/cached_player_age = set_client_age_from_db(tdata) //we have to cache this because other shit may change it and we need it's current value now down below.
 	if (isnum(cached_player_age) && cached_player_age == -1) //first connection
 		player_age = 0
+	var/newbie = 0
 	var/nnpa = CONFIG_GET(number/notify_new_player_age)
 	if (isnum(cached_player_age) && cached_player_age == -1) //first connection
 		if (nnpa >= 0)
 			message_admins("АХТУНГ: [key_name_admin(src)] впервые на сервере.")
+			newbie = 1
 			if (CONFIG_GET(flag/irc_first_connection_alert))
 				send2tgs_adminless_only("New-user", "[key_name(src)] впервые на сервере.")
 	else if (isnum(cached_player_age) && cached_player_age < nnpa)
@@ -430,19 +433,19 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		if (CONFIG_GET(flag/irc_first_connection_alert))
 			send2tgs_adminless_only("new_byond_user", "[key_name(src)] (IP: [address], ID: [computer_id]) is a new BYOND account [account_age] day[(account_age==1?"":"s")] old, created on [account_join_date].")
 
-	if(account_age >= 0)
-		for(var/client/X in GLOB.admins)
-			if(X.prefs.toggles & SOUND_ADMINVPNPROXYPING)
-				SEND_SOUND(X, sound('lambda/sanecman/sound/detect.ogg'))
-
 	get_message_output("watchlist entry", ckey)
 	check_ip_intel()
 	validate_key_in_db()
+
+	if(newbie)
+		geoip = new(src, address)
 
 	send_resources()
 
 	generate_clickcatcher()
 	apply_clickcatcher()
+
+//	vpn_check() // ТЕСТЫ
 
 	if(prefs.lastchangelog != GLOB.changelog_hash) //bolds the changelog button on the interface so we know there are updates.
 		to_chat(src, "<span class='info'>You have unread updates in the changelog.</span>")
@@ -751,7 +754,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 				cidcheck_spoofckeys[ckey] = TRUE
 				for(var/client/X in GLOB.admins)
 					if(X.prefs.toggles & SOUND_ADMINVPNPROXYPING)
-						SEND_SOUND(X, sound('lambda/sanecman/sound/detect.ogg'))
+						SEND_SOUND(X, sound('lambda/sanecman/sound/admin_alert.ogg'))
 			cidcheck[ckey] = computer_id
 			tokens[ckey] = cid_check_reconnect()
 
@@ -847,9 +850,6 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		var/datum/ipintel/res = get_ip_intel(address)
 		if (res.intel >= CONFIG_GET(number/ipintel_rating_bad))
 			message_admins("<span class='adminnotice'>ОБНАРУЖЕН ПРОКСИ: [key_name_admin(src)] возможно на [res.intel*100]% использует прокси или впн.</span>")
-			for(var/client/X in GLOB.admins)
-				if(X.prefs.toggles & SOUND_ADMINVPNPROXYPING)
-					SEND_SOUND(X, sound('lambda/sanecman/sound/detect.ogg'))
 		ip_intel = res.intel
 
 /client/Click(atom/object, atom/location, control, params)

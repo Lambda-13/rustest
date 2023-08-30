@@ -369,6 +369,8 @@
 
 /datum/config_entry/flag/check_randomizer
 
+/datum/config_entry/flag/proxy_autoban
+
 /datum/config_entry/string/ipintel_email
 
 /datum/config_entry/string/ipintel_email/ValidateAndSet(str_val)

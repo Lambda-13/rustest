@@ -5,9 +5,80 @@
 "b" = (
 /turf/closed/indestructible/riveted,
 /area/awaymission/errorroom)
+"d" = (
+/turf/open/floor/plasteel,
+/area/centcom/supplypod/loading/two)
+"e" = (
+/obj/effect/turf_decal/industrial/hatch/yellow,
+/turf/open/floor/plasteel,
+/area/centcom/supplypod/loading/three)
+"f" = (
+/obj/effect/turf_decal/corner/opaque/brown,
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/centcom/supplypod/loading/four)
+"i" = (
+/obj/effect/turf_decal/corner/opaque/brown,
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/centcom/supplypod/loading/one)
+"j" = (
+/turf/open/floor/plasteel,
+/area/centcom/supplypod/podStorage)
+"l" = (
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/opaque/brown,
+/turf/open/floor/plasteel,
+/area/centcom/supplypod/loading/two)
+"m" = (
+/obj/effect/turf_decal/corner/opaque/brown,
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/centcom/supplypod/loading/four)
+"n" = (
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/opaque/brown,
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/centcom/supplypod/loading/three)
 "p" = (
 /turf/closed/mineral/ash_rock,
 /area/awaymission/errorroom)
+"q" = (
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/opaque/brown,
+/turf/open/floor/plasteel,
+/area/centcom/supplypod/loading/three)
+"r" = (
+/obj/effect/turf_decal/industrial/hatch/yellow,
+/turf/open/floor/plasteel,
+/area/centcom/supplypod/loading/two)
+"s" = (
+/turf/open/floor/plasteel,
+/area/centcom/supplypod/loading/three)
 "t" = (
 /obj/effect/landmark/error,
 /turf/open/floor/plating/ashplanet/wateryrock{
@@ -15,9 +86,72 @@
 	planetary_atmos = 0
 	},
 /area/awaymission/errorroom)
+"u" = (
+/obj/effect/turf_decal/corner/opaque/brown,
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/centcom/supplypod/loading/four)
+"v" = (
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/centcom/supplypod/loading/one)
+"w" = (
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/centcom/supplypod/loading/two)
+"y" = (
+/obj/effect/turf_decal/corner/opaque/brown,
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/centcom/supplypod/loading/four)
+"z" = (
+/obj/effect/turf_decal/corner/opaque/brown,
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/centcom/supplypod/loading/three)
+"A" = (
+/turf/open/floor/plasteel,
+/area/centcom/supplypod/loading/four)
+"B" = (
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/centcom/supplypod/loading/three)
+"C" = (
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/centcom/supplypod/loading/four)
 "D" = (
 /turf/closed/indestructible/riveted,
 /area/start)
+"E" = (
+/turf/open/floor/plasteel,
+/area/centcom/supplypod/loading/one)
 "F" = (
 /obj/item/rupee,
 /turf/open/floor/plating/ashplanet/wateryrock{
@@ -25,6 +159,13 @@
 	planetary_atmos = 0
 	},
 /area/awaymission/errorroom)
+"G" = (
+/obj/effect/turf_decal/industrial/hatch/yellow,
+/turf/open/floor/plasteel,
+/area/centcom/supplypod/loading/four)
+"H" = (
+/turf/closed/indestructible/cement_wall,
+/area/centcom/supplypod)
 "I" = (
 /turf/open/floor/holofloor/hyperspace,
 /area/space)
@@ -32,9 +173,29 @@
 /obj/structure/fans/tiny/invisible,
 /turf/open/floor/holofloor/hyperspace,
 /area/space)
+"K" = (
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/opaque/brown,
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/centcom/supplypod/loading/two)
 "L" = (
 /turf/closed/indestructible/splashscreen,
 /area/start)
+"M" = (
+/obj/effect/turf_decal/corner/opaque/brown,
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/centcom/supplypod/loading/one)
 "N" = (
 /obj/structure/fans/tiny/invisible,
 /turf/open/floor/holofloor/hyperspace,
@@ -50,6 +211,16 @@
 	planetary_atmos = 0
 	},
 /area/awaymission/errorroom)
+"Q" = (
+/obj/effect/turf_decal/corner/opaque/brown,
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/centcom/supplypod/loading/one)
 "R" = (
 /obj/structure/speaking_tile,
 /turf/closed/mineral/ash_rock,
@@ -64,6 +235,41 @@
 /obj/effect/landmark/start/new_player,
 /turf/open/floor/plating,
 /area/start)
+"V" = (
+/obj/effect/turf_decal/industrial/hatch/yellow,
+/turf/open/floor/plasteel,
+/area/centcom/supplypod/loading/one)
+"W" = (
+/obj/effect/turf_decal/corner/opaque/brown,
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/centcom/supplypod/loading/one)
+"X" = (
+/obj/effect/turf_decal/corner/opaque/brown,
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/centcom/supplypod/loading/two)
+"Y" = (
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/opaque/brown,
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/centcom/supplypod/loading/three)
+"Z" = (
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/opaque/brown,
+/turf/open/floor/plasteel,
+/area/centcom/supplypod/loading/two)
 
 (1,1,1) = {"
 a
@@ -2479,25 +2685,25 @@ a
 a
 a
 a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+H
+H
+H
+H
+H
+H
+H
+H
+H
+H
+H
+H
+H
+H
+H
+H
+H
+H
+H
 a
 J
 J
@@ -2608,25 +2814,25 @@ a
 a
 a
 a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+H
+v
+v
+v
+v
+v
+M
+H
+B
+B
+B
+B
+B
+n
+H
+j
+j
+j
+H
 a
 J
 I
@@ -2737,25 +2943,25 @@ a
 a
 a
 a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+H
+E
+E
+E
+E
+V
+W
+H
+e
+s
+e
+s
+e
+q
+H
+j
+j
+j
+H
 a
 J
 I
@@ -2866,25 +3072,25 @@ a
 a
 a
 a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+H
+V
+E
+E
+E
+V
+W
+H
+e
+s
+e
+s
+e
+q
+H
+j
+j
+j
+H
 a
 J
 I
@@ -2995,25 +3201,25 @@ a
 a
 a
 a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+H
+V
+V
+V
+V
+V
+W
+H
+e
+s
+e
+s
+e
+q
+H
+j
+j
+j
+H
 a
 J
 I
@@ -3124,25 +3330,25 @@ a
 a
 a
 a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+H
+E
+E
+E
+E
+V
+W
+H
+e
+e
+e
+e
+e
+q
+H
+j
+j
+j
+H
 a
 J
 I
@@ -3253,25 +3459,25 @@ a
 a
 a
 a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+H
+i
+i
+i
+i
+i
+Q
+H
+z
+z
+z
+z
+z
+Y
+H
+j
+j
+j
+H
 a
 J
 I
@@ -3382,25 +3588,25 @@ a
 a
 a
 a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+H
+H
+H
+H
+H
+H
+H
+H
+H
+H
+H
+H
+H
+H
+H
+j
+j
+j
+H
 a
 J
 I
@@ -3511,25 +3717,25 @@ a
 a
 a
 a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+H
+w
+w
+w
+w
+w
+l
+H
+C
+C
+C
+C
+C
+f
+H
+j
+j
+j
+H
 a
 J
 I
@@ -3640,25 +3846,25 @@ a
 a
 a
 a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+H
+r
+d
+r
+r
+r
+Z
+H
+G
+G
+G
+A
+A
+u
+H
+j
+j
+j
+H
 a
 J
 I
@@ -3769,25 +3975,25 @@ a
 a
 a
 a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+H
+r
+d
+r
+d
+r
+Z
+H
+A
+A
+G
+A
+A
+u
+H
+j
+j
+j
+H
 a
 J
 I
@@ -3898,25 +4104,25 @@ a
 a
 a
 a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+H
+r
+d
+r
+d
+r
+Z
+H
+A
+A
+G
+A
+A
+u
+H
+j
+j
+j
+H
 a
 J
 I
@@ -4027,25 +4233,25 @@ a
 a
 a
 a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+H
+r
+r
+r
+d
+r
+Z
+H
+G
+G
+G
+G
+G
+u
+H
+j
+j
+j
+H
 a
 J
 I
@@ -4156,25 +4362,25 @@ a
 a
 a
 a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+H
+X
+X
+X
+X
+X
+K
+H
+y
+y
+y
+y
+y
+m
+H
+j
+j
+j
+H
 a
 J
 I
@@ -4285,25 +4491,25 @@ a
 a
 a
 a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+H
+H
+H
+H
+H
+H
+H
+H
+H
+H
+H
+H
+H
+H
+H
+H
+H
+H
+H
 a
 J
 I

@@ -26,9 +26,6 @@
 	if(!cril)
 		return TRUE
 
-	if(text2num(cril[1]["bypass"]))
-		return TRUE
-
 	var/clear_sanity = TRUE
 
 	for(var/i in 2 to cril.len)
