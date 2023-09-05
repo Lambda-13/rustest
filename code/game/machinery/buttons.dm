@@ -194,6 +194,7 @@
 
 /obj/machinery/button/door/indestructible
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
+	emagproof = TRUE
 
 /obj/machinery/button/door/setup_device()
 	if(!device)

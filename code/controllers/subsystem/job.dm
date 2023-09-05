@@ -110,6 +110,9 @@ SUBSYSTEM_DEF(job)
 		destination.JoinPlayerHere(M, FALSE)
 		return TRUE
 
+	else
+		M.forceMove(locate(/obj/effect/landmark/start/bad_spawn))
+		return TRUE
 	var/msg = "Unable to send mob [M] to late join!"
 	message_admins(msg)
 	CRASH(msg)

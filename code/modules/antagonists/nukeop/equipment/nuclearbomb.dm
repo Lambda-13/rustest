@@ -624,7 +624,6 @@ This is here to make the tiles around the station mininuke change when it's arme
 		STOP_PROCESSING(SSobj, src)
 		CRASH("A fake nuke disk tried to call process(). Who the fuck and how the fuck")
 	var/turf/newturf = get_turf(src)
-
 	if(newturf && lastlocation == newturf)
 		/// How comfy is our disk?
 		var/disk_comfort_level = 0
@@ -640,7 +639,7 @@ This is here to make the tiles around the station mininuke change when it's arme
 				loneop.weight += 1
 				if(loneop.weight % 5 == 0 && SSticker.totalPlayers > 1)
 					if(disk_comfort_level >= 2)
-						visible_message("<span class='notice'>[src] sleeps soundly. Sleep tight, disky.</span>")
+						visible_message("<span class='notice'>[src] засыпает. Спокойной ночи диск.</span>")
 					message_admins("[src] is stationary in [ADMIN_VERBOSEJMP(newturf)]. The weight of Lone Operative is now [loneop.weight].")
 				log_game("[src] is stationary for too long in [loc_name(newturf)], and has increased the weight of the Lone Operative event to [loneop.weight].")
 

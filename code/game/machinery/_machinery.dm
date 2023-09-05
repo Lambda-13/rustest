@@ -375,8 +375,14 @@ Class Procs:
 	return _try_interact(user)
 
 /obj/machinery/attack_ai(mob/user)
-	if(!(interaction_flags_machine & INTERACT_MACHINE_ALLOW_SILICON) && !isAdminGhostAI(user))
+	if(!(src & INTERACT_MACHINE_ALLOW_SILICON) && !isAdminGhostAI(user))
 		return FALSE
+	var/turf/poshel = get_turf(src)
+	var/area/nahui = get_area(poshel)
+	if(nahui.area_flags & SAFEZONE)
+		if(!isAdminGhostAI(user))
+			to_chat(user, "<span class='interface'>Файрвол не даёт подключиться, отмена!</span>")
+			return FALSE
 	if(iscyborg(user))// For some reason attack_robot doesn't work
 		return attack_robot(user)
 	else

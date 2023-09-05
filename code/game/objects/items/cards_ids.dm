@@ -86,7 +86,7 @@
 
 /obj/item/card/emag/borg/examine()
 	. = ..()
-	. += "<hr><span class='notice'> Capable of interchanging between electromagnetic, electrical, & screw turning functionality.</span>" //Я не знаю как это перевести
+	. += "<hr><span class='notice'> Имеет три режима: отвёртка, мультитул и секвестер.</span>"
 	if(uses_left > -1)
 		. += "<hr><span class='notice'> У неё видно [uses_left] делений оставшихся использований.</span>"
 

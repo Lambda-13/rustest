@@ -490,3 +490,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	// Subship landmarks are in the bounding box of the subship, meaning that the landmark can be landed on which destroys it.
 	// I'm not sure landmarks destroyed on landing is intended behavior or not, so we're not destroying the dock on deletion just in case it is.
 	. = ..()
+
+//На случай проёбаного спавнера
+/obj/effect/landmark/start/bad_spawn
+	name = "Место спавна если точки спавна не нашлось"
