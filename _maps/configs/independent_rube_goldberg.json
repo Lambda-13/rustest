@@ -8,7 +8,7 @@
 	"map_name": "Rube Goldberg-class Engineering Project",
 	"map_short_name": "Rube Goldberg-class",
 	"description": "Инженерный проект класса Руба Голдберга — это опыт и памятник безумию. Обладая мощным двигателем из сверхматерии в сочетании со структурной схемой в стиле Эшера, сложной сетью труб и проводов, а также полным пренебрежением к элементарным процедурам безопасности и здравому смыслу, этот корабль представляет собой катастрофу, которая ждет своего часа.",
-	"tags": ["Engineering", "Construction"],
+	"tags": ["Инженерный", "Строительный"],
 	"map_path": "_maps/shuttles/shiptest/independent_rube_goldberg.dmm",
 	"limit": 1,
 	"job_slots": {
