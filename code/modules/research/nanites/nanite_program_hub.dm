@@ -60,7 +60,7 @@
 
 /obj/machinery/nanite_program_hub/ui_interact(mob/user, datum/tgui/ui)
 	if(!linked_techweb)
-		say("Нет подключения к серверу.")
+		to_chat(user, "<span class='notice'>Нет подключения к серверу.</span>")
 		SStgui.close_uis(src)
 		return
 	ui = SStgui.try_update_ui(user, src, ui)

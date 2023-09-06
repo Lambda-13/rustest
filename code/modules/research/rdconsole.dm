@@ -170,7 +170,7 @@ Nothing else in the console has ID requirements.
 
 		var/obj/item/assembly/signaler/anomaly/anomaly = D
 		if(!stored_research)
-			say("Нет подключения к серверу.")
+			to_chat(user, "<span class='notice'>Нет подключения к серверу.</span>")
 			return
 
 		playsound(src, 'sound/machines/ping.ogg', 50, 3, -1)
@@ -181,7 +181,7 @@ Nothing else in the console has ID requirements.
 
 	if(istype(D, /obj/item/research_notes))
 		if(!stored_research)
-			say("Нет подключения к серверу.")
+			to_chat(user, "<span class='notice'>Нет подключения к серверу.</span>")
 			return
 
 		var/obj/item/research_notes/R = D
@@ -1177,7 +1177,7 @@ Nothing else in the console has ID requirements.
 /obj/machinery/computer/rdconsole/ui_interact(mob/user)
 	. = ..()
 	if(!stored_research)
-		say("Нет подключения к серверу.")
+		to_chat(user, "<span class='notice'>Нет подключения к серверу.</span>")
 		return
 
 	var/datum/browser/popup = new(user, "rndconsole", name, 900, 600)

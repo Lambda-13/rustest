@@ -63,7 +63,7 @@
 
 /obj/machinery/computer/operating/proc/sync_surgeries()
 	if(!linked_techweb)
-		say("Нет подключения к серверу.")
+		to_chat(user, "<span class='notice'>Нет подключения к серверу.</span>")
 		return
 
 	for(var/i in linked_techweb.researched_designs)
