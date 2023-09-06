@@ -119,8 +119,8 @@
 	pixel_x = 25
 	},
 /obj/effect/turf_decal/siding/blue{
-	icon_state = "siding_line";
-	dir = 4
+	dir = 4;
+	icon_state = "siding_line"
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
@@ -203,6 +203,7 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/docking_port/mobile,
 /turf/open/floor/plating,
 /area/ship/cargo)
 "iF" = (
@@ -216,8 +217,8 @@
 /area/ship/engineering/atmospherics)
 "iG" = (
 /obj/effect/turf_decal/siding/blue{
-	icon_state = "siding_line";
-	dir = 10
+	dir = 10;
+	icon_state = "siding_line"
 	},
 /obj/machinery/reagentgrinder,
 /obj/structure/table/glass,
@@ -425,9 +426,9 @@
 /obj/structure/closet/secure_closet/wall{
 	icon_state = "sec_wall";
 	name = "hunting locker";
-	req_access = list(30);
+	pixel_x = -3;
 	pixel_y = 29;
-	pixel_x = -3
+	req_access = list(30)
 	},
 /obj/item/binoculars,
 /obj/item/disk/design_disk/ammo_1911,
@@ -435,10 +436,10 @@
 /obj/item/areaeditor/shuttle,
 /obj/item/radio/off,
 /obj/item/gun/ballistic/automatic/pistol/m1911{
-	name = "Faust";
-	extra_damage = 10;
 	desc = "Ihr naht euch wieder, schwankende Gestalten!";
-	dry_fire_text = "chinck"
+	dry_fire_text = "chinck";
+	extra_damage = 10;
+	name = "Faust"
 	},
 /obj/machinery/power/apc/auto_name/directional/east,
 /obj/item/clothing/mask/gas/explorer,
@@ -667,8 +668,8 @@
 	pixel_x = 10
 	},
 /obj/item/survey_handheld{
-	pixel_y = 9;
-	pixel_x = 6
+	pixel_x = 6;
+	pixel_y = 9
 	},
 /obj/machinery/cell_charger{
 	pixel_x = -2;
@@ -791,8 +792,8 @@
 /area/ship/bridge)
 "wH" = (
 /obj/structure/sink{
-	pixel_x = 11;
 	dir = 8;
+	pixel_x = 11;
 	pixel_y = 1
 	},
 /obj/effect/turf_decal/siding/blue{
@@ -876,8 +877,8 @@
 	},
 /obj/machinery/airalarm/directional/south,
 /obj/effect/turf_decal/siding/blue{
-	icon_state = "siding_line";
-	dir = 6
+	dir = 6;
+	icon_state = "siding_line"
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
@@ -914,15 +915,15 @@
 	dir = 1
 	},
 /obj/machinery/button/door{
-	pixel_x = -6;
-	pixel_y = 24;
+	id = "calock";
 	name = "Cargo Lock";
-	id = "calock"
+	pixel_x = -6;
+	pixel_y = 24
 	},
 /obj/machinery/button/shieldwallgen{
-	pixel_y = 22;
+	id = "shield";
 	pixel_x = 4;
-	id = "shield"
+	pixel_y = 22
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
@@ -1026,19 +1027,28 @@
 /area/ship/cargo)
 "Ek" = (
 /obj/structure/sink{
-	pixel_x = 5;
 	dir = 8;
+	pixel_x = 5;
 	pixel_y = 1
 	},
 /obj/structure/window/reinforced{
 	dir = 4
 	},
 /obj/effect/turf_decal/siding/blue{
-	icon_state = "siding_line";
-	dir = 4
+	dir = 4;
+	icon_state = "siding_line"
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
+"Er" = (
+/obj/docking_port/stationary{
+	dir = 2;
+	dwidth = 15;
+	height = 15;
+	width = 30
+	},
+/turf/template_noop,
+/area/template_noop)
 "Es" = (
 /obj/machinery/power/terminal{
 	dir = 8
@@ -1076,20 +1086,20 @@
 "FU" = (
 /obj/structure/table/glass,
 /obj/item/storage/firstaid/brute{
-	pixel_y = 8;
-	pixel_x = -7
+	pixel_x = -7;
+	pixel_y = 8
 	},
 /obj/item/storage/firstaid/fire{
-	pixel_y = 8;
-	pixel_x = 7
+	pixel_x = 7;
+	pixel_y = 8
 	},
 /obj/item/storage/firstaid{
 	pixel_x = -7;
 	pixel_y = -2
 	},
 /obj/item/storage/firstaid/toxin{
-	pixel_y = -2;
-	pixel_x = 7
+	pixel_x = 7;
+	pixel_y = -2
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
@@ -1192,6 +1202,14 @@
 /obj/machinery/airalarm/directional/west,
 /turf/open/floor/wood,
 /area/ship/crew)
+"JT" = (
+/obj/docking_port/stationary{
+	dwidth = 15;
+	height = 15;
+	width = 30
+	},
+/turf/template_noop,
+/area/template_noop)
 "JW" = (
 /obj/machinery/atmospherics/components/binary/pump/on/layer4{
 	dir = 1;
@@ -1323,16 +1341,16 @@
 "QY" = (
 /obj/structure/table/reinforced,
 /obj/machinery/button/door{
-	pixel_x = -6;
-	pixel_y = 24;
+	id = "calock";
 	name = "Cargo Lock";
-	id = "calock"
+	pixel_x = -6;
+	pixel_y = 24
 	},
 /obj/machinery/button/door{
-	pixel_y = 24;
-	pixel_x = 6;
 	id = "brlock";
-	name = "Bridge Lock"
+	name = "Bridge Lock";
+	pixel_x = 6;
+	pixel_y = 24
 	},
 /obj/item/toy/plush/hornet{
 	pixel_x = 9;
@@ -1453,8 +1471,8 @@
 /area/ship/medical)
 "UZ" = (
 /obj/effect/turf_decal/siding/blue{
-	icon_state = "siding_line";
-	dir = 8
+	dir = 8;
+	icon_state = "siding_line"
 	},
 /obj/item/radio/intercom/directional/west,
 /turf/open/floor/plasteel/white,
@@ -1552,6 +1570,8 @@
 /obj/machinery/light/dim/directional/west,
 /obj/structure/closet/crate/science,
 /obj/structure/window/reinforced,
+/obj/item/clothing/glasses/welding,
+/obj/item/clothing/glasses/welding,
 /obj/item/clothing/glasses/welding,
 /turf/open/floor/plasteel/white,
 /area/ship/science)
@@ -1978,7 +1998,7 @@ bc
 "}
 (26,1,1) = {"
 bc
-bc
+JT
 ir
 Co
 sk
@@ -1986,7 +2006,7 @@ gT
 tr
 Co
 rw
-bc
+Er
 bc
 bc
 "}

@@ -362,8 +362,8 @@
 /turf/open/floor/plating,
 /area/ship/security)
 "aX" = (
-/obj/structure/lattice,
-/turf/open/space/basic,
+/obj/structure/catwalk,
+/turf/open/floor/plating,
 /area/ship/external)
 "aY" = (
 /obj/structure/closet{
@@ -1727,6 +1727,11 @@
 "dY" = (
 /turf/template_noop,
 /area/template_noop)
+"vy" = (
+/obj/structure/catwalk,
+/obj/structure/catwalk,
+/turf/open/floor/plating,
+/area/ship/external)
 
 (1,1,1) = {"
 dY
@@ -1739,7 +1744,7 @@ aX
 aX
 aX
 aX
-aX
+vy
 aX
 aX
 cj
@@ -1839,7 +1844,7 @@ cd
 ao
 aX
 aX
-aX
+vy
 aX
 aX
 aX
@@ -2289,12 +2294,12 @@ ce
 av
 aX
 aX
+vy
 aX
 aX
 aX
 aX
-aX
-aX
+vy
 dY
 cn
 cJ
