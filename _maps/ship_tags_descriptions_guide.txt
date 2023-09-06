@@ -1,27 +1,28 @@
-When adding a ship to the game you need to add a description and a set of tags based on what the ship is equipped with.
-The description should describe what the ship is used for, what it's conditions are typically like, and possibly some lore tidbits for it.
-When creating a description you'll need to run it by the lore team to make sure it is compliant and meets up to our standards.
+При добавлении корабля в игру необходимо добавить описание и набор тегов исходя из того для чего предназначен корабль.
+В описании должно быть описано, для чего используется корабль, каковы его условия и, возможно, некоторые подробности о нем.
+При создании описания вам необходимо будет посоветоваться со знатоками, чтобы убедиться, что оно соответствует нашему стандарту ASS.
 
-For tags you will add them in the following format:
+Теги добавлять в следующем порядке:
 "tags": ["Tag One", "Tag Two", "Tag Three"],
 
-All individual words in tags must be capitalized.
-Here is the list of tags:
+Все отдельные слова в тегах должны быть написаны с заглавной буквы.
+Вот список тегов:
 
-"Combat" - A ship containing significant lethal weaponry, is generally lethally armed, or has a ruin or pvp focus.
-"Generalist" - A ship containing 4 or more focus tags or very little in a lot of categories without enough to constitute tagging it as such.
-"Construction" - A ship built for building or construction projects.
-"Robotics" - A ship with AI's, Borgs, or a robotics setup in general.
-"Science" - A ship containing a research focus, this includes RnD and XenoBio.
-"Service" - A ship with a bar or kitchen setup, a ship focused around the service department.
-"Chemistry" - A ship containing a chemistry and/or plumbing setup.
-"Medical" - A ship with more than just a few medkits an a surgery kit, a ship based around medical gameplay.
-"RP Focus" - A ship that's meant to facilitate a lot of RP. IE cruise ships, apartment ships, bar-rp ships, etc.
-"Mining" - A ship with more than a modest amount of mining equipment. Having an ORM, multiple harsuits, protos, etc.
-"Cargo" - A ship that is meant to either act as a merchant or a cargo vessel. This is judged on a ship to ship basis.
-"Engineering" - A ship with a lot of engineering gear.
-"Subshuttle" - A ship that contains a subshuttle.
-"Survival Challenge" - A ship that is actively hostile to start on.
-"Telecomms" - A ship with a telecomms setup comprising of 3 or more machines.
-"Botany" - A ship that has more than a couple trays and a mild selection of seeds. Has a considerable amount of botany equipment.
-"Specialist" - A ship that is special, doesn't fit any other tag, or has a special niche. Judged on a ship to ship basis.
+"Боевой" — корабль, содержащий значительное смертоносное вооружение, обычно смертельно вооружен или имеет фокус на PvP.
+"Универсальный" - корабль, который вроде бы и подходит по большинству тегов но в тоже время не подходит.
+"Строительный" — корабль, построенный для строительства или колонизации.
+"Робототехника" — корабль с искусственным интеллектом, боргами или помещением для роботехника.
+"Научный" — корабль с исследовательской направленностью, включая РнД и ксенобиологию.
+"Сервисный" — корабль с барной или кухонной обстановкой, ориентированный на сервисный отдел.
+"Химия" — корабль с химическим и/или сантехническим оборудованием.
+"Медицинский" - корабль, на котором есть не только несколько аптечек, но и хирургический набор, основанный на медицинском игровом процессе.
+"RP фокусированный" — корабль, предназначенный для получения большого количества ролевого опыта. Включает в себя круизные лайнеры, многоквартирные суда, суда с барами и т. д.
+"Шахтёрский" — корабль с более чем скромным количеством горнодобывающего оборудования. Наличие печи, нескольких наборов для шахтёров, протокинетиков и т. д.
+"Грузовой" — корабль, предназначенный для использования в качестве торгового или грузового судна. Если быть проще "от корабля к кораблю".
+"Инженерный" — корабль с большим количеством инженерного оборудования. Обычно ставится ещё тег "Строительный" если содержится достаточно материалов для строительства.
+"Имеет шаттл" — корабль, содержащий шаттл.
+"Хардкор" — корабль, на котором игрок будет выживать чем играть.
+"Телекоммы" — корабль с телекоммуникационной установкой, состоящей из 3 и более машин.
+"Ботаника" — Корабль, имеющий более пары лотков и небольшой выбор семян. Имеет значительное количество ботанического оборудования.
+"Особенный" — корабль особенный, не подходящий ни под какой другой тег или имеющий особую нишу. Ставить такой тег нужно если тег "Универсальный" не подходит сюда.
+"Шаттл" — Корабль является шаттлом и может стыковаться к более крупным кораблям.

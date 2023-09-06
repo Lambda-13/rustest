@@ -178,10 +178,10 @@ export const ShipSelect = (props, context) => {
                   <Table.Row key={job.name}>
                     <Table.Cell>
                       <Button
-                        content="Select"
+                        content="Выбрать"
                         tooltip={
                           data.playMin < job.minTime &&
-                          'You do not have enough playtime to play this job.'
+                          'У тебя недостаточно времени для игры на этой профессии.'
                         }
                         disabled={data.playMin < job.minTime}
                         onClick={() => {
