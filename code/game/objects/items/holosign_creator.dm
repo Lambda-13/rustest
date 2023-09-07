@@ -1,6 +1,6 @@
 /obj/item/holosign_creator
-	name = "голопроектор уборщика"
-	desc = "Удобный голографический проектор, который отображает предупреждение о скользком поле."
+	name = "holographic sign projector"
+	desc = "A handy-dandy holographic projector that displays a janitorial sign."
 	icon = 'icons/obj/device.dmi'
 	icon_state = "signmaker"
 	item_state = "electronic"
@@ -26,12 +26,12 @@
 		var/turf/T = get_turf(target)
 		var/obj/structure/holosign/H = locate(holosign_type) in T
 		if(H)
-			to_chat(user, "<span class='notice'>Использую [src] для деактивации [H].</span>")
+			to_chat(user, "<span class='notice'>You use [src] to deactivate [H].</span>")
 			qdel(H)
 		else
 			if(!T.is_blocked_turf(TRUE)) //can't put holograms on a tile that has dense stuff
 				if(holocreator_busy)
-					to_chat(user, "<span class='notice'>[src] похоже сейчас занят.</span>")
+					to_chat(user, "<span class='notice'>[src] is busy creating a hologram.</span>")
 					return
 				if(signs.len < max_signs)
 					playsound(src.loc, 'sound/machines/click.ogg', 20, TRUE)
@@ -46,9 +46,9 @@
 						if(T.is_blocked_turf(TRUE)) //don't try to sneak dense stuff on our tile during the wait.
 							return
 					H = new holosign_type(get_turf(target), src)
-					to_chat(user, "<span class='notice'>Создаю [H] с помощью [src].</span>")
+					to_chat(user, "<span class='notice'>You create \a [H] with [src].</span>")
 				else
-					to_chat(user, "<span class='notice'>[src] достиг своего лимита создания голограмм!</span>")
+					to_chat(user, "<span class='notice'>[src] is projecting at max capacity!</span>")
 
 /obj/item/holosign_creator/attack(mob/living/carbon/human/M, mob/user)
 	return
@@ -57,42 +57,42 @@
 	if(signs.len)
 		for(var/H in signs)
 			qdel(H)
-		to_chat(user, "<span class='notice'>Очищаю все созданные голограммы.</span>")
+		to_chat(user, "<span class='notice'>You clear all active holograms.</span>")
 
 /obj/item/holosign_creator/janibarrier
-	name = "модернизированный голопроектор уборщика"
-	desc = "Удобный голографический проектор, который отображает предупреждение о скользком поле. Так же блокирует передвижение невнимательных прохожих."
+	name = "custodial holobarrier projector"
+	desc = "A holographic projector that creates hard light wet floor barriers."
 	holosign_type = /obj/structure/holosign/barrier/wetsign
 	creation_time = 20
 	max_signs = 12
 
 /obj/item/holosign_creator/security
-	name = "голопроектор СБ"
-	desc = "Голографический проектор, создающий голографические защитные барьеры."
+	name = "security holobarrier projector"
+	desc = "A holographic projector that creates holographic security barriers."
 	icon_state = "signmaker_sec"
 	holosign_type = /obj/structure/holosign/barrier
 	creation_time = 30
 	max_signs = 6
 
 /obj/item/holosign_creator/engineering
-	name = "инженерный голопроектор"
-	desc = "Голографический проектор, который создает голографические инженерные барьеры. Зачастую устанавливаются перед зонами техногенной опасности. Препятствуют распространению радиации."
+	name = "engineering holobarrier projector"
+	desc = "A holographic projector that creates holographic engineering barriers."
 	icon_state = "signmaker_engi"
 	holosign_type = /obj/structure/holosign/barrier/engineering
 	creation_time = 30
 	max_signs = 6
 
 /obj/item/holosign_creator/atmos
-	name = "голопроектор АТМОСа"
-	desc = "Голографический проектор, создающий барьеры, препятствующие прохождению газов, но не людей."
+	name = "ATMOS holofan projector"
+	desc = "A holographic projector that creates holographic barriers that prevent changes in atmosphere conditions."
 	icon_state = "signmaker_atmos"
 	holosign_type = /obj/structure/holosign/barrier/atmos
 	creation_time = 0
-	max_signs = 6
+	max_signs = 3
 
 /obj/item/holosign_creator/medical
-	name = "медицинский голопроектор PENLITE"
-	desc = "Создает барьер который блокирует проход пациентам с опасными заболеваниями. Используется для контроля эпидемий."
+	name = "\improper PENLITE barrier projector"
+	desc = "A holographic projector that creates PENLITE holobarriers. Useful during quarantines since they halt those with malicious diseases."
 	icon_state = "signmaker_med"
 	holosign_type = /obj/structure/holosign/barrier/medical
 	creation_time = 30
@@ -111,7 +111,7 @@
 		var/mob/living/silicon/robot/R = user
 
 		if(shock)
-			to_chat(user, "<span class='notice'>Деактивирую все доступные голограммы и очищаю свой голопроектор.</span>")
+			to_chat(user, "<span class='notice'>You clear all active holograms, and reset your projector to normal.</span>")
 			holosign_type = /obj/structure/holosign/barrier/cyborg
 			creation_time = 5
 			if(signs.len)
@@ -120,7 +120,7 @@
 			shock = 0
 			return
 		else if(R.emagged&&!shock)
-			to_chat(user, "<span class='warning'>Деактивирую все доступные голограммы и перегружаю их!</span>")
+			to_chat(user, "<span class='warning'>You clear all active holograms, and overload your energy projector!</span>")
 			holosign_type = /obj/structure/holosign/barrier/cyborg/hacked
 			creation_time = 30
 			if(signs.len)
@@ -132,8 +132,8 @@
 			if(signs.len)
 				for(var/H in signs)
 					qdel(H)
-				to_chat(user, "<span class='notice'>Деактивирую все доступные голограммы.</span>")
+				to_chat(user, "<span class='notice'>You clear all active holograms.</span>")
 	if(signs.len)
 		for(var/H in signs)
 			qdel(H)
-		to_chat(user, "<span class='notice'>Деактивирую все доступные голограммы.</span>")
+		to_chat(user, "<span class='notice'>You clear all active holograms.</span>")

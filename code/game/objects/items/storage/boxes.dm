@@ -134,7 +134,7 @@
 	var/medipen_type = /obj/item/reagent_containers/hypospray/medipen
 	var/bruise_type = /obj/item/stack/medical/bruise_pack
 	var/flare_type = /obj/item/flashlight/glowstick
-	var/food_type = /obj/item/reagent_containers/food/snacks/proteinbar
+	var/food_type = /obj/item/reagent_containers/food/snacks/bay12/proteinbar
 //	var/oxycandle_type = /obj/item/device/oxycandle
 
 /obj/item/storage/box/survival/PopulateContents()
@@ -171,7 +171,7 @@
 /obj/item/storage/box/survival/mining
 	mask_type = /obj/item/clothing/mask/gas/explorer
 	medipen_type = /obj/item/reagent_containers/hypospray/medipen/stimpack
-	bruise_type = /obj/item/reagent_containers/food/snacks/tastybread
+	bruise_type = /obj/item/reagent_containers/food/snacks/bay12/tastybread
 	flare_type = /obj/item/flashlight/lantern/heirloom_moth
 	food_type = /obj/item/reagent_containers/food/snacks/chocolatebar
 
@@ -183,7 +183,7 @@
 /obj/item/storage/box/survival/engineer
 	internal_type = /obj/item/tank/internals/emergency_oxygen/engi
 	flare_type = /obj/item/flashlight/flare
-	food_type = /obj/item/reagent_containers/food/snacks/tastybread
+	food_type = /obj/item/reagent_containers/food/snacks/bay12/tastybread
 
 /obj/item/storage/box/survival/engineer/radio/PopulateContents()
 	..() // we want the regular items too.
@@ -209,7 +209,7 @@
 /obj/item/storage/box/survival/medical
 	mask_type = /obj/item/clothing/mask/breath/medical
 	medipen_type = /obj/item/hypospray/mkii/tricord
-	food_type = /obj/item/reagent_containers/food/snacks/tastybread
+	food_type = /obj/item/reagent_containers/food/snacks/bay12/tastybread
 
 /obj/item/storage/box/gloves
 	name = "box of latex gloves"
@@ -1125,7 +1125,7 @@
 		new /obj/item/reagent_containers/food/snacks/grown/citrus/orange(src)
 	new /obj/item/reagent_containers/food/snacks/grown/citrus/lemon(src)
 	new /obj/item/reagent_containers/food/snacks/grown/citrus/lime(src)
-	new /obj/item/reagent_containers/food/snacks/tastybread(src)
+	new /obj/item/reagent_containers/food/snacks/bay12/tastybread(src)
 
 /obj/item/storage/box/ingredients/sweets
 	theme_name = "sweets"

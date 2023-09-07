@@ -10,5 +10,5 @@
 
 /obj/item/trash/bay12/tastybread
 	name = "хлеб в трубочке"
-	icon_state = "proteinbar"
+	icon_state = "tastybread"
 	grind_results = list(/datum/reagent/plastic_polymers = 2)

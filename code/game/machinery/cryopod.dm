@@ -11,8 +11,8 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 //Main cryopod console.
 
 /obj/machinery/computer/cryopod
-	name = "cryogenic oversight console"
-	desc = "An interface between crew and the cryogenic storage oversight systems."
+	name = "консоль управления криокапсулой"
+	desc = "Следит за криокапсулой и за криохранилищем."
 	icon_state = "wallconsole"
 	icon_screen = "wallconsole_cryo"
 	icon_keyboard = null
@@ -32,7 +32,7 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod, 17)
 
 /obj/machinery/computer/cryopod/retro
-	desc = "An interface between crew and the cryogenic storage oversight systems. Currently strugggling to catch up with the modern cryogenic storage system."
+	desc = "Следит за криокапсулой и за криохранилищем. Выглядит старомодно."
 	icon_state = "wallconsole_old"
 	icon_screen = "wallconsole_old_cryo"
 
@@ -116,8 +116,8 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod/retro, 17)
 
 //Cryopods themselves.
 /obj/machinery/cryopod
-	name = "cryogenic freezer"
-	desc = "Keeps crew frozen in cryostasis until they are needed in order to cut down on supply usage."
+	name = "криокапсула"
+	desc = "Позволяет ненужному экипажу отправиться в долгосрочный сон."
 	icon = 'icons/obj/machines/sleeper.dmi'
 	icon_state = "cryopod-open"
 	density = TRUE
@@ -211,7 +211,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod/retro, 17)
 			return
 		var/mob/living/mob_occupant = occupant
 		if(mob_occupant && mob_occupant.stat != DEAD)
-			to_chat(occupant, "<span class='boldnotice'>You feel cool air surround you. You go numb as your senses turn inward.</span>")
+			to_chat(occupant, "<span class='boldnotice'>Чувствую прохладный воздух вокруг себя.</span>")
 			addtimer(CALLBACK(src, .proc/try_despawn_occupant, mob_occupant), mob_occupant.client ? time_till_despawn * 0.1 : time_till_despawn) // If they're logged in, reduce the timer
 	icon_state = close_state
 	if(close_sound)
@@ -231,8 +231,8 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod/retro, 17)
 
 
 /obj/machinery/cryopod/container_resist_act(mob/living/user)
-	visible_message("<span class='notice'>[occupant] emerges from [src]!</span>",
-		"<span class='notice'>You climb out of [src]!</span>")
+	visible_message("<span class='notice'>[occupant] выскакивает из [src]!</span>",
+		"<span class='notice'>Вылезаю из [src].</span>")
 	open_machine()
 
 /obj/machinery/cryopod/relaymove(mob/user)
@@ -345,7 +345,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod/retro, 17)
 	if(GLOB.announcement_systems.len)
 		var/obj/machinery/announcement_system/announcer = pick(GLOB.announcement_systems)
 		announcer.announce("CRYOSTORAGE", mob_occupant.real_name, announce_rank, list())
-		visible_message("<span class='notice'>[src] hums and hisses as it moves [mob_occupant.real_name] into storage.</span>")
+		visible_message("<span class='notice'>[src] шипит и перемещает [mob_occupant.real_name] в криохранилище.</span>")
 
 	for(var/obj/item/W as anything in mob_occupant.GetAllContents())
 		if(W.loc.loc && ((W.loc.loc == loc) || (W.loc.loc == control_computer_obj)))
@@ -386,11 +386,11 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod/retro, 17)
 		return
 
 	if(occupant)
-		to_chat(user, "<span class='boldnotice'>The cryo pod is already occupied!</span>")
+		to_chat(user, "<span class='boldnotice'>В крио уже кто-то есть!</span>")
 		return
 
 	if(target.stat == DEAD)
-		to_chat(user, "<span class='notice'>Dead people can not be put into cryo.</span>")
+		to_chat(user, "<span class='notice'>Кажется сюда нельзя положить труп.</span>")
 		return
 
 	if(target.client && user != target)
@@ -400,7 +400,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod/retro, 17)
 			to_chat(user, "<span class='danger'>You can't put [target] into [src]. They're conscious.</span>")
 		return
 	else if(target.client)
-		if(tgui_alert(target, "Would you like to enter cryosleep?", "Cryopod", list("Yes","No")) != "Yes")
+		if(tgui_alert(target, "Войти в крио?", "Криокапсула", list("Да","Нет")) != "Да")
 			return
 
 	if(!target || user.incapacitated() || !target.Adjacent(user) || !Adjacent(user) || (!ishuman(user) && !iscyborg(user)) || !istype(user.loc, /turf) || target.buckled)
@@ -408,16 +408,16 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod/retro, 17)
 		//rerun the checks in case of shenanigans
 
 	if(target == user)
-		visible_message("[user] starts climbing into [src].")
+		visible_message("[user] ложится в [src].")
 	else
-		visible_message("[user] starts putting [target] into [src].")
+		visible_message("[user] начинает ложить [target] в [src].")
 
 	if(occupant)
-		to_chat(user, "<span class='boldnotice'>[src] is in use.</span>")
+		to_chat(user, "<span class='boldnotice'>[src] уже занята.</span>")
 		return
 	close_machine(target)
 
-	to_chat(target, "<span class='boldnotice'>If you ghost, log out or close your client now, your character will shortly be permanently removed from the round.</span>")
+	to_chat(target, "<span class='boldnotice'>Если вы выйдете из тела или закроете игру - ваш персонаж будет удалён из раунда.</span>")
 	name = "[name] ([occupant.name])"
 	log_admin("<span class='notice'>[key_name(target)] entered a stasis pod.</span>")
 	message_admins("[key_name_admin(target)] entered a stasis pod. (<A HREF='?_src_=holder;[HrefToken()];adminplayerobservecoodjump=1;X=[x];Y=[y];Z=[z]'>JMP</a>)")
@@ -429,45 +429,45 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod/retro, 17)
 	linked_ship.spawn_points += src
 
 /obj/machinery/cryopod/apply_effects_to_mob(mob/living/carbon/sleepyhead)
-	//it always sucks a little to get up
 	sleepyhead.set_nutrition(200)
-	sleepyhead.SetSleeping(60) //if you read this comment and feel like shitting together something to adjust elzu and IPC charge on wakeup, be my guest.
-	//but it can be worse.
-	if(prob(90))
-		sleepyhead.apply_effect(rand(3,10), EFFECT_DROWSY)
-	if(prob(75))
-		sleepyhead.blur_eyes(rand(3, 6))
-	//so much worse
-	if(prob(66))
-		sleepyhead.adjust_disgust(rand(25,35))
-	if(prob(33))
-		sleepyhead.adjust_disgust(rand(20,30))
-	if(prob(16))
-		sleepyhead.adjust_disgust(rand(10, 17))
-	//maybe you should've bought high passage.
-	if(prob(30))
-		sleepyhead.apply_damage_type(15, BURN)
-	to_chat(sleepyhead, "<span class='userdanger'>The symptoms of cryosleep set in as you awaken...")
+	sleepyhead.SetSleeping(60)
+	var/trouble = rand(1,6)
+
+	// Незначительные приколы
+	switch(trouble)
+		if(1)
+			sleepyhead.apply_effect(rand(1,3), EFFECT_DROWSY)
+			to_chat(sleepyhead, "<span class='notice'>Неплохо выспался, до сих пор немного клонит в сон.")
+		if(2)
+			sleepyhead.adjust_disgust(rand(25,35))
+			to_chat(sleepyhead, "<span class='danger'>В криокапсуле ужасно воняет, как будто тут кто-то умер.")
+		if(3)
+			sleepyhead.adjust_disgust(rand(20,30))
+			to_chat(sleepyhead, "<span class='danger'>В криокапсуле ужасно воняет, как будто тут кто-то гниёт.")
+		if(4)
+			sleepyhead.adjust_disgust(rand(10, 17))
+			to_chat(sleepyhead, "<span class='danger'>В криокапсуле воняет, как будто тут оставили рыбу.")
+		if(5)
+			sleepyhead.blur_eyes(rand(3, 6))
+			to_chat(sleepyhead, "<span class='notice'>Яркий свет пробуждает меня из тяготного сна.")
+		if(6)
+			sleepyhead.apply_damage_type(15, BURN)
+			to_chat(sleepyhead, "<span class='danger'>В криокапсуле сильно холодно. В следующий раз нужно будет отрегулировать датчик температуры.")
+		if(7)
+			sleepyhead.blind_eyes(rand(6, 12))
+			to_chat(sleepyhead, "<span class='notice'>Я так долго был в криостазисе что моё зрение отвыкло от света.")
+		if(8)
+			sleepyhead.apply_effect(rand(1,3), EFFECT_SLUR)
+			to_chat(sleepyhead, "<span class='notice'>Просыпаюсь в криокапсуле и вспоминаю что перед тем как лечь в неё я отмечал какой-то праздник. Похоже эффект от такого ещё остался.")
+		if(9)
+			sleepyhead.apply_effect(rand(6,9), EFFECT_SLUR)
+			to_chat(sleepyhead, "<span class='notice'>Немного кружится голова, возможно из-за сильного сна в капсуле а возможно из-за того что я выпил перед сном.")
+		if(10)
+			sleepyhead.apply_effect(rand(12,24), EFFECT_SLUR)
+			to_chat(sleepyhead, "<span class='danger'>Пожалуй я больше не буду нажираться до такого состояния перед сном.")
 
 
 
 /obj/machinery/cryopod/poor
 	name = "low quality cryogenic freezer"
 	desc = "Keeps crew frozen in cryostasis until they are needed in order to cut down on supply usage. This one seems cheaply made."
-
-/obj/machinery/cryopod/poor/apply_effects_to_mob(mob/living/carbon/sleepyhead)
-	sleepyhead.set_nutrition(200)
-	sleepyhead.SetSleeping(80)
-	if(prob(90))
-		sleepyhead.apply_effect(rand(5,15), EFFECT_DROWSY)
-	if(prob(75))
-		sleepyhead.blur_eyes(rand(6, 10))
-	if(prob(66))
-		sleepyhead.adjust_disgust(rand(35, 45)) //rand
-	if(prob(40))
-		sleepyhead.adjust_disgust(rand(15, 25))
-	if(prob(20))
-		sleepyhead.adjust_disgust(rand(5,15))
-	if(prob(30))
-		sleepyhead.apply_damage_type(30, BURN)
-	to_chat(sleepyhead, "<span class='userdanger'>The symptoms of a horrid cryosleep set in as you awaken...")

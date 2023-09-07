@@ -127,7 +127,7 @@
 
 /obj/structure/holosign/barrier/medical/examine(mob/user)
 	. = ..()
-	. += "<hr><span class='notice'>The biometric scanners are <b>[force_allaccess ? "off" : "on"]</b>.</span>"
+	. += "<span class='notice'>The biometric scanners are <b>[force_allaccess ? "off" : "on"]</b>.</span>"
 
 /obj/structure/holosign/barrier/medical/CanAllowThrough(atom/movable/mover, turf/target)
 	. = ..()
