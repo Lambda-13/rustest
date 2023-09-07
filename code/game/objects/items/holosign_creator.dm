@@ -12,7 +12,7 @@
 	throw_speed = 3
 	throw_range = 7
 	item_flags = NOBLUDGEON
-	var/list/signs
+	var/list/signs = list()
 	var/max_signs = 10
 	var/creation_time = 0 //time to create a holosign in deciseconds.
 	var/holosign_type = /obj/structure/holosign/wetsign
@@ -137,21 +137,3 @@
 		for(var/H in signs)
 			qdel(H)
 		to_chat(user, "<span class='notice'>Деактивирую все доступные голограммы.</span>")
-
-/obj/item/holosign_creator/janibarrier/infinite
-	holosign_type = /obj/structure/holosign/barrier/wetsign/infinite
-
-/obj/item/holosign_creator/security/infinite
-	holosign_type = /obj/structure/holosign/barrier/infinite
-
-/obj/item/holosign_creator/engineering/infinite
-	holosign_type = /obj/structure/holosign/barrier/engineering/infinite
-
-/obj/item/holosign_creator/atmos/infinite
-	holosign_type = /obj/structure/holosign/barrier/atmos/infinite
-
-/obj/item/holosign_creator/medical/infinite
-	holosign_type = /obj/structure/holosign/barrier/medical/infinite
-
-/obj/item/holosign_creator/cyborg/infinite
-	holosign_type = /obj/structure/holosign/barrier/cyborg/infinite
