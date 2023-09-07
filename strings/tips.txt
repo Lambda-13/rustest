@@ -1,108 +1,106 @@
-You can catch thrown items by toggling on your throw mode with an empty hand active.
-To crack a safe, use a stethoscope or three plastic explosives on it.
-You can climb onto a table by dragging yourself onto one. This takes some time. Clicking on a table that someone else is climbing onto will knock them down.
-You can drag other players onto yourself to open the strip menu, letting you remove their equipment or force them to wear something. Note that exosuits or helmets will block your access to the clothing beneath them, and that certain items take longer to strip or put on than others.
-Clicking on a windoor rather then bumping into it will keep it open, you can click it again to close it.
-You can spray a fire extinguisher, throw items or fire a gun while floating through space to change your direction. Simply fire opposite to where you want to go.
-You can change the control scheme by pressing tab. One is WASD, the other is the arrow keys. Keep in mind that hotkeys are also changed with this.
-Firesuits and winter coats offer mild protection from the cold, allowing you to spend longer periods of time near breaches and space than if wearing nothing at all.
-Glass shards can be welded to make glass, and metal rods can be welded to make metal. Ores can be welded too, but this takes a lot of fuel.
-If you need to drag multiple people either to safety or to space, bring a locker or crate over and stuff them all in before hauling them off.
-You can grab someone by clicking on them with the grab intent, then upgrade the grab by clicking on them once more. An aggressive grab will momentarily stun someone, allow you to place them on a table by clicking on it, or throw them by toggling on throwing.
-Holding alt and left clicking a tile will allow you to see its contents in the top right window pane, which is alternative to right clicking.
-The resist button will allow you to resist out of handcuffs, being buckled to a chair or bed, out of locked lockers and more. Whenever you're stuck, try resisting!
-You can move an item out of the way by dragging it and then clicking on an adjacent tile with an empty hand.
-You can recolor certain items like jumpsuits and gloves in washing machines by also throwing in a crayon.
-When in doubt about technicial issues, clear your cache (byond launcher > cogwheel > preferences > game prefs), update your BYOND, and relog.
-Most things have special interactions with your middle mouse button, alt, shift, and control click. Experiment!
-You can screwdriver any non-chemical grenade to shorten fuses from 5 seconds, to 3 seconds, to 1 second, to instant boom! Nobody ever expects this.
-If you find yourself in a fistfight with another player, staying on the offensive is usually the smart move. Running away often won't accomplish much.
-Different weapons have different strengths. Some weapons, such as spears, floor tiles, and throwing stars, deal more damage when thrown compared to when attacked normally.
-A thrown glass of water can make a slippery tile, allowing you to slow down your pursuers in a pinch.
-When dealing with security, you can often get your sentence negated entirely through cooperation and deception.
-Experiment with different setups of the supermatter engine to maximize output, but don't risk the crew's safety to do so!
-We were all new once, be patient and guide new players in the right direction.
-On most clothing items that go in the exosuit slot, you can put certain small items into your suit storage, such as a spraycan, your emergency oxygen tank, or a flashlight.
-Most job-related exosuit clothing can fit job-related items into it, such as the atmospheric technician's hardsuit/winter coat holding an RPD, or labcoats holding most medicine.
-If you're using hotkey mode, you can stop pulling things using H.
-If there's something you need from others, try asking! This game isn't singleplayer and you'd be surprised what you can get accomplished together!
-You'll quickly lose your interest in the game if you play to win and kill. If you find yourself doing this, take a step back and talk to people - it's a much better experience!
-Felinids get temporarily distracted by laser pointers. Use this to your advantage when being pursued by one.
-Don't be afraid to ask for help, whether from your peers or from mentors.
-As the Captain, you have absolute access and control over your ship, but this does not mean that being a horrible person won't result in mutiny and a ban.
-A medical  hardsuit can hold an entire medkit in its suit storage!
-While both heal toxin damage, the difference between charcoal and antitoxin is that charcoal will actively remove all other reagents from one's body, while antitoxin only removes various toxins - but can overdose.
-You can surgically implant or extract things from people's chests. This can range from putting in a bomb to pulling out an alien larva.
-Using disarm attempt will intentionally fail a surgery step.
-Corpses with the "...and their soul has departed" description no longer have a ghost attached to them and aren't revivable or clonable.
-Treating plasmamen is not impossible! Salbutamol stops them from suffocating and showers stop them from burning alive. You can even perform surgery on them by doing the procedure on a roller bed under a shower.
-You can extract implants by holding an empty implant case in your offhand while performing the extraction step.
-There are dozens of chemicals that can heal, and even more that can cause harm. Experiment!
-Some chemicals can only be synthesized by heating up the contents with a chemical heater or manually with lighters and similar tools.
-You can recharge a chemical dispenser with an inducer or by replacing its cell.
-Water and Potassium mixed together will create an explosion, with power scaling by amount used. Don't do it.
-You can eject someone from cloning early by disabling power in the room. Note that they will suffer more genetic damage and may lose vital organs from this.
-Being a hulk makes you capable of dealing high melee damage, stunlocking people, and punching through walls. However, you can't fire guns, will lose your hulk status if you go into critical condition.
-You can take AIs out of their cores by loading them into an intelliCard, which lets you see their laws, It can also be placed into an AI system integrity restorer computer to revive and/or repair them.
-You can use the mutation toxin obtained from green slimes to create various mutation toxins by mixing it with various chemicals!
-You can maximize the number of uses you get out of a slime by feeding it slime steroid, created from purple slimes, while alive. You can then apply extract enhancer, created from cerulean slimes, on each extract.
-You can repair your cyborgs with a welding tool if they have brute damage, if they have burn damage, you can remove their battery, expose the wiring with a screwdriver and replace their wires with a cable coil.
-You can reset a cyborg's module by cutting and mending the reset wire with a wire cutter.
-You can augment people with cyborg limbs. Augmented limbs can easily be repaired with cables and welders.
-As a AI, you can click on people's names to look at them. This only works if there are cameras that can see them.
-As a AI, you can quickly open and close doors by holding shift while clicking them, bolt them when holding ctrl, and even shock them while holding alt.
-As a AI, you can take pictures with your camera and upload them to newscasters.
-As a AI, you can use CTRL + 1-9 to set a location hotkey for your camera, allowing you to save the location and jump to it at will. Tilde and zero will return you to the last spot you jumped from, and the numpad numbers act as aliases to the regular number keys.
-As a Cyborg, choose your module carefully, as only cutting and mending your reset wire will let you repick it. If possible, refrain from choosing a module until a situation that requires one occurs.
-As a Cyborg, you are immune to most forms of stunning, and excel at almost everything far better than humans. However, flashes can easily stunlock you and you cannot do any precision work as you lack hands.
-As a Cyborg, you are impervious to fires and heat. If you are rogue, you can release plasma fires everywhere and walk through them without a care in the world!
-As a Cyborg, you are extremely vulnerable to EMPs as EMPs both stun you and damage you. The ion rifle in the armory or a traitor with an EMP kit can kill you in seconds.
-As a Service Cyborg, your spray can knocks people down. However, it is blocked by masks and glasses.
-As an Engineering Cyborg, you can attach air alarm/fire alarm/APC frames to walls by placing them on the floor and using a screwdriver on them.
-As a Medical Cyborg, you can fully perform surgery and even augment people.
-You can rename areas or create entirely new ones using your ship expansion permit.
-The chief engineer’s hardsuit is significantly better than other engineering hardsuits. It has the best features of both engineering and atmospherics hardsuits - boasting nigh-invulnerability to radiation and all atmospheric conditions.
-The supermatter shard is an extremely dangerous piece of equipment: touching it will disintegrate you. So will touching it with telepathy.
-You can electrify grilles by placing wire "nodes" beneath them: the big seemingly unconnected bulges from a half completed wiring job.
-You can cool a supermatter crystal by spraying it with a fire extinguisher. Only for the brave!
-You can repair windows by using a welding tool on them while on any intent other than harm.
-Don't underestimate the humble P.A.C.M.A.N. generators.
-A RCD can be reloaded with metal, glass or plasteel sheets instead of just compressed matter cartridges.
-You can unwrench a pipe regardless of the pressures of the gases inside, but if they're too high they can burst out and injure you!
-ATMOS holofan projector blocks gases while allowing objects to pass through. With it, you can quickly contain gas spills, fires and hull breaches. Or, use it to seal a plasmaman cloning room.
-You can change the layer of a pipe by clicking with it on a wrenched pipe or other atmos component of the desired layer.
-As a Clown, if you lose your banana peel, you can still slip people with your PDA! Honk!
-As a Clown, eating bananas heals you slightly. Honk!
-As a Clown, your Grail is the mineral bananium, which can be used to build you a fun and robust mech beloved by everyone.
-As a Clown, you can use your stamp on a sheet of cardboard as the first step of making a honkbot. Fun for the whole crew!
-As a Clown, spice your gimmicks up! Nobody likes a one-trick pony.
-The null rod has anti magic functions: it makes you immune to magic.
-Books can be turned into a container that can store small items using wire cutters, bibles have this ability without needing to cut it.
-You can hack the MegaSeed Vendor to get access to more exotic seeds. These seeds can alternatively be ordered from a express console
-You can mutate the plants with unstable mutagen or, as an alternative, grow glowshrooms for their radium which also mutates plants to start you up!
-While growing plants you should look into increasing the potency of your plants. This increases the size, amount of chemicals, points gained from grinding them in the biogenerator, and lets people know you are a proficient botanist.
-You can create a very wide variety of food with the crafting menu. You can find it by looking for the hammer icon near your intents.
-You can rename custom food with a pen.
-any cooked food will be much healthier than the junk food found in vendors. Having the crew routinely eating cooked will provide minor buffs.
-Most non-custom foods will have a secondary effect, ranging from healing you to making you move at lightspeed. Experiment!
-Mousetraps can be used to create bombs or booby-trap containers.
-You can order contraband items from a express console without hacking it.
-You can earn more cargo points by shipping back crates, liquid containers, plasma sheets, rare seeds from hydroponics, and more!
-The express supply console can instantly delivers crates by drop pod. The impact will cause a small explosion as well.
-Every monster has a pattern you can exploit to minimize damage from the encounters.
-You can harvest goliath plates from goliaths and upgrade your explorer's suit, mining hardsuits as well as Firefighter APLUs with them, greatly reducing incoming melee damage.
-You can craft a variety of equipment from the local fauna. Bone axes, lava boats and ash drake armour are just a few of them!
-As a Monkey, you can crawl through air or scrubber vents by alt+left clicking them. You must drop everything you are wearing and holding to do this, however.
-As a Monkey, you can still wear a few human items, such as backpacks, gas masks and hats, and still have two free hands.
-As a Drone, you can ping other drones to alert them of areas in need of repair.
-As a Ghost, you can see the inside of a container on the ground by clicking on it.
-As a Ghost, you can double click on just about anything to follow it. Or just warp around!
-You can swap floor tiles by holding a crowbar in one hand and a stack of tiles in the other.
-When hacking doors, cutting and mending a "test light wire" will restore power to the door.
-When crafting most items, you can either manually combine parts or use the crafting menu.
-Suit storage units not only remove blood and dirt from clothing, but also radiation!
-Remote devices will work when used through cameras. For example: Bluespace RPEDs and door remotes.
-You can light a cigar on a supermatter crystal.
-Using sticky tape on items can make them stick to people and walls! Be careful, grenades might stick to your hand during the moment of truth!
-In a pinch, stripping yourself naked will give you a sizeable resistance to being tackled. What do you value more, your freedom or your dignity?
-Wearing riot armor makes you significantly more effective at performing tackle takedowns, but will use extra stamina with each leap! It will also significantly protect you from other tackles!
+Вы можете ловить брошенные предметы, включив режим броска с активной пустой рукой.
+Чтобы взломать сейф, используйте на нем стетоскоп или три С4.
+Вы можете залезть на стол, перетащив своего персонажа мышкой на него. Это занимает некоторое время. Если вы толкнёте кого-то, позади кого находится стол - он упадёт на него.
+Вы можете перетащить других игроков на себя, чтобы открыть меню, позволяющее снять или надеть на кого-то одежду или снаряжение. Обратите внимание, что плотная одежда заблокирует вам доступ к одежде под ними, и что на надевание или снимание некоторых предметов требуется больше времени, чем на другие.
+Если щелкнуть по стеклянной двери - она останется открытой, нежели если вы об неё врежетесь. Нажатие ещё раз закрывает дверь.
+Вы можете распылять огнетушитель, бросать предметы или стрелять из пистолета, летая в космосе, чтобы изменить направление. Просто стреляйте напротив, куда вы хотите лететь.
+Вы можете изменить схему управления, нажав Tab. Один — WASD, другой — клавиши со стрелками. Имейте в виду, что при этом изменяются и горячие клавиши.
+Пожарные костюмы позволяют выходить в космос, но вы рискуете заработать переохлаждение.
+Сваркой можно не только спиливать стены! Попробуйте сварку например на осколках стекла, металических прутьях или на необработанной руде.
+Можно использовать шкаф или ящик для транспортировки нескольких людей.
+Вы можете схватить другого игрока нажав Ctrl и кликнув по нему. Это будет работать как интент Grab.
+Удерживая клавишу Alt и щелкнув левой кнопкой мыши по полу, вы сможете увидеть ее содержимое в верхней правой панели окна, что является альтернативой щелчку правой кнопкой мыши.
+Кнопка resist позволит вам освободиться из наручиков, встать со стула, выбраться из заблокированного или заваренного шкафчика. Всякий раз как вы застреваете - попробуйте сопротивляться на кнопку resist!
+Вы можете убрать предмет с дороги, схватив его, а затем щёлкнуть по другому пустому тайлу.
+Вы можете перекрасить некоторые вещи, например комбинезоны и перчатки, в стиральной машине, добавив туда мелок.
+Если у вас подвисает игра, попробуйте перезагрузить компьютер или очистить кэш.
+Большинство вещей имеют особые взаимодействия с средней кнопкой мыши, Alt, Shift и обычным щелчком мыши. Экспериментируйте!
+Вы можете отверткой любую нехимическую гранату сократить время действия взрывателя с 5 секунд до 3 секунд, до 1 секунды и мгновенного взрыва! Никто никогда этого не ожидает.
+Если на вас напали с оружием, то бегство является лучшим вариантом.
+Разное оружие имеет разную силу. Некоторое оружие, такое как копьё, напольная плитка и метательные звезды, при броске наносят больше урона, чем при обычном нападении.
+Брошенный стакан с водой может превратить плитку в скользкую, что позволит вам в крайнем случае замедлить преследователей.
+Тортик - не ложь.
+Экспериментируйте с различными настройками двигателя сверхматерии, чтобы максимизировать мощность, но не рискуйте при этом безопасностью экипажа и сектора!
+Когда-то мы все были новичками, поэтому будьте терпеливы и помогайте другим игрокам которые играют тут впервые.
+При ношении верхнего белья, в слот для баллона экзокостюма (скафандр, РИГ, МОД) можно положить аварийный кислородный баллон, фонарик, лом и многие другие маленькие предметы.
+В некоторую одежду можно положить другие маленькие предметы (в лабораторный халат можно положить банку для таблеток, например).
+Настроение можно повысить если кушать вкусную еду, курить и делать многие другие вещи которые повысили вам бы настроение в реальной жизни.
+Эта игра не является однопользовательской, и вы будете удивлены, узнав, чего вы можете добиться вместе!
+Вы быстро потеряете интерес к игре, если будете играть ради победы и убийств. Если вы обнаружите, что у вас всё скатывается в это - попытайтесь в РП и вы увидите как вам будет интересно играть!
+Не бойтесь просить помощи у других людей или админов.
+Как капитан, вы имеете абсолютный доступ и контроль над своим кораблём, однако если вы будете мудаком то это может привести к мятежу и даже бану.
+Медицинский костюм может вместить целую аптечку!
+Хотя антитоксин и уголь излечивают повреждения от токсинов, разница между ними заключается в том, что уголь активно удаляет все другие реагенты из организма, в то время как антитоксин удаляет только различные токсины, но может привести к передозировке.
+Вы можете хирургически имплантировать или извлекать предметы из груди людей. Это может варьироваться от установки бомбы до извлечения инопланетной личинки.
+Если при осмотре трупа вы увидели «...душа покинула тело» то к этому телу больше не прикреплен призрак, и их невозможно оживить или клонировать.
+Лечение плазмаменов не является невозможным! Сальбутамол не дает им задохнуться, а душ не дает им сгореть заживо. Им даже можно сделать операцию, проделав процедуру на роликовой кровати под душем.
+Вы можете извлечь имплантаты, держа пустой контейнер с имплантатами в левой руке во время выполнения этапа извлечения.
+Существуют десятки химических веществ, которые могут лечить, и еще больше тех, которые могут причинить вред. Экспериментируйте!
+Некоторые химические вещества можно синтезировать только путем нагревания содержимого химическим нагревателем или вручную с помощью зажигалок и подобных инструментов.
+Подзарядить химический дозатор можно с помощью индуктора или заменой батарейки.
+Вода и калий, смешанные вместе, создадут взрыв, мощность которого будет зависеть от использованного количества. Полезно для копания пород.
+Вы можете досрочно вытащить субьекта из аппарата клонирования, отключив питание в комнате. Обратите внимание, что они пострадают от генетического повреждения и могут потерять жизненно важные органы.
+Будучи Халком, вы сможете наносить большой урон в ближнем бою, оглушать людей и пробивать стены. Однако вы не можете стрелять из оружия и потеряете Халка, если упадёте в критическое состояние.
+Вы можете извлечь ИИ из ядра, загрузив их в карту IntelliCard, которая позволит вам увидеть их законы. Карту также можно поместить в компьютер, восстанавливающий целостность системы ИИ, чтобы оживить и/или восстановить ИИ.
+Вы можете использовать мутационный токсин, полученный из зеленых слизней, для создания различных мутационных токсинов, смешивая его с различными химическими веществами!
+Вы можете максимизировать количество применений, которые вы получаете от слизи, кормя ее стероидом слизи, созданным из фиолетовых слаймов, пока он жив. Затем вы можете нанести на каждый экстракт усилитель экстракта, созданный из лазурной слизи.
+Вы можете отремонтировать своих киборгов с помощью сварочного инструмента, если они имеют грубые повреждения, если они имеют повреждения от ожогов, вы можете снять с них батарею, оголить проводку с помощью отвертки и заменить их провода катушкой кабеля.
+Вы можете сбросить модуль киборга, перерезав и починив провод сброса кусачками.
+Вы можете наделить людей конечностями киборга. Аугментированные конечности можно легко отремонтировать с помощью кабелей и сварочных аппаратов.
+Как ИИ, вы можете нажимать на имена людей, чтобы посмотреть на них. Это работает только в том случае, если есть камеры, которые могут их видеть.
+Как ИИ, вы можете быстро открывать и закрывать двери, удерживая клавишу Shift и щелкая по ним, запирать их, удерживая Ctrl, и даже трясти их, удерживая Alt.
+Как ИИ, вы можете делать снимки с помощью камеры и загружать их дикторам.
+Как ИИ, вы можете использовать CTRL + 1-9, чтобы установить горячую клавишу местоположения для вашей камеры, что позволит вам сохранить местоположение и перейти к нему по своему желанию. Тильда и ноль вернут вас к последней точке, с которой вы прыгнули, а цифры цифровой клавиатуры действуют как псевдонимы обычных цифровых клавиш.
+Будучи киборгом, тщательно выбирайте свой модуль, так как только перерезание и починка провода сброса позволит вам его повторно подключить. По возможности воздержитесь от выбора модуля до тех пор, пока не возникнет ситуация, требующая его.
+Как киборг, вы невосприимчивы к большинству форм оглушения и преуспеваете практически во всем гораздо лучше, чем люди. Однако вспышки могут легко оглушить вас, и вы не сможете выполнять какую-либо точную работу из-за отсутствия рук.
+Как киборг, вы невосприимчивы к огню и жаре. Если вы мошенник, вы можете повсюду выпускать плазменный огонь и проходить сквозь него, не заботясь ни о чем!
+Как киборг, вы чрезвычайно уязвимы для ЭМИ, поскольку ЭМИ одновременно оглушают вас и наносят урон. Ионная винтовка в арсенале или предатель с ЭМИ-комплектом могут убить вас за секунды.
+Будучи сервисным киборгом, ваш баллончик с баллончиком сбивает людей с ног. Однако его блокируют маски и очки.
+Будучи инженерным киборгом, вы можете прикрепить рамки воздушной/пожарной сигнализации/APC к стенам, поместив их на пол и прикрепив к ним отвертку.
+Будучи медицинским киборгом, вы можете проводить операции и даже аугментировать людей.
+Вы можете переименовывать области или создавать совершенно новые, используя разрешение на расширение вашего корабля.
+Костюм главного инженера значительно лучше других инженерных костюмов. Он обладает лучшими характеристиками как инженерных, так и атмосферных костюмов: он может похвастаться практически неуязвимостью к радиации и всем атмосферным условиям.
+Осколок суперматерии — чрезвычайно опасное оборудование: прикосновение к нему приведет к разрушению вас. То же самое можно сказать и о прикосновении к нему телепатией.
+Вы можете электрифицировать решетки, поместив под них проволочные «узлы»: большие, казалось бы, несоединенные выпуклости от наполовину завершенной проводки.
+Охладить кристалл суперматерии можно, распылив на него огнетушитель. Только для смелых!
+Вы можете ремонтировать окна, применив к ним сварочный инструмент, с любыми намерениями, кроме причинения вреда.
+Не стоит недооценивать скромного P.A.C.M.A.N. генераторы.
+УЗО можно перезарядить металлическими, стеклянными или пласталевыми листами, а не просто картриджами со сжатым веществом.
+Вы можете выкрутить трубу независимо от давления газов внутри, но если оно слишком велико, они могут взорваться и причинить вам вред!
+Холлофановый проектор АТМОС блокирует газы, пропуская предметы. С его помощью можно быстро локализовать разливы газа, пожары и пробоины корпуса. Или используйте его, чтобы запечатать комнату клонирования плазменного человека.
+Изменить слой трубы можно, щелкнув ею по вывернутой трубе или другому компоненту атмоса нужного слоя.
+Будучи клоуном, если вы потеряете банановую кожуру, вы все равно сможете подсовывать людям свой КПК! Сигнал!
+Если вы клоун, поедание бананов слегка исцеляет вас. Сигнал!
+Если вы клоун, то ваш Грааль — это минеральный банан, из которого можно построить веселого и надежного робота, всеми любимого.
+Будучи клоуном, вы можете использовать штамп на листе картона в качестве первого шага при создании робота-гудока. Веселье для всей команды!
+Играя за клоуна, придайте остроты своим трюкам! Никто не любит пони с одной уловкой.
+Нулевой жезл обладает антимагическими функциями: он делает вас невосприимчивым к магии.
+Книги можно превратить в контейнер, в котором можно хранить мелкие предметы, с помощью кусачек. Библия обладает этой способностью без необходимости ее разрезать.
+Вы можете взломать MegaSeed Vendor, чтобы получить доступ к более экзотическим семенам. Эти семена также можно заказать через экспресс-консоль.
+Вы можете мутировать растения с помощью нестабильного мутагена или, в качестве альтернативы, выращивать светящиеся грибы ради радия, который также мутирует растения, чтобы запустить вас!
+Выращивая растения, вам следует подумать об увеличении их эффективности. Это увеличивает размер, количество химикатов, очки, получаемые за их измельчение в биогенераторе, и дает людям понять, что вы опытный ботаник.
+С помощью меню крафта вы можете создавать самые разнообразные блюда. Вы можете найти его, найдя значок молотка рядом с вашими намерениями.
+Вы можете переименовать нестандартную еду с помощью ручки.
+любая приготовленная еда будет намного полезнее, чем нездоровая пища, которую можно найти у продавцов. Если экипаж будет регулярно есть приготовленную пищу, это обеспечит небольшие улучшения.
+Большинство нестандартных продуктов имеют вторичный эффект: от исцеления до движения со скоростью света. Экспериментируйте!
+Мышеловки можно использовать для создания бомб или контейнеров-ловушек.
+Заказать контрабанду можно из экспресс-консоли, не взламывая ее.
+Вы можете заработать больше грузовых очков, отправляя обратно ящики, контейнеры с жидкостью, плазменные листы, редкие семена из гидропоники и многое другое!
+Консоль экспресс-доставки может мгновенно доставлять ящики с помощью десантной капсулы. Удар также вызовет небольшой взрыв.
+У каждого монстра есть особенность, которую вы можете использовать, чтобы минимизировать ущерб от столкновений.
+Вы можете собирать пластины голиафа с голиафов и улучшать с их помощью костюм исследователя, горнодобывающие костюмы, а также APLU пожарного, значительно уменьшая входящий урон в ближнем бою.
+Из местной фауны можно изготовить различное снаряжение. Костяные топоры, лавовые лодки и доспехи пепельного дракона — лишь некоторые из них!
+Играя за Обезьяну, вы можете пролезть через вентиляционные отверстия или вентиляционные отверстия, нажав на них Alt+щелкнув левой кнопкой мыши. Однако для этого вам придется бросить все, что вы носите и держите.
+Будучи Обезьяной, вы по-прежнему можете носить некоторые человеческие предметы, такие как рюкзаки, противогазы и шапки, и при этом иметь две свободные руки.
+Играя в роли дрона, вы можете отправлять сигналы другим дронам, чтобы предупредить их об участках, нуждающихся в ремонте.
+Будучи Призраком, вы можете увидеть внутреннюю часть контейнера на земле, щелкнув по нему.
+Будучи призраком, вы можете дважды щелкнуть практически по любому объекту, чтобы следовать за ним. Или просто телепортироваться!
+Вы можете менять плитки на полу, держа в одной руке лом, а в другой стопку плиток.
+При взломе дверей перерезание и починка «провода контрольной лампы» восстановит подачу электроэнергии к двери.
+При создании большинства предметов вы можете комбинировать детали вручную или использовать меню крафта.
+Единицы хранения костюмов удаляют с одежды не только кровь и грязь, но и радиацию!
+Удаленные устройства будут работать при использовании через камеры. Например: устройства Bluespace RPED и дверные пульты.
+Вы можете зажечь сигару о кристалле сверхматерии.
+Использование липкой ленты на предметах может привести к их прилипанию к людям и стенам! Будьте осторожны, в момент истины гранаты могут прилипнуть к вашей руке!
+В крайнем случае, если вы разденетесь догола, вы окажете значительное сопротивление атакам. Что вы цените больше: свою свободу или свое достоинство?
+Ношение брони делает вас значительно более эффективным в выполнении захватов, но при каждом прыжке вам потребуется дополнительная выносливость! Это также существенно защитит вас от других снастей!
