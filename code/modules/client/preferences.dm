@@ -191,6 +191,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	/// Multiz Performance option
 	var/multiz_performance = -1
 
+	///Фуллскрин
+	var/fullscreen = TRUE
+
 /datum/preferences/New(client/C)
 	parent = C
 

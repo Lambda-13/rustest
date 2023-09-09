@@ -3668,6 +3668,7 @@
 #include "lambda\sanecman\code\job\russian.dm"
 #include "lambda\sanecman\code\job\soviet.dm"
 #include "lambda\sanecman\code\job\triglavian.dm"
+#include "lambda\sanecman\code\serverside\fullscreen.dm"
 #include "lambda\sanecman\code\outpost\decor.dm"
 #include "lambda\sanecman\code\outpost\structure.dm"
 #include "lambda\sanecman\code\outpost\walls.dm"
