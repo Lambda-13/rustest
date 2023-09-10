@@ -51,7 +51,7 @@
 
 	for(var/i in 1 to hangar_templates.len)
 		hangar_templates[i] = SSmapping.outpost_templates[hangar_templates[i]]
-	sortTim(hangar_templates, /proc/cmp_hangarsize_asc)
+	sortTim(hangar_templates, GLOBAL_PROC_REF(cmp_hangarsize_asc))
 
 	SSovermap.outposts += src
 	mapzone = SSmapping.create_map_zone("[name]")

@@ -5,7 +5,7 @@
 	else
 		winset(src, "mainwindow", "is-maximized=false;can-resize=true;titlebar=true;menu=menu")
 		winset(src, "mainwindow", "is-maximized=true")
-	addtimer(CALLBACK(src,.verb/fit_viewport, 10))
+	addtimer(CALLBACK(src, VERB_REF(fit_viewport), 10))
 
 /datum/keybinding/client/fullscreen_toggle
 	hotkey_keys = list("F11")
