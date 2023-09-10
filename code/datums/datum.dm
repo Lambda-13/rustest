@@ -10,29 +10,29 @@
  */
 /datum
 	/**
-	* Tick count time when this object was destroyed.
-	*
-	* If this is non zero then the object has been garbage collected and is awaiting either
-	* a hard del by the GC subsystme, or to be autocollected (if it has no references)
-	*/
+	  * Tick count time when this object was destroyed.
+	  *
+	  * If this is non zero then the object has been garbage collected and is awaiting either
+	  * a hard del by the GC subsystme, or to be autocollected (if it has no references)
+	  */
 	var/gc_destroyed
 
 	/// Active timers with this datum as the target
 	var/list/active_timers
-	/// Status traits attached to this datum
+	/// Status traits attached to this datum. associative list of the form: list(trait name (string) = list(source1, source2, source3,...))
 	var/list/status_traits
 
 	/**
-	* Components attached to this datum
-	*
-	* Lazy associated list in the structure of `type:component/list of components`
-	*/
+	  * Components attached to this datum
+	  *
+	  * Lazy associated list in the structure of `type:component/list of components`
+	  */
 	var/list/datum_components
 	/**
-	* Any datum registered to receive signals from this datum is in this list
-	*
-	* Lazy associated list in the structure of `signal:registree/list of registrees`
-	*/
+	  * Any datum registered to receive signals from this datum is in this list
+	  *
+	  * Lazy associated list in the structure of `signal:registree/list of registrees`
+	  */
 	var/list/comp_lookup
 	/// Lazy associated list in the structure of `signals:proctype` that are run when the datum receives that signal
 	var/list/list/datum/callback/signal_procs
@@ -43,9 +43,21 @@
 	/// A weak reference to another datum
 	var/datum/weakref/weak_reference
 
-#ifdef TESTING
+	/*
+	* Lazy associative list of currently active cooldowns.
+	*
+	* cooldowns [ COOLDOWN_INDEX ] = add_timer()
+	* add_timer() returns the truthy value of -1 when not stoppable, and else a truthy numeric index
+	*/
+	var/list/cooldowns
+
+#ifdef REFERENCE_TRACKING
 	var/running_find_references
 	var/last_find_references = 0
+	#ifdef REFERENCE_TRACKING_DEBUG
+	///Stores info about where refs are found, used for sanity checks and testing
+	var/list/found_refs
+	#endif
 #endif
 
 #ifdef DATUMVAR_DEBUGGING_MODE
@@ -79,20 +91,25 @@
  */
 /datum/proc/Destroy(force=FALSE, ...)
 	SHOULD_CALL_PARENT(TRUE)
+	SHOULD_NOT_SLEEP(TRUE)
 	tag = null
 	datum_flags &= ~DF_USE_TAG //In case something tries to REF us
 	weak_reference = null //ensure prompt GCing of weakref.
 
 	var/list/timers = active_timers
 	active_timers = null
-	for(var/thing as anything in timers)
-		var/datum/timedevent/timer = thing
+	for(var/datum/timedevent/timer as anything in timers)
 		if (timer.spent && !(timer.flags & TIMER_DELETE_ME))
 			continue
 		qdel(timer)
 
-	//BEGIN: ECS SHIT
+	#ifdef REFERENCE_TRACKING
+	#ifdef REFERENCE_TRACKING_DEBUG
+	found_refs = null
+	#endif
+	#endif
 
+	//BEGIN: ECS SHIT
 	var/list/dc = datum_components
 	if(dc)
 		var/all_components = dc[/datum/component]
@@ -210,10 +227,41 @@
 				return
 		else if(!ispath(jsonlist["DATUM_TYPE"], target_type))
 			return
-	var/typeofdatum = jsonlist["DATUM_TYPE"]			//BYOND won't directly read if this is just put in the line below, and will instead runtime because it thinks you're trying to make a new list?
+	var/typeofdatum = jsonlist["DATUM_TYPE"] //BYOND won't directly read if this is just put in the line below, and will instead runtime because it thinks you're trying to make a new list?
 	var/datum/D = new typeofdatum
 	var/datum/returned = D.deserialize_list(jsonlist, options)
 	if(!istype(returned, /datum))
 		qdel(D)
 	else
 		return returned
+
+/**
+ * Callback called by a timer to end an associative-list-indexed cooldown.
+ *
+ * Arguments:
+ * * source - datum storing the cooldown
+ * * index - string index storing the cooldown on the cooldowns associative list
+ *
+ * This sends a signal reporting the cooldown end.
+ */
+/proc/end_cooldown(datum/source, index)
+	if(QDELETED(source))
+		return
+	SEND_SIGNAL(source, COMSIG_CD_STOP(index))
+	TIMER_COOLDOWN_END(source, index)
+
+
+/**
+ * Proc used by stoppable timers to end a cooldown before the time has ran out.
+ *
+ * Arguments:
+ * * source - datum storing the cooldown
+ * * index - string index storing the cooldown on the cooldowns associative list
+ *
+ * This sends a signal reporting the cooldown end, passing the time left as an argument.
+ */
+/proc/reset_cooldown(datum/source, index)
+	if(QDELETED(source))
+		return
+	SEND_SIGNAL(source, COMSIG_CD_RESET(index), S_TIMER_COOLDOWN_TIMELEFT(source, index))
+	TIMER_COOLDOWN_END(source, index)

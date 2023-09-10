@@ -205,6 +205,7 @@
 #include "code\__HELPERS\typelists.dm"
 #include "code\__HELPERS\unique_ids.dm"
 #include "code\__HELPERS\unsorted.dm"
+#include "code\__HELPERS\varset_callback.dm"
 #include "code\__HELPERS\verbs.dm"
 #include "code\__HELPERS\view.dm"
 #include "code\__HELPERS\virtual_z_level.dm"

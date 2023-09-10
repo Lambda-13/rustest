@@ -101,7 +101,7 @@
 	return ..()
 
 /obj/effect/anomaly/proc/anomalyEffect(seconds_per_tick)
-	if(!immobile && SPT_PROB(ANOMALY_MOVECHANCE, seconds_per_tick))
+	if(!immobile && DT_PROB(ANOMALY_MOVECHANCE, seconds_per_tick))
 		step(src,pick(GLOB.alldirs))
 
 /obj/effect/anomaly/proc/detonate()

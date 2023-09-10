@@ -551,7 +551,6 @@
 /datum/config_entry/keyed_list/whitesands_atmos_mix
 	key_mode = KEY_MODE_TEXT
 	value_mode = VALUE_MODE_NUM
-	lowercase = FALSE
 	splitter = " "
 
 

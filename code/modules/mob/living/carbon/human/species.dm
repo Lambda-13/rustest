@@ -1875,16 +1875,16 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		H.apply_damage(burn_damage, BURN, spread_damage = TRUE)
 
 	// Body temperature is too cold, and we do not have resist traits
-	else if(H.bodytemperature < bodytemp_cold_damage_limit && !HAS_TRAIT(H, TRAIT_RESISTCOLD))
+	else if(H.bodytemperature < HUMAN_BODYTEMP_COLD_DAMAGE_LIMIT && !HAS_TRAIT(H, TRAIT_RESISTCOLD))
 		// clear any hot moods and apply cold mood
 		SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "hot")
 		SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "cold", /datum/mood_event/cold)
 		// Apply cold slow down
-		H.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/cold, multiplicative_slowdown = ((bodytemp_cold_damage_limit - H.bodytemperature) / COLD_SLOWDOWN_FACTOR))
+		H.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/cold, multiplicative_slowdown = ((HUMAN_BODYTEMP_COLD_DAMAGE_LIMIT - H.bodytemperature) / COLD_SLOWDOWN_FACTOR))
 		// Display alerts based on the amount of cold damage being taken
 		// Apply more damage based on how cold you are
 		switch(H.bodytemperature)
-			if(200 to bodytemp_cold_damage_limit)
+			if(200 to HUMAN_BODYTEMP_COLD_DAMAGE_LIMIT)
 				H.throw_alert("temp", /atom/movable/screen/alert/cold, 1)
 				H.apply_damage(COLD_DAMAGE_LEVEL_1 * coldmod * H.physiology.cold_mod, BURN)
 			if(120 to 200)
